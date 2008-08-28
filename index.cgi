@@ -221,7 +221,7 @@ HEAD
 	puts "<fieldset><legend>Comment</legend>"
 	puts "<form method='post' action=''>\n"
 	puts "<div>"
-	puts "Name: <input value='anonymous' type='text' name='__commentname' /><br />"
+	puts "<label for='Commentname'>Name: </label><input id='Commentname' value='anonymous' type='text' name='__commentname' /><br />"
 	puts "<textarea cols='50' rows='10' name='__comment' ></textarea><br />"
 	puts "<input type='hidden' name='#{SITE}' />"
 	puts "<input type='submit' value='Submit' />"
