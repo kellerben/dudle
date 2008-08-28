@@ -44,7 +44,7 @@ class Poll
 		ret += "<tr>\n"
 		ret += "<td class='name'><input size='16' type='text' name='__add_participant' /></td>\n"
 		@head.each{|columntitle|
-			ret += "<td class='checkboxes'><input type='checkbox' value='#{columntitle}' name='checked' title='#{columntitle}' /></td>\n"
+			ret += "<td class='checkboxes'><input type='checkbox' value='#{columntitle}' name='__add_participant_checked' title='#{columntitle}' /></td>\n"
 		}
 		ret += "<td class='checkboxes'><input type='hidden' name='#{SITE}' /><input type='submit' value='add/edit' /></td>\n"
 
@@ -172,7 +172,7 @@ HEAD
 	end
 
 	if cgi.include?("__add_participant")
-		table.add_participant(cgi["__add_participant"],cgi["checked"]) 
+		table.add_participant(cgi["__add_participant"],cgi["__add_participant_checked"]) 
 	end
 
 	if cgi.include?("__delete")
