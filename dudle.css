@@ -1,0 +1,42 @@
+td.true      { background-color:#0F0; }
+td.false     { background-color:#F00; }
+td.undecided { background-color:#DDD;color:#666 }
+td.name {
+	text-align:right;
+}
+table { 
+	border: none; 
+}
+td {
+	vertical-align:middle;
+	text-align:center;
+	border-width: 0px;
+}
+td.sum, td.date, td.name, td.checkboxes { 
+	background-color:Silver;
+}
+th { 
+	color: white;
+	background-color:black;
+	font-weight: normal;
+}
+td.date { 
+	color: Gray;
+	text-align: left;
+}
+html {
+	background: #CCCCD3;
+	color: black;
+}
+body {
+	background: white;
+	margin: 3ex auto;
+	width: 90%;
+	padding: 2em;
+	color: black;
+	line-height: 1.5em;
+	border: solid 1px black;
+}
+h1 {
+	text-align: center;
+}
