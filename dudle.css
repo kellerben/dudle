@@ -11,11 +11,13 @@ td {
 	vertical-align:middle;
 	text-align:center;
 	border-width: 0px;
+	padding: 1px 3px;
 }
 td.sum, td.date, td.name, td.checkboxes { 
 	background-color:Silver;
 }
 th { 
+	padding: 1px 3px;
 	color: white;
 	background-color:black;
 	font-weight: normal;

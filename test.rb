@@ -62,7 +62,7 @@ class DatePollTest < Test::Unit::TestCase
 		assert(!@poll.add_remove_column("bla"))
 		assert(!@poll.add_remove_column("31-02-2001"))
 		assert(@poll.add_remove_column("2008-02-20"))
-		assert_equal(Time,@poll.head[0].class)
+		assert_equal(Date,@poll.head[0].class)
 		assert(@poll.add_remove_column(" 2008-02-20  "))
 		assert(@poll.head.empty?)
 	end

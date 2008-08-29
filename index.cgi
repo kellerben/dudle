@@ -2,7 +2,6 @@
 require "yaml"
 require "cgi"
 require "pp"
-require "date"
 
 class Poll
 	attr_reader :head
@@ -113,7 +112,7 @@ class Poll
 		name = CGI.escapeHTML(name.strip)
 		@data[name] = {"timestamp" => Time.now}
 		@head.each{|columntitle|
-			@data[name][columntitle] = agreed.include?(columntitle)
+			@data[name][columntitle] = agreed.include?(columntitle.to_s)
 		}
 		store
 	end
@@ -148,16 +147,26 @@ class Poll
 end
 class DatePoll < Poll
 	def head_to_html
-		ret = "<td></td>\n"
-		@head.each{|columntitle|
-			ret += "<th>#{columntitle}</th>\n"
+		ret = "<tr><td></td>\n"
+		monthhead = Hash.new(0)
+		@head.each{|curdate|
+			monthhead["#{curdate.year}-#{curdate.mon.to_s.rjust(2,"0")} "] += 1
+		}
+		monthhead.sort.each{|title,count|
+			year, month = title.split("-").collect{|e| e.to_i}
+			ret += "<th colspan='#{count}'>#{Date::ABBR_MONTHNAMES[month]} #{year}</th>\n"
+		}
+		ret += "</tr><tr><td></td>\n"
+		@head.each{|curdate|
+			ret += "<th>#{Date::ABBR_DAYNAMES[curdate.wday]}, #{curdate.day}</th>\n"
 		}
 		ret += "<th>Last Edit</th>\n"
+		ret += "</tr>\n"
 		ret	
 	end
 	def add_remove_column name
 		begin
-			parsed_name = YAML::load(DateTime.parse(name).to_yaml)
+			parsed_name = Date.parse(name)
 		rescue
 			return false
 		end
@@ -198,6 +207,7 @@ if defined?(SITE)
 <h1>#{SITE}</h1>
 HEAD
 	unless File.exist?(SITE + ".yaml" ) and table = YAML::load_file(SITE + ".yaml")
+		puts CGI.escapeHTML(cgi.pretty_inspect)
 		if cgi["__type"] == "date"
 			table = DatePoll.new
 		else
