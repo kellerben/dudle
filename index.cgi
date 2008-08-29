@@ -172,7 +172,7 @@ HEAD
 	end
 
 	if cgi.include?("__add_participant")
-		table.add_participant(cgi["__add_participant"],cgi["__add_participant_checked"]) 
+		table.add_participant(cgi["__add_participant"],cgi.params["__add_participant_checked"]) 
 	end
 
 	if cgi.include?("__delete")
