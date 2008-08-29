@@ -7,15 +7,13 @@ class Poll
 	attr_accessor :head, :data, :comment
 end
 
-class Test_dudle < Test::Unit::TestCase
+class PollTest < Test::Unit::TestCase
 	def setup
-		@poll = StringPoll.new
+		@poll = Poll.new
 	end
-
 	def teardown
 		File.delete("#{SITE}.yaml") if File.exists?("#{SITE}.yaml")
 	end
-
 	def test_init
 		assert(@poll.head.empty?)
 	end
@@ -46,10 +44,27 @@ class Test_dudle < Test::Unit::TestCase
 		assert_equal("blabla", @poll.comment[0][1])
 	end
 	def test_add_remove_column
-		@poll.add_remove_column(" bla  ")
+		assert(@poll.add_remove_column(" bla  "))
 		assert_equal("bla",@poll.head[0])
-		@poll.add_remove_column("   bla ")
-		assert(@poll.head.empty?)	
+		assert(@poll.add_remove_column("   bla "))
+		assert(@poll.head.empty?)
 	end
 end
 
+class DatePollTest < Test::Unit::TestCase
+	def setup
+		@poll = DatePoll.new
+	end
+	def teardown
+		File.delete("#{SITE}.yaml") if File.exists?("#{SITE}.yaml")
+	end
+	def test_add_remove_column
+		assert(!@poll.add_remove_column("bla"))
+		assert(!@poll.add_remove_column("31-02-2001"))
+		assert(@poll.add_remove_column("2008-02-20"))
+		assert_equal(Time,@poll.head[0].class)
+		assert(@poll.add_remove_column(" 2008-02-20  "))
+		assert(@poll.head.empty?)
+	end
+
+end

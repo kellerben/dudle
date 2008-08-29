@@ -2,6 +2,7 @@
 require "yaml"
 require "cgi"
 require "pp"
+require "date"
 
 class Poll
 	attr_reader :head
@@ -11,7 +12,7 @@ class Poll
 		@comment = []
 	end
 	def head_to_html
-		ret = "<td></td>\n"
+		ret = "<tr><td></td>\n"
 		@head.each{|columntitle|
 			ret += "<th>#{columntitle}</th>\n"
 		}
@@ -24,17 +25,18 @@ class Poll
 #		ret += "</div>"
 #		ret += "</form>\n"
 #		ret += "</th>\n"
+		ret += "</tr>\n"
 		ret
 	end
 	def to_html
 		ret = "<div id='polltable'>\n"
 		ret += "<form method='post' action=''>\n"
-		ret += "<table border='1'><tr>\n"
+		ret += "<table border='1'>\n"
 
 		ret += head_to_html
 
 		@data.sort{|x,y| x[1]["timestamp"] <=> y[1]["timestamp"]}.each{|participant,poll|
-			ret += "</tr><tr>\n"
+			ret += "<tr>\n"
 			ret += "<td class='name'>#{participant}</td>\n"
 			@head.each{|columntitle|
 				klasse = poll[columntitle].nil? ? "undecided" : poll[columntitle]
@@ -42,9 +44,9 @@ class Poll
 				ret += "<td class='#{klasse}' title='#{participant}: #{columntitle}'>#{value}</td>\n"
 			}
 			ret += "<td class='date'>#{poll['timestamp'].strftime('%d.%m, %H:%M')}</td>"
+			ret += "</tr>\n"
 		}
 		
-		ret += "</tr>\n"
 		ret += "<tr>\n"
 		ret += "<td class='name'><input size='16' type='text' name='__add_participant' /></td>\n"
 		@head.each{|columntitle|
@@ -141,9 +143,26 @@ class Poll
 			@head.sort!
 		end
 		store
+		true
 	end
 end
 class DatePoll < Poll
+	def head_to_html
+		ret = "<td></td>\n"
+		@head.each{|columntitle|
+			ret += "<th>#{columntitle}</th>\n"
+		}
+		ret += "<th>Last Edit</th>\n"
+		ret	
+	end
+	def add_remove_column name
+		begin
+			parsed_name = YAML::load(DateTime.parse(name).to_yaml)
+		rescue
+			return false
+		end
+		add_remove_parsed_column parsed_name
+	end
 end
 
 if __FILE__ == $0
@@ -179,14 +198,20 @@ if defined?(SITE)
 <h1>#{SITE}</h1>
 HEAD
 	unless File.exist?(SITE + ".yaml" ) and table = YAML::load_file(SITE + ".yaml")
-		table = Poll.new 
+		if cgi["__type"] == "date"
+			table = DatePoll.new
+		else
+			table = Poll.new
+		end
 	end
 
 	table.add_participant(cgi["__add_participant"],cgi.params["__add_participant_checked"]) if cgi.include?("__add_participant")
 
 	table.delete(cgi["__delete"])	if cgi.include?("__delete")
 	
-	table.add_remove_column(cgi["__add_remove_column"])	if cgi.include?("__add_remove_column")
+	if cgi.include?("__add_remove_column")
+		puts "Could not add/remove column #{cgi["__add_remove_column"]}" unless table.add_remove_column(cgi["__add_remove_column"])
+	end
 
 	table.add_comment(cgi["__commentname"],cgi.params["__comment"][0]) if cgi.include?("__comment")
 
@@ -200,7 +225,7 @@ HEAD
 	puts "<fieldset><legend>delete</legend>"
 	puts "<form method='post' action=''>\n"
 	puts "<div>"
-	puts "<input size='16' type='text' name='__delete' />"
+	puts "<input size='16' value='#{cgi["__delete"]}' type='text' name='__delete' />"
 	puts "<input type='hidden' name='#{SITE}' />"
 	puts "<input type='submit' value='delete' />"
 	puts "</div>"
@@ -212,7 +237,7 @@ HEAD
 	puts "<fieldset><legend>add/remove column</legend>"
 	puts "<form method='post' action=''>\n"
 	puts "<div>"
-	puts "<input size='16' type='text' name='__add_remove_column' />"
+	puts "<input size='16' value='#{cgi["__add_remove_column"]}' type='text' name='__add_remove_column' />"
 	puts "<input type='hidden' name='#{SITE}' />"
 	puts "<input type='submit' value='add/remove column' />"
 	puts "</div>"
