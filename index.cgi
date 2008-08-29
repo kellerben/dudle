@@ -10,12 +10,8 @@ class Poll
 		@data = {}
 		@comment = []
 	end
-	def to_html
-		ret = "<div id='polltable'>\n"
-		ret += "<form method='post' action=''>\n"
-		ret += "<table border='1'><tr>\n"
-
-		ret += "<td></td>\n"
+	def head_to_html
+		ret = "<td></td>\n"
 		@head.each{|columntitle|
 			ret += "<th>#{columntitle}</th>\n"
 		}
@@ -28,6 +24,14 @@ class Poll
 #		ret += "</div>"
 #		ret += "</form>\n"
 #		ret += "</th>\n"
+		ret
+	end
+	def to_html
+		ret = "<div id='polltable'>\n"
+		ret += "<form method='post' action=''>\n"
+		ret += "<table border='1'><tr>\n"
+
+		ret += head_to_html
 
 		@data.sort{|x,y| x[1]["timestamp"] <=> y[1]["timestamp"]}.each{|participant,poll|
 			ret += "</tr><tr>\n"
@@ -126,7 +130,10 @@ class Poll
 		store
 	end
 	def add_remove_column name
-		columntitle = CGI.escapeHTML(name.strip)
+		add_remove_parsed_column CGI.escapeHTML(name.strip)
+	end
+	def add_remove_parsed_column name
+		columntitle = name
 		if @head.include?(columntitle)
 			@head.delete(columntitle)
 		else
@@ -136,6 +143,10 @@ class Poll
 		store
 	end
 end
+class DatePoll < Poll
+end
+
+if __FILE__ == $0
 
 #Content-type: application/xhtml+xml; charset=utf-8
 puts <<HEAD
@@ -171,21 +182,13 @@ HEAD
 		table = Poll.new 
 	end
 
-	if cgi.include?("__add_participant")
-		table.add_participant(cgi["__add_participant"],cgi.params["__add_participant_checked"]) 
-	end
+	table.add_participant(cgi["__add_participant"],cgi.params["__add_participant_checked"]) if cgi.include?("__add_participant")
 
-	if cgi.include?("__delete")
-		table.delete(cgi["__delete"])
-	end
+	table.delete(cgi["__delete"])	if cgi.include?("__delete")
 	
-	if cgi.include?("__add_remove_column")
-		table.add_remove_column(cgi["__add_remove_column"])
-	end
+	table.add_remove_column(cgi["__add_remove_column"])	if cgi.include?("__add_remove_column")
 
-	if cgi.include?("__comment")
-		table.add_comment(cgi["__commentname"],cgi.params["__comment"][0])
-	end
+	table.add_comment(cgi["__commentname"],cgi.params["__comment"][0]) if cgi.include?("__comment")
 
 	puts table.to_html
 	
@@ -252,3 +255,5 @@ HEAD
 end
 
 puts "</body></html>"
+
+end
