@@ -1,8 +1,27 @@
-td.true      { background-color:#0F0; }
-td.false     { background-color:#F00; }
+td.true, input.choosen  { background-color:#0F0; }
+td.false { background-color:#F00; }
 td.undecided { background-color:#DDD;color:#666 }
 td.name {
 	text-align:right;
+}
+input.navigation, input.disabled, input.choosen, input.notchoosen {
+	border-width: 1px; 
+	border-style: solid;
+	border-color: black;
+	padding: 0px;
+	cursor: pointer;
+	width: 3.5em;
+	height: 3.5ex;
+}
+input.navigation {
+	color: white; 
+	background-color: black;
+}
+input.disabled { background-color:#DDD;color:#BBB}
+td.calendarday{
+	border: 1px; 
+	padding: 0px;
+	margin: 0px;
 }
 table { 
 	border: none; 

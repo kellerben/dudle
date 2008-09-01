@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
+load "/home/ben/src/lib.rb/pphtml.rb"
 require "yaml"
 require "cgi"
 require "pp"
+require "date"
 
 class Poll
 	attr_reader :head
@@ -26,6 +28,21 @@ class Poll
 #		ret += "</th>\n"
 		ret += "</tr>\n"
 		ret
+	end
+	def add_remove_column_htmlform
+		return <<END
+<div id='add_remove_column'>
+<fieldset><legend>add/remove column</legend>
+<form method='post' action=''>
+<div>
+<input size='16' type='text' value='#{$cgi["__add_remove_column"]}' name='__add_remove_column' />
+<input type='hidden' name='#{SITE}' />
+<input type='submit' value='add/remove column' />
+</div>
+</form>
+</fieldset>
+</div>
+END
 	end
 	def to_html
 		ret = "<div id='polltable'>\n"
@@ -164,10 +181,74 @@ class DatePoll < Poll
 		ret += "</tr>\n"
 		ret	
 	end
+	def add_remove_column_htmlform
+		if $cgi.include?("__add_remove_column_month")
+			begin
+				startdate = Date.parse("#{$cgi["__add_remove_column_month"]}-1")
+			rescue ArgumentError
+				olddate =  $cgi.params["__add_remove_column_month"][1]
+				case $cgi["__add_remove_column_month"]
+				when "<<"
+					startdate = Date.parse("#{olddate}-1")-365
+				when "<"
+					startdate = Date.parse("#{olddate}-1")-1
+				when ">"
+					startdate = Date.parse("#{olddate}-1")+31
+				when ">>"
+					startdate = Date.parse("#{olddate}-1")+366
+				end
+				startdate = Date.parse("#{startdate.year}-#{startdate.month}-1")
+			end
+		else
+			startdate = Date.parse("#{Date.today.year}-#{Date.today.month}-1")
+		end
+		ret = <<END
+<div id='add_remove_column'>
+<fieldset><legend>add/remove column</legend>
+<form method='post' action=''>
+<div>
+<input type='hidden' name='#{SITE}' />
+<table><tr>
+END
+		def navi val
+			"<th style='padding:0px'>" +
+				"<input class='navigation' type='submit' name='__add_remove_column_month' value='#{val}' /></th>"
+		end
+		["&lt;&lt;","&lt;"].each{|val| ret += navi(val)}
+		ret += "<th colspan=3>#{Date::ABBR_MONTHNAMES[startdate.month]} #{startdate.year}</th>"
+		["&gt;","&gt;&gt;"].each{|val| ret += navi(val)}
+		
+		ret += "</tr><tr>\n"
+
+		7.times{|i| ret += "<th>#{Date::ABBR_DAYNAMES[(i+1)%7]}</th>" }
+		ret += "</tr><tr>\n"
+		
+		(startdate.wday-1).times{
+			ret += "<td></td>"
+		}
+		d = startdate
+		while (d.month == startdate.month) do
+			klasse = "notchoosen"
+			klasse = "disabled" if d < Date.today
+			klasse = "choosen" if @head.include?(d)
+			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='__add_remove_column' value='#{d.day}' /></td>\n"
+			ret += "<tr></tr>\n" if d.wday == 0
+			d = d.next
+		end
+		ret += <<END
+</tr></table>
+<input type='hidden' name='__add_remove_column_month' value='#{startdate.strftime("%Y-%m")}' />
+</div>
+</form>
+</fieldset>
+</div>
+END
+		ret
+	end
 	def add_remove_column name
 		begin
-			parsed_name = Date.parse(name)
-		rescue
+			parsed_name = Date.parse("#{$cgi["__add_remove_column_month"]}-#{name}")
+		rescue ArgumentError
 			return false
 		end
 		add_remove_parsed_column parsed_name
@@ -185,8 +266,8 @@ Content-type: text/html; charset=utf-8
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 HEAD
 
-cgi = CGI.new
-cgi.params.each_pair{|k,v|
+$cgi = CGI.new
+$cgi.params.each_pair{|k,v|
 	if "" == v[0].to_s && !(k =~ /^__/)
 		if defined?(SITE)
 			puts "FEHLER, meld dich bei Ben!"
@@ -200,30 +281,30 @@ cgi.params.each_pair{|k,v|
 if defined?(SITE)
 	puts <<HEAD
 <head>
-	<title>dudle - #{SITE}</title>
+ <meta http-equiv="Content-Style-Type" content="text/css" />
+ <title>dudle - #{SITE}</title>
 	<link rel="stylesheet" type="text/css" href="dudle.css" />
 </head>
 <body>
 <h1>#{SITE}</h1>
 HEAD
 	unless File.exist?(SITE + ".yaml" ) and table = YAML::load_file(SITE + ".yaml")
-		puts CGI.escapeHTML(cgi.pretty_inspect)
-		if cgi["__type"] == "date"
+		if $cgi["__type"] == "date"
 			table = DatePoll.new
 		else
 			table = Poll.new
 		end
 	end
 
-	table.add_participant(cgi["__add_participant"],cgi.params["__add_participant_checked"]) if cgi.include?("__add_participant")
+	table.add_participant($cgi["__add_participant"],$cgi.params["__add_participant_checked"]) if $cgi.include?("__add_participant")
 
-	table.delete(cgi["__delete"])	if cgi.include?("__delete")
+	table.delete($cgi["__delete"])	if $cgi.include?("__delete")
 	
-	if cgi.include?("__add_remove_column")
-		puts "Could not add/remove column #{cgi["__add_remove_column"]}" unless table.add_remove_column(cgi["__add_remove_column"])
+	if $cgi.include?("__add_remove_column")
+		puts "Could not add/remove column #{$cgi["__add_remove_column"]}" unless table.add_remove_column($cgi["__add_remove_column"])
 	end
 
-	table.add_comment(cgi["__commentname"],cgi.params["__comment"][0]) if cgi.include?("__comment")
+	table.add_comment($cgi["__commentname"],$cgi.params["__comment"][0]) if $cgi.include?("__comment")
 
 	puts table.to_html
 	
@@ -235,7 +316,7 @@ HEAD
 	puts "<fieldset><legend>delete</legend>"
 	puts "<form method='post' action=''>\n"
 	puts "<div>"
-	puts "<input size='16' value='#{cgi["__delete"]}' type='text' name='__delete' />"
+	puts "<input size='16' value='#{$cgi["__delete"]}' type='text' name='__delete' />"
 	puts "<input type='hidden' name='#{SITE}' />"
 	puts "<input type='submit' value='delete' />"
 	puts "</div>"
@@ -243,17 +324,7 @@ HEAD
 	puts "</fieldset>"
 	puts "</div>"
 	
-	puts "<div id='add_remove_column'>"
-	puts "<fieldset><legend>add/remove column</legend>"
-	puts "<form method='post' action=''>\n"
-	puts "<div>"
-	puts "<input size='16' value='#{cgi["__add_remove_column"]}' type='text' name='__add_remove_column' />"
-	puts "<input type='hidden' name='#{SITE}' />"
-	puts "<input type='submit' value='add/remove column' />"
-	puts "</div>"
-	puts "</form>"
-	puts "</fieldset>"
-	puts "</div>"
+	puts table.add_remove_column_htmlform
 	
 	puts "<div id='add_comment'>"
 	puts "<fieldset><legend>Comment</legend>"
