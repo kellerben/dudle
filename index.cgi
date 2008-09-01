@@ -215,7 +215,7 @@ END
 				"<input class='navigation' type='submit' name='__add_remove_column_month' value='#{val}' /></th>"
 		end
 		["&lt;&lt;","&lt;"].each{|val| ret += navi(val)}
-		ret += "<th colspan=3>#{Date::ABBR_MONTHNAMES[startdate.month]} #{startdate.year}</th>"
+		ret += "<th colspan='3'>#{Date::ABBR_MONTHNAMES[startdate.month]} #{startdate.year}</th>"
 		["&gt;","&gt;&gt;"].each{|val| ret += navi(val)}
 		
 		ret += "</tr><tr>\n"
@@ -232,7 +232,7 @@ END
 			klasse = "disabled" if d < Date.today
 			klasse = "choosen" if @head.include?(d)
 			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='__add_remove_column' value='#{d.day}' /></td>\n"
-			ret += "<tr></tr>\n" if d.wday == 0
+			ret += "</tr><tr>\n" if d.wday == 0
 			d = d.next
 		end
 		ret += <<END
