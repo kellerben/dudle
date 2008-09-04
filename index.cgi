@@ -11,6 +11,7 @@ class Poll
 		@head = {}
 		@data = {}
 		@comment = []
+		store
 	end
 	def head_to_html
 		ret = "<tr><td></td>\n"
@@ -252,7 +253,7 @@ END
 		rescue ArgumentError
 			return false
 		end
-		add_remove_parsed_column(parsed_name,parsed_description)
+		add_remove_parsed_column(parsed_name,CGI.escapeHTML(description))
 	end
 end
 
@@ -279,7 +280,7 @@ $cgi.params.each_pair{|k,v|
 	end
 }
 
-if defined?(SITE)
+if defined?(SITE) and File.exist?(SITE + ".yaml" ) and table = YAML::load_file(SITE + ".yaml")
 	puts <<HEAD
 <head>
  <meta http-equiv="Content-Style-Type" content="text/css" />
@@ -289,13 +290,6 @@ if defined?(SITE)
 <body>
 <h1>#{SITE}</h1>
 HEAD
-	unless File.exist?(SITE + ".yaml" ) and table = YAML::load_file(SITE + ".yaml")
-		if $cgi["__type"] == "date"
-			table = DatePoll.new
-		else
-			table = Poll.new
-		end
-	end
 
 	table.add_participant($cgi["__add_participant"],$cgi.params["__add_participant_checked"]) if $cgi.include?("__add_participant")
 
@@ -341,6 +335,16 @@ HEAD
 	puts "</div>"
 else
 	
+	if defined?($cgi["__create_poll"])
+		SITE=$cgi["__create_poll"]
+		case $cgi["__poll_type"]
+		when "Poll"
+			Poll.new
+		when "DatePoll"
+			DatePoll.new
+		end
+	end
+
 	puts <<HEAD
 <head>
 	<title>dudle</title>
@@ -354,10 +358,19 @@ HEAD
 		puts "<a href='?#{site}'>#{site}</a><br />"
 	}
 	puts "</fieldset>"
-	
-	puts "<fieldset><legend>Hint</legend>"
-	puts CGI.escapeHTML("To add a poll, go to example.org/?<pollname>")
-	puts "</fieldset>"
+
+	puts <<CREATE
+<fieldset><legend>Create new Poll</legend>
+<form method='post'><div>
+	<input size='16' type='text' name='__create_poll' value='#{$cgi["__create_poll"]}' />
+	<select name="__poll_type">
+	<option value="Poll" selected="selected">normal</option>
+	<option value="DatePoll">date</option>
+	</select>
+<input type='submit' value='create' />
+</div></form>
+</fieldset>
+CREATE
 
 end
 
