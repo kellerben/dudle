@@ -143,6 +143,7 @@ END
 		File.open("#{SITE}.yaml", 'w') do |out|
 			out << "# This is a dudle poll file\n"
 			out << self.to_yaml
+			out.chmod(0660)
 		end
 	end
 	def add_comment name, comment
