@@ -5,6 +5,10 @@ require "cgi"
 require "pp"
 require "date"
 
+YES   = CGI.escapeHTML('✔')
+NO    = CGI.escapeHTML('✘')
+MAYBE = CGI.escapeHTML('?')
+
 class Poll
 	attr_reader :head
 	def initialize 
@@ -59,7 +63,16 @@ END
 			ret += "<td class='name'>#{participant}</td>\n"
 			@head.sort.each{|columntitle,columndescription|
 				klasse = poll[columntitle].nil? ? "undecided" : poll[columntitle]
-				value = poll[columntitle].nil? ? "?" : ( poll[columntitle] ? CGI.escapeHTML('✔') : CGI.escapeHTML('✘')) 
+				case poll[columntitle]
+				when nil
+					value = "-"
+				when "yes"
+					value = YES
+				when "no"
+					value = NO
+				when "maybe"
+					value = MAYBE
+				end
 				ret += "<td class='#{klasse}' title='#{participant}: #{columntitle}'>#{value}</td>\n"
 			}
 			ret += "<td class='date'>#{poll['timestamp'].strftime('%d.%m, %H:%M')}</td>"
@@ -69,19 +82,31 @@ END
 		ret += "<tr>\n"
 		ret += "<td class='name'><input size='16' type='text' name='__add_participant' /></td>\n"
 		@head.sort.each{|columntitle,columndescription|
-			ret += "<td class='checkboxes'><input type='checkbox' value='#{columntitle}' name='__add_participant_checked' title='#{columntitle}' /></td>\n"
+			ret += "<td class='checkboxes'>
+			<table><tr>
+			<td>#{YES}</td>
+			<td><input type='radio' value='yes' name='__add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
+			</tr><tr>
+			<td>#{NO}</td>
+			<td><input type='radio' value='no' name='__add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
+			</tr><tr>
+			<td>#{MAYBE}</td>
+			<td><input type='radio' value='maybe' name='__add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
+			</tr></table>
+			</td>\n"
 		}
 		ret += "<td class='checkboxes'><input type='hidden' name='#{SITE}' /><input type='submit' value='add/edit' /></td>\n"
 
 		ret += "</tr>\n"
+
 		ret += "<tr><td class='name'>total</td>\n"
 		@head.sort.each{|columntitle,columndescription|
 			yes = 0
 			undecided = 0
 			@data.each_value{|participant|
-				if participant[columntitle]
+				if participant[columntitle] == "yes"
 					yes += 1
-				elsif !participant.has_key?(columntitle)
+				elsif !participant.has_key?(columntitle) or participant[columntitle] == "maybe"
 					undecided += 1
 				end
 			}
@@ -131,8 +156,8 @@ END
 	def add_participant(name, agreed)
 		name = CGI.escapeHTML(name.strip)
 		@data[name] = {"timestamp" => Time.now}
-		@head.sort.each{|columntitle,columndescription|
-			@data[name][columntitle] = agreed.include?(columntitle.to_s)
+		@head.each_key{|columntitle|
+			@data[name][columntitle] = agreed[columntitle.to_s]
 		}
 		store
 	end
@@ -269,7 +294,7 @@ Content-type: text/html; charset=utf-8
 HEAD
 
 $cgi = CGI.new
-$cgi.params.each_pair{|k,v|
+$cgi.params.each{|k,v|
 	if "" == v[0].to_s && !(k =~ /^__/)
 		if defined?(SITE)
 			puts "FEHLER, meld dich bei Ben!"
@@ -290,8 +315,17 @@ if defined?(SITE) and File.exist?(SITE + ".yaml" ) and table = YAML::load_file(S
 <body>
 <h1>#{SITE}</h1>
 HEAD
+	
+	if $cgi.include?("__add_participant")
+		agreed = {}
+		$cgi.params.each{|k,v|
+			if k =~ /^__add_participant_checked_/
+				agreed[k.gsub(/^__add_participant_checked_/,"")] = v[0]
+			end
+		}
 
-	table.add_participant($cgi["__add_participant"],$cgi.params["__add_participant_checked"]) if $cgi.include?("__add_participant")
+		table.add_participant($cgi["__add_participant"],agreed)
+	end
 
 	table.delete($cgi["__delete"])	if $cgi.include?("__delete")
 	

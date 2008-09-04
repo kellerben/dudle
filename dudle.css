@@ -1,5 +1,6 @@
-td.true, input.choosen  { background-color:#0F0; }
-td.false { background-color:#F00; }
+td.yes, input.choosen  { background-color:#0F0; }
+td.no { background-color:#F00; }
+td.maybe { background-color:#FF0; }
 td.undecided { background-color:#DDD;color:#666 }
 td.name {
 	text-align:right;

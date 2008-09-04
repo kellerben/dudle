@@ -18,7 +18,7 @@ class PollTest < Test::Unit::TestCase
 		assert(@poll.head.empty?)
 	end
 	def test_add_participant
-		@poll.head << "Item 2"
+		@poll.head["Item 2"] = ""
 		@poll.add_participant("bla",{"Item 2" => true})
 		assert_equal(Time, @poll.data["bla"]["timestamp"].class)
 		assert(@poll.data["bla"]["Item 2"])
@@ -29,9 +29,9 @@ class PollTest < Test::Unit::TestCase
 		assert(@poll.data.empty?)
 	end
 	def test_store
-		@poll.add_remove_column("uaie")
-		@poll.add_remove_column("gfia")
-		@poll.add_participant("bla",{"uaie"=>true, "gfia"=>true})
+		@poll.add_remove_column("uaie","descriptionfoobar")
+		@poll.add_remove_column("gfia","")
+		@poll.add_participant("bla",{"uaie"=>"maybe", "gfia"=>"yes"})
 		@poll.add_comment("blabla","commentblubb")
 		@poll.store
 		assert_equal(@poll.data,YAML::load_file("#{SITE}.yaml").data)
@@ -44,9 +44,9 @@ class PollTest < Test::Unit::TestCase
 		assert_equal("blabla", @poll.comment[0][1])
 	end
 	def test_add_remove_column
-		assert(@poll.add_remove_column(" bla  "))
-		assert_equal("bla",@poll.head[0])
-		assert(@poll.add_remove_column("   bla "))
+		assert(@poll.add_remove_column(" bla  ", ""))
+		assert(@poll.head.include?("bla"))
+		assert(@poll.add_remove_column("   bla ", ""))
 		assert(@poll.head.empty?)
 	end
 end
