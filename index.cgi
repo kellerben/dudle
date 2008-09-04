@@ -8,14 +8,14 @@ require "date"
 class Poll
 	attr_reader :head
 	def initialize 
-		@head = []
+		@head = {}
 		@data = {}
 		@comment = []
 	end
 	def head_to_html
 		ret = "<tr><td></td>\n"
-		@head.each{|columntitle|
-			ret += "<th>#{columntitle}</th>\n"
+		@head.sort.each{|columntitle,columndescription|
+			ret += "<th title='#{columndescription}'>#{columntitle}</th>\n"
 		}
 		ret += "<th>Last Edit</th>\n"
 #		ret += "<th>"
@@ -35,9 +35,11 @@ class Poll
 <fieldset><legend>add/remove column</legend>
 <form method='post' action=''>
 <div>
-<input size='16' type='text' value='#{$cgi["__add_remove_column"]}' name='__add_remove_column' />
-<input type='hidden' name='#{SITE}' />
-<input type='submit' value='add/remove column' />
+		<label for='columntitle'>Columntitle: </label>
+		<input id='columntitle' size='16' type='text' value='#{$cgi["__add_remove_column"]}' name='__add_remove_column' />
+		<label for='columndescription'>Description: </label>
+		<input id='columndescription' size='30' type='text' value='#{$cgi["__columndescription"]}' name='__columndescription' />
+		<input type='hidden' name='#{SITE}' /><input type='submit' value='add/remove column' />
 </div>
 </form>
 </fieldset>
@@ -54,7 +56,7 @@ END
 		@data.sort{|x,y| x[1]["timestamp"] <=> y[1]["timestamp"]}.each{|participant,poll|
 			ret += "<tr>\n"
 			ret += "<td class='name'>#{participant}</td>\n"
-			@head.each{|columntitle|
+			@head.sort.each{|columntitle,columndescription|
 				klasse = poll[columntitle].nil? ? "undecided" : poll[columntitle]
 				value = poll[columntitle].nil? ? "?" : ( poll[columntitle] ? CGI.escapeHTML('✔') : CGI.escapeHTML('✘')) 
 				ret += "<td class='#{klasse}' title='#{participant}: #{columntitle}'>#{value}</td>\n"
@@ -65,14 +67,14 @@ END
 		
 		ret += "<tr>\n"
 		ret += "<td class='name'><input size='16' type='text' name='__add_participant' /></td>\n"
-		@head.each{|columntitle|
+		@head.sort.each{|columntitle,columndescription|
 			ret += "<td class='checkboxes'><input type='checkbox' value='#{columntitle}' name='__add_participant_checked' title='#{columntitle}' /></td>\n"
 		}
 		ret += "<td class='checkboxes'><input type='hidden' name='#{SITE}' /><input type='submit' value='add/edit' /></td>\n"
 
 		ret += "</tr>\n"
 		ret += "<tr><td class='name'>total</td>\n"
-		@head.each{|columntitle|
+		@head.sort.each{|columntitle,columndescription|
 			yes = 0
 			undecided = 0
 			@data.each_value{|participant|
@@ -128,7 +130,7 @@ END
 	def add_participant(name, agreed)
 		name = CGI.escapeHTML(name.strip)
 		@data[name] = {"timestamp" => Time.now}
-		@head.each{|columntitle|
+		@head.sort.each{|columntitle,columndescription|
 			@data[name][columntitle] = agreed.include?(columntitle.to_s)
 		}
 		store
@@ -147,16 +149,14 @@ END
 		@comment << [Time.now, CGI.escapeHTML(name), CGI.escapeHTML(comment).gsub("\n","<br />")]
 		store
 	end
-	def add_remove_column name
-		add_remove_parsed_column CGI.escapeHTML(name.strip)
+	def add_remove_column name, description
+		add_remove_parsed_column CGI.escapeHTML(name.strip), CGI.escapeHTML(description.strip)
 	end
-	def add_remove_parsed_column name
-		columntitle = name
+	def add_remove_parsed_column columntitle, description
 		if @head.include?(columntitle)
 			@head.delete(columntitle)
 		else
-			@head << columntitle
-			@head.sort!
+			@head[columntitle] = description
 		end
 		store
 		true
@@ -166,7 +166,7 @@ class DatePoll < Poll
 	def head_to_html
 		ret = "<tr><td></td>\n"
 		monthhead = Hash.new(0)
-		@head.each{|curdate|
+		@head.sort.each{|curdate,curdescription|
 			monthhead["#{curdate.year}-#{curdate.mon.to_s.rjust(2,"0")} "] += 1
 		}
 		monthhead.sort.each{|title,count|
@@ -174,7 +174,7 @@ class DatePoll < Poll
 			ret += "<th colspan='#{count}'>#{Date::ABBR_MONTHNAMES[month]} #{year}</th>\n"
 		}
 		ret += "</tr><tr><td></td>\n"
-		@head.each{|curdate|
+		@head.sort.each{|curdate,curdescription|
 			ret += "<th>#{Date::ABBR_DAYNAMES[curdate.wday]}, #{curdate.day}</th>\n"
 		}
 		ret += "<th>Last Edit</th>\n"
@@ -245,13 +245,13 @@ END
 END
 		ret
 	end
-	def add_remove_column name
+	def add_remove_column name,description
 		begin
 			parsed_name = Date.parse("#{$cgi["__add_remove_column_month"]}-#{name}")
 		rescue ArgumentError
 			return false
 		end
-		add_remove_parsed_column parsed_name
+		add_remove_parsed_column(parsed_name,parsed_description)
 	end
 end
 
@@ -301,7 +301,7 @@ HEAD
 	table.delete($cgi["__delete"])	if $cgi.include?("__delete")
 	
 	if $cgi.include?("__add_remove_column")
-		puts "Could not add/remove column #{$cgi["__add_remove_column"]}" unless table.add_remove_column($cgi["__add_remove_column"])
+		puts "Could not add/remove column #{$cgi["__add_remove_column"]}" unless table.add_remove_column($cgi["__add_remove_column"],$cgi["__columndescription"])
 	end
 
 	table.add_comment($cgi["__commentname"],$cgi.params["__comment"][0]) if $cgi.include?("__comment")
@@ -313,7 +313,7 @@ HEAD
 	puts "</fieldset>"
 
 	puts "<div id='delete'>"
-	puts "<fieldset><legend>delete</legend>"
+	puts "<fieldset><legend>delete participant</legend>"
 	puts "<form method='post' action=''>\n"
 	puts "<div>"
 	puts "<input size='16' value='#{$cgi["__delete"]}' type='text' name='__delete' />"
