@@ -313,6 +313,7 @@ if defined?(SITE) and File.exist?(SITE + ".yaml" ) and table = YAML::load_file(S
 	<link rel="stylesheet" type="text/css" href="dudle.css" />
 </head>
 <body>
+<a href='.' style='text-decoration:none'>#{CGI.escapeHTML("↩")}</a>
 <h1>#{SITE}</h1>
 HEAD
 	
