@@ -389,7 +389,7 @@ HEAD
 	puts "<fieldset><legend>Available Polls</legend>"
 	Dir.new(".").collect{|f| 
 		f.gsub(/\.yaml$/,'')	if f =~ /\.yaml$/
-	}.compact.each{|site|
+	}.compact.sort.each{|site|
 		puts "<a href='?#{site}'>#{site}</a><br />"
 	}
 	puts "</fieldset>"
