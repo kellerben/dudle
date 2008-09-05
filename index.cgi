@@ -88,10 +88,10 @@ END
 			<td><input type='radio' value='yes' name='__add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
 			</tr><tr>
 			<td>#{NO}</td>
-			<td><input type='radio' value='no' name='__add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
+			<td><input type='radio' value='no' name='__add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
 			</tr><tr>
 			<td>#{MAYBE}</td>
-			<td><input type='radio' value='maybe' name='__add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
+			<td><input type='radio' value='maybe' name='__add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
 			</tr></table>
 			</td>\n"
 		}
