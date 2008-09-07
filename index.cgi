@@ -387,11 +387,18 @@ else
 <body>
 HEAD
 	puts "<fieldset><legend>Available Polls</legend>"
-	Dir.new(".").collect{|f| 
+	puts "<table><tr><th>Poll</th><th>Last change</th></tr>"
+	d = Dir.new(".").sort_by{|f|
+		File.new(f).mtime
+	}.reverse.collect{|f| 
 		f.gsub(/\.yaml$/,'')	if f =~ /\.yaml$/
-	}.compact.sort.each{|site|
-		puts "<a href='?#{site}'>#{site}</a><br />"
+	}.compact.each{|site|
+		puts "<tr>"
+		puts "<td class='site'><a href='?#{site}'>#{site}</a></td>"
+		puts "<td class='mtime'>#{File.new(site + ".yaml").mtime.strftime('%d.%m, %H:%M')}</td>"
+		puts "</tr>"
 	}
+	puts "</table>"
 	puts "</fieldset>"
 
 	puts <<CREATE
