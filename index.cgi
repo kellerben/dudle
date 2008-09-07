@@ -388,11 +388,11 @@ else
 HEAD
 	puts "<fieldset><legend>Available Polls</legend>"
 	puts "<table><tr><th>Poll</th><th>Last change</th></tr>"
-	d = Dir.new(".").sort_by{|f|
+	Dir.glob("*.yaml").sort_by{|f|
 		File.new(f).mtime
 	}.reverse.collect{|f| 
-		f.gsub(/\.yaml$/,'')	if f =~ /\.yaml$/
-	}.compact.each{|site|
+		f.gsub(/\.yaml$/,'')
+	}.each{|site|
 		puts "<tr>"
 		puts "<td class='site'><a href='?#{site}'>#{site}</a></td>"
 		puts "<td class='mtime'>#{File.new(site + ".yaml").mtime.strftime('%d.%m, %H:%M')}</td>"
