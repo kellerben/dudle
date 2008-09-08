@@ -173,7 +173,7 @@ END
 		end
 	end
 	def add_comment name, comment
-		@comment << [Time.now, CGI.escapeHTML(name), CGI.escapeHTML(comment).gsub("\n","<br />")]
+		@comment << [Time.now, CGI.escapeHTML(name), CGI.escapeHTML(comment.strip).gsub("\r\n","<br />")]
 		store
 	end
 	def add_remove_column name, description
