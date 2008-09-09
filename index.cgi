@@ -84,13 +84,13 @@ END
 		@head.sort.each{|columntitle,columndescription|
 			ret += "<td class='checkboxes'>
 			<table><tr>
-			<td>#{YES}</td>
+			<td class='input-yes'>#{YES}</td>
 			<td><input type='radio' value='yes' name='__add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
 			</tr><tr>
-			<td>#{NO}</td>
+			<td class='input-no'>#{NO}</td>
 			<td><input type='radio' value='no' name='__add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
 			</tr><tr>
-			<td>#{MAYBE}</td>
+			<td class='input-maybe'>#{MAYBE}</td>
 			<td><input type='radio' value='maybe' name='__add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
 			</tr></table>
 			</td>\n"
@@ -313,7 +313,9 @@ if defined?(SITE) and File.exist?(SITE + ".yaml" ) and table = YAML::load_file(S
 	<link rel="stylesheet" type="text/css" href="dudle.css" />
 </head>
 <body>
-<a href='.' style='text-decoration:none'>#{CGI.escapeHTML("↩")}</a>
+<div>
+	<a href='.' style='text-decoration:none'>#{CGI.escapeHTML("↩")}</a>
+</div>
 <h1>#{SITE}</h1>
 HEAD
 	
@@ -403,7 +405,7 @@ HEAD
 
 	puts <<CREATE
 <fieldset><legend>Create new Poll</legend>
-<form method='post'><div>
+<form method='post' action=''><div>
 	<input size='16' type='text' name='__create_poll' value='#{$cgi["__create_poll"]}' />
 	<select name="__poll_type">
 	<option value="Poll" selected="selected">normal</option>
