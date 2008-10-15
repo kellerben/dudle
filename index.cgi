@@ -5,10 +5,6 @@ require "cgi"
 require "pp"
 require "date"
 
-YES   = CGI.escapeHTML('✔')
-NO    = CGI.escapeHTML('✘')
-MAYBE = CGI.escapeHTML('?')
-
 class Poll
 	attr_reader :head
 	def initialize 
@@ -284,9 +280,15 @@ end
 
 if __FILE__ == $0
 
-#Content-type: application/xhtml+xml; charset=utf-8
+YES   = CGI.escapeHTML('✔')
+NO    = CGI.escapeHTML('✘')
+MAYBE = CGI.escapeHTML('?')
+
+CONTENTTYPE = "text/html; charset=utf-8"
+
+#CONTENTTYPE = "application/xhtml+xml; charset=utf-8"
 puts <<HEAD
-Content-type: text/html; charset=utf-8
+Content-type: #{CONTENTTYPE}
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -308,7 +310,8 @@ $cgi.params.each{|k,v|
 if defined?(SITE) and File.exist?(SITE + ".yaml" ) and table = YAML::load_file(SITE + ".yaml")
 	puts <<HEAD
 <head>
- <meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Type" content="#{CONTENTTYPE}" /> 
+	<meta http-equiv="Content-Style-Type" content="text/css" />
  <title>dudle - #{SITE}</title>
 	<link rel="stylesheet" type="text/css" href="dudle.css" />
 </head>
