@@ -280,10 +280,6 @@ end
 
 if __FILE__ == $0
 
-YES   = CGI.escapeHTML('✔')
-NO    = CGI.escapeHTML('✘')
-MAYBE = CGI.escapeHTML('?')
-
 CONTENTTYPE = "text/html; charset=utf-8"
 
 #CONTENTTYPE = "application/xhtml+xml; charset=utf-8"
@@ -307,6 +303,19 @@ $cgi.params.each{|k,v|
 	end
 }
 
+if $cgi.include?("__utf") || $cgi.cookies["utf"][0]
+	YES   = CGI.escapeHTML('✔')
+	NO    = CGI.escapeHTML('✘')
+	MAYBE = CGI.escapeHTML('?')
+	BACK  = CGI.escapeHTML("↩")
+else
+	YES   = CGI.escapeHTML('OK')
+	NO    = CGI.escapeHTML('-')
+	MAYBE = CGI.escapeHTML('?')
+	BACK  = CGI.escapeHTML("<-")
+end
+
+
 if defined?(SITE) and File.exist?(SITE + ".yaml" ) and table = YAML::load_file(SITE + ".yaml")
 	puts <<HEAD
 <head>
@@ -317,7 +326,7 @@ if defined?(SITE) and File.exist?(SITE + ".yaml" ) and table = YAML::load_file(S
 </head>
 <body>
 <div>
-	<a href='.' style='text-decoration:none'>#{CGI.escapeHTML("↩")}</a>
+	<a href='.' style='text-decoration:none'>#{BACK}</a>
 </div>
 <h1>#{SITE}</h1>
 HEAD
