@@ -280,18 +280,33 @@ end
 
 if __FILE__ == $0
 
-CONTENTTYPE = "text/html; charset=utf-8"
+$cgi = CGI.new
 
+CONTENTTYPE = "text/html; charset=utf-8"
 #CONTENTTYPE = "application/xhtml+xml; charset=utf-8"
+
+puts "Content-type: #{CONTENTTYPE}"
+
+if $cgi.include?("__utf") || $cgi.cookies["utf"][0]
+	YES   = CGI.escapeHTML('✔')
+	NO    = CGI.escapeHTML('✘')
+	MAYBE = CGI.escapeHTML('?')
+	BACK  = CGI.escapeHTML("↩")
+	puts "Set-Cookie: utf=true; path=; expires=#{(Time.now+1*60*60*24*365).getgm.strftime("%a, %d %b %Y %H:%M:%S %Z")}"
+else
+	YES   = CGI.escapeHTML('OK')
+	NO    = CGI.escapeHTML('-')
+	MAYBE = CGI.escapeHTML('?')
+	BACK  = CGI.escapeHTML("<-")
+end
+
 puts <<HEAD
-Content-type: #{CONTENTTYPE}
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 HEAD
 
-$cgi = CGI.new
 $cgi.params.each{|k,v|
 	if "" == v[0].to_s && !(k =~ /^__/)
 		if defined?(SITE)
@@ -303,17 +318,6 @@ $cgi.params.each{|k,v|
 	end
 }
 
-if $cgi.include?("__utf") || $cgi.cookies["utf"][0]
-	YES   = CGI.escapeHTML('✔')
-	NO    = CGI.escapeHTML('✘')
-	MAYBE = CGI.escapeHTML('?')
-	BACK  = CGI.escapeHTML("↩")
-else
-	YES   = CGI.escapeHTML('OK')
-	NO    = CGI.escapeHTML('-')
-	MAYBE = CGI.escapeHTML('?')
-	BACK  = CGI.escapeHTML("<-")
-end
 
 
 if defined?(SITE) and File.exist?(SITE + ".yaml" ) and table = YAML::load_file(SITE + ".yaml")
