@@ -389,23 +389,27 @@ HEAD
 	puts "</fieldset>"
 	puts "</div>"
 else
-	
-	if defined?($cgi["__create_poll"])
-		SITE=$cgi["__create_poll"]
-		case $cgi["__poll_type"]
-		when "Poll"
-			Poll.new
-		when "DatePoll"
-			DatePoll.new
-		end
-	end
-
 	puts <<HEAD
 <head>
 	<title>dudle</title>
 </head>
 <body>
 HEAD
+
+	if defined?($cgi["__create_poll"])
+		SITE=$cgi["__create_poll"]
+		unless File.exist?("#{SITE}.yaml")
+			case $cgi["__poll_type"]
+			when "Poll"
+				Poll.new
+			when "DatePoll"
+				DatePoll.new
+			end
+		else
+			puts "<fieldset><legend>Error</legend>This poll already exists!</fieldset>"
+		end
+	end
+
 	puts "<fieldset><legend>Available Polls</legend>"
 	puts "<table><tr><th>Poll</th><th>Last change</th></tr>"
 	Dir.glob("*.yaml").sort_by{|f|
