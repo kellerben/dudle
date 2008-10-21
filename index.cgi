@@ -61,7 +61,7 @@ END
 				klasse = poll[columntitle].nil? ? "undecided" : poll[columntitle]
 				case poll[columntitle]
 				when nil
-					value = "-"
+					value = UNKNOWN
 				when "yes"
 					value = YES
 				when "no"
@@ -288,16 +288,18 @@ CONTENTTYPE = "text/html; charset=utf-8"
 puts "Content-type: #{CONTENTTYPE}"
 
 if $cgi.include?("__utf") || $cgi.cookies["utf"][0]
-	YES   = CGI.escapeHTML('✔')
-	NO    = CGI.escapeHTML('✘')
-	MAYBE = CGI.escapeHTML('?')
-	BACK  = CGI.escapeHTML("↩")
 	puts "Set-Cookie: utf=true; path=; expires=#{(Time.now+1*60*60*24*365).getgm.strftime("%a, %d %b %Y %H:%M:%S %Z")}"
+	YES     = CGI.escapeHTML('✔')
+	NO      = CGI.escapeHTML('✘')
+	MAYBE   = CGI.escapeHTML('?')
+	UNKNOWN = CGI.escapeHTML("-")
+	BACK    = CGI.escapeHTML("↩")
 else
-	YES   = CGI.escapeHTML('OK')
-	NO    = CGI.escapeHTML('-')
-	MAYBE = CGI.escapeHTML('?')
-	BACK  = CGI.escapeHTML("<-")
+	YES     = CGI.escapeHTML('OK')
+	NO      = CGI.escapeHTML('NO')
+	MAYBE   = CGI.escapeHTML('?')
+	UNKNOWN = CGI.escapeHTML("-")
+	BACK    = CGI.escapeHTML("<-")
 end
 
 puts <<HEAD
