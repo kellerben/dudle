@@ -6,8 +6,9 @@ require "pp"
 require "date"
 
 class Poll
-	attr_reader :head
-	def initialize 
+	attr_reader :head, :name
+	def initialize name
+		@name = name
 		@head = {}
 		@data = {}
 		@comment = []
@@ -22,8 +23,8 @@ class Poll
 #		ret += "<th>"
 #		ret += "<form method='post' action=''>\n"
 #		ret += "<div>"
-#		ret += "<input size='16' type='text' name='__add_participant' />\n"
-#		ret += "<input type='hidden' name='#{SITE}' /><input type='submit' value='add/edit' />\n"
+#		ret += "<input size='16' type='text' name='add_participant' />\n"
+#		ret += "<input type='submit' value='add/edit' />\n"
 #		ret += "</div>"
 #		ret += "</form>\n"
 #		ret += "</th>\n"
@@ -37,10 +38,10 @@ class Poll
 <form method='post' action=''>
 <div>
 		<label for='columntitle'>Columntitle: </label>
-		<input id='columntitle' size='16' type='text' value='#{$cgi["__add_remove_column"]}' name='__add_remove_column' />
+		<input id='columntitle' size='16' type='text' value='#{$cgi["add_remove_column"]}' name='add_remove_column' />
 		<label for='columndescription'>Description: </label>
-		<input id='columndescription' size='30' type='text' value='#{$cgi["__columndescription"]}' name='__columndescription' />
-		<input type='hidden' name='#{SITE}' /><input type='submit' value='add/remove column' />
+		<input id='columndescription' size='30' type='text' value='#{$cgi["columndescription"]}' name='columndescription' />
+		<input type='submit' value='add/remove column' />
 </div>
 </form>
 </fieldset>
@@ -76,22 +77,22 @@ END
 		}
 		
 		ret += "<tr>\n"
-		ret += "<td class='name'><input size='16' type='text' name='__add_participant' /></td>\n"
+		ret += "<td class='name'><input size='16' type='text' name='add_participant' /></td>\n"
 		@head.sort.each{|columntitle,columndescription|
 			ret += "<td class='checkboxes'>
 			<table><tr>
 			<td class='input-yes'>#{YES}</td>
-			<td><input type='radio' value='yes' name='__add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
+			<td><input type='radio' value='yes' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
 			</tr><tr>
 			<td class='input-no'>#{NO}</td>
-			<td><input type='radio' value='no' name='__add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
+			<td><input type='radio' value='no' name='add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
 			</tr><tr>
 			<td class='input-maybe'>#{MAYBE}</td>
-			<td><input type='radio' value='maybe' name='__add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
+			<td><input type='radio' value='maybe' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
 			</tr></table>
 			</td>\n"
 		}
-		ret += "<td class='checkboxes'><input type='hidden' name='#{SITE}' /><input type='submit' value='add/edit' /></td>\n"
+		ret += "<td class='checkboxes'><input type='submit' value='add/edit' /></td>\n"
 
 		ret += "</tr>\n"
 
@@ -162,11 +163,12 @@ END
 		store
 	end
 	def store
-		File.open("#{SITE}.yaml", 'w') do |out|
+		File.open("data.yaml", 'w') do |out|
 			out << "# This is a dudle poll file\n"
 			out << self.to_yaml
 			out.chmod(0660)
 		end
+		`bzr commit -m "automatic commit"`
 	end
 	def add_comment name, comment
 		@comment << [Time.now, CGI.escapeHTML(name), CGI.escapeHTML(comment.strip).gsub("\r\n","<br />")]
@@ -205,19 +207,19 @@ class DatePoll < Poll
 		ret	
 	end
 	def add_remove_column_htmlform
-		if $cgi.include?("__add_remove_column_month")
+		if $cgi.include?("add_remove_column_month")
 			begin
-				startdate = Date.parse("#{$cgi["__add_remove_column_month"]}-1")
+				startdate = Date.parse("#{$cgi["add_remove_column_month"]}-1")
 			rescue ArgumentError
-				olddate =  $cgi.params["__add_remove_column_month"][1]
-				case $cgi["__add_remove_column_month"]
-				when "<<"
+				olddate =  $cgi.params["add_remove_column_month"][1]
+				case $cgi["add_remove_column_month"]
+				when YEARBACK
 					startdate = Date.parse("#{olddate}-1")-365
-				when "<"
+				when MONTHBACK
 					startdate = Date.parse("#{olddate}-1")-1
-				when ">"
+				when MONTHFORWARD
 					startdate = Date.parse("#{olddate}-1")+31
-				when ">>"
+				when YEARFORWARD 
 					startdate = Date.parse("#{olddate}-1")+366
 				end
 				startdate = Date.parse("#{startdate.year}-#{startdate.month}-1")
@@ -230,17 +232,17 @@ class DatePoll < Poll
 <fieldset><legend>add/remove column</legend>
 <form method='post' action=''>
 <div>
-<input type='hidden' name='#{SITE}' />
 <table><tr>
 END
 		def navi val
 			"<th style='padding:0px'>" +
-				"<input class='navigation' type='submit' name='__add_remove_column_month' value='#{val}' /></th>"
+				"<input class='navigation' type='submit' name='add_remove_column_month' value='#{val}' />" +
+				"</th>"
 		end
-		["&lt;&lt;","&lt;"].each{|val| ret += navi(val)}
+		[YEARBACK,MONTHBACK].each{|val| ret += navi(val)}
 		ret += "<th colspan='3'>#{Date::ABBR_MONTHNAMES[startdate.month]} #{startdate.year}</th>"
-		["&gt;","&gt;&gt;"].each{|val| ret += navi(val)}
-		
+		[MONTHFORWARD, YEARFORWARD].each{|val| ret += navi(val)}
+		 
 		ret += "</tr><tr>\n"
 
 		7.times{|i| ret += "<th>#{Date::ABBR_DAYNAMES[(i+1)%7]}</th>" }
@@ -254,13 +256,13 @@ END
 			klasse = "notchoosen"
 			klasse = "disabled" if d < Date.today
 			klasse = "choosen" if @head.include?(d)
-			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='__add_remove_column' value='#{d.day}' /></td>\n"
+			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='add_remove_column' value='#{d.day}' /></td>\n"
 			ret += "</tr><tr>\n" if d.wday == 0
 			d = d.next
 		end
 		ret += <<END
 </tr></table>
-<input type='hidden' name='__add_remove_column_month' value='#{startdate.strftime("%Y-%m")}' />
+<input type='hidden' name='add_remove_column_month' value='#{startdate.strftime("%Y-%m")}' />
 </div>
 </form>
 </fieldset>
@@ -270,7 +272,7 @@ END
 	end
 	def add_remove_column name,description
 		begin
-			parsed_name = Date.parse("#{$cgi["__add_remove_column_month"]}-#{name}")
+			parsed_name = Date.parse("#{$cgi["add_remove_column_month"]}-#{name}")
 		rescue ArgumentError
 			return false
 		end
@@ -287,23 +289,34 @@ CONTENTTYPE = "text/html; charset=utf-8"
 
 puts "Content-type: #{CONTENTTYPE}"
 
-if ($cgi.include?("__utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("__ascii")
+if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 	puts "Set-Cookie: utf=true; path=; expires=#{(Time.now+1*60*60*24*365).getgm.strftime("%a, %d %b %Y %H:%M:%S %Z")}"
+	UTFASCII = "<a href='?ascii' style='text-decoration:none'>A</a>"
+	BACK     = CGI.escapeHTML("↩")
+	
 	YES      = CGI.escapeHTML('✔')
 	NO       = CGI.escapeHTML('✘')
 	MAYBE    = CGI.escapeHTML('?')
 	UNKNOWN  = CGI.escapeHTML("–")
-	BACK     = CGI.escapeHTML("↩")
-	UTFASCII = "<a href='?__ascii' style='text-decoration:none'>A</a>"
+	
+	YEARBACK     = CGI.escapeHTML("↞")
+	MONTHBACK    = CGI.escapeHTML("←")
+	MONTHFORWARD = CGI.escapeHTML("→")
+	YEARFORWARD  = CGI.escapeHTML("↠")
 else
 	puts "Set-Cookie: utf=true; path=; expires=#{(Time.now-1*60*60*24*365).getgm.strftime("%a, %d %b %Y %H:%M:%S %Z")}"
-	YES      = CGI.escapeHTML('✔')
+	UTFASCII = "<a href='?utf' style='text-decoration:none'>#{CGI.escapeHTML('✔')}</a>"
+	BACK     = CGI.escapeHTML("<-")
+	
 	YES      = CGI.escapeHTML('OK')
 	NO       = CGI.escapeHTML('NO')
 	MAYBE    = CGI.escapeHTML('?')
 	UNKNOWN  = CGI.escapeHTML("-")
-	BACK     = CGI.escapeHTML("<-")
-	UTFASCII = "<a href='?__utf' style='text-decoration:none'>#{CGI.escapeHTML('✔')}</a>"
+
+	YEARBACK     = CGI.escapeHTML("<<")
+	MONTHBACK    = CGI.escapeHTML("<")
+	MONTHFORWARD = CGI.escapeHTML(">")
+	YEARFORWARD  = CGI.escapeHTML(">>")
 end
 
 puts <<HEAD
@@ -313,52 +326,47 @@ puts <<HEAD
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 HEAD
 
-$cgi.params.each{|k,v|
-	if "" == v[0].to_s && !(k =~ /^__/)
-		if defined?(SITE)
-			puts "FEHLER, meld dich bei Ben!"
-			exit
-		else
-			SITE = k
-		end
+if File.exist?("data.yaml") 
+	MAXREV=`bzr revno`.to_i
+	if $cgi.include?("revision")
+		REVISION=$cgi["revision"].to_i
+	else
+		REVISION=MAXREV
 	end
-}
+	table = YAML::load(`bzr cat -r #{REVISION} data.yaml`)
 
-
-
-if defined?(SITE) and File.exist?(SITE + ".yaml" ) and table = YAML::load_file(SITE + ".yaml")
 	puts <<HEAD
 <head>
 	<meta http-equiv="Content-Type" content="#{CONTENTTYPE}" /> 
 	<meta http-equiv="Content-Style-Type" content="text/css" />
- <title>dudle - #{SITE}</title>
+ <title>dudle - #{table.name}</title>
 	<link rel="stylesheet" type="text/css" href="dudle.css" />
 </head>
 <body>
 <div>
-	<a href='.' style='text-decoration:none'>#{BACK}</a>
+	<a href='..' style='text-decoration:none'>#{BACK}</a>
 </div>
-<h1>#{SITE}</h1>
+<h1>#{table.name}</h1>
 HEAD
 	
-	if $cgi.include?("__add_participant")
+	if $cgi.include?("add_participant")
 		agreed = {}
 		$cgi.params.each{|k,v|
-			if k =~ /^__add_participant_checked_/
-				agreed[k.gsub(/^__add_participant_checked_/,"")] = v[0]
+			if k =~ /^add_participant_checked_/
+				agreed[k.gsub(/^add_participant_checked_/,"")] = v[0]
 			end
 		}
 
-		table.add_participant($cgi["__add_participant"],agreed)
+		table.add_participant($cgi["add_participant"],agreed)
 	end
 
-	table.delete($cgi["__delete"])	if $cgi.include?("__delete")
+	table.delete($cgi["delete"])	if $cgi.include?("delete")
 	
-	if $cgi.include?("__add_remove_column")
-		puts "Could not add/remove column #{$cgi["__add_remove_column"]}" unless table.add_remove_column($cgi["__add_remove_column"],$cgi["__columndescription"])
+	if $cgi.include?("add_remove_column")
+		puts "Could not add/remove column #{$cgi["add_remove_column"]}" unless table.add_remove_column($cgi["add_remove_column"],$cgi["columndescription"])
 	end
 
-	table.add_comment($cgi["__commentname"],$cgi.params["__comment"][0]) if $cgi.include?("__comment")
+	table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi.include?("comment")
 
 	puts table.to_html
 	
@@ -366,12 +374,27 @@ HEAD
 	puts "To change a line, add a new person with the same name!"
 	puts "</fieldset>"
 
+	puts "<div id='history'>"
+	puts "<fieldset><legend>browse history</legend>"
+	puts "<form method='post' action=''>\n"
+	puts "<div>"
+	(1..5).to_a.reverse.each do |i|
+		puts "<input class='historynavi' type='submit' name='revision' value='#{REVISION - i}' />" if REVISION - i >= 1
+	end
+	puts REVISION
+	(1..5).each do |i|
+		puts "<input class='historynavi' type='submit' name='revision' value='#{REVISION + i}' />" if REVISION + i <= MAXREV
+	end
+	puts "</div>"
+	puts "</form>"
+	puts "</fieldset>"
+	puts "</div>"
+	
 	puts "<div id='delete'>"
 	puts "<fieldset><legend>delete participant</legend>"
 	puts "<form method='post' action=''>\n"
 	puts "<div>"
-	puts "<input size='16' value='#{$cgi["__delete"]}' type='text' name='__delete' />"
-	puts "<input type='hidden' name='#{SITE}' />"
+	puts "<input size='16' value='#{$cgi["delete"]}' type='text' name='delete' />"
 	puts "<input type='submit' value='delete' />"
 	puts "</div>"
 	puts "</form>"
@@ -384,9 +407,8 @@ HEAD
 	puts "<fieldset><legend>Comment</legend>"
 	puts "<form method='post' action=''>\n"
 	puts "<div>"
-	puts "<label for='Commentname'>Name: </label><input id='Commentname' value='anonymous' type='text' name='__commentname' /><br />"
-	puts "<textarea cols='50' rows='10' name='__comment' ></textarea><br />"
-	puts "<input type='hidden' name='#{SITE}' />"
+	puts "<label for='Commentname'>Name: </label><input id='Commentname' value='anonymous' type='text' name='commentname' /><br />"
+	puts "<textarea cols='50' rows='10' name='comment' ></textarea><br />"
 	puts "<input type='submit' value='Submit' />"
 	puts "</div>"
 	puts "</form>"
@@ -400,15 +422,23 @@ else
 <body>
 HEAD
 
-	if defined?($cgi["__create_poll"])
-		SITE=$cgi["__create_poll"]
-		unless File.exist?("#{SITE}.yaml")
-			case $cgi["__poll_type"]
+	if $cgi.include?("create_poll")
+		SITE=$cgi["create_poll"]
+		unless File.exist?(SITE)
+			Dir.mkdir(SITE)
+			Dir.chdir(SITE)
+			`bzr init`
+			File.symlink("../index.cgi","index.cgi")
+			File.symlink("../dudle.css","dudle.css")
+			case $cgi["poll_type"]
 			when "Poll"
-				Poll.new
+				Poll.new SITE
 			when "DatePoll"
-				DatePoll.new
+				DatePoll.new SITE
 			end
+			`bzr add data.yaml`
+			`bzr commit -m "initial commit"`
+			Dir.chdir("..")
 		else
 			puts "<fieldset><legend>Error</legend>This poll already exists!</fieldset>"
 		end
@@ -417,14 +447,14 @@ HEAD
 	puts "<fieldset><legend>Available Polls</legend>"
 	puts UTFASCII
 	puts "<table><tr><th>Poll</th><th>Last change</th></tr>"
-	Dir.glob("*.yaml").sort_by{|f|
+	Dir.glob("*/data.yaml").sort_by{|f|
 		File.new(f).mtime
 	}.reverse.collect{|f| 
-		f.gsub(/\.yaml$/,'')
+		f.gsub(/\/data\.yaml$/,'')
 	}.each{|site|
 		puts "<tr>"
-		puts "<td class='site'><a href='?#{site}'>#{site}</a></td>"
-		puts "<td class='mtime'>#{File.new(site + ".yaml").mtime.strftime('%d.%m, %H:%M')}</td>"
+		puts "<td class='site'><a href='#{site}'>#{site}</a></td>"
+		puts "<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>"
 		puts "</tr>"
 	}
 	puts "</table>"
@@ -433,8 +463,8 @@ HEAD
 	puts <<CREATE
 <fieldset><legend>Create new Poll</legend>
 <form method='post' action=''><div>
-	<input size='16' type='text' name='__create_poll' value='#{$cgi["__create_poll"]}' />
-	<select name="__poll_type">
+	<input size='16' type='text' name='create_poll' value='#{$cgi["create_poll"]}' />
+	<select name="poll_type">
 	<option value="Poll" selected="selected">normal</option>
 	<option value="DatePoll">date</option>
 	</select>

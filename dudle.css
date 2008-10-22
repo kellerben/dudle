@@ -5,6 +5,14 @@ td.undecided { background-color:#DDD;color:#666 }
 td.name {
 	text-align:right;
 }
+input.historynavi{
+	border-width: 0px; 
+	border-style: none;
+	padding: 0px;
+	cursor: pointer;
+	background-color: white;
+	color: blue;
+}
 input.navigation, input.disabled, input.choosen, input.notchoosen {
 	border-width: 1px; 
 	border-style: solid;
