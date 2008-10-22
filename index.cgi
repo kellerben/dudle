@@ -287,19 +287,23 @@ CONTENTTYPE = "text/html; charset=utf-8"
 
 puts "Content-type: #{CONTENTTYPE}"
 
-if $cgi.include?("__utf") || $cgi.cookies["utf"][0]
+if ($cgi.include?("__utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("__ascii")
 	puts "Set-Cookie: utf=true; path=; expires=#{(Time.now+1*60*60*24*365).getgm.strftime("%a, %d %b %Y %H:%M:%S %Z")}"
-	YES     = CGI.escapeHTML('✔')
-	NO      = CGI.escapeHTML('✘')
-	MAYBE   = CGI.escapeHTML('?')
-	UNKNOWN = CGI.escapeHTML("-")
-	BACK    = CGI.escapeHTML("↩")
+	YES      = CGI.escapeHTML('✔')
+	NO       = CGI.escapeHTML('✘')
+	MAYBE    = CGI.escapeHTML('?')
+	UNKNOWN  = CGI.escapeHTML("–")
+	BACK     = CGI.escapeHTML("↩")
+	UTFASCII = "<a href='?__ascii' style='text-decoration:none'>A</a>"
 else
-	YES     = CGI.escapeHTML('OK')
-	NO      = CGI.escapeHTML('NO')
-	MAYBE   = CGI.escapeHTML('?')
-	UNKNOWN = CGI.escapeHTML("-")
-	BACK    = CGI.escapeHTML("<-")
+	puts "Set-Cookie: utf=true; path=; expires=#{(Time.now-1*60*60*24*365).getgm.strftime("%a, %d %b %Y %H:%M:%S %Z")}"
+	YES      = CGI.escapeHTML('✔')
+	YES      = CGI.escapeHTML('OK')
+	NO       = CGI.escapeHTML('NO')
+	MAYBE    = CGI.escapeHTML('?')
+	UNKNOWN  = CGI.escapeHTML("-")
+	BACK     = CGI.escapeHTML("<-")
+	UTFASCII = "<a href='?__utf' style='text-decoration:none'>#{CGI.escapeHTML('✔')}</a>"
 end
 
 puts <<HEAD
@@ -411,6 +415,7 @@ HEAD
 	end
 
 	puts "<fieldset><legend>Available Polls</legend>"
+	puts UTFASCII
 	puts "<table><tr><th>Poll</th><th>Last change</th></tr>"
 	Dir.glob("*.yaml").sort_by{|f|
 		File.new(f).mtime
