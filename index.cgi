@@ -158,8 +158,12 @@ END
 		}
 		store
 	end
-	def delete(name)
-		@data.delete(CGI.escapeHTML(name.strip))
+	def invite_delete(name)
+		if @data.has_key?(name)
+			@data.delete(CGI.escapeHTML(name.strip))
+		else
+			add_participant(name,{})
+		end
 		store
 	end
 	def store
@@ -327,13 +331,12 @@ puts <<HEAD
 HEAD
 
 if File.exist?("data.yaml") 
-	MAXREV=`bzr revno`.to_i
 	if $cgi.include?("revision")
 		REVISION=$cgi["revision"].to_i
+		table = YAML::load(`bzr cat -r #{REVISION} data.yaml`)
 	else
-		REVISION=MAXREV
+		table = YAML::load_file("data.yaml")
 	end
-	table = YAML::load(`bzr cat -r #{REVISION} data.yaml`)
 
 	puts <<HEAD
 <head>
@@ -360,7 +363,7 @@ HEAD
 		table.add_participant($cgi["add_participant"],agreed)
 	end
 
-	table.delete($cgi["delete"])	if $cgi.include?("delete")
+	table.invite_delete($cgi["invite_delete"])	if $cgi.include?("invite_delete")
 	
 	if $cgi.include?("add_remove_column")
 		puts "Could not add/remove column #{$cgi["add_remove_column"]}" unless table.add_remove_column($cgi["add_remove_column"],$cgi["columndescription"])
@@ -374,6 +377,8 @@ HEAD
 	puts "To change a line, add a new person with the same name!"
 	puts "</fieldset>"
 
+	MAXREV=`bzr revno`.to_i
+	REVISION=MAXREV unless defined?(REVISION)
 	puts "<div id='history'>"
 	puts "<fieldset><legend>browse history</legend>"
 	puts "<form method='post' action=''>\n"
@@ -390,12 +395,12 @@ HEAD
 	puts "</fieldset>"
 	puts "</div>"
 	
-	puts "<div id='delete'>"
-	puts "<fieldset><legend>delete participant</legend>"
+	puts "<div id='invite_delete'>"
+	puts "<fieldset><legend>invite/delete participant</legend>"
 	puts "<form method='post' action=''>\n"
 	puts "<div>"
-	puts "<input size='16' value='#{$cgi["delete"]}' type='text' name='delete' />"
-	puts "<input type='submit' value='delete' />"
+	puts "<input size='16' value='#{$cgi["invite_delete"]}' type='text' name='invite_delete' />"
+	puts "<input type='submit' value='invite/delete' />"
 	puts "</div>"
 	puts "</form>"
 	puts "</fieldset>"
