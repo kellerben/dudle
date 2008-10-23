@@ -301,7 +301,6 @@ if ($cgi.include?("__utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("__ascii
 	UTFASCII = "<a href='?__ascii' style='text-decoration:none'>A</a>"
 else
 	puts "Set-Cookie: utf=true; path=; expires=#{(Time.now-1*60*60*24*365).getgm.strftime("%a, %d %b %Y %H:%M:%S %Z")}"
-	YES      = CGI.escapeHTML('✔')
 	YES      = CGI.escapeHTML('OK')
 	NO       = CGI.escapeHTML('NO')
 	MAYBE    = CGI.escapeHTML('?')
