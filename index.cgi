@@ -157,8 +157,12 @@ END
 		}
 		store
 	end
-	def delete(name)
-		@data.delete(CGI.escapeHTML(name.strip))
+	def invite_delete(name)
+		if @data.has_key?(name)
+			@data.delete(CGI.escapeHTML(name.strip))
+		else
+			add_participant(name,{})
+		end
 		store
 	end
 	def store
@@ -352,7 +356,7 @@ HEAD
 		table.add_participant($cgi["__add_participant"],agreed)
 	end
 
-	table.delete($cgi["__delete"])	if $cgi.include?("__delete")
+	table.invite_delete($cgi["__invite_delete"])	if $cgi.include?("__invite_delete")
 	
 	if $cgi.include?("__add_remove_column")
 		puts "Could not add/remove column #{$cgi["__add_remove_column"]}" unless table.add_remove_column($cgi["__add_remove_column"],$cgi["__columndescription"])
@@ -366,13 +370,13 @@ HEAD
 	puts "To change a line, add a new person with the same name!"
 	puts "</fieldset>"
 
-	puts "<div id='delete'>"
-	puts "<fieldset><legend>delete participant</legend>"
+	puts "<div id='invite_delete'>"
+	puts "<fieldset><legend>invite/delete participant</legend>"
 	puts "<form method='post' action=''>\n"
 	puts "<div>"
-	puts "<input size='16' value='#{$cgi["__delete"]}' type='text' name='__delete' />"
+	puts "<input size='16' value='#{$cgi["__invite_delete"]}' type='text' name='__invite_delete' />"
 	puts "<input type='hidden' name='#{SITE}' />"
-	puts "<input type='submit' value='delete' />"
+	puts "<input type='submit' value='invite/delete' />"
 	puts "</div>"
 	puts "</form>"
 	puts "</fieldset>"
