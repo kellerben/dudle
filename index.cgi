@@ -450,14 +450,14 @@ HEAD
 			`bzr init`
 			File.symlink("../index.cgi","index.cgi")
 			File.symlink("../dudle.css","dudle.css")
+			File.open("data.yaml","w").close
+			`bzr add data.yaml`
 			case $cgi["poll_type"]
 			when "Poll"
 				Poll.new SITE
 			when "DatePoll"
 				DatePoll.new SITE
 			end
-			`bzr add data.yaml`
-			`bzr commit -m "initial commit"`
 			Dir.chdir("..")
 		else
 			puts "<fieldset><legend>Error</legend>This poll already exists!</fieldset>"
