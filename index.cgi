@@ -12,7 +12,7 @@ class Poll
 		@head = {}
 		@data = {}
 		@comment = []
-		store
+		store "Poll #{name} created"
 	end
 	def head_to_html
 		ret = "<tr><td></td>\n"
@@ -139,10 +139,18 @@ END
 		ret += "<div id='comments'>"
 		unless @comment.empty?
 			ret	+= "<fieldset><legend>Comments</legend>"
-			@comment.each{|time,name,comment|
-				ret	+= "<fieldset><legend>#{name} said on #{time.strftime("%d.%m, %H:%M")}</legend>"
+			@comment.each_with_index{|c,i|
+				time,name,comment = c
+				ret += "<form method='post' action=''>\n"
+				ret += "<div>"
+				ret	+= "<fieldset><legend>#{name} said on #{time.strftime("%d.%m, %H:%M")} "
+				ret += "<input type='hidden' name='delete_comment' value='#{i}' />"
+				ret += "<input type='submit' value='delete' style='position: absolute; margin-left: 20px;' />"
+				ret += "</legend>"
 				ret += comment
 				ret += "</fieldset>"
+				ret += "</div>"
+				ret += "</form>"
 			}
 			ret += "</fieldset>"
 		end
@@ -156,27 +164,31 @@ END
 		@head.each_key{|columntitle|
 			@data[name][columntitle] = agreed[columntitle.to_s]
 		}
-		store
+		store "Participant #{name} edited"
 	end
 	def invite_delete(name)
 		if @data.has_key?(name)
 			@data.delete(CGI.escapeHTML(name.strip))
+			store "Participant #{name} deleted"
 		else
 			add_participant(name,{})
 		end
-		store
 	end
-	def store
+	def store comment
 		File.open("data.yaml", 'w') do |out|
 			out << "# This is a dudle poll file\n"
 			out << self.to_yaml
 			out.chmod(0660)
 		end
-		`bzr commit -m "automatic commit"`
+		`bzr commit -m "#{comment}"`
 	end
 	def add_comment name, comment
 		@comment << [Time.now, CGI.escapeHTML(name), CGI.escapeHTML(comment.strip).gsub("\r\n","<br />")]
-		store
+		store "Comment added by #{name}"
+	end
+	def delete_comment index
+		@comment.delete_at(index)
+		store "Comment deleted"
 	end
 	def add_remove_column name, description
 		add_remove_parsed_column CGI.escapeHTML(name.strip), CGI.escapeHTML(description.strip)
@@ -184,10 +196,12 @@ END
 	def add_remove_parsed_column columntitle, description
 		if @head.include?(columntitle)
 			@head.delete(columntitle)
+			action = "deleted"
 		else
 			@head[columntitle] = description
+			action = "added"
 		end
-		store
+		store "Column #{columntitle} #{action}"
 		true
 	end
 end
@@ -351,7 +365,7 @@ if File.exist?("data.yaml")
 </div>
 <h1>#{table.name}</h1>
 HEAD
-	
+
 	if $cgi.include?("add_participant")
 		agreed = {}
 		$cgi.params.each{|k,v|
@@ -370,6 +384,7 @@ HEAD
 	end
 
 	table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi.include?("comment")
+	table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
 
 	puts table.to_html
 	
