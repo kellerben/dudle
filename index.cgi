@@ -172,7 +172,7 @@ END
 			out << self.to_yaml
 			out.chmod(0660)
 		end
-		`bzr commit -m "#{CGI.escapeHTML(comment)}"`
+		`export LC_ALL=de_DE.UTF-8; bzr commit -m '#{CGI.escapeHTML(comment)}'`
 	end
 	def add_comment name, comment
 		@comment << [Time.now, CGI.escapeHTML(name), CGI.escapeHTML(comment.strip).gsub("\r\n","<br />")]
@@ -338,7 +338,7 @@ HEAD
 if File.exist?("data.yaml") 
 	if $cgi.include?("revision")
 		REVISION=$cgi["revision"].to_i
-		table = YAML::load(`bzr cat -r #{REVISION} data.yaml`)
+		table = YAML::load(`export LC_ALL=de_DE.UTF-8; bzr cat -r #{REVISION} data.yaml`)
 	else
 		table = YAML::load_file("data.yaml")
 	end
@@ -392,7 +392,7 @@ HEAD
 
 	MAXREV=`bzr revno`.to_i
 	REVISION=MAXREV unless defined?(REVISION)
-	log = `bzr log --forward`.split("-"*60)
+	log = `export LC_ALL=de_DE.UTF-8; bzr log --forward`.split("-"*60)
 	log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
 	log.shift
 	log.collect!{|t,c| [DateTime.parse(t),c]}
