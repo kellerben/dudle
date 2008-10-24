@@ -357,7 +357,7 @@ if File.exist?("data.yaml")
 	<meta http-equiv="Content-Type" content="#{CONTENTTYPE}" /> 
 	<meta http-equiv="Content-Style-Type" content="text/css" />
  <title>dudle - #{table.name}</title>
-	<link rel="stylesheet" type="text/css" href="dudle.css" />
+	<link rel="stylesheet" type="text/css" href="../dudle.css" />
 </head>
 <body>
 <div>
@@ -434,7 +434,11 @@ HEAD
 	puts "</form>"
 	puts "</fieldset>"
 	puts "</div>"
+
+
 else
+
+
 	puts <<HEAD
 <head>
 	<title>dudle</title>
@@ -449,7 +453,6 @@ HEAD
 			Dir.chdir(SITE)
 			`bzr init`
 			File.symlink("../index.cgi","index.cgi")
-			File.symlink("../dudle.css","dudle.css")
 			File.open("data.yaml","w").close
 			`bzr add data.yaml`
 			case $cgi["poll_type"]
