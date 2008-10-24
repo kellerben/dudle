@@ -20,14 +20,6 @@ class Poll
 			ret += "<th title='#{columndescription}'>#{columntitle}</th>\n"
 		}
 		ret += "<th>Last Edit</th>\n"
-#		ret += "<th>"
-#		ret += "<form method='post' action=''>\n"
-#		ret += "<div>"
-#		ret += "<input size='16' type='text' name='add_participant' />\n"
-#		ret += "<input type='submit' value='add/edit' />\n"
-#		ret += "</div>"
-#		ret += "</form>\n"
-#		ret += "</th>\n"
 		ret += "</tr>\n"
 		ret
 	end
@@ -76,7 +68,7 @@ END
 			ret += "</tr>\n"
 		}
 		
-		ret += "<tr>\n"
+		ret += "<tr id='add_participant'>\n"
 		ret += "<td class='name'><input size='16' type='text' name='add_participant' /></td>\n"
 		@head.sort.each{|columntitle,columndescription|
 			ret += "<td class='checkboxes'>
@@ -145,7 +137,7 @@ END
 				ret += "<div>"
 				ret	+= "<fieldset><legend>#{name} said on #{time.strftime("%d.%m, %H:%M")} "
 				ret += "<input type='hidden' name='delete_comment' value='#{i}' />"
-				ret += "<input type='submit' value='delete' style='position: absolute; margin-left: 20px;' />"
+				ret += "<input class='delete_comment_button' type='submit' value='delete' style='position: absolute; margin-left: 20px;' />"
 				ret += "</legend>"
 				ret += comment
 				ret += "</fieldset>"
@@ -357,10 +349,15 @@ if File.exist?("data.yaml")
 	<meta http-equiv="Content-Type" content="#{CONTENTTYPE}" /> 
 	<meta http-equiv="Content-Style-Type" content="text/css" />
  <title>dudle - #{table.name}</title>
-	<link rel="stylesheet" type="text/css" href="../dudle.css" />
+	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
+	<link rel="stylesheet" type="text/css" href="../print.css" title="print" media="print" />
+	<link rel="stylesheet" type="text/css" href="../print.css" title="print" />
+
+
+
 </head>
 <body>
-<div>
+<div id='backlink'>
 	<a href='..' style='text-decoration:none'>#{BACK}</a>
 </div>
 <h1>#{table.name}</h1>
@@ -388,9 +385,11 @@ HEAD
 
 	puts table.to_html
 	
+	puts "<div id='hint'>"
 	puts "<fieldset><legend>Hint</legend>"
 	puts "To change a line, add a new person with the same name!"
 	puts "</fieldset>"
+	puts "</div>"
 
 	MAXREV=`bzr revno`.to_i
 	REVISION=MAXREV unless defined?(REVISION)
