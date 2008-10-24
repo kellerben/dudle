@@ -27,7 +27,7 @@ class Poll
 		return <<END
 <div id='add_remove_column'>
 <fieldset><legend>add/remove column</legend>
-<form method='post' action=''>
+<form method='post' action='.'>
 <div>
 		<label for='columntitle'>Columntitle: </label>
 		<input id='columntitle' size='16' type='text' value='#{$cgi["add_remove_column"]}' name='add_remove_column' />
@@ -42,7 +42,7 @@ END
 	end
 	def to_html
 		ret = "<div id='polltable'>\n"
-		ret += "<form method='post' action=''>\n"
+		ret += "<form method='post' action='.'>\n"
 		ret += "<table border='1'>\n"
 
 		ret += head_to_html
@@ -133,7 +133,7 @@ END
 			ret	+= "<fieldset><legend>Comments</legend>"
 			@comment.each_with_index{|c,i|
 				time,name,comment = c
-				ret += "<form method='post' action=''>\n"
+				ret += "<form method='post' action='.'>\n"
 				ret += "<div>"
 				ret	+= "<fieldset><legend>#{name} said on #{time.strftime("%d.%m, %H:%M")} "
 				ret += "<input type='hidden' name='delete_comment' value='#{i}' />"
@@ -151,10 +151,10 @@ END
 		ret
 	end
 	def add_participant(name, agreed)
-		name = CGI.escapeHTML(name.strip)
-		@data[name] = {"timestamp" => Time.now}
+		htmlname = CGI.escapeHTML(name.strip)
+		@data[htmlname] = {"timestamp" => Time.now}
 		@head.each_key{|columntitle|
-			@data[name][columntitle] = agreed[columntitle.to_s]
+			@data[htmlname][columntitle] = agreed[columntitle.to_s]
 		}
 		store "Participant #{name} edited"
 	end
@@ -172,15 +172,14 @@ END
 			out << self.to_yaml
 			out.chmod(0660)
 		end
-		`bzr commit -m "#{comment}"`
+		`bzr commit -m "#{CGI.escapeHTML(comment)}"`
 	end
 	def add_comment name, comment
 		@comment << [Time.now, CGI.escapeHTML(name), CGI.escapeHTML(comment.strip).gsub("\r\n","<br />")]
 		store "Comment added by #{name}"
 	end
 	def delete_comment index
-		@comment.delete_at(index)
-		store "Comment deleted"
+		store "Comment from #{@comment.delete_at(index)[1]} deleted"
 	end
 	def add_remove_column name, description
 		add_remove_parsed_column CGI.escapeHTML(name.strip), CGI.escapeHTML(description.strip)
@@ -240,7 +239,7 @@ class DatePoll < Poll
 		ret = <<END
 <div id='add_remove_column'>
 <fieldset><legend>add/remove column</legend>
-<form method='post' action=''>
+<form method='post' action='.'>
 <div>
 <table><tr>
 END
@@ -301,7 +300,7 @@ puts "Content-type: #{CONTENTTYPE}"
 
 if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 	puts "Set-Cookie: utf=true; path=; expires=#{(Time.now+1*60*60*24*365).getgm.strftime("%a, %d %b %Y %H:%M:%S %Z")}"
-	UTFASCII = "<a href='?ascii' style='text-decoration:none'>A</a>"
+	UTFASCII = "<a href='?ascii' style='text-decoration:none'>ASCII</a>"
 	BACK     = CGI.escapeHTML("↩")
 	
 	YES      = CGI.escapeHTML('✔')
@@ -315,7 +314,7 @@ if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 	YEARFORWARD  = CGI.escapeHTML("↠")
 else
 	puts "Set-Cookie: utf=true; path=; expires=#{(Time.now-1*60*60*24*365).getgm.strftime("%a, %d %b %Y %H:%M:%S %Z")}"
-	UTFASCII = "<a href='?utf' style='text-decoration:none'>#{CGI.escapeHTML('✔')}</a>"
+	UTFASCII = "<a href='?utf' style='text-decoration:none'>#{CGI.escapeHTML('↩✔✘?–↞←→↠')}</a>"
 	BACK     = CGI.escapeHTML("<-")
 	
 	YES      = CGI.escapeHTML('OK')
@@ -393,25 +392,40 @@ HEAD
 
 	MAXREV=`bzr revno`.to_i
 	REVISION=MAXREV unless defined?(REVISION)
+	log = `bzr log --forward`.split("-"*60)
+	log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
+	log.shift
+	log.collect!{|t,c| [DateTime.parse(t),c]}
 	puts "<div id='history'>"
 	puts "<fieldset><legend>browse history</legend>"
-	puts "<form method='post' action=''>\n"
-	puts "<div>"
-	(1..5).to_a.reverse.each do |i|
-		puts "<input class='historynavi' type='submit' name='revision' value='#{REVISION - i}' />" if REVISION - i >= 1
+	puts "<table>"
+	puts "<tr>"
+	puts "<th>rev</th>"
+	puts "<th>time</th>"
+	puts "<th>description of change</th>"
+	puts "</tr>"
+
+	((REVISION-2)..(REVISION+2)).each do |i|
+		if i >0 && i<=MAXREV
+			if REVISION == i
+				puts "<tr id='displayed_revision'><td>#{i}"
+			else
+				puts "<tr><td>"
+				puts "<a href='?revision=#{i}' />#{i}</a>"
+			end
+			puts "</td>"
+			puts "<td>#{log[i-1][0].strftime('%d.%m, %H:%M')}</td>"
+			puts "<td>#{log[i-1][1]}</td>"
+			puts "</tr>"
+		end
 	end
-	puts REVISION
-	(1..5).each do |i|
-		puts "<input class='historynavi' type='submit' name='revision' value='#{REVISION + i}' />" if REVISION + i <= MAXREV
-	end
-	puts "</div>"
-	puts "</form>"
+	puts "</table>"
 	puts "</fieldset>"
 	puts "</div>"
 	
 	puts "<div id='invite_delete'>"
 	puts "<fieldset><legend>invite/delete participant</legend>"
-	puts "<form method='post' action=''>\n"
+	puts "<form method='post' action='.'>\n"
 	puts "<div>"
 	puts "<input size='16' value='#{$cgi["invite_delete"]}' type='text' name='invite_delete' />"
 	puts "<input type='submit' value='invite/delete' />"
@@ -424,7 +438,7 @@ HEAD
 	
 	puts "<div id='add_comment'>"
 	puts "<fieldset><legend>Comment</legend>"
-	puts "<form method='post' action=''>\n"
+	puts "<form method='post' action='.'>\n"
 	puts "<div>"
 	puts "<label for='Commentname'>Name: </label><input id='Commentname' value='anonymous' type='text' name='commentname' /><br />"
 	puts "<textarea cols='50' rows='10' name='comment' ></textarea><br />"
@@ -467,7 +481,6 @@ HEAD
 	end
 
 	puts "<fieldset><legend>Available Polls</legend>"
-	puts UTFASCII
 	puts "<table><tr><th>Poll</th><th>Last change</th></tr>"
 	Dir.glob("*/data.yaml").sort_by{|f|
 		File.new(f).mtime
@@ -484,7 +497,7 @@ HEAD
 
 	puts <<CREATE
 <fieldset><legend>Create new Poll</legend>
-<form method='post' action=''><div>
+<form method='post' action='.'><div>
 	<input size='16' type='text' name='create_poll' value='#{$cgi["create_poll"]}' />
 	<select name="poll_type">
 	<option value="Poll" selected="selected">normal</option>
@@ -494,6 +507,12 @@ HEAD
 </div></form>
 </fieldset>
 CREATE
+	
+	puts <<CHARSET
+<fieldset><legend>change charset</legend>
+#{UTFASCII}
+</fieldset>
+CHARSET
 
 end
 
