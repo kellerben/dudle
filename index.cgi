@@ -6,9 +6,10 @@ require "pp"
 require "date"
 
 class Poll
-	attr_reader :head, :name
-	def initialize name
+	attr_reader :head, :name, :hidden
+	def initialize name,hidden
 		@name = name
+		@hidden = hidden
 		@head = {}
 		@data = {}
 		@comment = []
@@ -468,13 +469,24 @@ HEAD
 			File.symlink("../index.cgi","index.cgi")
 			File.open("data.yaml","w").close
 			`bzr add data.yaml`
+			hidden = ($cgi["hidden"] == "true")
 			case $cgi["poll_type"]
 			when "Poll"
-				Poll.new SITE
+				Poll.new SITE, hidden
 			when "DatePoll"
-				DatePoll.new SITE
+				DatePoll.new SITE, hidden
 			end
 			Dir.chdir("..")
+			if hidden
+				puts <<HIDDENINFO
+<fieldset>
+	<legend>Info</legend>
+	Poll #{SITE} created successfull!
+	You can reach it with <a href="#{SITE}">this link</a>.
+	Please remember the url while it will not be visible here.
+</fieldset>
+HIDDENINFO
+			end
 		else
 			puts "<fieldset><legend>Error</legend>This poll already exists!</fieldset>"
 		end
@@ -487,33 +499,50 @@ HEAD
 	}.reverse.collect{|f| 
 		f.gsub(/\/data\.yaml$/,'')
 	}.each{|site|
-		puts "<tr>"
-		puts "<td class='site'><a href='#{site}'>#{site}</a></td>"
-		puts "<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>"
-		puts "</tr>"
+		unless YAML::load_file("#{site}/data.yaml" ).hidden
+			puts "<tr>"
+			puts "<td class='site'><a href='#{site}'>#{site}</a></td>"
+			puts "<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>"
+			puts "</tr>"
+		end
 	}
 	puts "</table>"
 	puts "</fieldset>"
 
-	puts <<CREATE
-<fieldset><legend>Create new Poll</legend>
-<form method='post' action='.'><div>
-	<input size='16' type='text' name='create_poll' value='#{$cgi["create_poll"]}' />
-	<select name="poll_type">
-	<option value="Poll" selected="selected">normal</option>
-	<option value="DatePoll">date</option>
-	</select>
-<input type='submit' value='create' />
-</div></form>
-</fieldset>
-CREATE
-	
 	puts <<CHARSET
 <fieldset><legend>change charset</legend>
 #{UTFASCII}
 </fieldset>
 CHARSET
 
+	puts <<CREATE
+<fieldset><legend>Create new Poll</legend>
+<form method='post' action='.'>
+<table>
+	<tr>
+		<td><label title="#{poll_name_tip = "the name equals the link under which you receive the poll"}" for="poll_name">Name:</label></td>
+		<td><input title="#{poll_name_tip}" id="poll_name" size='16' type='text' name='create_poll' value='#{$cgi["create_poll"]}' /></td>
+	</tr>
+	<tr>
+		<td><label for="poll_type">Type:</label></td>
+		<td>
+			<select id="poll_type" name="poll_type">
+				<option value="Poll" selected="selected">normal</option>
+				<option value="DatePoll">date</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td><label title="#{hidden_tip = "do not list the poll here (you have to remember the link)"}" for="hidden">Hidden?:</label></td>
+		<td><input id="hidden" type="checkbox" name="hidden" value="true" title="#{hidden_tip}"></td>
+	</tr>
+	<tr>
+		<td colspan='2'><input type='submit' value='create' /></td>
+	</tr>
+</table>
+</form>
+</fieldset>
+CREATE
 end
 
 puts "</body></html>"
