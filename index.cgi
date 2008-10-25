@@ -482,8 +482,8 @@ HEAD
 <fieldset>
 	<legend>Info</legend>
 	Poll #{SITE} created successfull!
-	You can reach it with <a href="#{SITE}">this link</a>.
-	Please remember the url while it will not be visible here.
+	<br />
+	Please remember the url (<a href="#{SITE}">http.../#{SITE}</a>) while it will not be visible here.
 </fieldset>
 HIDDENINFO
 			end
