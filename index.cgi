@@ -300,7 +300,7 @@ CONTENTTYPE = "text/html; charset=utf-8"
 puts "Content-type: #{CONTENTTYPE}"
 
 if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
-	puts "Set-Cookie: utf=true; path=; expires=#{(Time.now+1*60*60*24*365).getgm.strftime("%a, %d %b %Y %H:%M:%S %Z")}"
+	puts "Set-Cookie: utf=true; path=/; expires=#{(Time.now+1*60*60*24*365).getgm.strftime("%a, %d %b %Y %H:%M:%S %Z")}"
 	UTFASCII = "<a href='?ascii' style='text-decoration:none'>ASCII</a>"
 	BACK     = CGI.escapeHTML("↩")
 	
@@ -314,7 +314,7 @@ if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 	MONTHFORWARD = CGI.escapeHTML("→")
 	YEARFORWARD  = CGI.escapeHTML("↠")
 else
-	puts "Set-Cookie: utf=true; path=; expires=#{(Time.now-1*60*60*24*365).getgm.strftime("%a, %d %b %Y %H:%M:%S %Z")}"
+	puts "Set-Cookie: utf=true; path=/; expires=#{(Time.now-1*60*60*24*365).getgm.strftime("%a, %d %b %Y %H:%M:%S %Z")}"
 	UTFASCII = "<a href='?utf' style='text-decoration:none'>#{CGI.escapeHTML('↩✔✘?–↞←→↠')}</a>"
 	BACK     = CGI.escapeHTML("<-")
 	
