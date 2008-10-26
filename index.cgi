@@ -352,9 +352,7 @@ if File.exist?("data.yaml")
 	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
 	<link rel="stylesheet" type="text/css" href="../print.css" title="print" media="print" />
 	<link rel="stylesheet" type="text/css" href="../print.css" title="print" />
-
-
-
+	<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />
 </head>
 <body>
 <div id='backlink'>
@@ -449,7 +447,6 @@ HEAD
 	puts "</fieldset>"
 	puts "</div>"
 
-
 else
 
 
@@ -467,6 +464,7 @@ HEAD
 			Dir.chdir(SITE)
 			`bzr init`
 			File.symlink("../index.cgi","index.cgi")
+			File.symlink("../atom.cgi","atom.cgi")
 			File.open("data.yaml","w").close
 			`bzr add data.yaml`
 			hidden = ($cgi["hidden"] == "true")
@@ -483,7 +481,7 @@ HEAD
 	<legend>Info</legend>
 	Poll #{SITE} created successfull!
 	<br />
-	Please remember the url (<a href="#{SITE}">http.../#{SITE}</a>) while it will not be visible here.
+	Please remember the url (<a href="#{SITE}">#{$cgi.server_name}#{$cgi.script_name.gsub(/index.cgi$/,"")}#{SITE}</a>) while it will not be visible here.
 </fieldset>
 HIDDENINFO
 			end
