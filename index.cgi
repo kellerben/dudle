@@ -453,6 +453,7 @@ else
 	puts <<HEAD
 <head>
 	<title>dudle</title>
+	<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />
 </head>
 <body>
 HEAD
