@@ -32,7 +32,7 @@ if File.exist?("data.yaml")
 		feed.entries << Atom::Entry.new do |e|	
 			e.title = l[1]
 			e.links << Atom::Link.new(:href => "http://#{cgi.server_name}#{cgi.script_name.gsub(/atom.cgi$/,"")}?revision=#{i+1}")
-			e.id = "urn:#{poll.class}:#{poll.name}:rev:#{i+1}"
+			e.id = "urn:#{poll.class}:#{poll.name}:rev=#{i+1}"
 			e.updated = l[0]
 		end
 	}
@@ -46,7 +46,7 @@ else
 
 	Dir.glob("*/data.yaml").sort_by{|f|
 		File.new(f).mtime
-	}.reverse.collect{|f| 
+	}.reverse.collect{|f|
 		f.gsub(/\/data\.yaml$/,'')
 	}.each{|site|
 		unless YAML::load_file("#{site}/data.yaml" ).hidden
@@ -54,12 +54,20 @@ else
 				firstround = false
 				feed.updated = File.new("#{site}/data.yaml").mtime
 			end
-			feed.entries << Atom::Entry.new do |e|	
-				e.title = site
-				e.links << Atom::Link.new(:href => site)
-				e.id = "urn:dudle:main:#{site}"
-				e.updated = File.new("#{site}/data.yaml").mtime
-			end
+			
+			log = `export LC_ALL=de_DE.UTF-8; bzr log --forward #{site}`.split("-"*60)
+			log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
+			log.shift
+			log.collect!{|t,c| [DateTime.parse(t),c]}
+			log.each_with_index {|l,i|
+				feed.entries << Atom::Entry.new do |e|
+					e.title = site
+					e.summary = l[1]
+					e.links << Atom::Link.new(:href => site)
+					e.id = "urn:dudle:main:#{site}:rev=#{i+1}"
+					e.updated = l[0]
+				end
+			}
 		end
 	}
 
