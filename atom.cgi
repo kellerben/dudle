@@ -2,13 +2,17 @@
 require "rubygems"
 require "atom"
 require "yaml"
-require "pp"
-load "index.cgi"
+require "cgi"
 
 cgi = CGI.new
 
 feed = Atom::Feed.new 
 if File.exist?("data.yaml")
+	olddir = File.expand_path(".")
+	Dir.chdir("..")
+	require "poll"
+	require "datepoll"
+	Dir.chdir(olddir)
 
 	poll = YAML::load_file("data.yaml")
 
@@ -34,6 +38,8 @@ if File.exist?("data.yaml")
 	}
 
 else
+	require "poll"
+	require "datepoll"
 	feed.title = "dudle"
 	feed.id = "urn:dudle:main"
 	feed.authors << Atom::Person.new(:name => 'dudle automatic notificator')
