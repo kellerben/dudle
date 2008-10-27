@@ -3,8 +3,8 @@ load "/home/ben/src/lib.rb/pphtml.rb"
 require "pp"
 require "yaml"
 require "cgi"
-require "date"
 require "poll"
+require "datepoll"
 
 puts <<HEAD
 <head>
@@ -54,7 +54,7 @@ Dir.glob("*/data.yaml").sort_by{|f|
 }.reverse.collect{|f| 
 	f.gsub(/\/data\.yaml$/,'')
 }.each{|site|
-	unless YAML::load_file("#{site}/data.yaml" ).hidden
+	unless YAML::load_file("#{site}/data.yaml").hidden
 		puts "<tr>"
 		puts "<td class='site'><a href='#{site}'>#{site}</a></td>"
 		puts "<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>"
