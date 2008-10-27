@@ -4,7 +4,18 @@ require "atom"
 require "yaml"
 require "cgi"
 
+def readhistory dir
+	log = `export LC_ALL=de_DE.UTF-8; bzr log -r -10.. #{dir}`.split("-"*60)
+	log.collect!{|s| s.scan(/\nrevno: (.*)\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
+	log.shift
+	log.collect!{|r,t,c| [r.to_i,DateTime.parse(t),c]}
+end
+
+
+
 cgi = CGI.new
+
+SITEURL = "http://#{cgi.server_name}#{cgi.script_name.gsub(/atom.cgi$/,"")}"
 
 feed = Atom::Feed.new 
 if File.exist?("data.yaml")
@@ -23,17 +34,13 @@ if File.exist?("data.yaml")
 
 	feed.authors << Atom::Person.new(:name => 'dudle automatic notificator')
 
-	log = `export LC_ALL=de_DE.UTF-8; bzr log --forward`.split("-"*60)
-	log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
-	log.shift
-	log.collect!{|t,c| [DateTime.parse(t),c]}
-
-	log.each_with_index {|l,i|	
+	log = readhistory "."
+	log.each {|rev,time,comment|	
 		feed.entries << Atom::Entry.new do |e|	
-			e.title = l[1]
-			e.links << Atom::Link.new(:href => "http://#{cgi.server_name}#{cgi.script_name.gsub(/atom.cgi$/,"")}?revision=#{i+1}")
-			e.id = "urn:#{poll.class}:#{poll.name}:rev=#{i+1}"
-			e.updated = l[0]
+			e.title = comment
+			e.links << Atom::Link.new(:href => "#{SITEURL}?revision=#{rev}")
+			e.id = "urn:#{poll.class}:#{poll.name}:rev=#{rev}"
+			e.updated = time
 		end
 	}
 
@@ -55,17 +62,14 @@ else
 				feed.updated = File.new("#{site}/data.yaml").mtime
 			end
 			
-			log = `export LC_ALL=de_DE.UTF-8; bzr log --forward #{site}`.split("-"*60)
-			log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
-			log.shift
-			log.collect!{|t,c| [DateTime.parse(t),c]}
-			log.each_with_index {|l,i|
+			log = readhistory(site)
+			log.each {|rev,time,comment|
 				feed.entries << Atom::Entry.new do |e|
 					e.title = site
-					e.summary = l[1]
-					e.links << Atom::Link.new(:href => site)
-					e.id = "urn:dudle:main:#{site}:rev=#{i+1}"
-					e.updated = l[0]
+					e.summary = comment
+					e.links << Atom::Link.new(:href => "#{SITEURL}#{site}/?revision=#{rev}")
+					e.id = "urn:dudle:main:#{site}:rev=#{rev}"
+					e.updated = time
 				end
 			}
 		end
