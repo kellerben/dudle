@@ -67,8 +67,9 @@ END
 			ret += "</tr>\n"
 		}
 		
+		# PARTICIPATE
 		ret += "<tr id='add_participant'>\n"
-		ret += "<td class='name'><input size='16' type='text' name='add_participant' /></td>\n"
+		ret += "<td class='name'><input size='16' type='text' name='add_participant' title='To change a line, add a new person with the same name!' /></td>\n"
 		@head.sort.each{|columntitle,columndescription|
 			ret += "<td class='checkboxes'>
 			<table><tr>
@@ -87,6 +88,7 @@ END
 
 		ret += "</tr>\n"
 
+		# SUMMARY
 		ret += "<tr><td class='name'>total</td>\n"
 		@head.sort.each{|columntitle,columndescription|
 			yes = 0
@@ -132,16 +134,20 @@ END
 			ret	+= "<fieldset><legend>Comments</legend>"
 			@comment.each_with_index{|c,i|
 				time,name,comment = c
-				ret += "<form method='post' action='.'>\n"
-				ret += "<div>"
-				ret	+= "<fieldset><legend>#{name} said on #{time.strftime("%d.%m, %H:%M")} "
-				ret += "<input type='hidden' name='delete_comment' value='#{i}' />"
-				ret += "<input class='delete_comment_button' type='submit' value='delete' style='position: absolute; margin-left: 20px;' />"
-				ret += "</legend>"
-				ret += comment
-				ret += "</fieldset>"
-				ret += "</div>"
-				ret += "</form>"
+				ret += <<COMMENT
+<form method='post' action='.'>
+<div>
+	<fieldset>
+		<legend>#{name} said on #{time.strftime("%d.%m, %H:%M")}
+			<input type='hidden' name='delete_comment' value='#{i}' />
+			&nbsp;
+			<input class='delete_comment_button' type='submit' value='delete' />
+		</legend>
+		#{comment}
+	</fieldset>
+</div>
+</form>
+COMMENT
 			}
 			ret += "</fieldset>"
 		end

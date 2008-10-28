@@ -89,7 +89,7 @@ puts <<CREATE
 </tr>
 <tr>
 	<td><label title="#{hidden_tip = "do not list the poll here (you have to remember the link)"}" for="hidden">Hidden?:</label></td>
-	<td><input id="hidden" type="checkbox" name="hidden" value="true" title="#{hidden_tip}"></td>
+	<td><input id="hidden" type="checkbox" name="hidden" value="true" title="#{hidden_tip}" /></td>
 </tr>
 <tr>
 	<td colspan='2'><input type='submit' value='create' /></td>

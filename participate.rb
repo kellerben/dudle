@@ -13,19 +13,19 @@ end
 
 puts <<HEAD
 <head>
-<meta http-equiv="Content-Type" content="#{CONTENTTYPE}" /> 
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<title>dudle - #{table.name}</title>
-<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
-<link rel="stylesheet" type="text/css" href="../print.css" title="print" media="print" />
-<link rel="stylesheet" type="text/css" href="../print.css" title="print" />
-<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />
+	<meta http-equiv="Content-Type" content="#{CONTENTTYPE}" /> 
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<title>dudle - #{table.name}</title>
+	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
+	<link rel="stylesheet" type="text/css" href="../print.css" title="print" media="print" />
+	<link rel="stylesheet" type="text/css" href="../print.css" title="print" />
+	<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />
 </head>
 <body>
-<div id='backlink'>
-<a href='..' style='text-decoration:none'>#{BACK}</a>
-</div>
-<h1>#{table.name}</h1>
+	<div id='backlink'>
+	<a href='..' style='text-decoration:none'>#{BACK}</a>
+	</div>
+	<h1>#{table.name}</h1>
 HEAD
 
 if $cgi.include?("add_participant")
@@ -50,26 +50,22 @@ table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comme
 
 puts table.to_html
 
-puts "<div id='hint'>"
-puts "<fieldset><legend>Hint</legend>"
-puts "To change a line, add a new person with the same name!"
-puts "</fieldset>"
-puts "</div>"
-
 MAXREV=`bzr revno`.to_i
 REVISION=MAXREV unless defined?(REVISION)
 log = `export LC_ALL=de_DE.UTF-8; bzr log --forward`.split("-"*60)
 log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
 log.shift
 log.collect!{|t,c| [DateTime.parse(t),c]}
-puts "<div id='history'>"
-puts "<fieldset><legend>browse history</legend>"
-puts "<table>"
-puts "<tr>"
-puts "<th>rev</th>"
-puts "<th>time</th>"
-puts "<th>description of change</th>"
-puts "</tr>"
+puts <<HISTORY
+<div id='history'>
+	<fieldset><legend>browse history</legend>
+	<table>
+		<tr>
+			<th>rev</th>
+			<th>time</th>
+			<th>description of change</th>
+		</tr>
+HISTORY
 
 ((REVISION-2)..(REVISION+2)).each do |i|
 	if i >0 && i<=MAXREV
@@ -77,7 +73,7 @@ puts "</tr>"
 			puts "<tr id='displayed_revision'><td>#{i}"
 		else
 			puts "<tr><td>"
-			puts "<a href='?revision=#{i}' />#{i}</a>"
+			puts "<a href='?revision=#{i}'>#{i}</a>"
 		end
 		puts "</td>"
 		puts "<td>#{log[i-1][0].strftime('%d.%m, %H:%M')}</td>"
@@ -89,28 +85,38 @@ puts "</table>"
 puts "</fieldset>"
 puts "</div>"
 
-puts "<div id='invite_delete'>"
-puts "<fieldset><legend>invite/delete participant</legend>"
-puts "<form method='post' action='.'>\n"
-puts "<div>"
-puts "<input size='16' value='#{$cgi["invite_delete"]}' type='text' name='invite_delete' />"
-puts "<input type='submit' value='invite/delete' />"
-puts "</div>"
-puts "</form>"
-puts "</fieldset>"
-puts "</div>"
+puts <<INVITEDELETE
+<div id='invite_delete'>
+	<fieldset>
+		<legend>invite/delete participant</legend>
+		<form method='post' action='.'>
+			<div>
+				<input size='16' value='#{$cgi["invite_delete"]}' type='text' name='invite_delete' />
+				<input type='submit' value='invite/delete' />
+			</div>
+		</form>
+	</fieldset>
+</div>
+INVITEDELETE
 
 puts table.add_remove_column_htmlform
 
-puts "<div id='add_comment'>"
-puts "<fieldset><legend>Comment</legend>"
-puts "<form method='post' action='.'>\n"
-puts "<div>"
-puts "<label for='Commentname'>Name: </label><input id='Commentname' value='anonymous' type='text' name='commentname' /><br />"
-puts "<textarea cols='50' rows='10' name='comment' ></textarea><br />"
-puts "<input type='submit' value='Submit' />"
-puts "</div>"
-puts "</form>"
-puts "</fieldset>"
-puts "</div>"
+puts <<ADDCOMMENT
+<div id='add_comment'>
+	<fieldset>
+		<legend>Comment</legend>
+		<form method='post' action='.'>
+			<div>
+				<label for='Commentname'>Name: </label>
+				<input id='Commentname' value='anonymous' type='text' name='commentname' />
+				<br />
+				<textarea cols='50' rows='10' name='comment' ></textarea>
+				<br />
+				<input type='submit' value='Submit' />
+			</div>
+		</form>
+	</fieldset>
+</div>
+ADDCOMMENT
 
+puts "</body></html>"
