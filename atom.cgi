@@ -27,12 +27,11 @@ if File.exist?("data.yaml")
 
 	poll = YAML::load_file("data.yaml")
 
-
 	feed.title = poll.name
 	feed.id = "urn:dudle:#{poll.class}:#{poll.name}"
 	feed.updated = File.new("data.yaml").mtime
-
 	feed.authors << Atom::Person.new(:name => 'dudle automatic notificator')
+	feed.links << Atom::Link.new(:href => SITEURL + "atom.cgi", :rel => "self")
 
 	log = readhistory "."
 	log.each {|rev,time,comment|	
@@ -50,7 +49,8 @@ else
 	feed.title = "dudle"
 	feed.id = "urn:dudle:main"
 	feed.authors << Atom::Person.new(:name => 'dudle automatic notificator')
-
+	feed.links << Atom::Link.new(:href => SITEURL + "atom.cgi", :rel => "self")
+	
 	Dir.glob("*/data.yaml").sort_by{|f|
 		File.new(f).mtime
 	}.reverse.collect{|f|
