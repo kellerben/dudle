@@ -6,7 +6,7 @@ require "cgi"
 require "poll"
 require "datepoll"
 
-puts <<HEAD
+$htmlout += <<HEAD
 <head>
 <title>dudle</title>
 <link rel="alternate"  type="application/atom+xml" href="atom.cgi" />
@@ -33,7 +33,7 @@ if $cgi.include?("create_poll")
 		end
 		Dir.chdir("..")
 		if hidden
-			puts <<HIDDENINFO
+			$htmlout += <<HIDDENINFO
 <fieldset>
 <legend>Info</legend>
 Poll #{SITE} created successfull!
@@ -43,34 +43,34 @@ Please remember the url (<a href="#{SITE}">#{$cgi.server_name}#{$cgi.script_name
 HIDDENINFO
 		end
 	else
-		puts "<fieldset><legend>Error</legend>This poll already exists!</fieldset>"
+		$htmlout += "<fieldset><legend>Error</legend>This poll already exists!</fieldset>"
 	end
 end
 
-puts "<fieldset><legend>Available Polls</legend>"
-puts "<table><tr><th>Poll</th><th>Last change</th></tr>"
+$htmlout += "<fieldset><legend>Available Polls</legend>"
+$htmlout += "<table><tr><th>Poll</th><th>Last change</th></tr>"
 Dir.glob("*/data.yaml").sort_by{|f|
 	File.new(f).mtime
 }.reverse.collect{|f| 
 	f.gsub(/\/data\.yaml$/,'')
 }.each{|site|
 	unless YAML::load_file("#{site}/data.yaml").hidden
-		puts "<tr>"
-		puts "<td class='site'><a href='#{site}'>#{site}</a></td>"
-		puts "<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>"
-		puts "</tr>"
+		$htmlout += "<tr>"
+		$htmlout += "<td class='site'><a href='#{site}'>#{site}</a></td>"
+		$htmlout += "<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>"
+		$htmlout += "</tr>"
 	end
 }
-puts "</table>"
-puts "</fieldset>"
+$htmlout += "</table>"
+$htmlout += "</fieldset>"
 
-puts <<CHARSET
+$htmlout += <<CHARSET
 <fieldset><legend>change charset</legend>
 #{UTFASCII}
 </fieldset>
 CHARSET
 
-puts <<CREATE
+$htmlout += <<CREATE
 <fieldset><legend>Create new Poll</legend>
 <form method='post' action='.'>
 <table>
@@ -99,5 +99,5 @@ puts <<CREATE
 </fieldset>
 CREATE
 
-puts "</body></html>"
+$htmlout += "</body></html>"
 

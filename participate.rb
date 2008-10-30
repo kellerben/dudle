@@ -11,9 +11,9 @@ else
 	table = YAML::load_file("data.yaml")
 end
 
-puts <<HEAD
+$htmlout += <<HEAD
 <head>
-	<meta http-equiv="Content-Type" content="#{CONTENTTYPE}" /> 
+	<meta http-equiv="Content-Type" content="#{TYPE}"; charset="#{CHARSET}" /> 
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<title>dudle - #{table.name}</title>
 	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
@@ -42,13 +42,13 @@ end
 table.invite_delete($cgi["invite_delete"])	if $cgi.include?("invite_delete")
 
 if $cgi.include?("add_remove_column")
-	puts "Could not add/remove column #{$cgi["add_remove_column"]}" unless table.add_remove_column($cgi["add_remove_column"],$cgi["columndescription"])
+	$htmlout += "Could not add/remove column #{$cgi["add_remove_column"]}" unless table.add_remove_column($cgi["add_remove_column"],$cgi["columndescription"])
 end
 
 table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi.include?("comment")
 table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
 
-puts table.to_html
+$htmlout += table.to_html
 
 MAXREV=`bzr revno`.to_i
 REVISION=MAXREV unless defined?(REVISION)
@@ -56,7 +56,7 @@ log = `export LC_ALL=de_DE.UTF-8; bzr log --forward`.split("-"*60)
 log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
 log.shift
 log.collect!{|t,c| [DateTime.parse(t),c]}
-puts <<HISTORY
+$htmlout += <<HISTORY
 <div id='history'>
 	<fieldset><legend>browse history</legend>
 	<table>
@@ -70,22 +70,22 @@ HISTORY
 ((REVISION-2)..(REVISION+2)).each do |i|
 	if i >0 && i<=MAXREV
 		if REVISION == i
-			puts "<tr id='displayed_revision'><td>#{i}"
+			$htmlout += "<tr id='displayed_revision'><td>#{i}"
 		else
-			puts "<tr><td>"
-			puts "<a href='?revision=#{i}'>#{i}</a>"
+			$htmlout += "<tr><td>"
+			$htmlout += "<a href='?revision=#{i}'>#{i}</a>"
 		end
-		puts "</td>"
-		puts "<td>#{log[i-1][0].strftime('%d.%m, %H:%M')}</td>"
-		puts "<td>#{log[i-1][1]}</td>"
-		puts "</tr>"
+		$htmlout += "</td>"
+		$htmlout += "<td>#{log[i-1][0].strftime('%d.%m, %H:%M')}</td>"
+		$htmlout += "<td>#{log[i-1][1]}</td>"
+		$htmlout += "</tr>"
 	end
 end
-puts "</table>"
-puts "</fieldset>"
-puts "</div>"
+$htmlout += "</table>"
+$htmlout += "</fieldset>"
+$htmlout += "</div>"
 
-puts <<INVITEDELETE
+$htmlout += <<INVITEDELETE
 <div id='invite_delete'>
 	<fieldset>
 		<legend>invite/delete participant</legend>
@@ -99,9 +99,9 @@ puts <<INVITEDELETE
 </div>
 INVITEDELETE
 
-puts table.add_remove_column_htmlform
+$htmlout += table.add_remove_column_htmlform
 
-puts <<ADDCOMMENT
+$htmlout += <<ADDCOMMENT
 <div id='add_comment'>
 	<fieldset>
 		<legend>Comment</legend>
@@ -119,4 +119,4 @@ puts <<ADDCOMMENT
 </div>
 ADDCOMMENT
 
-puts "</body></html>"
+$htmlout += "</body></html>"
