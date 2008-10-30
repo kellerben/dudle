@@ -12,6 +12,7 @@ CONTENTTYPE = "text/html; charset=utf-8"
 #CONTENTTYPE = "application/xhtml+xml; charset=utf-8"
 
 puts "Content-type: #{CONTENTTYPE}"
+puts "Cache-Control: no-cache"
 
 if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 	puts "Set-Cookie: utf=true; path=/; expires=#{(Time.now+1*60*60*24*365).getgm.strftime("%a, %d %b %Y %H:%M:%S %Z")}"
