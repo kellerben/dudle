@@ -11,8 +11,6 @@ def readhistory dir
 	log.collect!{|r,t,c| [r.to_i,DateTime.parse(t),c]}
 end
 
-
-
 cgi = CGI.new
 
 SITEURL = "http://#{cgi.server_name}#{cgi.script_name.gsub(/atom.cgi$/,"")}"
@@ -77,5 +75,4 @@ else
 
 end
 
-puts "Content-type: application/atom+xml\n\n" 
-puts feed.to_xml
+cgi.out("type" => "application/atom+xml"){ feed.to_xml }
