@@ -5,6 +5,18 @@ require "date"
 require "poll"
 
 class DatePoll < Poll
+	def sort_data field
+		@data.sort{|x,y|
+			if field == "name"
+				x[0] <=> y[0]
+			elsif field == "timestamp"
+				x[1][field] <=> y[1][field]
+			else
+				datefield = Date.parse(field)
+				x[1][datefield].to_s <=> y[1][datefield].to_s
+			end
+		}
+	end 
 	def head_to_html
 		ret = "<tr><td></td>\n"
 		monthhead = Hash.new(0)
@@ -15,11 +27,11 @@ class DatePoll < Poll
 			year, month = title.split("-").collect{|e| e.to_i}
 			ret += "<th colspan='#{count}'>#{Date::ABBR_MONTHNAMES[month]} #{year}</th>\n"
 		}
-		ret += "</tr><tr><td></td>\n"
+		ret += "</tr><tr><th><a href='?sort=name'>Name</a></th>\n"
 		@head.sort.each{|curdate,curdescription|
-			ret += "<th>#{Date::ABBR_DAYNAMES[curdate.wday]}, #{curdate.day}</th>\n"
+			ret += "<th><a href='?sort=#{curdate.to_s}'>#{Date::ABBR_DAYNAMES[curdate.wday]}, #{curdate.day}</a></th>\n"
 		}
-		ret += "<th>Last Edit</th>\n"
+		ret += "<th><a href='.'>Last Edit</a></th>\n"
 		ret += "</tr>\n"
 		ret	
 	end
@@ -28,7 +40,7 @@ class DatePoll < Poll
 			begin
 				startdate = Date.parse("#{$cgi["add_remove_column_month"]}-1")
 			rescue ArgumentError
-				olddate =  $cgi.params["add_remove_column_month"][1]
+				olddate = $cgi.params["add_remove_column_month"][1]
 				case $cgi["add_remove_column_month"]
 				when YEARBACK
 					startdate = Date.parse("#{olddate}-1")-365

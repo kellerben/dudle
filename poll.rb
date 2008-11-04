@@ -13,31 +13,25 @@ class Poll
 		@comment = []
 		store "Poll #{name} created"
 	end
-	def head_to_html
-		ret = "<tr><td></td>\n"
-		@head.sort.each{|columntitle,columndescription|
-			ret += "<th title='#{columndescription}'>#{columntitle}</th>\n"
+	def sort_data field
+		@data.sort{|x,y|
+			if field == "name"
+				x[0] <=> y[0]
+			elsif x[1][field].nil? or y[1][field].nil?
+				x[1][field].to_s <=> y[1][field].to_s
+			else
+				x[1][field] <=> y[1][field]
+			end
 		}
-		ret += "<th>Last Edit</th>\n"
+	end
+	def head_to_html
+		ret = "<tr><th><a href='?sort=name'>Name</a></th>\n"
+		@head.sort.each{|columntitle,columndescription|
+			ret += "<th title='#{columndescription}'><a href='?sort=#{columntitle}'>#{columntitle}</a></th>\n"
+		}
+		ret += "<th><a href='.'>Last Edit</a></th>\n"
 		ret += "</tr>\n"
 		ret
-	end
-	def add_remove_column_htmlform
-		return <<END
-<div id='add_remove_column'>
-<fieldset><legend>add/remove column</legend>
-<form method='post' action='.'>
-<div>
-		<label for='columntitle'>Columntitle: </label>
-		<input id='columntitle' size='16' type='text' value='#{$cgi["add_remove_column"]}' name='add_remove_column' />
-		<label for='columndescription'>Description: </label>
-		<input id='columndescription' size='30' type='text' value='#{$cgi["columndescription"]}' name='columndescription' />
-		<input type='submit' value='add/remove column' />
-</div>
-</form>
-</fieldset>
-</div>
-END
 	end
 	def to_html
 		ret = "<div id='polltable'>\n"
@@ -46,7 +40,7 @@ END
 
 		ret += head_to_html
 
-		@data.sort{|x,y| x[1]["timestamp"] <=> y[1]["timestamp"]}.each{|participant,poll|
+		sort_data($cgi.include?("sort") ? $cgi["sort"] : "timestamp").each{|participant,poll|
 			ret += "<tr>\n"
 			ret += "<td class='name'>#{participant}</td>\n"
 			@head.sort.each{|columntitle,columndescription|
@@ -154,6 +148,23 @@ COMMENT
 
 		ret += "</div>\n"
 		ret
+	end
+	def add_remove_column_htmlform
+		return <<END
+<div id='add_remove_column'>
+<fieldset><legend>add/remove column</legend>
+<form method='post' action='.'>
+<div>
+		<label for='columntitle'>Columntitle: </label>
+		<input id='columntitle' size='16' type='text' value='#{$cgi["add_remove_column"]}' name='add_remove_column' />
+		<label for='columndescription'>Description: </label>
+		<input id='columndescription' size='30' type='text' value='#{$cgi["columndescription"]}' name='columndescription' />
+		<input type='submit' value='add/remove column' />
+</div>
+</form>
+</fieldset>
+</div>
+END
 	end
 	def add_participant(name, agreed)
 		htmlname = CGI.escapeHTML(name.strip)
