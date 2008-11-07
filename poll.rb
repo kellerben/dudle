@@ -1,3 +1,4 @@
+require "hash"
 require "yaml"
 
 class Poll
@@ -10,14 +11,15 @@ class Poll
 		@comment = []
 		store "Poll #{name} created"
 	end
-	def sort_data field
+	def sort_data fields
 		@data.sort{|x,y|
-			if field == "name"
-				x[0] <=> y[0]
-			elsif x[1][field].nil? or y[1][field].nil?
-				x[1][field].to_s <=> y[1][field].to_s
+			if fields.include?("name")
+				until fields.pop == "name"
+				end
+				cmp =  x[1].compare_by_values(y[1],fields) == 0
+				return cmp == 0 ? x[0] <=> y[0] : cmp
 			else
-				x[1][field] <=> y[1][field]
+				return x[1].compare_by_values(y[1],fields)
 			end
 		}
 	end
@@ -37,7 +39,7 @@ class Poll
 
 		ret += head_to_html
 
-		sort_data($cgi.include?("sort") ? $cgi["sort"] : "timestamp").each{|participant,poll|
+		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
 			ret += "<tr>\n"
 			ret += "<td class='name'>#{participant}</td>\n"
 			@head.sort.each{|columntitle,columndescription|
@@ -169,12 +171,13 @@ END
 		@head.each_key{|columntitle|
 			@data[htmlname][columntitle] = agreed[columntitle.to_s]
 		}
-		store "Participant #{name} edited"
+		store "Participant #{name.strip} edited"
 	end
 	def invite_delete(name)
-		if @data.has_key?(name)
-			@data.delete(CGI.escapeHTML(name.strip))
-			store "Participant #{name} deleted"
+		htmlname = CGI.escapeHTML(name.strip)
+		if @data.has_key?(htmlname)
+			@data.delete(htmlname)
+			store "Participant #{name.strip} deleted"
 		else
 			add_participant(name,{})
 		end
@@ -188,7 +191,7 @@ END
 		`export LC_ALL=de_DE.UTF-8; bzr commit -m '#{CGI.escapeHTML(comment)}'`
 	end
 	def add_comment name, comment
-		@comment << [Time.now, CGI.escapeHTML(name), CGI.escapeHTML(comment.strip).gsub("\r\n","<br />")]
+		@comment << [Time.now, CGI.escapeHTML(name.strip), CGI.escapeHTML(comment.strip).gsub("\r\n","<br />")]
 		store "Comment added by #{name}"
 	end
 	def delete_comment index
@@ -212,18 +215,19 @@ end
 
 if __FILE__ == $0
 require 'test/unit'
+require 'cgi'
+require 'pp'
 
 SITE = "glvhc_8nuv_8fchi09bb12a-23_uvc"
 class Poll
 	attr_accessor :head, :data, :comment
+	def store comment
+	end
 end
 
 class PollTest < Test::Unit::TestCase
 	def setup
-		@poll = Poll.new
-	end
-	def teardown
-		File.delete("#{SITE}.yaml") if File.exists?("#{SITE}.yaml")
+		@poll = Poll.new(SITE, false)
 	end
 	def test_init
 		assert(@poll.head.empty?)
@@ -234,20 +238,11 @@ class PollTest < Test::Unit::TestCase
 		assert_equal(Time, @poll.data["bla"]["timestamp"].class)
 		assert(@poll.data["bla"]["Item 2"])
 	end
-	def test_delete
-		@poll.data["bla"] = {}
-		@poll.delete(" bla ")
+	def test_invite_delete
+		@poll.invite_delete(" bla ")
+		assert_equal(Hash, @poll.data["bla"].class)
+		@poll.invite_delete("   bla  ")
 		assert(@poll.data.empty?)
-	end
-	def test_store
-		@poll.add_remove_column("uaie","descriptionfoobar")
-		@poll.add_remove_column("gfia","")
-		@poll.add_participant("bla",{"uaie"=>"maybe", "gfia"=>"yes"})
-		@poll.add_comment("blabla","commentblubb")
-		@poll.store
-		assert_equal(@poll.data,YAML::load_file("#{SITE}.yaml").data)
-		assert_equal(@poll.head,YAML::load_file("#{SITE}.yaml").head)
-		assert_equal(@poll.comment,YAML::load_file("#{SITE}.yaml").comment)
 	end
 	def test_add_comment
 		@poll.add_comment("blabla","commentblubb")

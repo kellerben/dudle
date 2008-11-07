@@ -2,17 +2,11 @@ require "date"
 require "poll"
 
 class DatePoll < Poll
-	def sort_data field
-		@data.sort{|x,y|
-			if field == "name"
-				x[0] <=> y[0]
-			elsif field == "timestamp"
-				x[1][field] <=> y[1][field]
-			else
-				datefield = Date.parse(field)
-				x[1][datefield].to_s <=> y[1][datefield].to_s
-			end
+	def sort_data fields
+		datefields = fields.collect{|field| 
+			field == "timestamp" || field == "name" ? field : Date.parse(field) 
 		}
+		super datefields
 	end 
 	def head_to_html
 		ret = "<tr><td></td>\n"
@@ -108,12 +102,16 @@ end
 
 if __FILE__ == $0
 require 'test/unit'
+class DatePoll
+	def store comment
+	end
+end
+
+SITE="gbfuaibe"
+
 class DatePollTest < Test::Unit::TestCase
 	def setup
-		@poll = DatePoll.new
-	end
-	def teardown
-		File.delete("#{SITE}.yaml") if File.exists?("#{SITE}.yaml")
+		@poll = DatePoll.new(SITE, false)
 	end
 	def test_add_remove_column
 #		how to test cgi class?
