@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-load "/home/ben/src/lib.rb/pphtml.rb"
-require "pp"
 require "yaml"
 require "cgi"
 
