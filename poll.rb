@@ -12,16 +12,16 @@ class Poll
 		store "Poll #{name} created"
 	end
 	def sort_data fields
-		@data.sort{|x,y|
-			if fields.include?("name")
-				until fields.pop == "name"
-				end
-				cmp =  x[1].compare_by_values(y[1],fields) == 0
-				return cmp == 0 ? x[0] <=> y[0] : cmp
-			else
-				return x[1].compare_by_values(y[1],fields)
+		if fields.include?("name")
+			until fields.pop == "name"
 			end
-		}
+			@data.sort{|x,y|
+				cmp = x[1].compare_by_values(y[1],fields) 
+				cmp == 0 ? x[0] <=> y[0] : cmp
+			}
+		else
+			@data.sort{|x,y| x[1].compare_by_values(y[1],fields) }
+		end
 	end
 	def head_to_html
 		ret = "<tr><th><a href='?sort=name'>Name</a></th>\n"
@@ -38,7 +38,6 @@ class Poll
 		ret += "<table border='1'>\n"
 
 		ret += head_to_html
-
 		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
 			ret += "<tr>\n"
 			ret += "<td class='name'>#{participant}</td>\n"
