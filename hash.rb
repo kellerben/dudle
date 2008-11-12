@@ -1,8 +1,8 @@
 class Hash
 	def compare_by_values(other, fieldarray)
 		return  0 if fieldarray.size == 0
-		return -1 if  self[fieldarray[0]].nil?
-		return  1 if other[fieldarray[0]].nil?
+		return  1 if  self[fieldarray[0]].nil?
+		return -1 if other[fieldarray[0]].nil?
 
 		if self[fieldarray[0]] == other[fieldarray[0]]
 			if fieldarray.size == 1

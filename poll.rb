@@ -46,11 +46,11 @@ class Poll
 				case poll[columntitle]
 				when nil
 					value = UNKNOWN
-				when "yes"
+				when "0 yes"
 					value = YES
-				when "no"
+				when "2 no"
 					value = NO
-				when "maybe"
+				when "1 maybe"
 					value = MAYBE
 				end
 				ret += "<td class='#{klasse}' title='#{participant}: #{columntitle}'>#{value}</td>\n"
@@ -66,13 +66,13 @@ class Poll
 			ret += "<td class='checkboxes'>
 			<table><tr>
 			<td class='input-yes'>#{YES}</td>
-			<td><input type='radio' value='yes' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
+			<td><input type='radio' value='0 yes' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
 			</tr><tr>
 			<td class='input-no'>#{NO}</td>
-			<td><input type='radio' value='no' name='add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
+			<td><input type='radio' value='2 no' name='add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
 			</tr><tr>
 			<td class='input-maybe'>#{MAYBE}</td>
-			<td><input type='radio' value='maybe' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
+			<td><input type='radio' value='1 maybe' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
 			</tr></table>
 			</td>\n"
 		}
@@ -86,9 +86,9 @@ class Poll
 			yes = 0
 			undecided = 0
 			@data.each_value{|participant|
-				if participant[columntitle] == "yes"
+				if participant[columntitle] == "0 yes"
 					yes += 1
-				elsif !participant.has_key?(columntitle) or participant[columntitle] == "maybe"
+				elsif !participant.has_key?(columntitle) or participant[columntitle] == "1 maybe"
 					undecided += 1
 				end
 			}
@@ -166,7 +166,7 @@ END
 	end
 	def add_participant(name, agreed)
 		htmlname = CGI.escapeHTML(name.strip)
-		@data[htmlname] = {"timestamp" => Time.now}
+		@data[htmlname] = {"timestamp" => Time.now }
 		@head.each_key{|columntitle|
 			@data[htmlname][columntitle] = agreed[columntitle.to_s]
 		}
