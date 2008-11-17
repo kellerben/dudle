@@ -1,3 +1,9 @@
+/********************************
+ * Author:  Benjamin Kellermann *
+ * Licence: CC-by-sa 3.0        *
+ *          see Licence         *
+ *******************************/
+
 td.yes, input.choosen  { background-color:#0F0; }
 td.no { background-color:#F00; }
 td.maybe { background-color:#FF0; }

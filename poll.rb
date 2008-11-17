@@ -1,3 +1,9 @@
+################################
+# Author:  Benjamin Kellermann #
+# Licence: CC-by-sa 3.0        #
+#          see Licence         #
+################################
+
 require "hash"
 require "yaml"
 
@@ -12,16 +18,16 @@ class Poll
 		store "Poll #{name} created"
 	end
 	def sort_data fields
-		@data.sort{|x,y|
-			if fields.include?("name")
-				until fields.pop == "name"
-				end
-				cmp =  x[1].compare_by_values(y[1],fields) == 0
-				return cmp == 0 ? x[0] <=> y[0] : cmp
-			else
-				return x[1].compare_by_values(y[1],fields)
+		if fields.include?("name")
+			until fields.pop == "name"
 			end
-		}
+			@data.sort{|x,y|
+				cmp = x[1].compare_by_values(y[1],fields) 
+				cmp == 0 ? x[0] <=> y[0] : cmp
+			}
+		else
+			@data.sort{|x,y| x[1].compare_by_values(y[1],fields) }
+		end
 	end
 	def head_to_html
 		ret = "<tr><th><a href='?sort=name'>Name</a></th>\n"
@@ -38,7 +44,6 @@ class Poll
 		ret += "<table border='1'>\n"
 
 		ret += head_to_html
-
 		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
 			ret += "<tr>\n"
 			ret += "<td class='name'>#{participant}</td>\n"
@@ -48,11 +53,11 @@ class Poll
 				when nil
 					value = UNKNOWN
 					klasse = "undecided"
-				when "yes"
+				when "0 yes"
 					value = YES
-				when "no"
+				when "2 no"
 					value = NO
-				when "maybe"
+				when "1 maybe"
 					value = MAYBE
 				end
 				ret += "<td class='#{klasse}' title='#{participant}: #{columntitle}'>#{value}</td>\n"
@@ -68,13 +73,13 @@ class Poll
 			ret += "<td class='checkboxes'>
 			<table><tr>
 			<td class='input-yes'>#{YES}</td>
-			<td><input type='radio' value='yes' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
+			<td><input type='radio' value='0 yes' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
 			</tr><tr>
 			<td class='input-no'>#{NO}</td>
-			<td><input type='radio' value='no' name='add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
+			<td><input type='radio' value='2 no' name='add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
 			</tr><tr>
 			<td class='input-maybe'>#{MAYBE}</td>
-			<td><input type='radio' value='maybe' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
+			<td><input type='radio' value='1 maybe' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
 			</tr></table>
 			</td>\n"
 		}
@@ -88,9 +93,9 @@ class Poll
 			yes = 0
 			undecided = 0
 			@data.each_value{|participant|
-				if participant[columntitle] == "yes"
+				if participant[columntitle] == "0 yes"
 					yes += 1
-				elsif !participant.has_key?(columntitle) or participant[columntitle] == "maybe"
+				elsif !participant.has_key?(columntitle) or participant[columntitle] == "1 maybe"
 					undecided += 1
 				end
 			}
@@ -168,7 +173,7 @@ END
 	end
 	def add_participant(name, agreed)
 		htmlname = CGI.escapeHTML(name.strip)
-		@data[htmlname] = {"timestamp" => Time.now}
+		@data[htmlname] = {"timestamp" => Time.now }
 		@head.each_key{|columntitle|
 			@data[htmlname][columntitle] = agreed[columntitle.to_s]
 		}

@@ -1,3 +1,9 @@
+################################
+# Author:  Benjamin Kellermann #
+# Licence: CC-by-sa 3.0        #
+#          see Licence         #
+################################
+
 require "date"
 require "poll"
 

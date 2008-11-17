@@ -1,4 +1,11 @@
 #!/usr/bin/env ruby
+
+################################
+# Author:  Benjamin Kellermann #
+# Licence: CC-by-sa 3.0        #
+#          see Licence         #
+################################
+
 require "rubygems"
 require "atom"
 require "yaml"
