@@ -94,5 +94,18 @@ $htmlout += <<CREATE
 </fieldset>
 CREATE
 
+$htmlout += <<CHARSET
+<fieldset><legend>--verbose</legend>
+<a href="http://dudle.inf.tu-dresden.de/src/">Get the sourcecode.</a>
+<br />
+Checkout using <a href="http://bazaar-vcs.org/">bazaar</a>:
+<br />
+bzr branch http://dudle.inf.tu-dresden.de/src/ dudle
+<br />
+<a href="mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?subject=Feedback to dudle">give feedback</a>
+</fieldset>
+CHARSET
+
 $htmlout += "</body></html>"
+
 
