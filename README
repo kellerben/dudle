@@ -1,0 +1,9 @@
+Author:
+   Benjamin Kellermann <Benjamin dot Kellermann at tu-dresden in germany>
+Requirements:
+ * ruby, ruby-atom
+ * bzr
+
+Just place this application into a directory where cgi-scripts are evaluated.
+The webserver needs the permission to write into the directory!
+
