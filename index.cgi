@@ -2,13 +2,11 @@
 require "yaml"
 require "cgi"
 
+load "config.rb"
+
 if __FILE__ == $0
 
 $cgi = CGI.new
-
-TYPE = "text/html"
-CHARSET = "utf-8"
-#CONTENTTYPE = "application/xhtml+xml; charset=utf-8"
 
 utfcookie = CGI::Cookie.new("utf", "true")
 utfcookie.path = "/"
@@ -54,6 +52,9 @@ else
 	load "overview.rb"
 end
 
+TYPE = "text/html"
+#TYPE = "application/xhtml+xml"
+CHARSET = "utf-8"
 $cgi.out("type" => TYPE ,"charset" => CHARSET,"cookie" => utfcookie, "Cache-Control" => "no-cache"){$htmlout}
 end
 

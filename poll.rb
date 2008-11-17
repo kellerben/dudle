@@ -43,10 +43,11 @@ class Poll
 			ret += "<tr>\n"
 			ret += "<td class='name'>#{participant}</td>\n"
 			@head.sort.each{|columntitle,columndescription|
-				klasse = poll[columntitle].nil? ? "undecided" : poll[columntitle]
-				case poll[columntitle]
+				klasse = poll[columntitle]
+				case klasse 
 				when nil
 					value = UNKNOWN
+					klasse = "undecided"
 				when "yes"
 					value = YES
 				when "no"
@@ -188,7 +189,7 @@ END
 			out << self.to_yaml
 			out.chmod(0660)
 		end
-		`export LC_ALL=de_DE.UTF-8; bzr commit -m '#{CGI.escapeHTML(comment)}'`
+		vcs_commit(CGI.escapeHTML(comment))
 	end
 	def add_comment name, comment
 		@comment << [Time.now, CGI.escapeHTML(name.strip), CGI.escapeHTML(comment.strip).gsub("\r\n","<br />")]

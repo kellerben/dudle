@@ -6,7 +6,7 @@ Dir.chdir(olddir)
 
 if $cgi.include?("revision")
 	REVISION=$cgi["revision"].to_i
-	table = YAML::load(`export LC_ALL=de_DE.UTF-8; bzr cat -r #{REVISION} data.yaml`)
+	table = YAML::load(vcs_cat(REVISION, "data.yaml"))
 else
 	table = YAML::load_file("data.yaml")
 end
@@ -50,9 +50,9 @@ table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comme
 
 $htmlout += table.to_html
 
-MAXREV=`bzr revno`.to_i
+MAXREV=vcs_revno
 REVISION=MAXREV unless defined?(REVISION)
-log = `export LC_ALL=de_DE.UTF-8; bzr log --forward`.split("-"*60)
+log = vcs_history
 log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
 log.shift
 log.collect!{|t,c| [DateTime.parse(t),c]}

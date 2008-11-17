@@ -4,16 +4,16 @@ require "atom"
 require "yaml"
 require "cgi"
 
+$cgi = CGI.new
+
+load "config.rb"
+
 def readhistory dir
 	log = `export LC_ALL=de_DE.UTF-8; bzr log -r -10.. "#{dir}"`.split("-"*60)
 	log.collect!{|s| s.scan(/\nrevno: (.*)\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
 	log.shift
 	log.collect!{|r,t,c| [r.to_i,DateTime.parse(t),c]}
 end
-
-cgi = CGI.new
-
-SITEURL = "http://#{cgi.server_name}#{cgi.script_name.gsub(/atom.cgi$/,"")}"
 
 feed = Atom::Feed.new 
 if File.exist?("data.yaml")
@@ -75,4 +75,4 @@ else
 
 end
 
-cgi.out("type" => "application/atom+xml"){ feed.to_xml }
+$cgi.out("type" => "application/atom+xml"){ feed.to_xml }

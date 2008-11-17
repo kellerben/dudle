@@ -14,11 +14,11 @@ if $cgi.include?("create_poll")
 	unless File.exist?(SITE)
 		Dir.mkdir(SITE)
 		Dir.chdir(SITE)
-		`bzr init`
+		vcs_init
 		File.symlink("../index.cgi","index.cgi")
 		File.symlink("../atom.cgi","atom.cgi")
 		File.open("data.yaml","w").close
-		`bzr add data.yaml`
+		vcs_add("data.yaml")
 		hidden = ($cgi["hidden"] == "true")
 		case $cgi["poll_type"]
 		when "Poll"
@@ -33,7 +33,7 @@ if $cgi.include?("create_poll")
 <legend>Info</legend>
 Poll #{SITE} created successfull!
 <br />
-Please remember the url (<a href="#{SITE}">#{$cgi.server_name}#{$cgi.script_name.gsub(/index.cgi$/,"")}#{SITE}</a>) while it will not be visible here.
+Please remember the url (<a href="#{SITE}">#{SITEURL}#{SITE}</a>) while it will not be visible here.
 </fieldset>
 HIDDENINFO
 		end
