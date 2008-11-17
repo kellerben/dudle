@@ -1,3 +1,9 @@
+################################
+# Author:  Benjamin Kellermann #
+# Licence: CC-by-sa 3.0        #
+#          see Licence         #
+################################
+
 class Hash
 	def compare_by_values(other, fieldarray)
 		return  0 if fieldarray.size == 0
