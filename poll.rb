@@ -194,7 +194,7 @@ END
 			out << self.to_yaml
 			out.chmod(0660)
 		end
-		vcs_commit(CGI.escapeHTML(comment))
+		VCS.commit(CGI.escapeHTML(comment))
 	end
 	def add_comment name, comment
 		@comment << [Time.now, CGI.escapeHTML(name.strip), CGI.escapeHTML(comment.strip).gsub("\r\n","<br />")]

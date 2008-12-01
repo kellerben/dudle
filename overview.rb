@@ -20,11 +20,11 @@ if $cgi.include?("create_poll")
 	unless File.exist?(SITE)
 		Dir.mkdir(SITE)
 		Dir.chdir(SITE)
-		vcs_init
+		VCS.init
 		File.symlink("../index.cgi","index.cgi")
 		File.symlink("../atom.cgi","atom.cgi")
 		File.open("data.yaml","w").close
-		vcs_add("data.yaml")
+		VCS.add("data.yaml")
 		hidden = ($cgi["hidden"] == "true")
 		case $cgi["poll_type"]
 		when "Poll"

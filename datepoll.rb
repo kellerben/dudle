@@ -108,6 +108,7 @@ end
 
 if __FILE__ == $0
 require 'test/unit'
+require 'pp'
 class DatePoll
 	def store comment
 	end
@@ -115,18 +116,22 @@ end
 
 SITE="gbfuaibe"
 
+require "cgi"
+CGI_PARAMS={"add_remove_column_month" => ["2008-02"]}
+CGI_COOKIES={}	
+$cgi = CGI.new
+
 class DatePollTest < Test::Unit::TestCase
 	def setup
 		@poll = DatePoll.new(SITE, false)
 	end
 	def test_add_remove_column
-#		how to test cgi class?
-#		assert(!@poll.add_remove_column("bla"))
-#		assert(!@poll.add_remove_column("31-02-2001"))
-#		assert(@poll.add_remove_column("2008-02-20"))
-#		assert_equal(Date,@poll.head[0].class)
-#		assert(@poll.add_remove_column(" 2008-02-20  "))
-#		assert(@poll.head.empty?)
+		assert(!@poll.add_remove_column("foo", "bar"))
+		assert(!@poll.add_remove_column("31", "31.02.2008 ;--)"))
+		assert(@poll.add_remove_column("20", "correct date"))
+		assert_equal("correct date",@poll.head[Date.parse("2008-02-20")])
+		assert(@poll.add_remove_column("20", "foobar"))
+		assert(@poll.head.empty?)
 	end
 
 end
