@@ -13,8 +13,6 @@ require "cgi"
 
 $cgi = CGI.new
 
-load "config.rb"
-
 def readhistory dir
 	log = `export LC_ALL=de_DE.UTF-8; bzr log -r -10.. "#{dir}"`.split("-"*60)
 	log.collect!{|s| s.scan(/\nrevno: (.*)\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
@@ -26,6 +24,7 @@ feed = Atom::Feed.new
 if File.exist?("data.yaml")
 	olddir = File.expand_path(".")
 	Dir.chdir("..")
+	load "config.rb"
 	require "poll"
 	require "datepoll"
 	Dir.chdir(olddir)
@@ -49,6 +48,7 @@ if File.exist?("data.yaml")
 	}
 
 else
+	load "config.rb"
 	require "poll"
 	require "datepoll"
 	feed.title = "dudle"
