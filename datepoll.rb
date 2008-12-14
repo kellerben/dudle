@@ -74,7 +74,7 @@ END
 		7.times{|i| ret += "<th>#{Date::ABBR_DAYNAMES[(i+1)%7]}</th>" }
 		ret += "</tr><tr>\n"
 		
-		(startdate.wday-1).times{
+		((startdate.wday+7-1)%7).times{
 			ret += "<td></td>"
 		}
 		d = startdate
