@@ -39,14 +39,16 @@ class DatePoll < Poll
 			rescue ArgumentError
 				olddate = $cgi.params["add_remove_column_month"][1]
 				case $cgi["add_remove_column_month"]
-				when YEARBACK
+				when CGI.unescapeHTML(YEARBACK)
 					startdate = Date.parse("#{olddate}-1")-365
-				when MONTHBACK
+				when CGI.unescapeHTML(MONTHBACK)
 					startdate = Date.parse("#{olddate}-1")-1
-				when MONTHFORWARD
+				when CGI.unescapeHTML(MONTHFORWARD)
 					startdate = Date.parse("#{olddate}-1")+31
-				when YEARFORWARD 
+				when CGI.unescapeHTML(YEARFORWARD)
 					startdate = Date.parse("#{olddate}-1")+366
+				else
+					exit
 				end
 				startdate = Date.parse("#{startdate.year}-#{startdate.month}-1")
 			end
