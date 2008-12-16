@@ -72,14 +72,14 @@ class Poll
 		@head.sort.each{|columntitle,columndescription|
 			ret += "<td class='checkboxes'>
 			<table><tr>
-			<td class='input-yes'>#{YES}</td>
-			<td><input type='radio' value='0 yes' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
+			<td class='input-yes'><label for='add_participant_checked_#{columntitle}_yes'>#{YES}</label></td>
+			<td><input type='radio' value='0 yes' id='add_participant_checked_#{columntitle}_yes' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
 			</tr><tr>
-			<td class='input-no'>#{NO}</td>
-			<td><input type='radio' value='2 no' name='add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
+			<td class='input-no'><label for='add_participant_checked_#{columntitle}_no'>#{NO}</label></td>
+			<td><input type='radio' value='2 no' id='add_participant_checked_#{columntitle}_no' name='add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
 			</tr><tr>
-			<td class='input-maybe'>#{MAYBE}</td>
-			<td><input type='radio' value='1 maybe' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
+			<td class='input-maybe'><label for='add_participant_checked_#{columntitle}_maybe'>#{MAYBE}</label></td>
+			<td><input type='radio' value='1 maybe' id='add_participant_checked_#{columntitle}_maybe' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
 			</tr></table>
 			</td>\n"
 		}
