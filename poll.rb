@@ -173,11 +173,14 @@ END
 	end
 	def add_participant(name, agreed)
 		htmlname = CGI.escapeHTML(name.strip)
-		@data[htmlname] = {"timestamp" => Time.now }
-		@head.each_key{|columntitle|
-			@data[htmlname][columntitle] = agreed[columntitle.to_s]
-		}
-		store "Participant #{name.strip} edited"
+		if htmlname == ""
+			htmlname = "Anonymous ##{rand(1000)}"
+		end
+			@data[htmlname] = {"timestamp" => Time.now }
+			@head.each_key{|columntitle|
+				@data[htmlname][columntitle] = agreed[columntitle.to_s]
+			}
+			store "Participant #{name.strip} edited"
 	end
 	def invite_delete(name)
 		htmlname = CGI.escapeHTML(name.strip)
