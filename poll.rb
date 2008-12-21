@@ -175,6 +175,7 @@ END
 		htmlname = CGI.escapeHTML(name.strip)
 		if htmlname == ""
 			htmlname = "Anonymous ##{rand(1000)}"
+			name = htmlname
 		end
 			@data[htmlname] = {"timestamp" => Time.now }
 			@head.each_key{|columntitle|
