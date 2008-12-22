@@ -175,6 +175,7 @@ END
 		htmlname = CGI.escapeHTML(name.strip)
 		if htmlname == ""
 			maximum = @data.keys.collect{|e| e.scan(/^Anonymous #(\d*)/).flatten[0]}.compact.collect{|i| i.to_i}.max
+			maximum ||= 0
 			htmlname = "Anonymous ##{maximum + 1}"
 			name = htmlname
 		end
