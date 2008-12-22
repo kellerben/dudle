@@ -174,7 +174,8 @@ END
 	def add_participant(name, agreed)
 		htmlname = CGI.escapeHTML(name.strip)
 		if htmlname == ""
-			htmlname = "Anonymous ##{rand(1000)}"
+			maximum = @data.keys.collect{|e| e.scan(/^Anonymous #(\d*)/).flatten[0]}.compact.collect{|i| i.to_i}.max
+			htmlname = "Anonymous ##{maximum + 1}"
 			name = htmlname
 		end
 			@data[htmlname] = {"timestamp" => Time.now }
