@@ -9,9 +9,9 @@ require "yaml"
 
 class Poll
 	attr_reader :head, :name, :hidden
-	def initialize name,hidden
+	def initialize name
 		@name = name
-		@hidden = hidden
+		@hidden = false
 		@head = {}
 		@data = {}
 		@comment = []

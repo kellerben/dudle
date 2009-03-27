@@ -25,24 +25,13 @@ if $cgi.include?("create_poll")
 		File.symlink("../atom.cgi","atom.cgi")
 		File.open("data.yaml","w").close
 		VCS.add("data.yaml")
-		hidden = ($cgi["hidden"] == "true")
 		case $cgi["poll_type"]
 		when "Poll"
-			Poll.new SITE, hidden
+			Poll.new SITE
 		when "DatePoll"
-			DatePoll.new SITE, hidden
+			DatePoll.new SITE
 		end
 		Dir.chdir("..")
-		if hidden
-			$htmlout += <<HIDDENINFO
-<fieldset>
-<legend>Info</legend>
-Poll #{SITE} created successfull!
-<br />
-Please remember the url (<a href="#{SITE}">#{SITEURL}#{SITE}</a>) while it will not be visible here.
-</fieldset>
-HIDDENINFO
-		end
 	else
 		$htmlout += "<fieldset><legend>Error</legend>This poll already exists!</fieldset>"
 	end
@@ -87,10 +76,6 @@ $htmlout += <<CREATE
 			<option value="DatePoll">date</option>
 		</select>
 	</td>
-</tr>
-<tr>
-	<td><label title="#{hidden_tip = "do not list the poll here (you have to remember the link)"}" for="hidden">Hidden?:</label></td>
-	<td><input id="hidden" type="checkbox" name="hidden" value="true" title="#{hidden_tip}" /></td>
 </tr>
 <tr>
 	<td colspan='2'><input type='submit' value='create' /></td>
