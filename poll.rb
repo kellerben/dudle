@@ -223,6 +223,12 @@ END
 		store "Column #{columntitle} #{action}"
 		true
 	end
+
+	def toggle_hidden
+		@hidden = !@hidden
+		store "Hidden status changed!"
+	end
+
 end
 
 if __FILE__ == $0

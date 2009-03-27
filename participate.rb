@@ -53,6 +53,7 @@ end
 
 table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi.include?("comment")
 table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
+table.toggle_hidden if $cgi.include?("toggle_hidden")
 
 $htmlout += table.to_html
 
@@ -124,5 +125,19 @@ $htmlout += <<ADDCOMMENT
 	</fieldset>
 </div>
 ADDCOMMENT
+
+$htmlout +=<<HIDDEN
+<div id='toggle_hidden'>
+	<fieldset>
+		<legend>Toggle Hidden flag</legend>
+		<form method='post' action='.'>
+			<div>
+				<input type='hidden' name='toggle_hidden' value='toggle' />
+				<input type='submit' value='#{table.hidden ? "unhide" : "hide"}' />
+			</div>
+		</form>
+	</fieldset>
+</div>
+HIDDEN
 
 $htmlout += "</body></html>"
