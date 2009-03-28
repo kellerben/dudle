@@ -1,25 +1,26 @@
+BZRCMD="export LC_ALL=de_DE.UTF-8; bzr"
 class VCS
 	def VCS.init
-		`bzr init`
+		`#{BZRCMD} init`
 	end
 
 	def VCS.add file
-		`bzr add #{file}`
+		`#{BZRCMD} add #{file}`
 	end
 
 	def VCS.revno
-		`bzr revno`.to_i
+		`#{BZRCMD} revno`.to_i
 	end
 
 	def VCS.cat revision, file
-		`export LC_ALL=de_DE.UTF-8;bzr cat -r #{revision} #{file}`
+		`#{BZRCMD} cat -r #{revision} #{file}`
 	end
 
 	def VCS.history
-		`export LC_ALL=de_DE.UTF-8; bzr log --forward`.split("-"*60)
+		`#{BZRCMD} log --forward`.split("-"*60)
 	end
 
 	def VCS.commit comment
-		`export LC_ALL=de_DE.UTF-8; bzr commit -m '#{comment}'`
+		`#{BZRCMD} commit -m '#{comment}'`
 	end
 end
