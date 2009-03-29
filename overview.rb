@@ -9,8 +9,10 @@ require "datepoll"
 
 $htmlout += <<HEAD
 <head>
-<title>dudle</title>
-<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />
+	<title>dudle</title>
+	<meta http-equiv="Content-Type" content="#{TYPE}; charset=#{CHARSET}" /> 
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />
 </head>
 <body>
 HEAD
