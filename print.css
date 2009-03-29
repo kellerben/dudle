@@ -51,6 +51,10 @@ th {
 	background-color:black;
 	font-weight: normal;
 }
+th a{
+	color: white;
+	text-decoration: none;
+}
 td.date { 
 	color: Gray;
 	text-align: left;

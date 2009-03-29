@@ -70,7 +70,7 @@ $htmlout += <<ADDCOMMENT
 				<label for='Commentname'>Name: </label>
 				<input id='Commentname' value='anonymous' type='text' name='commentname' />
 				<br />
-				<textarea cols='50' rows='6' name='comment' ></textarea>
+				<textarea cols='50' rows='7' name='comment' ></textarea>
 				<br />
 				<input type='submit' value='Submit' />
 			</div>
