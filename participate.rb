@@ -19,7 +19,7 @@ end
 
 $htmlout += <<HEAD
 <head>
-	<meta http-equiv="Content-Type" content="#{TYPE}"; charset="#{CHARSET}" /> 
+	<meta http-equiv="Content-Type" content="#{TYPE}; charset=#{CHARSET}" /> 
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<title>dudle - #{table.name}</title>
 	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
