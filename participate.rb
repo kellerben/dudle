@@ -45,18 +45,41 @@ if $cgi.include?("add_participant")
 	table.add_participant($cgi["add_participant"],agreed)
 end
 
-table.invite_delete($cgi["invite_delete"])	if $cgi.include?("invite_delete")
-
-if $cgi.include?("add_remove_column")
-	$htmlout += "Could not add/remove column #{$cgi["add_remove_column"]}" unless table.add_remove_column($cgi["add_remove_column"],$cgi["columndescription"])
-end
-
 table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi.include?("comment")
 table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
-table.toggle_hidden if $cgi.include?("toggle_hidden")
 
-$htmlout += table.to_html
+# POLL
+$htmlout += <<POLLTABLE
+<div id='polltable'>
+<form method='post' action='.'>
+#{table.to_html}
+</form>
+</div>
+POLLTABLE
 
+$htmlout += table.comment_to_html
+
+
+# ADD COMMENT
+$htmlout += <<ADDCOMMENT
+<div id='add_comment'>
+	<fieldset>
+		<legend>Comment</legend>
+		<form method='post' action='.'>
+			<div>
+				<label for='Commentname'>Name: </label>
+				<input id='Commentname' value='anonymous' type='text' name='commentname' />
+				<br />
+				<textarea cols='50' rows='6' name='comment' ></textarea>
+				<br />
+				<input type='submit' value='Submit' />
+			</div>
+		</form>
+	</fieldset>
+</div>
+ADDCOMMENT
+
+# HISTORY
 MAXREV=VCS.revno
 REVISION=MAXREV unless defined?(REVISION)
 log = VCS.history
@@ -92,53 +115,15 @@ $htmlout += "</table>"
 $htmlout += "</fieldset>"
 $htmlout += "</div>"
 
-$htmlout += <<INVITEDELETE
-<div id='invite_delete'>
+
+$htmlout +=<<CONFIG
+<div id='configlink'>
 	<fieldset>
-		<legend>invite/delete participant</legend>
-		<form method='post' action='.'>
-			<div>
-				<input size='16' value='#{$cgi["invite_delete"]}' type='text' name='invite_delete' />
-				<input type='submit' value='invite/delete' />
-			</div>
-		</form>
+		<legend>Configure the Poll</legend>
+		<a href='config.cgi' style='text-decoration:none'>config</a>
 	</fieldset>
 </div>
-INVITEDELETE
-
-$htmlout += table.add_remove_column_htmlform
-
-$htmlout += <<ADDCOMMENT
-<div id='add_comment'>
-	<fieldset>
-		<legend>Comment</legend>
-		<form method='post' action='.'>
-			<div>
-				<label for='Commentname'>Name: </label>
-				<input id='Commentname' value='anonymous' type='text' name='commentname' />
-				<br />
-				<textarea cols='50' rows='10' name='comment' ></textarea>
-				<br />
-				<input type='submit' value='Submit' />
-			</div>
-		</form>
-	</fieldset>
-</div>
-ADDCOMMENT
-
-$htmlout +=<<HIDDEN
-<div id='toggle_hidden'>
-	<fieldset>
-		<legend>Toggle Hidden flag</legend>
-		<form method='post' action='.'>
-			<div>
-				<input type='hidden' name='toggle_hidden' value='toggle' />
-				<input type='submit' value='#{table.hidden ? "unhide" : "hide"}' />
-			</div>
-		</form>
-	</fieldset>
-</div>
-HIDDEN
+CONFIG
 
 $htmlout += "</body>"
 

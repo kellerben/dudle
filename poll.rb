@@ -38,10 +38,8 @@ class Poll
 		ret += "</tr>\n"
 		ret
 	end
-	def to_html
-		ret = "<div id='polltable'>\n"
-		ret += "<form method='post' action='.'>\n"
-		ret += "<table border='1'>\n"
+	def to_html(config = false)
+		ret = "<table border='1'>\n"
 
 		ret += head_to_html
 		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
@@ -65,27 +63,9 @@ class Poll
 			ret += "<td class='date'>#{poll['timestamp'].strftime('%d.%m, %H:%M')}</td>"
 			ret += "</tr>\n"
 		}
-		
-		# PARTICIPATE
-		ret += "<tr id='add_participant'>\n"
-		ret += "<td class='name'><input size='16' type='text' name='add_participant' title='To change a line, add a new person with the same name!' /></td>\n"
-		@head.sort.each{|columntitle,columndescription|
-			ret += "<td class='checkboxes'>
-			<table><tr>
-			<td class='input-yes'><label for='add_participant_checked_#{columntitle}_yes'>#{YES}</label></td>
-			<td><input type='radio' value='0 yes' id='add_participant_checked_#{columntitle}_yes' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
-			</tr><tr>
-			<td class='input-no'><label for='add_participant_checked_#{columntitle}_no'>#{NO}</label></td>
-			<td><input type='radio' value='2 no' id='add_participant_checked_#{columntitle}_no' name='add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
-			</tr><tr>
-			<td class='input-maybe'><label for='add_participant_checked_#{columntitle}_maybe'>#{MAYBE}</label></td>
-			<td><input type='radio' value='1 maybe' id='add_participant_checked_#{columntitle}_maybe' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
-			</tr></table>
-			</td>\n"
-		}
-		ret += "<td class='checkboxes'><input type='submit' value='add/edit' /></td>\n"
 
-		ret += "</tr>\n"
+		# PARTICIPATE
+		ret += participate_to_html unless config
 
 		# SUMMARY
 		ret += "<tr><td class='name'>total</td>\n"
@@ -125,10 +105,33 @@ class Poll
 
 		ret += "</tr>"
 		ret += "</table>\n"
-		ret += "</form>\n"
-		ret += "</div>"
-		
-		ret += "<div id='comments'>"
+		ret
+	end
+	def participate_to_html
+		ret = "<tr id='add_participant'>\n"
+		ret += "<td class='name'><input size='16' type='text' name='add_participant' title='To change a line, add a new person with the same name!' /></td>\n"
+		@head.sort.each{|columntitle,columndescription|
+			ret += "<td class='checkboxes'>
+			<table><tr>
+			<td class='input-yes'><label for='add_participant_checked_#{columntitle}_yes'>#{YES}</label></td>
+			<td><input type='radio' value='0 yes' id='add_participant_checked_#{columntitle}_yes' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
+			</tr><tr>
+			<td class='input-no'><label for='add_participant_checked_#{columntitle}_no'>#{NO}</label></td>
+			<td><input type='radio' value='2 no' id='add_participant_checked_#{columntitle}_no' name='add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
+			</tr><tr>
+			<td class='input-maybe'><label for='add_participant_checked_#{columntitle}_maybe'>#{MAYBE}</label></td>
+			<td><input type='radio' value='1 maybe' id='add_participant_checked_#{columntitle}_maybe' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
+			</tr></table>
+			</td>\n"
+		}
+		ret += "<td class='checkboxes'><input type='submit' value='add/edit' /></td>\n"
+
+		ret += "</tr>\n"
+
+		ret
+	end
+	def comment_to_html
+		ret = "<div id='comments'>"
 		unless @comment.empty?
 			ret	+= "<fieldset><legend>Comments</legend>"
 			@comment.each_with_index{|c,i|
@@ -156,18 +159,12 @@ COMMENT
 	end
 	def add_remove_column_htmlform
 		return <<END
-<div id='add_remove_column'>
-<fieldset><legend>add/remove column</legend>
-<form method='post' action='.'>
 <div>
 		<label for='columntitle'>Columntitle: </label>
 		<input id='columntitle' size='16' type='text' value='#{$cgi["add_remove_column"]}' name='add_remove_column' />
 		<label for='columndescription'>Description: </label>
 		<input id='columndescription' size='30' type='text' value='#{$cgi["columndescription"]}' name='columndescription' />
 		<input type='submit' value='add/remove column' />
-</div>
-</form>
-</fieldset>
 </div>
 END
 	end

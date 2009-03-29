@@ -80,3 +80,10 @@ body {
 h1 {
 	text-align: center;
 }
+
+div#history{
+	min-height: 24ex;
+}
+div#add_comment{
+	float: left; 
+}
