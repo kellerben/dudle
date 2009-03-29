@@ -140,4 +140,5 @@ $htmlout +=<<HIDDEN
 </div>
 HIDDEN
 
-$htmlout += "</body></html>"
+$htmlout += "</body>"
+

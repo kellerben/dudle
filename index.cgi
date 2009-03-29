@@ -38,6 +38,8 @@ else
 	load "overview.rb"
 end
 
+$htmlout += "</html>"
+
 $cgi.out("type" => TYPE ,"charset" => CHARSET,"cookie" => $utfcookie, "Cache-Control" => "no-cache"){$htmlout}
 end
 

@@ -86,6 +86,6 @@ $htmlout += <<CREATE
 CREATE
 
 $htmlout += NOTICE
-$htmlout += "</body></html>"
+$htmlout += "</body>"
 
 
