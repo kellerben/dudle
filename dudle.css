@@ -4,9 +4,9 @@
  *          see Licence         *
  *******************************/
 
-td.yes, input.choosen  { background-color:#0F0; }
-td.no { background-color:#F00; }
-td.maybe { background-color:#FF0; }
+td.ayes, input.choosen  { background-color:#0F0; }
+td.cno { background-color:#F00; }
+td.bmaybe { background-color:#FF0; }
 td.undecided { background-color:#DDD;color:#666 }
 td.name {
 	text-align:right;

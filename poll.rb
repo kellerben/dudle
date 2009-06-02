@@ -9,6 +9,9 @@ require "yaml"
 
 class Poll
 	attr_reader :head, :name, :hidden
+	YESVAL   = "ayes"
+	MAYBEVAL = "bmaybe"
+	NOVAL    = "cno"
 	def initialize name
 		@name = name
 		@hidden = false
@@ -35,6 +38,7 @@ class Poll
 			ret += "<th title='#{columndescription}'><a href='?sort=#{columntitle}'>#{columntitle}</a></th>\n"
 		}
 		ret += "<th><a href='.'>Last Edit</a></th>\n"
+		ret += "<th></th>\n"
 		ret += "</tr>\n"
 		ret
 	end
@@ -51,16 +55,17 @@ class Poll
 				when nil
 					value = UNKNOWN
 					klasse = "undecided"
-				when "0 yes"
+				when YESVAL
 					value = YES
-				when "2 no"
+				when NOVAL
 					value = NO
-				when "1 maybe"
+				when MAYBEVAL
 					value = MAYBE
 				end
 				ret += "<td class='#{klasse}' title='#{participant}: #{columntitle}'>#{value}</td>\n"
 			}
 			ret += "<td class='date'>#{poll['timestamp'].strftime('%d.%m, %H:%M')}</td>"
+			ret += "<td class='date'><a href='?edit=#{CGI.escape(participant)}'>edit</a></td>"
 			ret += "</tr>\n"
 		}
 
@@ -73,9 +78,9 @@ class Poll
 			yes = 0
 			undecided = 0
 			@data.each_value{|participant|
-				if participant[columntitle] == "0 yes"
+				if participant[columntitle] == YESVAL
 					yes += 1
-				elsif !participant.has_key?(columntitle) or participant[columntitle] == "1 maybe"
+				elsif !participant.has_key?(columntitle) or participant[columntitle] == MAYBEVAL
 					undecided += 1
 				end
 			}
@@ -108,21 +113,38 @@ class Poll
 		ret
 	end
 	def participate_to_html
+		checked = {}
+		if $cgi.include?("edit")
+			participant = $cgi["edit"]
+			@head.each_key{|k| checked[k] = @data[participant][k]}
+		else
+			@head.each_key{|k| checked[k] = NOVAL}
+		end
 		ret = "<tr id='add_participant'>\n"
-		ret += "<td class='name'><input size='16' type='text' name='add_participant' title='To change a line, add a new person with the same name!' /></td>\n"
-		@head.sort.each{|columntitle,columndescription|
-			ret += "<td class='checkboxes'>
-			<table><tr>
-			<td class='input-yes'><label for='add_participant_checked_#{columntitle}_yes'>#{YES}</label></td>
-			<td><input type='radio' value='0 yes' id='add_participant_checked_#{columntitle}_yes' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
-			</tr><tr>
-			<td class='input-no'><label for='add_participant_checked_#{columntitle}_no'>#{NO}</label></td>
-			<td><input type='radio' value='2 no' id='add_participant_checked_#{columntitle}_no' name='add_participant_checked_#{columntitle}' title='#{columntitle}' checked='checked' /></td>
-			</tr><tr>
-			<td class='input-maybe'><label for='add_participant_checked_#{columntitle}_maybe'>#{MAYBE}</label></td>
-			<td><input type='radio' value='1 maybe' id='add_participant_checked_#{columntitle}_maybe' name='add_participant_checked_#{columntitle}' title='#{columntitle}' /></td>
-			</tr></table>
+		ret += "<td class='name'>
+			<input size='16' 
+				type='text' 
+				name='add_participant'
+				value='#{participant}'
+				title='To change a line, add a new person with the same name!' />
 			</td>\n"
+		@head.sort.each{|columntitle,columndescription|
+			ret += "<td class='checkboxes'><table>"
+			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
+				ret += "<tr>
+					<td class='input-#{valbinary}'>
+						<label for='add_participant_checked_#{columntitle}_#{valbinary}'>#{valhuman}</label>
+					</td>
+					<td>
+						<input type='radio' 
+							value='#{valbinary}' 
+							id='add_participant_checked_#{columntitle}_#{valbinary}' 
+							name='add_participant_checked_#{columntitle}' 
+							title='#{columntitle}' #{checked[columntitle] == valbinary ? "checked='checked'":""}/>
+					</td>
+			</tr>"
+			}
+			ret += "</table></td>"
 		}
 		ret += "<td class='checkboxes'><input type='submit' value='add/edit' /></td>\n"
 
