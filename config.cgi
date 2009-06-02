@@ -54,7 +54,7 @@ $htmlout = <<HTMLHEAD
 	<h1>#{table.name}</h1>
 HTMLHEAD
 
-table.invite_delete($cgi["invite_delete"])	if $cgi.include?("invite_delete")
+table.invite_delete($cgi["invite_delete"])	if $cgi.include?("invite_delete") and $cgi["invite_delete"] != ""
 
 if $cgi.include?("add_remove_column")
 	$htmlout += "Could not add/remove column #{$cgi["add_remove_column"]}" unless table.add_remove_column($cgi["add_remove_column"],$cgi["columndescription"])
