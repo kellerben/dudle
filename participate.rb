@@ -72,7 +72,7 @@ $htmlout += <<ADDCOMMENT
 				<br />
 				<textarea cols='50' rows='7' name='comment' ></textarea>
 				<br />
-				<input type='submit' value='Submit' />
+				<input type='submit' value='Submit comment' />
 			</div>
 		</form>
 	</fieldset>
