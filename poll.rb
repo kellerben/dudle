@@ -155,8 +155,9 @@ class Poll
 	end
 	def comment_to_html
 		ret = "<div id='comments'>"
+		ret	+= "<fieldset><legend>Comments</legend>"
+
 		unless @comment.empty?
-			ret	+= "<fieldset><legend>Comments</legend>"
 			@comment.each_with_index{|c,i|
 				time,name,comment = c
 				ret += <<COMMENT
@@ -174,8 +175,23 @@ class Poll
 </form>
 COMMENT
 			}
-			ret += "</fieldset>"
 		end
+		
+		# ADD COMMENT
+		ret += <<ADDCOMMENT
+		<form method='post' action='.'>
+			<div>
+				<fieldset>
+					<legend>
+						<input value='anonymous' type='text' name='commentname' size='1' /> says 
+					</legend>
+					<textarea cols='50' rows='7' name='comment' ></textarea>
+					<br /><input type='submit' value='Submit comment' />
+				</fieldset>
+			</div>
+		</form>
+ADDCOMMENT
+			ret += "</fieldset>"
 
 		ret += "</div>\n"
 		ret
