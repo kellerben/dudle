@@ -49,7 +49,7 @@ class Poll
 			ret += "<tr>\n"
 			ret += "<td class='name' #{$cgi["edit"] == participant ? "id='active'":""}>"
 			ret += participant
-			ret += " <sup><a href='?edit=#{CGI.escape(participant)}'>edit</a></sup>"
+			ret += " <sup><a href='?edit=#{CGI.escape(participant)}'>edit</a></sup>" unless config
 			ret += "</td>\n"
 			@head.sort.each{|columntitle,columndescription|
 				klasse = poll[columntitle]
