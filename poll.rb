@@ -38,7 +38,6 @@ class Poll
 			ret += "<th title='#{columndescription}'><a href='?sort=#{columntitle}'>#{columntitle}</a></th>\n"
 		}
 		ret += "<th><a href='.'>Last Edit</a></th>\n"
-		ret += "<th></th>\n"
 		ret += "</tr>\n"
 		ret
 	end
@@ -48,7 +47,10 @@ class Poll
 		ret += head_to_html
 		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
 			ret += "<tr>\n"
-			ret += "<td class='name'>#{participant}</td>\n"
+			ret += "<td class='name' #{$cgi["edit"] == participant ? "id='active'":""}>"
+			ret += participant
+			ret += " <sup><a href='?edit=#{CGI.escape(participant)}'>edit</a></sup>"
+			ret += "</td>\n"
 			@head.sort.each{|columntitle,columndescription|
 				klasse = poll[columntitle]
 				case klasse 
@@ -65,7 +67,6 @@ class Poll
 				ret += "<td class='#{klasse}' title='#{participant}: #{columntitle}'>#{value}</td>\n"
 			}
 			ret += "<td class='date'>#{poll['timestamp'].strftime('%d.%m, %H:%M')}</td>"
-			ret += "<td class='date'><a href='?edit=#{CGI.escape(participant)}'>edit</a></td>"
 			ret += "</tr>\n"
 		}
 

@@ -11,6 +11,9 @@ td.undecided { background-color:#DDD;color:#666 }
 td.name {
 	text-align:right;
 }
+td#active{
+	background-color:#A00;
+}
 input.historynavi{
 	border-width: 0px; 
 	border-style: none;
