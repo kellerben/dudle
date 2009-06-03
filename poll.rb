@@ -183,7 +183,7 @@ COMMENT
 			<div>
 				<fieldset>
 					<legend>
-						<input value='anonymous' type='text' name='commentname' size='1' /> says 
+						<input value='anonymous' type='text' name='commentname' size='9ex' /> says&nbsp;
 					</legend>
 					<textarea cols='50' rows='7' name='comment' ></textarea>
 					<br /><input type='submit' value='Submit comment' />
