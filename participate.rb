@@ -67,7 +67,7 @@ if $cgi.include?("add_participant")
 	table.add_participant($cgi["add_participant"],agreed)
 end
 
-table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi.include?("comment")
+table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi["comment"] != ""
 table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
 
 # POLL
