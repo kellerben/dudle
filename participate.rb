@@ -28,9 +28,10 @@ $htmlout += <<HEAD
 	<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />
 </head>
 <body>
-<small>
-	<a href='..' style='text-decoration:none'>#{BACK}</a>
-	<a href='config.cgi' style='text-decoration:none'>config</a>
+<div>
+	<small>
+		<a href='..' style='text-decoration:none'>#{BACK}</a>
+		<a href='config.cgi' style='text-decoration:none'>config</a>
 HEAD
 	
 # HISTORY
@@ -51,7 +52,7 @@ $htmlout +=" history:"
 		$htmlout += "</a>" if REVISION != i
 	end
 end
-$htmlout += "</small>"
+$htmlout += "</small></div>"
 
 
 # TABLE
