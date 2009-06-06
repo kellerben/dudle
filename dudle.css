@@ -4,6 +4,7 @@
  *          see Licence         *
  *******************************/
 
+
 td.ayes, input.choosen  { background-color:#0F0; }
 td.cno { background-color:#F00; }
 td.bmaybe { background-color:#FF0; }
@@ -50,8 +51,11 @@ td {
 	border-width: 0px;
 	padding: 1px 3px;
 }
-td.sum, td.date, td.name, td.checkboxes { 
+td.sum, tr.participantrow, tr#add_participant, tr#summary { 
 	background-color:Silver;
+}
+tr.participantrow:hover {
+	background: #AAA;
 }
 th { 
 	padding: 1px 3px;

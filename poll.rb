@@ -46,7 +46,7 @@ class Poll
 
 		ret += head_to_html
 		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
-			ret += "<tr>\n"
+			ret += "<tr class='participantrow'>\n"
 			ret += "<td class='name' #{$cgi["edit"] == participant ? "id='active'":""}>"
 			ret += participant
 			ret += " <sup><a href='?edit=#{CGI.escape(participant)}'>edit</a></sup>" unless config
@@ -74,7 +74,7 @@ class Poll
 		ret += participate_to_html unless config
 
 		# SUMMARY
-		ret += "<tr><td class='name'>total</td>\n"
+		ret += "<tr id='summary'><td class='name'>total</td>\n"
 		@head.sort.each{|columntitle,columndescription|
 			yes = 0
 			undecided = 0
