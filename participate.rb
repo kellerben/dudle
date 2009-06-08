@@ -11,7 +11,7 @@ require "datepoll"
 Dir.chdir(olddir)
 
 if $cgi.include?("revision")
-	REVISION=$cgi["revision"].to_i
+	REVISION=$cgi["revision"]
 	table = YAML::load(VCS.cat(REVISION, "data.yaml"))
 else
 	table = YAML::load_file("data.yaml")

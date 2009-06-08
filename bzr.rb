@@ -13,7 +13,7 @@ class VCS
 	end
 
 	def VCS.cat revision, file
-		`#{BZRCMD} cat -r #{revision} #{file}`
+		`#{BZRCMD} cat -r #{revision.to_i} #{file}`
 	end
 
 	def VCS.history
@@ -21,6 +21,6 @@ class VCS
 	end
 
 	def VCS.commit comment
-		`#{BZRCMD} commit -m '#{comment}'`
+		`#{BZRCMD} commit -m \"#{comment}\"`
 	end
 end
