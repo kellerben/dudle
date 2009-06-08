@@ -21,6 +21,12 @@ class VCS
 	end
 
 	def VCS.commit comment
-		`#{BZRCMD} commit -m \"#{comment}\"`
+		tmpfile = "/tmp/commitcomment.#{rand(10000)}"
+		File.open(tmpfile,"w"){|f|
+			f<<comment
+		}
+		ret = `#{BZRCMD} commit -F #{tmpfile}`
+		File.delete(tmpfile)
+		ret
 	end
 end
