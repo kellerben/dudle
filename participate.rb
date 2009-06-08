@@ -47,8 +47,8 @@ $htmlout +=" history:"
 ((REVISION-2)..(REVISION+2)).each do |i|
 	if i >0 && i<=MAXREV
 		$htmlout += " "
-		$htmlout += "<a href='?revision=#{i}' title=\"#{log[i-1][0].strftime('%d.%m, %H:%M')}: #{CGI.escapeHTML(log[i-1][1])}\">" if REVISION != i
-		$htmlout += "#{i}"
+		$htmlout += "<a href='?revision=#{i}' >" if REVISION != i
+		$htmlout += "<span title=\"#{log[i-1][0].strftime('%d.%m, %H:%M')}: #{CGI.escapeHTML(log[i-1][1])}\">#{i}</span>"
 		$htmlout += "</a>" if REVISION != i
 	end
 end
