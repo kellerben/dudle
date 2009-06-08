@@ -49,7 +49,7 @@ class Poll
 			ret += "<tr class='participantrow'>\n"
 			ret += "<td class='name' #{$cgi["edit"] == participant ? "id='active'":""}>"
 			ret += participant
-			ret += " <sup><a href='?edit=#{CGI.escape(participant)}'>edit</a></sup>" unless config
+			ret += " <sup><a href=\"?edit=#{CGI.escapeHTML(CGI.escape(participant))}\">edit</a></sup>" unless config
 			ret += "</td>\n"
 			@head.sort.each{|columntitle,columndescription|
 				klasse = poll[columntitle]
@@ -119,6 +119,7 @@ class Poll
 			participant = $cgi["edit"]
 			@head.each_key{|k| checked[k] = @data[participant][k]}
 		else
+			participant = ""
 			@head.each_key{|k| checked[k] = NOVAL}
 		end
 		ret = "<tr id='add_participant'>\n"
@@ -126,7 +127,7 @@ class Poll
 			<input size='16' 
 				type='text' 
 				name='add_participant'
-				value='#{participant}'
+				value=\"#{CGI.escapeHTML(participant)}\"
 				title='To change a line, add a new person with the same name!' />
 			</td>\n"
 		@head.sort.each{|columntitle,columndescription|
