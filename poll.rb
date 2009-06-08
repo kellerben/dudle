@@ -35,7 +35,7 @@ class Poll
 	def head_to_html
 		ret = "<tr><th><a href='?sort=name'>Name</a></th>\n"
 		@head.sort.each{|columntitle,columndescription|
-			ret += "<th title='#{columndescription}'><a href='?sort=#{columntitle}'>#{columntitle}</a></th>\n"
+			ret += "<th><a title='#{columndescription}' href='?sort=#{columntitle}'>#{columntitle}</a></th>\n"
 		}
 		ret += "<th><a href='.'>Last Edit</a></th>\n"
 		ret += "</tr>\n"
