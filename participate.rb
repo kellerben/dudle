@@ -11,7 +11,7 @@ require "datepoll"
 Dir.chdir(olddir)
 
 if $cgi.include?("revision")
-	REVISION=$cgi["revision"]
+	REVISION=$cgi["revision"].to_i
 	table = YAML::load(VCS.cat(REVISION, "data.yaml"))
 else
 	table = YAML::load_file("data.yaml")
@@ -38,8 +38,8 @@ HEAD
 MAXREV=VCS.revno
 REVISION=MAXREV unless defined?(REVISION)
 log = VCS.history
-log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
 log.shift
+log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
 log.collect!{|t,c| [DateTime.parse(t),c]}
 
 $htmlout +=" history:"
@@ -47,7 +47,7 @@ $htmlout +=" history:"
 ((REVISION-2)..(REVISION+2)).each do |i|
 	if i >0 && i<=MAXREV
 		$htmlout += " "
-		$htmlout += "<a href='?revision=#{i}' title='#{log[i-1][0].strftime('%d.%m, %H:%M')}: #{log[i-1][1]}'>" if REVISION != i
+		$htmlout += "<a href='?revision=#{i}' title=\"#{log[i-1][0].strftime('%d.%m, %H:%M')}: #{CGI.escapeHTML(log[i-1][1])}\">" if REVISION != i
 		$htmlout += "#{i}"
 		$htmlout += "</a>" if REVISION != i
 	end
