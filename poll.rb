@@ -64,7 +64,7 @@ class Poll
 				when MAYBEVAL
 					value = MAYBE
 				end
-				ret += "<td class='#{klasse}' title='#{participant}: #{columntitle}'>#{value}</td>\n"
+				ret += "<td class='#{klasse}' title=\"#{CGI.escapeHTML(participant)}: #{columntitle}\">#{value}</td>\n"
 			}
 			ret += "<td class='date'>#{poll['timestamp'].strftime('%d.%m, %H:%M')}</td>"
 			ret += "</tr>\n"
@@ -184,7 +184,7 @@ COMMENT
 			<div>
 				<fieldset>
 					<legend>
-						<input value='anonymous' type='text' name='commentname' size='9ex' /> says&nbsp;
+						<input value='anonymous' type='text' name='commentname' size='9' /> says&nbsp;
 					</legend>
 					<textarea cols='50' rows='7' name='comment' ></textarea>
 					<br /><input type='submit' value='Submit comment' />
