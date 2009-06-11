@@ -12,7 +12,7 @@ td.undecided { background-color:#DDD;color:#666 }
 td.name {
 	text-align:right;
 }
-td#active{
+#active{
 	background-color:#A00;
 }
 input.historynavi{

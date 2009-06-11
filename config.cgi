@@ -24,7 +24,6 @@ $htmlout = <<HEAD
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 HEAD
 
-if File.exist?("data.yaml")
 olddir = File.expand_path(".")
 Dir.chdir("..")
 load "charset.rb"
@@ -35,7 +34,7 @@ Dir.chdir(olddir)
 
 table = YAML::load_file("data.yaml")
 
-$htmlout = <<HTMLHEAD
+$htmlout += <<HTMLHEAD
 <head>
 	<meta http-equiv="Content-Type" content="#{TYPE}; charset=#{CHARSET}" /> 
 	<meta http-equiv="Content-Style-Type" content="text/css" />
@@ -76,7 +75,7 @@ INVITEDELETE
 $htmlout +=<<ADD_REMOVE
 <div id='add_remove_column'>
 <fieldset><legend>add/remove column</legend>
-<form method='post' action='config.cgi'>
+<form method='post' action=''>
 #{table.add_remove_column_htmlform}
 </form>
 </fieldset>
@@ -87,7 +86,7 @@ $htmlout +=<<HIDDEN
 <div id='toggle_hidden'>
 	<fieldset>
 		<legend>Toggle Hidden flag</legend>
-		<form method='post' action='config.cgi'>
+		<form method='post' action=''>
 			<div>
 				<input type='hidden' name='toggle_hidden' value='toggle' />
 				<input type='submit' value='#{table.hidden ? "unhide" : "hide"}' />
@@ -98,11 +97,6 @@ $htmlout +=<<HIDDEN
 HIDDEN
 
 $htmlout += "</body>"
-else
-	load "charset.rb"
-	load "config.rb"
-	load "overview.rb"
-end
 
 $htmlout += "</html>"
 

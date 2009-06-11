@@ -32,10 +32,14 @@ class Poll
 			@data.sort{|x,y| x[1].compare_by_values(y[1],fields) }
 		end
 	end
-	def head_to_html
+	def head_to_html(config = false)
 		ret = "<tr><th><a href='?sort=name'>Name</a></th>\n"
 		@head.sort.each{|columntitle,columndescription|
-			ret += "<th><a title='#{columndescription}' href='?sort=#{columntitle}'>#{columntitle}</a></th>\n"
+			ret += "<th"
+			ret += " id='active' " if $cgi["editcolumn"] == columntitle
+			ret += "><a title=\"#{columndescription}\" href=\"?sort=#{CGI.escapeHTML(CGI.escape(columntitle))}\">#{CGI.escapeHTML(columntitle)}</a>"
+			ret += "<br/>\n<small><a href=\"?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}#add_remove_column\">edit</a></small>" if config
+			ret += "</th>"
 		}
 		ret += "<th><a href='.'>Last Edit</a></th>\n"
 		ret += "</tr>\n"
@@ -44,7 +48,7 @@ class Poll
 	def to_html(config = false)
 		ret = "<table border='1'>\n"
 
-		ret += head_to_html
+		ret += head_to_html(config)
 		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
 			ret += "<tr class='participantrow'>\n"
 			ret += "<td class='name' #{$cgi["edit"] == participant ? "id='active'":""}>"
@@ -64,7 +68,7 @@ class Poll
 				when MAYBEVAL
 					value = MAYBE
 				end
-				ret += "<td class='#{klasse}' title=\"#{CGI.escapeHTML(participant)}: #{columntitle}\">#{value}</td>\n"
+				ret += "<td class='#{klasse}' title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(columntitle.to_s)}\">#{value}</td>\n"
 			}
 			ret += "<td class='date'>#{poll['timestamp'].strftime('%d.%m, %H:%M')}</td>"
 			ret += "</tr>\n"
@@ -135,14 +139,14 @@ class Poll
 			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
 				ret += "<tr>
 					<td class='input-#{valbinary}'>
-						<label for='add_participant_checked_#{columntitle}_#{valbinary}'>#{valhuman}</label>
+						<label for=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s)}_#{valbinary}\">#{valhuman}</label>
 					</td>
 					<td>
 						<input type='radio' 
 							value='#{valbinary}' 
-							id='add_participant_checked_#{columntitle}_#{valbinary}' 
-							name='add_participant_checked_#{columntitle}' 
-							title='#{columntitle}' #{checked[columntitle] == valbinary ? "checked='checked'":""}/>
+							id=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s)}_#{valbinary}\" 
+							name=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s)}\" 
+							title=\"#{CGI.escapeHTML(columntitle.to_s)}\" #{checked[columntitle] == valbinary ? "checked='checked'":""}/>
 					</td>
 			</tr>"
 			}
@@ -198,12 +202,20 @@ ADDCOMMENT
 		ret
 	end
 	def add_remove_column_htmlform
+		if $cgi.include?("editcolumn")
+			title = $cgi["editcolumn"]
+			description = @head[title]
+			title = CGI.escapeHTML(title)
+		else
+			title = CGI.escapeHTML($cgi["add_remove_column"])
+			description = CGI.escapeHTML($cgi["columndescription"])
+		end
 		return <<END
 <div>
 		<label for='columntitle'>Columntitle: </label>
-		<input id='columntitle' size='16' type='text' value='#{$cgi["add_remove_column"]}' name='add_remove_column' />
+		<input id='columntitle' size='16' type='text' value="#{title}" name='add_remove_column' />
 		<label for='columndescription'>Description: </label>
-		<input id='columndescription' size='30' type='text' value='#{$cgi["columndescription"]}' name='columndescription' />
+		<input id='columndescription' size='30' type='text' value="#{description}" name='columndescription' />
 		<input type='submit' value='add/remove column' />
 </div>
 END
@@ -247,7 +259,7 @@ END
 		store "Comment from #{@comment.delete_at(index)[1]} deleted"
 	end
 	def add_remove_column name, description
-		add_remove_parsed_column CGI.escapeHTML(name.strip), CGI.escapeHTML(description.strip)
+		add_remove_parsed_column name.strip, CGI.escapeHTML(description.strip)
 	end
 	def add_remove_parsed_column columntitle, description
 		if @head.include?(columntitle)

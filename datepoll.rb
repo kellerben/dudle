@@ -14,7 +14,7 @@ class DatePoll < Poll
 		}
 		super datefields
 	end 
-	def head_to_html
+	def head_to_html(config = false)
 		ret = "<tr><td></td>\n"
 		monthhead = Hash.new(0)
 		@head.sort.each{|curdate,curdescription|
