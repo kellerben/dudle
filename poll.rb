@@ -201,6 +201,25 @@ ADDCOMMENT
 		ret += "</div>\n"
 		ret
 	end
+	def history_to_html
+		ret = ""
+		maxrev=VCS.revno
+		revision= defined?(REVISION) ? REVISION : maxrev
+		log = VCS.history
+		log.shift
+		log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
+		log.collect!{|t,c| [DateTime.parse(t),c]}
+
+		((revision-2)..(revision+2)).each do |i|
+			if i >0 && i<=maxrev
+				ret += " "
+				ret += "<a href='?revision=#{i}' >" if revision != i
+				ret += "<span title=\"#{log[i-1][0].strftime('%d.%m, %H:%M')}: #{CGI.escapeHTML(log[i-1][1])}\">#{i}</span>"
+				ret += "</a>" if revision != i
+			end
+		end
+		ret
+	end
 	def add_remove_column_htmlform
 		if $cgi.include?("editcolumn")
 			title = $cgi["editcolumn"]

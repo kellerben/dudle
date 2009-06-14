@@ -15,6 +15,20 @@ if $cgi.include?("revision")
 	table = YAML::load(VCS.cat(REVISION, "data.yaml"))
 else
 	table = YAML::load_file("data.yaml")
+
+	if $cgi.include?("add_participant")
+		agreed = {}
+		$cgi.params.each{|k,v|
+			if k =~ /^add_participant_checked_/
+				agreed[k.gsub(/^add_participant_checked_/,"")] = v[0]
+			end
+		}
+
+		table.add_participant($cgi["add_participant"],agreed)
+	end
+
+	table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi["comment"] != ""
+	table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
 end
 
 $htmlout += <<HEAD
@@ -28,60 +42,26 @@ $htmlout += <<HEAD
 	<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />
 </head>
 <body>
-<div>
-	<small>
-		<a href='..' style='text-decoration:none'>#{BACK}</a>
-		<a href='config.cgi' style='text-decoration:none'>config</a>
+	<div>
+		<small>
+			<a href='..' style='text-decoration:none'>#{BACK}</a>
+			<a href='config.cgi' style='text-decoration:none'>config</a>
+			history:#{table.history_to_html}
+		</small>
+	</div>
 HEAD
-	
-# HISTORY
-MAXREV=VCS.revno
-REVISION=MAXREV unless defined?(REVISION)
-log = VCS.history
-log.shift
-log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
-log.collect!{|t,c| [DateTime.parse(t),c]}
-
-$htmlout +=" history:"
-
-((REVISION-2)..(REVISION+2)).each do |i|
-	if i >0 && i<=MAXREV
-		$htmlout += " "
-		$htmlout += "<a href='?revision=#{i}' >" if REVISION != i
-		$htmlout += "<span title=\"#{log[i-1][0].strftime('%d.%m, %H:%M')}: #{CGI.escapeHTML(log[i-1][1])}\">#{i}</span>"
-		$htmlout += "</a>" if REVISION != i
-	end
-end
-$htmlout += "</small></div>"
-
 
 # TABLE
-$htmlout += "<h1>#{table.name}</h1>"
-if $cgi.include?("add_participant")
-	agreed = {}
-	$cgi.params.each{|k,v|
-		if k =~ /^add_participant_checked_/
-			agreed[k.gsub(/^add_participant_checked_/,"")] = v[0]
-		end
-	}
-
-	table.add_participant($cgi["add_participant"],agreed)
-end
-
-table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi["comment"] != ""
-table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
-
-# POLL
-$htmlout += <<POLLTABLE
+$htmlout += <<TABLE
+<h1>#{table.name}</h1>
 <div id='polltable'>
-<form method='post' action='.'>
-#{table.to_html}
-</form>
+	<form method='post' action='.'>
+		#{table.to_html}
+	</form>
 </div>
-POLLTABLE
+TABLE
 
 $htmlout += table.comment_to_html
-
 
 $htmlout += "</body>"
 

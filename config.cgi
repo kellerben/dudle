@@ -32,7 +32,16 @@ require "poll"
 require "datepoll"
 Dir.chdir(olddir)
 
-table = YAML::load_file("data.yaml")
+if $cgi.include?("revision")
+	REVISION=$cgi["revision"].to_i
+	table = YAML::load(VCS.cat(REVISION, "data.yaml"))
+else
+	table = YAML::load_file("data.yaml")
+
+	table.invite_delete($cgi["invite_delete"])	if $cgi.include?("invite_delete") and $cgi["invite_delete"] != ""
+	table.add_remove_column($cgi["add_remove_column"],$cgi["columndescription"]) if $cgi.include?("add_remove_column")
+	table.toggle_hidden if $cgi.include?("toggle_hidden")
+end
 
 $htmlout += <<HTMLHEAD
 <head>
@@ -42,20 +51,18 @@ $htmlout += <<HTMLHEAD
 	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
 </head>
 <body>
-	<div id='backlink'>
-	<a href='.' style='text-decoration:none'>#{BACK}</a>
+	<div>
+		<small>
+			<a href='.' style='text-decoration:none'>#{BACK}</a>
+			history:#{table.history_to_html}
+		</small>
 	</div>
-	<h1>#{table.name}</h1>
 HTMLHEAD
 
-table.invite_delete($cgi["invite_delete"])	if $cgi.include?("invite_delete") and $cgi["invite_delete"] != ""
-
-if $cgi.include?("add_remove_column")
-	$htmlout += "Could not add/remove column #{$cgi["add_remove_column"]}" unless table.add_remove_column($cgi["add_remove_column"],$cgi["columndescription"])
-end
-table.toggle_hidden if $cgi.include?("toggle_hidden")
-
-$htmlout += table.to_html(config = true)
+$htmlout += <<TABLE
+	<h1>#{table.name}</h1>
+#{table.to_html(config = true)}
+TABLE
 
 $htmlout += <<INVITEDELETE
 <div id='invite_delete'>
