@@ -25,7 +25,7 @@ class VCS
 		File.open(tmpfile,"w"){|f|
 			f<<comment
 		}
-		ret = `#{BZRCMD} commit -F #{tmpfile}`
+		ret = `#{BZRCMD} commit -q -F #{tmpfile}`
 		File.delete(tmpfile)
 		ret
 	end
