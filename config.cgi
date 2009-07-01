@@ -42,7 +42,6 @@ else
 	table.add_remove_column($cgi["add_remove_column"],$cgi["columndescription"]) if $cgi.include?("add_remove_column")
 	table.toggle_hidden if $cgi.include?("toggle_hidden")
 end
-table.init
 
 $htmlout += <<HTMLHEAD
 <head>

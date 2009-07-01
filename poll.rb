@@ -6,6 +6,7 @@
 
 require "hash"
 require "yaml"
+require "time"
 
 class Poll
 	attr_reader :head, :name, :hidden
@@ -210,7 +211,7 @@ ADDCOMMENT
 		log = VCS.history
 		log.shift
 		log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
-		log.collect!{|t,c| [DateTime.parse(t),c]}
+		log.collect!{|t,c| [Time.parse(t),c]}
 
 		((revision-2)..(revision+2)).each do |i|
 			if i >0 && i<=maxrev

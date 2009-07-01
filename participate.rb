@@ -8,7 +8,7 @@ olddir = File.expand_path(".")
 Dir.chdir("..")
 require "poll"
 require "datepoll"
-require "datetimepoll"
+require "timepoll"
 Dir.chdir(olddir)
 
 if $cgi.include?("revision")
@@ -31,8 +31,6 @@ else
 	table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi["comment"] != ""
 	table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
 end
-
-table.init
 
 $htmlout += <<HEAD
 <head>

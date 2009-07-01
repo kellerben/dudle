@@ -6,7 +6,7 @@
 
 require "poll"
 require "datepoll"
-require "datetimepoll"
+require "timepoll"
 
 $htmlout += <<HEAD
 <head>
@@ -32,8 +32,8 @@ if $cgi.include?("create_poll")
 		case $cgi["poll_type"]
 		when "Poll"
 			Poll.new SITE
-		when "DatePoll"
-			DatePoll.new SITE
+		when "TimePoll"
+			TimePoll.new SITE
 		end
 		Dir.chdir("..")
 	else
@@ -77,7 +77,7 @@ $htmlout += <<CREATE
 	<td>
 		<select id="poll_type" name="poll_type">
 			<option value="Poll" selected="selected">normal</option>
-			<option value="DatePoll">date</option>
+			<option value="TimePoll">date</option>
 		</select>
 	</td>
 </tr>

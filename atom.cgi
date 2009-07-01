@@ -10,6 +10,7 @@ require "rubygems"
 require "atom"
 require "yaml"
 require "cgi"
+require "time"
 
 $cgi = CGI.new
 
@@ -17,7 +18,7 @@ def readhistory dir
 	log = `export LC_ALL=de_DE.UTF-8; bzr log -r -10.. "#{dir}"`.split("-"*60)
 	log.collect!{|s| s.scan(/\nrevno: (.*)\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
 	log.shift
-	log.collect!{|r,t,c| [r.to_i,DateTime.parse(t),c]}
+	log.collect!{|r,t,c| [r.to_i,Time.parse(t),c]}
 end
 
 feed = Atom::Feed.new 
