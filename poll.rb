@@ -41,7 +41,7 @@ class Poll
 			ret += "<th"
 			ret += " id='active' " if $cgi["editcolumn"] == columntitle
 			ret += "><a title=\"#{columndescription}\" href=\"?sort=#{CGI.escapeHTML(CGI.escape(columntitle))}\">#{CGI.escapeHTML(columntitle)}</a>"
-			ret += "<br/>\n<small><a href=\"?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}#add_remove_column\">edit</a></small>" if config
+			ret += "<br/>\n<small><a href=\"?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}#add_remove_column\">#{EDIT}</a></small>" if config
 			ret += "</th>"
 		}
 		ret += "<th><a href='.'>Last Edit</a></th>\n"
@@ -56,7 +56,7 @@ class Poll
 			ret += "<tr class='participantrow'>\n"
 			ret += "<td class='name' #{$cgi["edit"] == participant ? "id='active'":""}>"
 			ret += participant
-			ret += " <sup><a href=\"?edit=#{CGI.escapeHTML(CGI.escape(participant))}\">edit</a></sup>" unless config
+			ret += " <sup><a href=\"?edit=#{CGI.escapeHTML(CGI.escape(participant))}\" style='text-decoration: none' >#{EDIT}</a></sup>" unless config
 			ret += "</td>\n"
 			@head.sort.each{|columntitle,columndescription|
 				klasse = poll[columntitle]
