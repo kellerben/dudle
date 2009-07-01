@@ -20,6 +20,8 @@ class Poll
 		@comment = []
 		store "Poll #{name} created"
 	end
+	def init
+	end
 	def sort_data fields
 		if fields.include?("name")
 			until fields.pop == "name"
@@ -230,13 +232,15 @@ ADDCOMMENT
 			description = CGI.escapeHTML($cgi["columndescription"])
 		end
 		return <<END
-<div>
-		<label for='columntitle'>Columntitle: </label>
-		<input id='columntitle' size='16' type='text' value="#{title}" name='add_remove_column' />
-		<label for='columndescription'>Description: </label>
-		<input id='columndescription' size='30' type='text' value="#{description}" name='columndescription' />
-		<input type='submit' value='add/remove column' />
-</div>
+<form method='post' action=''>
+	<div>
+			<label for='columntitle'>Columntitle: </label>
+			<input id='columntitle' size='16' type='text' value="#{title}" name='add_remove_column' />
+			<label for='columndescription'>Description: </label>
+			<input id='columndescription' size='30' type='text' value="#{description}" name='columndescription' />
+			<input type='submit' value='add/remove column' />
+	</div>
+</form>
 END
 	end
 	def add_participant(name, agreed)

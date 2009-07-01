@@ -31,6 +31,8 @@ else
 	table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
 end
 
+table.init
+
 $htmlout += <<HEAD
 <head>
 	<meta http-equiv="Content-Type" content="#{TYPE}; charset=#{CHARSET}" /> 

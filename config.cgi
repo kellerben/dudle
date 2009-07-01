@@ -42,6 +42,7 @@ else
 	table.add_remove_column($cgi["add_remove_column"],$cgi["columndescription"]) if $cgi.include?("add_remove_column")
 	table.toggle_hidden if $cgi.include?("toggle_hidden")
 end
+table.init
 
 $htmlout += <<HTMLHEAD
 <head>
@@ -82,9 +83,7 @@ INVITEDELETE
 $htmlout +=<<ADD_REMOVE
 <div id='add_remove_column'>
 <fieldset><legend>add/remove column</legend>
-<form method='post' action=''>
 #{table.add_remove_column_htmlform}
-</form>
 </fieldset>
 </div>
 ADD_REMOVE

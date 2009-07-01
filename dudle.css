@@ -23,14 +23,19 @@ input.historynavi{
 	background-color: white;
 	color: blue;
 }
+th.weekday{
+	width: 2.5em;
+}
 input.navigation, input.disabled, input.choosen, input.notchoosen {
 	border-width: 1px; 
 	border-style: solid;
 	border-color: black;
 	padding: 0px;
 	cursor: pointer;
-	width: 3.5em;
-	height: 3.5ex;
+	width: 100%;
+	height: 100%;
+/*	width: 3.5em;
+	height: 3.5ex;*/
 }
 input.navigation {
 	color: white; 
