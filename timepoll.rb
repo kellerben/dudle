@@ -9,16 +9,6 @@ require "poll"
 require "time"
 
 class TimePoll < Poll
-	def init
-		#FIXME: quick 'n' dirty hack, because Time <=> Date is not possible and yaml loads Time instead of DateTime!
-		#better solution would be to overwrite <=>
-		@head.each{|k,v| 
-			if k.class == Time
-				@head.delete(k)
-				@head[DateTime.parse(k.to_s)]=v
-			end
-		}
-	end
 	def sort_data fields
 		datefields = fields.collect{|field| 
 			field == "timestamp" || field == "name" ? field : Time.parse(field) 
@@ -46,16 +36,11 @@ class TimePoll < Poll
 		}
 		ret += "</tr><tr><td></td>"
 		head_count("%Y-%m-%d", " %H:%M%Z").each{|title,count|
-			curdate = Date.parse(title)
-			ret += "<th colspan='#{count}'>#{curdate.strftime("%a, %d")}</th>\n"
+			ret += "<th colspan='#{count}'>#{Date.parse(title).strftime("%a, %d")}</th>\n"
 		}
 		ret += "</tr><tr><th><a href='?sort=name'>Name</a></th>"
 		@head.keys.sort.each{|curdate|
-			if curdate.class == Date
-				ret += "<th><a href='?sort=#{curdate.to_s}'>---</a></th>\n"
-			else
-				ret += "<th><a href='?sort=#{curdate.to_s}'>#{curdate.strftime("%H:%M")}</a></th>\n"
-			end
+			ret += "<th><a href='?sort=#{CGI.escapeHTML(CGI.escape(curdate.to_s))}'>#{curdate.strftime("%H:%M")}</a></th>\n"
 		}
 		ret += "<th><a href='.'>Last Edit</a></th></tr>"
 		ret
@@ -108,11 +93,11 @@ END
 		d = startdate
 		while (d.month == startdate.month) do
 			klasse = "notchoosen"
-			klasse = "disabled" if d < Date.today
-			klasse = "choosen" if @head.include?(d)
+			klasse = "disabled" if d < Time.now - 60*60*24
+			klasse = "choosen" if @head.keys.collect{|t|t.strftime("%Y-%m-%d")}.include?(d.strftime("%Y-%m-%d"))
 			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='add_remove_column' value='#{d.day}' /></td>\n"
 			ret += "</tr><tr>\n" if d.wday == 0
-			d = d.next
+			d += 60*60*24
 		end
 		ret += <<END
 </tr></table>
@@ -131,17 +116,21 @@ END
 		ret += "</tr><tr>"
 
 		head_count("%Y-%m-%d","").each{|title,count|
-			curdate = Date.parse(title)
-			ret += "<th>#{curdate.strftime("%a, %d")}</th>\n"
+			ret += "<th>#{Date.parse(title).strftime("%a, %d")}</th>\n"
 		}
 
 		ret += "</tr>"
 
-		["00:00", "10:00","13:00","14:00","20:00"].each{|time|
-			ret +="<tr>\n"
-			@head.sort.collect{|day,descr| 
+
+		days = @head.sort.collect{|day,descr| 
 				Date.parse(day.strftime("%Y-%m-%d"))
-			}.uniq.each{|date|
+			}.uniq
+		
+		@head.keys.collect{|time|
+			time.strftime("%H:%M")
+		}.uniq.sort.each{|time|
+			ret +="<tr>\n"
+			days.each{|date|
 				timestamp = Time.parse("#{date} #{time} #{Time.now.zone}")
 				klasse = "notchoosen"
 				klasse = "disabled" if timestamp < Time.now
@@ -161,14 +150,26 @@ END
 			}
 			ret += "</tr>\n"
 		}
+
+		ret += "<tr>"
+		days.each{|d|
+			ret += <<END
+	<td>
+		<form method='post' action='config.cgi'>
+			<div>
+				<input type='hidden' name='add_remove_column_day' value='#{d.day}' />
+				<input type='hidden' name='add_remove_column_month' value='#{d.strftime("%Y-%m")}' />
+				<input name='add_remove_column' type="text" maxlength="7" style="width: 5ex" /><br />
+				<input name="add_remove_column" type="submit" value="Add" style="width: 100%" />
+			</div>
+		</form>
+	</td>
+END
+		}
+
 		ret += <<END
+		</tr>
 	</table>
-	<form method='post' action='config.cgi'>
-	<div>
-		<input name='add_remove_column' size='1' />
-		<input name="add_remove_column" type="submit" value="Add Time" />
-	</div>
-	</form>
 </div>
 END
 		ret
@@ -177,14 +178,13 @@ END
 		if $cgi.include?("add_remove_column_day")
 			begin
 				parsed_date = YAML::load(Time.parse("#{$cgi["add_remove_column_month"]}-#{$cgi["add_remove_column_day"]} #{col} #{Time.now.zone}").to_yaml)
-				day = Date.parse(parsed_date.to_s)
-				@head.delete(day) if @head.include?(day)
 			rescue ArgumentError
 				return false
 			end
 		else
 			begin
-				parsed_date = YAML::load(Date.parse("#{$cgi["add_remove_column_month"]}-#{col}").to_yaml)
+				earlytime = @head.keys.collect{|t|t.strftime("%H:%M")}.sort[0]
+				parsed_date = YAML::load(Time.parse("#{$cgi["add_remove_column_month"]}-#{col} #{earlytime} #{Time.now.zone}").to_yaml)
 			rescue ArgumentError
 				return false
 			end

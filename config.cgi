@@ -30,6 +30,7 @@ load "charset.rb"
 load "config.rb"
 require "poll"
 require "datepoll"
+require "timepoll"
 Dir.chdir(olddir)
 
 if $cgi.include?("revision")

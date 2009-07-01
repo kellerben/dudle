@@ -28,6 +28,7 @@ if File.exist?("data.yaml")
 	load "config.rb"
 	require "poll"
 	require "datepoll"
+	require "timepoll"
 	Dir.chdir(olddir)
 
 	poll = YAML::load_file("data.yaml")
@@ -52,6 +53,7 @@ else
 	load "config.rb"
 	require "poll"
 	require "datepoll"
+	require "timepoll"
 	feed.title = "dudle"
 	feed.id = "urn:dudle:main"
 	feed.authors << Atom::Person.new(:name => 'dudle automatic notificator')
