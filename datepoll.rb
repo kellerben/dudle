@@ -56,6 +56,7 @@ class DatePoll < Poll
 			startdate = Date.parse("#{Date.today.year}-#{Date.today.month}-1")
 		end
 		ret = <<END
+<form method='post' action=''>
 <div>
 <table><tr>
 END
@@ -89,6 +90,7 @@ END
 </tr></table>
 <input type='hidden' name='add_remove_column_month' value='#{startdate.strftime("%Y-%m")}' />
 </div>
+</form>
 END
 		ret
 	end
