@@ -8,6 +8,7 @@ olddir = File.expand_path(".")
 Dir.chdir("..")
 require "poll"
 require "datepoll"
+require "datetimepoll"
 Dir.chdir(olddir)
 
 if $cgi.include?("revision")
