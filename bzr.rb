@@ -1,4 +1,6 @@
 BZRCMD="export LC_ALL=de_DE.UTF-8; bzr"
+require "time"
+
 class VCS
 	def VCS.init
 		`#{BZRCMD} init`
@@ -18,6 +20,13 @@ class VCS
 
 	def VCS.history
 		`#{BZRCMD} log --forward`.split("-"*60)
+	end
+	
+	def VCS.longhistory dir
+		log = `#{BZRCMD} log -r -10.. "#{dir}"`.split("-"*60)
+		log.collect!{|s| s.scan(/\nrevno: (.*)\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
+		log.shift
+		log.collect!{|r,t,c| [r.to_i,Time.parse(t),c]}
 	end
 
 	def VCS.commit comment
