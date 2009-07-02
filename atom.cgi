@@ -11,7 +11,6 @@ require "atom"
 require "yaml"
 require "cgi"
 require "time"
-load "config.rb"
 
 $cgi = CGI.new
 
