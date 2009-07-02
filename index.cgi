@@ -48,7 +48,7 @@ if $cgi.include?("create_poll")
 		VCS.init
 		File.symlink("../participate.rb","index.cgi")
 		File.symlink("../atom_single.rb","atom.cgi")
-		File.symlink("../config.cgi","config.cgi")
+		File.symlink("../config_poll.rb","config.cgi")
 		File.open("data.yaml","w").close
 		VCS.add("data.yaml")
 		case $cgi["poll_type"]
