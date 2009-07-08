@@ -11,5 +11,6 @@ Licence:
 Just place this application into a directory where cgi-scripts are evaluated.
 The webserver needs the permission to write into the directory!
 
-You may look at config.rb to configure dudle. 
-However, in most cases it should run out-of-the-box.
+Copy config.rb.sample to config.rb to start with a default configuration and make
+sure, that the webserver is allowed to write into the directory and can execute
+ruby + bzr.
