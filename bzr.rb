@@ -1,3 +1,9 @@
+################################
+# Author:  Benjamin Kellermann #
+# Licence: CC-by-sa 3.0        #
+#          see Licence         #
+################################
+
 BZRCMD="export LC_ALL=de_DE.UTF-8; bzr"
 require "time"
 

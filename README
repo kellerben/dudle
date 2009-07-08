@@ -3,6 +3,10 @@ Author:
 Requirements:
  * ruby, ruby-atom
  * bzr
+Licence: 
+   CC-by-sa 3.0 
+   see Licence
+
 
 Just place this application into a directory where cgi-scripts are evaluated.
 The webserver needs the permission to write into the directory!
