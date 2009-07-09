@@ -1,7 +1,7 @@
 ################################
 # Author:  Benjamin Kellermann #
-# Licence: CC-by-sa 3.0        #
-#          see Licence         #
+# License: CC-by-sa 3.0        #
+#          see License         #
 ################################
 
 require "hash"

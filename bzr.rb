@@ -1,7 +1,7 @@
 ################################
 # Author:  Benjamin Kellermann #
-# Licence: CC-by-sa 3.0        #
-#          see Licence         #
+# License: CC-by-sa 3.0        #
+#          see License         #
 ################################
 
 BZRCMD="export LC_ALL=de_DE.UTF-8; bzr"

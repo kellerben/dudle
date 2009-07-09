@@ -3,9 +3,9 @@ Author:
 Requirements:
  * ruby, ruby-atom
  * bzr
-Licence: 
+License: 
    CC-by-sa 3.0 
-   see Licence
+   see License
 
 
 Just place this application into a directory where cgi-scripts are evaluated.
