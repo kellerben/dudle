@@ -1,7 +1,7 @@
 Author:
    Benjamin Kellermann <Benjamin dot Kellermann at tu-dresden in germany>
 Requirements:
- * ruby, ruby-atom
+ * ruby
  * bzr
 License: 
    CC-by-sa 3.0 

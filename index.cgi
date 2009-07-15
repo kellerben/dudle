@@ -35,10 +35,11 @@ $htmlout += <<HEAD
 	<title>dudle</title>
 	<meta http-equiv="Content-Type" content="#{TYPE}; charset=#{CHARSET}" /> 
 	<meta http-equiv="Content-Style-Type" content="text/css" />
-	<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />
-</head>
-<body>
 HEAD
+	
+	$htmlout += '<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />' if File.exists?("atom.cgi")
+
+	$htmlout += "</head><body>"
 
 if $cgi.include?("create_poll")
 	SITE=$cgi["create_poll"]

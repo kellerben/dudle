@@ -62,7 +62,11 @@ $htmlout += <<HEAD
 	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
 	<link rel="stylesheet" type="text/css" href="../print.css" title="print" media="print" />
 	<link rel="stylesheet" type="text/css" href="../print.css" title="print" />
-	<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />
+HEAD
+
+$htmlout += '<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />' if File.exists?("../atom_single.rb")
+
+$htmlout += <<HEAD
 </head>
 <body>
 	<div>
