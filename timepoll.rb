@@ -45,21 +45,23 @@ class TimePoll < Poll
 		ret += "<th><a href='.'>Last Edit</a></th></tr>"
 		ret
 	end
+	load "/home/ben/src/lib.rb/pphtml.rb"
 	def add_remove_column_htmlform
+		ret = ""
 		if $cgi.include?("add_remove_column_month")
-			begin
+			if $cgi.params["add_remove_column_month"].size == 1
 				startdate = Time.parse("#{$cgi["add_remove_column_month"]}-1")
-			rescue ArgumentError
+			else
 				olddate = $cgi.params["add_remove_column_month"][1]
-				case $cgi["add_remove_column_month"]
+				case $cgi.params["add_remove_column_month"][0]
 				when CGI.unescapeHTML(YEARBACK)
-					startdate = Time.parse("#{olddate}-1")-365
+					startdate = Time.parse("#{olddate}-1")-365*24*60*60
 				when CGI.unescapeHTML(MONTHBACK)
-					startdate = Time.parse("#{olddate}-1")-1
+					startdate = Time.parse("#{olddate}-1")-1*24*60*60
 				when CGI.unescapeHTML(MONTHFORWARD)
-					startdate = Time.parse("#{olddate}-1")+31
+					startdate = Time.parse("#{olddate}-1")+31*24*60*60
 				when CGI.unescapeHTML(YEARFORWARD)
-					startdate = Time.parse("#{olddate}-1")+366
+					startdate = Time.parse("#{olddate}-1")+366*24*60*60
 				else
 					exit
 				end
@@ -68,7 +70,7 @@ class TimePoll < Poll
 		else
 			startdate = Time.parse(Date.today.strftime("%Y-%m-1"))
 		end
-		ret = <<END
+		ret += <<END
 <form method='post' action=''>
 <div style="float: left; margin-right: 20px">
 <table><tr>
