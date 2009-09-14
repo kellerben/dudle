@@ -48,7 +48,7 @@ HEAD
 	$htmlout += "</head><body>"
 
 if $cgi.include?("create_poll")
-	SITE=$cgi["create_poll"]
+	SITE=$cgi["create_poll"].gsub(/^\//,"")
 	unless File.exist?(SITE)
 		Dir.mkdir(SITE)
 		Dir.chdir(SITE)
@@ -79,7 +79,7 @@ Dir.glob("*/data.yaml").sort_by{|f|
 }.each{|site|
 	unless YAML::load_file("#{site}/data.yaml").hidden
 		$htmlout += "<tr>"
-		$htmlout += "<td class='site'><a href='#{site}'>#{site}</a></td>"
+		$htmlout += "<td class='site'><a href='./#{CGI.escapeHTML(site).gsub("'","%27")}'>#{CGI.escapeHTML(site)}</a></td>"
 		$htmlout += "<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>"
 		$htmlout += "</tr>"
 	end
