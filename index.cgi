@@ -25,7 +25,13 @@ $htmlout = <<HEAD
 HEAD
 
 load "charset.rb"
-load "config.rb"
+if File.exists?("config.rb")
+	load "config.rb"
+else
+	puts "\nPlease configure me in the file config.rb"
+	exit
+end
+
 require "poll"
 require "datepoll"
 require "timepoll"
