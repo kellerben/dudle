@@ -45,32 +45,31 @@ class TimePoll < Poll
 		ret += "<th><a href='.'>Last Edit</a></th></tr>"
 		ret
 	end
-	load "/home/ben/src/lib.rb/pphtml.rb"
+
 	def add_remove_column_htmlform
-		ret = ""
 		if $cgi.include?("add_remove_column_month")
 			if $cgi.params["add_remove_column_month"].size == 1
-				startdate = Time.parse("#{$cgi["add_remove_column_month"]}-1")
+				startdate = Date.parse("#{$cgi["add_remove_column_month"]}-1")
 			else
 				olddate = $cgi.params["add_remove_column_month"][1]
 				case $cgi.params["add_remove_column_month"][0]
 				when CGI.unescapeHTML(YEARBACK)
-					startdate = Time.parse("#{olddate}-1")-365*24*60*60
+					startdate = Date.parse("#{olddate}-1")-365
 				when CGI.unescapeHTML(MONTHBACK)
-					startdate = Time.parse("#{olddate}-1")-1*24*60*60
+					startdate = Date.parse("#{olddate}-1")-1
 				when CGI.unescapeHTML(MONTHFORWARD)
-					startdate = Time.parse("#{olddate}-1")+31*24*60*60
+					startdate = Date.parse("#{olddate}-1")+31
 				when CGI.unescapeHTML(YEARFORWARD)
-					startdate = Time.parse("#{olddate}-1")+366*24*60*60
+					startdate = Date.parse("#{olddate}-1")+366
 				else
 					exit
 				end
-				startdate = Time.parse(startdate.strftime("%Y-%m-1"))
+				startdate = Date.parse("#{startdate.year}-#{startdate.month}-1")
 			end
 		else
-			startdate = Time.parse(Date.today.strftime("%Y-%m-1"))
+			startdate = Date.parse("#{Date.today.year}-#{Date.today.month}-1")
 		end
-		ret += <<END
+		ret = <<END
 <form method='post' action=''>
 <div style="float: left; margin-right: 20px">
 <table><tr>
@@ -95,11 +94,11 @@ END
 		d = startdate
 		while (d.month == startdate.month) do
 			klasse = "notchoosen"
-			klasse = "disabled" if d < Time.now - 60*60*24
+			klasse = "disabled" if d < Date.today
 			klasse = "choosen" if @head.keys.collect{|t|t.strftime("%Y-%m-%d")}.include?(d.strftime("%Y-%m-%d"))
 			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='add_remove_column' value='#{d.day}' /></td>\n"
 			ret += "</tr><tr>\n" if d.wday == 0
-			d += 60*60*24
+			d = d.next
 		end
 		ret += <<END
 </tr></table>
