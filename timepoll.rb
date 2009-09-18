@@ -40,7 +40,7 @@ class TimePoll < Poll
 		}
 		ret += "</tr><tr><th><a href='?sort=name'>Name</a></th>"
 		@head.keys.sort.each{|curdate|
-			ret += "<th><a href='?sort=#{CGI.escapeHTML(CGI.escape(curdate.to_s))}'>#{curdate.strftime("%H:%M")}</a></th>\n"
+			ret += "<th><a title='#{curdate}' href='?sort=#{CGI.escapeHTML(CGI.escape(curdate.to_s))}'>#{curdate.strftime("%H:%M")}</a></th>\n"
 		}
 		ret += "<th><a href='.'>Last Edit</a></th></tr>"
 		ret
@@ -132,7 +132,7 @@ END
 		}.uniq.sort.each{|time|
 			ret +="<tr>\n"
 			days.each{|date|
-				timestamp = Time.parse("#{date} #{time} #{Time.now.zone}")
+				timestamp = Time.parse("#{date} #{time}")
 				klasse = "notchoosen"
 				klasse = "disabled" if timestamp < Time.now
 				klasse = "choosen" if @head.include?(timestamp)
@@ -140,8 +140,8 @@ END
 <td class='calendarday'>
 	<form method='post' action="config.cgi">
 		<div>
-			<!--Timestamp: #{timestamp.to_s} -->
-			<input class='#{klasse}' type='submit' name='add_remove_column' value='#{time}' />
+			<!--Timestamp: #{timestamp} -->
+			<input title='#{timestamp}' class='#{klasse}' type='submit' name='add_remove_column' value='#{time}' />
 			<input type='hidden' name='add_remove_column_day' value='#{timestamp.day}' />
 			<input type='hidden' name='add_remove_column_month' value='#{timestamp.strftime("%Y-%m")}' />
 		</div>
@@ -178,14 +178,14 @@ END
 	def add_remove_column col,description
 		if $cgi.include?("add_remove_column_day")
 			begin
-				parsed_date = YAML::load(Time.parse("#{$cgi["add_remove_column_month"]}-#{$cgi["add_remove_column_day"]} #{col} #{Time.now.zone}").to_yaml)
+				parsed_date = YAML::load(Time.parse("#{$cgi["add_remove_column_month"]}-#{$cgi["add_remove_column_day"]} #{col}").to_yaml)
 			rescue ArgumentError
 				return false
 			end
 		else
 			begin
 				earlytime = @head.keys.collect{|t|t.strftime("%H:%M")}.sort[0]
-				parsed_date = YAML::load(Time.parse("#{$cgi["add_remove_column_month"]}-#{col} #{earlytime} #{Time.now.zone}").to_yaml)
+				parsed_date = YAML::load(Time.parse("#{$cgi["add_remove_column_month"]}-#{col} #{earlytime}").to_yaml)
 			rescue ArgumentError
 				return false
 			end
