@@ -142,12 +142,12 @@ class Poll
 			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
 				ret += "<tr>
 					<td class='input-#{valbinary}'>
-						<label for=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s)}_#{valbinary}\">#{valhuman}</label>
+						<label for=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\">#{valhuman}</label>
 					</td>
 					<td>
 						<input type='radio' 
 							value='#{valbinary}' 
-							id=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s)}_#{valbinary}\" 
+							id=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\" 
 							name=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s)}\" 
 							title=\"#{CGI.escapeHTML(columntitle.to_s)}\" #{checked[columntitle] == valbinary ? "checked='checked'":""}/>
 					</td>

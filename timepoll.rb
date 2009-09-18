@@ -42,7 +42,7 @@ class TimePoll < Poll
 		@head.keys.sort.each{|curdate|
 			ret += "<th><a title='#{curdate}' href='?sort=#{CGI.escapeHTML(CGI.escape(curdate.to_s))}'>#{curdate.strftime("%H:%M")}</a></th>\n"
 		}
-		ret += "<th><a href='.'>Last Edit</a></th></tr>"
+		ret += "<th><a href='.'>Last Edit</a></th></tr>\n"
 		ret
 	end
 
