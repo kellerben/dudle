@@ -79,7 +79,7 @@ Dir.glob("*/data.yaml").sort_by{|f|
 }.each{|site|
 	unless YAML::load_file("#{site}/data.yaml").hidden
 		$htmlout += "<tr>"
-		$htmlout += "<td class='site'><a href='./#{CGI.escapeHTML(site).gsub("'","%27")}'>#{CGI.escapeHTML(site)}</a></td>"
+		$htmlout += "<td class='site'><a href='./#{CGI.escapeHTML(site).gsub("'","%27")}/'>#{CGI.escapeHTML(site)}</a></td>"
 		$htmlout += "<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>"
 		$htmlout += "</tr>"
 	end
