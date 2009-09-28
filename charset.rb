@@ -25,7 +25,7 @@ if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 else
 	$utfcookie.expires = Time.now-1*60*60*24*36
 	UTFASCII = "<a href='?utf' style='text-decoration:none'>#{CGI.escapeHTML('↩✔✘?–↞←→↠✍')}</a>"
-	BACK     = CGI.escapeHTML("<-")
+	BACK     = CGI.escapeHTML("back")
 	
 	YES      = CGI.escapeHTML('OK')
 	NO       = CGI.escapeHTML('NO')
