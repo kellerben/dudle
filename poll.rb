@@ -221,6 +221,7 @@ ADDCOMMENT
 				ret += "</a>" if revision != i
 			end
 		end
+		ret += " <a href='.' >last</a>" if defined?(REVISION)
 		ret
 	end
 	def add_remove_column_htmlform
