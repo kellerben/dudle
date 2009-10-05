@@ -79,7 +79,7 @@ $htmlout += <<INVITEDELETE
 		<legend>invite/delete participant</legend>
 		<form method='post' action='config.cgi'>
 			<div>
-				<input size='16' value='#{$cgi["invite_delete"]}' type='text' name='invite_delete' />
+				<input size='16' value="#{CGI.escapeHTML($cgi["invite_delete"])}" type='text' name='invite_delete' />
 				<input type='submit' value='invite/delete' />
 			</div>
 		</form>

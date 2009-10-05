@@ -254,7 +254,7 @@ END
 			name = "Anonymous ##{maximum + 1}"
 		end
 		htmlname = CGI.escapeHTML(name)
-		@data.delete(CGI.escapeHTML($edituser))
+		@data.delete(CGI.escapeHTML($edituser)) if $edituser
 		$edituser = htmlname
 		@data[htmlname] = {"timestamp" => Time.now }
 		@head.each_key{|columntitle|
