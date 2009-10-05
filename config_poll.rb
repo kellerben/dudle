@@ -110,6 +110,20 @@ $htmlout +=<<HIDDEN
 </div>
 HIDDEN
 
+$htmlout +=<<REMOVE
+<div id='remove_poll'>
+	<fieldset>
+		<legend>Remove the whole poll</legend>
+		<form method='post' action='remove.cgi'>
+			<div>
+				Warning: This is an irreversible action!<br />
+				<input type='submit' value='remove' />
+			</div>
+		</form>
+	</fieldset>
+</div>
+REMOVE
+
 $htmlout += "</body>"
 
 $htmlout += "</html>"
