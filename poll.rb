@@ -54,9 +54,9 @@ class Poll
 		ret += head_to_html(config)
 		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
 			ret += "<tr class='participantrow'>\n"
-			ret += "<td class='name' #{$cgi["edit"] == participant ? "id='active'":""}>"
+			ret += "<td class='name' #{$edituser == participant ? "id='active'":""}>"
 			ret += participant
-			ret += " <sup><a href=\"?edit=#{CGI.escapeHTML(CGI.escape(participant))}\" style='text-decoration: none' >#{EDIT}</a></sup>" unless config
+			ret += " <sup><a href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\" style='text-decoration: none' >#{EDIT}</a></sup>" unless config
 			ret += "</td>\n"
 			@head.sort.each{|columntitle,columndescription|
 				klasse = poll[columntitle]
@@ -122,8 +122,8 @@ class Poll
 	end
 	def participate_to_html
 		checked = {}
-		if $cgi.include?("edit")
-			participant = $cgi["edit"]
+		if $edituser && @data.include?($edituser)
+			participant = $edituser
 			@head.each_key{|k| checked[k] = @data[participant][k]}
 		else
 			participant = ""
@@ -131,10 +131,11 @@ class Poll
 		end
 		ret = "<tr id='add_participant'>\n"
 		ret += "<td class='name'>
+			<input type='hidden' name='edituser' value=\"#{participant}\" />
 			<input size='16' 
 				type='text' 
 				name='add_participant'
-				value=\"#{CGI.escapeHTML(participant)}\"
+				value=\"#{participant}\"
 				title='To change a line, add a new person with the same name!' />
 			</td>\n"
 		@head.sort.each{|columntitle,columndescription|
@@ -246,18 +247,20 @@ ADDCOMMENT
 END
 	end
 	def add_participant(name, agreed)
-		htmlname = CGI.escapeHTML(name.strip)
-		if htmlname == ""
+		name.strip!
+		if name == ""
 			maximum = @data.keys.collect{|e| e.scan(/^Anonymous #(\d*)/).flatten[0]}.compact.collect{|i| i.to_i}.max
 			maximum ||= 0
-			htmlname = "Anonymous ##{maximum + 1}"
-			name = htmlname
+			name = "Anonymous ##{maximum + 1}"
 		end
-			@data[htmlname] = {"timestamp" => Time.now }
-			@head.each_key{|columntitle|
-				@data[htmlname][columntitle] = agreed[columntitle.to_s]
-			}
-			store "Participant #{name.strip} edited"
+		htmlname = CGI.escapeHTML(name)
+		@data.delete(CGI.escapeHTML($edituser))
+		$edituser = htmlname
+		@data[htmlname] = {"timestamp" => Time.now }
+		@head.each_key{|columntitle|
+			@data[htmlname][columntitle] = agreed[columntitle.to_s]
+		}
+		store "Participant #{name.strip} edited"
 	end
 	def invite_delete(name)
 		htmlname = CGI.escapeHTML(name.strip)

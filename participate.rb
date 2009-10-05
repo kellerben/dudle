@@ -33,6 +33,10 @@ load "charset.rb"
 load "config.rb"
 Dir.chdir(olddir)
 
+if $cgi.include?("edituser")
+	$edituser = $cgi["edituser"]
+end
+
 if $cgi.include?("revision")
 	REVISION=$cgi["revision"].to_i
 	table = YAML::load(VCS.cat(REVISION, "data.yaml"))
