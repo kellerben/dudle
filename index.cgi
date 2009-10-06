@@ -57,8 +57,10 @@ if $cgi.include?("create_poll")
 		File.symlink("../atom_single.rb","atom.cgi")
 		File.symlink("../config_poll.rb","config.cgi")
 		File.symlink("../remove_poll.rb","remove.cgi")
-		File.open("data.yaml","w").close
-		VCS.add("data.yaml")
+		["data.yaml",".htaccess",".htdigest"].each{|f|
+			File.open(f,"w").close
+			VCS.add(f)
+		}
 		case $cgi["poll_type"]
 		when "Poll"
 			Poll.new SITE

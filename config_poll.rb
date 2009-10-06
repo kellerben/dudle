@@ -41,15 +41,79 @@ class << Time
 	end
 end
 
+acusers = {}
+
 if $cgi.include?("revision")
 	REVISION=$cgi["revision"].to_i
 	table = YAML::load(VCS.cat(REVISION, "data.yaml"))
+	VCS.cat(REVISION,".htdigest").each_line{|l| 
+		v,k = l.scan(/^(.*):(.*):.*$/).flatten
+		acusers[k] = v
+	}
 else
 	table = YAML::load_file("data.yaml")
+	File.open(".htdigest","r").each_line{|l| 
+		v,k = l.scan(/^(.*):(.*):.*$/).flatten
+		acusers[k] = v
+	}
 
 	table.invite_delete($cgi["invite_delete"])	if $cgi.include?("invite_delete") and $cgi["invite_delete"] != ""
 	table.add_remove_column($cgi["add_remove_column"],$cgi["columndescription"]) if $cgi.include?("add_remove_column")
 	table.toggle_hidden if $cgi.include?("toggle_hidden")
+
+	def writehtaccess(acusers)
+		File.open(".htaccess","w"){|htaccess|
+			if acusers["admin"]
+				htaccess << <<HTACCESS
+<Files ~ "^(config|remove).cgi$">
+	AuthType digest
+	AuthName "admin"
+	AuthUserFile #{File.expand_path(".")}/.htdigest
+	Require valid-user
+</Files>
+HTACCESS
+			end
+			if acusers["participant"]
+				htaccess << <<HTACCESS
+AuthType digest
+AuthName "participant"
+AuthUserFile #{File.expand_path(".")}/.htdigest
+Require valid-user
+HTACCESS
+				VCS.commit("Access Control changed")
+			end
+		}
+	end
+
+	if $cgi.include?("ac_create")
+		user = $cgi["ac_name"]
+		# only admin and participant is allowed 
+		if user == "admin" || user == "participant"
+			fork {
+				IO.popen("htdigest .htdigest #{user} #{user}","w+"){|htdigest|
+					htdigest.sync
+					2.times{ 
+						htdigest.puts($cgi["ac_password"])
+					}
+				}
+			}
+			acusers[user] = user
+			writehtaccess(acusers)
+		end
+	elsif $cgi.include?("ac_delete_admin") || $cgi.include?("ac_delete_participant")
+		["admin", "participant"].each{|u| user = u if $cgi.include?("ac_delete_#{u}") }
+		htdigest = []
+		File.open(".htdigest","r").each_line{|line|
+			htdigest << line
+		}
+		File.open(".htdigest","w"){|f|
+			htdigest.each{|line|
+				f << line if line.scan(/^#{user}:#{user}:/).empty?
+			}
+		}
+		acusers.delete(user)
+		writehtaccess(acusers)
+	end
 end
 
 $htmlout += <<HTMLHEAD
@@ -95,6 +159,50 @@ $htmlout +=<<ADD_REMOVE
 </fieldset>
 </div>
 ADD_REMOVE
+
+$htmlout +=<<ACL
+<div id='access_control'>
+	<fieldset>
+		<legend>Change Access Control settings</legend>
+		If you want to restrict the poll, add the participant user.
+		If you want to restrict the configuration interface seperately, please add an admin user!
+		<form method='post' action=''>
+			<table>
+				<tr>
+					<th>Name</th><th>Password</th>
+				</tr>
+ACL
+acusers.each{|action,user|
+		$htmlout += <<USER
+<tr>
+	<td>#{user}</td>
+	<td>*****************</td>
+	<td>
+		<input type='submit' name='ac_delete_#{user}' value='delete' />
+	</td>
+</tr>
+USER
+}
+$htmlout += <<ACL
+				<tr>
+					<td>
+						<select name='ac_name'>
+							<option value='participant'>participant</option>
+							<option value='admin'>admin</option>
+						</select>
+					</td>
+					<td>
+						<input size='16' value="" type='password' name='ac_password' />
+					</td>
+					<td>
+						<input type='submit' name='ac_create' value='add' />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</fieldset>
+</div>
+ACL
 
 $htmlout +=<<HIDDEN
 <div id='toggle_hidden'>

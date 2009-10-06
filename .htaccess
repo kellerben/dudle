@@ -1,0 +1,5 @@
+<Files ~ "^\.ht.*">
+	deny from all
+	satisfy all
+	ErrorDocument 403 "You are not allowed to access .ht* files!"
+</Files>
