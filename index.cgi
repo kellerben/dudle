@@ -105,7 +105,7 @@ $htmlout += <<CREATE
 <table>
 <tr>
 	<td><label title="#{poll_name_tip = "the name equals the link under which you receive the poll"}" for="poll_name">Name:</label></td>
-	<td><input title="#{poll_name_tip}" id="poll_name" size='16' type='text' name='create_poll' value='#{$cgi["create_poll"]}' /></td>
+	<td><input title="#{poll_name_tip}" id="poll_name" size='16' type='text' name='create_poll' /></td>
 </tr>
 <tr>
 	<td><label for="poll_type">Type:</label></td>

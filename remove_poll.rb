@@ -14,6 +14,7 @@ QUESTIONS = ["Yes, I know what I am doing!",
 CONFIRM = rand(QUESTIONS.size)
 
 require "cgi"
+require "ftools"
 
 if __FILE__ == $0
 
@@ -41,7 +42,7 @@ HEAD
 if $cgi.include?("confirmnumber")
 	if $cgi["confirm"] == QUESTIONS[$cgi["confirmnumber"].to_i]
 		Dir.chdir("..")
-		`mv #{POLL} /tmp/#{POLL}.#{rand(9999999)}`
+		File.move(POLL, "/tmp/#{POLL}.#{rand(9999999)}")
 		$htmlout += <<SUCCESS
 <div>
 	The poll was deleted successfully!
