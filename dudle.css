@@ -12,16 +12,16 @@ td.undecided { background-color:#DDD;color:#666 }
 td.name {
 	text-align:right;
 }
-#active{
+#active, #activedeletebutton{
 	background-color:#A00;
 }
-input.historynavi{
+input.deletebutton{
 	border-width: 0px; 
-	border-style: none;
+	border-style: solid;
 	padding: 0px;
 	cursor: pointer;
-	background-color: white;
-	color: blue;
+	background-color: black;
+	color: white;
 }
 th.weekday{
 	width: 2.5em;

@@ -83,7 +83,7 @@ END
 			klasse = "notchoosen"
 			klasse = "disabled" if d < Date.today
 			klasse = "choosen" if @head.include?(d)
-			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='edit_column' value='#{d.day}' /></td>\n"
+			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='new_columnname' value='#{d.day}' /></td>\n"
 			ret += "</tr><tr>\n" if d.wday == 0
 			d = d.next
 		end

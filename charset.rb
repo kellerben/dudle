@@ -22,9 +22,10 @@ if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 	YEARFORWARD  = CGI.escapeHTML("↠")
 
 	EDIT = CGI.escapeHTML("✍")
+	DELETE = CGI.escapeHTML("⌧")
 else
 	$utfcookie.expires = Time.now-1*60*60*24*36
-	UTFASCII = "<a href='?utf' style='text-decoration:none'>#{CGI.escapeHTML('↩✔✘?–↞←→↠✍')}</a>"
+	UTFASCII = "<a href='?utf' style='text-decoration:none'>#{CGI.escapeHTML('↩✔✘?–↞←→↠✍⌧')}</a>"
 	BACK     = CGI.escapeHTML("back")
 	
 	YES      = CGI.escapeHTML('OK')
@@ -38,5 +39,6 @@ else
 	YEARFORWARD  = CGI.escapeHTML(">>")
 
 	EDIT = CGI.escapeHTML("edit")
+	DELETE = CGI.escapeHTML("delete")
 end
 

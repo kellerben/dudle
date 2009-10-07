@@ -41,7 +41,22 @@ class Poll
 			ret += "<th"
 			ret += " id='active' " if activecolumn == columntitle
 			ret += "><a title=\"#{columndescription}\" href=\"?sort=#{CGI.escapeHTML(CGI.escape(columntitle))}\">#{CGI.escapeHTML(columntitle)}</a>"
-			ret += "<br/>\n<small><a href=\"?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}#edit_column\">#{EDIT}</a></small>" if config
+			if config
+				ret += <<EDITDELETE
+<form method='post' action=''>
+	<div>
+		<small>
+			<a href="?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}" title="edit">
+			#{EDIT}
+			</a>
+			#{CGI.escapeHTML("|")}
+			<input type='hidden' name='delete_column' value="#{CGI.escapeHTML(columntitle)}" />
+			<input type="submit" value="#{DELETE}" title="delete" class="deletebutton" #{activecolumn == columntitle ? 'id="activedeletebutton"' : ''} />
+		</small>
+	</div>
+</form>
+EDITDELETE
+			end
 			ret += "</th>"
 		}
 		ret += "<th><a href='.'>Last Edit</a></th>\n"
@@ -297,20 +312,20 @@ ADDCOMMENT
 		true
 	end
 	def edit_column_htmlform(activecolumn)
-		if activecolumn
+		if activecolumn 
 			title = activecolumn
 			description = @head[title]
 			title = CGI.escapeHTML(title)
 		end
 		return <<END
 <fieldset><legend>add/edit column</legend>
-<form method='post' action='?'>
+<form method='post' action='config.cgi'>
 	<div>
 			<label for='columntitle'>Columntitle: </label>
-			<input id='columntitle' size='16' type='text' value="#{title}" name='edit_column' />
+			<input id='columntitle' size='16' type='text' value="#{title}" name='new_columnname' />
 			<label for='columndescription'>Description: </label>
 			<input id='columndescription' size='30' type='text' value="#{description}" name='columndescription' />
-			<input type='hidden' name='editcolumn' value="#{title}" />
+			<input type='hidden' name='old_columnname' value="#{title}" />
 			<input type='submit' value='add/edit column' />
 	</div>
 </form>

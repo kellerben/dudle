@@ -58,7 +58,8 @@ else
 	}
 
 	table.invite_delete($cgi["invite_delete"])	if $cgi.include?("invite_delete") and $cgi["invite_delete"] != ""
-	table.edit_column($cgi["edit_column"],$cgi["columndescription"],$cgi["editcolumn"]) if $cgi.include?("edit_column")
+	table.edit_column($cgi["new_columnname"],$cgi["columndescription"],$cgi["old_columnname"]) if $cgi.include?("new_columnname")
+	table.delete_column($cgi["delete_column"]) if $cgi.include?("delete_column")
 	table.toggle_hidden if $cgi.include?("toggle_hidden")
 
 	def writehtaccess(acusers)
@@ -132,10 +133,9 @@ $htmlout += <<HTMLHEAD
 	</div>
 HTMLHEAD
 
-activecolumn = $cgi.include?("edit_column") ? $cgi["edit_column"] : $cgi["editcolumn"]
 $htmlout += <<TABLE
 	<h1>#{table.name}</h1>
-#{table.to_html(config = true,activecolumn = activecolumn)}
+#{table.to_html(config = true,activecolumn = $cgi["editcolumn"])}
 TABLE
 
 $htmlout += <<INVITEDELETE
@@ -155,7 +155,7 @@ INVITEDELETE
 # ADD/REMOVE COLUMN
 $htmlout +=<<ADD_EDIT
 <div id='edit_column'>
-#{table.edit_column_htmlform(activecolumn)}
+#{table.edit_column_htmlform($cgi["editcolumn"])}
 </div>
 ADD_EDIT
 

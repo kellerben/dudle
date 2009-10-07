@@ -97,7 +97,7 @@ END
 			klasse = "notchoosen"
 			klasse = "disabled" if d < Date.today
 			klasse = "choosen" if @head.keys.collect{|t|t.strftime("%Y-%m-%d")}.include?(d.strftime("%Y-%m-%d"))
-			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='edit_column' value='#{d.day}' /></td>\n"
+			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='new_columnname' value='#{d.day}' /></td>\n"
 			ret += "</tr><tr>\n" if d.wday == 0
 			d = d.next
 		end
@@ -139,10 +139,10 @@ END
 				klasse = "choosen" if @head.include?(timestamp)
 				ret += <<END
 <td class='calendarday'>
-	<form method='post' action="config.cgi">
+	<form method='post' action="">
 		<div>
 			<!--Timestamp: #{timestamp} -->
-			<input title='#{timestamp}' class='#{klasse}' type='submit' name='edit_column' value='#{time}' />
+			<input title='#{timestamp}' class='#{klasse}' type='submit' name='new_columnname' value='#{time}' />
 			<input type='hidden' name='add_remove_column_day' value='#{timestamp.day}' />
 			<input type='hidden' name='add_remove_column_month' value='#{timestamp.strftime("%Y-%m")}' />
 		</div>
@@ -157,11 +157,11 @@ END
 		days.each{|d|
 			ret += <<END
 	<td>
-		<form method='post' action='config.cgi'>
+		<form method='post' action=''>
 			<div>
 				<input type='hidden' name='add_remove_column_day' value='#{d.day}' />
 				<input type='hidden' name='add_remove_column_month' value='#{d.strftime("%Y-%m")}' />
-				<input name='edit_column' type="text" maxlength="7" style="width: 7ex" /><br />
+				<input name='new_columnname' type="text" maxlength="7" style="width: 7ex" /><br />
 				<input type="submit" value="Add" style="width: 100%" />
 			</div>
 		</form>
