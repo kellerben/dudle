@@ -137,7 +137,6 @@ class Poll
 				name='add_participant'
 				value=\"#{participant}\"
 				title='To change a line, add a new person with the same name!' />"
-		ret += "<br /><input type='submit' name='delete_participant' value='delete user' />" if $edituser
 		ret += "</td>\n"
 		@head.sort.each{|columntitle,columndescription|
 			ret += "<td class='checkboxes'><table>"
@@ -157,7 +156,9 @@ class Poll
 			}
 			ret += "</table></td>"
 		}
-		ret += "<td class='checkboxes'><input type='submit' value='add/edit' /></td>\n"
+		ret += "<td class='checkboxes'><input type='submit' value='add/edit' />"
+		ret += "<br /><input type='submit' name='delete_participant' value='delete user' />" if $edituser
+		ret += "</td>\n"
 
 		ret += "</tr>\n"
 
