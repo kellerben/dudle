@@ -41,11 +41,12 @@ $htmlout += <<HEAD
 	<title>dudle</title>
 	<meta http-equiv="Content-Type" content="#{TYPE}; charset=#{CHARSET}" /> 
 	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" href="dudle.css" title="default"/>
 HEAD
 	
 	$htmlout += '<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />' if File.exists?("atom.cgi")
 
-	$htmlout += "</head><body>"
+	$htmlout += "</head><body><h1>dudle</h1>"
 
 if $cgi.include?("create_poll")
 	SITE=$cgi["create_poll"].gsub(/^\//,"")
@@ -85,7 +86,7 @@ Dir.glob("*/data.yaml").sort_by{|f|
 }.each{|site|
 	unless YAML::load_file("#{site}/data.yaml").hidden
 		$htmlout += "<tr>"
-		$htmlout += "<td class='site'><a href='./#{CGI.escapeHTML(site).gsub("'","%27")}/'>#{CGI.escapeHTML(site)}</a></td>"
+		$htmlout += "<td class='polls'><a href='./#{CGI.escapeHTML(site).gsub("'","%27")}/'>#{CGI.escapeHTML(site)}</a></td>"
 		$htmlout += "<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>"
 		$htmlout += "</tr>"
 	end

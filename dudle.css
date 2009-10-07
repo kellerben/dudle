@@ -59,6 +59,9 @@ td {
 td.sum, tr.participantrow, tr#add_participant, tr#summary { 
 	background-color:Silver;
 }
+td.polls {
+	text-align:left;
+}
 tr.participantrow:hover {
 	background: #AAA;
 }
