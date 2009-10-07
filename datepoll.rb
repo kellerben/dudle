@@ -14,7 +14,7 @@ class DatePoll < Poll
 		}
 		super datefields
 	end 
-	def head_to_html(config = false)
+	def head_to_html(config = false, activecolumn = nil)
 		ret = "<tr><td></td>\n"
 		monthhead = Hash.new(0)
 		@head.sort.each{|curdate,curdescription|
@@ -28,15 +28,15 @@ class DatePoll < Poll
 		@head.sort.each{|curdate,curdescription|
 			ret += "<th><a href='?sort=#{curdate.to_s}'>#{Date::ABBR_DAYNAMES[curdate.wday]}, #{curdate.day}</a></th>\n"
 		}
-		ret += "<th><a href='.'>Last Edit</a></th>\n"
-		ret += "</tr>\n"
-		ret	
+		ret += "<th><a href='.'>Last Edit</a></th>\n</tr>\n"
+		ret
 	end
-	def add_remove_column_htmlform
+
+	def edit_column_htmlform(activecolumn)
 		if $cgi.include?("add_remove_column_month")
-			begin
+			if $cgi.params["add_remove_column_month"].size == 1
 				startdate = Date.parse("#{$cgi["add_remove_column_month"]}-1")
-			rescue ArgumentError
+			else
 				olddate = $cgi.params["add_remove_column_month"][1]
 				case $cgi["add_remove_column_month"]
 				when CGI.unescapeHTML(YEARBACK)
@@ -56,6 +56,7 @@ class DatePoll < Poll
 			startdate = Date.parse("#{Date.today.year}-#{Date.today.month}-1")
 		end
 		ret = <<END
+<fieldset><legend>add/remove column</legend>
 <form method='post' action=''>
 <div>
 <table><tr>
@@ -82,7 +83,7 @@ END
 			klasse = "notchoosen"
 			klasse = "disabled" if d < Date.today
 			klasse = "choosen" if @head.include?(d)
-			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='add_remove_column' value='#{d.day}' /></td>\n"
+			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='edit_column' value='#{d.day}' /></td>\n"
 			ret += "</tr><tr>\n" if d.wday == 0
 			d = d.next
 		end
@@ -91,16 +92,22 @@ END
 <input type='hidden' name='add_remove_column_month' value='#{startdate.strftime("%Y-%m")}' />
 </div>
 </form>
+</fieldset>
 END
 		ret
 	end
-	def add_remove_column name,description
-		begin
-			parsed_name = Date.parse("#{$cgi["add_remove_column_month"]}-#{name}")
-		rescue ArgumentError
-			return false
+	def parsecolumntitle(title)
+		Date.parse("#{$cgi["add_remove_column_month"]}-#{title}")
+	end
+	def edit_column(newtitle, description, oldtitle = nil)
+		parsed_date = parsecolumntitle(newtitle)
+		if @head.include?(parsed_date)
+			delete_column(newtitle)
+		else
+			@head[parsed_date] = ""
+			store "Column #{parsed_date} added"
 		end
-		add_remove_parsed_column(parsed_name,CGI.escapeHTML(description))
+		true
 	end
 end
 

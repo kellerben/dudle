@@ -35,23 +35,23 @@ class Poll
 			@data.sort{|x,y| x[1].compare_by_values(y[1],fields) }
 		end
 	end
-	def head_to_html(config = false)
+	def head_to_html(config = false,activecolumn = nil)
 		ret = "<tr><th><a href='?sort=name'>Name</a></th>\n"
 		@head.sort.each{|columntitle,columndescription|
 			ret += "<th"
-			ret += " id='active' " if $cgi["editcolumn"] == columntitle
+			ret += " id='active' " if activecolumn == columntitle
 			ret += "><a title=\"#{columndescription}\" href=\"?sort=#{CGI.escapeHTML(CGI.escape(columntitle))}\">#{CGI.escapeHTML(columntitle)}</a>"
-			ret += "<br/>\n<small><a href=\"?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}#add_remove_column\">#{EDIT}</a></small>" if config
+			ret += "<br/>\n<small><a href=\"?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}#edit_column\">#{EDIT}</a></small>" if config
 			ret += "</th>"
 		}
 		ret += "<th><a href='.'>Last Edit</a></th>\n"
 		ret += "</tr>\n"
 		ret
 	end
-	def to_html(config = false)
+	def to_html(config = false,activecolumn = nil)
 		ret = "<table border='1'>\n"
 
-		ret += head_to_html(config)
+		ret += head_to_html(config, activecolumn)
 		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
 			ret += "<tr class='participantrow'>\n"
 			ret += "<td class='name' #{$edituser == participant ? "id='active'":""}>"
@@ -227,27 +227,6 @@ ADDCOMMENT
 		ret += " <a href='.' >last</a>" if defined?(REVISION)
 		ret
 	end
-	def add_remove_column_htmlform
-		if $cgi.include?("editcolumn")
-			title = $cgi["editcolumn"]
-			description = @head[title]
-			title = CGI.escapeHTML(title)
-		else
-			title = CGI.escapeHTML($cgi["add_remove_column"])
-			description = CGI.escapeHTML($cgi["columndescription"])
-		end
-		return <<END
-<form method='post' action=''>
-	<div>
-			<label for='columntitle'>Columntitle: </label>
-			<input id='columntitle' size='16' type='text' value="#{title}" name='add_remove_column' />
-			<label for='columndescription'>Description: </label>
-			<input id='columndescription' size='30' type='text' value="#{description}" name='columndescription' />
-			<input type='submit' value='add/remove column' />
-	</div>
-</form>
-END
-	end
 	def add_participant(name, agreed)
 		name.strip!
 		if name == ""
@@ -281,6 +260,10 @@ END
 		end
 		VCS.commit(CGI.escapeHTML(comment))
 	end
+
+	###############################
+	# comment related functions 
+	###############################
 	def add_comment name, comment
 		@comment << [Time.now, CGI.escapeHTML(name.strip), CGI.escapeHTML(comment.strip).gsub("\r\n","<br />")]
 		store "Comment added by #{name}"
@@ -288,19 +271,51 @@ END
 	def delete_comment index
 		store "Comment from #{@comment.delete_at(index)[1]} deleted"
 	end
-	def add_remove_column name, description
-		add_remove_parsed_column name.strip, CGI.escapeHTML(description.strip)
+
+	###############################
+	# column related functions
+	###############################
+	def parsecolumntitle title
+		title.strip
 	end
-	def add_remove_parsed_column columntitle, description
-		if @head.include?(columntitle)
-			@head.delete(columntitle)
-			action = "deleted"
+	def delete_column title
+		parsedtitle = parsecolumntitle(title)
+		if @head.include?(parsedtitle)
+			@head.delete(parsedtitle)
+			store "Column #{parsedtitle} deleted"
+			return true
 		else
-			@head[columntitle] = description
-			action = "added"
+			return false
 		end
-		store "Column #{columntitle} #{action}"
+	end
+	def edit_column(newtitle, description, oldtitle = nil)
+		@head.delete(oldtitle) if oldtitle
+		parsedtitle = parsecolumntitle(newtitle)
+
+		@head[parsedtitle] = CGI.escapeHTML(description.strip)
+		store "Column #{parsedtitle} edited"
 		true
+	end
+	def edit_column_htmlform(activecolumn)
+		if activecolumn
+			title = activecolumn
+			description = @head[title]
+			title = CGI.escapeHTML(title)
+		end
+		return <<END
+<fieldset><legend>add/edit column</legend>
+<form method='post' action='?'>
+	<div>
+			<label for='columntitle'>Columntitle: </label>
+			<input id='columntitle' size='16' type='text' value="#{title}" name='edit_column' />
+			<label for='columndescription'>Description: </label>
+			<input id='columndescription' size='30' type='text' value="#{description}" name='columndescription' />
+			<input type='hidden' name='editcolumn' value="#{title}" />
+			<input type='submit' value='add/edit column' />
+	</div>
+</form>
+</fieldset>
+END
 	end
 
 	def toggle_hidden

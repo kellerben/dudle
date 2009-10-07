@@ -33,9 +33,7 @@ load "charset.rb"
 load "config.rb"
 Dir.chdir(olddir)
 
-if $cgi.include?("edituser")
-	$edituser = $cgi["edituser"]
-end
+$edituser = $cgi["edituser"] if $cgi.include?("edituser")
 
 if $cgi.include?("revision")
 	REVISION=$cgi["revision"].to_i

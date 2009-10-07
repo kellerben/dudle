@@ -58,7 +58,7 @@ else
 	}
 
 	table.invite_delete($cgi["invite_delete"])	if $cgi.include?("invite_delete") and $cgi["invite_delete"] != ""
-	table.add_remove_column($cgi["add_remove_column"],$cgi["columndescription"]) if $cgi.include?("add_remove_column")
+	table.edit_column($cgi["edit_column"],$cgi["columndescription"],$cgi["editcolumn"]) if $cgi.include?("edit_column")
 	table.toggle_hidden if $cgi.include?("toggle_hidden")
 
 	def writehtaccess(acusers)
@@ -132,9 +132,10 @@ $htmlout += <<HTMLHEAD
 	</div>
 HTMLHEAD
 
+activecolumn = $cgi.include?("edit_column") ? $cgi["edit_column"] : $cgi["editcolumn"]
 $htmlout += <<TABLE
 	<h1>#{table.name}</h1>
-#{table.to_html(config = true)}
+#{table.to_html(config = true,activecolumn = activecolumn)}
 TABLE
 
 $htmlout += <<INVITEDELETE
@@ -152,13 +153,11 @@ $htmlout += <<INVITEDELETE
 INVITEDELETE
 
 # ADD/REMOVE COLUMN
-$htmlout +=<<ADD_REMOVE
-<div id='add_remove_column'>
-<fieldset><legend>add/remove column</legend>
-#{table.add_remove_column_htmlform}
-</fieldset>
+$htmlout +=<<ADD_EDIT
+<div id='edit_column'>
+#{table.edit_column_htmlform(activecolumn)}
 </div>
-ADD_REMOVE
+ADD_EDIT
 
 $htmlout +=<<ACL
 <div id='access_control'>
