@@ -57,6 +57,9 @@ if $cgi.include?("create_poll")
 		File.symlink("../atom_single.rb","atom.cgi")
 		File.symlink("../config_poll.rb","config.cgi")
 		File.symlink("../remove_poll.rb","remove.cgi")
+		["index.cgi","atom.cgi","config.cgi","remove.cgi"].each{|f|
+			VCS.add(f)
+		}
 		["data.yaml",".htaccess",".htdigest"].each{|f|
 			File.open(f,"w").close
 			VCS.add(f)
