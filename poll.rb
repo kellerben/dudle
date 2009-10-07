@@ -136,8 +136,9 @@ class Poll
 				type='text' 
 				name='add_participant'
 				value=\"#{participant}\"
-				title='To change a line, add a new person with the same name!' />
-			</td>\n"
+				title='To change a line, add a new person with the same name!' />"
+		ret += "<br /><input type='submit' name='delete_participant' value='delete user' />" if $edituser
+		ret += "</td>\n"
 		@head.sort.each{|columntitle,columndescription|
 			ret += "<td class='checkboxes'><table>"
 			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|

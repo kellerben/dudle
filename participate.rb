@@ -44,14 +44,19 @@ else
 	table = YAML::load_file("data.yaml")
 
 	if $cgi.include?("add_participant")
-		agreed = {}
-		$cgi.params.each{|k,v|
-			if k =~ /^add_participant_checked_/
-				agreed[k.gsub(/^add_participant_checked_/,"")] = v[0]
-			end
-		}
+		if $cgi.include?("delete_participant")
+			table.invite_delete($edituser)
+			$edituser = nil
+		else
+			agreed = {}
+			$cgi.params.each{|k,v|
+				if k =~ /^add_participant_checked_/
+					agreed[k.gsub(/^add_participant_checked_/,"")] = v[0]
+				end
+			}
 
-		table.add_participant($cgi["add_participant"],agreed)
+			table.add_participant($cgi["add_participant"],agreed)
+		end
 	end
 
 	table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi["comment"] != ""
