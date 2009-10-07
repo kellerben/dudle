@@ -194,34 +194,3 @@ END
 	end
 end
 
-if __FILE__ == $0
-require 'test/unit'
-require 'pp'
-class TimePoll
-	def store comment
-	end
-end
-
-SITE="gbfuaibe"
-
-require "cgi"
-CGI_PARAMS={"add_remove_column_month" => ["2008-02"]}
-CGI_COOKIES={}	
-$cgi = CGI.new
-
-class TimePollTest < Test::Unit::TestCase
-	def setup
-		@poll = TimePoll.new(SITE)
-	end
-	#TODO
-	def test_add_remove_column
-		assert(!@poll.add_remove_column("foo", "bar"))
-		assert(!@poll.add_remove_column("31", "31.02.2008 ;--)"))
-		assert(@poll.add_remove_column("20", "correct date"))
-		assert_equal("correct date",@poll.head[Date.parse("2008-02-20")])
-		assert(@poll.add_remove_column("20", "foobar"))
-		assert(@poll.head.empty?)
-	end
-
-end
-end
