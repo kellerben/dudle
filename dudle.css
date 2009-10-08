@@ -50,6 +50,9 @@ td.calendarday{
 table { 
 	border: none; 
 }
+td.create_poll{
+	text-align:left;
+}
 td {
 	vertical-align:middle;
 	text-align:center;

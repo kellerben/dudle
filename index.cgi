@@ -109,8 +109,8 @@ $htmlout += <<CREATE
 	<td><input title="#{poll_name_tip}" id="poll_name" size='16' type='text' name='create_poll' /></td>
 </tr>
 <tr>
-	<td><label for="poll_type">Type:</label></td>
-	<td>
+	<td class='create_poll'><label for="poll_type">Type:</label></td>
+	<td class='create_poll'>
 		<select id="poll_type" name="poll_type">
 			<option value="Poll" selected="selected">normal</option>
 			<option value="TimePoll">date</option>
@@ -118,7 +118,8 @@ $htmlout += <<CREATE
 	</td>
 </tr>
 <tr>
-	<td colspan='2'><input type='submit' value='create' /></td>
+	<td class='create_poll'></td>
+	<td class='create_poll'><input type='submit' value='create' /></td>
 </tr>
 </table>
 </form>
