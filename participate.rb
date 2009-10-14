@@ -33,8 +33,6 @@ load "charset.rb"
 load "config.rb"
 Dir.chdir(olddir)
 
-$edituser = $cgi["edituser"] if $cgi.include?("edituser")
-
 if $cgi.include?("revision")
 	REVISION=$cgi["revision"].to_i
 	table = YAML::load(VCS.cat(REVISION, "data.yaml"))
@@ -43,8 +41,7 @@ else
 
 	if $cgi.include?("add_participant")
 		if $cgi.include?("delete_participant")
-			table.invite_delete($edituser)
-			$edituser = nil
+			table.invite_delete($cgi["olduser"])
 		else
 			agreed = {}
 			$cgi.params.each{|k,v|
@@ -53,7 +50,7 @@ else
 				end
 			}
 
-			table.add_participant($cgi["add_participant"],agreed)
+			table.add_participant($cgi["olduser"],$cgi["add_participant"],agreed)
 		end
 	end
 
@@ -90,7 +87,7 @@ $htmlout += <<TABLE
 <h1>#{table.name}</h1>
 <div id='polltable'>
 	<form method='post' action='.'>
-		#{table.to_html}
+		#{table.to_html($cgi['edituser'])}
 	</form>
 </div>
 TABLE

@@ -135,7 +135,7 @@ HTMLHEAD
 
 $htmlout += <<TABLE
 	<h1>#{table.name}</h1>
-#{table.to_html(config = true,activecolumn = $cgi["editcolumn"])}
+#{table.to_html("",true,$cgi["editcolumn"])}
 TABLE
 
 $htmlout += <<INVITEDELETE

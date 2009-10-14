@@ -63,7 +63,7 @@ EDITDELETE
 		ret += "</tr>\n"
 		ret
 	end
-	def to_html(config = false,activecolumn = nil)
+	def to_html(edituser = "", config = false,activecolumn = nil)
 		if VCS.revno == 1 && !config
 			return <<HINT
 <pre
@@ -95,7 +95,7 @@ HINT
 		ret += head_to_html(config, activecolumn)
 		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
 			ret += "<tr class='participantrow'>\n"
-			ret += "<td class='name' #{$edituser == participant ? "id='active'":""}>"
+			ret += "<td class='name' #{edituser == participant ? "id='active'":""}>"
 			ret += participant
 			ret += " <sup><a href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\" style='text-decoration: none' >#{EDIT}</a></sup>" unless config
 			ret += "</td>\n"
@@ -119,7 +119,7 @@ HINT
 		}
 
 		# PARTICIPATE
-		ret += participate_to_html unless config
+		ret += participate_to_html(edituser) unless config
 
 		# SUMMARY
 		ret += "<tr id='summary'><td class='name'>total</td>\n"
@@ -161,22 +161,20 @@ HINT
 		ret += "</table>\n"
 		ret
 	end
-	def participate_to_html
+	def participate_to_html(edituser)
 		checked = {}
-		if $edituser && @data.include?($edituser)
-			participant = $edituser
-			@head.each_key{|k| checked[k] = @data[participant][k]}
+		if @data.include?(edituser)
+			@head.each_key{|k| checked[k] = @data[edituser][k]}
 		else
-			participant = ""
 			@head.each_key{|k| checked[k] = NOVAL}
 		end
 		ret = "<tr id='add_participant'>\n"
 		ret += "<td class='name'>
-			<input type='hidden' name='edituser' value=\"#{participant}\" />
+			<input type='hidden' name='olduser' value=\"#{edituser}\" />
 			<input size='16' 
 				type='text' 
 				name='add_participant'
-				value=\"#{participant}\"
+				value=\"#{edituser}\"
 				title='To change a line, add a new person with the same name!' />"
 		ret += "</td>\n"
 		@head.sort.each{|columntitle,columndescription|
@@ -198,7 +196,7 @@ HINT
 			ret += "</table></td>"
 		}
 		ret += "<td class='checkboxes'><input type='submit' value='add/edit' />"
-		ret += "<br /><input type='submit' name='delete_participant' value='delete user' />" if $edituser
+		ret += "<br /><input type='submit' name='delete_participant' value='delete user' />" if @data.include?(edituser)
 		ret += "</td>\n"
 
 		ret += "</tr>\n"
@@ -268,7 +266,7 @@ ADDCOMMENT
 		ret += " <a href='.' >last</a>" if defined?(REVISION)
 		ret
 	end
-	def add_participant(name, agreed)
+	def add_participant(olduser, name, agreed)
 		name.strip!
 		if name == ""
 			maximum = @data.keys.collect{|e| e.scan(/^Anonymous #(\d*)/).flatten[0]}.compact.collect{|i| i.to_i}.max
@@ -276,8 +274,7 @@ ADDCOMMENT
 			name = "Anonymous ##{maximum + 1}"
 		end
 		htmlname = CGI.escapeHTML(name)
-		@data.delete(CGI.escapeHTML($edituser)) if $edituser
-		$edituser = htmlname
+		@data.delete(CGI.escapeHTML(olduser))
 		@data[htmlname] = {"timestamp" => Time.now }
 		@head.each_key{|columntitle|
 			@data[htmlname][columntitle] = agreed[columntitle.to_s]
