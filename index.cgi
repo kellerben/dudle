@@ -66,9 +66,9 @@ if $cgi.include?("create_poll")
 			VCS.add(f)
 		}
 		case $cgi["poll_type"]
-		when "Poll"
+		when "create normal poll"
 			Poll.new SITE
-		when "TimePoll"
+		when "create event schedule"
 			TimePoll.new SITE
 		end
 		Dir.chdir("..")
@@ -94,12 +94,6 @@ Dir.glob("*/data.yaml").sort_by{|f|
 $htmlout += "</table>"
 $htmlout += "</fieldset>"
 
-$htmlout += <<CHARSET
-<fieldset><legend>change charset</legend>
-#{UTFASCII}
-</fieldset>
-CHARSET
-
 $htmlout += <<CREATE
 <fieldset><legend>Create new Poll</legend>
 <form method='post' action='.'>
@@ -107,24 +101,24 @@ $htmlout += <<CREATE
 <tr>
 	<td><label title="#{poll_name_tip = "the name equals the link under which you receive the poll"}" for="poll_name">Name:</label></td>
 	<td><input title="#{poll_name_tip}" id="poll_name" size='16' type='text' name='create_poll' /></td>
-</tr>
-<tr>
-	<td class='create_poll'><label for="poll_type">Type:</label></td>
+	<td>Type:</td>
 	<td class='create_poll'>
-		<select id="poll_type" name="poll_type">
-			<option value="Poll" selected="selected">normal</option>
-			<option value="TimePoll">date</option>
-		</select>
+		<input type='submit' value='create event schedule' name='poll_type' />
+		<br />
+		<input type='submit' value='create normal poll' name='poll_type' />
 	</td>
-</tr>
-<tr>
-	<td class='create_poll'></td>
-	<td class='create_poll'><input type='submit' value='create' /></td>
 </tr>
 </table>
 </form>
 </fieldset>
 CREATE
+
+$htmlout += <<CHARSET
+<fieldset><legend>change charset</legend>
+#{UTFASCII}
+</fieldset>
+CHARSET
+
 
 $htmlout += NOTICE
 $htmlout += "</body>"
