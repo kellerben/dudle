@@ -287,7 +287,7 @@ ADDCOMMENT
 			@data.delete(htmlname)
 			store "Participant #{name.strip} deleted"
 		else
-			add_participant(name,{})
+			add_participant("",name,{})
 		end
 	end
 	def store comment
