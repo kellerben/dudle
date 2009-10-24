@@ -5,6 +5,8 @@
  *******************************/
 
 
+td.ayes, td.bmaybe, td.cno { cursor:default; }
+label { cursor: pointer; }
 td.ayes, input.choosen  { background-color:#0F0; }
 td.cno { background-color:#F00; }
 td.bmaybe { background-color:#FF0; }
