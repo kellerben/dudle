@@ -51,14 +51,6 @@ HEAD
 if $cgi.include?("create_poll")
 	SITE=$cgi["create_poll"].gsub(/^\//,"")
 	unless File.exist?(SITE)
-		case $cgi["poll_type"]
-		when "normal"
-			Poll.new SITE
-		when "time"
-			TimePoll.new SITE
-		else
-			exit
-		end
 		Dir.mkdir(SITE)
 		Dir.chdir(SITE)
 		VCS.init
@@ -73,6 +65,12 @@ if $cgi.include?("create_poll")
 			File.open(f,"w").close
 			VCS.add(f)
 		}
+		case $cgi["poll_type"]
+		when "normal"
+			Poll.new SITE
+		when "time"
+			TimePoll.new SITE
+		end
 		Dir.chdir("..")
 		createnotice = <<SUCCESS
 <div class='success'>
@@ -96,7 +94,7 @@ $htmlout += <<CREATE
 <tr>
 	<td>Type:</td>
 	<td class='create_poll'>
-		<input id='chooseTime' type='radio' value='time' name='poll_type' />
+		<input id='chooseTime' type='radio' value='time' name='poll_type' checked='checked' />
 		<label for='chooseTime'>Event Schedule Poll (e.g. schedule a meeting)</label>
 		<br />
 		<input id='chooseNormal' type='radio' value='normal' name='poll_type' />
