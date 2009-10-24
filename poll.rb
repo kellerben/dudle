@@ -9,13 +9,12 @@ require "yaml"
 require "time"
 
 class Poll
-	attr_reader :head, :name, :hidden
+	attr_reader :head, :name
 	YESVAL   = "ayes"
 	MAYBEVAL = "bmaybe"
 	NOVAL    = "cno"
 	def initialize name
 		@name = name
-		@hidden = false
 		@head = {}
 		@data = {}
 		@comment = []
@@ -327,11 +326,6 @@ ADDCOMMENT
 </form>
 </fieldset>
 END
-	end
-
-	def toggle_hidden
-		@hidden = !@hidden
-		store "Hidden status changed!"
 	end
 
 end

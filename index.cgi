@@ -72,27 +72,16 @@ if $cgi.include?("create_poll")
 			TimePoll.new SITE
 		end
 		Dir.chdir("..")
+		createnotice = <<SUCCESS
+<div class='success'>
+	The poll was created successfully. The link to your new poll is:<br />
+	<a href='#{SITEURL}#{SITE}'>#{SITEURL}#{SITE}</a>
+</div>
+SUCCESS
 	else
-		$htmlout += "<fieldset><legend>Error</legend>This poll already exists!</fieldset>"
+		createnotice = "<div class='error'>Error: This poll already exists!</div>"
 	end
 end
-
-$htmlout += "<fieldset><legend>Available Polls</legend>"
-$htmlout += "<table><tr><th>Poll</th><th>Last change</th></tr>"
-Dir.glob("*/data.yaml").sort_by{|f|
-	File.new(f).mtime
-}.reverse.collect{|f| 
-	f.gsub(/\/data\.yaml$/,'')
-}.each{|site|
-	unless YAML::load_file("#{site}/data.yaml").hidden
-		$htmlout += "<tr>"
-		$htmlout += "<td class='polls'><a href='./#{CGI.escapeHTML(site).gsub("'","%27")}/'>#{CGI.escapeHTML(site)}</a></td>"
-		$htmlout += "<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>"
-		$htmlout += "</tr>"
-	end
-}
-$htmlout += "</table>"
-$htmlout += "</fieldset>"
 
 $htmlout += <<CREATE
 <fieldset><legend>Create new Poll</legend>
@@ -110,6 +99,7 @@ $htmlout += <<CREATE
 </tr>
 </table>
 </form>
+#{createnotice}
 </fieldset>
 CREATE
 

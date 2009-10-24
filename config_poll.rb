@@ -60,7 +60,6 @@ else
 	table.invite_delete($cgi["invite_delete"])	if $cgi.include?("invite_delete") and $cgi["invite_delete"] != ""
 	table.edit_column($cgi["new_columnname"],$cgi["columndescription"],$cgi["old_columnname"]) if $cgi.include?("new_columnname")
 	table.delete_column($cgi["delete_column"]) if $cgi.include?("delete_column")
-	table.toggle_hidden if $cgi.include?("toggle_hidden")
 
 	def writehtaccess(acusers)
 		File.open(".htaccess","w"){|htaccess|
@@ -202,20 +201,6 @@ $htmlout += <<ACL
 	</fieldset>
 </div>
 ACL
-
-$htmlout +=<<HIDDEN
-<div id='toggle_hidden'>
-	<fieldset>
-		<legend>Toggle Hidden flag</legend>
-		<form method='post' action=''>
-			<div>
-				<input type='hidden' name='toggle_hidden' value='toggle' />
-				<input type='submit' value='#{table.hidden ? "unhide" : "hide"}' />
-			</div>
-		</form>
-	</fieldset>
-</div>
-HIDDEN
 
 $htmlout +=<<REMOVE
 <div id='delete_poll'>
