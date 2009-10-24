@@ -169,7 +169,7 @@ EDITDELETE
 			ret += "</table></td>"
 		}
 		ret += "<td class='checkboxes'><input type='submit' value='add/edit' />"
-		ret += "<br /><input type='submit' name='delete_participant' value='delete user' />" if @data.include?(edituser)
+		ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='delete user' />" if @data.include?(edituser)
 		ret += "</td>\n"
 
 		ret += "</tr>\n"
