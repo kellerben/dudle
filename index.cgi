@@ -51,6 +51,14 @@ HEAD
 if $cgi.include?("create_poll")
 	SITE=$cgi["create_poll"].gsub(/^\//,"")
 	unless File.exist?(SITE)
+		case $cgi["poll_type"]
+		when "normal"
+			Poll.new SITE
+		when "time"
+			TimePoll.new SITE
+		else
+			exit
+		end
 		Dir.mkdir(SITE)
 		Dir.chdir(SITE)
 		VCS.init
@@ -65,12 +73,6 @@ if $cgi.include?("create_poll")
 			File.open(f,"w").close
 			VCS.add(f)
 		}
-		case $cgi["poll_type"]
-		when "create normal poll"
-			Poll.new SITE
-		when "create event schedule"
-			TimePoll.new SITE
-		end
 		Dir.chdir("..")
 		createnotice = <<SUCCESS
 <div class='success'>
@@ -88,14 +90,22 @@ $htmlout += <<CREATE
 <form method='post' action='.'>
 <table>
 <tr>
-	<td><label title="#{poll_name_tip = "the name equals the link under which you receive the poll"}" for="poll_name">Name:</label></td>
-	<td><input title="#{poll_name_tip}" id="poll_name" size='16' type='text' name='create_poll' /></td>
+	<td class='create_poll'><label title="#{poll_name_tip = "the name equals the link under which you receive the poll"}" for="poll_name">Name:</label></td>
+	<td class='create_poll'><input title="#{poll_name_tip}" id="poll_name" size='16' type='text' name='create_poll' /></td>
+</tr>
+<tr>
 	<td>Type:</td>
 	<td class='create_poll'>
-		<input type='submit' value='create event schedule' name='poll_type' />
+		<input id='chooseTime' type='radio' value='time' name='poll_type' />
+		<label for='chooseTime'>Event Schedule Poll (e.g. schedule a meeting)</label>
 		<br />
-		<input type='submit' value='create normal poll' name='poll_type' />
+		<input id='chooseNormal' type='radio' value='normal' name='poll_type' />
+		<label for='chooseNormal'>Normal Poll (e.g. vote for what is the best coffee)</label>
 	</td>
+</tr>
+<tr>
+	<td></td>
+	<td class='create_poll'><input type='submit' value='create' /></td>
 </tr>
 </table>
 </form>
