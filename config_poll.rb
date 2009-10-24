@@ -218,13 +218,13 @@ $htmlout +=<<HIDDEN
 HIDDEN
 
 $htmlout +=<<REMOVE
-<div id='remove_poll'>
+<div id='delete_poll'>
 	<fieldset>
-		<legend>Remove the whole poll</legend>
+		<legend>Delete the whole poll</legend>
 		<form method='post' action='remove.cgi'>
 			<div>
 				Warning: This is an irreversible action!<br />
-				<input type='submit' value='remove' />
+				<input type='submit' value='delete' />
 			</div>
 		</form>
 	</fieldset>

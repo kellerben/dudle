@@ -33,7 +33,7 @@ $htmlout = <<HEAD
 <head>
 	<meta http-equiv="Content-Type" content="#{TYPE}; charset=#{CHARSET}" /> 
 	<meta http-equiv="Content-Style-Type" content="text/css" />
-	<title>dudle - remove - #{POLL}</title>
+	<title>dudle - delete - #{POLL}</title>
 	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
 </head>
 <body>
@@ -58,7 +58,7 @@ SUCCESS
 	You canceld the deletion!
 	<br />
 	<a href='config.cgi'>config</a>
-	<a href='remove.cgi'>remove</a>
+	<a href='remove.cgi'>delete</a>
 </div>
 CANCEL
 	end
@@ -67,15 +67,15 @@ else
 
 $htmlout += <<TABLE
 <div>
-	<h1>Remove a Poll</h1>
-	You want to remove the poll named <b>#{POLL}</b>.<br />
+	<h1>Delete a Poll</h1>
+	You want to delete the poll named <b>#{POLL}</b>.<br />
 	This is an irreversible action!<br />
 	If you are sure in what you are doing, please type into the form “#{QUESTIONS[CONFIRM]}”
 	<form method='post' action=''>
 		<div>
 			<input type='hidden' name='confirmnumber' value='#{CONFIRM}' />
 			<input size='30' type='text' name='confirm' />
-			<input type='submit' value='remove' />
+			<input type='submit' value='delete' />
 		</div>
 	</form>
 </div>
