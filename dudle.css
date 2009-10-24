@@ -103,4 +103,9 @@ h1 {
 
 div.comment { margin-top: 1ex; }
 
+div#config{
+	float: right;
+	margin-left:20px;
+	width:20ex;
+}
 

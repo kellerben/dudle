@@ -83,6 +83,14 @@ SUCCESS
 	end
 end
 
+$htmlout += <<CHARSET
+<div id='config'>
+<fieldset><legend>Config</legend>
+#{UTFASCII}
+</fieldset>
+</div>
+CHARSET
+
 $htmlout += <<CREATE
 <fieldset><legend>Create New Poll</legend>
 <form method='post' action='.'>
@@ -110,13 +118,6 @@ $htmlout += <<CREATE
 #{createnotice}
 </fieldset>
 CREATE
-
-$htmlout += <<CHARSET
-<fieldset><legend>Change Charset</legend>
-#{UTFASCII}
-</fieldset>
-CHARSET
-
 
 $htmlout += NOTICE
 $htmlout += "</body>"
