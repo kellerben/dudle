@@ -206,7 +206,7 @@ COMMENT
 			<div class='comment'>
 				<fieldset>
 					<legend>
-						<input value='anonymous' type='text' name='commentname' size='9' /> says&nbsp;
+						<input value='Anonymous' type='text' name='commentname' size='9' /> says&nbsp;
 					</legend>
 					<textarea cols='50' rows='7' name='comment' ></textarea>
 					<br /><input type='submit' value='Submit comment' />
@@ -313,7 +313,7 @@ ADDCOMMENT
 			title = CGI.escapeHTML(title)
 		end
 		return <<END
-<fieldset><legend>add/edit column</legend>
+<fieldset><legend>Add/Edit Column</legend>
 <form method='post' action='config.cgi'>
 	<div>
 			<label for='columntitle'>Columntitle: </label>

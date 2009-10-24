@@ -84,7 +84,7 @@ SUCCESS
 end
 
 $htmlout += <<CREATE
-<fieldset><legend>Create new Poll</legend>
+<fieldset><legend>Create New Poll</legend>
 <form method='post' action='.'>
 <table>
 <tr>
@@ -112,7 +112,7 @@ $htmlout += <<CREATE
 CREATE
 
 $htmlout += <<CHARSET
-<fieldset><legend>change charset</legend>
+<fieldset><legend>Change Charset</legend>
 #{UTFASCII}
 </fieldset>
 CHARSET

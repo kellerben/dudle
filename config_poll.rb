@@ -140,7 +140,7 @@ TABLE
 $htmlout += <<INVITEDELETE
 <div id='invite_delete'>
 	<fieldset>
-		<legend>invite/delete participant</legend>
+		<legend>Invite/Delete Participant</legend>
 		<form method='post' action='config.cgi'>
 			<div>
 				<input size='16' value="#{CGI.escapeHTML($cgi["invite_delete"])}" type='text' name='invite_delete' />
@@ -205,7 +205,7 @@ ACL
 $htmlout +=<<REMOVE
 <div id='delete_poll'>
 	<fieldset>
-		<legend>Delete the whole poll</legend>
+		<legend>Delete the Whole Poll</legend>
 		<form method='post' action='remove.cgi'>
 			<div>
 				Warning: This is an irreversible action!<br />

@@ -70,7 +70,7 @@ class TimePoll < Poll
 			startdate = Date.parse("#{Date.today.year}-#{Date.today.month}-1")
 		end
 		ret = <<END
-<fieldset><legend>add/remove column</legend>
+<fieldset><legend>Add/Remove Column</legend>
 <form method='post' action=''>
 <div style="float: left; margin-right: 20px">
 <table><tr>
