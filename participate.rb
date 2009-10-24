@@ -83,8 +83,34 @@ $htmlout += <<HEAD
 HEAD
 
 # TABLE
-$htmlout += <<TABLE
-<h1>#{table.name}</h1>
+	$htmlout += "<h1>#{table.name}</h1>"
+if VCS.revno == 1
+	$htmlout += <<HINT
+<pre
+	style="font-family:Courier New,Courier,monospace;
+		letter-spacing:0;
+		margin-top: -8ex;
+		line-height:95%;"
+>
+    .
+  .:;:.
+.:;;;;;:.
+  ;;;;;
+  ;;;;;
+  ;;;;;
+  ;;;;;      Please press the config link on
+  ;:;;;      the top left corner of this page
+  ;;; :      to configure this poll!
+  ;:;
+  ;.: .
+  : .
+  .   .
+
+   .
+</pre>
+HINT
+else
+	$htmlout += <<TABLE
 <div id='polltable'>
 	<form method='post' action='.'>
 		#{table.to_html($cgi['edituser'])}
@@ -92,7 +118,8 @@ $htmlout += <<TABLE
 </div>
 TABLE
 
-$htmlout += table.comment_to_html
+	$htmlout += table.comment_to_html
+end
 
 $htmlout += "</body>"
 

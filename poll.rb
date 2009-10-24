@@ -64,32 +64,6 @@ EDITDELETE
 		ret
 	end
 	def to_html(edituser = "", config = false,activecolumn = nil)
-		if VCS.revno == 1 && !config
-			return <<HINT
-<pre
-	style="font-family:Courier New,Courier,monospace;
-		letter-spacing:0;
-		margin-top: -8ex;
-		line-height:95%;"
->
-    .
-  .:;:.
-.:;;;;;:.
-  ;;;;;
-  ;;;;;
-  ;;;;;
-  ;;;;;      Please press the config link on
-  ;:;;;      the top left corner of this page
-  ;;; :      to configure this poll!
-  ;:;
-  ;.: .
-  : .
-  .   .
-
-   .
-</pre>
-HINT
-		end
 		ret = "<table border='1'>\n"
 
 		ret += head_to_html(config, activecolumn)
