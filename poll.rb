@@ -179,14 +179,14 @@ EDITDELETE
 	end
 	def comment_to_html
 		ret = "<div id='comments'>"
-		ret	+= "<fieldset><legend>Comments</legend>"
+		ret	+= "<h2>Comments</h2>"
 
 		unless @comment.empty?
 			@comment.each_with_index{|c,i|
 				time,name,comment = c
 				ret += <<COMMENT
 <form method='post' action='.'>
-<div>
+<div class='comment'>
 	<fieldset>
 		<legend>#{name} said on #{time.strftime("%d.%m, %H:%M")}
 			<input type='hidden' name='delete_comment' value='#{i}' />
@@ -204,7 +204,7 @@ COMMENT
 		# ADD COMMENT
 		ret += <<ADDCOMMENT
 		<form method='post' action='.'>
-			<div>
+			<div class='comment'>
 				<fieldset>
 					<legend>
 						<input value='anonymous' type='text' name='commentname' size='9' /> says&nbsp;
@@ -215,7 +215,6 @@ COMMENT
 			</div>
 		</form>
 ADDCOMMENT
-			ret += "</fieldset>"
 
 		ret += "</div>\n"
 		ret
