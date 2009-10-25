@@ -5,19 +5,12 @@ load "bzr.rb"
 SITEURL = "http://#{$cgi.server_name}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
 
 # add this htmlcode to the startpage
-NOTICE = <<CHARSET
+NOTICE = <<NOTICE
 <fieldset><legend>Sandbox</legend>
 	If you want to play around with the Tool, you may want to take a look at these two Example Polls:<br />
-	<a href='#{SITEURL}EventScheduleExample'>Event Schedule Poll</a><br />
-	<a href='#{SITEURL}NormalExample'>Normal Poll</a>	
+	<a href='EventScheduleExample'>Event Schedule Poll</a><br />
+	<a href='NormalExample'>Normal Poll</a>	
 </fieldset>
-<fieldset><legend>--verbose</legend>
-Get the sourcecode with <a href="http://bazaar-vcs.org/">bazaar</a>:
-<br />
-bzr branch #{SITEURL} dudle
-<br />
-<a href="mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?subject=Feedback to dudle">give feedback</a>
-</fieldset>
-CHARSET
+NOTICE
 
 
