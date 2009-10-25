@@ -80,13 +80,12 @@ $htmlout += <<HEAD
 			</ul>
 	</div>
 	<div id='main'>
-		<p id='history'>history:#{table.history_to_html}</p>
 HEAD
 
 # TABLE
-	$htmlout += "<h1>#{table.name}</h1>"
 if VCS.revno == 1
 	$htmlout += <<HINT
+<h1>#{table.name}</h1>
 <pre id='configwarning'>
     .
   .:;:.
@@ -107,6 +106,8 @@ if VCS.revno == 1
 HINT
 else
 	$htmlout += <<TABLE
+<p id='history'>history:#{table.history_to_html}</p>
+<h1>#{table.name}</h1>
 <div id='polltable'>
 	<form method='post' action='.'>
 		#{table.to_html($cgi['edituser'])}
