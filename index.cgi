@@ -72,12 +72,15 @@ if $cgi.include?("create_poll")
 			TimePoll.new SITE
 		end
 		Dir.chdir("..")
-		createnotice = <<SUCCESS
-<div class='success'>
-	The poll was created successfully. The link to your new poll is:<br />
-	<a href='#{SITEURL}#{SITE}'>#{SITEURL}#{SITE}</a>
-</div>
-SUCCESS
+		$cgi.out("status" => "REDIRECT",
+		         "Location" => "#{SITEURL}#{SITE}/",
+		         "type" => TYPE,
+		         "charset" => CHARSET,
+		         "cookie" => $utfcookie,
+		         "Cache-Control" => "no-cache"){ 
+			"The poll was created successfully. The link to your new poll is:<br /><a href='#{SITEURL}#{SITE}'>#{SITEURL}#{SITE}</a>"
+		}
+		exit
 	else
 		createnotice = "<div class='error'>Error: This poll already exists!</div>"
 	end
