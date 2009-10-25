@@ -36,7 +36,7 @@ $htmlout = <<HEAD
 	<title>dudle - delete - #{POLL}</title>
 	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
 </head>
-<body>
+<body id='main'>
 HEAD
 
 if $cgi.include?("confirmnumber")
