@@ -88,14 +88,51 @@ html {
 	background: #CCCCD3;
 	color: black;
 }
-body {
+#main {
 	background: white;
-	margin: 3ex auto;
-	width: 90%;
 	padding: 2em;
 	color: black;
 	line-height: 1.5em;
 	border: solid 1px black;
+	top: 0px;
+	margin-top: 0px;
+}
+body#main, div#tabs ul{
+	margin-top: 2em;
+}
+div#tabs ul, p#history{
+	font-size: 80%;
+}
+div#tabs ul{
+	margin-left 0em;
+	margin-bottom: 0em;
+	padding: 0em;
+	list-style-type: none;
+}
+div#tabs li{
+	background: white;
+	border-width: 1px;
+	display: inline;
+}
+div#tabs a{
+	text-decoration:none;
+}
+li#active_tab{
+	border-style: solid solid none; 
+	padding-bottom: 1px;
+}
+li.nonactive_tab{ 
+	border-style: solid;
+}
+li.nonactive_tab a:hover { 
+	background: #CCC;
+}
+pre#configwarning {
+	font-family:Courier New,Courier,monospace;
+	letter-spacing:0;
+	margin-top: -12ex;
+	line-height:95%;
+	margin-left: -2ex;
 }
 h1 {
 	text-align: center;

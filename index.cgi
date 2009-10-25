@@ -46,7 +46,7 @@ HEAD
 	
 	$htmlout += '<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />' if File.exists?("atom.cgi")
 
-	$htmlout += "</head><body><h1>dudle</h1>"
+	$htmlout += "</head><body id='main'><h1>dudle</h1>"
 
 if $cgi.include?("create_poll")
 	SITE=$cgi["create_poll"].gsub(/^\//,"")

@@ -73,34 +73,30 @@ $htmlout += '<link rel="alternate"  type="application/atom+xml" href="atom.cgi" 
 $htmlout += <<HEAD
 </head>
 <body>
-	<div>
-		<small>
-			<a href='..' style='text-decoration:none'>#{BACK}</a>
-			<a href='config.cgi' style='text-decoration:none'>config</a>
-			history:#{table.history_to_html}
-		</small>
+	<div id='tabs'>
+			<ul>
+				<li id='active_tab' >&nbsp;poll&nbsp;</li>
+				<li class='nonactive_tab'><a href='config.cgi'>&nbsp;config&nbsp;</a></li>
+			</ul>
 	</div>
+	<div id='main'>
+		<p id='history'>history:#{table.history_to_html}</p>
 HEAD
 
 # TABLE
 	$htmlout += "<h1>#{table.name}</h1>"
 if VCS.revno == 1
 	$htmlout += <<HINT
-<pre
-	style="font-family:Courier New,Courier,monospace;
-		letter-spacing:0;
-		margin-top: -8ex;
-		line-height:95%;"
->
+<pre id='configwarning'>
     .
   .:;:.
 .:;;;;;:.
   ;;;;;
   ;;;;;
   ;;;;;
-  ;;;;;      Please press the config link on
-  ;:;;;      the top left corner of this page
-  ;;; :      to configure this poll!
+  ;;;;;      Please configure this poll
+  ;:;;;      within the config tab!
+  ;;; :
   ;:;
   ;.: .
   : .
@@ -121,7 +117,7 @@ TABLE
 	$htmlout += table.comment_to_html
 end
 
-$htmlout += "</body>"
+$htmlout += "</div></body>"
 
 $htmlout += "</html>"
 

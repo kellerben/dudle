@@ -124,15 +124,15 @@ $htmlout += <<HTMLHEAD
 	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
 </head>
 <body>
-	<div>
-		<small>
-			<a href='.' style='text-decoration:none'>#{BACK}</a>
-			history:#{table.history_to_html}
-		</small>
+	<div id='tabs'>
+		<ul>
+			<li class='nonactive_tab'><a href='.'>&nbsp;poll&nbsp;</a></li>
+			<li id='active_tab'>&nbsp;config&nbsp;</li>
 	</div>
 HTMLHEAD
 
 $htmlout += <<TABLE
+	<div id='main'>
 	<h1>#{table.name}</h1>
 #{table.to_html("",true,$cgi["editcolumn"])}
 TABLE
@@ -216,7 +216,7 @@ $htmlout +=<<REMOVE
 </div>
 REMOVE
 
-$htmlout += "</body>"
+$htmlout += "</div></body>"
 
 $htmlout += "</html>"
 
