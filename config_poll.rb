@@ -69,7 +69,7 @@ else
 <Files ~ "^(config|remove).cgi$">
 	AuthType digest
 	AuthName "admin"
-	AuthUserFile #{File.expand_path(".")}/.htdigest
+	AuthUserFile "#{File.expand_path(".").gsub('"','\\\\"')}/.htdigest"
 	Require valid-user
 </Files>
 HTACCESS
@@ -78,7 +78,7 @@ HTACCESS
 				htaccess << <<HTACCESS
 AuthType digest
 AuthName "participant"
-AuthUserFile #{File.expand_path(".")}/.htdigest
+AuthUserFile "#{File.expand_path(".").gsub('"','\\\\"')}/.htdigest"
 Require valid-user
 HTACCESS
 				VCS.commit("Access Control changed")
@@ -135,7 +135,7 @@ HTMLHEAD
 $htmlout += <<TABLE
 	<div id='main'>
 	<h1>#{table.name}</h1>
-#{table.to_html("",true,$cgi["editcolumn"])}
+#{table.to_html($cgi["edituser"],true,$cgi["editcolumn"])}
 TABLE
 
 $htmlout += <<INVITEDELETE
@@ -221,7 +221,7 @@ $htmlout += "</div></body>"
 
 $htmlout += "</html>"
 
-$header["Cache-Control"] => "no-cache"
+$header["Cache-Control"] = "no-cache"
 $cgi.out($header){$htmlout}
 end
 

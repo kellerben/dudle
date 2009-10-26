@@ -67,32 +67,36 @@ EDITDELETE
 
 		ret += head_to_html(config, activecolumn)
 		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
-			ret += "<tr class='participantrow'>\n"
-			ret += "<td class='name' #{edituser == participant ? "id='active'":""}>"
-			ret += participant
-			ret += " <sup><a href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\" style='text-decoration: none' >#{EDIT}</a></sup>" unless config
-			ret += "</td>\n"
-			@head.sort.each{|columntitle,columndescription|
-				klasse = poll[columntitle]
-				case klasse
-				when nil
-					value = UNKNOWN
-					klasse = "undecided"
-				when YESVAL
-					value = YES
-				when NOVAL
-					value = NO
-				when MAYBEVAL
-					value = MAYBE
-				end
-				ret += "<td class='#{klasse}' title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(columntitle.to_s)}\">#{value}</td>\n"
-			}
-			ret += "<td class='date'>#{poll['timestamp'].strftime('%d.%m,&nbsp;%H:%M')}</td>"
-			ret += "</tr>\n"
+			if edituser == participant
+				ret += participate_to_html(edituser, config)
+			else
+				ret += "<tr class='participantrow'>\n"
+				ret += "<td class='name' #{edituser == participant ? "id='active'":""}>"
+				ret += participant
+				ret += " <sup><a href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\" style='text-decoration: none' >#{EDIT}</a></sup>"
+				ret += "</td>\n"
+				@head.sort.each{|columntitle,columndescription|
+					klasse = poll[columntitle]
+					case klasse
+					when nil
+						value = UNKNOWN
+						klasse = "undecided"
+					when YESVAL
+						value = YES
+					when NOVAL
+						value = NO
+					when MAYBEVAL
+						value = MAYBE
+					end
+					ret += "<td class='#{klasse}' title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(columntitle.to_s)}\">#{value}</td>\n"
+				}
+				ret += "<td class='date'>#{poll['timestamp'].strftime('%d.%m,&nbsp;%H:%M')}</td>"
+				ret += "</tr>\n"
+			end
 		}
 
 		# PARTICIPATE
-		ret += participate_to_html(edituser) unless config
+		ret += participate_to_html(edituser, config) unless @data.keys.include?(edituser)
 
 		# SUMMARY
 		ret += "<tr id='summary'><td class='name'>total</td>\n"
@@ -134,7 +138,7 @@ EDITDELETE
 		ret += "</table>\n"
 		ret
 	end
-	def participate_to_html(edituser)
+	def participate_to_html(edituser, config)
 		checked = {}
 		if @data.include?(edituser)
 			@head.each_key{|k| checked[k] = @data[edituser][k]}
@@ -147,29 +151,36 @@ EDITDELETE
 			<input size='16' 
 				type='text' 
 				name='add_participant'
-				value=\"#{edituser}\"
-				title='To change a line, add a new person with the same name!' />"
+				value=\"#{edituser}\"/>"
 		ret += "</td>\n"
-		@head.sort.each{|columntitle,columndescription|
-			ret += "<td class='checkboxes'><table>"
-			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
-				ret += "<tr>
-					<td>
-						<input type='radio' 
-							value='#{valbinary}' 
-							id=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\" 
-							name=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s)}\" 
-							title=\"#{CGI.escapeHTML(columntitle.to_s)}\" #{checked[columntitle] == valbinary ? "checked='checked'":""}/>
-					</td>
-					<td class='input-#{valbinary}'>
-						<label for=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\">#{valhuman}</label>
-					</td>
-			</tr>"
+		if config
+		else
+			@head.sort.each{|columntitle,columndescription|
+				ret += "<td class='checkboxes'><table>"
+				[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
+					ret += "<tr>
+						<td>
+							<input type='radio' 
+								value='#{valbinary}' 
+								id=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\" 
+								name=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s)}\" 
+								title=\"#{CGI.escapeHTML(columntitle.to_s)}\" #{checked[columntitle] == valbinary ? "checked='checked'":""}/>
+						</td>
+						<td class='input-#{valbinary}'>
+							<label for=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\">#{valhuman}</label>
+						</td>
+				</tr>"
+				}
+				ret += "</table></td>"
 			}
-			ret += "</table></td>"
-		}
-		ret += "<td class='checkboxes'><input type='submit' value='add/edit' />"
-		ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='delete user' />" if @data.include?(edituser)
+		end
+		ret += "<td class='checkboxes'>"
+		if @data.include?(edituser)
+			ret += "<input type='submit' value='edit user' />"
+			ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='delete user' />"
+		else
+			ret += "<input type='submit' value='add user' />"
+		end
 		ret += "</td>\n"
 
 		ret += "</tr>\n"
