@@ -13,10 +13,10 @@ require "cgi"
 if __FILE__ == $0
 
 $cgi = CGI.new
-
-TYPE = "text/html"
-#TYPE = "application/xhtml+xml"
-CHARSET = "utf-8"
+$header = {}
+$header["type"] = "text/html"
+#$header["type"] = "application/xhtml+xml"
+$header["charset"] = "utf-8"
 
 $htmlout = <<HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
@@ -39,7 +39,7 @@ require "timepoll"
 $htmlout += <<HEAD
 <head>
 	<title>dudle</title>
-	<meta http-equiv="Content-Type" content="#{TYPE}; charset=#{CHARSET}" /> 
+	<meta http-equiv="Content-Type" content="#{$header["type"]}; charset=#{$header["charset"]}" /> 
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<link rel="stylesheet" type="text/css" href="dudle.css" title="default"/>
 HEAD
@@ -49,9 +49,12 @@ HEAD
 	$htmlout += "</head><body id='main'><h1>dudle</h1>"
 
 if $cgi.include?("create_poll")
-	SITE=$cgi["create_poll"].gsub(/^\//,"")
-	unless File.exist?(SITE)
-		Dir.mkdir(SITE)
+	SITE=$cgi["create_poll"]
+	if SITE.include?("/") 
+		createnotice = "<div class='error'>Error: The character '/' is not allowed.</div>"
+	elsif File.exist?(SITE)
+		createnotice = "<div class='error'>Error: This poll already exists!</div>"
+	else Dir.mkdir(SITE)
 		Dir.chdir(SITE)
 		VCS.init
 		File.symlink("../participate.rb","index.cgi")
@@ -72,21 +75,16 @@ if $cgi.include?("create_poll")
 			TimePoll.new SITE
 		end
 		Dir.chdir("..")
-		$cgi.out("status" => "REDIRECT",
-		         "Location" => "#{SITEURL}#{SITE}/",
-		         "type" => TYPE,
-		         "charset" => CHARSET,
-		         "cookie" => $utfcookie,
-		         "Cache-Control" => "no-cache"){ 
-			"The poll was created successfully. The link to your new poll is:<br /><a href='#{SITEURL}#{SITE}'>#{SITEURL}#{SITE}</a>"
-		}
-		exit
-	else
-		createnotice = "<div class='error'>Error: This poll already exists!</div>"
+		escapedsite = SITEURL + CGI.escapeHTML(CGI.escape(SITE)) + "/"
+		escapedsite.gsub!("+"," ")
+		$header["status"] = "REDIRECT"
+		$header["Location"] = escapedsite
+		$htmlout = "The poll was created successfully. The link to your new poll is:<br /><a href=\"#{escapedsite}\">#{escapedsite}</a>"
 	end
 end
 
-$htmlout += <<CHARSET
+unless $header["status"] == "REDIRECT"
+	$htmlout += <<CHARSET
 <div id='config'>
 <fieldset><legend>Config</legend>
 #{UTFASCII}
@@ -94,13 +92,13 @@ $htmlout += <<CHARSET
 </div>
 CHARSET
 
-$htmlout += <<CREATE
+	$htmlout += <<CREATE
 <fieldset><legend>Create New Poll</legend>
 <form method='post' action='.'>
 <table>
 <tr>
 	<td class='create_poll'><label title="#{poll_name_tip = "the name equals the link under which you receive the poll"}" for="poll_name">Name:</label></td>
-	<td class='create_poll'><input title="#{poll_name_tip}" id="poll_name" size='16' type='text' name='create_poll' /></td>
+	<td class='create_poll'><input title="#{poll_name_tip}" id="poll_name" size='16' type='text' name='create_poll' value="#{CGI.escapeHTML($cgi["create_poll"])}" /></td>
 </tr>
 <tr>
 	<td>Type:</td>
@@ -118,15 +116,16 @@ $htmlout += <<CREATE
 </tr>
 </table>
 </form>
-#{createnotice}
 </fieldset>
 CREATE
 
-$htmlout += NOTICE
-$htmlout += "</body>"
+	$htmlout += NOTICE
+	$htmlout += "</body>"
 
-$htmlout += "</html>"
+	$htmlout += "</html>"
+end
 
-$cgi.out("type" => TYPE ,"charset" => CHARSET,"cookie" => $utfcookie, "Cache-Control" => "no-cache"){$htmlout}
+$header["Cache-Control"] = "no-cache"
+$cgi.out($header){$htmlout}
 end
 

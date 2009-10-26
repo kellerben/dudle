@@ -13,10 +13,11 @@ require "cgi"
 if __FILE__ == $0
 
 $cgi = CGI.new
+$header = {}
 
-TYPE = "text/html"
-#TYPE = "application/xhtml+xml"
-CHARSET = "utf-8"
+$header["type"] = "text/html"
+#$header["type"] = "application/xhtml+xml"
+$header["charset"] = "utf-8"
 
 $htmlout = <<HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
@@ -60,7 +61,7 @@ end
 
 $htmlout += <<HEAD
 <head>
-	<meta http-equiv="Content-Type" content="#{TYPE}; charset=#{CHARSET}" /> 
+	<meta http-equiv="Content-Type" content="#{$header["type"]}; charset=#{$header["charset"]}" /> 
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<title>dudle - #{table.name}</title>
 	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
@@ -122,5 +123,6 @@ $htmlout += "</div></body>"
 
 $htmlout += "</html>"
 
-$cgi.out("type" => TYPE ,"charset" => CHARSET,"cookie" => $utfcookie, "Cache-Control" => "no-cache"){$htmlout}
+$header["Cache-Control"] = "no-cache"
+$cgi.out($header){$htmlout}
 end

@@ -19,10 +19,11 @@ require "ftools"
 if __FILE__ == $0
 
 $cgi = CGI.new
+$header = {}
 
-TYPE = "text/html"
-#TYPE = "application/xhtml+xml"
-CHARSET = "utf-8"
+$header["type"] = "text/html"
+#$header["type"] = "application/xhtml+xml"
+$header["charset"] = "utf-8"
 
 POLL = File.basename(File.expand_path("."))
 
@@ -31,7 +32,7 @@ $htmlout = <<HEAD
   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="#{TYPE}; charset=#{CHARSET}" /> 
+	<meta http-equiv="Content-Type" content="#{$header["type"]}; charset=#{$header["charset"]}" /> 
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<title>dudle - delete - #{POLL}</title>
 	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
@@ -86,6 +87,7 @@ $htmlout += "</body>"
 
 $htmlout += "</html>"
 
-$cgi.out("type" => TYPE ,"charset" => CHARSET, "Cache-Control" => "no-cache"){$htmlout}
+$header["Cache-Control"] = "no-cache"
+$cgi.out($header){$htmlout}
 end
 
