@@ -158,8 +158,8 @@ $htmlout +=<<ACL
 <div id='access_control'>
 	<fieldset>
 		<legend>Change Access Control settings</legend>
-		If you want to restrict the poll, add the participant user.
-		If you want to restrict the configuration interface seperately, please add an admin user!
+		If you want to restrict the access to the poll, add the user “participant”.<br />
+		If you want to restrict the access to the configuration interface seperately, please add the user “admin”!
 		<form method='post' action=''>
 			<table>
 				<tr>
@@ -177,21 +177,29 @@ acusers.each{|action,user|
 </tr>
 USER
 }
+
+remainder = ["admin","participant"] - acusers.keys
+unless remainder.empty?
+	$htmlout += <<ACL
+<tr>
+	<td>
+		<select name='ac_name'>
+ACL
+	remainder.each{|user|	$htmlout += "<option value='#{user}'>#{user}</option>"}
+	$htmlout += <<ACL
+		</select>
+	</td>
+	<td>
+		<input size='16' value="" type='password' name='ac_password' />
+	</td>
+	<td>
+		<input type='submit' name='ac_create' value='add' />
+	</td>
+</tr>
+ACL
+end
+
 $htmlout += <<ACL
-				<tr>
-					<td>
-						<select name='ac_name'>
-							<option value='participant'>participant</option>
-							<option value='admin'>admin</option>
-						</select>
-					</td>
-					<td>
-						<input size='16' value="" type='password' name='ac_password' />
-					</td>
-					<td>
-						<input type='submit' name='ac_create' value='add' />
-					</td>
-				</tr>
 			</table>
 		</form>
 	</fieldset>
