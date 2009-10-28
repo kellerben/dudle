@@ -58,7 +58,13 @@ else
 		acusers[k] = v
 	}
 
-	table.invite_delete($cgi["invite_delete"])	if $cgi.include?("invite_delete") and $cgi["invite_delete"] != ""
+	if $cgi.include?("add_participant")
+		if $cgi.include?("delete_participant")
+			table.delete($cgi["olduser"])
+		else
+			table.add_participant($cgi["olduser"],$cgi["add_participant"],{})
+		end
+	end
 	table.edit_column($cgi["new_columnname"],$cgi["columndescription"],$cgi["old_columnname"]) if $cgi.include?("new_columnname")
 	table.delete_column($cgi["delete_column"]) if $cgi.include?("delete_column")
 
@@ -129,28 +135,17 @@ $htmlout += <<HTMLHEAD
 		<ul>
 			<li class='nonactive_tab'><a href='.'>&nbsp;poll&nbsp;</a></li>
 			<li id='active_tab'>&nbsp;config&nbsp;</li>
+		</ul>
 	</div>
 HTMLHEAD
 
 $htmlout += <<TABLE
 	<div id='main'>
 	<h1>#{table.name}</h1>
-#{table.to_html($cgi["edituser"],true,$cgi["editcolumn"])}
-TABLE
-
-$htmlout += <<INVITEDELETE
-<div id='invite_delete'>
-	<fieldset>
-		<legend>Invite/Delete Participant</legend>
 		<form method='post' action='config.cgi'>
-			<div>
-				<input size='16' value="#{CGI.escapeHTML($cgi["invite_delete"])}" type='text' name='invite_delete' />
-				<input type='submit' value='invite/delete' />
-			</div>
+			#{table.to_html($cgi["edituser"],true,$cgi["editcolumn"])}
 		</form>
-	</fieldset>
-</div>
-INVITEDELETE
+TABLE
 
 # ADD/REMOVE COLUMN
 $htmlout +=<<ADD_EDIT

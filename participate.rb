@@ -42,7 +42,7 @@ else
 
 	if $cgi.include?("add_participant")
 		if $cgi.include?("delete_participant")
-			table.invite_delete($cgi["olduser"])
+			table.delete($cgi["olduser"])
 		else
 			agreed = {}
 			$cgi.params.each{|k,v|

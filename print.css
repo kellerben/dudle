@@ -42,7 +42,7 @@ td {
 td.sum, td.date, td.name, td.checkboxes { 
 	background-color:Silver;
 }
-div#add_comment,div#edit_column, div#invite_delete, div#history, div#backlink, input.delete_comment_button, tr#add_participant, div#configlink{
+div#add_comment,div#edit_column, div#history, div#backlink, input.delete_comment_button, tr#add_participant, div#configlink{
 	visibility: collapse;
 }
 th { 

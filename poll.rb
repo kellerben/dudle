@@ -153,8 +153,7 @@ EDITDELETE
 				name='add_participant'
 				value=\"#{edituser}\"/>"
 		ret += "</td>\n"
-		if config
-		else
+		unless config
 			@head.sort.each{|columntitle,columndescription|
 				ret += "<td class='checkboxes'><table>"
 				[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
@@ -173,8 +172,10 @@ EDITDELETE
 				}
 				ret += "</table></td>"
 			}
+			ret += "<td class='checkboxes'>"
+		else
+			ret += "<td class='checkboxes' colspan='#{@head.size + 1}'>"
 		end
-		ret += "<td class='checkboxes'>"
 		if @data.include?(edituser)
 			ret += "<input type='submit' value='edit user' />"
 			ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='delete user' />"
@@ -264,13 +265,11 @@ ADDCOMMENT
 		}
 		store "Participant #{name.strip} edited"
 	end
-	def invite_delete(name)
+	def delete(name)
 		htmlname = CGI.escapeHTML(name.strip)
 		if @data.has_key?(htmlname)
 			@data.delete(htmlname)
 			store "Participant #{name.strip} deleted"
-		else
-			add_participant("",name,{})
 		end
 	end
 	def store comment
