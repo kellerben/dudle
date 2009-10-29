@@ -159,11 +159,11 @@ $htmlout +=<<ACL
 	<fieldset>
 		<legend>Change Access Control settings</legend>
 		If you want to restrict the access to the poll, add the user “participant”.<br />
-		If you want to restrict the access to the configuration interface seperately, please add the user “admin”!
+		If you want to restrict the access to the configuration interface seperately, add the user “admin”.
 		<form method='post' action=''>
 			<table>
 				<tr>
-					<th>Name</th><th>Password</th>
+					<th>User</th><th>Password</th>
 				</tr>
 ACL
 acusers.each{|action,user|
