@@ -21,6 +21,8 @@ td.name {
 	background-color:#A00;
 }
 
+span.edituser a{ text-decoration: none }
+
 th.weekday{
 	width: 2.5em;
 }
@@ -74,7 +76,7 @@ tr.participantrow:hover {
 	background: #AAA;
 }
 
-div#add_comment,div#edit_column, div#history, div#backlink, input.delete_comment_button, tr#add_participant, div#configlink, div#tabs, p#history{
+div#add_comment,div#edit_column, div#history, div#backlink, input.delete_comment_button, tr#add_participant, div#configlink, div#tabs, p#history, span.edituser a{
 	visibility: collapse;
 }
 

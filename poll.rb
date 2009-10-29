@@ -72,7 +72,7 @@ EDITDELETE
 				ret += "<tr class='participantrow'>\n"
 				ret += "<td class='name' #{edituser == participant ? "id='active'":""}>"
 				ret += participant
-				ret += " <sup><a href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\" style='text-decoration: none' >#{EDIT}</a></sup>"
+				ret += "<span class='edituser'> <sup><a href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">#{EDIT}</a></sup></span>"
 				ret += "</td>\n"
 				@head.sort.each{|columntitle,columndescription|
 					klasse = poll[columntitle]

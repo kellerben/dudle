@@ -21,6 +21,8 @@ td.name {
 	background-color:#A00;
 }
 
+span.edituser a{ text-decoration: none }
+
 input.deletebutton{
 	border-width: 0px; 
 	border-style: solid;
@@ -50,6 +52,7 @@ input.navigation {
 }
 
 input.disabled { background-color:#DDD;color:#BBB}
+
 td.calendarday{
 	border: 1px; 
 	padding: 0px;
@@ -164,7 +167,6 @@ pre#configwarning {
 h1 {
 	text-align: center;
 }
-
 
 div.comment { margin-top: 1ex; }
 
