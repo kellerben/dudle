@@ -96,6 +96,8 @@ HTACCESS
 		user = $cgi["ac_user"]
 		type = $cgi["ac_type"]
 		if !(user =~ /^[\w]*$/)
+			# add user
+
 			usercreatenotice = "<div class='error'>Only uppercase, lowercase, digits are allowed in the username.</div>"
 		elsif $cgi["ac_password1"] != $cgi["ac_password2"]
 			usercreatenotice = "<div class='error'>Passwords do not match.</div>"
@@ -113,22 +115,27 @@ HTACCESS
 					writehtaccess(acusers)
 				end
 			end
-			usercreatenotice = "Access control was changed."
+
+			# delete user
+			deleteuser = ""
+			deleteaction = ""
 			acusers.each{|user,action|
-				if $cgi.include?("ac_delete_#{user}")
-					htdigest = []
-					File.open(".htdigest","r"){|file|
-						htdigest = file.readlines
-					}
-					File.open(".htdigest","w"){|f|
-						htdigest.each{|line|
-							f << line if line.scan(/^#{user}:#{type}:/).empty?
-						}
-					}
-					acusers.delete(user)
-					writehtaccess(acusers)
+				if $cgi.include?("ac_delete_#{user}_#{action}")
+					deleteuser = user
+					deleteaction = action
 				end
 			}
+			acusers.delete(deleteuser)
+			htdigest = []
+			File.open(".htdigest","r"){|file|
+				htdigest = file.readlines
+			}
+			File.open(".htdigest","w"){|f|
+				htdigest.each{|line|
+					f << line unless line =~ /^#{deleteuser}:#{deleteaction}:/
+				}
+			}
+			writehtaccess(acusers)
 		end
 	end
 end
@@ -184,7 +191,7 @@ acusers.each{|user,action|
 	<td>*****************</td>
 	<td>*****************</td>
 	<td>
-		<input type='submit' name='ac_delete_#{user}' value='delete' />
+		<input type='submit' name='ac_delete_#{user}_#{action}' value='delete' />
 	</td>
 </tr>
 USER
@@ -201,7 +208,7 @@ ACL
 	$htmlout += <<ACL
 		</select>
 	</td>
-	<td><input size='6' value="" type='entry' name='ac_user' /></td>
+	<td><input size='6' value="" type='text' name='ac_user' /></td>
 	<td><input size='6' value="" type='password' name='ac_password1' /></td>
 	<td><input size='6' value="" type='password' name='ac_password2' /></td>
 	<td>
