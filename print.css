@@ -5,13 +5,10 @@
  *******************************/
 
 
-td.ayes, td.bmaybe, td.cno { cursor:default; }
 td.ayes, input.choosen  { background-color:#0F0; }
 td.cno { background-color:#F00; }
 td.bmaybe { background-color:#FF0; }
 td.undecided { background-color:#DDD;color:#666 }
-
-label { cursor: pointer; }
 
 td.name {
 	text-align:right;
@@ -32,7 +29,6 @@ input.navigation, input.disabled, input.choosen, input.notchoosen {
 	border-style: solid;
 	border-color: black;
 	padding: 0px;
-	cursor: pointer;
 	width: 100%;
 	height: 100%;
 }
@@ -99,7 +95,7 @@ td.date {
 
 
 pre#configwarning {
-	font-family:Courier New,Courier,monospace;
+	font-family:"Courier New",Courier,monospace;
 	letter-spacing:0;
 	margin-top: -12ex;
 	line-height:95%;
