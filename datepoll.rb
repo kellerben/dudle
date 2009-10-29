@@ -14,6 +14,7 @@ class DatePoll < Poll
 		}
 		super datefields
 	end 
+
 	def head_to_html(config = false, activecolumn = nil)
 		ret = "<tr><td></td>\n"
 		monthhead = Hash.new(0)
@@ -96,9 +97,11 @@ END
 END
 		ret
 	end
+
 	def parsecolumntitle(title)
 		Date.parse("#{$cgi["add_remove_column_month"]}-#{title}")
 	end
+
 	def edit_column(newtitle, description, oldtitle = nil)
 		parsed_date = parsecolumntitle(newtitle)
 		if @head.include?(parsed_date)

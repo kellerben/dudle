@@ -20,8 +20,7 @@ class Poll
 		@comment = []
 		store "Poll #{name} created"
 	end
-	def init
-	end
+
 	def sort_data fields
 		if fields.include?("name")
 			until fields.pop == "name"
@@ -34,6 +33,7 @@ class Poll
 			@data.sort{|x,y| x[1].compare_by_values(y[1],fields) }
 		end
 	end
+
 	def head_to_html(config = false,activecolumn = nil)
 		ret = "<tr><th><a href='?sort=name'>Name</a></th>\n"
 		@head.sort.each{|columntitle,columndescription|
@@ -47,8 +47,7 @@ class Poll
 		<small>
 			<a href="?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}" title="edit">
 			#{EDIT}
-			</a>
-			#{CGI.escapeHTML("|")}
+			</a>|
 			<input type='hidden' name='delete_column' value="#{CGI.escapeHTML(columntitle)}" />
 			<input type="submit" value="#{DELETE}" title="delete" class="deletebutton" #{activecolumn == columntitle ? 'id="activedeletebutton"' : ''} />
 		</small>
@@ -116,9 +115,9 @@ EDITDELETE
 			else
 				percent_f = 100*yes/@data.size
 			end
-			percent = "#{percent_f}#{CGI.escapeHTML("%")}" unless @data.empty?
+			percent = "#{percent_f}%" unless @data.empty?
 			if undecided > 0
-				percent += "-#{(100.0*(undecided+yes)/@data.size).round}#{CGI.escapeHTML("%")}"
+				percent += "-#{(100.0*(undecided+yes)/@data.size).round}%"
 			end
 
 			ret += "<td class='sum' title='#{percent}' style='"
@@ -138,6 +137,7 @@ EDITDELETE
 		ret += "</table>\n"
 		ret
 	end
+
 	def participate_to_html(edituser, config)
 		checked = {}
 		if @data.include?(edituser)
@@ -188,6 +188,7 @@ EDITDELETE
 
 		ret
 	end
+
 	def comment_to_html
 		ret = "<div id='comments'>"
 		ret	+= "<h2>Comments</h2>"
@@ -230,6 +231,7 @@ ADDCOMMENT
 		ret += "</div>\n"
 		ret
 	end
+
 	def history_to_html
 		ret = ""
 		maxrev=VCS.revno
@@ -250,6 +252,7 @@ ADDCOMMENT
 		ret += " <a href='.' >last</a>" if defined?(REVISION)
 		ret
 	end
+
 	def add_participant(olduser, name, agreed)
 		name.strip!
 		if name == ""
@@ -265,6 +268,7 @@ ADDCOMMENT
 		}
 		store "Participant #{name.strip} edited"
 	end
+
 	def delete(name)
 		htmlname = CGI.escapeHTML(name.strip)
 		if @data.has_key?(htmlname)
@@ -272,6 +276,7 @@ ADDCOMMENT
 			store "Participant #{name.strip} deleted"
 		end
 	end
+
 	def store comment
 		File.open("data.yaml", 'w') do |out|
 			out << "# This is a dudle poll file\n"
@@ -288,6 +293,7 @@ ADDCOMMENT
 		@comment << [Time.now, CGI.escapeHTML(name.strip), CGI.escapeHTML(comment.strip).gsub("\r\n","<br />")]
 		store "Comment added by #{name}"
 	end
+
 	def delete_comment index
 		store "Comment from #{@comment.delete_at(index)[1]} deleted"
 	end
@@ -298,6 +304,7 @@ ADDCOMMENT
 	def parsecolumntitle title
 		title.strip
 	end
+
 	def delete_column title
 		parsedtitle = parsecolumntitle(title)
 		if @head.include?(parsedtitle)
@@ -308,6 +315,7 @@ ADDCOMMENT
 			return false
 		end
 	end
+
 	def edit_column(newtitle, description, oldtitle = nil)
 		@head.delete(oldtitle) if oldtitle
 		parsedtitle = parsecolumntitle(newtitle)
@@ -316,6 +324,7 @@ ADDCOMMENT
 		store "Column #{parsedtitle} edited"
 		true
 	end
+
 	def edit_column_htmlform(activecolumn)
 		if activecolumn 
 			title = activecolumn

@@ -15,6 +15,7 @@ class TimePoll < Poll
 		}
 		super datefields
 	end 
+	
 	# returns a sorted array, containing the big units and how often each small is in the big one
 	# small and big must be formated for strftime
 	# ex: head_count("%Y-%m", "-%d") returns an array like [["2009-03",2],["2009-04",3]]
@@ -177,6 +178,7 @@ END
 END
 		ret
 	end
+
 	def parsecolumntitle(title)
 		if $cgi.include?("add_remove_column_day")
 			parsed_date = YAML::load(Time.parse("#{$cgi["add_remove_column_month"]}-#{$cgi["add_remove_column_day"]} #{title}").to_yaml)
@@ -186,6 +188,7 @@ END
 		end
 		parsed_date
 	end
+
 	def edit_column(newtitle, description, oldtitle = nil)
 		parsed_date = parsecolumntitle(newtitle)
 		if @head.include?(parsed_date)
