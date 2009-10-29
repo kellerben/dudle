@@ -4,61 +4,110 @@
  *          see License         *
  *******************************/
 
-td.yes, input.choosen  { background-color:#0F0; }
-td.no { background-color:#F00; }
-td.maybe { background-color:#FF0; }
+
+td.ayes, td.bmaybe, td.cno { cursor:default; }
+td.ayes, input.choosen  { background-color:#0F0; }
+td.cno { background-color:#F00; }
+td.bmaybe { background-color:#FF0; }
 td.undecided { background-color:#DDD;color:#666 }
+
+label { cursor: pointer; }
+
 td.name {
 	text-align:right;
 }
+
+#active, #activedeletebutton{
+	background-color:#A00;
+}
+
+th.weekday{
+	width: 2.5em;
+}
+
 input.navigation, input.disabled, input.choosen, input.notchoosen {
 	border-width: 1px; 
 	border-style: solid;
 	border-color: black;
 	padding: 0px;
 	cursor: pointer;
-	width: 3.5em;
-	height: 3.5ex;
+	width: 100%;
+	height: 100%;
 }
+
 input.navigation {
 	color: white; 
 	background-color: black;
 }
+
 input.disabled { background-color:#DDD;color:#BBB}
 td.calendarday{
 	border: 1px; 
 	padding: 0px;
 	margin: 0px;
 }
+
 table { 
 	border: none; 
 }
+
+td.create_poll{
+	text-align:left;
+}
+
 td {
 	vertical-align:middle;
 	text-align:center;
 	border-width: 0px;
 	padding: 1px 3px;
 }
-td.sum, td.date, td.name, td.checkboxes { 
+
+td.sum, tr.participantrow, tr#add_participant, tr#summary { 
 	background-color:Silver;
 }
-div#add_comment,div#edit_column, div#history, div#backlink, input.delete_comment_button, tr#add_participant, div#configlink{
+
+td.polls {
+	text-align:left;
+}
+
+tr.participantrow:hover {
+	background: #AAA;
+}
+
+div#add_comment,div#edit_column, div#history, div#backlink, input.delete_comment_button, tr#add_participant, div#configlink, div#tabs, p#history{
 	visibility: collapse;
 }
+
 th { 
 	padding: 1px 3px;
 	color: white;
 	background-color:black;
 	font-weight: normal;
 }
+
 th a{
 	color: white;
 	text-decoration: none;
 }
+
 td.date { 
 	color: Gray;
 	text-align: left;
 }
+
+
+pre#configwarning {
+	font-family:Courier New,Courier,monospace;
+	letter-spacing:0;
+	margin-top: -12ex;
+	line-height:95%;
+	margin-left: -2ex;
+}
+
+
 h1 {
 	text-align: center;
 }
+
+
+div.comment { margin-top: 1ex; }

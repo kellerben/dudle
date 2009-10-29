@@ -216,7 +216,7 @@ COMMENT
 		# ADD COMMENT
 		ret += <<ADDCOMMENT
 		<form method='post' action='.'>
-			<div class='comment'>
+			<div class='comment' id='add_comment'>
 				<fieldset>
 					<legend>
 						<input value='Anonymous' type='text' name='commentname' size='9' /> says&nbsp;
