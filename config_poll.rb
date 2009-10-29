@@ -54,8 +54,8 @@ if $cgi.include?("revision")
 else
 	table = YAML::load_file("data.yaml")
 	File.open(".htdigest","r").each_line{|l| 
-		v,k = l.scan(/^(.*):(.*):.*$/).flatten
-		acusers[k] = v
+		user,realm = l.scan(/^(.*):(.*):.*$/).flatten
+		acusers[user] = realm
 	}
 
 	if $cgi.include?("add_participant")
@@ -70,20 +70,20 @@ else
 
 	def writehtaccess(acusers)
 		File.open(".htaccess","w"){|htaccess|
-			if acusers["admin"]
+			if acusers.values.include?("config")
 				htaccess << <<HTACCESS
 <Files ~ "^(config|remove).cgi$">
 	AuthType digest
-	AuthName "admin"
+	AuthName "config"
 	AuthUserFile "#{File.expand_path(".").gsub('"','\\\\"')}/.htdigest"
 	Require valid-user
 </Files>
 HTACCESS
 			end
-			if acusers["participant"]
+			if acusers.values.include?("vote")
 				htaccess << <<HTACCESS
 AuthType digest
-AuthName "participant"
+AuthName "vote"
 AuthUserFile "#{File.expand_path(".").gsub('"','\\\\"')}/.htdigest"
 Require valid-user
 HTACCESS
@@ -92,34 +92,44 @@ HTACCESS
 		}
 	end
 
-	if $cgi.include?("ac_create")
-		user = $cgi["ac_name"]
-		# only admin and participant is allowed 
-		if user == "admin" || user == "participant"
-			fork {
-				IO.popen("htdigest .htdigest #{user} #{user}","w+"){|htdigest|
-					htdigest.sync
-					2.times{ 
-						htdigest.puts($cgi["ac_password"])
+	if $cgi.include?("ac_user")
+		user = $cgi["ac_user"]
+		type = $cgi["ac_type"]
+		if !(user =~ /^[\w]*$/)
+			usercreatenotice = "<div class='error'>Only uppercase, lowercase, digits are allowed in the username.</div>"
+		elsif $cgi["ac_password1"] != $cgi["ac_password2"]
+			usercreatenotice = "<div class='error'>Passwords do not match.</div>"
+		else
+			if $cgi.include?("ac_create")
+				if type == "config" || type == "vote"
+					fork {
+						IO.popen("htdigest .htdigest #{type} #{user}","w+"){|htdigest|
+							htdigest.sync
+							htdigest.puts($cgi["ac_password1"])
+							htdigest.puts($cgi["ac_password2"])
+						}
 					}
-				}
+					acusers[user] = type 
+					writehtaccess(acusers)
+				end
+			end
+			usercreatenotice = "Access control was changed."
+			acusers.each{|user,action|
+				if $cgi.include?("ac_delete_#{user}")
+					htdigest = []
+					File.open(".htdigest","r"){|file|
+						htdigest = file.readlines
+					}
+					File.open(".htdigest","w"){|f|
+						htdigest.each{|line|
+							f << line if line.scan(/^#{user}:#{type}:/).empty?
+						}
+					}
+					acusers.delete(user)
+					writehtaccess(acusers)
+				end
 			}
-			acusers[user] = user
-			writehtaccess(acusers)
 		end
-	elsif $cgi.include?("ac_delete_admin") || $cgi.include?("ac_delete_participant")
-		["admin", "participant"].each{|u| user = u if $cgi.include?("ac_delete_#{u}") }
-		htdigest = []
-		File.open(".htdigest","r").each_line{|line|
-			htdigest << line
-		}
-		File.open(".htdigest","w"){|f|
-			htdigest.each{|line|
-				f << line if line.scan(/^#{user}:#{user}:/).empty?
-			}
-		}
-		acusers.delete(user)
-		writehtaccess(acusers)
 	end
 end
 
@@ -154,22 +164,24 @@ $htmlout +=<<ADD_EDIT
 </div>
 ADD_EDIT
 
+# ACCESS CONTROL
+$accesslevels = { "vote" => "Vote Interface", "config" => "Config Interface" }
 $htmlout +=<<ACL
 <div id='access_control'>
 	<fieldset>
 		<legend>Change Access Control settings</legend>
-		If you want to restrict the access to the poll, add the user “participant”.<br />
-		If you want to restrict the access to the configuration interface seperately, add the user “admin”.
 		<form method='post' action=''>
 			<table>
 				<tr>
-					<th>User</th><th>Password</th>
+					<th>Access to</th><th>Username</th><th>Password</th><th>Password (repeat)</th>
 				</tr>
 ACL
-acusers.each{|action,user|
+acusers.each{|user,action|
 		$htmlout += <<USER
 <tr>
+	<td>#{$accesslevels[action]}</td>
 	<td>#{user}</td>
+	<td>*****************</td>
 	<td>*****************</td>
 	<td>
 		<input type='submit' name='ac_delete_#{user}' value='delete' />
@@ -178,30 +190,30 @@ acusers.each{|action,user|
 USER
 }
 
-remainder = ["admin","participant"] - acusers.keys
-unless remainder.empty?
-	$htmlout += <<ACL
+$htmlout += <<ACL
 <tr>
 	<td>
-		<select name='ac_name'>
+		<select name='ac_type'>
 ACL
-	remainder.each{|user|	$htmlout += "<option value='#{user}'>#{user}</option>"}
+	$accesslevels.each{|action,description| 
+		$htmlout += "<option value='#{action}'>#{description}</option>"
+	}
 	$htmlout += <<ACL
 		</select>
 	</td>
-	<td>
-		<input size='16' value="" type='password' name='ac_password' />
-	</td>
+	<td><input size='6' value="" type='entry' name='ac_user' /></td>
+	<td><input size='6' value="" type='password' name='ac_password1' /></td>
+	<td><input size='6' value="" type='password' name='ac_password2' /></td>
 	<td>
 		<input type='submit' name='ac_create' value='add' />
 	</td>
 </tr>
 ACL
-end
 
 $htmlout += <<ACL
 			</table>
 		</form>
+		#{usercreatenotice}
 	</fieldset>
 </div>
 ACL
