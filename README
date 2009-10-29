@@ -7,10 +7,8 @@ License:
    CC-by-sa 3.0 
    see License
 
-
-Just place this application into a directory where cgi-scripts are evaluated.
-The webserver needs the permission to write into the directory!
-
-Copy config.rb.sample to config.rb to start with a default configuration and make
-sure, that the webserver is allowed to write into the directory and can execute
-ruby + bzr.
+=== Installation ===
+1. Place this application into a directory where cgi-scripts are evaluated.
+   Make shure, that the webserver can execute ruby + bzr.
+2. Copy config_sample.rb to config.rb to start with a default configuration.
+3. The webserver needs the permission to write into the directory 
