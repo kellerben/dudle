@@ -16,19 +16,29 @@ class DatePoll < Poll
 		super datefields
 	end 
 
-	def head_to_html(config = false, activecolumn = nil)
-		ret = "<tr><td></td>\n"
-		monthhead = Hash.new(0)
-		@head.sort.each{|curdate,curdescription|
-			monthhead["#{curdate.year}-#{curdate.mon.to_s.rjust(2,"0")} "] += 1
+	# returns a sorted array, containing the big units and how often each small is in the big one
+	# small and big must be formated for strftime
+	# ex: head_count("%Y-%m", "-%d") returns an array like [["2009-03",2],["2009-04",3]]
+	def head_count(big,small)
+		ret = Hash.new(0)
+		@head.keys.collect{|curdate|
+			Time.parse(curdate.strftime(big + small))
+		}.uniq.each{|day|
+			ret[day.strftime(big)] += 1
 		}
-		monthhead.sort.each{|title,count|
+		ret.sort
+	end
+
+	def head_to_html(config = false, activecolumn = nil)
+		ret = "<tr><td></td>"
+		head_count("%Y-%m","-%d %H:%M%Z").each{|title,count|
 			year, month = title.split("-").collect{|e| e.to_i}
 			ret += "<th colspan='#{count}'>#{Date::ABBR_MONTHNAMES[month]} #{year}</th>\n"
 		}
-		ret += "</tr><tr><th><a href='?sort=name'>Name</a></th>\n"
-		@head.sort.each{|curdate,curdescription|
-			ret += "<th><a href='?sort=#{curdate.to_s}'>#{Date::ABBR_DAYNAMES[curdate.wday]}, #{curdate.day}</a></th>\n"
+
+		ret += "</tr><tr><th><a href='?sort=name'>Name</a></th>"
+		@head.keys.sort.each{|curdate|
+			ret += "<th><a title='#{curdate}' href='?sort=#{curdate.to_s}'>#{Date::ABBR_DAYNAMES[curdate.wday]}, #{curdate.day}</a></th>\n"
 		}
 		ret += "<th><a href='.'>Last Edit</a></th>\n</tr>\n"
 		ret
@@ -60,7 +70,7 @@ class DatePoll < Poll
 		ret = <<END
 <fieldset><legend>Add/Remove Column</legend>
 <form method='post' action=''>
-<div>
+<div style="float: left; margin-right: 20px">
 <table><tr>
 END
 		def navi val

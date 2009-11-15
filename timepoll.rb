@@ -35,10 +35,12 @@ class TimePoll < Poll
 			year, month = title.split("-").collect{|e| e.to_i}
 			ret += "<th colspan='#{count}'>#{Date::ABBR_MONTHNAMES[month]} #{year}</th>\n"
 		}
+
 		ret += "</tr><tr><td></td>"
 		head_count("%Y-%m-%d", " %H:%M%Z").each{|title,count|
 			ret += "<th colspan='#{count}'>#{Date.parse(title).strftime("%a, %d")}</th>\n"
 		}
+
 		ret += "</tr><tr><th><a href='?sort=name'>Name</a></th>"
 		@head.keys.sort.each{|curdate|
 			ret += "<th><a title='#{curdate}' href='?sort=#{CGI.escapeHTML(CGI.escape(curdate.to_s))}'>#{curdate.strftime("%H:%M")}</a></th>\n"
