@@ -6,6 +6,7 @@
 
 require "date"
 require "poll"
+require "time"
 
 class DatePoll < Poll
 	def sort_data fields
@@ -57,7 +58,7 @@ class DatePoll < Poll
 			startdate = Date.parse("#{Date.today.year}-#{Date.today.month}-1")
 		end
 		ret = <<END
-<fieldset><legend>add/remove column</legend>
+<fieldset><legend>Add/Remove Column</legend>
 <form method='post' action=''>
 <div>
 <table><tr>
@@ -73,7 +74,7 @@ END
 		 
 		ret += "</tr><tr>\n"
 
-		7.times{|i| ret += "<th>#{Date::ABBR_DAYNAMES[(i+1)%7]}</th>" }
+		7.times{|i| ret += "<th class='weekday'>#{Date::ABBR_DAYNAMES[(i+1)%7]}</th>" }
 		ret += "</tr><tr>\n"
 		
 		((startdate.wday+7-1)%7).times{
