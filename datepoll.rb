@@ -38,7 +38,7 @@ class DatePoll < Poll
 
 		ret += "</tr><tr><th><a href='?sort=name'>Name</a></th>"
 		@head.keys.sort.each{|curdate|
-			ret += "<th><a title='#{curdate}' href='?sort=#{curdate.to_s}'>#{Date::ABBR_DAYNAMES[curdate.wday]}, #{curdate.day}</a></th>\n"
+			ret += "<th><a title='#{curdate}' href='?sort=#{curdate.to_s}'>#{curdate.strftime("%a, %d")}</a></th>\n"
 		}
 		ret += "<th><a href='.'>Last Edit</a></th>\n</tr>\n"
 		ret
