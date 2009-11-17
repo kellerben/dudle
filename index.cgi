@@ -33,8 +33,6 @@ else
 end
 
 require "poll"
-require "datepoll"
-require "timepoll"
 
 $htmlout += <<HEAD
 <head>
@@ -68,12 +66,7 @@ if $cgi.include?("create_poll")
 			File.open(f,"w").close
 			VCS.add(f)
 		}
-		case $cgi["poll_type"]
-		when "normal"
-			Poll.new SITE
-		when "time"
-			TimePoll.new SITE
-		end
+		Poll.new(SITE,$cgi["poll_type"])
 		Dir.chdir("..")
 		escapedsite = SITEURL + CGI.escapeHTML(CGI.escape(SITE)) + "/"
 		escapedsite.gsub!("+"," ")

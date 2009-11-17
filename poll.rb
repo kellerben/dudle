@@ -7,64 +7,50 @@
 require "hash"
 require "yaml"
 require "time"
+require "pollhead"
+require "timepollhead"
 
 class Poll
 	attr_reader :head, :name
 	YESVAL   = "ayes"
 	MAYBEVAL = "bmaybe"
 	NOVAL    = "cno"
-	def initialize name
+	def initialize name,type
 		@name = name
-		@head = {}
+
+		case type
+		when "normal"
+			@head = PollHead.new
+		when "time"
+			@head = TimePollHead.new
+		else
+			raise("unknown poll type: #{type}")
+		end
 		@data = {}
 		@comment = []
 		store "Poll #{name} created"
 	end
 
 	def sort_data fields
-		if fields.include?("name")
-			until fields.pop == "name"
+		parsedfields = fields.collect{|field| 
+			field == "timestamp" || field == "name" ? field : @head.cgi_to_id(field) 
+		}
+		if parsedfields.include?("name")
+			until parsedfields.pop == "name"
 			end
 			@data.sort{|x,y|
-				cmp = x[1].compare_by_values(y[1],fields) 
+				cmp = x[1].compare_by_values(y[1],parsedfields) 
 				cmp == 0 ? x[0] <=> y[0] : cmp
 			}
 		else
-			@data.sort{|x,y| x[1].compare_by_values(y[1],fields) }
+			@data.sort{|x,y| x[1].compare_by_values(y[1],parsedfields) }
 		end
 	end
 
-	def head_to_html(config = false,activecolumn = nil)
-		ret = "<tr><th><a href='?sort=name'>Name</a></th>\n"
-		@head.sort.each{|columntitle,columndescription|
-			ret += "<th"
-			ret += " id='active' " if activecolumn == columntitle
-			ret += "><a title=\"#{columndescription}\" href=\"?sort=#{CGI.escapeHTML(CGI.escape(columntitle))}\">#{CGI.escapeHTML(columntitle)}</a>"
-			if config
-				ret += <<EDITDELETE
-<form method='post' action=''>
-	<div>
-		<small>
-			<a href="?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}" title="edit">
-			#{EDIT}
-			</a>|
-			<input type='hidden' name='delete_column' value="#{CGI.escapeHTML(columntitle)}" />
-			<input type="submit" value="#{DELETE}" title="delete" class="deletebutton" #{activecolumn == columntitle ? 'id="activedeletebutton"' : ''} />
-		</small>
-	</div>
-</form>
-EDITDELETE
-			end
-			ret += "</th>"
-		}
-		ret += "<th><a href='.'>Last Edit</a></th>\n"
-		ret += "</tr>\n"
-		ret
-	end
 	def to_html(edituser = "", config = false,activecolumn = nil)
 		ret = "<table border='1'>\n"
 
-		ret += head_to_html(config, activecolumn)
+		ret += @head.to_html(config, activecolumn)
 		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
 			if edituser == participant
 				ret += participate_to_html(edituser, config)
@@ -74,8 +60,8 @@ EDITDELETE
 				ret += participant
 				ret += "<span class='edituser'> <sup><a href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">#{EDIT}</a></sup></span>"
 				ret += "</td>\n"
-				@head.sort.each{|columntitle,columndescription|
-					klasse = poll[columntitle]
+				@head.each_column{|columnid,columntitle|
+					klasse = poll[columnid]
 					case klasse
 					when nil
 						value = UNKNOWN
@@ -99,13 +85,13 @@ EDITDELETE
 
 		# SUMMARY
 		ret += "<tr id='summary'><td class='name'>total</td>\n"
-		@head.sort.each{|columntitle,columndescription|
+		@head.each_columnid{|columnid|
 			yes = 0
 			undecided = 0
 			@data.each_value{|participant|
-				if participant[columntitle] == YESVAL
+				if participant[columnid] == YESVAL
 					yes += 1
-				elsif !participant.has_key?(columntitle) or participant[columntitle] == MAYBEVAL
+				elsif !participant.has_key?(columnid) or participant[columnid] == MAYBEVAL
 					undecided += 1
 				end
 			}
@@ -141,9 +127,9 @@ EDITDELETE
 	def participate_to_html(edituser, config)
 		checked = {}
 		if @data.include?(edituser)
-			@head.each_key{|k| checked[k] = @data[edituser][k]}
+			@head.each_columnid{|k| checked[k] = @data[edituser][k]}
 		else
-			@head.each_key{|k| checked[k] = NOVAL}
+			@head.each_columnid{|k| checked[k] = NOVAL}
 		end
 		ret = "<tr id='add_participant'>\n"
 		ret += "<td class='name'>
@@ -154,19 +140,19 @@ EDITDELETE
 				value=\"#{edituser}\"/>"
 		ret += "</td>\n"
 		unless config
-			@head.sort.each{|columntitle,columndescription|
+			@head.each_column{|columnid,columntitle|
 				ret += "<td class='checkboxes'><table>"
 				[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
 					ret += "<tr>
 						<td>
 							<input type='radio' 
 								value='#{valbinary}' 
-								id=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\" 
-								name=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s)}\" 
-								title=\"#{CGI.escapeHTML(columntitle.to_s)}\" #{checked[columntitle] == valbinary ? "checked='checked'":""}/>
+								id=\"add_participant_checked_#{CGI.escapeHTML(columnid.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\" 
+								name=\"add_participant_checked_#{CGI.escapeHTML(columnid.to_s)}\" 
+								title=\"#{CGI.escapeHTML(columntitle.to_s)}\" #{checked[columnid] == valbinary ? "checked='checked'":""}/>
 						</td>
 						<td class='input-#{valbinary}'>
-							<label for=\"add_participant_checked_#{CGI.escapeHTML(columntitle.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\">#{valhuman}</label>
+							<label for=\"add_participant_checked_#{CGI.escapeHTML(columnid.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\">#{valhuman}</label>
 						</td>
 				</tr>"
 				}
@@ -174,7 +160,7 @@ EDITDELETE
 			}
 			ret += "<td class='checkboxes'>"
 		else
-			ret += "<td class='checkboxes' colspan='#{@head.size + 1}'>"
+			ret += "<td class='checkboxes' colspan='#{@head.col_size + 1}'>"
 		end
 		if @data.include?(edituser)
 			ret += "<input type='submit' value='edit user' />"
@@ -263,8 +249,8 @@ ADDCOMMENT
 		htmlname = CGI.escapeHTML(name)
 		@data.delete(CGI.escapeHTML(olduser))
 		@data[htmlname] = {"timestamp" => Time.now }
-		@head.each_key{|columntitle|
-			@data[htmlname][columntitle] = agreed[columntitle.to_s]
+		@head.each_columnid{|columnid|
+			@data[htmlname][columnid] = agreed[columnid.to_s]
 		}
 		store "Participant #{name.strip} edited"
 	end
@@ -301,51 +287,23 @@ ADDCOMMENT
 	###############################
 	# column related functions
 	###############################
-	def parsecolumntitle title
-		title.strip
-	end
-
-	def delete_column title
-		parsedtitle = parsecolumntitle(title)
-		if @head.include?(parsedtitle)
-			@head.delete(parsedtitle)
-			store "Column #{parsedtitle} deleted"
+	def delete_column columnid
+		title = @head.get_title(columnid)
+		if @head.delete_column(columnid)
+			store "Column #{title} deleted"
 			return true
 		else
 			return false
 		end
 	end
 
-	def edit_column(newtitle, description, oldtitle = nil)
-		@head.delete(oldtitle) if oldtitle
-		parsedtitle = parsecolumntitle(newtitle)
-
-		@head[parsedtitle] = CGI.escapeHTML(description.strip)
-		store "Column #{parsedtitle} edited"
-		true
+	def edit_column(oldcolumnid, newtitle, cgi)
+		parsedtitle = @head.edit_column(oldcolumnid, newtitle, cgi)
+		store "Column #{parsedtitle} edited" if parsedtitle
 	end
 
 	def edit_column_htmlform(activecolumn)
-		if activecolumn 
-			title = activecolumn
-			description = @head[title]
-			title = CGI.escapeHTML(title)
-		end
-		return <<END
-<fieldset><legend>Add/Edit Column</legend>
-<form method='post' action='config.cgi'>
-	<div>
-			<label for='columntitle'>Columntitle: </label>
-			<input id='columntitle' size='16' type='text' value="#{title}" name='new_columnname' />
-			<label for='columndescription'>Description: </label>
-			<input id='columndescription' size='30' type='text' value="#{description}" name='columndescription' />
-			<input type='hidden' name='old_columnname' value="#{title}" />
-			<input type='submit' value='add/edit column' />
-	</div>
-</form>
-</fieldset>
-END
+		@head.edit_column_htmlform(activecolumn)
 	end
-
 end
 

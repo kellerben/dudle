@@ -3,33 +3,78 @@
 # License: CC-by-sa 3.0        #
 #          see License         #
 ################################
+require "digest/sha2"
 
-require "date"
-require "poll"
-require "time"
-
-class DatePoll < Poll
-	def sort_data fields
-		datefields = fields.collect{|field| 
-			field == "timestamp" || field == "name" ? field : Date.parse(field) 
-		}
-		super datefields
-	end 
-
-	# returns a sorted array, containing the big units and how often each small is in the big one
-	# small and big must be formated for strftime
-	# ex: head_count("%Y-%m", "-%d") returns an array like [["2009-03",2],["2009-04",3]]
-	def head_count(big,small)
-		ret = Hash.new(0)
-		@head.keys.collect{|curdate|
-			Time.parse(curdate.strftime(big + small))
-		}.uniq.each{|day|
-			ret[day.strftime(big)] += 1
-		}
-		ret.sort
+class TimePollHead 
+	def initialize
+		@data = {}
+	end
+	def col_size
+		@data.size
 	end
 
-	def head_to_html(config = false, activecolumn = nil)
+	def get_id(columntitle)
+		if @data.include?(columntitle)
+			return Digest::SHA2.hexdigest("#{columntitle}#{@data[columntitle]}" + columntitle.to_s)
+		else
+			raise("no such column found: #{columntitle}")
+		end
+	end
+	def get_title(columnid)
+		@data.each_key{|k| return k if get_id(k) == columnid}
+		raise("no such id found: #{columnid}")
+	end
+	def each_columntitle
+		@data.sort.each{|k,v|
+			yield(k)
+		}
+	end
+	def each_columnid
+		@data.sort.each{|k,v|
+			yield(get_id(k))
+		}
+	end
+	def each_column
+		@data.sort.each{|k,v|
+			yield(get_id(k),k)
+		}
+	end
+
+	# returns internal representation of cgi-string
+	def cgi_to_id(field)
+		Date.parse(field)
+	end
+
+	# returns true if deletion sucessfull
+	def delete_column(columnid)
+		raise("this should not be called currently")
+	end
+
+	# columnid should be never used as changing title is not usefull here
+	# returns parsed title
+	def edit_column(columnid, newtitle, cgi)
+		parsed_date = Date.parse("#{cgi["add_remove_column_month"]}-#{newtitle}")
+		if @data.include?(parsed_date)
+			@data.delete(newtitle)
+		else
+			@data[parsed_date] = ""
+		end
+		parsed_date.to_s
+	end
+
+	def to_html(config = false,activecolumn = nil)
+		# returns a sorted array, containing the big units and how often each small is in the big one
+		# small and big must be formated for strftime
+		# ex: head_count("%Y-%m", "-%d") returns an array like [["2009-03",2],["2009-04",3]]
+		def head_count(big,small)
+			ret = Hash.new(0)
+			@data.keys.collect{|curdate|
+				Time.parse(curdate.strftime(big + small))
+			}.uniq.each{|day|
+				ret[day.strftime(big)] += 1
+			}
+			ret.sort
+		end
 		ret = "<tr><td></td>"
 		head_count("%Y-%m","-%d %H:%M%Z").each{|title,count|
 			year, month = title.split("-").collect{|e| e.to_i}
@@ -37,13 +82,13 @@ class DatePoll < Poll
 		}
 
 		ret += "</tr><tr><th><a href='?sort=name'>Name</a></th>"
-		@head.keys.sort.each{|curdate|
+		@data.keys.sort.each{|curdate|
 			ret += "<th><a title='#{curdate}' href='?sort=#{curdate.to_s}'>#{curdate.strftime("%a, %d")}</a></th>\n"
 		}
 		ret += "<th><a href='.'>Last Edit</a></th>\n</tr>\n"
 		ret
 	end
-
+	
 	def edit_column_htmlform(activecolumn)
 		if $cgi.include?("add_remove_column_month")
 			if $cgi.params["add_remove_column_month"].size == 1
@@ -93,9 +138,13 @@ END
 		d = startdate
 		while (d.month == startdate.month) do
 			klasse = "notchoosen"
+			type = "new_columnname"
 			klasse = "disabled" if d < Date.today
-			klasse = "choosen" if @head.include?(d)
-			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='new_columnname' value='#{d.day}' /></td>\n"
+			if @data.include?(d)
+				klasse = "choosen"
+				type = "deletecolumn"
+			end
+			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='#{type}' value='#{d.day}' /></td>\n"
 			ret += "</tr><tr>\n" if d.wday == 0
 			d = d.next
 		end
@@ -108,20 +157,4 @@ END
 END
 		ret
 	end
-
-	def parsecolumntitle(title)
-		Date.parse("#{$cgi["add_remove_column_month"]}-#{title}")
-	end
-
-	def edit_column(newtitle, description, oldtitle = nil)
-		parsed_date = parsecolumntitle(newtitle)
-		if @head.include?(parsed_date)
-			delete_column(newtitle)
-		else
-			@head[parsed_date] = ""
-			store "Column #{parsed_date} added"
-		end
-		true
-	end
 end
-

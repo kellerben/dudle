@@ -28,8 +28,6 @@ HEAD
 olddir = File.expand_path(".")
 Dir.chdir("..")
 require "poll"
-require "datepoll"
-require "timepoll"
 load "charset.rb"
 load "config.rb"
 Dir.chdir(olddir)

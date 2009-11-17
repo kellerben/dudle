@@ -20,8 +20,6 @@ olddir = File.expand_path(".")
 Dir.chdir("..")
 load "config.rb"
 require "poll"
-require "datepoll"
-require "timepoll"
 Dir.chdir(olddir)
 
 poll = YAML::load_file("data.yaml")

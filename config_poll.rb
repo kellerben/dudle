@@ -30,8 +30,6 @@ Dir.chdir("..")
 load "charset.rb"
 load "config.rb"
 require "poll"
-require "datepoll"
-require "timepoll"
 Dir.chdir(olddir)
 # BUGFIX for Time.parse, which handles the zone indeterministically
 class << Time
@@ -65,8 +63,8 @@ else
 			table.add_participant($cgi["olduser"],$cgi["add_participant"],{})
 		end
 	end
-	table.edit_column($cgi["new_columnname"],$cgi["columndescription"],$cgi["old_columnname"]) if $cgi.include?("new_columnname")
-	table.delete_column($cgi["delete_column"]) if $cgi.include?("delete_column")
+	table.edit_column($cgi["columnid"],$cgi["new_columnname"],$cgi) if $cgi.include?("new_columnname")
+	table.delete_column($cgi["deletecolumn"]) if $cgi.include?("deletecolumn")
 
 	def writehtaccess(acusers)
 		File.open(".htaccess","w"){|htaccess|

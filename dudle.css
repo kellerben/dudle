@@ -23,15 +23,6 @@ td.name {
 
 span.edituser a{ text-decoration: none }
 
-input.deletebutton{
-	border-width: 0px; 
-	border-style: solid;
-	padding: 0px;
-	cursor: pointer;
-	background-color: black;
-	color: white;
-}
-
 th.weekday{
 	width: 2.5em;
 }
