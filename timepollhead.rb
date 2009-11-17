@@ -3,7 +3,6 @@
 # License: CC-by-sa 3.0        #
 #          see License         #
 ################################
-require "digest/sha2"
 
 class TimePollHead 
 	def initialize
@@ -14,14 +13,11 @@ class TimePollHead
 	end
 
 	def get_id(columntitle)
-		if @data.include?(columntitle)
-			return Digest::SHA2.hexdigest("#{columntitle}#{@data[columntitle]}" + columntitle.to_s)
-		else
-			raise("no such column found: #{columntitle}")
-		end
+		return columntitle.to_s if @data.include?(columntitle)
+		raise("no such column found: #{columntitle}")
 	end
 	def get_title(columnid)
-		@data.each_key{|k| return k if get_id(k) == columnid}
+		return columnid if @data.include?(Date.parse(columnid))
 		raise("no such id found: #{columnid}")
 	end
 	def each_columntitle
@@ -47,15 +43,15 @@ class TimePollHead
 
 	# returns true if deletion sucessfull
 	def delete_column(columnid)
-		raise("this should not be called currently")
+		@data.delete(cgi_to_id(columnid)) != nil
 	end
 
 	# columnid should be never used as changing title is not usefull here
 	# returns parsed title
 	def edit_column(columnid, newtitle, cgi)
-		parsed_date = Date.parse("#{cgi["add_remove_column_month"]}-#{newtitle}")
+		parsed_date = Date.parse(newtitle)
 		if @data.include?(parsed_date)
-			@data.delete(newtitle)
+			@data.delete(parsed_date)
 		else
 			@data[parsed_date] = ""
 		end
@@ -114,18 +110,24 @@ class TimePollHead
 		end
 		ret = <<END
 <fieldset><legend>Add/Remove Column</legend>
-<form method='post' action=''>
 <div style="float: left; margin-right: 20px">
 <table><tr>
 END
-		def navi val
-			"<th style='padding:0px'>" +
-				"<input class='navigation' type='submit' name='add_remove_column_month' value='#{val}' />" +
-				"</th>"
+		def navi val,curmonth
+			return <<END
+			<th style='padding:0px'>
+				<form method='post' action=''>
+					<div>
+						<input class='navigation' type='submit' name='add_remove_column_month' value='#{val}' />
+						<input type='hidden' name='add_remove_column_month' value='#{curmonth.strftime("%Y-%m")}' />
+					</div>
+				</form>
+			</th>
+END
 		end
-		[YEARBACK,MONTHBACK].each{|val| ret += navi(val)}
-		ret += "<th colspan='3'>#{Date::ABBR_MONTHNAMES[startdate.month]} #{startdate.year}</th>"
-		[MONTHFORWARD, YEARFORWARD].each{|val| ret += navi(val)}
+		[YEARBACK,MONTHBACK].each{|val| ret += navi(val,startdate)}
+		ret += "<th colspan='3'>#{startdate.strftime("%b %Y")}</th>"
+		[MONTHFORWARD, YEARFORWARD].each{|val| ret += navi(val,startdate)}
 		 
 		ret += "</tr><tr>\n"
 
@@ -138,21 +140,28 @@ END
 		d = startdate
 		while (d.month == startdate.month) do
 			klasse = "notchoosen"
-			type = "new_columnname"
+			varname = "new_columnname"
 			klasse = "disabled" if d < Date.today
 			if @data.include?(d)
 				klasse = "choosen"
-				type = "deletecolumn"
+				varname = "deletecolumn"
 			end
-			ret += "<td class='calendarday'><input class='#{klasse}' type='submit' name='#{type}' value='#{d.day}' /></td>\n"
+			ret += <<TD
+<td class='calendarday'>
+	<form method='post' action=''>
+		<div>
+			<input class='#{klasse}' type='submit' value='#{d.day}' />
+			<input type='hidden' name='#{varname}' value='#{startdate.strftime("%Y-%m")}-#{d.day}' />
+		</div>
+	</form>
+</td>
+TD
 			ret += "</tr><tr>\n" if d.wday == 0
 			d = d.next
 		end
 		ret += <<END
 </tr></table>
-<input type='hidden' name='add_remove_column_month' value='#{startdate.strftime("%Y-%m")}' />
 </div>
-</form>
 </fieldset>
 END
 		ret
