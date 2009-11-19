@@ -141,10 +141,10 @@ class Poll
 		ret += "</td>\n"
 		unless config
 			@head.each_column{|columnid,columntitle|
-				ret += "<td class='checkboxes'><table>"
+				ret += "<td class='checkboxes'><table class='checkboxes'>"
 				[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
-					ret += "<tr>
-						<td>
+					ret += "<tr class='input-#{valbinary}'>
+						<td class='input-#{valbinary}'>
 							<input type='radio' 
 								value='#{valbinary}' 
 								id=\"add_participant_checked_#{CGI.escapeHTML(columnid.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\" 
@@ -158,9 +158,9 @@ class Poll
 				}
 				ret += "</table></td>"
 			}
-			ret += "<td class='checkboxes'>"
+			ret += "<td class='date'>"
 		else
-			ret += "<td class='checkboxes' colspan='#{@head.col_size + 1}'>"
+			ret += "<td class='date' colspan='#{@head.col_size + 1}'>"
 		end
 		if @data.include?(edituser)
 			ret += "<input type='submit' value='edit user' />"

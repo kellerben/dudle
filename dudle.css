@@ -10,6 +10,18 @@ td.ayes, input.choosen  { background-color:#0F0; }
 td.cno { background-color:#F00; }
 td.bmaybe { background-color:#FF0; }
 td.undecided { background-color:#DDD;color:#666 }
+td.checkboxes {
+	background-color: #DDD;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+table.checkboxes{
+	width: 100%;
+	border-collapse: collapse;
+}
+td.input-cno { background-color: #F00 }
+td.input-ayes { background-color: #0F0}
+td.input-bmaybe { background-color: #FF0}
 
 label { cursor: pointer; }
 
@@ -62,7 +74,8 @@ td {
 	vertical-align:middle;
 	text-align:center;
 	border-width: 0px;
-	padding: 1px 3px;
+	padding-left: 3px;
+	padding-right: 3px;
 }
 
 td.sum, tr.participantrow, tr#add_participant, tr#summary { 
@@ -78,7 +91,8 @@ tr.participantrow:hover {
 }
 
 th { 
-	padding: 1px 3px;
+	padding-left: 3px;
+	padding-right: 3px;
 	color: white;
 	background-color:black;
 	font-weight: normal;
@@ -91,7 +105,6 @@ th a{
 
 td.date { 
 	color: Gray;
-	text-align: left;
 }
 
 html {
@@ -166,5 +179,4 @@ div#config{
 	margin-left:20px;
 	width:20ex;
 }
-
 
