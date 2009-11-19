@@ -14,13 +14,10 @@ require "cgi"
 
 $cgi = CGI.new
 
-
 olddir = File.expand_path(".")
 Dir.chdir("..")
 require "html"
-$html = HTML.new
 require "poll"
-load "charset.rb"
 load "config.rb"
 Dir.chdir(olddir)
 
@@ -48,23 +45,26 @@ else
 	table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi["comment"] != ""
 	table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
 end
+$html = HTML.new("dudle - #{table.name}")
+$html.header["Cache-Control"] = "no-cache"
+load "../charset.rb"
 $html.add_css("../dudle.css")
 $html.add_css("../print.css","print")
 
 $html.add_atom("atom.cgi") if File.exists?("../atom.rb")
-$html.add_head("dudle - #{table.name}")
 
-$html.htmlout += "<body>"
 
-$html.add_tabs
+$html << "<body>"
 
-$html.htmlout += <<HEAD
+$html << Dudle::tabs
+
+$html << <<HEAD
 	<div id='main'>
 HEAD
 
 # TABLE
 if VCS.revno == 1
-	$html.htmlout += <<HINT
+	$html << <<HINT
 <h1>#{table.name}</h1>
 <pre id='configwarning'>
     .
@@ -85,7 +85,7 @@ if VCS.revno == 1
 </pre>
 HINT
 else
-	$html.htmlout += <<TABLE
+	$html << <<TABLE
 <p id='history'>history:#{table.history_to_html}</p>
 <h1>#{table.name}</h1>
 <div id='polltable'>
@@ -95,13 +95,10 @@ else
 </div>
 TABLE
 
-	$html.htmlout += table.comment_to_html
+	$html << table.comment_to_html
 end
 
-$html.htmlout += "</div></body>"
+$html << "</div></body>"
 
-$html.htmlout += "</html>"
-
-$html.header["Cache-Control"] = "no-cache"
-$cgi.out($html.header){$html.htmlout}
+$html.out($cgi)
 end

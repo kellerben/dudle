@@ -4,10 +4,8 @@
 #          see License         #
 ################################
 
-utfcookie = CGI::Cookie.new("utf", "true")
-utfcookie.path = "/"
 if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
-	utfcookie.expires = Time.now+1*60*60*24*365
+	expiretime = Time.now+1*60*60*24*365
 	UTFASCII = "<a href='?ascii' style='text-decoration:none'>Change Charset to plain ASCII</a>"
 	
 	YES      = CGI.escapeHTML('✔')
@@ -23,7 +21,7 @@ if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 	EDIT = CGI.escapeHTML("✍")
 	DELETE = CGI.escapeHTML("⌧")
 else
-	utfcookie.expires = Time.now-1*60*60*24*36
+	expiretime = Time.now-1*60*60*24*36
 	UTFASCII = "<a href='?utf' style='text-decoration:none'>If you see all these characters: #{CGI.escapeHTML('✔✘?–↞←→↠✍⌧')} you can safely change the charset to UTF-8</a>"
 	
 	YES      = CGI.escapeHTML('OK')
@@ -39,4 +37,4 @@ else
 	EDIT = CGI.escapeHTML("edit")
 	DELETE = CGI.escapeHTML("delete")
 end
-$html.header["cookie"] = utfcookie
+$html.add_cookie("utf","true","/",expiretime)
