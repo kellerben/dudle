@@ -76,6 +76,13 @@ class TimePollHead
 			TimeString.new(Date.today,a) <=> TimeString.new(Date.today,b)
 		}.each{|k| yield(k)}
 	end
+	def date_included?(date)
+		ret = false
+		@data.each{|ds|
+			ret = ret || ds.date == date
+		}
+		ret
+	end
 
 	# returns internal representation of cgi-string
 	def cgi_to_id(field)
@@ -192,7 +199,7 @@ END
 			klasse = "notchoosen"
 			varname = "new_columnname"
 			klasse = "disabled" if d < Date.today
-			if @data.include?(TimeString.new(d,nil))
+			if date_included?(d)
 				klasse = "choosen"
 				varname = "deletecolumn"
 			end
