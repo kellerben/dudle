@@ -127,21 +127,24 @@ class TimePollHead
 		# returns a sorted array, containing the big units and how often each small is in the big one
 		# small and big must be formated for strftime
 		# ex: head_count("%Y-%m") returns an array like [["2009-03",2],["2009-04",3]]
-		def head_count(elem)
+		# if notime = true, the time field is stripped out before counting
+		def head_count(elem, notime)
+			data = @data.collect{|day| day.date}
+			data.uniq! if notime
 			ret = Hash.new(0)
-			@data.each{|day|
-				ret[day.date.strftime(elem)] += 1
+			data.each{|day|
+				ret[day.strftime(elem)] += 1
 			}
 			ret.sort
 		end
 		ret = "<tr><td></td>"
-		head_count("%Y-%m").each{|title,count|
+		head_count("%Y-%m",false).each{|title,count|
 			year, month = title.split("-").collect{|e| e.to_i}
 			ret += "<th colspan='#{count}'>#{Date::ABBR_MONTHNAMES[month]} #{year}</th>\n"
 		}
 
 		ret += "</tr><tr><td></td>"
-		head_count("%Y-%m-%d").each{|title,count|
+		head_count("%Y-%m-%d",false).each{|title,count|
 			ret += "<th colspan='#{count}'>#{Date.parse(title).strftime("%a, %d")}</th>\n"
 		}
 		ret += "</tr><tr><th><a href='?sort=name'>Name</a></th>"
@@ -239,14 +242,14 @@ END
 		if col_size > 0
 		ret += "<div><table><tr>"
 
-		head_count("%Y-%m").each{|title,count|
+		head_count("%Y-%m",true).each{|title,count|
 			year,month = title.split("-").collect{|e| e.to_i}
 			ret += "<th colspan='#{count}'>#{Date::ABBR_MONTHNAMES[month]} #{year}</th>\n"
 		}
 
 		ret += "</tr><tr>"
 
-		head_count("%Y-%m-%d").each{|title,count|
+		head_count("%Y-%m-%d",true).each{|title,count|
 			ret += "<th>#{Date.parse(title).strftime("%a, %d")}</th>\n"
 		}
 
