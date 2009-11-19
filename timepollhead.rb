@@ -236,6 +236,7 @@ END
 		###########################
 		# starting hour input
 		###########################
+		if col_size > 0
 		ret += "<div><table><tr>"
 
 		head_count("%Y-%m").each{|title,count|
@@ -303,12 +304,9 @@ END
 END
 		}
 
-		ret += <<END
-		</tr>
-	</table>
-</div>
-</fieldset>
-END
+		ret += "</tr></table></div>"
+		end
+		ret += "</fieldset>"
 		ret
 	end
 end
