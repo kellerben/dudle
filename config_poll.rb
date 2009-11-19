@@ -220,6 +220,6 @@ REMOVE
 
 $html << "</div></body>"
 
-cgi.out($cgi)
+$html.out($cgi)
 end
 
