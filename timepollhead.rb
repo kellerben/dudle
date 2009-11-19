@@ -23,6 +23,8 @@ class TimePollHead
 			if self.date == other.date
 				if self.time.class == String && other.time.class == String || self.time.class == Time && other.time.class == Time
 					self.time <=> other.time
+				elsif self.time.class == NilClass && other.time.class == NilClass
+					0
 				else
 					self.time.class == String ? -1 : 1
 				end
@@ -32,6 +34,9 @@ class TimePollHead
 		end
 		def to_s
 			"#{@date} #{time_to_s}"
+		end
+		def inspect
+			"TS: date: #{@date} time: #{@time ? time_to_s : "nil"}"
 		end
 		def time_to_s
 			if @time.class == Time
@@ -47,12 +52,11 @@ class TimePollHead
 	def col_size
 		@data.size
 	end
-
 	def get_id(columntitle)
-		return columntitle
+		columntitle
 	end
 	def get_title(columnid)
-		return columnid
+		columnid
 	end
 	def each_columntitle
 		@data.sort.each{|day,time|
@@ -86,7 +90,9 @@ class TimePollHead
 
 	# returns internal representation of cgi-string
 	def cgi_to_id(field)
-		TimeString.new(field,nil)
+		date = field.scan(/^(\d\d\d\d-\d\d-\d\d).*$/).flatten[0]
+		time = field.scan(/^\d\d\d\d-\d\d-\d\d (.*)$/).flatten[0]
+		TimeString.new(date,time)
 	end
 
 	# returns true if deletion sucessfull
@@ -256,9 +262,16 @@ END
 	<form method='post' action="">
 		<div>
 			<!--Timestamp: #{timestamp} -->
-			<input type='hidden' name='new_columnname' value='#{timestamp.date}' />
-			<input type='hidden' name='add_remove_column_month' value='#{timestamp.date.strftime("%Y-%m")}' />
+END
+				if klasse == "choosen"
+					ret += "<input type='hidden' name='deletecolumn' value='#{timestamp.to_s}' />"
+				else
+					ret += "<input type='hidden' name='new_columnname' value='#{timestamp.date}' />"
+				end
+
+				ret += <<END
 			<input title='#{timestamp}' class='#{klasse}' type='submit' name='columntime' value='#{timestamp.time_to_s}' />
+			<input type='hidden' name='add_remove_column_month' value='#{timestamp.date.strftime("%Y-%m")}' />
 		</div>
 	</form>
 </td>
