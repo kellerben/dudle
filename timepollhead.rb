@@ -5,40 +5,81 @@
 ################################
 
 class TimePollHead 
+	class TimeString
+		attr_reader :date, :time
+		def initialize(date,time)
+			@date = date.class == Date ? date : Date.parse(date)
+			if time =~ /^\d[\d]?:\d[\d]?$/
+				@time = Time.parse("#{@date} #{time}")
+			else
+				@time = time
+			end
+		end
+		def TimeString.now
+			TimeString.new(Date.today,Time.now)
+		end
+		include Comparable
+		def <=>(other)
+			if self.date == other.date
+				if self.time.class == String && other.time.class == String || self.time.class == Time && other.time.class == Time
+					self.time <=> other.time
+				else
+					self.time.class == String ? -1 : 1
+				end
+			else
+				self.date <=> other.date
+			end
+		end
+		def to_s
+			"#{@date} #{time_to_s}"
+		end
+		def time_to_s
+			if @time.class == Time
+				return time.strftime("%H:%M")
+			else
+				return @time
+			end
+		end
+	end
 	def initialize
-		@data = {}
+		@data = []
 	end
 	def col_size
 		@data.size
 	end
 
 	def get_id(columntitle)
-		return columntitle.to_s if @data.include?(columntitle)
-		raise("no such column found: #{columntitle}")
+		return columntitle
 	end
 	def get_title(columnid)
-		return columnid if @data.include?(Date.parse(columnid))
-		raise("no such id found: #{columnid}")
+		return columnid
 	end
 	def each_columntitle
-		@data.sort.each{|k,v|
-			yield(k)
+		@data.sort.each{|day,time|
+			yield("#{day} #{time}")
 		}
 	end
 	def each_columnid
-		@data.sort.each{|k,v|
-			yield(get_id(k))
+		@data.sort.each{|day,time|
+			yield("#{day} #{time}")
 		}
 	end
 	def each_column
-		@data.sort.each{|k,v|
-			yield(get_id(k),k)
+		@data.sort.each{|day,time|
+			yield("#{day} #{time}","#{day} #{time}")
 		}
+	end
+	def each_time
+		h = {}
+		@data.each{|ds| h[ds.time_to_s] = true }
+		h.keys.compact.sort{|a,b|
+			TimeString.new(Date.today,a) <=> TimeString.new(Date.today,b)
+		}.each{|k| yield(k)}
 	end
 
 	# returns internal representation of cgi-string
 	def cgi_to_id(field)
-		Date.parse(field)
+		TimeString.new(field,nil)
 	end
 
 	# returns true if deletion sucessfull
@@ -46,40 +87,49 @@ class TimePollHead
 		@data.delete(cgi_to_id(columnid)) != nil
 	end
 
+	def parsecolumntitle(title)
+		if $cgi.include?("add_remove_column_day")
+			parsed_date = YAML::load(Time.parse("#{$cgi["add_remove_column_month"]}-#{$cgi["add_remove_column_day"]} #{title}").to_yaml)
+		else
+			earlytime = @head.keys.collect{|t|t.strftime("%H:%M")}.sort[0]
+			parsed_date = YAML::load(Time.parse("#{$cgi["add_remove_column_month"]}-#{title} #{earlytime}").to_yaml)
+		end
+		parsed_date
+	end
+
 	# columnid should be never used as changing title is not usefull here
 	# returns parsed title
 	def edit_column(columnid, newtitle, cgi)
-		parsed_date = Date.parse(newtitle)
-		if @data.include?(parsed_date)
-			@data.delete(parsed_date)
-		else
-			@data[parsed_date] = ""
-		end
+		parsed_date = TimeString.new(newtitle, cgi.include?("columntime") ? cgi["columntime"] : nil)
+		@data << parsed_date
+		@data.uniq!
 		parsed_date.to_s
 	end
 
 	def to_html(config = false,activecolumn = nil)
 		# returns a sorted array, containing the big units and how often each small is in the big one
 		# small and big must be formated for strftime
-		# ex: head_count("%Y-%m", "-%d") returns an array like [["2009-03",2],["2009-04",3]]
-		def head_count(big,small)
+		# ex: head_count("%Y-%m") returns an array like [["2009-03",2],["2009-04",3]]
+		def head_count(elem)
 			ret = Hash.new(0)
-			@data.keys.collect{|curdate|
-				Time.parse(curdate.strftime(big + small))
-			}.uniq.each{|day|
-				ret[day.strftime(big)] += 1
+			@data.each{|day|
+				ret[day.date.strftime(elem)] += 1
 			}
 			ret.sort
 		end
 		ret = "<tr><td></td>"
-		head_count("%Y-%m","-%d %H:%M%Z").each{|title,count|
+		head_count("%Y-%m").each{|title,count|
 			year, month = title.split("-").collect{|e| e.to_i}
 			ret += "<th colspan='#{count}'>#{Date::ABBR_MONTHNAMES[month]} #{year}</th>\n"
 		}
 
+		ret += "</tr><tr><td></td>"
+		head_count("%Y-%m-%d").each{|title,count|
+			ret += "<th colspan='#{count}'>#{Date.parse(title).strftime("%a, %d")}</th>\n"
+		}
 		ret += "</tr><tr><th><a href='?sort=name'>Name</a></th>"
-		@data.keys.sort.each{|curdate|
-			ret += "<th><a title='#{curdate}' href='?sort=#{curdate.to_s}'>#{curdate.strftime("%a, %d")}</a></th>\n"
+		@data.sort.each{|date|
+			ret += "<th><a title='#{date}' href='?sort=#{date}'>#{date.time_to_s}</a></th>\n"
 		}
 		ret += "<th><a href='.'>Last Edit</a></th>\n</tr>\n"
 		ret
@@ -142,7 +192,7 @@ END
 			klasse = "notchoosen"
 			varname = "new_columnname"
 			klasse = "disabled" if d < Date.today
-			if @data.include?(d)
+			if @data.include?(TimeString.new(d,nil))
 				klasse = "choosen"
 				varname = "deletecolumn"
 			end
@@ -152,6 +202,7 @@ END
 		<div>
 			<input class='#{klasse}' type='submit' value='#{d.day}' />
 			<input type='hidden' name='#{varname}' value='#{startdate.strftime("%Y-%m")}-#{d.day}' />
+			<input type='hidden' name='add_remove_column_month' value='#{startdate.strftime("%Y-%m")}' />
 		</div>
 	</form>
 </td>
@@ -161,6 +212,73 @@ TD
 		end
 		ret += <<END
 </tr></table>
+</div>
+END
+		
+
+		###########################
+		# starting hour input
+		###########################
+		ret += "<div><table><tr>"
+
+		head_count("%Y-%m").each{|title,count|
+			year,month = title.split("-").collect{|e| e.to_i}
+			ret += "<th colspan='#{count}'>#{Date::ABBR_MONTHNAMES[month]} #{year}</th>\n"
+		}
+
+		ret += "</tr><tr>"
+
+		head_count("%Y-%m-%d").each{|title,count|
+			ret += "<th>#{Date.parse(title).strftime("%a, %d")}</th>\n"
+		}
+
+		ret += "</tr>"
+
+
+		days = @data.sort.collect{|date| date.date }.uniq
+		
+		each_time{|time|
+			ret +="<tr>\n"
+			days.each{|day|
+				timestamp = TimeString.new(day,time)
+				klasse = "notchoosen"
+				klasse = "disabled" if timestamp < TimeString.now
+				klasse = "choosen" if @data.include?(timestamp)
+				ret += <<END
+<td class='calendarday'>
+	<form method='post' action="">
+		<div>
+			<!--Timestamp: #{timestamp} -->
+			<input type='hidden' name='new_columnname' value='#{timestamp.date}' />
+			<input type='hidden' name='add_remove_column_month' value='#{timestamp.date.strftime("%Y-%m")}' />
+			<input title='#{timestamp}' class='#{klasse}' type='submit' name='columntime' value='#{timestamp.time_to_s}' />
+		</div>
+	</form>
+</td>
+END
+			}
+			ret += "</tr>\n"
+		}
+
+		ret += "<tr>"
+		days.each{|d|
+			ret += <<END
+	<td>
+		<form method='post' action=''>
+			<div>
+				<input type='hidden' name='new_columnname' value='#{d.strftime("%Y-%m-%d")}' />
+				<input type='hidden' name='add_remove_column_month' value='#{d.strftime("%Y-%m")}' />
+				<input type="text" name='columntime' title='e.g.: 09:30, morning, afternoon' maxlength="7" style="width: 7ex" /><br />
+				<input type="submit" value="Add" style="width: 100%" />
+			</div>
+		</form>
+	</td>
+END
+		}
+
+		ret += <<END
+		</tr>
+	</table>
 </div>
 </fieldset>
 END
