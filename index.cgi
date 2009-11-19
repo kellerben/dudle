@@ -13,18 +13,7 @@ require "cgi"
 if __FILE__ == $0
 
 $cgi = CGI.new
-$header = {}
-$header["type"] = "text/html"
-#$header["type"] = "application/xhtml+xml"
-$header["charset"] = "utf-8"
 
-$htmlout = <<HEAD
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-HEAD
-
-load "charset.rb"
 if File.exists?("config.rb")
 	load "config.rb"
 else
@@ -33,18 +22,13 @@ else
 end
 
 require "poll"
+require "html"
+$html = HTML.new("dudle")
+load "charset.rb"
+$html.add_css("dudle.css")
+$htlm.add_atom("atom.cgi") if File.exists?("atom.cgi")
 
-$htmlout += <<HEAD
-<head>
-	<title>dudle</title>
-	<meta http-equiv="Content-Type" content="#{$header["type"]}; charset=#{$header["charset"]}" /> 
-	<meta http-equiv="Content-Style-Type" content="text/css" />
-	<link rel="stylesheet" type="text/css" href="dudle.css" title="default"/>
-HEAD
-	
-	$htmlout += '<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />' if File.exists?("atom.cgi")
-
-	$htmlout += "</head><body id='main'><h1>dudle</h1>"
+	$html << "<body id='main'><h1>dudle</h1>"
 
 if $cgi.include?("create_poll")
 	SITE=$cgi["create_poll"]
@@ -70,14 +54,14 @@ if $cgi.include?("create_poll")
 		Dir.chdir("..")
 		escapedsite = SITEURL + CGI.escapeHTML(CGI.escape(SITE)) + "/"
 		escapedsite.gsub!("+"," ")
-		$header["status"] = "REDIRECT"
-		$header["Location"] = escapedsite
-		$htmlout = "The poll was created successfully. The link to your new poll is:<br /><a href=\"#{escapedsite}\">#{escapedsite}</a>"
+		$html.header["status"] = "REDIRECT"
+		$html.header["Location"] = escapedsite
+		$html << "The poll was created successfully. The link to your new poll is:<br /><a href=\"#{escapedsite}\">#{escapedsite}</a>"
 	end
 end
 
-unless $header["status"] == "REDIRECT"
-	$htmlout += <<CHARSET
+unless $html.header["status"] == "REDIRECT"
+	$html << <<CHARSET
 <div id='config'>
 <fieldset><legend>Config</legend>
 #{UTFASCII}
@@ -85,7 +69,7 @@ unless $header["status"] == "REDIRECT"
 </div>
 CHARSET
 
-	$htmlout += <<CREATE
+	$html << <<CREATE
 <fieldset><legend>Create New Poll</legend>
 <form method='post' action='.'>
 <table>
@@ -112,13 +96,9 @@ CHARSET
 </fieldset>
 CREATE
 
-	$htmlout += NOTICE
-	$htmlout += "</body>"
-
-	$htmlout += "</html>"
+	$html << NOTICE
 end
 
-$header["Cache-Control"] = "no-cache"
-$cgi.out($header){$htmlout}
+$html.out($cgi)
 end
 
