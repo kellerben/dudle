@@ -33,7 +33,11 @@ class TimePollHead
 			end
 		end
 		def to_s
-			"#{@date} #{time_to_s}"
+			if @time
+				"#{@date} #{time_to_s}"
+			else
+				@date.to_s
+			end
 		end
 		def inspect
 			"TS: date: #{@date} time: #{@time ? time_to_s : "nil"}"
@@ -113,6 +117,7 @@ class TimePollHead
 	# columnid should be never used as changing title is not usefull here
 	# returns parsed title
 	def edit_column(columnid, newtitle, cgi)
+		delete_column(columnid) if columnid != ""
 		parsed_date = TimeString.new(newtitle, cgi.include?("columntime") ? cgi["columntime"] : nil)
 		@data << parsed_date
 		@data.uniq!
@@ -267,6 +272,9 @@ END
 					ret += "<input type='hidden' name='deletecolumn' value='#{timestamp.to_s}' />"
 				else
 					ret += "<input type='hidden' name='new_columnname' value='#{timestamp.date}' />"
+					if @data.include?(TimeString.new(day,nil))
+						ret += "<input type='hidden' name='columnid' value='#{TimeString.new(day,nil).to_s}' />"
+					end
 				end
 
 				ret += <<END
