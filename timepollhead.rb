@@ -296,6 +296,11 @@ END
 			<div>
 				<input type='hidden' name='new_columnname' value='#{d.strftime("%Y-%m-%d")}' />
 				<input type='hidden' name='add_remove_column_month' value='#{d.strftime("%Y-%m")}' />
+END
+			if @data.include?(TimeString.new(d,nil))
+				ret += "<input type='hidden' name='columnid' value='#{TimeString.new(d,nil).to_s}' />"
+			end
+			ret += <<END
 				<input type="text" name='columntime' title='e.g.: 09:30, morning, afternoon' maxlength="7" style="width: 7ex" /><br />
 				<input type="submit" value="Add" style="width: 100%" />
 			</div>
