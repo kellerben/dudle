@@ -7,26 +7,18 @@
 ################################
 
 require "yaml"
-require "cgi"
-
 
 if __FILE__ == $0
 
+require "cgi"
+
 $cgi = CGI.new
-$header = {}
 
-$header["type"] = "text/html"
-#$header["type"] = "application/xhtml+xml"
-$header["charset"] = "utf-8"
-
-$htmlout = <<HEAD
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-HEAD
 
 olddir = File.expand_path(".")
 Dir.chdir("..")
+require "html"
+$html = HTML.new
 require "poll"
 load "charset.rb"
 load "config.rb"
@@ -56,34 +48,23 @@ else
 	table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi["comment"] != ""
 	table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
 end
+$html.add_css("../dudle.css")
+$html.add_css("../print.css","print")
 
-$htmlout += <<HEAD
-<head>
-	<meta http-equiv="Content-Type" content="#{$header["type"]}; charset=#{$header["charset"]}" /> 
-	<meta http-equiv="Content-Style-Type" content="text/css" />
-	<title>dudle - #{table.name}</title>
-	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
-	<link rel="stylesheet" type="text/css" href="../print.css" title="print" media="print" />
-	<link rel="stylesheet" type="text/css" href="../print.css" title="print" />
-HEAD
+$html.add_atom("atom.cgi") if File.exists?("../atom.rb")
+$html.add_head("dudle - #{table.name}")
 
-$htmlout += '<link rel="alternate"  type="application/atom+xml" href="atom.cgi" />' if File.exists?("../atom_single.rb")
+$html.htmlout += "<body>"
 
-$htmlout += <<HEAD
-</head>
-<body>
-	<div id='tabs'>
-			<ul>
-				<li id='active_tab' >&nbsp;poll&nbsp;</li>
-				<li class='nonactive_tab'><a href='config.cgi'>&nbsp;config&nbsp;</a></li>
-			</ul>
-	</div>
+$html.add_tabs
+
+$html.htmlout += <<HEAD
 	<div id='main'>
 HEAD
 
 # TABLE
 if VCS.revno == 1
-	$htmlout += <<HINT
+	$html.htmlout += <<HINT
 <h1>#{table.name}</h1>
 <pre id='configwarning'>
     .
@@ -104,7 +85,7 @@ if VCS.revno == 1
 </pre>
 HINT
 else
-	$htmlout += <<TABLE
+	$html.htmlout += <<TABLE
 <p id='history'>history:#{table.history_to_html}</p>
 <h1>#{table.name}</h1>
 <div id='polltable'>
@@ -114,13 +95,13 @@ else
 </div>
 TABLE
 
-	$htmlout += table.comment_to_html
+	$html.htmlout += table.comment_to_html
 end
 
-$htmlout += "</div></body>"
+$html.htmlout += "</div></body>"
 
-$htmlout += "</html>"
+$html.htmlout += "</html>"
 
-$header["Cache-Control"] = "no-cache"
-$cgi.out($header){$htmlout}
+$html.header["Cache-Control"] = "no-cache"
+$cgi.out($html.header){$html.htmlout}
 end

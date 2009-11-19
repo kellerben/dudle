@@ -39,4 +39,4 @@ else
 	EDIT = CGI.escapeHTML("edit")
 	DELETE = CGI.escapeHTML("delete")
 end
-$header["cookie"] = utfcookie
+$html.header["cookie"] = utfcookie

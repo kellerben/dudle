@@ -142,14 +142,14 @@ $htmlout += <<HTMLHEAD
 <head>
 	<meta http-equiv="Content-Type" content="#{$header["type"]}; charset=#{$header["charset"]}" /> 
 	<meta http-equiv="Content-Style-Type" content="text/css" />
-	<title>dudle - config - #{table.name}</title>
+	<title>dudle - Administration - #{table.name}</title>
 	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
 </head>
 <body>
 	<div id='tabs'>
 		<ul>
 			<li class='nonactive_tab'><a href='.'>&nbsp;poll&nbsp;</a></li>
-			<li id='active_tab'>&nbsp;config&nbsp;</li>
+			<li id='active_tab'>&nbsp;admin&nbsp;</li>
 		</ul>
 	</div>
 HTMLHEAD
