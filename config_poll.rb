@@ -13,21 +13,10 @@ require "cgi"
 if __FILE__ == $0
 
 $cgi = CGI.new
-$header = {}
-
-$header["type"] = "text/html"
-#$header["type"] = "application/xhtml+xml"
-$header["charset"] = "utf-8"
-
-$htmlout = <<HEAD
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-HEAD
 
 olddir = File.expand_path(".")
 Dir.chdir("..")
-load "charset.rb"
+require "html"
 load "config.rb"
 require "poll"
 Dir.chdir(olddir)
@@ -138,23 +127,15 @@ HTACCESS
 	end
 end
 
-$htmlout += <<HTMLHEAD
-<head>
-	<meta http-equiv="Content-Type" content="#{$header["type"]}; charset=#{$header["charset"]}" /> 
-	<meta http-equiv="Content-Style-Type" content="text/css" />
-	<title>dudle - Administration - #{table.name}</title>
-	<link rel="stylesheet" type="text/css" href="../dudle.css" title="default"/>
-</head>
-<body>
-	<div id='tabs'>
-		<ul>
-			<li class='nonactive_tab'><a href='.'>&nbsp;poll&nbsp;</a></li>
-			<li id='active_tab'>&nbsp;admin&nbsp;</li>
-		</ul>
-	</div>
-HTMLHEAD
+$html = HTML.new("dudle - Administration - #{table.name}")
+$html.header["Cache-Control"] = "no-cache"
+load "../charset.rb"
+$html.add_css("../dudle.css")
 
-$htmlout += <<TABLE
+$html << "<body"
+$html << Dudle::tabs("Admin")
+
+$html << <<TABLE
 	<div id='main'>
 	<h1>#{table.name}</h1>
 		<form method='post' action='config.cgi'>
@@ -163,7 +144,7 @@ $htmlout += <<TABLE
 TABLE
 
 # ADD/REMOVE COLUMN
-$htmlout +=<<ADD_EDIT
+$html << <<ADD_EDIT
 <div id='edit_column'>
 #{table.edit_column_htmlform($cgi["editcolumn"])}
 </div>
@@ -171,7 +152,7 @@ ADD_EDIT
 
 # ACCESS CONTROL
 $accesslevels = { "vote" => "Vote Interface", "config" => "Config Interface" }
-$htmlout +=<<ACL
+$html << <<ACL
 <div id='access_control'>
 	<fieldset>
 		<legend>Change Access Control Settings</legend>
@@ -182,7 +163,7 @@ $htmlout +=<<ACL
 				</tr>
 ACL
 acusers.each{|user,action|
-		$htmlout += <<USER
+		$html << <<USER
 <tr>
 	<td>#{$accesslevels[action]}</td>
 	<td>#{user}</td>
@@ -195,15 +176,15 @@ acusers.each{|user,action|
 USER
 }
 
-$htmlout += <<ACL
+$html << <<ACL
 <tr>
 	<td>
 		<select name='ac_type'>
 ACL
 	$accesslevels.each{|action,description| 
-		$htmlout += "<option value='#{action}'>#{description}</option>"
+		$html << "<option value='#{action}'>#{description}</option>"
 	}
-	$htmlout += <<ACL
+	$html << <<ACL
 		</select>
 	</td>
 	<td><input size='6' value="" type='text' name='ac_user' /></td>
@@ -215,7 +196,7 @@ ACL
 </tr>
 ACL
 
-$htmlout += <<ACL
+$html << <<ACL
 			</table>
 		</form>
 		#{usercreatenotice}
@@ -223,7 +204,7 @@ $htmlout += <<ACL
 </div>
 ACL
 
-$htmlout +=<<REMOVE
+$html << <<REMOVE
 <div id='delete_poll'>
 	<fieldset>
 		<legend>Delete the Whole Poll</legend>
@@ -237,11 +218,8 @@ $htmlout +=<<REMOVE
 </div>
 REMOVE
 
-$htmlout += "</div></body>"
+$html << "</div></body>"
 
-$htmlout += "</html>"
-
-$header["Cache-Control"] = "no-cache"
-$cgi.out($header){$htmlout}
+$html.out($cgi)
 end
 

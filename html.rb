@@ -67,14 +67,17 @@ HEAD
 end
 
 module Dudle
-	def Dudle.tabs
-		return <<HEAD
-		<div id='tabs'>
-				<ul>
-					<li id='active_tab' >&nbsp;poll&nbsp;</li>
-					<li class='nonactive_tab'><a href='config.cgi'>&nbsp;admin&nbsp;</a></li>
-				</ul>
-		</div>
-HEAD
+	def Dudle.tabs(active_tab)
+		ret = "<div id='tabs'><ul>"
+		[["Poll","."],
+		 ["Admin","config.cgi"]].each{|tab,file|
+			if tab == active_tab
+				ret += "<li id='active_tab' >&nbsp;#{tab}&nbsp;</li> "
+			else
+				ret += "<li class='nonactive_tab' ><a href='#{file}'>&nbsp;#{tab}&nbsp;</a></li> "
+			end
+		}
+		ret += "</ul></div>"
+		ret
 	end
 end

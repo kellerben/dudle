@@ -56,7 +56,7 @@ $html.add_atom("atom.cgi") if File.exists?("../atom.rb")
 
 $html << "<body>"
 
-$html << Dudle::tabs
+$html << Dudle::tabs("Poll")
 
 $html << <<HEAD
 	<div id='main'>
