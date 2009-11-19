@@ -26,7 +26,7 @@ class TimePollHead
 				elsif self.time.class == NilClass && other.time.class == NilClass
 					0
 				else
-					self.time.class == String ? -1 : 1
+					self.time.class == String ? 1 : -1
 				end
 			else
 				self.date <=> other.date
