@@ -56,7 +56,7 @@ if $cgi.include?("create_poll")
 		Dir.chdir(SITE)
 		VCS.init
 		File.symlink("../participate.rb","index.cgi")
-		File.symlink("../atom_single.rb","atom.cgi")
+		File.symlink("../atom.rb","atom.cgi")
 		File.symlink("../config_poll.rb","config.cgi")
 		File.symlink("../remove_poll.rb","remove.cgi")
 		["index.cgi","atom.cgi","config.cgi","remove.cgi"].each{|f|
