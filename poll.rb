@@ -163,10 +163,10 @@ class Poll
 			ret += "<td class='date' colspan='#{@head.col_size + 1}'>"
 		end
 		if @data.include?(edituser)
-			ret += "<input type='submit' value='edit user' />"
-			ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='delete user' />"
+			ret += "<input type='submit' value='Save Changes' />"
+			ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='Delete User' />"
 		else
-			ret += "<input type='submit' value='add user' />"
+			ret += "<input type='submit' value='Add User' />"
 		end
 		ret += "</td>\n"
 
@@ -208,7 +208,7 @@ COMMENT
 						<input value='Anonymous' type='text' name='commentname' size='9' /> says&nbsp;
 					</legend>
 					<textarea cols='50' rows='7' name='comment' ></textarea>
-					<br /><input type='submit' value='Submit comment' />
+					<br /><input type='submit' value='Submit Comment' />
 				</fieldset>
 			</div>
 		</form>

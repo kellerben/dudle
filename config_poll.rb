@@ -174,7 +174,7 @@ $accesslevels = { "vote" => "Vote Interface", "config" => "Config Interface" }
 $htmlout +=<<ACL
 <div id='access_control'>
 	<fieldset>
-		<legend>Change Access Control settings</legend>
+		<legend>Change Access Control Settings</legend>
 		<form method='post' action=''>
 			<table>
 				<tr>
@@ -210,7 +210,7 @@ ACL
 	<td><input size='6' value="" type='password' name='ac_password1' /></td>
 	<td><input size='6' value="" type='password' name='ac_password2' /></td>
 	<td>
-		<input type='submit' name='ac_create' value='add' />
+		<input type='submit' name='ac_create' value='Add' />
 	</td>
 </tr>
 ACL
@@ -230,7 +230,7 @@ $htmlout +=<<REMOVE
 		<form method='post' action='remove.cgi'>
 			<div>
 				Warning: This is an irreversible action!<br />
-				<input type='submit' value='delete' />
+				<input type='submit' value='Delete' />
 			</div>
 		</form>
 	</fieldset>
