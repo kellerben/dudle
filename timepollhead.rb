@@ -114,7 +114,6 @@ class TimePollHead
 		parsed_date
 	end
 
-	# columnid should be never used as changing title is not usefull here
 	# returns parsed title
 	def edit_column(columnid, newtitle, cgi)
 		delete_column(columnid) if columnid != ""
