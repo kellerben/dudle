@@ -4,11 +4,11 @@ Requirements:
  * ruby
  * bzr
 License: 
-   CC-by-sa 3.0 
-   see License
+   GNU AGPL v3 or higer
+   see file License
 
 === Installation ===
 1. Place this application into a directory where cgi-scripts are evaluated.
-   Make shure, that the webserver can execute ruby + bzr.
+   Make sure, that the webserver can execute ruby + bzr.
 2. Copy config_sample.rb to config.rb to start with a default configuration.
 3. The webserver needs the permission to write into the directory 
