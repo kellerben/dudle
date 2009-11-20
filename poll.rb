@@ -60,7 +60,7 @@ class Poll
 		end
 	end
 
-	def to_html(edituser = "", showparticipation = true)
+	def to_html(edituser, showparticipation = true)
 		ret = "<table border='1'>\n"
 
 		ret += @head.to_html

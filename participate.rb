@@ -76,7 +76,7 @@ $html << <<TABLE
 <h1>#{table.name}</h1>
 <div id='polltable'>
 	<form method='post' action='.'>
-		#{table.to_html($cgi['edituser'])}
+		#{table.to_html($cgi.include?('edituser') ? $cgi['edituser'] : $cgi.cookies["username"][0] )}
 	</form>
 </div>
 TABLE

@@ -32,10 +32,13 @@ $html.header["Cache-Control"] = "no-cache"
 
 $html.add_css("../dudle.css")
 
-$html << "<body>"
-$html << Dudle::tabs("Customize")
-$html << "<div id='main'>"
-$html << "<h1>Customize Personal Settings</h1>"
+$html << <<END
+<body>
+#{Dudle::tabs("Customize")}
+<div id='main'>
+<h1>Customize Personal Settings</h1>
+You need cookies enabled in order to personalize your settings.
+END
 
 $html << <<CHARSET
 <div id='charset'>
@@ -77,13 +80,21 @@ $html << <<CHARSET
 </div>
 CHARSET
 
+
+username = $cgi.cookies["username"][0]
+if $cgi.include?("username") 
+	username = $cgi["username"]
+	$html.add_cookie("username",username,"/",Time.now + 1*60*60*24*365)
+end
+
+
 $html << <<CHARSET
 <div id='config_user'>
 <h2>Default Username</h2>
-<form method='post' action=''>
+<form method='GET' action=''>
 	<div>
 			<label for=''>Username: </label>
-			<input  id='' size='16' type='text' value="" name='default_username' />
+			<input  id='' size='16' type='text' value="#{username}" name='username' />
 			<input type='submit' value='Save' />
 	</div>
 </form>
