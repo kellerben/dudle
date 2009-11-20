@@ -251,8 +251,9 @@ END
 		###########################
 		# starting hour input
 		###########################
+		ret += "<div style='min-height: 13em' >"
 		if col_size > 0
-		ret += "<div><table><tr>"
+		ret += "<table><tr>"
 
 		head_count("%Y-%m",true).each{|title,count|
 			year,month = title.split("-").collect{|e| e.to_i}
@@ -324,8 +325,9 @@ END
 END
 		}
 
-		ret += "</tr></table></div>"
+		ret += "</tr></table>"
 		end
+		ret += "</div>"
 		ret
 	end
 end
