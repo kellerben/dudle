@@ -142,6 +142,7 @@ class Poll
 		if @data.include?(edituser)
 			@head.each_columnid{|k| checked[k] = @data[edituser][k]}
 		else
+			edituser = $cgi.cookies["username"][0] unless @data.include?($cgi.cookies["username"][0])
 			@head.each_columnid{|k| checked[k] = NOVAL}
 		end
 		ret = "<tr id='add_participant'>\n"
