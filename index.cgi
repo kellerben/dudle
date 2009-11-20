@@ -64,7 +64,7 @@ if $cgi.include?("create_poll")
 		}
 		Poll.new(SITE,$cgi["poll_type"])
 		Dir.chdir("..")
-		escapedsite = SITEURL + CGI.escapeHTML(CGI.escape(SITE)) + "/"
+		escapedsite = SITEURL + CGI.escapeHTML(CGI.escape(SITE)) + "/edit_columns.cgi"
 		escapedsite.gsub!("+"," ")
 		$html.header["status"] = "REDIRECT"
 		$html.header["Location"] = escapedsite

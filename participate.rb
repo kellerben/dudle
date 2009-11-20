@@ -72,29 +72,7 @@ $html << <<HEAD
 HEAD
 
 # TABLE
-if VCS.revno == 1
-	$html << <<HINT
-<h1>#{table.name}</h1>
-<pre id='configwarning'>
-    .
-  .:;:.
-.:;;;;;:.
-  ;;;;;
-  ;;;;;
-  ;;;;;
-  ;;;;;      Please configure this poll
-  ;:;;;      within the config tab!
-  ;;; :
-  ;:;
-  ;.: .
-  : .
-  .   .
-
-   .
-</pre>
-HINT
-else
-	$html << <<TABLE
+$html << <<TABLE
 <h1>#{table.name}</h1>
 <div id='polltable'>
 	<form method='post' action='.'>
@@ -103,8 +81,7 @@ else
 </div>
 TABLE
 
-	$html << table.comment_to_html
-end
+$html << table.comment_to_html
 
 $html << "</div></body>"
 
