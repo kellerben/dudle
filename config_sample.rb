@@ -23,13 +23,31 @@ load "bzr.rb"
 # Change this if the url is not determined correctly
 SITEURL = "http://#{$cgi.server_name}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
 
-# add this htmlcode to the startpage
-NOTICE = <<NOTICE
+# add the htmlcode in the Variable NOTICE to the startpage
+# Example 1: displays all available Polls
+notice = <<NOTICE
+<fieldset><legend>Available Polls</legend>
+<table><tr><th>Poll</th><th>Last change</th></tr>
+NOTICE
+Dir.glob("*/data.yaml").sort_by{|f|
+	File.new(f).mtime
+}.reverse.collect{|f| f.gsub(/\/data\.yaml$/,'') }.each{|site|
+	notice += <<NOTICE
+<tr>
+	<td class='polls'><a href='./#{CGI.escapeHTML(site).gsub("'","%27")}/'>#{CGI.escapeHTML(site)}</a></td>
+	<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>
+</tr>
+NOTICE
+}
+notice += "</table></fieldset>"
+# Example 2: displays a static text
+notice += <<NOTICE
 <fieldset><legend>Examples</legend>
 	If you want to play around with the Tool, you may want to take a look at these two Example Polls:<br />
 	<a href='EventScheduleExample'>Event Schedule Poll</a><br />
 	<a href='NormalExample'>Normal Poll</a>	
 </fieldset>
 NOTICE
+NOTICE = notice
 
 
