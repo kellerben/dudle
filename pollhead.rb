@@ -78,13 +78,13 @@ class PollHead
 		end
 	end
 
-	def to_html(config = false,activecolumn = nil)
+	def to_html(showeditbuttons = false,activecolumn = nil)
 		ret = "<tr><th><a href='?sort=name'>Name</a></th>\n"
 		@data.each{|columntitle,columndescription|
 			ret += "<th"
 			ret += " id='active' " if activecolumn == columntitle
 			ret += "><a title=\"#{columndescription}\" href=\"?sort=#{CGI.escapeHTML(CGI.escape(columntitle))}\">#{CGI.escapeHTML(columntitle)}</a>"
-			if config
+			if showeditbuttons
 				ret += <<EDITDELETE
 	<div>
 		<small>
@@ -125,7 +125,7 @@ EDITDELETE
 </form>
 <fieldset><legend>Preview</legend>
 <table>
-#{to_html(true)}
+#{to_html(true,activecolumn)}
 </table>
 </fieldset>
 END

@@ -60,10 +60,10 @@ class Poll
 		end
 	end
 
-	def to_html(edituser = "", activecolumn = nil, participation = true)
+	def to_html(edituser = "", showparticipation = true)
 		ret = "<table border='1'>\n"
 
-		ret += @head.to_html(activecolumn)
+		ret += @head.to_html
 		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
 			if edituser == participant
 				ret += participate_to_html(edituser)
@@ -71,7 +71,7 @@ class Poll
 				ret += "<tr class='participantrow'>\n"
 				ret += "<td class='name' #{edituser == participant ? "id='active'":""}>"
 				ret += participant
-				ret += "<span class='edituser'> <sup><a href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">#{EDIT}</a></sup></span>"
+				ret += "<span class='edituser'> <sup><a href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">#{EDIT}</a></sup></span>" if showparticipation
 				ret += "</td>\n"
 				@head.each_column{|columnid,columntitle|
 					klasse = poll[columnid]
@@ -94,7 +94,7 @@ class Poll
 		}
 
 		# PARTICIPATE
-		ret += participate_to_html(edituser) unless @data.keys.include?(edituser)
+		ret += participate_to_html(edituser) unless @data.keys.include?(edituser) || !showparticipation
 
 		# SUMMARY
 		ret += "<tr id='summary'><td class='name'>total</td>\n"

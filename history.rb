@@ -60,7 +60,7 @@ if defined?(REVISION)
 else
 	$html << "<h2>Current Poll</h2>"
 end
-$html << table.to_html
+$html << table.to_html("",false)
 
 $html << "<h2>History</h2>"
 $html << "<div id='history'>#{table.history_to_html}</div>"
