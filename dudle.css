@@ -79,7 +79,7 @@ table {
 	border: none; 
 }
 
-td.create_poll{
+td.create_poll, td.charset{
 	text-align:left;
 }
 

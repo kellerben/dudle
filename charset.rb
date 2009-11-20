@@ -24,6 +24,7 @@ if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 	NO       = CGI.escapeHTML('✘')
 	MAYBE    = CGI.escapeHTML('?')
 	UNKNOWN  = CGI.escapeHTML("–")
+	CROSS    = CGI.escapeHTML('✘')
 	
 	YEARBACK     = CGI.escapeHTML("↞")
 	MONTHBACK    = CGI.escapeHTML("←")
@@ -39,6 +40,7 @@ else
 	NO       = CGI.escapeHTML('NO')
 	MAYBE    = CGI.escapeHTML('?')
 	UNKNOWN  = CGI.escapeHTML("-")
+	CROSS    = CGI.escapeHTML('X')
 
 	YEARBACK     = CGI.escapeHTML("<<")
 	MONTHBACK    = CGI.escapeHTML("<")

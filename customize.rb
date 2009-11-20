@@ -46,12 +46,12 @@ $html << <<CHARSET
 		<th>Description</th>
 	</tr>
 CHARSET
-[["Use special characters (#{UTFCHARS})","utf"],
- ["Use normal strings","ascii"]].each{|description,href|
+[["Use normal strings","ascii"],
+ ["Use special characters (#{UTFCHARS})","utf"]].each{|description,href|
  	 selected = href == (USEUTF ? "utf" : "ascii")
  	 $html << "<tr><td>"
- 	 $html << "X" if selected
- 	 $html << "</td><td>"
+ 	 $html << CROSS if selected
+ 	 $html << "</td><td class='charset'>"
  	 $html << "<a href='?#{href}'>" unless selected
  	 $html << description
  	 $html << "</a>" unless selected
