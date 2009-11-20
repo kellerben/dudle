@@ -18,7 +18,7 @@
 ############################################################################
 
 if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
-	expiretime = Time.now+1*60*60*24*365
+	USEUTF = true
 	
 	YES      = CGI.escapeHTML('✔')
 	NO       = CGI.escapeHTML('✘')
@@ -33,7 +33,7 @@ if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 	EDIT = CGI.escapeHTML("✍")
 	DELETE = CGI.escapeHTML("⌧")
 else
-	expiretime = Time.now-1*60*60*24*36
+	USEUTF = false
 	
 	YES      = CGI.escapeHTML('OK')
 	NO       = CGI.escapeHTML('NO')
@@ -49,6 +49,5 @@ else
 	DELETE = CGI.escapeHTML("delete")
 end
 
-UTFCHARS = [YES,NO,MAYBE,UNKNOWN,YEARBACK,MONTHBACK,MONTHFORWARD,YEARFORWARD,EDIT,DELETE]
-
-$html.add_cookie("utf","true","/",expiretime)
+UTFCHARS = CGI.escapeHTML("✔✘↞←→↠✍⌧")
+$html.add_cookie("utf","true","/",Time.now + (1*60*60*24*365 * (USEUTF ? 1 : -1 )))

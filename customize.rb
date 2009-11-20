@@ -40,10 +40,25 @@ $html << "<h1>Customize Personal Settings</h1>"
 $html << <<CHARSET
 <div id='charset'>
 <h2>Charset</h2>
-<ul>
-<li><a href='?utf' style='text-decoration:none'>If you see all these characters: #{UTFCHARS} you can safely change the charset to UTF-8</a></li>
-<li><a href='?ascii' style='text-decoration:none'>Change Charset to plain ASCII</a></li>
-</ul>
+<table>
+	<tr>
+		<th>Current Setting</th>
+		<th>Description</th>
+	</tr>
+CHARSET
+[["Use special characters (#{UTFCHARS})","utf"],
+ ["Use normal strings","ascii"]].each{|description,href|
+ 	 selected = href == (USEUTF ? "utf" : "ascii")
+ 	 $html << "<tr><td>"
+ 	 $html << "X" if selected
+ 	 $html << "</td><td>"
+ 	 $html << "<a href='?#{href}'>" unless selected
+ 	 $html << description
+ 	 $html << "</a>" unless selected
+ 	 $html << "</td></tr>"
+ }
+$html << <<CHARSET
+</table>
 </div>
 CHARSET
 
