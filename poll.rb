@@ -47,13 +47,13 @@ class Poll
 		end
 	end
 
-	def to_html(edituser = "", config = false,activecolumn = nil)
+	def to_html(edituser = "", activecolumn = nil)
 		ret = "<table border='1'>\n"
 
-		ret += @head.to_html(config, activecolumn)
+		ret += @head.to_html(activecolumn)
 		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
 			if edituser == participant
-				ret += participate_to_html(edituser, config)
+				ret += participate_to_html(edituser)
 			else
 				ret += "<tr class='participantrow'>\n"
 				ret += "<td class='name' #{edituser == participant ? "id='active'":""}>"
@@ -81,7 +81,7 @@ class Poll
 		}
 
 		# PARTICIPATE
-		ret += participate_to_html(edituser, config) unless @data.keys.include?(edituser)
+		ret += participate_to_html(edituser) unless @data.keys.include?(edituser)
 
 		# SUMMARY
 		ret += "<tr id='summary'><td class='name'>total</td>\n"
@@ -124,7 +124,7 @@ class Poll
 		ret
 	end
 
-	def participate_to_html(edituser, config)
+	def participate_to_html(edituser)
 		checked = {}
 		if @data.include?(edituser)
 			@head.each_columnid{|k| checked[k] = @data[edituser][k]}
@@ -139,29 +139,25 @@ class Poll
 				name='add_participant'
 				value=\"#{edituser}\"/>"
 		ret += "</td>\n"
-		unless config
-			@head.each_column{|columnid,columntitle|
-				ret += "<td class='checkboxes'><table class='checkboxes'>"
-				[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
-					ret += "<tr class='input-#{valbinary}'>
-						<td class='input-#{valbinary}'>
-							<input type='radio' 
-								value='#{valbinary}' 
-								id=\"add_participant_checked_#{CGI.escapeHTML(columnid.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\" 
-								name=\"add_participant_checked_#{CGI.escapeHTML(columnid.to_s)}\" 
-								title=\"#{CGI.escapeHTML(columntitle.to_s)}\" #{checked[columnid] == valbinary ? "checked='checked'":""}/>
-						</td>
-						<td class='input-#{valbinary}'>
-							<label for=\"add_participant_checked_#{CGI.escapeHTML(columnid.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\">#{valhuman}</label>
-						</td>
-				</tr>"
-				}
-				ret += "</table></td>"
+		@head.each_column{|columnid,columntitle|
+			ret += "<td class='checkboxes'><table class='checkboxes'>"
+			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
+				ret += "<tr class='input-#{valbinary}'>
+					<td class='input-#{valbinary}'>
+						<input type='radio' 
+							value='#{valbinary}' 
+							id=\"add_participant_checked_#{CGI.escapeHTML(columnid.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\" 
+							name=\"add_participant_checked_#{CGI.escapeHTML(columnid.to_s)}\" 
+							title=\"#{CGI.escapeHTML(columntitle.to_s)}\" #{checked[columnid] == valbinary ? "checked='checked'":""}/>
+					</td>
+					<td class='input-#{valbinary}'>
+						<label for=\"add_participant_checked_#{CGI.escapeHTML(columnid.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\">#{valhuman}</label>
+					</td>
+			</tr>"
 			}
-			ret += "<td class='date'>"
-		else
-			ret += "<td class='date' colspan='#{@head.col_size + 1}'>"
-		end
+			ret += "</table></td>"
+		}
+		ret += "<td class='date'>"
 		if @data.include?(edituser)
 			ret += "<input type='submit' value='Save Changes' />"
 			ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='Delete User' />"

@@ -21,30 +21,26 @@ require "poll"
 load "config.rb"
 Dir.chdir(olddir)
 
-if $cgi.include?("revision")
-	REVISION=$cgi["revision"].to_i
-	table = YAML::load(VCS.cat(REVISION, "data.yaml"))
-else
-	table = YAML::load_file("data.yaml")
+table = YAML::load_file("data.yaml")
 
-	if $cgi.include?("add_participant")
-		if $cgi.include?("delete_participant")
-			table.delete($cgi["olduser"])
-		else
-			agreed = {}
-			$cgi.params.each{|k,v|
-				if k =~ /^add_participant_checked_/
-					agreed[k.gsub(/^add_participant_checked_/,"")] = v[0]
-				end
-			}
+if $cgi.include?("add_participant")
+	if $cgi.include?("delete_participant")
+		table.delete($cgi["olduser"])
+	else
+		agreed = {}
+		$cgi.params.each{|k,v|
+			if k =~ /^add_participant_checked_/
+				agreed[k.gsub(/^add_participant_checked_/,"")] = v[0]
+			end
+		}
 
-			table.add_participant($cgi["olduser"],$cgi["add_participant"],agreed)
-		end
+		table.add_participant($cgi["olduser"],$cgi["add_participant"],agreed)
 	end
-
-	table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi["comment"] != ""
-	table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
 end
+
+table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi["comment"] != ""
+table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
+
 $html = HTML.new("dudle - #{table.name}")
 $html.header["Cache-Control"] = "no-cache"
 load "../charset.rb"
@@ -86,7 +82,6 @@ if VCS.revno == 1
 HINT
 else
 	$html << <<TABLE
-<p id='history'>history:#{table.history_to_html}</p>
 <h1>#{table.name}</h1>
 <div id='polltable'>
 	<form method='post' action='.'>

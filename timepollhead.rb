@@ -123,20 +123,20 @@ class TimePollHead
 		parsed_date.to_s
 	end
 
+	# returns a sorted array, containing the big units and how often each small is in the big one
+	# small and big must be formated for strftime
+	# ex: head_count("%Y-%m") returns an array like [["2009-03",2],["2009-04",3]]
+	# if notime = true, the time field is stripped out before counting
+	def head_count(elem, notime)
+		data = @data.collect{|day| day.date}
+		data.uniq! if notime
+		ret = Hash.new(0)
+		data.each{|day|
+			ret[day.strftime(elem)] += 1
+		}
+		ret.sort
+	end
 	def to_html(config = false,activecolumn = nil)
-		# returns a sorted array, containing the big units and how often each small is in the big one
-		# small and big must be formated for strftime
-		# ex: head_count("%Y-%m") returns an array like [["2009-03",2],["2009-04",3]]
-		# if notime = true, the time field is stripped out before counting
-		def head_count(elem, notime)
-			data = @data.collect{|day| day.date}
-			data.uniq! if notime
-			ret = Hash.new(0)
-			data.each{|day|
-				ret[day.strftime(elem)] += 1
-			}
-			ret.sort
-		end
 		ret = "<tr><td></td>"
 		head_count("%Y-%m",false).each{|title,count|
 			year, month = title.split("-").collect{|e| e.to_i}
@@ -179,7 +179,6 @@ class TimePollHead
 			startdate = Date.parse("#{Date.today.year}-#{Date.today.month}-1")
 		end
 		ret = <<END
-<fieldset><legend>Add/Remove Column</legend>
 <div style="float: left; margin-right: 20px">
 <table><tr>
 END
@@ -314,7 +313,6 @@ END
 
 		ret += "</tr></table></div>"
 		end
-		ret += "</fieldset>"
 		ret
 	end
 end

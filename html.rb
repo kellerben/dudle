@@ -70,8 +70,13 @@ module Dudle
 	def Dudle.tabs(active_tab)
 		ret = "<div id='tabs'><ul>"
 		[["Home",".."],
+		 ["Customize","customize.cgi"],
 		 ["Poll","."],
-		 ["Admin","config.cgi"]].each{|tab,file|
+		 ["History","history.cgi"],
+		 ["Edit Columns","edit_columns.cgi"],
+		 ["Access Control","access_control.cgi"],
+		 ["Delete Poll","delete_poll.cgi"]
+		].each{|tab,file|
 			if tab == active_tab
 				ret += "<li id='active_tab' >&nbsp;#{tab}&nbsp;</li> "
 			else

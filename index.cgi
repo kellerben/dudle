@@ -40,11 +40,10 @@ if $cgi.include?("create_poll")
 		Dir.chdir(SITE)
 		VCS.init
 		File.symlink("../participate.rb","index.cgi")
-		File.symlink("../atom.rb","atom.cgi")
-		File.symlink("../config_poll.rb","config.cgi")
-		File.symlink("../remove_poll.rb","remove.cgi")
-		["index.cgi","atom.cgi","config.cgi","remove.cgi"].each{|f|
-			VCS.add(f)
+		VCS.add("index.cgi")
+		["atom","customize", "history", "edit_columns","access_control", "delete_poll"].each{|f|
+			File.symlink("../#{f}.rb","#{f}.cgi")
+			VCS.add("#{f}.cgi")
 		}
 		["data.yaml",".htaccess",".htdigest"].each{|f|
 			File.open(f,"w").close
@@ -61,13 +60,6 @@ if $cgi.include?("create_poll")
 end
 
 unless $html.header["status"] == "REDIRECT"
-	$html << <<CHARSET
-<div id='config'>
-<fieldset><legend>Config</legend>
-#{UTFASCII}
-</fieldset>
-</div>
-CHARSET
 
 	$html << <<CREATE
 <fieldset><legend>Create New Poll</legend>

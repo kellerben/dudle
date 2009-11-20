@@ -99,17 +99,20 @@ EDITDELETE
 			hiddeninput = "<input type='hidden' name='columnid' value=\"#{get_id(title)}\" />"
 		end
 		return <<END
-<fieldset><legend>Add/Edit Column</legend>
-<form method='post' action='config.cgi'>
+<form method='post' action=''>
 	<div>
 			<label for='columntitle'>Columntitle: </label>
 			<input id='columntitle' size='16' type='text' value="#{title}" name='new_columnname' />
 			<label for='columndescription'>Description: </label>
 			<input id='columndescription' size='30' type='text' value="#{description}" name='columndescription' />
 			#{hiddeninput}
-			<input type='submit' value='add/edit column' />
+			<input type='submit' value='Add/Edit Column' />
 	</div>
 </form>
+<fieldset><legend>Preview</legend>
+<table>
+#{to_html(true)}
+</table>
 </fieldset>
 END
 	end
