@@ -60,7 +60,7 @@ class Poll
 		end
 	end
 
-	def to_html(edituser = "", activecolumn = nil)
+	def to_html(edituser = "", activecolumn = nil, participation = true)
 		ret = "<table border='1'>\n"
 
 		ret += @head.to_html(activecolumn)
@@ -228,7 +228,7 @@ ADDCOMMENT
 	end
 
 	def history_to_html
-		ret = ""
+		ret = "<table><tr><th>Version</th><th>Date</th><th>Comment</th></tr>"
 		maxrev=VCS.revno
 		revision= defined?(REVISION) ? REVISION : maxrev
 		log = VCS.history
@@ -236,15 +236,17 @@ ADDCOMMENT
 		log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
 		log.collect!{|t,c| [Time.parse(t),c]}
 
-		((revision-2)..(revision+2)).each do |i|
+		((revision-5)..(revision+5)).each do |i|
 			if i >0 && i<=maxrev
-				ret += " "
+				ret += "<tr><td>"
 				ret += "<a href='?revision=#{i}' >" if revision != i
-				ret += "<span title=\"#{log[i-1][0].strftime('%d.%m, %H:%M')}: #{CGI.escapeHTML(log[i-1][1])}\">#{i}</span>"
-				ret += "</a>" if revision != i
+				ret += "#{i}"
+				ret += "</a></td>" if revision != i
+				ret += "<td>#{log[i-1][0].strftime('%d.%m, %H:%M')}</td><td>#{CGI.escapeHTML(log[i-1][1])}</td>"
+				ret += "</tr>"
 			end
 		end
-		ret += " <a href='.' >last</a>" if defined?(REVISION)
+		ret += "</table>"
 		ret
 	end
 

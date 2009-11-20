@@ -46,16 +46,25 @@ load "../charset.rb"
 $html.add_css("../dudle.css")
 
 $html << "<body>"
-$html << Dudle::tabs("Access Control")
+$html << Dudle::tabs("History")
 
 $html << <<TABLE
 	<div id='main'>
-	<h1>History</h1>
+	<h1>History of #{table.name}</h1>
 TABLE
 
 
-$html << "<p id='history'>history:#{table.history_to_html}</p>"
+
+if defined?(REVISION)
+	$html << "<h2>Poll of Version #{REVISION}</h2>"
+else
+	$html << "<h2>Current Poll</h2>"
+end
 $html << table.to_html
+
+$html << "<h2>History</h2>"
+$html << "<div id='history'>#{table.history_to_html}</div>"
+
 $html << "</div></body>"
 
 $html.out($cgi)
