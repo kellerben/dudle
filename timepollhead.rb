@@ -23,7 +23,16 @@ class TimePollHead
 		def initialize(date,time)
 			@date = date.class == Date ? date : Date.parse(date)
 			if time =~ /^\d[\d]?:\d[\d]?$/
-				@time = Time.parse("#{@date} #{time}")
+				begin
+#TODO: what to do with 24:00 ???
+#					if time == "24:00"
+#						@date += 1
+#						time = "00:00"
+#					end
+						@time = Time.parse("#{@date} #{time}")
+				rescue ArgumentError
+					@time = time
+				end
 			else
 				@time = time
 			end
