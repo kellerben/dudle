@@ -82,7 +82,10 @@ CHARSET
 
 
 username = $cgi.cookies["username"][0]
-if $cgi.include?("username") 
+if $cgi.include?("delete_username")
+	username = ""
+	$html.add_cookie("username",username,"/",Time.now - 1*60*60*24*365)
+elsif $cgi.include?("username") 
 	username = $cgi["username"]
 	$html.add_cookie("username",username,"/",Time.now + 1*60*60*24*365)
 end
@@ -96,6 +99,7 @@ $html << <<CHARSET
 			<label for=''>Username: </label>
 			<input  id='' size='16' type='text' value="#{username}" name='username' />
 			<input type='submit' value='Save' />
+			<input type='submit' name='delete_username' value='Delete' />
 	</div>
 </form>
 </div>
