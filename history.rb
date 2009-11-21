@@ -50,7 +50,7 @@ $html << Dudle::tabs("History")
 
 $html << <<TABLE
 	<div id='main'>
-	<h1>History of #{table.name}</h1>
+	<h1>#{table.name}</h1>
 TABLE
 
 

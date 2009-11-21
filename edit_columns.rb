@@ -62,7 +62,7 @@ else
 
 end
 
-$html = HTML.new("dudle - Edit Columns - #{table.name}")
+$html = HTML.new("dudle - #{table.name} - Edit Columns")
 $html.header["Cache-Control"] = "no-cache"
 load "../charset.rb"
 $html.add_css("../dudle.css")
@@ -72,7 +72,8 @@ $html << Dudle::tabs("Edit Columns")
 
 $html << <<TABLE
 	<div id='main'>
-	<h1>Add and Remove Columns</h1>
+	<h1>#{table.name}</h1>
+	<h2>Add and Remove Columns</h2>
 TABLE
 
 # ADD/REMOVE COLUMN

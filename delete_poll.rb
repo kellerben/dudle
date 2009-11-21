@@ -34,7 +34,7 @@ if __FILE__ == $0
 POLL = File.basename(File.expand_path("."))
 $cgi = CGI.new
 load "../html.rb"
-$html = HTML.new("dudle - Delete - #{POLL}")
+$html = HTML.new("dudle - #{POLL} - Delete")
 
 $html.header["Cache-Control"] = "no-cache"
 
@@ -67,7 +67,8 @@ else
 
 $html << <<TABLE
 <div>
-	<h1>Delete this Poll</h1>
+	<h1>#{POLL}</h1>
+	<h2>Delete this Poll</h2>
 	You want to delete the poll named <b>#{POLL}</b>.<br />
 	This is an irreversible action!<br />
 	If you are sure in what you are doing, please type into the form “#{QUESTIONS[CONFIRM]}”

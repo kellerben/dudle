@@ -105,7 +105,8 @@ if $cgi.include?("ac_user")
 	end
 end
 
-$html = HTML.new("dudle - Access Control Settings")
+POLL = File.basename(File.expand_path("."))
+$html = HTML.new("dudle - #{POLL} - Access Control Settings")
 $html.header["Cache-Control"] = "no-cache"
 load "../charset.rb"
 $html.add_css("../dudle.css")
@@ -121,12 +122,13 @@ TABLE
 $accesslevels = { "vote" => "Vote Interface", "config" => "Config Interface" }
 $html << <<ACL
 <div id='access_control'>
-		<h1>Change Access Control Settings</h1>
-		<form method='post' action=''>
-			<table>
-				<tr>
-					<th>Access to</th><th>Username</th><th>Password</th><th>Password (repeat)</th>
-				</tr>
+	<h1>#{POLL}</h1>
+	<h2>Change Access Control Settings</h2>
+	<form method='post' action=''>
+		<table>
+			<tr>
+				<th>Access to</th><th>Username</th><th>Password</th><th>Password (repeat)</th>
+			</tr>
 ACL
 acusers.each{|user,action|
 		$html << <<USER
