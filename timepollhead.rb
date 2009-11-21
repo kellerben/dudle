@@ -123,7 +123,20 @@ class TimePollHead
 
 	# returns true if deletion sucessfull
 	def delete_column(columnid)
-		@data.delete(cgi_to_id(columnid)) != nil
+		col = cgi_to_id(columnid)
+		if col.time 
+			@data.delete(cgi_to_id(columnid)) != nil
+			@data << TimeString.new(col.date,nil) unless date_included?(col.date)
+		else
+			deldata = []
+			@data.each{|ts|
+				deldata << ts if ts.date == col.date
+			}
+			deldata.each{|ts|
+				@data.delete(ts)
+			}
+			return !deldata.empty?
+		end
 	end
 
 	def parsecolumntitle(title)
