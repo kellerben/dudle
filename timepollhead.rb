@@ -125,8 +125,9 @@ class TimePollHead
 	def delete_column(columnid)
 		col = cgi_to_id(columnid)
 		if col.time 
-			@data.delete(cgi_to_id(columnid)) != nil
+			ret = @data.delete(cgi_to_id(columnid)) != nil
 			@data << TimeString.new(col.date,nil) unless date_included?(col.date)
+			return ret
 		else
 			deldata = []
 			@data.each{|ts|
