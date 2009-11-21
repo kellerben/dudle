@@ -33,10 +33,14 @@ require "poll"
 load "config.rb"
 Dir.chdir(olddir)
 
+maxrev = VCS.revno
 if $cgi.include?("revision")
-	REVISION=$cgi["revision"].to_i
-	table = YAML::load(VCS.cat(REVISION, "data.yaml"))
+	revno=$cgi["revision"].to_i
+	versiontitle = "Poll of Version #{revno}"
+	table = YAML::load(VCS.cat(revno, "data.yaml"))
 else
+	revno = maxrev
+	versiontitle = "Current Poll"
 	table = YAML::load_file("data.yaml")
 end
 
@@ -55,15 +59,11 @@ TABLE
 
 
 
-if defined?(REVISION)
-	$html << "<h2>Poll of Version #{REVISION}</h2>"
-else
-	$html << "<h2>Current Poll</h2>"
-end
+$html << "<h2>#{versiontitle}</h2>"
 $html << table.to_html("",false)
 
 $html << "<h2>History</h2>"
-$html << "<div id='history'>#{table.history_to_html}</div>"
+$html << "<div id='history'>#{table.history_to_html(maxrev, revno)}</div>"
 
 $html << "</div></body>"
 

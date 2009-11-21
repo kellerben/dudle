@@ -228,21 +228,19 @@ ADDCOMMENT
 		ret
 	end
 
-	def history_to_html
+	def history_to_html(maxrev, middlerevision)
 		ret = "<table><tr><th>Version</th><th>Date</th><th>Comment</th></tr>"
-		maxrev=VCS.revno
-		revision= defined?(REVISION) ? REVISION : maxrev
 		log = VCS.history
 		log.shift
 		log.collect!{|s| s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
 		log.collect!{|t,c| [Time.parse(t),c]}
 
-		((revision-5)..(revision+5)).each do |i|
+		((middlerevision-5)..(middlerevision+5)).each do |i|
 			if i >0 && i<=maxrev
 				ret += "<tr><td>"
-				ret += "<a href='?revision=#{i}' >" if revision != i
+				ret += "<a href='?revision=#{i}' >" if middlerevision != i
 				ret += "#{i}"
-				ret += "</a></td>" if revision != i
+				ret += "</a></td>" if middlerevision != i
 				ret += "<td>#{log[i-1][0].strftime('%d.%m, %H:%M')}</td><td>#{CGI.escapeHTML(log[i-1][1])}</td>"
 				ret += "</tr>"
 			end
