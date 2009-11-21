@@ -38,7 +38,7 @@ def writehtaccess(acusers)
 	File.open(".htaccess","w"){|htaccess|
 		if acusers.values.include?("config")
 			htaccess << <<HTACCESS
-<Files ~ "^(config|remove).cgi$">
+<Files ~ "^(edit_columns|access_control|delete_poll).cgi$">
 AuthType digest
 AuthName "config"
 AuthUserFile "#{File.expand_path(".").gsub('"','\\\\"')}/.htdigest"
