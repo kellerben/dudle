@@ -54,19 +54,15 @@ if $cgi.include?("confirmnumber")
 	If this was done by accident, please contact the administrator of the system.
 	The poll can be recovered for an indeterministic amount of time, maybe it is already to late. <br />
 	<a href='../'>home</a>
-</div>
 SUCCESS
 	else
 		$html << <<CANCEL
 	You canceld the deletion!
-</div>
 CANCEL
 	end
 
 else
-
 $html << <<TABLE
-<div>
 	<h1>#{POLL}</h1>
 	<h2>Delete this Poll</h2>
 	You want to delete the poll named <b>#{POLL}</b>.<br />
@@ -79,9 +75,9 @@ $html << <<TABLE
 			<input type='submit' value='delete' />
 		</div>
 	</form>
-</div>
 TABLE
 end
+$html << "</div>"
 
 $html << "</body>"
 
