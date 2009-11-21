@@ -38,7 +38,13 @@ class VCS
 	end
 
 	def VCS.history
-		`#{BZRCMD} log --forward`.split("-"*60)
+		log = `#{BZRCMD} log --forward`.split("-"*60)
+		log.shift
+		log.collect{|s| 
+			a = s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten
+			h = {"timestamp" => Time.parse(a[0]),
+			     "commit message" => a[1]}
+		}
 	end
 	
 	def VCS.longhistory dir
