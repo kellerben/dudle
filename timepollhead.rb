@@ -276,7 +276,7 @@ END
 		###########################
 		ret += "<div style='min-height: 13em' >"
 		if col_size > 0
-		ret += "<table><tr>"
+		ret += "<table class='calendarday' summary='The concrete timeslot'><tr>"
 
 		head_count("%Y-%m",true).each{|title,count|
 			year,month = title.split("-").collect{|e| e.to_i}
@@ -302,7 +302,7 @@ END
 				klasse = "disabled" if timestamp < TimeString.now
 				klasse = "choosen" if @data.include?(timestamp)
 				ret += <<END
-<td class='calendarday'>
+<td>
 	<form method='post' action="">
 		<div>
 			<!--Timestamp: #{timestamp} -->

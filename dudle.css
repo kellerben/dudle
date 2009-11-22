@@ -19,7 +19,7 @@
 
 
 td.ayes, td.bmaybe, td.cno { cursor:default; }
-td.ayes, input.choosen  { background-color:#0F0; }
+td.ayes{ background-color:#0F0; }
 td.cno { background-color:#F00; }
 td.bmaybe { background-color:#FF0; }
 td.undecided { background-color:#DDD;color:#666 }
@@ -52,6 +52,7 @@ th.weekday{
 	width: 2.5em;
 }
 
+input.choosen { background-color:#0F0; }
 input.navigation, input.disabled, input.choosen, input.notchoosen {
 	border-width: 1px; 
 	border-style: solid;
@@ -59,7 +60,6 @@ input.navigation, input.disabled, input.choosen, input.notchoosen {
 	padding: 0px;
 	cursor: pointer;
 	width: 100%;
-	height: 100%;
 }
 
 input.navigation {
@@ -69,14 +69,27 @@ input.navigation {
 
 input.disabled { background-color:#DDD;color:#BBB}
 
-td.calendarday{
-	border: 1px; 
+table { 
+	border: none; 
+}
+
+table.calendarday {
+	border-spacing: 2px;
+}
+
+table.calendarday form {
 	padding: 0px;
 	margin: 0px;
 }
 
-table { 
-	border: none; 
+table.calendarday td {
+	padding: 0px;
+	margin: 0px;
+}
+
+table.calendarday td input{
+	margin: 0px;
+	padding: 1px;
 }
 
 td.create_poll, td.charset{
@@ -129,7 +142,6 @@ html {
 	background: white;
 	padding: 2em;
 	color: black;
-	line-height: 1.5em;
 	border: solid 1px black;
 	top: 0px;
 	margin-top: 0px;
@@ -185,6 +197,9 @@ h1 {
 	text-align: center;
 }
 
-div.comment { margin-top: 1ex; }
+div.comment { 
+	margin-top: 1ex; 
+	line-height: 1.4em;
+}
 
 

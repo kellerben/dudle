@@ -237,8 +237,10 @@ ADDCOMMENT
 				ret += "<tr><td>"
 				ret += "<a href='?revision=#{i}' >" if middlerevision != i
 				ret += "#{i}"
-				ret += "</a></td>" if middlerevision != i
-				ret += "<td>#{log[i-1]["timestamp"].strftime('%d.%m, %H:%M')}</td><td>#{CGI.escapeHTML(log[i-1]["commit message"])}</td>"
+				ret += "</a>" if middlerevision != i
+				ret += "</td>"
+				ret += "<td>#{log[i-1]["timestamp"].strftime('%d.%m, %H:%M')}</td>"
+				ret += "<td>#{CGI.escapeHTML(log[i-1]["commit message"])}</td>"
 				ret += "</tr>"
 			end
 		end

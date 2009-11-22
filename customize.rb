@@ -43,7 +43,7 @@ END
 $html << <<CHARSET
 <div id='charset'>
 <h2>Charset</h2>
-<table>
+<table summary='Charset settings'>
 	<tr>
 		<th>Current Setting</th>
 		<th>Description</th>
@@ -94,10 +94,10 @@ end
 $html << <<CHARSET
 <div id='config_user'>
 <h2>Default Username</h2>
-<form method='GET' action=''>
+<form method='get' action=''>
 	<div>
-			<label for=''>Username: </label>
-			<input  id='' size='16' type='text' value="#{username}" name='username' />
+			<label for='username'>Username: </label>
+			<input  id='username' size='16' type='text' value="#{username}" name='username' />
 			<input type='submit' value='Save' />
 			<input type='submit' name='delete_username' value='Delete' />
 	</div>

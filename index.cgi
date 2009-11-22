@@ -77,7 +77,7 @@ unless $html.header["status"] == "REDIRECT"
 	$html << <<CREATE
 <fieldset><legend>Create New Poll</legend>
 <form method='post' action='.'>
-<table>
+<table summary='Create a new Poll'>
 <tr>
 	<td class='create_poll'><label title="#{poll_name_tip = "the name equals the link under which you receive the poll"}" for="poll_name">Name:</label></td>
 	<td class='create_poll'><input title="#{poll_name_tip}" id="poll_name" size='16' type='text' name='create_poll' value="#{CGI.escapeHTML($cgi["create_poll"])}" /></td>
@@ -102,6 +102,7 @@ unless $html.header["status"] == "REDIRECT"
 CREATE
 
 	$html << NOTICE
+	$html << "</body>"
 end
 
 $html.out($cgi)
