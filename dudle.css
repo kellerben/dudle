@@ -152,7 +152,7 @@ html {
 	margin-right:auto;
 	width:auto;
 	display: table;
-	min-width: 30em;
+	min-width: 35em;
 }
 
 div#tabs{
@@ -195,6 +195,10 @@ li.nonactive_tab{
 
 li.nonactive_tab a:hover { 
 	background: #CCC;
+}
+
+li.separator_tab {
+	margin-left: 2em;
 }
 
 pre#configwarning {
