@@ -185,7 +185,7 @@ class TimePollHead
 		}
 		ret += "</tr><tr><th><a href='?sort=name'>Name</a></th>"
 		@data.sort.each{|date|
-			ret += "<th><a title='#{date}' href='?sort=#{date}'>#{date.time_to_s}</a></th>\n"
+			ret += "<th><a title='#{date}' href='?sort=#{CGI.escape(date.to_s)}'>#{date.time_to_s}</a></th>\n"
 		}
 		ret += "<th><a href='.'>Last Edit</a></th>\n</tr>\n"
 		ret
@@ -215,8 +215,8 @@ class TimePollHead
 			startdate = Date.parse("#{Date.today.year}-#{Date.today.month}-1")
 		end
 		ret = <<END
-<div style="float: left; margin-right: 20px">
-<table><tr>
+<table><tr><td style="vertical-align:top">
+<table class='calendarday' summary='The day to vote for.'><tr>
 END
 		def navi val,curmonth
 			return <<END
@@ -267,14 +267,14 @@ TD
 		end
 		ret += <<END
 </tr></table>
-</div>
+</td>
 END
 		
 
 		###########################
 		# starting hour input
 		###########################
-		ret += "<div style='min-height: 13em' >"
+		ret += "<td style='vertical-align:top'>"
 		if col_size > 0
 		ret += "<table class='calendarday' summary='The concrete timeslot'><tr>"
 
@@ -350,7 +350,7 @@ END
 
 		ret += "</tr></table>"
 		end
-		ret += "</div>"
+		ret += "</td></tr></table>"
 		ret
 	end
 end
