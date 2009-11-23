@@ -26,9 +26,13 @@ class LogEntry
 		@timestamp = timestamp
 		@comment = comment
 	end
-	def to_html(link = true)
+	def to_html(link = true,history = "")
 		ret = "<tr><td>"
-		ret += "<a href='?revision=#{@rev}' >" if link
+		if link
+			ret += "<a href='?revision=#{@rev}"
+			ret += "&history=#{history}" if history != ""
+			ret += "'>"
+		end
 		ret += "#{@rev}"
 		ret += "</a>" if link
 		ret += "</td>"
@@ -101,10 +105,10 @@ class Log
 		@log << LogEntry.new(revision,timestamp,comment)
 		@log.sort!
 	end
-	def to_html(notlinkrevision)
-		ret = "<table><tr><th>Version</th><th>Date</th><th>Comment</th></tr>"
+	def to_html(unlinkedrevision,history)
+		ret = "<table summary='Historytable' ><tr><th>Version</th><th>Date</th><th>Comment</th></tr>"
 		self.each do |l|
-			ret += l.to_html(notlinkrevision != l.rev)
+			ret += l.to_html(unlinkedrevision != l.rev,history)
 		end
 		ret += "</table>"
 		ret

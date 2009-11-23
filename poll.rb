@@ -61,7 +61,7 @@ class Poll
 	end
 
 	def to_html(edituser, showparticipation = true)
-		ret = "<table border='1'>\n"
+		ret = "<table border='1' summary='Main Poll table'>\n"
 
 		ret += @head.to_html
 		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
@@ -154,7 +154,7 @@ class Poll
 				value=\"#{edituser}\"/>"
 		ret += "</td>\n"
 		@head.each_column{|columnid,columntitle|
-			ret += "<td class='checkboxes'><table class='checkboxes'>"
+			ret += "<td class='checkboxes'><table summary='Input for one column' class='checkboxes'>"
 			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
 				ret += "<tr class='input-#{valbinary}'>
 					<td class='input-#{valbinary}'>
@@ -232,15 +232,20 @@ ADDCOMMENT
 		ret = <<FORM
 <form method='get' action=''>
 	<div>
+		Show only history items concerning: 
 		<select name='history'>
 FORM
-		["", "comments","participants","columns"].each{|opt|
-			ret += "<option value='#{opt}' #{selected == opt ? "selected='selected'" : ""} >#{opt}</option>"
+		[["",""],
+		 ["participants","Participants"],
+		 ["columns","Columns"],
+		 ["comments","Comments"]
+			].each{|value,opt|
+			ret += "<option value='#{value}' #{selected == value ? "selected='selected'" : ""} >#{opt}</option>"
 		}
+		ret += "</select>"
 		ret += "<input type='hidden' name='revision' value='#{revision}' />" if revision
 		ret += <<FORM
-		</select>
-		<input type='submit' />
+		<input type='submit' value='Filter' />
 	</div>
 </form>
 FORM
@@ -262,7 +267,7 @@ FORM
 			end
 			log = log.comment_matches(match)
 		end
-		log.around_rev(middlerevision,11).to_html(middlerevision)
+		log.around_rev(middlerevision,11).to_html(middlerevision,only)
 	end
 
 	def add_participant(olduser, name, agreed)

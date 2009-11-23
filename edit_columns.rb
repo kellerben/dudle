@@ -103,7 +103,7 @@ if urevs.max
 	when "edited"
 		title = "Column #{coltitle} edit"
 	end
-	$html << "<table><tr>"
+	$html << "<table summary='Undo/Redo functionallity'><tr>"
 	unless urevs.size == 1
 		$html << <<UNDO
 		<td>

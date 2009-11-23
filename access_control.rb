@@ -125,7 +125,7 @@ $html << <<ACL
 	<h1>#{POLL}</h1>
 	<h2>Change Access Control Settings</h2>
 	<form method='post' action=''>
-		<table>
+		<table summary='Access Control settings'>
 			<tr>
 				<th>Access to</th><th>Username</th><th>Password</th><th>Password (repeat)</th>
 			</tr>

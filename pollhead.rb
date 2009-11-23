@@ -125,7 +125,7 @@ EDITDELETE
 	</div>
 </form>
 <fieldset><legend>Preview</legend>
-<table>
+<table summary='Preview poll head'>
 #{to_html(true,activecolumn)}
 </table>
 </fieldset>
