@@ -110,7 +110,13 @@ class Log
 			end
 		end
 		h.sort!{|a,b| a.rev <=> b.rev}
-		Log.new(h)
+		a = []
+		begin 
+			a << h.pop
+		end while a.last.comment =~ /^Column .*$/
+		a.pop	
+		a.sort!{|a1,b1| a1.rev <=> b1.rev}
+		Log.new(a)
 	end
 end
 
