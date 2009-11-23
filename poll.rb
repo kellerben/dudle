@@ -273,12 +273,17 @@ FORM
 			name = "Anonymous ##{maximum + 1}"
 		end
 		htmlname = CGI.escapeHTML(name)
-		@data.delete(CGI.escapeHTML(olduser))
+		action = ''
+		if @data.delete(CGI.escapeHTML(olduser))
+			action = "edited"
+		else
+			action = "added"
+		end
 		@data[htmlname] = {"timestamp" => Time.now }
 		@head.each_columnid{|columnid|
 			@data[htmlname][columnid] = agreed[columnid.to_s]
 		}
-		store "Participant #{name.strip} edited"
+		store "Participant #{name.strip} #{action}"
 	end
 
 	def delete(name)
@@ -325,7 +330,7 @@ FORM
 
 	def edit_column(oldcolumnid, newtitle, cgi)
 		parsedtitle = @head.edit_column(oldcolumnid, newtitle, cgi)
-		store "Column #{parsedtitle} edited" if parsedtitle
+		store "Column #{parsedtitle} #{oldcolumnid == "" ? "added" : "edited"}" if parsedtitle
 	end
 
 	def edit_column_htmlform(activecolumn, revision)
