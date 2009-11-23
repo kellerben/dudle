@@ -49,7 +49,9 @@ revbeforeedit = VCS.revno
 if $cgi.include?("undo_revision") && $cgi["undo_revision"].to_i < revbeforeedit
 	undorevision = $cgi["undo_revision"].to_i
 	table = YAML::load(VCS.cat(undorevision, "data.yaml"))
-	table.store("Reverted Poll to version #{undorevision}")
+	comment = "Reverted Poll" 
+	comment = "Redo changes" if $cgi.include?("redo")
+	table.store("#{comment} to version #{undorevision}")
 else
 	table = YAML::load_file("data.yaml")
 end
@@ -85,11 +87,14 @@ TABLE
 $html << table.edit_column_htmlform($cgi["editcolumn"],revno)
 
 $html << "<div class='undo'>"
-h = VCS.history.flatten
+h = VCS.history
+urevs = h.undorevisions
+rrevs = h.redorevisions
 
 hidden = "<input type='hidden' name='add_remove_column_month' value='#{$cgi["add_remove_column_month"]}' />" if $cgi.include?("add_remove_column_month")
-if h.max
-	coltitle,action = h.max.comment.scan(/^Column (.*) (added|deleted|edited)$/).flatten
+if urevs.max
+	urhist = urevs
+	coltitle,action = urevs.max.comment.scan(/^Column (.*) (added|deleted|edited)$/).flatten
 	case action
 	when "added"
 		title = "Delete column #{coltitle}"
@@ -98,18 +103,40 @@ if h.max
 	when "edited"
 		title = "Column #{coltitle} edit"
 	end
-	$html << <<ADD_EDIT
+	$html << "<table><tr>"
+	unless urevs.size == 1
+		$html << <<UNDO
+		<td>
 <form method='post' action=''>
 	<div>
 		<input type='submit' title='#{title}' value='Undo' />
-		<input type='hidden' name='undo_revision' value='#{h.max.rev() -1}' />
+		<input type='hidden' name='undo_revision' value='#{urevs.max.rev() -1}' />
 		#{hidden}
 	</div>
 </form>
-ADD_EDIT
+</td>
+UNDO
+	end
+	if rrevs.min
+		$html << <<REDO
+<td>
+<form method='post' action=''>
+	<div>
+		<input type='submit' title='#{title}' value='Redo' />
+		<input type='hidden' name='redo'/>
+		<input type='hidden' name='undo_revision' value='#{rrevs.min.rev()}' />
+		#{hidden}
+	</div>
+</form>
+</td>
+REDO
+		urhist += rrevs
+	end
+
+	$html << "</tr></table>"
+	$html << (urhist).to_html(urevs.max.rev)
 end
 
-$html << h.to_html(1)
 $html << "</div>" #undo
 
 

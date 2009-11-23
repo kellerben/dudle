@@ -37,25 +37,27 @@ class LogEntry
 		ret += "</tr>"
 		ret
 	end
+	include Comparable
+	def <=>(other)
+		self.rev <=> other.rev
+	end
+	def inspect
+		"#{@rev}: #{@comment}"
+	end
 end
 
 class Log
+	attr_reader :log
 	def initialize(a = [])
 		@log = a
 	end
 	def min
-		ret = @log[0]
-		@log.each{|l|
-			ret.rev = l if l.rev < ret.rev
-		}
-		ret
+		@log.sort!
+		@log[0]
 	end
 	def max
-		ret = @log[-1]
-		@log.each{|l|
-			ret.rev = l if l.rev > ret.rev
-		}
-		ret
+		@log.sort!
+		@log[-1]
 	end
 	def revisions
 		@log.collect{|e| e.rev }
@@ -70,6 +72,10 @@ class Log
 			return @log[i]
 		end
 	end
+	
+	def size
+		@log.size
+	end
 	def around_rev(rev,number)
 		ret = [self[rev]]
 		midindex = @log.index(ret[0])
@@ -82,12 +88,18 @@ class Log
 			end
 			ret.compact!
 		end
-		ret.sort!{|a,b| a.rev <=> b.rev}
+		ret.sort!
 		Log.new(ret)
 	end
+
+	def +(other)
+		a = @log + other.log
+		Log.new(a.sort)
+	end
+
 	def add(revision,timestamp,comment)
 		@log << LogEntry.new(revision,timestamp,comment)
-		@log.sort!{|a,b| a.rev <=> b.rev}
+		@log.sort!
 	end
 	def to_html(notlinkrevision)
 		ret = "<table><tr><th>Version</th><th>Date</th><th>Comment</th></tr>"
@@ -106,33 +118,52 @@ class Log
 	def comment_matches(regex)
 		Log.new(@log.collect{|e| e if e.comment =~ regex}.compact)
 	end
-	def flatten
+	def undorevisions
 		h = []
 		minrev = min.rev
 		rev = max.rev
 		while rev > minrev
 			elem = self[rev]
-			prevrev = elem.comment.scan(/^Reverted Poll to version (\d*)$/).flatten[0]
+			prevrev = elem.comment.scan(/^.* to version (\d*)$/).flatten[0]
 			if prevrev
 				rev = prevrev.to_i	
 			else
 				h << elem
-				rev += -1
+				rev -= 1
 			end
 		end
-		h.sort!{|a,b| a.rev <=> b.rev}
+		h.sort!
 		a = []
 		begin 
 			a << h.pop
-		end while a.last.comment =~ /^Column .*$/
+		end while a.last && a.last.comment =~ /^Column .*$/
 		a.pop	
-		a.sort!{|a1,b1| a1.rev <=> b1.rev}
+		a.sort!
 		Log.new(a)
+	end
+	def redorevisions
+		@log.sort!
+		revertrevs = []
+		redone = []
+		minrev = min.rev
+		(minrev..max.rev).reverse_each{|rev|
+			action,r = self[rev].comment.scan(/^(.*) to version (\d*)$/).flatten
+			break unless r
+			if action =~ /^Redo changes/
+				break unless revertrevs.empty?
+				redone << r.to_i() -1
+			else
+				revertrevs << r.to_i 
+			end
+		}
+		revertrevs = revertrevs - redone
+		Log.new(revertrevs.collect{|e| self[e+1]})
 	end
 end
 
 if __FILE__ == $0
 require "test/unit"
+require "pp"
   class Log_test < Test::Unit::TestCase
     def test_indexes
 
@@ -158,5 +189,87 @@ require "test/unit"
 			assert_equal(l.revisions,l.around_rev(0,99).revisions)
 
     end
+    def test_undoredo
+
+    	#       15  16  17
+    	#       |   |   |
+    	#       11  10  |
+    	#     14|   |   |
+    	#   13| 7---8---9
+    	#   | 12| 6
+    	#   | | | |
+    	# 0-1-2-3-4-5
+    	#   p
+    	
+    	def dummy_add(log,comment)
+				log.add(log.max.rev+1,Time.now,comment)
+			end
+    	l = Log.new
+			l.add(1,Time.now,"Participant Spamham added")
+			6.times{|i|
+				l.add(i,Time.now,"Column Foo#{i} added") unless i == 1
+			}
+
+			assert_equal([2,3,4,5],l.undorevisions.revisions)
+			assert_equal([],l.redorevisions.revisions)
+
+			dummy_add(l,"Reverted Poll to version 4")
+			assert_equal([2,3,4],l.undorevisions.revisions)
+			assert_equal([5],l.redorevisions.revisions)
+
+			dummy_add(l,"Reverted Poll to version 3")
+			assert_equal([2,3],l.undorevisions.revisions)
+			assert_equal([4,5],l.redorevisions.revisions)
+
+			dummy_add(l,"Column Foo added")
+			assert_equal([2,3,8],l.undorevisions.revisions)
+			assert_equal([],l.redorevisions.revisions)
+
+			dummy_add(l,"Column Foo added")
+
+			assert_equal([2,3,8,9],l.undorevisions.revisions)
+			assert_equal([],l.redorevisions.revisions)
+			
+			dummy_add(l,"Reverted Poll to version 8")
+			dummy_add(l,"Reverted Poll to version 7")
+			dummy_add(l,"Reverted Poll to version 2")
+			dummy_add(l,"Reverted Poll to version 1")
+			assert_equal([],l.undorevisions.revisions)
+			assert_equal([2,3,8,9],l.redorevisions.revisions)
+
+			dummy_add(l,"Redo changes to version 2")
+			dummy_add(l,"Redo changes to version 3")
+			assert_equal([2,3],l.undorevisions.revisions)
+			assert_equal([8,9],l.redorevisions.revisions)
+			
+			dummy_add(l,"Redo changes to version 8")
+			dummy_add(l,"Redo changes to version 9")
+			assert_equal([2,3,8,9],l.undorevisions.revisions)
+			assert_equal([],l.redorevisions.revisions)
+
+			# second time should be the same
+			dummy_add(l,"Reverted Poll to version 8")
+			assert_equal([2,3,8],l.undorevisions.revisions)
+			assert_equal([9],l.redorevisions.revisions)
+			dummy_add(l,"Reverted Poll to version 7")
+			assert_equal([2,3],l.undorevisions.revisions)
+			assert_equal([8,9],l.redorevisions.revisions)
+			dummy_add(l,"Reverted Poll to version 2")
+			assert_equal([2],l.undorevisions.revisions)
+			assert_equal([3,8,9],l.redorevisions.revisions)
+			dummy_add(l,"Reverted Poll to version 1")
+			assert_equal([],l.undorevisions.revisions)
+			assert_equal([2,3,8,9],l.redorevisions.revisions)
+
+			dummy_add(l,"Redo changes to version 2")
+			dummy_add(l,"Redo changes to version 3")
+			assert_equal([2,3],l.undorevisions.revisions)
+			assert_equal([8,9],l.redorevisions.revisions)
+			
+			dummy_add(l,"Redo changes to version 8")
+			dummy_add(l,"Redo changes to version 9")
+			assert_equal([2,3,8,9],l.undorevisions.revisions)
+			assert_equal([],l.redorevisions.revisions)
+		end
   end 
 end
