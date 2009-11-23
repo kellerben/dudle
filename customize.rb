@@ -40,45 +40,48 @@ $html << <<END
 You need cookies enabled in order to personalize your settings.
 END
 
-$html << <<CHARSET
-<div id='charset'>
-<h2>Charset</h2>
-<table summary='Charset settings'>
+def choosetable(tablesummary, options, cursetting)
+	ret = <<HEAD 
+<table summary='#{tablesummary}'>
 	<tr>
 		<th>Current Setting</th>
 		<th>Description</th>
 	</tr>
-CHARSET
-[["Use normal strings","ascii"],
- ["Use special characters (#{UTFCHARS})","utf"]].each{|description,href|
- 	 selected = href == (USEUTF ? "utf" : "ascii")
- 	 $html << "<tr><td>"
- 	 $html << CROSS if selected
- 	 $html << "</td><td class='charset'>"
- 	 $html << "<a href='?#{href}'>" unless selected
- 	 $html << description
- 	 $html << "</a>" unless selected
- 	 $html << "</td></tr>"
- }
+HEAD
+	options.each{|description,href,title|
+		selected = href == cursetting
+		ret += "<tr><td>"
+		ret += CROSS if selected
+		ret += "</td><td class='settingstable' title='#{title}'>"
+		ret += "<a href='?#{href}'>" unless selected
+		ret += description
+		ret += "</a>" unless selected
+		ret += "</td></tr>"
+	}
+	ret += "</table>"
+	ret
+end
+
+
+a = [["Use normal strings","ascii"], 
+     ["Use special characters (#{UTFCHARS})","utf", "Use this options if you see the characters in the parenthesis."]]
 $html << <<CHARSET
-</table>
+<div id='charset'>
+<h2>Charset</h2>
+#{choosetable("Charset settings",a,USEUTF ? "utf" : "ascii")}
 </div>
 CHARSET
 
-$html << <<CHARSET
+
+a = [["default","css=dudle.css"],
+     ["PrimeLife","css=primelife.css"],
+     ["TU Dresden","css=tud.css"]]
+$html << <<CSS
 <div id='config_stylesheet'>
 <h2>Stylesheet</h2>
-<ul>
-CHARSET
-[["default","dudle.css"],
- ["PrimeLife","primelife.css"],
- ["TU Dresden","tud.css"]].each{|descr,cssfile|
-	$html << "<li><a href='?css=#{cssfile}'>#{descr}</a></li>"
-}
-$html << <<CHARSET
-</ul>
+#{choosetable("Stylesheet settings",a,"css=dudle.css")}
 </div>
-CHARSET
+CSS
 
 
 username = $cgi.cookies["username"][0]
