@@ -63,9 +63,9 @@ $html << table.to_html("",false)
 
 $html << "<h2>History</h2>"
 $html << "<div id='history'>"
-historyselect = $cgi.include?("history") ? $cgi["history"] : nil
-$html << table.history_selectform($cgi.include?("revision") ? nil : revno, historyselect)
-$html << table.history_to_html(revno, historyselect)
+$html << table.history_selectform($cgi.include?("revision") ? nil : revno, $cgi["history"])
+
+$html << table.history_to_html(revno, $cgi["history"])
 $html << "</div>"
 
 $html << "</div></body>"

@@ -57,22 +57,33 @@ class Log
 		}
 		ret
 	end
+	def revisions
+		@log.collect{|e| e.rev }
+	end
 	def [](revision)
-		if revision.class == Fixnum
-			@log.each{|l|
-				return l if l.rev == revision
-			}
-			raise "No such revision found #{revision}"
-		else
-			min_r, max_r = "",""
-			@log.each_with_index{|l,i|
-				min_r = i if l.rev == revision.min
-				max_r = i if l.rev == revision.max
-			}
-			min_r = @log.index(min) if min_r == ""
-			max_r = @log.index(max) if max_r == ""
-			return Log.new(@log[min_r..max_r])
+		i = revisions.index(revision)
+		if i
+			return @log[i]
+		else # no revision found, search the nearest
+			dist = revisions.collect{|e| (e - revision).abs }.sort[0]
+			i = revisions.index(revision + dist) || revisions.index(revision - dist)
+			return @log[i]
 		end
+	end
+	def around_rev(rev,number)
+		ret = [self[rev]]
+		midindex = @log.index(ret[0])
+		counter = 1
+		while ret.size < number && counter < @log.size
+			ret << @log[midindex + counter]
+			counter *= -1 if counter <= midindex
+			if counter > 0
+				counter += 1
+			end
+			ret.compact!
+		end
+		ret.sort!{|a,b| a.rev <=> b.rev}
+		Log.new(ret)
 	end
 	def add(revision,timestamp,comment)
 		@log << LogEntry.new(revision,timestamp,comment)
@@ -135,10 +146,17 @@ require "test/unit"
 			assert_equal(19,l.max.rev)
       assert_equal("baz 10",l[10].comment)
 
-			p = l[9..11]
-      assert_equal([9,10,11],[p[9].rev,p[10].rev,p[11].rev])
-      
-      assert_equal([10],l.comment_matches(/^baz \d*$/).collect{|e| e.rev})
+      assert_equal([10],l.comment_matches(/^baz \d*$/).revisions)
+
+			[42,23].each{|i|
+				l.add(i,Time.now,"foo #{i}")
+			}
+			assert_equal(l[42],l[37])
+
+			assert_equal([16,17,18,19,23,42],l.around_rev(23,6).revisions)
+			assert_equal([0,1,2,3,4,5,6,7,8,9,10,11],l.around_rev(2,12).revisions)
+			assert_equal(l.revisions,l.around_rev(0,99).revisions)
+
     end
   end 
 end

@@ -234,7 +234,7 @@ ADDCOMMENT
 	<div>
 		<select name='history'>
 FORM
-		["comments","participants","columns"].each{|opt|
+		["", "comments","participants","columns"].each{|opt|
 			ret += "<option value='#{opt}' #{selected == opt ? "selected='selected'" : ""} >#{opt}</option>"
 		}
 		ret += "<input type='hidden' name='revision' value='#{revision}' />" if revision
@@ -249,7 +249,7 @@ FORM
 
 	def history_to_html(middlerevision,only)
 		log = VCS.history
-		if only
+		if only != ""
 			case only
 			when "comments"
 				match = /^Comment .*$/
@@ -262,7 +262,7 @@ FORM
 			end
 			log = log.comment_matches(match)
 		end
-		log[((middlerevision-5)..(middlerevision+5))].to_html(middlerevision)
+		log.around_rev(middlerevision,11).to_html(middlerevision)
 	end
 
 	def add_participant(olduser, name, agreed)
