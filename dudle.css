@@ -96,6 +96,9 @@ td.create_poll, td.charset{
 	text-align:left;
 }
 
+td.historycomment{
+	text-align:left;
+}
 td {
 	vertical-align:middle;
 	text-align:center;

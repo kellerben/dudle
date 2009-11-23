@@ -63,7 +63,11 @@ $html << "<h2>#{versiontitle}</h2>"
 $html << table.to_html("",false)
 
 $html << "<h2>History</h2>"
-$html << "<div id='history'>#{table.history_to_html(maxrev, revno)}</div>"
+$html << "<div id='history'>"
+historyselect = $cgi.include?("history") ? $cgi["history"] : nil
+$html << table.history_selectform(revno == maxrev ? nil : revno, historyselect)
+$html << table.history_to_html(maxrev, revno, historyselect)
+$html << "</div>"
 
 $html << "</div></body>"
 

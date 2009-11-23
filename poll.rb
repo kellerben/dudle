@@ -228,8 +228,40 @@ ADDCOMMENT
 		ret
 	end
 
-	def history_to_html(maxrev, middlerevision)
+	def history_selectform(revision, selected)
+		ret = <<FORM
+<form method='get' action=''>
+	<div>
+		<select name='history'>
+FORM
+		["comments","participants","columns"].each{|opt|
+			ret += "<option value='#{opt}' #{selected == opt ? "selected='selected'" : ""} >#{opt}</option>"
+		}
+		ret += "<input type='hidden' name='revision' value='#{revision}' />" if revision
+		ret += <<FORM
+		</select>
+		<input type='submit' />
+	</div>
+</form>
+FORM
+		ret
+	end
+
+	def history_to_html(maxrev, middlerevision,only)
 		log = VCS.history
+		if only
+			case only
+			when "comments"
+				match = /^Comment .*$/
+			when "participants"
+				match = /^Participant .*$/
+			when "columns"
+				match = /^Column .*$/
+			else
+				raise "invalid value #{only}"
+			end
+			log = log.comment_matches(match)
+		end
 		log[((middlerevision-5)..(middlerevision+5))].to_html(maxrev, middlerevision)
 	end
 

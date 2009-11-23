@@ -33,7 +33,7 @@ class LogEntry
 		ret += "</a>" if link
 		ret += "</td>"
 		ret += "<td>#{@timestamp.strftime('%d.%m, %H:%M')}</td>"
-		ret += "<td>#{CGI.escapeHTML(@comment)}</td>"
+		ret += "<td class='historycomment'>#{CGI.escapeHTML(@comment)}</td>"
 		ret += "</tr>"
 		ret
 	end
@@ -89,6 +89,12 @@ class Log
 	def each
 		@log.each{|e| yield(e)}
 	end
+	def collect
+		@log.collect{|e| yield(e)}
+	end
+	def comment_matches(regex)
+		Log.new(@log.collect{|e| e if e.comment =~ regex}.compact)
+	end
 end
 
 if __FILE__ == $0
@@ -97,16 +103,19 @@ require "test/unit"
     def test_indexes
 
 			l = Log.new
-			l.add(10,Time.now,"foo 10")
+			l.add(10,Time.now,"baz 10")
 			20.times{|i|
 				l.add(i,Time.now,"foo #{i}") unless i == 10
 			}
 
 			assert_equal(0,l.min.rev)
 			assert_equal(19,l.max.rev)
-      assert_equal("foo 10",l[10].comment)
-      l = l[9..11]
-      assert_equal([9,10,11],[l[9].rev,l[10].rev,l[11].rev])
+      assert_equal("baz 10",l[10].comment)
+
+			p = l[9..11]
+      assert_equal([9,10,11],[p[9].rev,p[10].rev,p[11].rev])
+      
+      assert_equal([10],l.comment_matches(/^baz \d*$/).collect{|e| e.rev})
     end
   end 
 end
