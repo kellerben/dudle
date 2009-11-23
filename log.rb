@@ -30,7 +30,7 @@ class LogEntry
 		ret = "<tr><td>"
 		if link
 			ret += "<a href='?revision=#{@rev}"
-			ret += "&history=#{history}" if history != ""
+			ret += "&amp;history=#{history}" if history != ""
 			ret += "'>"
 		end
 		ret += "#{@rev}"
