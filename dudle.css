@@ -149,6 +149,7 @@ html {
 	margin-right:auto;
 	width:auto;
 	display: table;
+	min-width: 30em;
 }
 
 div#tabs{
