@@ -17,10 +17,11 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-BZRCMD="export LC_ALL=de_DE.UTF-8; bzr"
 require "time"
+require "log"
 
 class VCS
+	BZRCMD="export LC_ALL=de_DE.UTF-8; bzr"
 	def VCS.init
 		`#{BZRCMD} init`
 	end
@@ -39,12 +40,13 @@ class VCS
 
 	def VCS.history
 		log = `#{BZRCMD} log --forward`.split("-"*60)
+		ret = Log.new
 		log.shift
-		log.collect{|s| 
-			a = s.scan(/\nrevno:.*\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten
-			h = {"timestamp" => Time.parse(a[0]),
-			     "commit message" => a[1]}
+		log.each{|s| 
+			a = s.scan(/\nrevno:(.*)\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten
+			ret.add(a[0].to_i, Time.parse(a[1]), a[2])
 		}
+		ret
 	end
 	
 	def VCS.longhistory dir

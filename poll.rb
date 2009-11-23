@@ -229,23 +229,8 @@ ADDCOMMENT
 	end
 
 	def history_to_html(maxrev, middlerevision)
-		ret = "<table><tr><th>Version</th><th>Date</th><th>Comment</th></tr>"
 		log = VCS.history
-
-		((middlerevision-5)..(middlerevision+5)).each do |i|
-			if i >0 && i<=maxrev
-				ret += "<tr><td>"
-				ret += "<a href='?revision=#{i}' >" if middlerevision != i
-				ret += "#{i}"
-				ret += "</a>" if middlerevision != i
-				ret += "</td>"
-				ret += "<td>#{log[i-1]["timestamp"].strftime('%d.%m, %H:%M')}</td>"
-				ret += "<td>#{CGI.escapeHTML(log[i-1]["commit message"])}</td>"
-				ret += "</tr>"
-			end
-		end
-		ret += "</table>"
-		ret
+		log[((middlerevision-5)..(middlerevision+5))].to_html(maxrev, middlerevision)
 	end
 
 	def add_participant(olduser, name, agreed)
