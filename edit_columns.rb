@@ -84,29 +84,34 @@ TABLE
 # ADD/REMOVE COLUMN
 $html << table.edit_column_htmlform($cgi["editcolumn"],revno)
 
+$html << "<div class='undo'>"
 h = VCS.history.flatten
 
-#undo = h.size -1
-
-#h.collect{|e|
-#
-#}
-
-
-
-#	This Revision: #{revno}<br />
-#	Hidden undo Revision: #{undorevision -1}<br />
-#	Last Action: #{h[0]["commit message"]}
-
-$html << <<ADD_EDIT
+hidden = "<input type='hidden' name='add_remove_column_month' value='#{$cgi["add_remove_column_month"]}' />" if $cgi.include?("add_remove_column_month")
+if h.max
+	coltitle,action = h.max.comment.scan(/^Column (.*) (added|deleted|edited)$/).flatten
+	case action
+	when "added"
+		title = "Delete column #{coltitle}"
+	when "deleted"
+		title = "Add column #{coltitle}"
+	when "edited"
+		title = "Column #{coltitle} edit"
+	end
+	$html << <<ADD_EDIT
 <form method='post' action=''>
 	<div>
-		<input type='submit' value='Undo' />
-		<input type='hidden' name='undo_revision' value='#{-1}' />
+		<input type='submit' title='#{title}' value='Undo' />
+		<input type='hidden' name='undo_revision' value='#{h.max.rev() -1}' />
+		#{hidden}
 	</div>
 </form>
-#{h[216..234].to_html(220)}
 ADD_EDIT
+end
+
+$html << h.to_html(1)
+$html << "</div>" #undo
+
 
 $html << "</div></body>"
 

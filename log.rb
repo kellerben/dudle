@@ -101,7 +101,7 @@ class Log
 		rev = max.rev
 		while rev > minrev
 			elem = self[rev]
-			prevrev = elem.comment.scan(/^Reverted Poll to revision (\d*)$/).flatten[0]
+			prevrev = elem.comment.scan(/^Reverted Poll to version (\d*)$/).flatten[0]
 			if prevrev
 				rev = prevrev.to_i	
 			else

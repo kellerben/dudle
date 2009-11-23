@@ -92,12 +92,17 @@ table.calendarday td input{
 	padding: 1px;
 }
 
+div.undo{
+	text-align: center;
+	margin-top: 2em;
+}
+
 td.create_poll, td.settingstable{
-	text-align:left;
+	text-align: left;
 }
 
 td.historycomment{
-	text-align:left;
+	text-align: left;
 }
 td {
 	vertical-align:middle;
