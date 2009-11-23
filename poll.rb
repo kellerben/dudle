@@ -247,7 +247,7 @@ FORM
 		ret
 	end
 
-	def history_to_html(maxrev, middlerevision,only)
+	def history_to_html(middlerevision,only)
 		log = VCS.history
 		if only
 			case only
@@ -262,7 +262,7 @@ FORM
 			end
 			log = log.comment_matches(match)
 		end
-		log[((middlerevision-5)..(middlerevision+5))].to_html(maxrev, middlerevision)
+		log[((middlerevision-5)..(middlerevision+5))].to_html(middlerevision)
 	end
 
 	def add_participant(olduser, name, agreed)
@@ -328,8 +328,8 @@ FORM
 		store "Column #{parsedtitle} edited" if parsedtitle
 	end
 
-	def edit_column_htmlform(activecolumn)
-		@head.edit_column_htmlform(activecolumn)
+	def edit_column_htmlform(activecolumn, revision)
+		@head.edit_column_htmlform(activecolumn, revision)
 	end
 end
 

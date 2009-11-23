@@ -191,7 +191,7 @@ class TimePollHead
 		ret
 	end
 	
-	def edit_column_htmlform(activecolumn)
+	def edit_column_htmlform(activecolumn, revision)
 		if $cgi.include?("add_remove_column_month")
 			if $cgi.params["add_remove_column_month"].size == 1
 				startdate = Date.parse("#{$cgi["add_remove_column_month"]}-1")
@@ -215,24 +215,25 @@ class TimePollHead
 			startdate = Date.parse("#{Date.today.year}-#{Date.today.month}-1")
 		end
 		ret = <<END
-<table><tr><td style="vertical-align:top">
+<table summary='edit column'><tr><td style="vertical-align:top">
 <table class='calendarday' summary='The day to vote for.'><tr>
 END
-		def navi val,curmonth
+		def navi val,curmonth,revision
 			return <<END
 			<th style='padding:0px'>
 				<form method='post' action=''>
 					<div>
 						<input class='navigation' type='submit' name='add_remove_column_month' value='#{val}' />
 						<input type='hidden' name='add_remove_column_month' value='#{curmonth.strftime("%Y-%m")}' />
+						<input type='hidden' name='undo_revision' value='#{revision}' />
 					</div>
 				</form>
 			</th>
 END
 		end
-		[YEARBACK,MONTHBACK].each{|val| ret += navi(val,startdate)}
+		[YEARBACK,MONTHBACK].each{|val| ret += navi(val,startdate,revision)}
 		ret += "<th colspan='3'>#{startdate.strftime("%b %Y")}</th>"
-		[MONTHFORWARD, YEARFORWARD].each{|val| ret += navi(val,startdate)}
+		[MONTHFORWARD, YEARFORWARD].each{|val| ret += navi(val,startdate,revision)}
 		 
 		ret += "</tr><tr>\n"
 
@@ -258,6 +259,7 @@ END
 			<input class='#{klasse}' type='submit' value='#{d.day}' />
 			<input type='hidden' name='#{varname}' value='#{startdate.strftime("%Y-%m")}-#{d.day}' />
 			<input type='hidden' name='add_remove_column_month' value='#{startdate.strftime("%Y-%m")}' />
+			<input type='hidden' name='undo_revision' value='#{revision}' />
 		</div>
 	</form>
 </td>
@@ -319,6 +321,7 @@ END
 				ret += <<END
 			<input title='#{timestamp}' class='#{klasse}' type='submit' name='columntime' value='#{timestamp.time_to_s}' />
 			<input type='hidden' name='add_remove_column_month' value='#{timestamp.date.strftime("%Y-%m")}' />
+			<input type='hidden' name='undo_revision' value='#{revision}' />
 		</div>
 	</form>
 </td>
@@ -335,6 +338,7 @@ END
 			<div>
 				<input type='hidden' name='new_columnname' value='#{d.strftime("%Y-%m-%d")}' />
 				<input type='hidden' name='add_remove_column_month' value='#{d.strftime("%Y-%m")}' />
+				<input type='hidden' name='undo_revision' value='#{revision}' />
 END
 			if @data.include?(TimeString.new(d,nil))
 				ret += "<input type='hidden' name='columnid' value='#{TimeString.new(d,nil).to_s}' />"

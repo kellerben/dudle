@@ -78,10 +78,10 @@ class Log
 		@log << LogEntry.new(revision,timestamp,comment)
 		@log.sort!{|a,b| a.rev <=> b.rev}
 	end
-	def to_html(maxrev, middlerevision)
+	def to_html(notlinkrevision)
 		ret = "<table><tr><th>Version</th><th>Date</th><th>Comment</th></tr>"
-		self[((middlerevision-5)..(middlerevision+5))].each do |l|
-			ret += l.to_html(middlerevision != l.rev)
+		self.each do |l|
+			ret += l.to_html(notlinkrevision != l.rev)
 		end
 		ret += "</table>"
 		ret
@@ -94,6 +94,23 @@ class Log
 	end
 	def comment_matches(regex)
 		Log.new(@log.collect{|e| e if e.comment =~ regex}.compact)
+	end
+	def flatten
+		h = []
+		minrev = min.rev
+		rev = max.rev
+		while rev > minrev
+			elem = self[rev]
+			prevrev = elem.comment.scan(/^Reverted Poll to revision (\d*)$/).flatten[0]
+			if prevrev
+				rev = prevrev.to_i	
+			else
+				h << elem
+				rev += -1
+			end
+		end
+		h.sort!{|a,b| a.rev <=> b.rev}
+		Log.new(h)
 	end
 end
 

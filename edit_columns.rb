@@ -44,23 +44,28 @@ end
 
 acusers = {}
 
-if $cgi.include?("revision")
-	REVISION=$cgi["revision"].to_i
-	table = YAML::load(VCS.cat(REVISION, "data.yaml"))
+revbeforeedit = VCS.revno
+
+if $cgi.include?("undo_revision") && $cgi["undo_revision"].to_i < revbeforeedit
+	undorevision = $cgi["undo_revision"].to_i
+	table = YAML::load(VCS.cat(undorevision, "data.yaml"))
+	table.store("Reverted Poll to version #{undorevision}")
 else
 	table = YAML::load_file("data.yaml")
-
-	if $cgi.include?("add_participant")
-		if $cgi.include?("delete_participant")
-			table.delete($cgi["olduser"])
-		else
-			table.add_participant($cgi["olduser"],$cgi["add_participant"],{})
-		end
-	end
-	table.edit_column($cgi["columnid"],$cgi["new_columnname"],$cgi) if $cgi.include?("new_columnname")
-	table.delete_column($cgi["deletecolumn"]) if $cgi.include?("deletecolumn")
-
 end
+
+# TODO: move to own tab
+#if $cgi.include?("add_participant")
+#	if $cgi.include?("delete_participant")
+#		table.delete($cgi["olduser"])
+#	else
+#		table.add_participant($cgi["olduser"],$cgi["add_participant"],{})
+#	end
+#end
+table.edit_column($cgi["columnid"],$cgi["new_columnname"],$cgi) if $cgi.include?("new_columnname")
+table.delete_column($cgi["deletecolumn"]) if $cgi.include?("deletecolumn")
+
+revno = VCS.revno
 
 $html = HTML.new("dudle - #{table.name} - Edit Columns")
 $html.header["Cache-Control"] = "no-cache"
@@ -77,13 +82,33 @@ $html << <<TABLE
 TABLE
 
 # ADD/REMOVE COLUMN
+$html << table.edit_column_htmlform($cgi["editcolumn"],revno)
+
+h = VCS.history.flatten
+
+#undo = h.size -1
+
+#h.collect{|e|
+#
+#}
+
+
+
+#	This Revision: #{revno}<br />
+#	Hidden undo Revision: #{undorevision -1}<br />
+#	Last Action: #{h[0]["commit message"]}
+
 $html << <<ADD_EDIT
-	<div id='edit_column'>
-	#{table.edit_column_htmlform($cgi["editcolumn"])}
+<form method='post' action=''>
+	<div>
+		<input type='submit' value='Undo' />
+		<input type='hidden' name='undo_revision' value='#{-1}' />
 	</div>
+</form>
+#{h[216..234].to_html(220)}
 ADD_EDIT
 
-$html << "</body>"
+$html << "</div></body>"
 
 $html.out($cgi)
 end

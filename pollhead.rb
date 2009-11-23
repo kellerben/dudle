@@ -105,7 +105,7 @@ EDITDELETE
 		ret
 	end
 	
-	def edit_column_htmlform(activecolumn)
+	def edit_column_htmlform(activecolumn, revision)
 		if activecolumn != ""
 			title = activecolumn
 			description = @data[title]
@@ -119,6 +119,7 @@ EDITDELETE
 			<input id='columntitle' size='16' type='text' value="#{title}" name='new_columnname' />
 			<label for='columndescription'>Description: </label>
 			<input id='columndescription' size='30' type='text' value="#{description}" name='columndescription' />
+			<input type='hidden' name='undo_revision' value='#{revision}' />
 			#{hiddeninput}
 			<input type='submit' value='Add/Edit Column' />
 	</div>
