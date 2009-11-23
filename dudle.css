@@ -145,6 +145,10 @@ html {
 	border: solid 1px black;
 	top: 0px;
 	margin-top: 0px;
+	margin-left: auto;
+	margin-right:auto;
+	width:auto;
+	display: table;
 }
 
 body#main, div#tabs ul{
