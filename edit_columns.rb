@@ -134,7 +134,7 @@ REDO
 	end
 
 	$html << "</tr></table>"
-	$html << (urhist).to_html(urevs.max.rev)
+	$html << (urhist).to_html(urevs.max.rev,"")
 end
 
 $html << "</div>" #undo
