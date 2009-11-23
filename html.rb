@@ -63,7 +63,7 @@ HEAD
 		@header["cookie"] = c
 	end
 	def << (bodycontent)
-		@body += bodycontent
+		@body += bodycontent.chomp + "\n"
 	end
 	def out(cgi)
 		cgi.out(@header){
