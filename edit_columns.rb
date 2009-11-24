@@ -152,7 +152,7 @@ TD
 </div>
 READY
 
-$html << (urevs + rrevs).to_html(curundorev,"")
+#$html << (urevs + rrevs).to_html(curundorev,"")
 
 $html << "</div></body>"
 
