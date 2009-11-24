@@ -108,11 +108,14 @@ class Log
 	end
 	def to_html(unlinkedrevision,history)
 		ret = "<table summary='Historytable' ><tr><th>Version</th><th>Date</th><th>Comment</th></tr>"
-		self.each{|l|
+		self.reverse_each{|l|
 			ret += l.to_html(unlinkedrevision != l.rev,history)
 		}
 		ret += "</table>"
 		ret
+	end
+	def reverse_each
+		@log.reverse.each{|e| yield(e)}
 	end
 	def each
 		@log.each{|e| yield(e)}
