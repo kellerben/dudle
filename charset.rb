@@ -42,7 +42,7 @@ if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 else
 	USEUTF = false
 	
-	NOSORT      = CGI.escapeHTML('sort')
+	NOSORT      = ''
 	SORT        = CGI.escapeHTML('^')
 	REVERSESORT = CGI.escapeHTML('reverse')
 
