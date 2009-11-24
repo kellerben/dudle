@@ -60,7 +60,12 @@ class Poll
 		end
 	end
 
+	# showparticipation \in {true, false, "invite"}
 	def to_html(edituser = "", showparticipation = true)
+		if showparticipation == "invite"
+			showparticipation = false
+			invite = true
+		end
 		ret = "<table border='1' summary='Main Poll table'>\n"
 		
 		sortcolumns = $cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]
@@ -97,6 +102,7 @@ class Poll
 
 		# PARTICIPATE
 		ret += participate_to_html(edituser) unless @data.keys.include?(edituser) || !showparticipation
+		ret += invite_to_html if invite
 
 		# SUMMARY
 		ret += "<tr id='summary'><td class='name'>total</td>\n"
@@ -137,6 +143,20 @@ class Poll
 		ret += "</tr>"
 		ret += "</table>\n"
 		ret
+	end
+
+	def invite_to_html
+		ret = <<INVITE
+<tr id='add_participant'>
+<td class='name'>
+	<input size='16' type='text' name='add_participant' />
+</td>
+<td class='checkboxes' colspan='#{@head.col_size + 1}'>
+			<input type='submit' value='Invite' />
+</td>
+</tr>
+INVITE
+
 	end
 
 	def participate_to_html(edituser)

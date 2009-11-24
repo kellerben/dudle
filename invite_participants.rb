@@ -33,26 +33,13 @@ require "html"
 load "config.rb"
 require "poll"
 Dir.chdir(olddir)
-# BUGFIX for Time.parse, which handles the zone indeterministically
-class << Time
-	alias_method :old_parse, :parse
-	def Time.parse(date, now=self.now)
-		Time.old_parse("2009-10-25 00:30")
-		Time.old_parse(date)
-	end
-end
 
 
 table = YAML::load_file("data.yaml")
 
-# TODO: move to own tab
-#if $cgi.include?("add_participant")
-#	if $cgi.include?("delete_participant")
-#		table.delete($cgi["olduser"])
-#	else
-#		table.add_participant($cgi["olduser"],$cgi["add_participant"],{})
-#	end
-#end
+if $cgi.include?("add_participant")
+	table.add_participant("",$cgi["add_participant"],{})
+end
 
 $html = HTML.new("dudle - #{table.name} - Invite Participants")
 $html.header["Cache-Control"] = "no-cache"
@@ -65,8 +52,10 @@ $html << Dudle::tabs("Invite Participants")
 $html << <<TABLE
 	<div id='main'>
 	<h1>#{table.name}</h1>
-	<h2>Invite or Delete Participants</h2>
-	#{table.to_html}
+	<h2>Invite Participants</h2>
+	<form method='post' action=''>
+		#{table.to_html("","invite")}
+	</form>
 TABLE
 
 $html << "</div></body>"
