@@ -142,8 +142,8 @@ acusers.each{|user,action|
 <tr>
 	<td>#{$accesslevels[action]}</td>
 	<td>#{user}</td>
-	<td>*****************</td>
-	<td>*****************</td>
+	<td>#{PASSWORDSTAR*14}</td>
+	<td>#{PASSWORDSTAR*14}</td>
 	<td>
 		<input type='submit' name='ac_delete_#{user}_#{action}' value='delete' />
 	</td>

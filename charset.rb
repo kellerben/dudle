@@ -33,6 +33,8 @@ if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 
 	EDIT = CGI.escapeHTML("✍")
 	DELETE = CGI.escapeHTML("⌧")
+
+	PASSWORDSTAR = CGI.escapeHTML("•")
 else
 	USEUTF = false
 	
@@ -49,7 +51,9 @@ else
 
 	EDIT = CGI.escapeHTML("edit")
 	DELETE = CGI.escapeHTML("delete")
+
+	PASSWORDSTAR = CGI.escapeHTML("*")
 end
 
-UTFCHARS = CGI.escapeHTML("✔✘↞←→↠✍⌧")
+UTFCHARS = CGI.escapeHTML("✔✘↞←→↠✍⌧•")
 $html.add_cookie("utf","true","/",Time.now + (1*60*60*24*365 * (USEUTF ? 1 : -1 )))
