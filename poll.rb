@@ -258,10 +258,10 @@ ADDCOMMENT
 		<select name='history'>
 FORM
 		[["","All"],
-		 ["participants","Participants only"],
-		 ["columns","Column changes"],
-		 ["comments","Comments only"],
-		 ["ac","Access Control changes"]
+		 ["participants","Participant related"],
+		 ["columns","Column related"],
+		 ["comments","Comment related"],
+		 ["ac","Access Control related"]
 			].each{|value,opt|
 			ret += "<option value='#{value}' #{selected == value ? "selected='selected'" : ""} >#{opt}</option>"
 		}
