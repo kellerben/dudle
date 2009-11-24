@@ -97,45 +97,46 @@ end
 $html << <<CHARSET
 <div id='config_user'>
 <h2>Default Username</h2>
-<table summary="Set default username">
-	<tr>
-		<td>
-			<form method='get' action=''>
-				<div>
-						<label for='username'>Username: </label>
+<form method='get' action=''>
+	<table summary="Set default username">
+		<tr>
+			<td>
+				<label for='username'>Username: </label>
+			</td>
+			<td class='settingstable'>
 CHARSET
+
 if username && !$cgi.include?("edit")
 	$html << <<CHARSET
-						<span>#{username}</span>
-						<input type='hidden' value="#{username}" name='username' />
-						<input type='hidden' value="true" name='edit' />
-						<input type='submit' value='Edit' />
+				<span>#{username}</span>
+				<input type='hidden' value="#{username}" name='username' />
+				<input type='hidden' value="true" name='edit' />
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td class='settingstable'>
+				<input id='username' type='submit' value='Edit' />
 CHARSET
 else
 	$html << <<CHARSET
-						<input id='username' type='text' value="#{username}" name='username' />
-						<input type='submit' value='Save' />
+				<input id='username' type='text' value="#{username}" name='username' />
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td class='settingstable'>
+				<input type='submit' value='Save' />
 CHARSET
 end
+
+$html << "<input type='submit' name='delete_username' value='Delete' />" if username
+
 $html << <<CHARSET
-				</div>
-			</form>
-		</td>
-CHARSET
-if username
-	$html << <<CHARSET
-		<td>
-			<form method='get' action=''>
-				<div>
-						<input type='submit' name='delete_username' value='Delete' />
-				</div>
-			</form>
-		</td>
-CHARSET
-end
-$html << <<CHARSET
-	</tr>
-</table>
+			</td>
+		</tr>
+	</table>
+</form>
 </div>
 CHARSET
 
