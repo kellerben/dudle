@@ -86,73 +86,71 @@ TABLE
 # ADD/REMOVE COLUMN
 $html << table.edit_column_htmlform($cgi["editcolumn"],revno)
 
-$html << "<div class='undo'>"
 h = VCS.history
 urevs = h.undorevisions
 rrevs = h.redorevisions
 
-hidden = "<input type='hidden' name='add_remove_column_month' value='#{$cgi["add_remove_column_month"]}' />" if $cgi.include?("add_remove_column_month")
+disabled, title, undorevision, hidden = {},{},{},{}
+hidden["common"] = "<input type='hidden' name='add_remove_column_month' value='#{$cgi["add_remove_column_month"]}' />" if $cgi.include?("add_remove_column_month")
+["Undo","Redo"].each{|button|
+	disabled[button] = "disabled='disabled'"
+}
 if urevs.max
-	urhist = urevs
+	# enable undo
+	disabled["Undo"] = ""
+	undorevision["Undo"] = urevs.max.rev() -1
+
 	coltitle,action = urevs.max.comment.scan(/^Column (.*) (added|deleted|edited)$/).flatten
 	case action
 	when "added"
-		title = "Delete column #{coltitle}"
+		title["Undo"] = "Delete column #{coltitle}"
 	when "deleted"
-		title = "Add column #{coltitle}"
+		title["Undo"] = "Add column #{coltitle}"
 	when "edited"
-		title = "Column #{coltitle} edit"
+		title["Undo"] = "Column #{coltitle} edit"
 	end
-	$html << "<table summary='Undo/Redo functionallity'><tr>"
-	unless urevs.size == 1
-		$html << <<UNDO
-		<td>
-<form method='post' action=''>
-	<div>
-		<input type='submit' title='#{title}' value='Undo' />
-		<input type='hidden' name='undo_revision' value='#{urevs.max.rev() -1}' />
-		#{hidden}
-	</div>
-</form>
-</td>
-UNDO
-	end
-		$html << <<REDO
-<td>
-<form method='post' action=''>
-	<div>
-		<input type='submit' title='#{title}' value='Redo' #{rrevs.min ? "" : "disabled='disabled'"}/>
-REDO
-	if rrevs.min
-		$html << <<REDO
-		<input type='hidden' name='redo'/>
-		<input type='hidden' name='undo_revision' value='#{rrevs.min.rev()}' />
-		#{hidden}
-REDO
-	end
-		$html << <<REDO
-	</div>
-</form>
-</td>
-REDO
-	urhist += rrevs
-	
-	$html << <<READY
-<td>
-<form method='get' action='.'>
-	<div>
-		<input type='submit' value='Ready' />
-	</div>
-</form>
-</td>
-READY
-
-	$html << "</tr></table>"
-	$html << (urhist).to_html(urevs.max.rev,"")
+	curundorev = urevs.max.rev if rrevs.min
+end
+if rrevs.min
+	# enable redo
+	disabled["Redo"] = ""
+	undorevision["Redo"] = rrevs.min.rev()
+	hidden["Redo"] = "<input type='hidden' name='redo'/>"
 end
 
-$html << "</div>" #undo
+	$html << <<UNDOREDOREADY
+<div class='undo'>
+	<table summary='Undo/Redo functionallity'>
+		<tr>
+UNDOREDOREADY
+	["Undo","Redo"].each{|button|
+		$html << <<TD
+			<td>
+				<form method='post' action=''>
+					<div>
+						<input type='submit' title='#{title[button]}' value='#{button}' #{disabled[button]} />
+						<input type='hidden' name='undo_revision' value='#{undorevision[button]}' />
+						#{hidden["common"]}
+						#{hidden[button]}
+					</div>
+				</form>
+			</td>
+TD
+	}
+	$html << <<READY
+			<td>
+				<form method='get' action='.'>
+					<div>
+						<input type='submit' value='Ready' />
+					</div>
+				</form>
+			</td>
+		</tr>
+	</table>
+</div>
+READY
 
+$html << (urevs + rrevs).to_html(curundorev,"")
 
 $html << "</div></body>"
 
