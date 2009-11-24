@@ -379,30 +379,38 @@ end
 class PollTest < Test::Unit::TestCase
 	Y,N,M   = Poll::YESVAL, Poll::NOVAL, Poll::MAYBEVAL
 	A,B,C,D = "Alice", "Bob", "Carol", "Dave"
-	Q,W,E,R = "2009-05-05 ", "2009-05-23 10:00 ", "2009-05-23 11:00 ", "2009-05-23 foo "
+	Q,W,E,R = "2009-05-05", "2009-05-23 10:00", "2009-05-23 11:00", "2009-05-23 foo"
 	def setup
-		def add_participant(user,votearray)
+		def add_participant(type,user,votearray)
 			h = { Q => votearray[0], W => votearray[1], E => votearray[2], R => votearray[3]}
-			@poll.add_participant("",user,h)
+			@polls[type].add_participant("",user,h)
 		end
 
-		@poll = Poll.new(SITE, "time")
+		@polls = {}
+		["time","normal"].each{|type|
+			@polls[type] = Poll.new(SITE, type)
 
-		@poll.edit_column("","2009-05-05", {})
-		2.times{|t|
-			@poll.edit_column("","2009-05-23", {"columntime" => "#{t+10}:00"})
+			@polls[type].edit_column("","2009-05-05", {"columndescription" => ""})
+			2.times{|t|
+				@polls[type].edit_column("","2009-05-23 #{t+10}:00", {"columntime" => "#{t+10}:00","columndescription" => ""})
+			}
+			@polls[type].edit_column("","2009-05-23", {"columntime" => "foo","columndescription" => ""})
+
+
+			add_participant(type,A,[Y,N,Y,N])
+			add_participant(type,B,[Y,Y,N,M])
+			add_participant(type,D,[N,M,Y,Y])
+			add_participant(type,C,[Y,Y,M,N])
 		}
-		@poll.edit_column("","2009-05-23", {"columntime" => "foo"})
-
-
-		add_participant(A,[Y,N,Y,N])
-		add_participant(B,[Y,Y,N,M])
-		add_participant(D,[N,M,Y,Y])
-		add_participant(C,[Y,Y,M,N])
 	end
 	def test_sort
-		assert_equal([A,B,C,D],@poll.sort_data("name").collect{|a| a[0]})
-		assert_equal([B,C,D,A],@poll.sort_data(W).collect{|a| a[0]})
+		["normal","time"].each{|type|
+			comment = "Test Type: #{type}"
+			assert_equal([A,B,C,D],@polls[type].sort_data("name").collect{|a| a[0]},comment)
+			assert_equal([A,B,D,C],@polls[type].sort_data("timestamp").collect{|a| a[0]},comment)
+			assert_equal([B,C,D,A],@polls[type].sort_data([W,"name"]).collect{|a| a[0]},comment)
+			assert_equal([B,A,C,D],@polls[type].sort_data([Q,R,E]).collect{|a| a[0]},comment)
+		}
 	end
 end
 

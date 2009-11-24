@@ -37,6 +37,11 @@ class TimePollHead
 				@time = time
 			end
 		end
+		def TimeString.from_s(string)
+			date = string.scan(/^(\d\d\d\d-\d\d-\d\d).*$/).flatten[0]
+			time = string.scan(/^\d\d\d\d-\d\d-\d\d (.*)$/).flatten[0]
+			TimeString.new(date,time)
+		end
 		def TimeString.now
 			TimeString.new(Date.today,Time.now)
 		end
@@ -78,9 +83,6 @@ class TimePollHead
 	def col_size
 		@data.size
 	end
-	def get_id(columntitle)
-		columntitle
-	end
 	def get_title(columnid)
 		columnid
 	end
@@ -116,16 +118,14 @@ class TimePollHead
 
 	# returns internal representation of cgi-string
 	def cgi_to_id(field)
-		date = field.scan(/^(\d\d\d\d-\d\d-\d\d).*$/).flatten[0]
-		time = field.scan(/^\d\d\d\d-\d\d-\d\d (.*)$/).flatten[0]
-		TimeString.new(date,time)
+		field
 	end
 
 	# returns true if deletion sucessfull
 	def delete_column(columnid)
-		col = cgi_to_id(columnid)
+		col = TimeString.from_s(columnid)
 		if col.time 
-			ret = @data.delete(cgi_to_id(columnid)) != nil
+			ret = @data.delete(TimeString.from_s(columnid)) != nil
 			@data << TimeString.new(col.date,nil) unless date_included?(col.date)
 			return ret
 		else
@@ -185,7 +185,7 @@ class TimePollHead
 		}
 		ret += "</tr><tr><th><a href='?sort=name'>Name #{NOSORT}</a></th>"
 		@data.sort.each{|date|
-			ret += "<th><a title='#{date}' href='?sort=#{CGI.escape(date.to_s)}'>#{date.time_to_s} #{NOSORT}</a></th>\n"
+			ret += "<th><a title='#{date}' href='?sort=#{CGI.escape(date.to_s + " ")}'>#{date.time_to_s} #{NOSORT}</a></th>\n"
 		}
 		ret += "<th><a href='.'>Last Edit #{NOSORT}</a></th>\n</tr>\n"
 		ret
