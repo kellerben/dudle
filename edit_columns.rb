@@ -117,21 +117,35 @@ if urevs.max
 </td>
 UNDO
 	end
-	if rrevs.min
 		$html << <<REDO
 <td>
 <form method='post' action=''>
 	<div>
-		<input type='submit' title='#{title}' value='Redo' />
+		<input type='submit' title='#{title}' value='Redo' #{rrevs.min ? "" : "disabled='disabled'"}/>
+REDO
+	if rrevs.min
+		$html << <<REDO
 		<input type='hidden' name='redo'/>
 		<input type='hidden' name='undo_revision' value='#{rrevs.min.rev()}' />
 		#{hidden}
+REDO
+	end
+		$html << <<REDO
 	</div>
 </form>
 </td>
 REDO
-		urhist += rrevs
-	end
+	urhist += rrevs
+	
+	$html << <<READY
+<td>
+<form method='get' action='.'>
+	<div>
+		<input type='submit' value='Ready' />
+	</div>
+</form>
+</td>
+READY
 
 	$html << "</tr></table>"
 	$html << (urhist).to_html(urevs.max.rev,"")

@@ -53,7 +53,7 @@ end
 class Log
 	attr_reader :log
 	def initialize(a = [])
-		@log = a
+		@log = a.compact.sort
 	end
 	def min
 		@log.sort!
@@ -72,6 +72,7 @@ class Log
 			return @log[i]
 		else # no revision found, search the nearest
 			dist = revisions.collect{|e| (e - revision).abs }.sort[0]
+			return nil unless dist
 			i = revisions.index(revision + dist) || revisions.index(revision - dist)
 			return @log[i]
 		end
@@ -107,9 +108,9 @@ class Log
 	end
 	def to_html(unlinkedrevision,history)
 		ret = "<table summary='Historytable' ><tr><th>Version</th><th>Date</th><th>Comment</th></tr>"
-		self.each do |l|
+		self.each{|l|
 			ret += l.to_html(unlinkedrevision != l.rev,history)
-		end
+		}
 		ret += "</table>"
 		ret
 	end
@@ -172,6 +173,10 @@ require "pp"
     def test_indexes
 
 			l = Log.new
+
+			l.each{flunk("this should not happen")}
+			assert_equal(nil,l[2])
+
 			l.add(10,Time.now,"baz 10")
 			20.times{|i|
 				l.add(i,Time.now,"foo #{i}") unless i == 10
