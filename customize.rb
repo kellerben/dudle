@@ -86,8 +86,8 @@ CSS
 
 username = $cgi.cookies["username"][0]
 if $cgi.include?("delete_username")
-	username = ""
-	$html.add_cookie("username",username,"/",Time.now - 1*60*60*24*365)
+	$html.add_cookie("username","","/",Time.now - 1*60*60*24*365)
+	username = nil
 elsif $cgi.include?("username") 
 	username = $cgi["username"]
 	$html.add_cookie("username",username,"/",Time.now + 1*60*60*24*365)
@@ -103,11 +103,27 @@ $html << <<CHARSET
 			<form method='get' action=''>
 				<div>
 						<label for='username'>Username: </label>
-						<input  id='username' size='16' type='text' value="#{username}" name='username' />
+CHARSET
+if username && !$cgi.include?("edit")
+	$html << <<CHARSET
+						<span>#{username}</span>
+						<input type='hidden' value="#{username}" name='username' />
+						<input type='hidden' value="true" name='edit' />
+						<input type='submit' value='Edit' />
+CHARSET
+else
+	$html << <<CHARSET
+						<input id='username' type='text' value="#{username}" name='username' />
 						<input type='submit' value='Save' />
+CHARSET
+end
+$html << <<CHARSET
 				</div>
 			</form>
 		</td>
+CHARSET
+if username
+	$html << <<CHARSET
 		<td>
 			<form method='get' action=''>
 				<div>
@@ -115,6 +131,9 @@ $html << <<CHARSET
 				</div>
 			</form>
 		</td>
+CHARSET
+end
+$html << <<CHARSET
 	</tr>
 </table>
 </div>
