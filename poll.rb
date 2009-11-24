@@ -347,3 +347,63 @@ FORM
 	end
 end
 
+if __FILE__ == $0
+require 'test/unit'
+require 'cgi'
+require 'pp'
+
+SITE = "glvhc_8nuv_8fchi09bb12a-23_uvc"
+class Poll
+	attr_accessor :head, :data, :comment
+	def store comment
+	end
+end
+#┌───────────────────┬─────────────────────────────────┬────────────┐
+#│                   │            May 2009             │            │
+#├───────────────────┼────────┬────────────────────────┼────────────┤
+#│                   │Tue, 05 │        Sat, 23         │            │
+#├───────────────────┼────────┼────────┬────────┬──────┼────────────┤
+#│      Name ▾▴      │   ▾▴   │10:00 ▾▴│11:00 ▾▴│foo ▾▴│Last Edit ▾▴│
+#├───────────────────┼────────┼────────┼────────┼──────┼────────────┤
+#│Alice ^✍           │✔       │✘       │✔       │✘     │24.11, 18:15│
+#├───────────────────┼────────┼────────┼────────┼──────┼────────────┤
+#│Bob ^✍             │✔       │✔       │✘       │?     │24.11, 18:15│
+#├───────────────────┼────────┼────────┼────────┼──────┼────────────┤
+#│Dave ^✍            │✘       │?       │✔       │✔     │24.11, 18:16│
+#├───────────────────┼────────┼────────┼────────┼──────┼────────────┤
+#│Carol ^✍           │✔       │✔       │?       │✘     │24.11, 18:16│
+#├───────────────────┼────────┼────────┼────────┼──────┼────────────┤
+#│total              │3       │2       │2       │1     │            │
+#└───────────────────┴────────┴────────┴────────┴──────┴────────────┘
+
+class PollTest < Test::Unit::TestCase
+	Y,N,M   = Poll::YESVAL, Poll::NOVAL, Poll::MAYBEVAL
+	A,B,C,D = "Alice", "Bob", "Carol", "Dave"
+	Q,W,E,R = "2009-05-05 ", "2009-05-23 10:00 ", "2009-05-23 11:00 ", "2009-05-23 foo "
+	def setup
+		def add_participant(user,votearray)
+			h = { Q => votearray[0], W => votearray[1], E => votearray[2], R => votearray[3]}
+			@poll.add_participant("",user,h)
+		end
+
+		@poll = Poll.new(SITE, "time")
+
+		@poll.edit_column("","2009-05-05", {})
+		2.times{|t|
+			@poll.edit_column("","2009-05-23", {"columntime" => "#{t+10}:00"})
+		}
+		@poll.edit_column("","2009-05-23", {"columntime" => "foo"})
+
+
+		add_participant(A,[Y,N,Y,N])
+		add_participant(B,[Y,Y,N,M])
+		add_participant(D,[N,M,Y,Y])
+		add_participant(C,[Y,Y,M,N])
+	end
+	def test_sort
+		assert_equal([A,B,C,D],@poll.sort_data("name").collect{|a| a[0]})
+		assert_equal([B,C,D,A],@poll.sort_data(W).collect{|a| a[0]})
+	end
+end
+
+end
