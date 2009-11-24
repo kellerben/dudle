@@ -97,14 +97,26 @@ end
 $html << <<CHARSET
 <div id='config_user'>
 <h2>Default Username</h2>
-<form method='get' action=''>
-	<div>
-			<label for='username'>Username: </label>
-			<input  id='username' size='16' type='text' value="#{username}" name='username' />
-			<input type='submit' value='Save' />
-			<input type='submit' name='delete_username' value='Delete' />
-	</div>
-</form>
+<table summary="Set default username">
+	<tr>
+		<td>
+			<form method='get' action=''>
+				<div>
+						<label for='username'>Username: </label>
+						<input  id='username' size='16' type='text' value="#{username}" name='username' />
+						<input type='submit' value='Save' />
+				</div>
+			</form>
+		</td>
+		<td>
+			<form method='get' action=''>
+				<div>
+						<input type='submit' name='delete_username' value='Delete' />
+				</div>
+			</form>
+		</td>
+	</tr>
+</table>
 </div>
 CHARSET
 
