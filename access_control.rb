@@ -80,7 +80,7 @@ def add_to_htdigest(user,type,password)
 	}
 end
 
-def createform(userarray,hint,acusers,newuser)
+def createform(userarray,hint,acusers)
 	ret = <<FORM
 <form method='post' action='' >
 	<table summary='Enter Access Control details' class='settingstable'>
@@ -100,10 +100,10 @@ FORM
 			<td class='label'><label for='password#{i}'>Password#{i == 1 ? " (repeat)" : ""}:</label></td>
 			<td>
 PASS
-		if newuser
-			ret += "<input id='password#{i}' size='6' value='' type='password' name='ac_password#{i}' />"
-		else
+		if acusers.include?(userarray[0])
 			ret += PASSWORDSTAR*14
+		else
+			ret += "<input id='password#{i}' size='6' value='' type='password' name='ac_password#{i}' />"
 		end
 		ret += "</td></tr>"
 	}
@@ -111,16 +111,20 @@ PASS
 	ret += <<FORM
 	<tr>
 		<td></td>
-		<td class='shorttextcolumn'>#{newuser ? hint : ""}</td>
+		<td class='shorttextcolumn'>#{acusers.include?(userarray[0]) ? "" : hint}</td>
 	</tr>
 	<tr>
 		<td></td>
 		<td>
 FORM
-	if newuser
-		ret += "<input type='submit' name='ac_create' value='Save' />"
+	if acusers.include?(userarray[0])
+		if userarray[0] == "admin" && acusers.include?("participant")
+			ret += "<div class='shorttextcolumn'>You have to remove the participant user before you can remove the administrator.</div>"
+		else
+			ret += "<input type='submit' name='ac_delete_#{userarray[0]}' value='Delete' />"
+		end
 	else
-		ret += "<input type='submit' name='ac_delete_#{userarray[0]}' value='Delete' />"
+		ret += "<input type='submit' name='ac_create' value='Save' />"
 	end
 
 	ret += <<FORM
@@ -199,25 +203,24 @@ if acusers.empty? && $cgi["ac_activate"] != "Activate"
 else
 	if acusers.empty?
 		acstatus = ["blue","will be activated when at least an admin user is configured"]
+		acswitchbutton = "<input type='submit' name='ac_activate' value='Deactivate' />"
 	else
 		acstatus = ["green", "activated"]
+		acswitchbutton = "<div class='shorttextcolumn'>You have to remove all users before you can deactivate the access control settings.</div>"
 	end
-	acswitchbutton = "<input type='submit' name='ac_activate' value='Deactivate' />"
 
 
 	admincreatenotice = usercreatenotice || "You will be asked for the password you entered here after pressing save!"
 
 	user = ["admin","config",
 	        "The user ‘admin’ has access to the vote as well as the configuration interface."]
-	adminexists = acusers.include?(user[0])
 
-	createform = createform(user,usercreatenotice,acusers,!adminexists)
-	if adminexists
+	createform = createform(user,admincreatenotice,acusers)
+	if acusers.include?("admin")
 		participantcreatenotice = usercreatenotice || ""
 		user = ["participant","vote",
 	        "The user ‘participant’ has only access to the vote interface."]
-		participantexists = acusers.include?(user[0])
-	  createform += createform(user,participantcreatenotice,acusers,!participantexists)
+	  createform += createform(user,participantcreatenotice,acusers)
 	end
 
 end
