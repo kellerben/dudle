@@ -88,7 +88,7 @@ def createform(userarray,hint,acusers)
 			<td class='label'>Username:</td>
 			<td title="#{userarray[1]}">
 				#{userarray[0]}
-				<input type='hidden' name='ac_user' value='#{userarray[0]}' /></td>
+				<input type='hidden' name='ac_user' value='#{userarray[0]}' />
 			</td>
 		</tr>
 FORM

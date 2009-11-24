@@ -97,14 +97,26 @@ if urevs.max
 	when "deleted"
 		title["Undo"] = "Add column #{coltitle}"
 	when "edited"
-		title["Undo"] = "Column #{coltitle} edit"
+		title["Undo"] = "Edit column #{coltitle}"
 	end
-	curundorev = urevs.max.rev if rrevs.min
+
+	curundorev = urevs.max.rev() +1 if rrevs.min
 end
 if rrevs.min
 	# enable redo
 	disabled["Redo"] = ""
 	undorevision["Redo"] = rrevs.min.rev()
+
+	coltitle,action = rrevs.min.comment.scan(/^Column (.*) (added|deleted|edited)$/).flatten
+	case action
+	when "added"
+		title["Redo"] = "Add column #{coltitle}"
+	when "deleted"
+		title["Redo"] = "Delete column #{coltitle}"
+	when "edited"
+		title["Redo"] = "Edit column #{coltitle}"
+	end
+
 	hidden["Redo"] = "<input type='hidden' name='redo'/>"
 end
 
