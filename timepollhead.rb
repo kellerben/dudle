@@ -183,11 +183,11 @@ class TimePollHead
 		head_count("%Y-%m-%d",false).each{|title,count|
 			ret += "<th colspan='#{count}'>#{Date.parse(title).strftime("%a, %d")}</th>\n"
 		}
-		ret += "</tr><tr><th><a href='?sort=name'>Name</a></th>"
+		ret += "</tr><tr><th><a href='?sort=name'>Name #{NOSORT}</a></th>"
 		@data.sort.each{|date|
-			ret += "<th><a title='#{date}' href='?sort=#{CGI.escape(date.to_s)}'>#{date.time_to_s}</a></th>\n"
+			ret += "<th><a title='#{date}' href='?sort=#{CGI.escape(date.to_s)}'>#{date.time_to_s} #{NOSORT}</a></th>\n"
 		}
-		ret += "<th><a href='.'>Last Edit</a></th>\n</tr>\n"
+		ret += "<th><a href='.'>Last Edit #{NOSORT}</a></th>\n</tr>\n"
 		ret
 	end
 	

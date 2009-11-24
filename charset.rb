@@ -20,6 +20,10 @@
 if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 	USEUTF = true
 	
+	NOSORT      = CGI.escapeHTML('▾▴')
+	SORT        = CGI.escapeHTML('▴')
+	REVERSESORT = CGI.escapeHTML('▾')
+
 	YES      = CGI.escapeHTML('✔')
 	NO       = CGI.escapeHTML('✘')
 	MAYBE    = CGI.escapeHTML('?')
@@ -38,6 +42,10 @@ if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 else
 	USEUTF = false
 	
+	NOSORT      = CGI.escapeHTML('sort')
+	SORT        = CGI.escapeHTML('^')
+	REVERSESORT = CGI.escapeHTML('reverse')
+
 	YES      = CGI.escapeHTML('OK')
 	NO       = CGI.escapeHTML('NO')
 	MAYBE    = CGI.escapeHTML('?')
