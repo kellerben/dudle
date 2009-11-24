@@ -44,35 +44,35 @@ File.open(".htdigest","r").each_line{|l|
 
 def write_htaccess(acusers)
 	File.open(".htaccess","w"){|htaccess|
-		if acusers.values.include?("config")
+		if acusers.include?("admin")
 			htaccess << <<HTACCESS
 <Files ~ "^(edit_columns|invite_participants|access_control|delete_poll).cgi$">
 AuthType digest
-AuthName "config"
+AuthName "dudle"
 AuthUserFile "#{File.expand_path(".").gsub('"','\\\\"')}/.htdigest"
-Require valid-user
+Require user admin
 </Files>
 HTACCESS
 		end
-		if acusers.values.include?("vote")
+		if acusers.include?("participant")
 			htaccess << <<HTACCESS
 AuthType digest
-AuthName "vote"
+AuthName "dudle"
 AuthUserFile "#{File.expand_path(".").gsub('"','\\\\"')}/.htdigest"
 Require valid-user
 HTACCESS
-			VCS.commit("Access Control changed")
 		end
 	}
+	VCS.commit("Access Control changed")
 	unless acusers.empty?
 		$html.header["status"] = "REDIRECT"
 		$html.header["Cache-Control"] = "no-cache"
 		$html.header["Location"] = "access_control.cgi"
 	end
 end
-def add_to_htdigest(user,type,password)
+def add_to_htdigest(user,password)
 	fork {
-		IO.popen("htdigest .htdigest #{type} #{user}","w+"){|htdigest|
+		IO.popen("htdigest .htdigest dudle #{user}","w+"){|htdigest|
 			htdigest.sync
 			htdigest.puts(password)
 			htdigest.puts(password)
@@ -86,10 +86,9 @@ def createform(userarray,hint,acusers)
 	<table summary='Enter Access Control details' class='settingstable'>
 		<tr>
 			<td class='label'>Username:</td>
-			<td title="#{userarray[2]}">
+			<td title="#{userarray[1]}">
 				#{userarray[0]}
 				<input type='hidden' name='ac_user' value='#{userarray[0]}' /></td>
-				<input type='hidden' name='ac_type' value='#{userarray[1]}' /></td>
 			</td>
 		</tr>
 FORM
@@ -140,7 +139,6 @@ end
 
 if $cgi.include?("ac_user")
 	user = $cgi["ac_user"]
-	type = $cgi["ac_type"]
 	if !(user =~ /^[\w]*$/)
 		# add user
 		usercreatenotice = "<div class='error'>Only uppercase, lowercase, digits are allowed in the username.</div>"
@@ -148,17 +146,9 @@ if $cgi.include?("ac_user")
 		usercreatenotice = "<div class='error'>Passwords did not match.</div>"
 	else
 		if $cgi.include?("ac_create")
-			case type 
-			when "config" 
-				add_to_htdigest(user, type, $cgi["ac_password0"])
-				add_to_htdigest(user, "vote", $cgi["ac_password0"])
-				acusers[user] = type 
-				write_htaccess(acusers)
-			when "vote"
-				add_to_htdigest(user, type, $cgi["ac_password0"])
-				acusers[user] = type 
-				write_htaccess(acusers)
-			end
+			add_to_htdigest(user,$cgi["ac_password0"])
+			acusers[user] = type 
+			write_htaccess(acusers)
 		end
 
 		# delete user
@@ -212,13 +202,13 @@ else
 
 	admincreatenotice = usercreatenotice || "You will be asked for the password you entered here after pressing save!"
 
-	user = ["admin","config",
+	user = ["admin",
 	        "The user ‘admin’ has access to the vote as well as the configuration interface."]
 
 	createform = createform(user,admincreatenotice,acusers)
 	if acusers.include?("admin")
 		participantcreatenotice = usercreatenotice || ""
-		user = ["participant","vote",
+		user = ["participant",
 	        "The user ‘participant’ has only access to the vote interface."]
 	  createform += createform(user,participantcreatenotice,acusers)
 	end
