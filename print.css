@@ -27,11 +27,14 @@ td.name {
 	text-align:right;
 }
 
+td.name a,td.name a:visited {
+	text-decoration: none;
+	color: black;
+}
+
 #active, #activedeletebutton{
 	background-color:#A00;
 }
-
-span.edituser a{ text-decoration: none }
 
 th.weekday{
 	width: 2.5em;
