@@ -31,8 +31,9 @@ load "html.rb"
 load "config.rb"
 Dir.chdir(olddir)
 
-
-
+POLL = File.basename(File.expand_path("."))
+$html = HTML.new("dudle - #{POLL} - Access Control Settings")
+$html.header["Cache-Control"] = "no-cache"
 
 acusers = {}
 
@@ -41,11 +42,11 @@ File.open(".htdigest","r").each_line{|l|
 	acusers[user] = realm
 }
 
-def writehtaccess(acusers)
+def write_htaccess(acusers)
 	File.open(".htaccess","w"){|htaccess|
 		if acusers.values.include?("config")
 			htaccess << <<HTACCESS
-<Files ~ "^(edit_columns|access_control|delete_poll).cgi$">
+<Files ~ "^(edit_columns|invite_participants|access_control|delete_poll).cgi$">
 AuthType digest
 AuthName "config"
 AuthUserFile "#{File.expand_path(".").gsub('"','\\\\"')}/.htdigest"
@@ -63,39 +64,104 @@ HTACCESS
 			VCS.commit("Access Control changed")
 		end
 	}
+	unless acusers.empty?
+		$html.header["status"] = "REDIRECT"
+		$html.header["Cache-Control"] = "no-cache"
+		$html.header["Location"] = "access_control.cgi"
+	end
 end
+def add_to_htdigest(user,type,password)
+	fork {
+		IO.popen("htdigest .htdigest #{type} #{user}","w+"){|htdigest|
+			htdigest.sync
+			htdigest.puts(password)
+			htdigest.puts(password)
+		}
+	}
+end
+
+def createform(userarray,hint,acusers,newuser)
+	ret = <<FORM
+<form method='post' action='' >
+	<table summary='Enter Access Control details' class='settingstable'>
+		<tr>
+			<td class='label'>Username:</td>
+			<td title="#{userarray[2]}">
+				#{userarray[0]}
+				<input type='hidden' name='ac_user' value='#{userarray[0]}' /></td>
+				<input type='hidden' name='ac_type' value='#{userarray[1]}' /></td>
+			</td>
+		</tr>
+FORM
+
+	2.times{|i|
+		ret += <<PASS
+		<tr>
+			<td class='label'><label for='password#{i}'>Password#{i == 1 ? " (repeat)" : ""}:</label></td>
+			<td>
+PASS
+		if newuser
+			ret += "<input id='password#{i}' size='6' value='' type='password' name='ac_password#{i}' />"
+		else
+			ret += PASSWORDSTAR*14
+		end
+		ret += "</td></tr>"
+	}
+
+	ret += <<FORM
+	<tr>
+		<td></td>
+		<td class='shorttextcolumn'>#{newuser ? hint : ""}</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+FORM
+	if newuser
+		ret += "<input type='submit' name='ac_create' value='Save' />"
+	else
+		ret += "<input type='submit' name='ac_delete_#{userarray[0]}' value='Delete' />"
+	end
+
+	ret += <<FORM
+				<input type='hidden' name='ac_activate' value='Activate' />
+			</td>
+		</tr>
+	</table>
+</form>
+FORM
+	ret
+end
+
 
 if $cgi.include?("ac_user")
 	user = $cgi["ac_user"]
 	type = $cgi["ac_type"]
 	if !(user =~ /^[\w]*$/)
 		# add user
-
 		usercreatenotice = "<div class='error'>Only uppercase, lowercase, digits are allowed in the username.</div>"
-	elsif $cgi["ac_password1"] != $cgi["ac_password2"]
-		usercreatenotice = "<div class='error'>Passwords do not match.</div>"
+	elsif $cgi["ac_password0"] != $cgi["ac_password1"]
+		usercreatenotice = "<div class='error'>Passwords did not match.</div>"
 	else
 		if $cgi.include?("ac_create")
-			if type == "config" || type == "vote"
-				fork {
-					IO.popen("htdigest .htdigest #{type} #{user}","w+"){|htdigest|
-						htdigest.sync
-						htdigest.puts($cgi["ac_password1"])
-						htdigest.puts($cgi["ac_password2"])
-					}
-				}
+			case type 
+			when "config" 
+				add_to_htdigest(user, type, $cgi["ac_password0"])
+				add_to_htdigest(user, "vote", $cgi["ac_password0"])
 				acusers[user] = type 
-				writehtaccess(acusers)
+				write_htaccess(acusers)
+			when "vote"
+				add_to_htdigest(user, type, $cgi["ac_password0"])
+				acusers[user] = type 
+				write_htaccess(acusers)
 			end
 		end
 
 		# delete user
 		deleteuser = ""
-		deleteaction = ""
 		acusers.each{|user,action|
-			if $cgi.include?("ac_delete_#{user}_#{action}")
+			if $cgi.include?("ac_delete_#{user}")
 				deleteuser = user
-				deleteaction = action
 			end
 		}
 		acusers.delete(deleteuser)
@@ -105,81 +171,82 @@ if $cgi.include?("ac_user")
 		}
 		File.open(".htdigest","w"){|f|
 			htdigest.each{|line|
-				f << line unless line =~ /^#{deleteuser}:#{deleteaction}:/
+				f << line unless line =~ /^#{deleteuser}:/
 			}
 		}
-		writehtaccess(acusers)
+		write_htaccess(acusers)
 	end
 end
 
-POLL = File.basename(File.expand_path("."))
-$html = HTML.new("dudle - #{POLL} - Access Control Settings")
-$html.header["Cache-Control"] = "no-cache"
+unless $html.header["status"] == "REDIRECT"
+
 load "../charset.rb"
 $html.add_css("../dudle.css")
 
 $html << "<body>"
 $html << Dudle::tabs("Access Control")
 
-$html << <<TABLE
-	<div id='main'>
-TABLE
-
-# ACCESS CONTROL
-$accesslevels = { "vote" => "Vote Interface", "config" => "Config Interface" }
-$html << <<ACL
-<div id='access_control'>
+$html << <<HEAD
+<div id='main'>
 	<h1>#{POLL}</h1>
 	<h2>Change Access Control Settings</h2>
-	<form method='post' action=''>
-		<table summary='Access Control settings'>
-			<tr>
-				<th>Access to</th><th>Username</th><th>Password</th><th>Password (repeat)</th>
-			</tr>
-ACL
-acusers.each{|user,action|
-		$html << <<USER
-<tr>
-	<td>#{$accesslevels[action]}</td>
-	<td>#{user}</td>
-	<td>#{PASSWORDSTAR*14}</td>
-	<td>#{PASSWORDSTAR*14}</td>
-	<td>
-		<input type='submit' name='ac_delete_#{user}_#{action}' value='delete' />
-	</td>
-</tr>
-USER
-}
+HEAD
 
-$html << <<ACL
-<tr>
-	<td>
-		<select name='ac_type'>
-ACL
-	$accesslevels.each{|action,description| 
-		$html << "<option value='#{action}'>#{description}</option>"
-	}
-	$html << <<ACL
-		</select>
-	</td>
-	<td><input size='6' value="" type='text' name='ac_user' /></td>
-	<td><input size='6' value="" type='password' name='ac_password1' /></td>
-	<td><input size='6' value="" type='password' name='ac_password2' /></td>
-	<td>
-		<input type='submit' name='ac_create' value='Add' />
-	</td>
-</tr>
-ACL
+if acusers.empty? && $cgi["ac_activate"] != "Activate"
 
-$html << <<ACL
-			</table>
-		</form>
-		#{usercreatenotice}
-</div>
-ACL
+	acstatus = ["red","not activated"]
+	acswitchbutton = "<input type='submit' name='ac_activate' value='Activate' />"
+else
+	if acusers.empty?
+		acstatus = ["blue","will be activated when at least an admin user is configured"]
+	else
+		acstatus = ["green", "activated"]
+	end
+	acswitchbutton = "<input type='submit' name='ac_activate' value='Deactivate' />"
+
+
+	admincreatenotice = usercreatenotice || "You will be asked for the password you entered here after pressing save!"
+
+	user = ["admin","config",
+	        "The user ‘admin’ has access to the vote as well as the configuration interface."]
+	adminexists = acusers.include?(user[0])
+
+	createform = createform(user,usercreatenotice,acusers,!adminexists)
+	if adminexists
+		participantcreatenotice = usercreatenotice || ""
+		user = ["participant","vote",
+	        "The user ‘participant’ has only access to the vote interface."]
+		participantexists = acusers.include?(user[0])
+	  createform += createform(user,participantcreatenotice,acusers,!participantexists)
+	end
+
+end
+
+$html << <<AC
+<form method='post' action='' >
+<table summary='Enable Access Control settings' class='settingstable'>
+	<tr>
+		<td>
+			Access control:
+		</td>
+		<td style='color: #{acstatus[0]}'>
+			#{acstatus[1]}
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			#{acswitchbutton}	
+		</td>
+	</tr>
+</table>
+</form>
+
+#{createform}
+AC
 
 $html << "</div></body>"
+end
 
 $html.out($cgi)
 end
-

@@ -67,6 +67,7 @@ if $cgi.include?("create_poll")
 		escapedsite = SITEURL + CGI.escapeHTML(CGI.escape(SITE)) + "/edit_columns.cgi"
 		escapedsite.gsub!("+"," ")
 		$html.header["status"] = "REDIRECT"
+		$html.header["Cache-Control"] = "no-cache"
 		$html.header["Location"] = escapedsite
 		$html << "The poll was created successfully. The link to your new poll is:<br /><a href=\"#{escapedsite}\">#{escapedsite}</a>"
 	end

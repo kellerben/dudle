@@ -97,8 +97,11 @@ div.undo{
 	margin-top: 2em;
 }
 
-td.create_poll, td.settingstable{
+td.create_poll, td.settingstable, table.settingstable td{
 	text-align: left;
+}
+table.settingstable td.label{
+	text-align: right;
 }
 
 td.historycomment{
@@ -157,11 +160,15 @@ html {
 	margin-right:auto;
 	width:auto;
 	display: table;
-	min-width: 45em;
+	min-width: 50em;
 }
 
 .textcolumn{
 	max-width: 45em;
+}
+
+.shorttextcolumn{
+	max-width: 20em;
 }
 
 div#tabs{
@@ -217,7 +224,7 @@ pre#configwarning {
 	line-height:95%;
 	margin-left: -2ex;
 }
-.warning{
+.warning, .error{
 	color: red;
 }
 
