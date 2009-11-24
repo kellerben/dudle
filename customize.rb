@@ -74,12 +74,17 @@ CHARSET
 
 
 a = [["default","css=dudle.css"],
+     ["Print","css=print.css"],
      ["PrimeLife","css=primelife.css"],
      ["TU Dresden","css=tud.css"]]
+css = $cgi.cookies["css"][0]
+css = $cgi["css"] if $cgi.include?("css")
+css ||= "dudle.css"
+$html.add_cookie("css",css,"/",Time.now + (1*60*60*24*365 * (css == "dudle.css" ? -1 : 1 )))
 $html << <<CSS
 <div id='config_stylesheet'>
 <h2>Stylesheet</h2>
-#{choosetable("Stylesheet settings",a,"css=dudle.css")}
+#{choosetable("Stylesheet settings",a,"css=#{css}")}
 </div>
 CSS
 
