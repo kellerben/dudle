@@ -62,9 +62,10 @@ class Poll
 
 	def to_html(edituser = "", showparticipation = true)
 		ret = "<table border='1' summary='Main Poll table'>\n"
-
-		ret += @head.to_html
-		sort_data($cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]).each{|participant,poll|
+		
+		sortcolumns = $cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]
+		ret += @head.to_html(sortcolumns)
+		sort_data(sortcolumns).each{|participant,poll|
 			if edituser == participant
 				ret += participate_to_html(edituser)
 			else

@@ -172,7 +172,7 @@ class TimePollHead
 		}
 		ret.sort
 	end
-	def to_html(config = false,activecolumn = nil)
+	def to_html(scols,config = false,activecolumn = nil)
 		ret = "<tr><td></td>"
 		head_count("%Y-%m",false).each{|title,count|
 			year, month = title.split("-").collect{|e| e.to_i}
@@ -183,11 +183,16 @@ class TimePollHead
 		head_count("%Y-%m-%d",false).each{|title,count|
 			ret += "<th colspan='#{count}'>#{Date.parse(title).strftime("%a, %d")}</th>\n"
 		}
-		ret += "</tr><tr><th><a href='?sort=name'>Name #{NOSORT}</a></th>"
+
+		def sortsymb(scols,col)
+			scols.include?(col) ? SORT : NOSORT
+		end
+
+		ret += "</tr><tr><th><a href='?sort=name'>Name #{sortsymb(scols,"name")}</a></th>"
 		@data.sort.each{|date|
-			ret += "<th><a title='#{date}' href='?sort=#{CGI.escape(date.to_s + " ")}'>#{date.time_to_s} #{NOSORT}</a></th>\n"
+			ret += "<th><a title='#{date}' href='?sort=#{CGI.escape(date.to_s + " ")}'>#{date.time_to_s} #{sortsymb(scols,date.to_s + " ")}</a></th>\n"
 		}
-		ret += "<th><a href='.'>Last Edit #{NOSORT}</a></th>\n</tr>\n"
+		ret += "<th><a href='?'>Last Edit #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
 		ret
 	end
 	
