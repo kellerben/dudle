@@ -82,7 +82,7 @@ end
 
 def createform(userarray,hint,acusers)
 	ret = <<FORM
-<form method='post' action='' >
+<form id='ac_#{userarray[0]}' method='post' action='' >
 	<table summary='Enter Access Control details' class='settingstable'>
 		<tr>
 			<td class='label'>Username:</td>
@@ -216,7 +216,7 @@ else
 end
 
 $html << <<AC
-<form method='post' action='' >
+<form id='ac' method='post' action='' >
 <table summary='Enable Access Control settings' class='settingstable'>
 	<tr>
 		<td>

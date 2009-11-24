@@ -240,4 +240,9 @@ div.comment {
 	line-height: 1.4em;
 }
 
-
+form#ac_participant, form#ac {
+	background: #EEE;
+}
+form#ac_participant, form#ac, form#ac_admin{
+	padding: 1em;
+}
