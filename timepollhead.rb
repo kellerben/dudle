@@ -344,7 +344,7 @@ END
 				ret += "<input type='hidden' name='columnid' value='#{TimeString.new(d,nil).to_s}' />"
 			end
 			ret += <<END
-				<input type="text" name='columntime' title='e.g.: 09:30, morning, afternoon' maxlength="7" style="width: 7ex" /><br />
+				<input type="text" name='columntime' title='e.g.: 09:30, morning, afternoon' style="width: 7ex" /><br />
 				<input type="submit" value="Add" style="width: 100%" />
 			</div>
 		</form>

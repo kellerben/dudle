@@ -60,7 +60,7 @@ class Poll
 		end
 	end
 
-	def to_html(edituser, showparticipation = true)
+	def to_html(edituser = "", showparticipation = true)
 		ret = "<table border='1' summary='Main Poll table'>\n"
 
 		ret += @head.to_html
@@ -176,7 +176,7 @@ class Poll
 			ret += "<input type='submit' value='Save Changes' />"
 			ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='Delete User' />"
 		else
-			ret += "<input type='submit' value='Add User' />"
+			ret += "<input type='submit' value='Save' />"
 		end
 		ret += "</td>\n"
 

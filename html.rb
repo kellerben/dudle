@@ -88,6 +88,7 @@ module Dudle
 		 ["History","history.cgi"],
 		 ["",""],
 		 ["Edit Columns","edit_columns.cgi"],
+		 ["Invite Participants","invite_participants.cgi"],
 		 ["Access Control","access_control.cgi"],
 		 ["Delete Poll","delete_poll.cgi"],
 		 ["",""],

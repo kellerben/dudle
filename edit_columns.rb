@@ -42,8 +42,6 @@ class << Time
 	end
 end
 
-acusers = {}
-
 revbeforeedit = VCS.revno
 
 if $cgi.include?("undo_revision") && $cgi["undo_revision"].to_i < revbeforeedit
@@ -56,14 +54,6 @@ else
 	table = YAML::load_file("data.yaml")
 end
 
-# TODO: move to own tab
-#if $cgi.include?("add_participant")
-#	if $cgi.include?("delete_participant")
-#		table.delete($cgi["olduser"])
-#	else
-#		table.add_participant($cgi["olduser"],$cgi["add_participant"],{})
-#	end
-#end
 table.edit_column($cgi["columnid"],$cgi["new_columnname"],$cgi) if $cgi.include?("new_columnname")
 table.delete_column($cgi["deletecolumn"]) if $cgi.include?("deletecolumn")
 

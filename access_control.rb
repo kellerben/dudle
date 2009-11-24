@@ -25,7 +25,14 @@ if __FILE__ == $0
 
 $cgi = CGI.new
 
-load "../html.rb"
+olddir = File.expand_path(".")
+Dir.chdir("..")
+load "html.rb"
+load "config.rb"
+Dir.chdir(olddir)
+
+
+
 
 acusers = {}
 
