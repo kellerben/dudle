@@ -160,6 +160,10 @@ html {
 	min-width: 45em;
 }
 
+.textcolumn{
+	max-width: 45em;
+}
+
 div#tabs{
 	text-align: center
 }
@@ -212,6 +216,9 @@ pre#configwarning {
 	margin-top: -12ex;
 	line-height:95%;
 	margin-left: -2ex;
+}
+.warning{
+	color: red;
 }
 
 h1 {

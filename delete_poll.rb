@@ -24,7 +24,6 @@ QUESTIONS = ["Yes, I know what I am doing!",
              "I am aware of the consequences.",
              "Please delete this poll."]
 
-CONFIRM = rand(QUESTIONS.size)
 
 require "cgi"
 require "ftools"
@@ -41,46 +40,78 @@ $html.header["Cache-Control"] = "no-cache"
 $html.add_css("../dudle.css")
 
 $html << "<body>"
-$html << Dudle::tabs("Delete Poll")
-$html << "<div id='main'>"
 
 if $cgi.include?("confirmnumber")
-	if $cgi["confirm"] == QUESTIONS[$cgi["confirmnumber"].to_i]
+ CONFIRM = $cgi["confirmnumber"].to_i
+	if $cgi["confirm"] == QUESTIONS[CONFIRM]
 		Dir.chdir("..")
 		File.move(POLL, "/tmp/#{POLL}.#{rand(9999999)}")
 		$html << <<SUCCESS
+<div id='main'>
+<p class='textcolumn'>
 	The poll was deleted successfully!
-	<br />
+</p>
+<p class='textcolumn'>
 	If this was done by accident, please contact the administrator of the system.
-	The poll can be recovered for an indeterministic amount of time, maybe it is already to late. <br />
-	<a href='../'>home</a>
+	The poll can be recovered for an indeterministic amount of time, maybe it is already to late. </p>
+<div class='textcolumn'>
+	Things you can do now are
+	<ul>
+		<li><a href='../'>Return to dudle home and Schedule a new Poll</a></li>
+		<li><a href='http://wikipedia.org'>Browse Wikipedia</a></li>
+		<li><a href='http://www.google.de'>Search something with Google</a></li>
+	</ul>
+</div>
+</div>
+</body>
 SUCCESS
+		$html.out($cgi)
+		exit
 	else
-		$html << <<CANCEL
-	You canceld the deletion!
-CANCEL
+		hint = <<HINT
+<table style='background:lightgray' summary='Error about wrong confirmation string'>
+	<tr>
+		<td style='text-align:right'>
+			To delete the poll, you have to type:
+		</td>
+		<td class='warning' style='text-align:left'>
+			#{QUESTIONS[CONFIRM]}
+		</td>
+	</tr>
+	<tr>
+		<td style='text-align:right'>
+			but you typed:
+		</td>
+		<td class='warning' style='text-align:left'>
+			#{$cgi["confirm"]}
+		</td>
+	</tr>
+</table>
+HINT
 	end
-
 else
+	CONFIRM = rand(QUESTIONS.size)
+end
 $html << <<TABLE
+#{Dudle::tabs("Delete Poll")}
+<div id='main'>
 	<h1>#{POLL}</h1>
 	<h2>Delete this Poll</h2>
 	You want to delete the poll named <b>#{POLL}</b>.<br />
 	This is an irreversible action!<br />
 	If you are sure in what you are doing, please type into the form “#{QUESTIONS[CONFIRM]}”
+	#{hint}
 	<form method='post' action=''>
 		<div>
 			<input type='hidden' name='confirmnumber' value='#{CONFIRM}' />
-			<input size='30' type='text' name='confirm' />
+			<input size='30' type='text' name='confirm' value='#{$cgi["confirm"]}' />
 			<input type='submit' value='delete' />
 		</div>
 	</form>
+</div>
+</body>
 TABLE
-end
-$html << "</div>"
-
-$html << "</body>"
 
 $html.out($cgi)
-end
 
+end
