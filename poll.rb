@@ -78,7 +78,7 @@ class Poll
 				ret += "<td class='name' #{edituser == participant ? "id='active'":""}>"
 				ret += "<a href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" if showparticipation
 				ret += participant
-				ret += "<span class='edituser'> <sup>#{EDIT}</sup></a></span>" if showparticipation
+				ret += "<span class='edituser'> <sup>#{EDIT}</sup></span></a>" if showparticipation
 				ret += "</td>\n"
 				@head.each_column{|columnid,columntitle|
 					klasse = poll[columnid]
