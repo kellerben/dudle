@@ -76,7 +76,7 @@ class Poll
 			else
 				ret += "<tr class='participantrow'>\n"
 				ret += "<td class='name' #{edituser == participant ? "id='active'":""}>"
-				ret += "<a href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" if showparticipation
+				ret += "<a title='Edit user #{CGI.escapeHTML(participant)}' href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" if showparticipation
 				ret += participant
 				ret += "<span class='edituser'> <sup>#{EDIT}</sup></span></a>" if showparticipation
 				ret += "</td>\n"
