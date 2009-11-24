@@ -105,7 +105,7 @@ $html << <<TABLE
 		<div>
 			<input type='hidden' name='confirmnumber' value='#{CONFIRM}' />
 			<input size='30' type='text' name='confirm' value='#{$cgi["confirm"]}' />
-			<input type='submit' value='delete' />
+			<input type='submit' value='Delete' />
 		</div>
 	</form>
 </div>

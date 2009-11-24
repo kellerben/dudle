@@ -39,7 +39,7 @@ if $cgi.include?("revision")
 	table = YAML::load(VCS.cat(revno, "data.yaml"))
 else
 	revno = VCS.revno
-	versiontitle = "Current Poll"
+	versiontitle = "Current Poll (Version #{revno})"
 	table = YAML::load_file("data.yaml")
 end
 

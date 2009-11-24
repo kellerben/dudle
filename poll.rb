@@ -232,20 +232,21 @@ ADDCOMMENT
 		ret = <<FORM
 <form method='get' action=''>
 	<div>
-		Show only history items concerning: 
+		Show history items: 
 		<select name='history'>
 FORM
-		[["",""],
-		 ["participants","Participants"],
-		 ["columns","Columns"],
-		 ["comments","Comments"]
+		[["","All"],
+		 ["participants","Participants only"],
+		 ["columns","Column changes"],
+		 ["comments","Comments only"],
+		 ["ac","Access Control changes"]
 			].each{|value,opt|
 			ret += "<option value='#{value}' #{selected == value ? "selected='selected'" : ""} >#{opt}</option>"
 		}
 		ret += "</select>"
 		ret += "<input type='hidden' name='revision' value='#{revision}' />" if revision
 		ret += <<FORM
-		<input type='submit' value='Filter' />
+		<input type='submit' value='Update' />
 	</div>
 </form>
 FORM
