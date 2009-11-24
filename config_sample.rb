@@ -26,8 +26,11 @@ SITEURL = "http://#{$cgi.server_name}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
 # add the htmlcode in the Variable NOTICE to the startpage
 # Example 1: displays all available Polls
 notice = <<NOTICE
-<fieldset><legend>Available Polls</legend>
-<table><tr><th>Poll</th><th>Last change</th></tr>
+<h2>Available Polls</h2>
+<table summary='Available Polls'>
+	<tr>
+		<th>Poll</th><th>Last change</th>
+	</tr>
 NOTICE
 Dir.glob("*/data.yaml").sort_by{|f|
 	File.new(f).mtime
@@ -39,14 +42,13 @@ Dir.glob("*/data.yaml").sort_by{|f|
 </tr>
 NOTICE
 }
-notice += "</table></fieldset>"
+notice += "</table>"
 # Example 2: displays a static text
 notice += <<NOTICE
-<fieldset><legend>Examples</legend>
+<h2>Examples</h2>
 	If you want to play around with the Tool, you may want to take a look at these two Example Polls:<br />
 	<a href='EventScheduleExample'>Event Schedule Poll</a><br />
 	<a href='NormalExample'>Normal Poll</a>	
-</fieldset>
 NOTICE
 NOTICE = notice
 

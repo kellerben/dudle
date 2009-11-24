@@ -75,7 +75,7 @@ end
 unless $html.header["status"] == "REDIRECT"
 
 	$html << <<CREATE
-<fieldset><legend>Create New Poll</legend>
+<h2>Create New Poll</h2>
 <form method='post' action='.'>
 <table summary='Create a new Poll'>
 <tr>
@@ -98,7 +98,6 @@ unless $html.header["status"] == "REDIRECT"
 </tr>
 </table>
 </form>
-</fieldset>
 CREATE
 
 	$html << NOTICE
