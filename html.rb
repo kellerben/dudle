@@ -60,7 +60,8 @@ HEAD
 		c = CGI::Cookie.new(key, value)
 		c.path = path
 		c.expires = expiretime
-		@header["cookie"] = c
+		@header["cookie"] ||= []
+		@header["cookie"] << c
 	end
 	def << (bodycontent)
 		@body += bodycontent.chomp + "\n"
