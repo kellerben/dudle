@@ -94,7 +94,7 @@ end
 
 $d << <<CHARSET
 <div id='config_user'>
-<h2>Default Username</h2>
+<h3>Default Username</h3>
 <form method='get' action=''>
 	<table summary="Set default username">
 		<tr>
