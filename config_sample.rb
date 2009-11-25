@@ -45,18 +45,19 @@ NOTICE
 notice += "</table>"
 # Example 2: displays a static text
 notice += <<NOTICE
-<h2>Examples</h2>
 <div>
+	<h2>Examples</h2>
 	If you want to play around with the Tool, you may want to take a look at these two Example Polls:<br />
 	<a href='coffeebreak'>Event Schedule Poll</a><br />
 	<a href='coffee'>Normal Poll</a>
 </div>
 
-<h2>--verbose</h2>
+<div>
+	<h2>--verbose</h2>
 	Get the sourcecode with <a href="http://bazaar-vcs.org/">bazaar</a>:
 	<br />
 	bzr branch #{SITEURL} dudle
 	<br />
-
+</div>
 NOTICE
 NOTICE = notice
