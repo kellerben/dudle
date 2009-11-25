@@ -143,7 +143,7 @@ TD
 			<td>
 				<form method='get' action='.'>
 					<div>
-						<input type='submit' value='Ready' />
+						<input type='submit' value='Done' />
 					</div>
 				</form>
 			</td>

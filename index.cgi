@@ -102,7 +102,7 @@ unless $html.header["status"] == "REDIRECT"
 </tr>
 <tr>
 	<td></td>
-	<td style='padding-bottom:0.7ex'><input type='submit' value='create' /></td>
+	<td style='padding-bottom:0.7ex'><input type='submit' value='Create' /></td>
 </tr>
 <tr>
 	<td colspan='2' style='border-top:solid thin;padding-top:0.7ex;'>Custom address (optional):
