@@ -116,7 +116,7 @@ CREATE
 	if defined?(createnotice)
 		$html << <<NOTICE
 <tr>
-	<td colspan=2 class='error'>
+	<td colspan='2' class='error'>
 		#{createnotice}
 	</td>
 </tr>
