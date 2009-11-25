@@ -141,7 +141,7 @@ TD
 	}
 	$html << <<READY
 			<td>
-				<form method='get' action='.'>
+				<form method='get' action='help.cgi'>
 					<div>
 						<input type='submit' value='Done' />
 					</div>

@@ -86,6 +86,7 @@ module Dudle
 		 ["",""],
 		 ["Poll","."],
 		 ["History","history.cgi"],
+		 ["Help","help.cgi"],
 		 ["",""],
 		 ["Edit Columns","edit_columns.cgi"],
 		 ["Invite Participants","invite_participants.cgi"],

@@ -24,7 +24,6 @@ require "cgi"
 if __FILE__ == $0
 
 $cgi = CGI.new
-
 olddir = File.expand_path(".")
 Dir.chdir("..")
 load "html.rb"
@@ -34,7 +33,7 @@ require "yaml"
 Dir.chdir(olddir)
 
 POLL = YAML::load_file("data.yaml").name
-$html = HTML.new("dudle - #{POLL} - Access Control Settings")
+$html = HTML.new("dudle - #{POLL} - Help")
 $html.header["Cache-Control"] = "no-cache"
 
 acusers = {}
