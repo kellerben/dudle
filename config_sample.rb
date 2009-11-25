@@ -51,5 +51,12 @@ notice += <<NOTICE
 	<a href='coffeebreak'>Event Schedule Poll</a><br />
 	<a href='coffee'>Normal Poll</a>
 </div>
+
+<h2>--verbose</h2>
+	Get the sourcecode with <a href="http://bazaar-vcs.org/">bazaar</a>:
+	<br />
+	bzr branch #{SITEURL} dudle
+	<br />
+
 NOTICE
 NOTICE = notice
