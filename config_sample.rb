@@ -47,8 +47,8 @@ notice += "</table>"
 notice += <<NOTICE
 <h2>Examples</h2>
 	If you want to play around with the Tool, you may want to take a look at these two Example Polls:<br />
-	<a href='EventScheduleExample'>Event Schedule Poll</a><br />
-	<a href='NormalExample'>Normal Poll</a>	
+	<a href='coffeebreak'>Event Schedule Poll</a><br />
+	<a href='coffee'>Normal Poll</a>
 NOTICE
 NOTICE = notice
 
