@@ -17,6 +17,15 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
+# BUGFIX for Time.parse, which handles the zone indeterministically
+class << Time
+	alias_method :old_parse, :parse
+	def Time.parse(date, now=self.now)
+		Time.old_parse("2009-10-25 00:30")
+		Time.old_parse(date)
+	end
+end
+
 class TimePollHead 
 	class TimeString
 		attr_reader :date, :time

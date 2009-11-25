@@ -19,56 +19,28 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "cgi"
-require "yaml"
-
 if __FILE__ == $0
-
-$cgi = CGI.new
-
-olddir = File.expand_path(".")
-Dir.chdir("..")
-require "html"
-require "poll"
-load "config.rb"
-Dir.chdir(olddir)
+load "../dudle.rb"
 
 if $cgi.include?("revision")
 	revno=$cgi["revision"].to_i
 	versiontitle = "Poll of Version #{revno}"
-	table = YAML::load(VCS.cat(revno, "data.yaml"))
+	$d = Dudle.new("History",revno)
 else
 	revno = VCS.revno
 	versiontitle = "Current Poll (Version #{revno})"
-	table = YAML::load_file("data.yaml")
+	$d = Dudle.new("History")
 end
 
-$html = HTML.new("dudle - #{table.name} - History")
-$html.header["Cache-Control"] = "no-cache"
-load "../charset.rb"
-$html.add_css("../dudle.css")
+$d << "<h2>#{versiontitle}</h2>"
+$d << $d.table.to_html("",false)
 
-$html << "<body>"
-$html << Dudle::tabs("History")
+$d << "<h2>History</h2>"
+$d << "<div id='history'>"
+$d << $d.table.history_selectform($cgi.include?("revision") ? revno : nil, $cgi["history"])
 
-$html << <<TABLE
-	<div id='main'>
-	<h1>#{table.name}</h1>
-TABLE
+$d << $d.table.history_to_html(revno, $cgi["history"])
+$d << "</div>"
 
-
-
-$html << "<h2>#{versiontitle}</h2>"
-$html << table.to_html("",false)
-
-$html << "<h2>History</h2>"
-$html << "<div id='history'>"
-$html << table.history_selectform($cgi.include?("revision") ? revno : nil, $cgi["history"])
-
-$html << table.history_to_html(revno, $cgi["history"])
-$html << "</div>"
-
-$html << "</div></body>"
-
-$html.out($cgi)
+$d.out($cgi)
 end

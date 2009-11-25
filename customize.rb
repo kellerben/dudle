@@ -19,24 +19,16 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "cgi"
 
 if __FILE__ == $0
 
-$cgi = CGI.new
-load "../html.rb"
-$html = HTML.new("dudle - Customize")
-load "../charset.rb"
+load "../dudle.rb"
 
-$html.header["Cache-Control"] = "no-cache"
+$d = Dudle.new("Customize")
 
-$html.add_css("../dudle.css")
 
-$html << <<END
-<body>
-#{Dudle::tabs("Customize")}
-<div id='main'>
-<h1>Customize Personal Settings</h1>
+$d << <<END
+<h2>Customize Personal Settings</h2>
 You need cookies enabled in order to personalize your settings.
 END
 
@@ -65,9 +57,10 @@ end
 
 a = [["Use normal strings","ascii"], 
      ["Use special characters (#{UTFCHARS})","utf", "Use this options if you see the characters in the parenthesis."]]
-$html << <<CHARSET
+$d.html.add_cookie("utf","true","/",Time.now + (1*60*60*24*365 * (USEUTF ? 1 : -1 )))
+$d << <<CHARSET
 <div id='charset'>
-<h2>Charset</h2>
+<h3>Charset</h3>
 #{choosetable("Charset settings",a,USEUTF ? "utf" : "ascii")}
 </div>
 CHARSET
@@ -80,10 +73,10 @@ a = [["default","css=dudle.css"],
 css = $cgi.cookies["css"][0]
 css = $cgi["css"] if $cgi.include?("css")
 css ||= "dudle.css"
-$html.add_cookie("css",css,"/",Time.now + (1*60*60*24*365 * (css == "dudle.css" ? -1 : 1 )))
-$html << <<CSS
+$d.html.add_cookie("css",css,"/",Time.now + (1*60*60*24*365 * (css == "dudle.css" ? -1 : 1 )))
+$d << <<CSS
 <div id='config_stylesheet'>
-<h2>Stylesheet</h2>
+<h3>Stylesheet</h3>
 #{choosetable("Stylesheet settings",a,"css=#{css}")}
 </div>
 CSS
@@ -91,15 +84,15 @@ CSS
 
 username = $cgi.cookies["username"][0]
 if $cgi.include?("delete_username")
-	$html.add_cookie("username","","/",Time.now - 1*60*60*24*365)
+	$d.html.add_cookie("username","","/",Time.now - 1*60*60*24*365)
 	username = nil
 elsif $cgi.include?("username") 
 	username = $cgi["username"]
-	$html.add_cookie("username",username,"/",Time.now + 1*60*60*24*365)
+	$d.html.add_cookie("username",username,"/",Time.now + 1*60*60*24*365)
 end
 
 
-$html << <<CHARSET
+$d << <<CHARSET
 <div id='config_user'>
 <h2>Default Username</h2>
 <form method='get' action=''>
@@ -112,7 +105,7 @@ $html << <<CHARSET
 CHARSET
 
 if username && !$cgi.include?("edit")
-	$html << <<CHARSET
+	$d << <<CHARSET
 				<span>#{username}</span>
 				<input type='hidden' value="#{username}" name='username' />
 				<input type='hidden' value="true" name='edit' />
@@ -124,7 +117,7 @@ if username && !$cgi.include?("edit")
 				<input id='username' type='submit' value='Edit' />
 CHARSET
 else
-	$html << <<CHARSET
+	$d << <<CHARSET
 				<input id='username' type='text' value="#{username}" name='username' />
 			</td>
 		</tr>
@@ -135,9 +128,9 @@ else
 CHARSET
 end
 
-$html << "<input type='submit' name='delete_username' value='Delete' />" if username
+$d.html << "<input type='submit' name='delete_username' value='Delete' />" if username
 
-$html << <<CHARSET
+$d << <<CHARSET
 			</td>
 		</tr>
 	</table>
@@ -145,10 +138,7 @@ $html << <<CHARSET
 </div>
 CHARSET
 
-$html << "</div>"
-$html << "</body>"
-
-$html.out($cgi)
+$d.out($cgi)
 end
 
 

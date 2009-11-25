@@ -19,26 +19,14 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "yaml"
 
 if __FILE__ == $0
-
-require "cgi"
-
-$cgi = CGI.new
-
-olddir = File.expand_path(".")
-Dir.chdir("..")
-require "html"
-require "poll"
-load "config.rb"
-Dir.chdir(olddir)
-
-table = YAML::load_file("data.yaml")
+load "../dudle.rb"
+$d = Dudle.new("Poll")
 
 if $cgi.include?("add_participant")
 	if $cgi.include?("delete_participant")
-		table.delete($cgi["olduser"])
+		$d.table.delete($cgi["olduser"])
 	else
 		agreed = {}
 		$cgi.params.each{|k,v|
@@ -47,43 +35,27 @@ if $cgi.include?("add_participant")
 			end
 		}
 
-		table.add_participant($cgi["olduser"],$cgi["add_participant"],agreed)
+		$d.table.add_participant($cgi["olduser"],$cgi["add_participant"],agreed)
 	end
 end
 
-table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi["comment"] != ""
-table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
+$d.table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi["comment"] != ""
+$d.table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
 
-$html = HTML.new("dudle - #{table.name}")
-$html.header["Cache-Control"] = "no-cache"
-load "../charset.rb"
-$html.add_css("../dudle.css")
-$html.add_css("../print.css","print")
+$d.html.add_css("../print.css","print")
 
-$html.add_atom("atom.cgi") if File.exists?("../atom.rb")
-
-
-$html << "<body>"
-
-$html << Dudle::tabs("Poll")
-
-$html << <<HEAD
-	<div id='main'>
-HEAD
+$d.html.add_atom("atom.cgi") if File.exists?("../atom.rb")
 
 # TABLE
-$html << <<TABLE
-<h1>#{table.name}</h1>
+$d << <<TABLE
 <div id='polltable'>
 	<form method='post' action='.'>
-		#{table.to_html($cgi['edituser'])}
+		#{$d.table.to_html($cgi['edituser'])}
 	</form>
 </div>
 TABLE
 
-$html << table.comment_to_html
+$d << $d.table.comment_to_html
 
-$html << "</div></body>"
-
-$html.out($cgi)
+$d.out($cgi)
 end

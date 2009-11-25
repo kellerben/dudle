@@ -19,44 +19,23 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
+if __FILE__ == $0
+
+load "../dudle.rb"
+$d = Dudle.new("Delete Poll")
+require "ftools"
+
 QUESTIONS = ["Yes, I know what I am doing!",
              "I hate these stupid entry fields.",
              "I am aware of the consequences.",
              "Please delete this poll."]
 
-
-require "cgi"
-require "ftools"
-
-if __FILE__ == $0
-
-$cgi = CGI.new
-
-olddir = File.expand_path(".")
-Dir.chdir("..")
-load "html.rb"
-load "config.rb"
-require "poll"
-require "yaml"
-Dir.chdir(olddir)
-
-POLLNAME = YAML::load_file("data.yaml").name
-POLL = File.basename(File.expand_path("."))
-$html = HTML.new("dudle - #{POLLNAME} - Delete")
-
-$html.header["Cache-Control"] = "no-cache"
-
-$html.add_css("../dudle.css")
-
-$html << "<body>"
-
 if $cgi.include?("confirmnumber")
  CONFIRM = $cgi["confirmnumber"].to_i
 	if $cgi["confirm"] == QUESTIONS[CONFIRM]
 		Dir.chdir("..")
-		File.move(POLL, "/tmp/#{POLL}.#{rand(9999999)}")
-		$html << <<SUCCESS
-<div id='main'>
+		File.move(@d.table.urlsuffix, "/tmp/#{@d.table.urlsuffix}.#{rand(9999999)}")
+		$d.html << <<SUCCESS
 <p class='textcolumn'>
 	The poll was deleted successfully!
 </p>
@@ -71,10 +50,8 @@ if $cgi.include?("confirmnumber")
 		<li><a href='http://www.google.de'>Search something with Google</a></li>
 	</ul>
 </div>
-</div>
-</body>
 SUCCESS
-		$html.out($cgi)
+		$d.out($cgi)
 		exit
 	else
 		hint = <<HINT
@@ -101,12 +78,9 @@ HINT
 else
 	CONFIRM = rand(QUESTIONS.size)
 end
-$html << <<TABLE
-#{Dudle::tabs("Delete Poll")}
-<div id='main'>
-	<h1>#{POLLNAME}</h1>
+$d.html << <<TABLE
 	<h2>Delete this Poll</h2>
-	You want to delete the poll named <b>#{POLLNAME}</b>.<br />
+	You want to delete the poll named <b>#{$d.table.name}</b>.<br />
 	This is an irreversible action!<br />
 	If you are sure in what you are doing, please type into the form “#{QUESTIONS[CONFIRM]}”
 	#{hint}
@@ -117,10 +91,8 @@ $html << <<TABLE
 			<input type='submit' value='Delete' />
 		</div>
 	</form>
-</div>
-</body>
 TABLE
 
-$html.out($cgi)
+$d.out($cgi)
 
 end

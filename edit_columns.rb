@@ -19,62 +19,31 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "yaml"
-require "cgi"
-
-
 if __FILE__ == $0
-
-$cgi = CGI.new
-
-olddir = File.expand_path(".")
-Dir.chdir("..")
-require "html"
-load "config.rb"
-require "poll"
-Dir.chdir(olddir)
-# BUGFIX for Time.parse, which handles the zone indeterministically
-class << Time
-	alias_method :old_parse, :parse
-	def Time.parse(date, now=self.now)
-		Time.old_parse("2009-10-25 00:30")
-		Time.old_parse(date)
-	end
-end
+	
+load "../dudle.rb"
 
 revbeforeedit = VCS.revno
 
 if $cgi.include?("undo_revision") && $cgi["undo_revision"].to_i < revbeforeedit
 	undorevision = $cgi["undo_revision"].to_i
-	table = YAML::load(VCS.cat(undorevision, "data.yaml"))
+	$d = Dudle.new("Edit Columns",undorevision)
 	comment = "Reverted Poll" 
 	comment = "Redo changes" if $cgi.include?("redo")
-	table.store("#{comment} to version #{undorevision}")
+	$d.table.store("#{comment} to version #{undorevision}")
 else
-	table = YAML::load_file("data.yaml")
+	$d = Dudle.new("Edit Columns")
 end
 
-table.edit_column($cgi["columnid"],$cgi["new_columnname"],$cgi) if $cgi.include?("new_columnname")
-table.delete_column($cgi["deletecolumn"]) if $cgi.include?("deletecolumn")
+$d.table.edit_column($cgi["columnid"],$cgi["new_columnname"],$cgi) if $cgi.include?("new_columnname")
+$d.table.delete_column($cgi["deletecolumn"]) if $cgi.include?("deletecolumn")
 
 revno = VCS.revno
 
-$html = HTML.new("dudle - #{table.name} - Edit Columns")
-$html.header["Cache-Control"] = "no-cache"
-load "../charset.rb"
-$html.add_css("../dudle.css")
-
-$html << "<body>"
-$html << Dudle::tabs("Edit Columns")
-
-$html << <<TABLE
-	<div id='main'>
-	<h1>#{table.name}</h1>
-	<h2>Add and Remove Columns</h2>
-TABLE
+$d << "<h2>Add and Remove Columns</h2>"
 
 # ADD/REMOVE COLUMN
-$html << table.edit_column_htmlform($cgi["editcolumn"],revno)
+$d << $d.table.edit_column_htmlform($cgi["editcolumn"],revno)
 
 h = VCS.history
 urevs = h.undorevisions
@@ -120,13 +89,13 @@ if rrevs.min
 	hidden["Redo"] = "<input type='hidden' name='redo'/>"
 end
 
-	$html << <<UNDOREDOREADY
+	$d << <<UNDOREDOREADY
 <div class='undo'>
 	<table summary='Undo/Redo functionallity'>
 		<tr>
 UNDOREDOREADY
 	["Undo","Redo"].each{|button|
-		$html << <<TD
+		$d << <<TD
 			<td>
 				<form method='post' action=''>
 					<div>
@@ -139,7 +108,7 @@ UNDOREDOREADY
 			</td>
 TD
 	}
-	$html << <<READY
+	$d << <<READY
 			<td>
 				<form method='get' action='help.cgi'>
 					<div>
@@ -152,10 +121,9 @@ TD
 </div>
 READY
 
-#$html << (urevs + rrevs).to_html(curundorev,"")
+#$d << (urevs + rrevs).to_html(curundorev,"")
 
-$html << "</div></body>"
 
-$html.out($cgi)
+$d.out($cgi)
 end
 

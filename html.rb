@@ -80,32 +80,3 @@ HEAD
 	end
 end
 
-module Dudle
-	def Dudle.tabs(active_tab)
-		ret = "<div id='tabs'><ul>"
-		[["Home",".."],
-		 ["",""],
-		 ["Poll","."],
-		 ["History","history.cgi"],
-		 ["Help","help.cgi"],
-		 ["",""],
-		 ["Edit Columns","edit_columns.cgi"],
-		 ["Invite Participants","invite_participants.cgi"],
-		 ["Access Control","access_control.cgi"],
-		 ["Delete Poll","delete_poll.cgi"],
-		 ["",""],
-		 ["Customize","customize.cgi"]
-		].each{|tab,file|
-			case tab
-			when active_tab
-				ret += "<li id='active_tab' >&nbsp;#{tab}&nbsp;</li> "
-			when ""
-				ret += "<li class='separator_tab' />"
-			else
-				ret += "<li class='nonactive_tab' ><a href='#{file}'>&nbsp;#{tab}&nbsp;</a></li> "
-			end
-		}
-		ret += "</ul></div>"
-		ret
-	end
-end

@@ -64,4 +64,3 @@ else
 end
 
 UTFCHARS = CGI.escapeHTML("✔✘↞←→↠✍⌧•▾▴")
-$html.add_cookie("utf","true","/",Time.now + (1*60*60*24*365 * (USEUTF ? 1 : -1 )))

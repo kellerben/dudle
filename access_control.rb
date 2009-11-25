@@ -19,22 +19,11 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "cgi"
-
 if __FILE__ == $0
 
-$cgi = CGI.new
-olddir = File.expand_path(".")
-Dir.chdir("..")
-load "html.rb"
-load "config.rb"
-require "poll"
-require "yaml"
-Dir.chdir(olddir)
+load "../dudle.rb"
 
-POLL = YAML::load_file("data.yaml").name
-$html = HTML.new("dudle - #{POLL} - Help")
-$html.header["Cache-Control"] = "no-cache"
+$d = Dudle.new("Access Control")
 
 acusers = {}
 
@@ -66,9 +55,9 @@ HTACCESS
 	}
 	VCS.commit("Access Control changed")
 	unless acusers.empty?
-		$html.header["status"] = "REDIRECT"
-		$html.header["Cache-Control"] = "no-cache"
-		$html.header["Location"] = "access_control.cgi"
+		$d.html.header["status"] = "REDIRECT"
+		$d.html.header["Cache-Control"] = "no-cache"
+		$d.html.header["Location"] = "access_control.cgi"
 	end
 end
 def add_to_htdigest(user,password)
@@ -173,19 +162,10 @@ if $cgi.include?("ac_user")
 	end
 end
 
-unless $html.header["status"] == "REDIRECT"
+unless $d.html.header["status"] == "REDIRECT"
 
-load "../charset.rb"
-$html.add_css("../dudle.css")
 
-$html << "<body>"
-$html << Dudle::tabs("Access Control")
-
-$html << <<HEAD
-<div id='main'>
-	<h1>#{POLL}</h1>
-	<h2>Change Access Control Settings</h2>
-HEAD
+$d.html << "<h2>Change Access Control Settings</h2>"
 
 if acusers.empty? && $cgi["ac_activate"] != "Activate"
 
@@ -216,7 +196,7 @@ else
 
 end
 
-$html << <<AC
+$d.html << <<AC
 <form id='ac' method='post' action='' >
 <table summary='Enable Access Control settings' class='settingstable'>
 	<tr>
@@ -239,8 +219,7 @@ $html << <<AC
 #{createform}
 AC
 
-$html << "</div></body>"
 end
 
-$html.out($cgi)
+$d.out($cgi)
 end

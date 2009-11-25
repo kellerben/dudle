@@ -19,33 +19,16 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "cgi"
-
 if __FILE__ == $0
 
-$cgi = CGI.new
-olddir = File.expand_path(".")
-Dir.chdir("..")
-load "html.rb"
-load "config.rb"
-require "poll"
-require "yaml"
-Dir.chdir(olddir)
+load "../dudle.rb"
 
-POLL = YAML::load_file("data.yaml").name
-$html = HTML.new("dudle - #{POLL} - Access Control Settings")
-$html.header["Cache-Control"] = "no-cache"
+$d = Dudle.new("Help")
 
-$html.add_css("../dudle.css")
-
-$html << <<END
-<body>
-#{Dudle::tabs("Help")}
-<div id='main'>
-<h1>#{POLL}</h1>
+$d << <<END
 The link to your poll is:
 <pre>#{SITEURL}</pre>
-<a href='mailto:?subject=dudle%20link&body=#{SITEURL}'>Send this link via email...</a>
+<a href='mailto:?subject=dudle%20link&amp;body=#{SITEURL}'>Send this link via email...</a>
 <form method='get' action='.'>
 	<div>
 		<input type='submit' value='To the Vote interface' />
@@ -53,10 +36,7 @@ The link to your poll is:
 </form>
 END
 
-$html << "</div>"
-$html << "</body>"
-
-$html.out($cgi)
+$d.out($cgi)
 end
 
 
