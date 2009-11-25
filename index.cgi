@@ -45,11 +45,17 @@ $htlm.add_atom("atom.cgi") if File.exists?("atom.cgi")
 
 if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 	POLLNAME=$cgi["create_poll"]
-	POLLURL=$cgi["poll_url"]
+	if $cgi["poll_url"] == ""
+		POLLURL = `pwgen -1`.chomp
+	else
+		POLLURL=$cgi["poll_url"]
+	end
+
+
 	if !(POLLURL =~ /^[\w\-_]*$/)
-		createnotice = "Custom alias may only contain letters, numbers, and dashes."
+		createnotice = "Custom address may only contain letters, numbers, and dashes."
 	elsif File.exist?(POLLURL)
-		createnotice = "A Poll with this alias already exists."
+		createnotice = "A Poll with this address already exists."
 	else Dir.mkdir(POLLURL)
 		Dir.chdir(POLLURL)
 		VCS.init
@@ -99,7 +105,7 @@ unless $html.header["status"] == "REDIRECT"
 	<td style='padding-bottom:0.7ex'><input type='submit' value='create' /></td>
 </tr>
 <tr>
-	<td colspan='2' style='border-top:solid thin;padding-top:0.7ex;'>Custom alias (optional):
+	<td colspan='2' style='border-top:solid thin;padding-top:0.7ex;'>Custom address (optional):
 	<span class='hint'>May contain letters, numbers, and dashes.</span></td>
 </tr>
 <tr>
