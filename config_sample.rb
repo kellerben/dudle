@@ -46,10 +46,10 @@ notice += "</table>"
 # Example 2: displays a static text
 notice += <<NOTICE
 <h2>Examples</h2>
+<div>
 	If you want to play around with the Tool, you may want to take a look at these two Example Polls:<br />
 	<a href='coffeebreak'>Event Schedule Poll</a><br />
 	<a href='coffee'>Normal Poll</a>
+</div>
 NOTICE
 NOTICE = notice
-
-
