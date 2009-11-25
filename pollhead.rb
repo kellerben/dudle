@@ -131,11 +131,11 @@ EDITDELETE
 			<input type='submit' value='Add/Edit Column' />
 	</div>
 </form>
-<fieldset><legend>Preview</legend>
+<h2>Preview</h2>
 <table summary='Preview poll head'>
 #{to_html([],true,activecolumn)}
 </table>
-</fieldset>
+
 END
 	end
 end
