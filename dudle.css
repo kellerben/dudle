@@ -100,7 +100,7 @@ div.undo{
 	margin-top: 2em;
 }
 
-td.create_poll, td.settingstable, table.settingstable td{
+td.settingstable, table.settingstable td{
 	text-align: left;
 }
 table.settingstable td.label{
@@ -172,6 +172,9 @@ html {
 
 .shorttextcolumn{
 	max-width: 20em;
+}
+.hint{
+	font-size:small;
 }
 
 div#tabs{

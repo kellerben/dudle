@@ -30,10 +30,19 @@ require "ftools"
 
 if __FILE__ == $0
 
-POLL = File.basename(File.expand_path("."))
 $cgi = CGI.new
-load "../html.rb"
-$html = HTML.new("dudle - #{POLL} - Delete")
+
+olddir = File.expand_path(".")
+Dir.chdir("..")
+load "html.rb"
+load "config.rb"
+require "poll"
+require "yaml"
+Dir.chdir(olddir)
+
+POLLNAME = YAML::load_file("data.yaml").name
+POLL = File.basename(File.expand_path("."))
+$html = HTML.new("dudle - #{POLLNAME} - Delete")
 
 $html.header["Cache-Control"] = "no-cache"
 
@@ -95,9 +104,9 @@ end
 $html << <<TABLE
 #{Dudle::tabs("Delete Poll")}
 <div id='main'>
-	<h1>#{POLL}</h1>
+	<h1>#{POLLNAME}</h1>
 	<h2>Delete this Poll</h2>
-	You want to delete the poll named <b>#{POLL}</b>.<br />
+	You want to delete the poll named <b>#{POLLNAME}</b>.<br />
 	This is an irreversible action!<br />
 	If you are sure in what you are doing, please type into the form “#{QUESTIONS[CONFIRM]}”
 	#{hint}

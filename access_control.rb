@@ -29,9 +29,11 @@ olddir = File.expand_path(".")
 Dir.chdir("..")
 load "html.rb"
 load "config.rb"
+require "poll"
+require "yaml"
 Dir.chdir(olddir)
 
-POLL = File.basename(File.expand_path("."))
+POLL = YAML::load_file("data.yaml").name
 $html = HTML.new("dudle - #{POLL} - Access Control Settings")
 $html.header["Cache-Control"] = "no-cache"
 

@@ -43,14 +43,15 @@ $htlm.add_atom("atom.cgi") if File.exists?("atom.cgi")
 
 	$html << "<body id='main'><h1>dudle</h1>"
 
-if $cgi.include?("create_poll")
-	SITE=$cgi["create_poll"]
-	if SITE.include?("/") 
-		createnotice = "<div class='error'>Error: The character '/' is not allowed.</div>"
-	elsif File.exist?(SITE)
-		createnotice = "<div class='error'>Error: This poll already exists!</div>"
-	else Dir.mkdir(SITE)
-		Dir.chdir(SITE)
+if $cgi.include?("create_poll") && $cgi.include?("poll_url")
+	POLLNAME=$cgi["create_poll"]
+	POLLURL=$cgi["poll_url"]
+	if !(POLLURL =~ /^[\w\-_]*$/)
+		createnotice = "Custom alias may only contain letters, numbers, and dashes."
+	elsif File.exist?(POLLURL)
+		createnotice = "A Poll with this alias already exists."
+	else Dir.mkdir(POLLURL)
+		Dir.chdir(POLLURL)
 		VCS.init
 		File.symlink("../participate.rb","index.cgi")
 		VCS.add("index.cgi")
@@ -62,9 +63,9 @@ if $cgi.include?("create_poll")
 			File.open(f,"w").close
 			VCS.add(f)
 		}
-		Poll.new(SITE,$cgi["poll_type"])
+		Poll.new(POLLNAME,$cgi["poll_type"])
 		Dir.chdir("..")
-		escapedsite = SITEURL + CGI.escapeHTML(CGI.escape(SITE)) + "/edit_columns.cgi"
+		escapedsite = SITEURL + CGI.escapeHTML(CGI.escape(POLLURL)) + "/edit_columns.cgi"
 		escapedsite.gsub!("+"," ")
 		$html.header["status"] = "REDIRECT"
 		$html.header["Cache-Control"] = "no-cache"
@@ -78,14 +79,14 @@ unless $html.header["status"] == "REDIRECT"
 	$html << <<CREATE
 <h2>Create New Poll</h2>
 <form method='post' action='.'>
-<table summary='Create a new Poll'>
+<table  class='settingstable' summary='Create a new Poll'>
 <tr>
-	<td class='create_poll'><label title="#{poll_name_tip = "the name equals the link under which you receive the poll"}" for="poll_name">Name:</label></td>
-	<td class='create_poll'><input title="#{poll_name_tip}" id="poll_name" size='16' type='text' name='create_poll' value="#{CGI.escapeHTML($cgi["create_poll"])}" /></td>
+	<td class='label'><label for="poll_name">Name:</label></td>
+	<td><input id="poll_name" size='40' type='text' name='create_poll' value="#{CGI.escapeHTML($cgi["create_poll"])}" /></td>
 </tr>
 <tr>
-	<td>Type:</td>
-	<td class='create_poll'>
+	<td class='label'>Type:</td>
+	<td>
 		<input id='chooseTime' type='radio' value='time' name='poll_type' checked='checked' />
 		<label for='chooseTime'>Event Schedule Poll (e.g. schedule a meeting)</label>
 		<br />
@@ -95,8 +96,27 @@ unless $html.header["status"] == "REDIRECT"
 </tr>
 <tr>
 	<td></td>
-	<td class='create_poll'><input type='submit' value='create' /></td>
+	<td style='padding-bottom:0.7ex'><input type='submit' value='create' /></td>
 </tr>
+<tr>
+	<td colspan='2' style='border-top:solid thin;padding-top:0.7ex;'>Custom alias (optional):
+	<span class='hint'>May contain letters, numbers, and dashes.</span></td>
+</tr>
+<tr>
+	<td colspan='2'><label for="poll_url"><span class='hint'>#{SITEURL}</span></label><input id="poll_url" size='16' type='text' name='poll_url' value="#{CGI.escapeHTML($cgi["poll_url"])}" />
+	</td>
+</tr>
+CREATE
+	if defined?(createnotice)
+		$html << <<NOTICE
+<tr>
+	<td colspan=2 class='error'>
+		#{createnotice}
+	</td>
+</tr>
+NOTICE
+	end
+	$html << <<CREATE
 </table>
 </form>
 CREATE
