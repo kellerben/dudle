@@ -22,7 +22,8 @@
 
 if __FILE__ == $0
 
-load "../dudle.rb"
+$:.unshift("..")
+require "dudle"
 
 $d = Dudle.new("Customize")
 
@@ -65,11 +66,6 @@ $d << <<CHARSET
 </div>
 CHARSET
 
-
-a = [["default","css=dudle.css"],
-     ["Print","css=print.css"],
-     ["PrimeLife","css=primelife.css"],
-     ["TU Dresden","css=tud.css"]]
 css = $cgi.cookies["css"][0]
 css = $cgi["css"] if $cgi.include?("css")
 css ||= "dudle.css"
@@ -77,7 +73,7 @@ $d.html.add_cookie("css",css,"/",Time.now + (1*60*60*24*365 * (css == "dudle.css
 $d << <<CSS
 <div id='config_stylesheet'>
 <h3>Stylesheet</h3>
-#{choosetable("Stylesheet settings",a,"css=#{css}")}
+#{choosetable("Stylesheet settings",$d.css.collect{|name,href| [name,"css=#{href}"]},"css=#{css}")}
 </div>
 CSS
 

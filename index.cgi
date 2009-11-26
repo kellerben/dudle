@@ -19,36 +19,24 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "yaml"
-require "cgi"
-
-
 if __FILE__ == $0
 
-$cgi = CGI.new
 
 if File.exists?("config.rb")
-	load "config.rb"
+	require "dudle"
 else
 	puts "\nPlease configure me in the file config.rb"
 	exit
 end
 
-require "poll"
-require "html"
-$html = HTML.new("dudle")
-load "charset.rb"
-$html.add_css("dudle.css")
-$htlm.add_atom("atom.cgi") if File.exists?("atom.cgi")
-
-	$html << "<body id='main'><h1>dudle</h1>"
+$d = Dudle.new("Home")
 
 if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 	POLLNAME=$cgi["create_poll"]
 	if $cgi["poll_url"] == ""
 		POLLURL = `pwgen -1`.chomp
 	else
-		POLLURL=$cgi["poll_url"]
+		OLLURL=$cgi["poll_url"]
 	end
 
 
@@ -71,18 +59,16 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 		}
 		Poll.new(POLLNAME,$cgi["poll_type"])
 		Dir.chdir("..")
-		escapedsite = SITEURL + CGI.escapeHTML(CGI.escape(POLLURL)) + "/edit_columns.cgi"
-		escapedsite.gsub!("+"," ")
-		$html.header["status"] = "REDIRECT"
-		$html.header["Cache-Control"] = "no-cache"
-		$html.header["Location"] = escapedsite
-		$html << "The poll was created successfully. The link to your new poll is:<br /><a href=\"#{escapedsite}\">#{escapedsite}</a>"
+		$d.html.header["status"] = "REDIRECT"
+		$d.html.header["Cache-Control"] = "no-cache"
+		$d.html.header["Location"] = SITEURL + "/edit_columns.cgi"
+		$d << "The poll was created successfully. The link to your new poll is:<br /><a href=\"#{escapedsite}\">#{escapedsite}</a>"
 	end
 end
 
-unless $html.header["status"] == "REDIRECT"
+unless $d.html.header["status"] == "REDIRECT"
 
-	$html << <<CREATE
+	$d << <<CREATE
 <h2>Create New Poll</h2>
 <form method='post' action='.'>
 <table  class='settingstable' summary='Create a new Poll'>
@@ -114,7 +100,7 @@ unless $html.header["status"] == "REDIRECT"
 </tr>
 CREATE
 	if defined?(createnotice)
-		$html << <<NOTICE
+		$d << <<NOTICE
 <tr>
 	<td colspan='2' class='error'>
 		#{createnotice}
@@ -122,15 +108,14 @@ CREATE
 </tr>
 NOTICE
 	end
-	$html << <<CREATE
+	$d << <<CREATE
 </table>
 </form>
 CREATE
 
-	$html << NOTICE
-	$html << "</body>"
+	$d << NOTICE
 end
 
-$html.out($cgi)
+$d.out($cgi)
 end
 

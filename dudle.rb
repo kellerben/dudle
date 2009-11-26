@@ -22,31 +22,32 @@ require "cgi"
 
 $cgi = CGI.new
 
-olddir = File.expand_path(".")
-Dir.chdir("..")
+$:.unshift("..")
 require "html"
 require "poll"
 require "config"
 require "charset"
-Dir.chdir(olddir)
 
 class Dudle
-	attr_reader :html, :table, :urlsuffix
-	def Dudle.tabs(active_tab)
+	attr_reader :html, :table, :urlsuffix, :css
+	def tabs(active_tab)
 		ret = "<div id='tabs'><ul>"
-		[["Home",".."],
-		 ["",""],
-		 ["Poll","."],
-		 ["History","history.cgi"],
-		 ["Help","help.cgi"],
-		 ["",""],
-		 ["Edit Columns","edit_columns.cgi"],
-		 ["Invite Participants","invite_participants.cgi"],
-		 ["Access Control","access_control.cgi"],
-		 ["Delete Poll","delete_poll.cgi"],
-		 ["",""],
-		 ["Customize","customize.cgi"]
-		].each{|tab,file|
+		tabs = []
+		tabs << ["Home",".."]
+		if @is_poll
+			tabs << ["",""]
+			tabs << ["Poll","."]
+			tabs << ["History","history.cgi"]
+			tabs << ["Help","help.cgi"]
+			tabs << ["",""]
+			tabs << ["Edit Columns","edit_columns.cgi"]
+			tabs << ["Invite Participants","invite_participants.cgi"]
+			tabs << ["Access Control","access_control.cgi"]
+			tabs << ["Delete Poll","delete_poll.cgi"]
+			tabs << ["",""]
+		end
+		tabs << ["Customize","customize.cgi"]
+		tabs.each{|tab,file|
 			case tab
 			when active_tab
 				ret += "<li id='active_tab' >&nbsp;#{tab}&nbsp;</li> "
@@ -59,33 +60,64 @@ class Dudle
 		ret += "</ul></div>"
 		ret
 	end
-	def initialize(htmltitle, revision=nil)
-		if revision
-			@table = YAML::load(VCS.cat(revision, "data.yaml"))
-		else
-			@table = YAML::load_file("data.yaml")
-		end
-		@urlsuffix = File.basename(File.expand_path("."))
 
-		@html = HTML.new("dudle - #{@table.name} - #{htmltitle}")
-		@html.header["Cache-Control"] = "no-cache"
-		@html.add_css("../dudle.css")
+	def initialize(htmltitle, revision=nil)
+		if File.exists?("data.yaml") && !File.stat("data.yaml").directory?
+			@is_poll = true
+			basedir = ".." 
+			if revision
+				@table = YAML::load(VCS.cat(revision, "data.yaml"))
+			else
+				@table = YAML::load_file("data.yaml")
+			end
+			@urlsuffix = File.basename(File.expand_path("."))
+			@title = @table.name
+			@html = HTML.new("dudle - #{@title} - #{htmltitle}")
+			@html.header["Cache-Control"] = "no-cache"
+		else
+			@is_poll = false
+			basedir = "."
+			@title = "dudle"
+			@html = HTML.new(@title)
+		end
+
+		
+		@css = [["default","dudle.css"],
+				    ["print"  ,"print.css"]]
+		Dir.open("#{basedir}/css/").each{|f|
+			if f =~ /\.css$/ 
+				name = ""
+				File.open("#{basedir}/css/#{f}","r").each_line{|l|
+					name = l.scan(/\/\* Name: (.*) \*\/$/).flatten[0]
+					break
+				}
+				@css << [name,"css/#{f}"]
+			end
+		}
+		default = $cgi["css"]
+		default = $cgi.cookies["css"][0] if default == ""
+		@css.each{|title,href|
+			@html.add_css("../#{href}",title,href == default)
+		}
 
 		@html << <<HEAD
 <body>
-<div id='header' />
-#{Dudle.tabs(htmltitle)}
+<div id='header1'></div>
+<div id='header2'></div>
+<div id='header3'></div>
+#{tabs(htmltitle)}
 <div id='main'>
-	<h1>#{@table.name}</h1>
+	<h1>#{@title}</h1>
 HEAD
 	end
+
 	def out(cgi)
 		@html << "</div></body>"
 		@html.out(cgi)
 	end
+
 	def <<(htmlbodytext)
 		@html << htmlbodytext
 	end
 
 end
-

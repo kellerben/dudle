@@ -27,7 +27,7 @@ class HTML
 		@header["charset"] = "utf-8"
 
 		@body = ""
-		@css = {}
+		@css = []
 		@atom = []
 	end
 	def head
@@ -37,21 +37,26 @@ class HTML
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<title>#{@title}</title>
 HEAD
+
+		@css = [@css[0]] + @css[1..-1].sort
 		@css.each{|title,href|
-			ret += "<link rel='stylesheet' type='text/css' href='#{href}' title='#{title}'/>"
-			ret += "<link rel='stylesheet' type='text/css' href='#{href}' title='print' media='print' />" if title == "print"
+			ret += "<link rel='stylesheet' type='text/css' href='#{href}' title='#{title}'/>\n"
+			ret += "<link rel='stylesheet' type='text/css' href='#{href}' title='print' media='print' />\n" if title == "print"
 		}
 
 		@atom.each{|href|
-			ret += "<link rel='alternate'  type='application/atom+xml' href='#{href}' />"
+			ret += "<link rel='alternate'  type='application/atom+xml' href='#{href}' />\n"
 		}
 
 		ret += "</head>"
 		ret
 	end
-	def add_css(href, title = "default")
-		@css[title] ||= []
-		@css[title] << href
+	def add_css(href, title, default = false)
+		if default
+			@css.unshift([title,href])
+		else
+			@css << [title,href]
+		end
 	end
 	def add_atom(href)
 		@atom << href
