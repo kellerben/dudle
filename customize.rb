@@ -22,7 +22,7 @@
 
 if __FILE__ == $0
 
-$:.unshift("..")
+$:.push("..")
 require "dudle"
 
 $d = Dudle.new("Customize")

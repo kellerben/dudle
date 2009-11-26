@@ -22,7 +22,7 @@ require "cgi"
 
 $cgi = CGI.new
 
-$:.unshift("..")
+$:.push("..")
 require "html"
 require "poll"
 require "config"
@@ -33,7 +33,7 @@ class Dudle
 	def tabs(active_tab)
 		ret = "<div id='tabs'><ul>"
 		tabs = []
-		tabs << ["Home",".."]
+		tabs << ["Home",@basedir]
 		if @is_poll
 			tabs << ["",""]
 			tabs << ["Poll","."]
@@ -64,7 +64,7 @@ class Dudle
 	def initialize(htmltitle, revision=nil)
 		if File.exists?("data.yaml") && !File.stat("data.yaml").directory?
 			@is_poll = true
-			basedir = ".." 
+			@basedir = ".." 
 			if revision
 				@table = YAML::load(VCS.cat(revision, "data.yaml"))
 			else
@@ -76,7 +76,7 @@ class Dudle
 			@html.header["Cache-Control"] = "no-cache"
 		else
 			@is_poll = false
-			basedir = "."
+			@basedir = "."
 			@title = "dudle"
 			@html = HTML.new(@title)
 		end
@@ -84,10 +84,10 @@ class Dudle
 		
 		@css = [["default","dudle.css"],
 				    ["print"  ,"print.css"]]
-		Dir.open("#{basedir}/css/").each{|f|
+		Dir.open("#{@basedir}/css/").each{|f|
 			if f =~ /\.css$/ 
 				name = ""
-				File.open("#{basedir}/css/#{f}","r").each_line{|l|
+				File.open("#{@basedir}/css/#{f}","r").each_line{|l|
 					name = l.scan(/\/\* Name: (.*) \*\/$/).flatten[0]
 					break
 				}
@@ -97,7 +97,7 @@ class Dudle
 		default = $cgi["css"]
 		default = $cgi.cookies["css"][0] if default == ""
 		@css.each{|title,href|
-			@html.add_css("../#{href}",title,href == default)
+			@html.add_css("#{@basedir}/#{href}",title,href == default)
 		}
 
 		@html << <<HEAD
