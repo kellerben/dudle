@@ -36,7 +36,7 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 	if $cgi["poll_url"] == ""
 		POLLURL = `pwgen -1`.chomp
 	else
-		OLLURL=$cgi["poll_url"]
+		POLLURL=$cgi["poll_url"]
 	end
 
 
@@ -61,8 +61,8 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 		Dir.chdir("..")
 		$d.html.header["status"] = "REDIRECT"
 		$d.html.header["Cache-Control"] = "no-cache"
-		$d.html.header["Location"] = SITEURL + "/edit_columns.cgi"
-		$d << "The poll was created successfully. The link to your new poll is:<br /><a href=\"#{escapedsite}\">#{escapedsite}</a>"
+		$d.html.header["Location"] = SITEURL + POLLURL+ "/edit_columns.cgi"
+		$d << "The poll was created successfully. The link to your new poll is:<br /><a href=\"#{POLLURL}\">#{POLLURL}</a>"
 	end
 end
 

@@ -34,7 +34,7 @@ if $cgi.include?("confirmnumber")
  CONFIRM = $cgi["confirmnumber"].to_i
 	if $cgi["confirm"] == QUESTIONS[CONFIRM]
 		Dir.chdir("..")
-		File.move(@d.table.urlsuffix, "/tmp/#{@d.table.urlsuffix}.#{rand(9999999)}")
+		File.move($d.urlsuffix, "/tmp/#{$d.urlsuffix}.#{rand(9999999)}")
 		$d.html << <<SUCCESS
 <p class='textcolumn'>
 	The poll was deleted successfully!
