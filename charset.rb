@@ -36,7 +36,7 @@ if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 	YEARFORWARD  = CGI.escapeHTML("↠")
 
 	EDIT = CGI.escapeHTML("✍")
-	DELETE = CGI.escapeHTML("⌧")
+	DELETE = CGI.escapeHTML("✖")
 
 	PASSWORDSTAR = CGI.escapeHTML("•")
 else
@@ -63,4 +63,4 @@ else
 	PASSWORDSTAR = CGI.escapeHTML("*")
 end
 
-UTFCHARS = CGI.escapeHTML("✔✘↞←→↠✍⌧•▾▴")
+UTFCHARS = CGI.escapeHTML("✔✘↞←→↠✍✖•▾▴")
