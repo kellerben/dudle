@@ -68,7 +68,7 @@ CHARSET
 
 css = $cgi.cookies["css"][0]
 css = $cgi["css"] if $cgi.include?("css")
-css ||= "dudle.css"
+css ||= "default.css"
 $d.html.add_cookie("css",css,"/",Time.now + (1*60*60*24*365 * (css == "dudle.css" ? -1 : 1 )))
 $d << <<CSS
 <div id='config_stylesheet'>
