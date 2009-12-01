@@ -140,7 +140,7 @@ class Poll
 			ret += "'>#{yes}</td>\n"
 		}
 
-		ret += "</tr>"
+		ret += "<td class='invisible' /></tr>"
 		ret += "</table>\n"
 		ret
 	end

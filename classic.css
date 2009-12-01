@@ -17,6 +17,11 @@
 * along with dudle.  If not, see <http://www.gnu.org/licenses/>.           *
 ***************************************************************************/
 
+.invisible {
+	border: none;
+	background-color: #FFF;
+}
+
 
 td.ayes, td.bmaybe, td.cno { cursor:default; }
 td.ayes{ background-color:#0F0; }
