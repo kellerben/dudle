@@ -1,0 +1,285 @@
+/***************************************************************************
+* Copyright 2009 Benjamin Kellermann, Stefanie Pötzsch                     *
+*                                                                          *
+* This file is part of dudle.                                              *
+*                                                                          *
+* Dudle is free software: you can redistribute it and/or modify it under   *
+* the terms of the GNU Affero General Public License as published by       *
+* the Free Software Foundation, either version 3 of the License, or        *
+* (at your option) any later version.                                      *
+*                                                                          *
+* Dudle is distributed in the hope that it will be useful, but WITHOUT ANY *
+* WARRANTY; without even the implied warranty of MERCHANTABILITY or        *
+* FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public     *
+* License for more details.                                                *
+*                                                                          *
+* You should have received a copy of the GNU Affero General Public License *
+* along with dudle.  If not, see <http://www.gnu.org/licenses/>.           *
+***************************************************************************/
+
+a, a:visited {
+color:#36c;
+text-decoration:none;
+}
+	
+a:hover, a:active {
+color:#36c;
+text-decoration:underline;
+}
+
+td.ayes, td.bmaybe, td.cno { cursor:default;}
+td.ayes, td.input-ayes, input.choosen  { background-color:#9C6}
+td.cno, td.input-cno { background-color:#FC9 }
+td.bmaybe, td.input-bmaybe { background-color:#FF6}
+td.undecided { background-color:#DDD }
+
+td.checkboxes {
+	background-color: #FFF;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+table.checkboxes{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+label { cursor: pointer; }
+
+td.name {
+	text-align:right;
+}
+
+#active, #activedeletebutton{
+	background-color:#36c;
+}
+
+th.weekday{
+	width: 2.5em;
+}
+
+input.navigation, input.disabled, input.choosen, input.notchoosen {
+	border-width: 1px; 
+	border-style: solid;
+	border-color: black;
+	padding: 0px;
+	cursor: pointer;
+	width: 100%;
+}
+
+input.navigation {
+	background-color: #EEE;
+	border: none;
+}
+
+input.disabled { background-color:#eee;color:#ccc}
+
+table { 
+	border: none; 
+}
+
+table.calendarday {
+	border-spacing: 2px;
+}
+
+table.calendarday form {
+	padding: 0px;
+	margin: 0px;
+}
+
+table.calendarday td {
+	padding: 0px;
+	margin: 0px;
+}
+
+table.calendarday td input{
+	margin: 0px;
+	padding: 1px;
+}
+
+div.undo{
+	text-align: center;
+	margin-top: 2em;
+}
+
+td.settingstable, table.settingstable td{
+	text-align: left;
+}
+table.settingstable td.label{
+	text-align: right;
+}
+
+td.historycomment{
+	text-align: left;
+}
+td {
+	vertical-align:middle;
+	text-align:center;
+	border-width: 0px;
+	padding-left: 3px;
+	padding-right: 3px;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	font-size:0.8em;
+	font-weight:bold;
+}
+
+tr#add_participant{
+	margin:5ex;
+	padding: 5ex;
+}
+
+tr.participantrow:hover {
+	background: #EEE;
+}
+
+tr.participantrow, tr#add_participant{ 
+	margin-top:5ex;
+	background-color:#fff;
+}
+	
+td.sum, tr#summary { 
+	margin-top:5ex;
+	background-color:#eee;
+}
+	
+td.polls {
+	text-align:left;
+}
+
+th { 
+	font-size:0.8em;
+	padding-left: 3px;
+	padding-right: 3px;
+	background-color: #EEE;
+	border:none;
+}
+
+td.date { 
+	color:#ccc;
+	text-align: left;
+	font-size:0.8em;
+	font-weight:bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+	background: #EEE;
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {
+	background: #fff;
+	padding: 2em;
+	color: #000;
+	border: solid 1px #000;
+	top: 0px;
+	margin-top: 0px;
+	margin-left: auto;
+	margin-right:auto;
+	width:auto;
+	display: table;
+	min-width: 55em;
+}
+
+.textcolumn{
+	max-width: 45em;
+}
+
+.shorttextcolumn{
+	max-width: 20em;
+}
+.hint{
+	font-size:small;
+}
+
+div#tabs{
+	text-align: center;
+}
+
+body#main, div#tabs ul{
+	margin-top: 2em;
+}
+
+div#tabs ul, p#history{
+	font-size: 0.8em;
+	font-weight:bold;
+}
+
+div#tabs ul{
+	margin-left: 0em;
+	margin-bottom: 0em;
+	padding: 0em;
+	list-style-type: none;
+}
+
+div#tabs li{
+	background: white;
+	border-width: 1px;
+	display: inline;
+}
+
+div#tabs a{
+	text-decoration:none;
+}
+
+li#active_tab{
+	border-style: solid solid none; 
+	padding-bottom: 1px;
+}
+
+li.nonactive_tab{ 
+	border-style: solid;
+	border-color:#CCC;
+	border-bottom:none;
+}
+
+li.nonactive_tab a:hover { 
+	background: #EEE;
+}
+
+li.separator_tab {
+	margin-left: 2em;
+}
+
+pre#configwarning {
+	font-family: "Courier New",Courier,monospace;
+	letter-spacing:0;
+	margin-top: -12ex;
+	line-height:95%;
+	margin-left: -2ex;
+}
+
+.warning, .error{
+	color: red;
+}
+
+h1 {
+	text-align:left;
+	font-size:1.4em;
+	font-weight:bold;
+	color:#000;
+	margin-bottom:1em;
+}
+
+h2 {
+	margin-top:1.5em;
+	text-align:left;
+	font-size:1.4em;
+	font-weight:bold;
+	color:#000;
+	margin-bottom:1em;
+}
+
+div.comment { 
+	margin-top: 1ex; 
+	line-height: 1.4em;
+}
+
+form#ac_participant, form#ac {
+	background: #EEE;
+}
+form#ac_participant, form#ac, form#ac_admin{
+	padding: 1em;
+}

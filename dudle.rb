@@ -82,22 +82,16 @@ class Dudle
 		end
 
 		
-		@css = [["default","dudle.css"],
-				    ["print"  ,"print.css"]]
+		@css = ["default", "classic", "print"].collect{|f| f + ".css"}
 		Dir.open("#{@basedir}/css/").each{|f|
 			if f =~ /\.css$/ 
-				name = ""
-				File.open("#{@basedir}/css/#{f}","r").each_line{|l|
-					name = l.scan(/\/\* Name: (.*) \*\/$/).flatten[0]
-					break
-				}
-				@css << [name,"css/#{f}"]
+				@css << "css/#{f}"
 			end
 		}
 		default = $cgi["css"]
 		default = $cgi.cookies["css"][0] if default == ""
-		@css.each{|title,href|
-			@html.add_css("#{@basedir}/#{href}",title,href == default)
+		@css.each{|href|
+			@html.add_css("#{@basedir}/#{href}",href.scan(/([^\/]*)\.css/).flatten[0] ,href == default)
 		}
 
 		@html << <<HEAD

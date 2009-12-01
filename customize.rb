@@ -73,7 +73,7 @@ $d.html.add_cookie("css",css,"/",Time.now + (1*60*60*24*365 * (css == "dudle.css
 $d << <<CSS
 <div id='config_stylesheet'>
 <h3>Stylesheet</h3>
-#{choosetable("Stylesheet settings",$d.css.collect{|name,href| [name,"css=#{href}"]},"css=#{css}")}
+#{choosetable("Stylesheet settings",$d.css.collect{|href| [href.scan(/([^\/]*)\.css/).flatten[0],"css=#{href}"]},"css=#{css}")}
 </div>
 CSS
 
