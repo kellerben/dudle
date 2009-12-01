@@ -32,15 +32,16 @@ else
 	$d = Dudle.new("History")
 end
 
-$d << "<h2>#{versiontitle}</h2>"
-$d << $d.table.to_html("",false)
+$d << <<HTML
+<h2>#{versiontitle}</h2>
+#{$d.table.to_html("",false)}
+<h2>History</h2>
+<div id='history'>
+#{$d.table.history_selectform($cgi.include?("revision") ? revno : nil, $cgi["history"])}
 
-$d << "<h2>History</h2>"
-$d << "<div id='history'>"
-$d << $d.table.history_selectform($cgi.include?("revision") ? revno : nil, $cgi["history"])
-
-$d << $d.table.history_to_html(revno, $cgi["history"])
-$d << "</div>"
+#{$d.table.history_to_html(revno, $cgi["history"])}
+</div>
+HTML
 
 $d.out($cgi)
 end

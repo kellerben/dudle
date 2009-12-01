@@ -40,10 +40,10 @@ $d.table.delete_column($cgi["deletecolumn"]) if $cgi.include?("deletecolumn")
 
 revno = VCS.revno
 
-$d << "<h2>Add and Remove Columns</h2>"
-
-# ADD/REMOVE COLUMN
-$d << $d.table.edit_column_htmlform($cgi["editcolumn"],revno)
+$d << <<HTML
+<h2>Add and Remove Columns</h2>
+#{$d.table.edit_column_htmlform($cgi["editcolumn"],revno)}
+HTML
 
 h = VCS.history
 urevs = h.undorevisions

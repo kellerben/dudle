@@ -46,15 +46,15 @@ $d.table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_co
 $d.html.add_atom("atom.cgi") if File.exists?("../atom.rb")
 
 # TABLE
-$d << <<TABLE
+$d << <<HTML
 <div id='polltable'>
 	<form method='post' action='.'>
 		#{$d.table.to_html($cgi['edituser'])}
 	</form>
 </div>
-TABLE
 
-$d << $d.table.comment_to_html
+#{$d.table.comment_to_html}
+HTML
 
 $d.out($cgi)
 end
