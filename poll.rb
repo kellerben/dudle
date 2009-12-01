@@ -216,15 +216,14 @@ INVITE
 				time,name,comment = c
 				ret += <<COMMENT
 <form method='post' action='.'>
-<div class='comment'>
-	<fieldset>
-		<legend>#{name} said on #{time.strftime("%d.%m, %H:%M")}
+<div class='textcolumn'>
+		<h3 class='comment'>
+			#{name} said on #{time.strftime("%d.%m, %H:%M")}
 			<input type='hidden' name='delete_comment' value='#{i}' />
 			&nbsp;
 			<input class='delete_comment_button' type='submit' value='delete' />
-		</legend>
+		</h3>
 		#{comment}
-	</fieldset>
 </div>
 </form>
 COMMENT
@@ -235,13 +234,10 @@ COMMENT
 		ret += <<ADDCOMMENT
 		<form method='post' action='.'>
 			<div class='comment' id='add_comment'>
-				<fieldset>
-					<legend>
-						<input value='Anonymous' type='text' name='commentname' size='9' /> says&nbsp;
-					</legend>
+					<input value='Anonymous' type='text' name='commentname' size='9' /> says&nbsp;
+					<br />
 					<textarea cols='50' rows='7' name='comment' ></textarea>
 					<br /><input type='submit' value='Submit Comment' />
-				</fieldset>
 			</div>
 		</form>
 ADDCOMMENT

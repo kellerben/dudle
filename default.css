@@ -188,6 +188,11 @@ html {
 	min-width: 55em;
 }
 
+.textcolumn, .shorttextcolumn{
+	text-align: justify;
+	line-height: 1.4em;
+}
+
 .textcolumn{
 	max-width: 45em;
 }
@@ -260,27 +265,27 @@ pre#configwarning {
 	color: red;
 }
 
-h1 {
-	text-align:left;
-	font-size:1.4em;
+h1, h2, h3 {
 	font-weight:bold;
 	color:#000;
-	margin-bottom:1em;
+	margin-bottom:.5ex;
+}
+h1{
+	text-align:center;
+	font-size:1.8em;
 }
 
 h2 {
-	margin-top:1.5em;
-	text-align:left;
-	font-size:1.4em;
-	font-weight:bold;
-	color:#000;
-	margin-bottom:1em;
+	font-size:1.6em;
+}
+h3 {
+	font-size:1.3em;
 }
 
-div.comment { 
-	margin-top: 1ex; 
-	line-height: 1.4em;
+.comment {
+	margin-top: 1.5em;
 }
+
 
 form#ac_participant, form#ac {
 	background: #EEE;
