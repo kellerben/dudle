@@ -156,19 +156,18 @@ html {
 	background: #CCCCD3;
 	color: black;
 }
-
-#main {
+#main{
+	margin-left: auto;
+	margin-right:auto; 
+	display:table;
+}
+#content {
 	background: white;
 	padding: 2em;
 	color: black;
 	border: solid 1px black;
 	top: 0px;
 	margin-top: 0px;
-	margin-left: auto;
-	margin-right:auto;
-	width:auto;
-	display: table;
-	min-width: 55em;
 }
 
 .textcolumn{
@@ -182,11 +181,7 @@ html {
 	font-size:small;
 }
 
-div#tabs{
-	text-align: center
-}
-
-body#main, div#tabs ul{
+div#tabs ul{
 	margin-top: 2em;
 }
 

@@ -99,14 +99,15 @@ class Dudle
 <div id='header1'></div>
 <div id='header2'></div>
 <div id='header3'></div>
-#{tabs(htmltitle)}
 <div id='main'>
+#{tabs(htmltitle)}
+<div id='content'>
 	<h1>#{@title}</h1>
 HEAD
 	end
 
 	def out(cgi)
-		@html << "</div></body>"
+		@html << "</div></div></body>"
 		@html.out(cgi)
 	end
 
