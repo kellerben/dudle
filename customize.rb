@@ -56,9 +56,9 @@ HEAD
 end
 
 
-a = [["Use normal strings","ascii"], 
-     ["Use special characters (#{UTFCHARS})","utf", "Use this options if you see the characters in the parenthesis."]]
-$d.html.add_cookie("utf","true","/",Time.now + (1*60*60*24*365 * (USEUTF ? 1 : -1 )))
+a = [["Use special characters (#{UTFCHARS})","utf", "Use this option if you see the characters in the parenthesis."],
+     ["Use only normal strings","ascii","Use this option if you have problems with some characters."]]
+$d.html.add_cookie("ascii","true","/",Time.now + (1*60*60*24*365 * (USEUTF ? -1 : 1 )))
 $d << <<CHARSET
 <div id='charset'>
 <h3>Charset</h3>

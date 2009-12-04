@@ -17,9 +17,13 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
-	USEUTF = true
-	
+USEUTF = true
+USEUTF = false if $cgi.user_agent =~ /.*MSIE [56]\..*/
+USEUTF = false if $cgi.cookies["ascii"][0]
+USEUTF = true  if $cgi.include?("utf")
+USEUTF = false if $cgi.include?("ascii") 
+
+if USEUTF
 	NOSORT      = CGI.escapeHTML('▾▴')
 	SORT        = CGI.escapeHTML('▴')
 	REVERSESORT = CGI.escapeHTML('▾')
@@ -40,8 +44,6 @@ if ($cgi.include?("utf") || $cgi.cookies["utf"][0]) && !$cgi.include?("ascii")
 
 	PASSWORDSTAR = CGI.escapeHTML("•")
 else
-	USEUTF = false
-	
 	NOSORT      = ''
 	SORT        = CGI.escapeHTML('^')
 	REVERSESORT = CGI.escapeHTML('reverse')
