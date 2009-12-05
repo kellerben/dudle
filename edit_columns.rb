@@ -38,6 +38,13 @@ end
 $d.table.edit_column($cgi["columnid"],$cgi["new_columnname"],$cgi) if $cgi.include?("new_columnname")
 $d.table.delete_column($cgi["deletecolumn"]) if $cgi.include?("deletecolumn")
 
+if $cgi.include?("done")
+		$d.html.header["status"] = "REDIRECT"
+		$d.html.header["Cache-Control"] = "no-cache"
+		$d.html.header["Location"] = "help.cgi"
+		$d << "All changes were saved sucessfully. <a href=\"help.cgi\">Proceed!</a>"
+else
+
 revno = VCS.revno
 
 $d << <<HTML
@@ -110,9 +117,10 @@ TD
 	}
 	$d << <<READY
 			<td>
-				<form method='get' action='help.cgi'>
+				<form method='post' action=''>
 					<div>
-						<input type='submit' value='Done' />
+						<input type='hidden' name='undo_revision' value='#{revno}' />
+						<input type='submit' name='done' value='Done' />
 					</div>
 				</form>
 			</td>
@@ -123,7 +131,7 @@ READY
 
 #$d << (urevs + rrevs).to_html(curundorev,"")
 
-
+end
 $d.out($cgi)
 end
 
