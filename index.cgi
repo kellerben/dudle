@@ -34,7 +34,11 @@ $d = Dudle.new("Home")
 if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 	POLLNAME=$cgi["create_poll"]
 	if $cgi["poll_url"] == ""
-		POLLURL = `pwgen -1`.chomp
+		if $cgi["create_poll"] =~ /^[\w\-_]*$/
+			POLLURL = $cgi["create_poll"]
+		else
+			POLLURL = `pwgen -1`.chomp
+		end
 	else
 		POLLURL=$cgi["poll_url"]
 	end
