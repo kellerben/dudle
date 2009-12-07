@@ -92,24 +92,16 @@ class TimePollHead
 	def col_size
 		@data.size
 	end
-	def get_title(columnid)
-		columnid
-	end
-	def each_columntitle
-		@data.sort.each{|day,time|
-			yield("#{day} #{time}")
-		}
-	end
-	def each_columnid
-		@data.sort.each{|day,time|
-			yield("#{day} #{time}")
-		}
-	end
+	
+	#	iterates over each column
+	#	column should be the internal representation
+	#	column.to_s should deliver humanreadable form
 	def each_column
-		@data.sort.each{|day,time|
-			yield("#{day} #{time}","#{day} #{time}")
+		@data.sort.each{|day|
+			yield(day.to_s)
 		}
 	end
+
 	def each_time
 		h = {}
 		@data.each{|ds| h[ds.time_to_s] = true }
@@ -125,16 +117,12 @@ class TimePollHead
 		ret
 	end
 
-	# returns internal representation of cgi-string
-	def cgi_to_id(field)
-		field
-	end
-
+	# column is in human readable form
 	# returns true if deletion sucessfull
-	def delete_column(columnid)
-		col = TimeString.from_s(columnid)
+	def delete_column(column)
+		col = TimeString.from_s(column)
 		if col.time 
-			ret = @data.delete(TimeString.from_s(columnid)) != nil
+			ret = @data.delete(TimeString.from_s(column)) != nil
 			@data << TimeString.new(col.date,nil) unless date_included?(col.date)
 			return ret
 		else
@@ -160,8 +148,8 @@ class TimePollHead
 	end
 
 	# returns parsed title
-	def edit_column(columnid, newtitle, cgi)
-		delete_column(columnid) if columnid != ""
+	def edit_column(column, newtitle, cgi)
+		delete_column(column) if column != ""
 		parsed_date = TimeString.new(newtitle, cgi.include?("columntime") ? cgi["columntime"] : nil)
 		@data << parsed_date
 		@data.uniq!
@@ -199,7 +187,7 @@ class TimePollHead
 
 		ret += "<th class='invisible' /></tr><tr><th><a href='?sort=name'>Name #{sortsymb(scols,"name")}</a></th>"
 		@data.sort.each{|date|
-			ret += "<th><a title='#{date}' href='?sort=#{CGI.escape(date.to_s + " ")}'>#{date.time_to_s} #{sortsymb(scols,date.to_s + " ")}</a></th>\n"
+			ret += "<th><a title='#{date}' href='?sort=#{CGI.escape(date.to_s)}'>#{date.time_to_s} #{sortsymb(scols,date.to_s)}</a></th>\n"
 		}
 		ret += "<th><a href='?'>Last Edit #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
 		ret

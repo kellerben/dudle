@@ -17,8 +17,6 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "digest/sha2"
-
 class PollHead
 	def initialize
 		@data = {}
@@ -27,47 +25,25 @@ class PollHead
 		@data.size
 	end
 
-	def get_id(columntitle)
-		if @data.include?(columntitle)
-			return Digest::SHA2.hexdigest("#{columntitle}#{@data[columntitle]}" + columntitle)
-		else
-			raise("no such column found: #{columntitle}")
-		end
-	end
-	def get_title(columnid)
-		@data.each_key{|k| return k if get_id(k) == columnid}
-		raise("no such id found: #{columnid}")
-	end
-	def each_columntitle
+	#	iterates over each column
+	#	column should be the internal representation
+	#	column.to_s should deliver humanreadable form
+	def each_column
 		@data.sort.each{|k,v|
 			yield(k)
 		}
 	end
-	def each_columnid
-		@data.sort.each{|k,v|
-			yield(get_id(k))
-		}
-	end
-	def each_column
-		@data.sort.each{|k,v|
-			yield(get_id(k),k)
-		}
-	end
 
-	# returns internal representation of cgi-string
-	def cgi_to_id(field)
-		field
-	end
-
+	# column is in human readable form
 	# returns true if deletion sucessfull
-	def delete_column(columnid)
-		@data.delete(get_title(columnid)) != nil
+	def delete_column(column)
+		@data.delete(column) != nil
 	end
 
 	# add new column if columnid = ""
 	# returns parsed title or false if parsed title == ""
-	def edit_column(columnid, newtitle, cgi)
-		delete_column(columnid) if columnid != ""
+	def edit_column(column, newtitle, cgi)
+		delete_column(column) if column != ""
 		parsedtitle = newtitle.strip
 
 		if parsedtitle != ""
@@ -98,7 +74,7 @@ class PollHead
 			<a href="?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}" title="edit">
 				#{EDIT}
 			</a>|
-			<a href="?deletecolumn=#{CGI.escapeHTML(CGI.escape(get_id(columntitle)))}" title="delete">
+			<a href="?deletecolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}" title="delete">
 				#{DELETE}
 			</a>
 		</small>
@@ -117,7 +93,7 @@ EDITDELETE
 			title = activecolumn
 			description = @data[title]
 			title = CGI.escapeHTML(title)
-			hiddeninput = "<input type='hidden' name='columnid' value=\"#{get_id(title)}\" />"
+			hiddeninput = "<input type='hidden' name='columnid' value=\"#{title}\" />"
 		end
 		return <<END
 <form method='post' action=''>

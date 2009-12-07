@@ -45,18 +45,15 @@ class Poll
 	end
 
 	def sort_data fields
-		parsedfields = fields.collect{|field| 
-			field == "timestamp" || field == "name" ? field : @head.cgi_to_id(field) 
-		}
-		if parsedfields.include?("name")
-			until parsedfields.pop == "name"
+		if fields.include?("name")
+			until fields.pop == "name"
 			end
 			@data.sort{|x,y|
-				cmp = x[1].compare_by_values(y[1],parsedfields) 
-				cmp == 0 ? x[0] <=> y[0] : cmp
+				cmp = x[1].compare_by_values(y[1],fields) 
+				cmp == 0 ? x[0].downcase <=> y[0].downcase : cmp
 			}
 		else
-			@data.sort{|x,y| x[1].compare_by_values(y[1],parsedfields) }
+			@data.sort{|x,y| x[1].compare_by_values(y[1],fields)}
 		end
 	end
 
@@ -80,8 +77,8 @@ class Poll
 				ret += participant
 				ret += "<span class='edituser'> <sup>#{EDIT}</sup></span></a>" if showparticipation
 				ret += "</td>\n"
-				@head.each_column{|columnid,columntitle|
-					klasse = poll[columnid]
+				@head.each_column{|column|
+					klasse = poll[column]
 					case klasse
 					when nil
 						value = UNKNOWN
@@ -93,7 +90,7 @@ class Poll
 					when MAYBEVAL
 						value = MAYBE
 					end
-					ret += "<td class='#{klasse}' title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(columntitle.to_s)}\">#{value}</td>\n"
+					ret += "<td class='#{klasse}' title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(column.to_s)}\">#{value}</td>\n"
 				}
 				ret += "<td class='date'>#{poll['timestamp'].strftime('%d.%m,&nbsp;%H:%M')}</td>"
 				ret += "</tr>\n"
@@ -106,13 +103,13 @@ class Poll
 
 		# SUMMARY
 		ret += "<tr id='summary'><td class='name'>total</td>\n"
-		@head.each_columnid{|columnid|
+		@head.each_column{|column|
 			yes = 0
 			undecided = 0
 			@data.each_value{|participant|
-				if participant[columnid] == YESVAL
+				if participant[column] == YESVAL
 					yes += 1
-				elsif !participant.has_key?(columnid) or participant[columnid] == MAYBEVAL
+				elsif !participant.has_key?(column) or participant[column] == MAYBEVAL
 					undecided += 1
 				end
 			}
@@ -162,10 +159,10 @@ INVITE
 	def participate_to_html(edituser)
 		checked = {}
 		if @data.include?(edituser)
-			@head.each_columnid{|k| checked[k] = @data[edituser][k]}
+			@head.each_column{|k| checked[k] = @data[edituser][k]}
 		else
 			edituser = $cgi.cookies["username"][0] unless @data.include?($cgi.cookies["username"][0])
-			@head.each_columnid{|k| checked[k] = NOVAL}
+			@head.each_column{|k| checked[k] = NOVAL}
 		end
 		ret = "<tr id='add_participant'>\n"
 		ret += "<td class='name'>
@@ -175,19 +172,19 @@ INVITE
 				name='add_participant'
 				value=\"#{edituser}\"/>"
 		ret += "</td>\n"
-		@head.each_column{|columnid,columntitle|
+		@head.each_column{|column|
 			ret += "<td class='checkboxes'><table summary='Input for one column' class='checkboxes'>"
 			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
 				ret += "<tr class='input-#{valbinary}'>
 					<td class='input-#{valbinary}'>
 						<input type='radio' 
 							value='#{valbinary}' 
-							id=\"add_participant_checked_#{CGI.escapeHTML(columnid.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\" 
-							name=\"add_participant_checked_#{CGI.escapeHTML(columnid.to_s)}\" 
-							title=\"#{CGI.escapeHTML(columntitle.to_s)}\" #{checked[columnid] == valbinary ? "checked='checked'":""}/>
+							id=\"add_participant_checked_#{CGI.escapeHTML(column.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\" 
+							name=\"add_participant_checked_#{CGI.escapeHTML(column.to_s)}\" 
+							title=\"#{CGI.escapeHTML(column.to_s)}\" #{checked[column] == valbinary ? "checked='checked'":""}/>
 					</td>
 					<td class='input-#{valbinary}'>
-						<label for=\"add_participant_checked_#{CGI.escapeHTML(columnid.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\">#{valhuman}</label>
+						<label for=\"add_participant_checked_#{CGI.escapeHTML(column.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\">#{valhuman}</label>
 					</td>
 			</tr>"
 			}
@@ -306,8 +303,8 @@ FORM
 			action = "added"
 		end
 		@data[htmlname] = {"timestamp" => Time.now }
-		@head.each_columnid{|columnid|
-			@data[htmlname][columnid] = agreed[columnid.to_s]
+		@head.each_column{|column|
+			@data[htmlname][column] = agreed[column.to_s]
 		}
 		store "Participant #{name.strip} #{action}"
 	end
@@ -344,19 +341,18 @@ FORM
 	###############################
 	# column related functions
 	###############################
-	def delete_column columnid
-		title = @head.get_title(columnid)
-		if @head.delete_column(columnid)
-			store "Column #{title} deleted"
+	def delete_column column
+		if @head.delete_column(column)
+			store "Column #{column} deleted"
 			return true
 		else
 			return false
 		end
 	end
 
-	def edit_column(oldcolumnid, newtitle, cgi)
-		parsedtitle = @head.edit_column(oldcolumnid, newtitle, cgi)
-		store "Column #{parsedtitle} #{oldcolumnid == "" ? "added" : "edited"}" if parsedtitle
+	def edit_column(oldcolumn, newtitle, cgi)
+		parsedtitle = @head.edit_column(oldcolumn, newtitle, cgi)
+		store "Column #{parsedtitle} #{oldcolumn == "" ? "added" : "edited"}" if parsedtitle
 	end
 
 	def edit_column_htmlform(activecolumn, revision)
@@ -411,7 +407,7 @@ class PollTest < Test::Unit::TestCase
 			2.times{|t|
 				@polls[type].edit_column("","2009-05-23 #{t+10}:00", {"columntime" => "#{t+10}:00","columndescription" => ""})
 			}
-			@polls[type].edit_column("","2009-05-23", {"columntime" => "foo","columndescription" => ""})
+			@polls[type].edit_column("","2009-05-23 foo", {"columntime" => "foo","columndescription" => ""})
 
 
 			add_participant(type,A,[Y,N,Y,N])
@@ -421,12 +417,12 @@ class PollTest < Test::Unit::TestCase
 		}
 	end
 	def test_sort
-		["normal","time"].each{|type|
+		["time","normal"].each{|type|
 			comment = "Test Type: #{type}"
-			assert_equal([A,B,C,D],@polls[type].sort_data("name").collect{|a| a[0]},comment)
-			assert_equal([A,B,D,C],@polls[type].sort_data("timestamp").collect{|a| a[0]},comment)
+			assert_equal([A,B,C,D],@polls[type].sort_data(["name"]).collect{|a| a[0]},comment)
+			assert_equal([A,B,D,C],@polls[type].sort_data(["timestamp"]).collect{|a| a[0]},comment)
 			assert_equal([B,C,D,A],@polls[type].sort_data([W,"name"]).collect{|a| a[0]},comment)
-			assert_equal([B,A,C,D],@polls[type].sort_data([Q,R,E]).collect{|a| a[0]},comment)
+			assert_equal([B,A,C,D],@polls[type].sort_data([Q,R,E]).collect{|a| a[0]},comment+ " " + [Q,R,E].join("; "))
 		}
 	end
 end

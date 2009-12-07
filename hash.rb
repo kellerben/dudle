@@ -18,6 +18,12 @@
 ############################################################################
 
 class Hash
+	####################################################
+	# compare self with other hash                     #
+	# in the order of fieldarray                       #
+	# {1=>a,2=>b}.compare_by_values({1=>c,2=>d},[2,1]) #
+	#  -> compares b,d and afterwards a,c              #
+	####################################################
 	def compare_by_values(other, fieldarray)
 		return  0 if fieldarray.size == 0
 		return  1 if  self[fieldarray[0]].nil?
