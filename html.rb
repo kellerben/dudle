@@ -38,7 +38,7 @@ class HTML
 	<title>#{@title}</title>
 HEAD
 
-		@css = [@css[0]] + @css[1..-1].sort
+		@css = [@css[0]] + @css[1..-1].sort unless @css.empty?
 		@css.each{|title,href|
 			ret += "<link rel='stylesheet' type='text/css' href='#{href}' title='#{title}'/>\n"
 			ret += "<link rel='stylesheet' type='text/css' href='#{href}' title='print' media='print' />\n" if title == "print"
