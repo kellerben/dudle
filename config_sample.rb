@@ -39,9 +39,7 @@ notice = <<NOTICE
 <div>
 	<h2>--verbose</h2>
 	Get the sourcecode with <a href="http://bazaar-vcs.org/">bazaar</a>:
-	<br />
-	bzr branch #{SITEURL} dudle
-	<br />
+	<pre>bzr branch #{SITEURL} dudle</pre>
 </div>
 NOTICE
 # Example 2: displays all available Polls
