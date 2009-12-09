@@ -19,7 +19,8 @@
 
 # Choose your favorite version control system
 # bzr and git is implemented
-# Warning: bzr is too slow!
+# Warning: bzr is slow!
+# Warning: git needs git >=1.6.5
 load "git.rb"
 
 # Change this if the url is not determined correctly
