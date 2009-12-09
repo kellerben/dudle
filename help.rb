@@ -28,7 +28,7 @@ $d = Dudle.new("Help")
 $d << <<END
 The link to your poll is:
 <pre>#{SITEURL}</pre>
-<a href='mailto:?subject=dudle%20link&amp;body=#{SITEURL}'>Send this link via email...</a>
+<a href='mailto:?subject=link%20to%20dudle%20poll%20about%20#{CGI.escapeHTML(CGI.escape($d.title).gsub("+","%20"))}&amp;body=#{SITEURL}'>Send this link via email...</a>
 <form method='get' action='.'>
 	<div>
 		<input type='submit' value='To the Vote interface' />

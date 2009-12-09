@@ -29,7 +29,7 @@ require "config"
 require "charset"
 
 class Dudle
-	attr_reader :html, :table, :urlsuffix, :css
+	attr_reader :html, :table, :urlsuffix, :css, :title
 	def tabs(active_tab)
 		ret = "<div id='tabs'><ul>"
 		tabs = []
