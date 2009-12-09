@@ -17,49 +17,55 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-# Choose your favorite version control system
-# bzr and git is implemented
-# Warning: bzr is too slow!
-load "git.rb"
+require "time"
+require "log"
 
-# Change this if the url is not determined correctly
-SITEURL = "http://#{$cgi.server_name}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
+class VCS
+	GITCMD="export LC_ALL=de_DE.UTF-8; git"
+	def VCS.init
+		`#{GITCMD} init`
+	end
 
-# add the htmlcode in the Variable NOTICE to the startpage
-# Example 1: displays a static text
-notice = <<NOTICE
-<div>
-	<h2>Examples</h2>
-	If you want to play around with the Tool, you may want to take a look at these two Example Polls:<br />
-	<a href='coffeebreak'>Event Schedule Poll</a><br />
-	<a href='coffee'>Normal Poll</a>
-</div>
+	def VCS.add file
+		`#{GITCMD} add #{file}`
+	end
 
-<div>
-	<h2>--verbose</h2>
-	Get the sourcecode with <a href="http://bazaar-vcs.org/">bazaar</a>:
-	<br />
-	bzr branch #{SITEURL} dudle
-	<br />
-</div>
-NOTICE
-# Example 2: displays all available Polls
-notice += <<NOTICE
-<h2>Available Polls</h2>
-<table summary='Available Polls'>
-	<tr>
-		<th>Poll</th><th>Last change</th>
-	</tr>
-NOTICE
-Dir.glob("*/data.yaml").sort_by{|f|
-	File.new(f).mtime
-}.reverse.collect{|f| f.gsub(/\/data\.yaml$/,'') }.each{|site|
-	notice += <<NOTICE
-<tr>
-	<td class='polls'><a href='./#{CGI.escapeHTML(site).gsub("'","%27")}/'>#{CGI.escapeHTML(site)}</a></td>
-	<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>
-</tr>
-NOTICE
-}
-notice += "</table>"
-NOTICE = notice
+	def VCS.revno
+		`#{GITCMD} log --oneline`.scan("\n").size
+	end
+
+	def VCS.cat revision, file
+		revs = `#{GITCMD} log --format="format:%H"`.scan(/^(.*)$/).flatten.reverse
+		`#{GITCMD} show #{revs[revision-1]}:#{file}`
+	end
+
+	def VCS.history
+		log = `#{GITCMD} log --format="format:%s|%ai"`.split("\n").reverse
+		ret = Log.new
+		log.each_with_index{|s,i|
+			a = s.scan(/^([^\|]*)(.*)$/).flatten
+			ret.add(i+1, Time.parse(a[1]), a[0])
+		}
+		ret
+	end
+
+	#FIXME
+	def VCS.longhistory dir
+		log = `#{GITCMD} log -r -10.. "#{dir}"`.split("-"*60)
+		log.collect!{|s| s.scan(/\nrevno: (.*)\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
+		log.shift
+		log.collect!{|r,t,c| [r.to_i,Time.parse(t),c]}
+	end
+
+	def VCS.commit comment
+		tmpfile = "/tmp/commitcomment.#{rand(10000)}"
+		File.open(tmpfile,"w"){|f|
+			f<<comment
+		}
+		ret = `#{GITCMD} commit -a -F #{tmpfile}`
+		File.delete(tmpfile)
+		ret
+	end
+end
+
+
