@@ -56,17 +56,19 @@ class PollHead
 
 	def to_html(scols, showeditbuttons = false,activecolumn = nil)
 		def sortsymb(scols,col)
-			scols.include?(col) ? SORT : NOSORT
+			return <<SORTSYMBOL
+<span class='sortsymb'> #{scols.include?(col) ? SORT : NOSORT}</span>
+SORTSYMBOL
 		end
 		ret = "<tr>"
-		ret += "<th><a href='?sort=name'>Name #{sortsymb(scols,"name")}</a></th>\n" unless showeditbuttons
+		ret += "<th><a href='?sort=name'>Name#{sortsymb(scols,"name")}</span></a></th>\n" unless showeditbuttons
 		@data.sort.each{|columntitle,columndescription|
 			ret += "<th"
 			ret += " id='active' " if activecolumn == columntitle
 			ret += ">"
 			ret += "<a title=\"#{columndescription}\" href=\"?sort=#{CGI.escapeHTML(CGI.escape(columntitle))}\">" unless showeditbuttons
 			ret += "#{CGI.escapeHTML(columntitle)}"
-			ret += " #{sortsymb(scols,columntitle)}</a>" unless showeditbuttons
+			ret += "#{sortsymb(scols,columntitle)}</a>" unless showeditbuttons
 			if showeditbuttons
 				ret += <<EDITDELETE
 	<div>
@@ -83,7 +85,7 @@ EDITDELETE
 			end
 			ret += "</th>"
 		}
-		ret += "<th><a href='?'>Last Edit #{sortsymb(scols,"timestamp")}</a></th>\n" unless showeditbuttons
+		ret += "<th><a href='?'>Last Edit#{sortsymb(scols,"timestamp")}</a></th>\n" unless showeditbuttons
 		ret += "</tr>\n"
 		ret
 	end
