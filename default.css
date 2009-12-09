@@ -28,8 +28,8 @@ text-decoration:none;
 }
 	
 a:hover, a:active {
-color:#36c;
-text-decoration:underline;
+	color:#36c;
+	text-decoration:underline;
 }
 
 td.ayes, td.bmaybe, td.cno { cursor:default;}
@@ -55,8 +55,8 @@ td.name {
 	text-align:right;
 }
 
-#active, #activedeletebutton{
-	background-color:#36c;
+#active {
+	background-color:#CCF;
 }
 
 th.weekday{

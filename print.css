@@ -32,7 +32,7 @@ td.name a,td.name a:visited {
 	color: black;
 }
 
-#active, #activedeletebutton{
+#active {
 	background-color:#A00;
 }
 
