@@ -259,7 +259,7 @@ END
 	<form method='post' action=''>
 		<div>
 			<input class='#{klasse}' type='submit' value='#{d.day}' />
-			<input type='hidden' name='#{varname}' value='#{startdate.strftime("%Y-%m")}-#{d.day}' />
+			<input type='hidden' name='#{varname}' value='#{startdate.strftime("%Y-%m")}-#{d.day.to_s.rjust(2,"0")}' />
 			<input type='hidden' name='add_remove_column_month' value='#{startdate.strftime("%Y-%m")}' />
 			<input type='hidden' name='undo_revision' value='#{revision}' />
 		</div>
