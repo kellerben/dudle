@@ -150,7 +150,7 @@ class TimePollHead
 	# returns parsed title
 	def edit_column(column, newtitle, cgi)
 		delete_column(column) if column != ""
-		parsed_date = TimeString.new(newtitle, cgi.include?("columntime") ? cgi["columntime"] : nil)
+		parsed_date = TimeString.new(newtitle, cgi["columntime"] != "" ? cgi["columntime"] : nil)
 		@data << parsed_date
 		@data.uniq!
 		parsed_date.to_s
