@@ -29,6 +29,8 @@ if $cgi.include?("add_participant")
 	$d.table.add_participant("",$cgi["add_participant"],{})
 end
 
+$d.wizzard_redirect
+
 $d << <<TABLE
 	<h2>Invite Participants</h2>
 	<form method='post' action=''>
@@ -36,6 +38,6 @@ $d << <<TABLE
 	</form>
 TABLE
 
-$d.out($cgi)
+$d.out
 end
 

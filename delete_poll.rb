@@ -51,7 +51,7 @@ if $cgi.include?("confirmnumber")
 	</ul>
 </div>
 SUCCESS
-		$d.out($cgi)
+		$d.out
 		exit
 	else
 		hint = <<HINT
@@ -93,6 +93,6 @@ $d.html << <<TABLE
 	</form>
 TABLE
 
-$d.out($cgi)
+$d.out
 
 end

@@ -36,13 +36,9 @@ class Dudle
 		tabs << ["Home",@basedir]
 		if @is_poll
 			tabs << ["",""]
-			tabs << ["Poll","."]
-			tabs << ["History","history.cgi"]
-			tabs << ["Help","help.cgi"]
+			tabs += @usertabs
 			tabs << ["",""]
-			tabs << ["Edit Columns","edit_columns.cgi"]
-			tabs << ["Invite Participants","invite_participants.cgi"]
-			tabs << ["Access Control","access_control.cgi"]
+			tabs += @configtabs
 			tabs << ["Delete Poll","delete_poll.cgi"]
 			tabs << ["",""]
 		end
@@ -61,25 +57,39 @@ class Dudle
 		ret
 	end
 
-	def initialize(htmltitle, revision=nil)
+	def initialize(tabtitle, revision=nil)
+		@cgi = $cgi
+		@tabtitle = tabtitle
 		if File.exists?("data.yaml") && !File.stat("data.yaml").directory?
 			@is_poll = true
 			@basedir = ".." 
-			if revision
-				@table = YAML::load(VCS.cat(revision, "data.yaml"))
-			else
-				@table = YAML::load_file("data.yaml")
-			end
+			@revision = revision || VCS.revno
+			@table = YAML::load(VCS.cat(@revision, "data.yaml"))
 			@urlsuffix = File.basename(File.expand_path("."))
 			@title = @table.name
-			@html = HTML.new("dudle - #{@title} - #{htmltitle}")
+			@html = HTML.new("dudle - #{@title} - #{@tabtitle}")
 			@html.header["Cache-Control"] = "no-cache"
+			# set-up tabs
+			@usertabs = [
+				["Poll","."],
+				["History","history.cgi"]
+			]
+			@configtabs = [
+				["Edit Columns","edit_columns.cgi"],
+				["Invite Participants","invite_participants.cgi"],
+				["Access Control","access_control.cgi"],
+				["Overview","overview.cgi"]
+			]
+			confignames = @configtabs.collect{|name,file| name}
+			@is_config = confignames.include?(@tabtitle)
+			@wizzardindex = confignames.index(@tabtitle) if @is_config
 		else
 			@is_poll = false
 			@basedir = "."
 			@title = "dudle"
 			@html = HTML.new(@title)
 		end
+
 
 		
 		@css = ["default", "classic", "print"].collect{|f| f + ".css"}
@@ -100,15 +110,51 @@ class Dudle
 <div id='header2'></div>
 <div id='header3'></div>
 <div id='main'>
-#{tabs(htmltitle)}
+#{tabs(@tabtitle)}
 <div id='content'>
 	<h1>#{@title}</h1>
 HEAD
 	end
 
-	def out(cgi)
-		@html << "</div></div></body>"
-		@html.out(cgi)
+	def wizzard_nav
+		ret = "<div id='wizzard_navigation'><table><tr>"
+		[["Previous",@wizzardindex == 0],
+		 ["Next",@wizzardindex >= @configtabs.size()-2],
+		 ["Finish",@wizzardindex == @configtabs.size()-1]].each{|button,disabled|
+			ret += <<READY
+				<td>
+					<form method='post' action=''>
+						<div>
+							<input type='hidden' name='undo_revision' value='#{@revision}' />
+							<input type='submit' #{disabled ? "disabled='disabled'" : ""} name='#{button}' value='#{button}' />
+						</div>
+					</form>
+				</td>
+READY
+		}
+		ret += "</tr></table></div>"
+	end
+
+	def wizzard_redirect
+		[["Previous",@wizzardindex-1],
+		 ["Next",@wizzardindex+1],
+		 ["Finish",@configtabs.size()-1]].each{|action,linkindex|
+			if $cgi.include?(action)
+				@html.header["status"] = "REDIRECT"
+				@html.header["Cache-Control"] = "no-cache"
+				@html.header["Location"] = @configtabs[linkindex][1]
+				@html << "All changes were saved sucessfully. <a href=\"#{@configtabs[linkindex][1]}\">Proceed!</a>"
+				out
+				exit
+			end
+		}
+	end
+
+	def out
+		@html << wizzard_nav if @is_config && @wizzardindex != @configtabs.size() -1
+		@html << "</div>"
+		@html << "</div></body>"
+		@html.out(@cgi)
 	end
 
 	def <<(htmlbodytext)

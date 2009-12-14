@@ -162,8 +162,9 @@ if $cgi.include?("ac_user")
 	end
 end
 
-unless $d.html.header["status"] == "REDIRECT"
+$d.wizzard_redirect
 
+if $d.html.header["status"] != "REDIRECT"
 
 $d.html << "<h2>Change Access Control Settings</h2>"
 
@@ -221,5 +222,5 @@ AC
 
 end
 
-$d.out($cgi)
+$d.out
 end

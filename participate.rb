@@ -56,5 +56,5 @@ $d << <<HTML
 #{$d.table.comment_to_html}
 HTML
 
-$d.out($cgi)
+$d.out
 end

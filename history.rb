@@ -43,5 +43,5 @@ $d << <<HTML
 </div>
 HTML
 
-$d.out($cgi)
+$d.out
 end

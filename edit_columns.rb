@@ -28,8 +28,7 @@ revbeforeedit = VCS.revno
 if $cgi.include?("undo_revision") && $cgi["undo_revision"].to_i < revbeforeedit
 	undorevision = $cgi["undo_revision"].to_i
 	$d = Dudle.new("Edit Columns",undorevision)
-	comment = "Reverted Poll" 
-	comment = "Redo changes" if $cgi.include?("redo")
+	comment = $cgi.include?("redo") ? "Redo changes" : "Reverted Poll" 
 	$d.table.store("#{comment} to version #{undorevision}")
 else
 	$d = Dudle.new("Edit Columns")
@@ -38,12 +37,7 @@ end
 $d.table.edit_column($cgi["columnid"],$cgi["new_columnname"],$cgi) if $cgi.include?("new_columnname")
 $d.table.delete_column($cgi["deletecolumn"]) if $cgi.include?("deletecolumn")
 
-if $cgi.include?("done")
-		$d.html.header["status"] = "REDIRECT"
-		$d.html.header["Cache-Control"] = "no-cache"
-		$d.html.header["Location"] = "help.cgi"
-		$d << "All changes were saved sucessfully. <a href=\"help.cgi\">Proceed!</a>"
-else
+$d.wizzard_redirect
 
 revno = VCS.revno
 
@@ -115,23 +109,14 @@ UNDOREDOREADY
 			</td>
 TD
 	}
-	$d << <<READY
-			<td>
-				<form method='post' action=''>
-					<div>
-						<input type='hidden' name='undo_revision' value='#{revno}' />
-						<input type='submit' name='done' value='Done' />
-					</div>
-				</form>
-			</td>
+	$d << <<END
 		</tr>
 	</table>
 </div>
-READY
+END
 
 #$d << (urevs + rrevs).to_html(curundorev,"")
 
-end
-$d.out($cgi)
+$d.out
 end
 

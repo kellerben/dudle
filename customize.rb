@@ -134,7 +134,7 @@ $d << <<CHARSET
 </div>
 CHARSET
 
-$d.out($cgi)
+$d.out
 end
 
 
