@@ -77,7 +77,7 @@ class Poll
 				ret += participant
 				ret += "<span class='edituser'> <sup>#{EDIT}</sup></span></a>" if showparticipation
 				ret += "</td>\n"
-				@head.each_column{|column|
+				@head.columns.each{|column|
 					klasse = poll[column]
 					case klasse
 					when nil
@@ -103,7 +103,7 @@ class Poll
 
 		# SUMMARY
 		ret += "<tr id='summary'><td class='name'>total</td>\n"
-		@head.each_column{|column|
+		@head.columns.each{|column|
 			yes = 0
 			undecided = 0
 			@data.each_value{|participant|
@@ -159,10 +159,10 @@ INVITE
 	def participate_to_html(edituser)
 		checked = {}
 		if @data.include?(edituser)
-			@head.each_column{|k| checked[k] = @data[edituser][k]}
+			@head.columns.each{|k| checked[k] = @data[edituser][k]}
 		else
 			edituser = $cgi.cookies["username"][0] unless @data.include?($cgi.cookies["username"][0])
-			@head.each_column{|k| checked[k] = NOVAL}
+			@head.columns.each{|k| checked[k] = NOVAL}
 		end
 		ret = "<tr id='add_participant'>\n"
 		ret += "<td class='name'>
@@ -172,7 +172,7 @@ INVITE
 				name='add_participant'
 				value=\"#{edituser}\"/>"
 		ret += "</td>\n"
-		@head.each_column{|column|
+		@head.columns.each{|column|
 			ret += "<td class='checkboxes'><table summary='Input for one column' class='checkboxes'>"
 			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
 				ret += "<tr class='input-#{valbinary}'>
@@ -303,7 +303,7 @@ FORM
 			action = "added"
 		end
 		@data[htmlname] = {"timestamp" => Time.now }
-		@head.each_column{|column|
+		@head.columns.each{|column|
 			@data[htmlname][column] = agreed[column.to_s]
 		}
 		store "Participant #{name.strip} #{action}"

@@ -25,13 +25,11 @@ class PollHead
 		@data.size
 	end
 
-	#	iterates over each column
+	# returns a sorted array of all columns
 	#	column should be the internal representation
 	#	column.to_s should deliver humanreadable form
-	def each_column
-		@data.sort.each{|k,v|
-			yield(k)
-		}
+	def columns
+		@data.keys.sort
 	end
 
 	# column is in human readable form

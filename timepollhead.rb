@@ -93,13 +93,11 @@ class TimePollHead
 		@data.size
 	end
 	
-	#	iterates over each column
+	# returns a sorted array of all columns
 	#	column should be the internal representation
 	#	column.to_s should deliver humanreadable form
-	def each_column
-		@data.sort.each{|day|
-			yield(day.to_s)
-		}
+	def columns
+		@data.sort.each.collect{|day| day.to_s}
 	end
 
 	def each_time
