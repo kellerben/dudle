@@ -37,7 +37,7 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 		createnotice = "Please enter a descriptive title."
 	else
 		if $cgi["poll_url"] == ""
-			if POLLTITLE =~ /^[\w\-_]*$/
+			if POLLTITLE =~ /^[\w\-_]*$/ && !File.exist?(POLLTITLE)
 				POLLURL = POLLTITLE
 			else
 				POLLURL = `pwgen -1`.chomp
