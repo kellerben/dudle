@@ -244,7 +244,7 @@ END
 			ret += "<td></td>"
 		}
 		d = startdate
-		while (d.month == startdate.month) do
+		while true do
 			klasse = "notchoosen"
 			varname = "new_columnname"
 			klasse = "disabled" if d < Date.today
@@ -264,8 +264,9 @@ END
 	</form>
 </td>
 TD
-			ret += "</tr><tr>\n" if d.wday == 0
 			d = d.next
+			break if d.month != startdate.month
+			ret += "</tr><tr>\n" if d.wday == 1
 		end
 		ret += <<END
 </tr></table>
