@@ -193,16 +193,17 @@ html {
 }
 
 .textcolumn, .shorttextcolumn{
-	text-align: justify;
 	line-height: 1.4em;
 }
 
 .textcolumn{
+	text-align: left;
 	max-width: 45em;
 }
 
 .shorttextcolumn{
-	max-width: 20em;
+	text-align: justify;
+	max-width: 18em;
 }
 .hint{
 	font-size:small;

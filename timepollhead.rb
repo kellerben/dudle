@@ -215,7 +215,11 @@ class TimePollHead
 			startdate = Date.parse("#{Date.today.year}-#{Date.today.month}-1")
 		end
 		ret = <<END
+
 <table summary='edit column'><tr><td style="vertical-align:top">
+<div class='shorttextcolumn'>
+Click on the dates to add or remove columns.
+</div>
 <table class='calendarday' summary='The day to vote for.'><tr>
 END
 		def navi val,curmonth,revision
@@ -279,7 +283,14 @@ END
 		###########################
 		ret += "<td style='vertical-align:top'>"
 		if col_size > 0
-		ret += "<table class='calendarday' summary='The concrete timeslot'><tr>"
+		ret += <<END
+<div class='shorttextcolumn'>
+Optional:<br/>
+Enter a concrete value as start time.
+</div>
+<table class='calendarday' summary='The concrete timeslot'>
+<tr>
+END
 
 		head_count("%Y-%m",true).each{|title,count|
 			year,month = title.split("-").collect{|e| e.to_i}
