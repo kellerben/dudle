@@ -32,41 +32,45 @@ end
 $d = Dudle.new("Home")
 
 if $cgi.include?("create_poll") && $cgi.include?("poll_url")
-	POLLNAME=$cgi["create_poll"]
-	if $cgi["poll_url"] == ""
-		if $cgi["create_poll"] =~ /^[\w\-_]*$/
-			POLLURL = $cgi["create_poll"]
-		else
-			POLLURL = `pwgen -1`.chomp
-		end
+	POLLTITLE=$cgi["create_poll"]
+	if POLLTITLE == ""
+		createnotice = "Please enter a descriptive title."
 	else
-		POLLURL=$cgi["poll_url"]
-	end
+		if $cgi["poll_url"] == ""
+			if POLLTITLE =~ /^[\w\-_]*$/
+				POLLURL = POLLTITLE
+			else
+				POLLURL = `pwgen -1`.chomp
+			end
+		else
+			POLLURL=$cgi["poll_url"]
+		end
 
 
-	if !(POLLURL =~ /^[\w\-_]*$/)
-		createnotice = "Custom address may only contain letters, numbers, and dashes."
-	elsif File.exist?(POLLURL)
-		createnotice = "A Poll with this address already exists."
-	else Dir.mkdir(POLLURL)
-		Dir.chdir(POLLURL)
-		VCS.init
-		File.symlink("../participate.rb","index.cgi")
-		VCS.add("index.cgi")
-		["atom","customize", "history", "overview", "edit_columns","access_control", "delete_poll", "invite_participants"].each{|f|
-			File.symlink("../#{f}.rb","#{f}.cgi")
-			VCS.add("#{f}.cgi")
-		}
-		["data.yaml",".htaccess",".htdigest"].each{|f|
-			File.open(f,"w").close
-			VCS.add(f)
-		}
-		Poll.new(POLLNAME,$cgi["poll_type"])
-		Dir.chdir("..")
-		$d.html.header["status"] = "REDIRECT"
-		$d.html.header["Cache-Control"] = "no-cache"
-		$d.html.header["Location"] = SITEURL + POLLURL+ "/edit_columns.cgi"
-		$d << "The poll was created successfully. The link to your new poll is:<br /><a href=\"#{POLLURL}\">#{POLLURL}</a>"
+		if !(POLLURL =~ /^[\w\-_]*$/)
+			createnotice = "Custom address may only contain letters, numbers, and dashes."
+		elsif File.exist?(POLLURL)
+			createnotice = "A Poll with this address already exists."
+		else Dir.mkdir(POLLURL)
+			Dir.chdir(POLLURL)
+			VCS.init
+			File.symlink("../participate.rb","index.cgi")
+			VCS.add("index.cgi")
+			["atom","customize", "history", "overview", "edit_columns","access_control", "delete_poll", "invite_participants"].each{|f|
+				File.symlink("../#{f}.rb","#{f}.cgi")
+				VCS.add("#{f}.cgi")
+			}
+			["data.yaml",".htaccess",".htdigest"].each{|f|
+				File.open(f,"w").close
+				VCS.add(f)
+			}
+			Poll.new(POLLTITLE,$cgi["poll_type"])
+			Dir.chdir("..")
+			$d.html.header["status"] = "REDIRECT"
+			$d.html.header["Cache-Control"] = "no-cache"
+			$d.html.header["Location"] = SITEURL + POLLURL+ "/edit_columns.cgi"
+			$d << "The poll was created successfully. The link to your new poll is:<br /><a href=\"#{POLLURL}\">#{POLLURL}</a>"
+		end
 	end
 end
 
@@ -77,7 +81,7 @@ unless $d.html.header["status"] == "REDIRECT"
 <form method='post' action='.'>
 <table  class='settingstable' summary='Create a new Poll'>
 <tr>
-	<td class='label'><label for="poll_name">Name:</label></td>
+	<td class='label'><label for="poll_name">Title:</label></td>
 	<td><input id="poll_name" size='40' type='text' name='create_poll' value="#{CGI.escapeHTML($cgi["create_poll"])}" /></td>
 </tr>
 <tr>
