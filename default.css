@@ -59,10 +59,6 @@ td.name {
 	background-color:#CCF;
 }
 
-th.weekday{
-	min-width: 2.5em;
-}
-
 input.navigation, input.disabled, input.choosen, input.notchoosen {
 	border-width: 1px; 
 	border-style: solid;
@@ -85,6 +81,12 @@ table {
 
 table.calendarday {
 	border-spacing: 2px;
+}
+
+
+table.calendarday th, table.calendarday td{
+	min-width: 2em;
+	height: 2em;
 }
 
 table.calendarday form {
