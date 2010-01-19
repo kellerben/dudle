@@ -83,6 +83,9 @@ table.calendarday {
 	border-spacing: 2px;
 }
 
+div#AddRemoveColumndaysDescription{
+	max-width: 12em; 
+}
 
 table.calendarday th, table.calendarday td{
 	min-width: 2em;

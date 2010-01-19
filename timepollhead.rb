@@ -213,7 +213,7 @@ class TimePollHead
 		ret = <<END
 
 <table style='width:100%' summary='edit column'><tr><td style="vertical-align:top">
-<div class='shorttextcolumn'>
+<div id='AddRemoveColumndaysDescription' class='shorttextcolumn'>
 Click on the dates to add or remove columns.
 </div>
 <table class='calendarday' summary='The day to vote for.'><tr>
