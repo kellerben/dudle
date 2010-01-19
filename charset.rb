@@ -62,4 +62,4 @@ else
 	PASSWORDSTAR = CGI.escapeHTML("*")
 end
 
-UTFCHARS = CGI.escapeHTML("✔✘↞←→↠✍✖•▾▴")
+UTFCHARS = CGI.escapeHTML("✔✘◀▶✍✖•▾▴")
