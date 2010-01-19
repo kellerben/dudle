@@ -212,7 +212,7 @@ class TimePollHead
 		end
 		ret = <<END
 
-<table summary='edit column'><tr><td style="vertical-align:top">
+<table style='width:100%' summary='edit column'><tr><td style="vertical-align:top">
 <div class='shorttextcolumn'>
 Click on the dates to add or remove columns.
 </div>
@@ -223,7 +223,7 @@ END
 			<th colspan='2' style='padding:0px'>
 				<form method='post' action=''>
 					<div>
-						<input class='navigation' style='font-weight:bold' type='submit' name='add_remove_column_month' value='#{val}' />
+						<input class='navigation' type='submit' name='add_remove_column_month' value='#{val}' />
 						<input type='hidden' name='add_remove_column_month' value='#{curmonth.strftime("%Y-%m")}' />
 						<input type='hidden' name='undo_revision' value='#{revision}' />
 					</div>
