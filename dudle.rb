@@ -100,6 +100,9 @@ class Dudle
 		}
 		default = $cgi["css"]
 		default = $cgi.cookies["css"][0] if default == ""
+		if $cgi.user_agent =~ /.*MSIE [567]\..*/
+			@css = [default ? default : "default.css"]
+		end
 		@css.each{|href|
 			@html.add_css("#{@basedir}/#{href}",href.scan(/([^\/]*)\.css/).flatten[0] ,href == default)
 		}
