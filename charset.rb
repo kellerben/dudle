@@ -17,13 +17,13 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-USEUTF = true
-USEUTF = false if $cgi.user_agent =~ /.*MSIE [56]\..*/
-USEUTF = false if $cgi.cookies["ascii"][0]
-USEUTF = true  if $cgi.include?("utf")
-USEUTF = false if $cgi.include?("ascii") 
+$USEUTF = true
+$USEUTF = false if $cgi.user_agent =~ /.*MSIE [56]\..*/
+$USEUTF = false if $cgi.cookies["ascii"][0]
+$USEUTF = true  if $cgi.include?("utf")
+$USEUTF = false if $cgi.include?("ascii") 
 
-if USEUTF
+if $USEUTF
 	NOSORT      = CGI.escapeHTML('▾▴')
 	SORT        = CGI.escapeHTML('▴')
 	REVERSESORT = CGI.escapeHTML('▾')

@@ -58,11 +58,11 @@ end
 
 a = [["Use special characters (#{UTFCHARS})","utf", "Use this option if you see the characters in the parenthesis."],
      ["Use only normal strings","ascii","Use this option if you have problems with some characters."]]
-$d.html.add_cookie("ascii","true","/",Time.now + (1*60*60*24*365 * (USEUTF ? -1 : 1 )))
+$d.html.add_cookie("ascii","true","/",Time.now + (1*60*60*24*365 * ($USEUTF ? -1 : 1 )))
 $d << <<CHARSET
 <div id='charset'>
 <h3>Charset</h3>
-#{choosetable("Charset settings",a,USEUTF ? "utf" : "ascii")}
+#{choosetable("Charset settings",a,$USEUTF ? "utf" : "ascii")}
 </div>
 CHARSET
 
