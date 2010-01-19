@@ -33,11 +33,10 @@ if USEUTF
 	MAYBE    = CGI.escapeHTML('?')
 	UNKNOWN  = CGI.escapeHTML("–")
 	CROSS    = CGI.escapeHTML('✘')
-	
-	YEARBACK     = CGI.escapeHTML("↞")
-	MONTHBACK    = CGI.escapeHTML("←")
-	MONTHFORWARD = CGI.escapeHTML("→")
-	YEARFORWARD  = CGI.escapeHTML("↠")
+
+	# Thanks to Antje for the symbols
+	MONTHBACK    = CGI.escapeHTML("◀")
+	MONTHFORWARD = CGI.escapeHTML("▶")
 
 	EDIT = CGI.escapeHTML("✍")
 	DELETE = CGI.escapeHTML("✖")
@@ -54,10 +53,8 @@ else
 	UNKNOWN  = CGI.escapeHTML("-")
 	CROSS    = CGI.escapeHTML('X')
 
-	YEARBACK     = CGI.escapeHTML("<<")
 	MONTHBACK    = CGI.escapeHTML("<")
 	MONTHFORWARD = CGI.escapeHTML(">")
-	YEARFORWARD  = CGI.escapeHTML(">>")
 
 	EDIT = CGI.escapeHTML("edit")
 	DELETE = CGI.escapeHTML("delete")

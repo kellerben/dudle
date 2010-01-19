@@ -198,14 +198,10 @@ class TimePollHead
 			else
 				olddate = $cgi.params["add_remove_column_month"][1]
 				case $cgi["add_remove_column_month"]
-				when CGI.unescapeHTML(YEARBACK)
-					startdate = Date.parse("#{olddate}-1")-365
 				when CGI.unescapeHTML(MONTHBACK)
 					startdate = Date.parse("#{olddate}-1")-1
 				when CGI.unescapeHTML(MONTHFORWARD)
 					startdate = Date.parse("#{olddate}-1")+31
-				when CGI.unescapeHTML(YEARFORWARD)
-					startdate = Date.parse("#{olddate}-1")+366
 				else
 					exit
 				end
@@ -224,10 +220,10 @@ Click on the dates to add or remove columns.
 END
 		def navi val,curmonth,revision
 			return <<END
-			<th style='padding:0px'>
+			<th colspan='2' style='padding:0px'>
 				<form method='post' action=''>
 					<div>
-						<input class='navigation' type='submit' name='add_remove_column_month' value='#{val}' />
+						<input class='navigation' style='font-weight:bold' type='submit' name='add_remove_column_month' value='#{val}' />
 						<input type='hidden' name='add_remove_column_month' value='#{curmonth.strftime("%Y-%m")}' />
 						<input type='hidden' name='undo_revision' value='#{revision}' />
 					</div>
@@ -235,9 +231,9 @@ END
 			</th>
 END
 		end
-		[YEARBACK,MONTHBACK].each{|val| ret += navi(val,startdate,revision)}
+		ret += navi(MONTHBACK,startdate,revision)
 		ret += "<th colspan='3'>#{startdate.strftime("%b %Y")}</th>"
-		[MONTHFORWARD, YEARFORWARD].each{|val| ret += navi(val,startdate,revision)}
+		ret += navi(MONTHFORWARD,startdate,revision)
 		 
 		ret += "</tr><tr>\n"
 
