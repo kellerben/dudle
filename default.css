@@ -60,7 +60,7 @@ td.name {
 }
 
 th.weekday{
-	width: 2.5em;
+	min-width: 2.5em;
 }
 
 input.navigation, input.disabled, input.choosen, input.notchoosen {
