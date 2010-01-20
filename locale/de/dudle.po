@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-01-20 19:18+0100\n"
-"PO-Revision-Date: 2010-01-20 17:36+0100\n"
+"POT-Creation-Date: 2010-01-20 22:12+0100\n"
+"PO-Revision-Date: 2010-01-20 22:13+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,69 +31,84 @@ msgstr ""
 "X-Poedit-Country: GERMANY\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: customize.cgi:31 customize.rb:31
+#: customize.cgi:31
+#: customize.rb:31
 msgid "Customize Personal Settings"
 msgstr "Persönliche Einstellungen anpassen"
 
-#: customize.cgi:32 customize.rb:32
+#: customize.cgi:32
+#: customize.rb:32
 msgid "You need cookies enabled in order to personalize your settings."
-msgstr ""
-"Ihr Browser muss cookies akzeptieren um persönliche Einstellungen dauerhaft "
-"vorzunehmen."
+msgstr "Ihr Browser muss Cookies akzeptieren um persönliche Einstellungen dauerhaft vorzunehmen."
 
-#: customize.cgi:39 customize.rb:39
+#: customize.cgi:39
+#: customize.rb:39
 msgid "Current Setting"
 msgstr "Momentane Einstellung"
 
-#: customize.cgi:40 customize.rb:40 pollhead.rb:99
+#: customize.cgi:40
+#: customize.rb:40
+#: pollhead.rb:99
 msgid "Description"
 msgstr "Beschreibung"
 
-#: customize.cgi:57 customize.rb:57
+#: customize.cgi:57
+#: customize.rb:57
 msgid "Use special characters"
 msgstr "Benutze spezielle Zeichen"
 
-#: customize.cgi:57 customize.rb:57
+#: customize.cgi:57
+#: customize.rb:57
 msgid "Use this option if you see the characters in the parenthesis."
-msgstr ""
-"Benutzen Sie diese Einstellung, wenn Sie die Zeichen in den Klammern lesen "
-"können."
+msgstr "Benutzen Sie diese Einstellung, wenn Sie die Zeichen in den Klammern lesen können."
 
-#: customize.cgi:58 customize.rb:58
+#: customize.cgi:58
+#: customize.rb:58
 msgid "Use only normal strings"
-msgstr "Benutze nur gewöhnliche Zeichen."
+msgstr "Benutze nur gewöhnliche Zeichen"
 
-#: customize.cgi:58 customize.rb:58
+#: customize.cgi:58
+#: customize.rb:58
 msgid "Use this option if you have problems with some characters."
-msgstr ""
-"Benutzen Sie diese Einstellung, wenn Probleme mit der Darstellung einiger "
-"Zeichen auftreten."
+msgstr "Benutzen Sie diese Einstellung, wenn Probleme mit der Darstellung einiger Zeichen auftreten."
 
-#: customize.cgi:61 customize.rb:61
+#: customize.cgi:61
+#: customize.rb:61
 msgid "Charset"
 msgstr "Zeichen"
 
-#: customize.cgi:70 customize.rb:70
+#: customize.cgi:70
+#: customize.rb:70
 msgid "Stylesheet"
 msgstr "Aussehen"
 
-#: customize.cgi:86 customize.rb:86
+#: customize.cgi:86
+#: customize.rb:86
 msgid "Default Username"
 msgstr "Voreingestellter Teilnehmername"
 
-#: customize.cgi:87 access_control.rb:74 customize.rb:87
+#: customize.cgi:87
+#: access_control.rb:74
+#: customize.rb:87
 msgid "Username:"
 msgstr "Teilnehmername:"
 
-#: customize.cgi:111 customize.rb:111
+#: customize.cgi:111
+#: customize.rb:111
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: customize.cgi:121 access_control.rb:121 customize.rb:121 poll.rb:201
+#: customize.cgi:121
+#: access_control.rb:121
+#: customize.rb:121
+#: poll.rb:201
 msgid "Save"
 msgstr "Speichern"
 
-#: customize.cgi:124 access_control.rb:117 customize.rb:124 delete_poll.rb:98
+#: customize.cgi:124
+#: access_control.rb:117
+#: customize.rb:124
+#: delete_poll.rb:98
 #: poll.rb:218
 msgid "Delete"
 msgstr "Löschen"
@@ -104,9 +119,7 @@ msgstr "Bitte geben Sie einen Titel für die Umfrage ein."
 
 #: index.cgi:51
 msgid "Custom address may only contain letters, numbers, and dashes."
-msgstr ""
-"Die spezielle eigene URL darf nur Buchstaben, Zahlen, Bindestrich und "
-"Unterstrich enthalten."
+msgstr "Die spezielle eigene URL darf nur Buchstaben, Zahlen, Bindestrich und Unterstrich enthalten."
 
 #: index.cgi:53
 msgid "A Poll with this address already exists."
@@ -114,8 +127,7 @@ msgstr "Eine Umfrage mit dieser URL existiert bereits."
 
 #: index.cgi:72
 msgid "The poll was created successfully. The link to your new poll is:"
-msgstr ""
-"Die Umfrage wurde erfolgreich erstellt. Die Adresse der Umfrage lautet:"
+msgstr "Die Umfrage wurde erfolgreich erstellt. Die Adresse der Umfrage lautet:"
 
 #: index.cgi:79
 msgid "Create New Poll"
@@ -158,12 +170,8 @@ msgid "repeat"
 msgstr "wiederholen"
 
 #: access_control.rb:114
-msgid ""
-"You have to remove the participant user before you can remove the "
-"administrator."
-msgstr ""
-"Der Benutzer „participant“ muss entfernt werden, bevor Sie den "
-"Administrator entfernen können."
+msgid "You have to remove the participant user before you can remove the administrator."
+msgstr "Der Benutzer „participant“ muss entfernt werden, bevor Sie den Administrator entfernen können."
 
 #: access_control.rb:139
 msgid "Only letters and digits are allowed in the username."
@@ -187,9 +195,7 @@ msgstr "Aktivieren"
 
 #: access_control.rb:183
 msgid "will be activated when at least an admin user is configured"
-msgstr ""
-"wird aktiviert, wenn ein Administrator (Benutzername: „admin“) "
-"konfiguriert wurde"
+msgstr "wird aktiviert, wenn ein Administrator (Benutzername: „admin“) konfiguriert wurde"
 
 #: access_control.rb:185
 msgid "Deactivate"
@@ -200,32 +206,20 @@ msgid "activated"
 msgstr "aktiviert"
 
 #: access_control.rb:188
-msgid ""
-"You have to remove all users before you can deactivate the access control "
-"settings."
-msgstr ""
-"Sie müssen alle Benutzer entfernen, bevor Sie die Zugriffskontrolle "
-"deaktivieren können."
+msgid "You have to remove all users before you can deactivate the access control settings."
+msgstr "Sie müssen alle Benutzer entfernen, bevor Sie die Zugriffskontrolle deaktivieren können."
 
 #: access_control.rb:192
-msgid ""
-"You will be asked for the password you entered here after pressing save!"
-msgstr ""
-"Nach dem Speichern werden Sie nach dem Benutzernamen und diesem Passwort "
-"gefragt!"
+msgid "You will be asked for the password you entered here after pressing save!"
+msgstr "Nach dem Speichern werden Sie nach dem Benutzernamen und diesem Passwort gefragt!"
 
 #: access_control.rb:195
-msgid ""
-"The user ‘admin’ has access to the vote as well as the configuration "
-"interface."
-msgstr ""
-"Der Benutzer „admin“ hat sowohl zur Abstimmungs- als auch zur "
-"Konfigurationsoberfläche Zugriff."
+msgid "The user ‘admin’ has access to the vote as well as the configuration interface."
+msgstr "Der Benutzer „admin“ hat sowohl zur Abstimmungs- als auch zur Konfigurationsoberfläche Zugriff."
 
 #: access_control.rb:201
 msgid "The user ‘participant’ has only access to the vote interface."
-msgstr ""
-"Der Benutzer „participant“ hat nur zur Abstimmungsoberfläche Zugriff."
+msgstr "Der Benutzer „participant“ hat nur zur Abstimmungsoberfläche Zugriff."
 
 #: access_control.rb:207
 msgid "Access control:"
@@ -252,14 +246,8 @@ msgid "The poll was deleted successfully!"
 msgstr "Die Umfrage wurde erfolgreich gelöscht!"
 
 #: delete_poll.rb:40
-msgid ""
-"If this was done by accident, please contact the administrator of the "
-"system. The poll can be recovered for an indeterministic amount of time, "
-"maybe it is already to late."
-msgstr ""
-"Wenn das ein Versehen war, kontaktieren Sie bitte umgehend den Administrator "
-"des Systems. Die Umfrage kann für einen unvorhersehbaren Zeitraum "
-"wiederhergestellt werden, vielleicht ist jetzt schon zu spät."
+msgid "If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterministic amount of time, maybe it is already to late."
+msgstr "Wenn das ein Versehen war, kontaktieren Sie bitte umgehend den Administrator des Systems. Die Umfrage kann für einen unvorhersehbaren Zeitraum wiederhergestellt werden, vielleicht ist jetzt schon zu spät."
 
 #: delete_poll.rb:41
 msgid "Things you can do now are"
@@ -299,8 +287,7 @@ msgstr "Das Löschen der gesamten Umfrage ist unwiederrufbar!"
 
 #: delete_poll.rb:97
 msgid "If you are sure in what you are doing, please type into the form"
-msgstr ""
-"Wenn Sie sich sicher sind, dann geben Sie bitte nachfolgenden Satz ein:"
+msgstr "Wenn Sie sich sicher sind, dann geben Sie bitte nachfolgenden Satz ein:"
 
 #: delete_poll.rb:97
 msgid "“"
@@ -326,15 +313,17 @@ msgstr "Personalisieren"
 msgid "Poll"
 msgstr "Umfrage"
 
-#: dudle.rb:81 history.rb:35
+#: dudle.rb:81
+#: history.rb:35
 msgid "History"
 msgstr "Versionen"
 
 #: dudle.rb:84
 msgid "Edit Columns"
-msgstr "Bearbeite Spalten"
+msgstr "Spalten bearbeiten"
 
-#: dudle.rb:85 invite_participants.rb:34
+#: dudle.rb:85
+#: invite_participants.rb:34
 msgid "Invite Participants"
 msgstr "Teilnehmer einladen"
 
@@ -346,15 +335,18 @@ msgstr "Zugriffskontrolle"
 msgid "Overview"
 msgstr "Übersicht"
 
-#: dudle.rb:135 dudle.rb:153
+#: dudle.rb:135
+#: dudle.rb:153
 msgid "Previous"
 msgstr "Zurück"
 
-#: dudle.rb:136 dudle.rb:154
+#: dudle.rb:136
+#: dudle.rb:154
 msgid "Next"
 msgstr "Weiter"
 
-#: dudle.rb:137 dudle.rb:155
+#: dudle.rb:137
+#: dudle.rb:155
 msgid "Finish"
 msgstr "Fertig"
 
@@ -370,15 +362,18 @@ msgstr "Weiter"
 msgid "Add and Remove Columns"
 msgstr "Spalten hinzufügen oder entfernen"
 
-#: edit_columns.rb:64 edit_columns.rb:83
+#: edit_columns.rb:64
+#: edit_columns.rb:83
 msgid "Delete column"
 msgstr "Lösche Spalte"
 
-#: edit_columns.rb:66 edit_columns.rb:81
+#: edit_columns.rb:66
+#: edit_columns.rb:81
 msgid "Add column"
 msgstr "Füge Spalte hinzu"
 
-#: edit_columns.rb:68 edit_columns.rb:85
+#: edit_columns.rb:68
+#: edit_columns.rb:85
 msgid "Edit column"
 msgstr "Bearbeite Spalte"
 
@@ -398,7 +393,8 @@ msgstr "Umfrage der Version"
 msgid "Current Poll"
 msgstr "Aktuelle Umfrage"
 
-#: history.rb:32 log.rb:111
+#: history.rb:32
+#: log.rb:111
 msgid "Version"
 msgstr "Version"
 
@@ -421,6 +417,10 @@ msgstr "Diese URL per E-Mail verschicken..."
 #: overview.rb:34
 msgid "To the Vote interface"
 msgstr "Zur Abstimmung"
+
+#: overview.rb:35
+msgid "Link to dudle poll about"
+msgstr "Dudle Umfrage über"
 
 #: poll.rb:76
 msgid "Edit user"
@@ -490,7 +490,8 @@ msgstr "Aktualisieren"
 msgid "Name"
 msgstr "Name"
 
-#: pollhead.rb:86 timepollhead.rb:190
+#: pollhead.rb:86
+#: timepollhead.rb:190
 msgid "Last Edit"
 msgstr "Letzte Änderung"
 
@@ -508,7 +509,7 @@ msgstr "Vorschau"
 
 #: timepollhead.rb:213
 msgid "Click on the dates to add or remove columns."
-msgstr "Klicken Sie auf ein Datum um es der Umfrage hinzuzufügen."
+msgstr "Klicken Sie auf ein Datum, um es der Umfrage hinzuzufügen."
 
 #: timepollhead.rb:282
 msgid "Optional:"
@@ -541,3 +542,4 @@ msgstr "Hinzufügen"
 #: timepollhead.rb:367
 msgid "e.g.: 09:30, morning, afternoon"
 msgstr "z.B.: 9:30, morgens, abends"
+

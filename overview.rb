@@ -32,10 +32,11 @@ $d << _("The link to your poll is:")
 
 mailstr = _("Send this link via email...")
 nextstr = _("To the Vote interface")
+subjectstr = _("Link to dudle poll about") + " " + $d.title
 
 $d << <<END
 <pre>#{SITEURL}</pre>
-<a href='mailto:?subject=link%20to%20dudle%20poll%20about%20#{CGI.escapeHTML(CGI.escape($d.title).gsub("+","%20"))}&amp;body=#{SITEURL}'>#{mailstr}</a>
+<a href='mailto:?subject=#{CGI.escapeHTML(CGI.escape(subjectstr).gsub("+","%20"))}&amp;body=#{SITEURL}'>#{mailstr}</a>
 <form method='get' action='.'>
 	<div style='margin-top:1ex'>
 		<input type='submit' value='#{nextstr}' />
