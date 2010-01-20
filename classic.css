@@ -60,8 +60,8 @@ th.weekday{
 	width: 2.5em;
 }
 
-input.choosen { background-color:#0F0; }
-input.navigation, input.disabled, input.choosen, input.notchoosen {
+input.chosen { background-color:#0F0; }
+input.navigation, input.disabled, input.chosen, input.notchosen {
 	border-width: 1px; 
 	border-style: solid;
 	border-color: black;

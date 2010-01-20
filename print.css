@@ -18,7 +18,7 @@
 ***************************************************************************/
 
 
-td.ayes, input.choosen  { background-color:#0F0; }
+td.ayes, input.chosen  { background-color:#0F0; }
 td.cno { background-color:#F00; }
 td.bmaybe { background-color:#FF0; }
 td.undecided { background-color:#DDD;color:#666 }
@@ -40,7 +40,7 @@ th.weekday{
 	width: 2.5em;
 }
 
-input.navigation, input.disabled, input.choosen, input.notchoosen {
+input.navigation, input.disabled, input.chosen, input.notchosen {
 	border-width: 1px; 
 	border-style: solid;
 	border-color: black;

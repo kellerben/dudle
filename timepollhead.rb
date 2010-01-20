@@ -100,12 +100,12 @@ class TimePollHead
 		@data.sort.each.collect{|day| day.to_s}
 	end
 
-	def each_time
+	def concrete_times
 		h = {}
 		@data.each{|ds| h[ds.time_to_s] = true }
 		h.keys.compact.sort{|a,b|
 			TimeString.new(Date.today,a) <=> TimeString.new(Date.today,b)
-		}.each{|k| yield(k)}
+		}
 	end
 	def date_included?(date)
 		ret = false
@@ -245,11 +245,11 @@ END
 		}
 		d = startdate
 		while true do
-			klasse = "notchoosen"
+			klasse = "notchosen"
 			varname = "new_columnname"
 			klasse = "disabled" if d < Date.today
 			if date_included?(d)
-				klasse = "choosen"
+				klasse = "chosen"
 				varname = "deletecolumn"
 			end
 			ret += <<TD
@@ -290,12 +290,13 @@ END
 <tr>
 END
 
+		ret += "<th class='invisible'></th>"
 		head_count("%Y-%m",true).each{|title,count|
 			year,month = title.split("-").collect{|e| e.to_i}
 			ret += "<th colspan='#{count}'>#{Date::ABBR_MONTHNAMES[month]} #{year}</th>\n"
 		}
 
-		ret += "</tr><tr>"
+		ret += "</tr><tr><th>" + _("Time") + "</th>"
 
 		head_count("%Y-%m-%d",true).each{|title,count|
 			ret += "<th>#{Date.parse(title).strftime('%a, %d')}</th>\n"
@@ -306,20 +307,28 @@ END
 
 		days = @data.sort.collect{|date| date.date }.uniq
 		
-		each_time{|time|
-			ret +="<tr>\n"
+		chosenstr = {
+			"chosen" => _("chosen"),
+			"notchosen" => _("notchosen"),
+			"disabled" => _("past")
+		}
+		times = []
+		(9..20).each{|i| times << "#{i.to_s.rjust(2,"0")}:00"}
+		times << concrete_times
+		times.flatten.compact.uniq.sort.each{|time|
+			ret +="<tr>\n<td>#{time}</td>"
 			days.each{|day|
 				timestamp = TimeString.new(day,time)
-				klasse = "notchoosen"
+				klasse = "notchosen"
 				klasse = "disabled" if timestamp < TimeString.now
-				klasse = "choosen" if @data.include?(timestamp)
+				klasse = "chosen" if @data.include?(timestamp)
 				ret += <<END
 <td>
 	<form method='post' action="">
 		<div>
 			<!--Timestamp: #{timestamp} -->
 END
-				if klasse == "choosen"
+				if klasse == "chosen"
 					ret += "<input type='hidden' name='deletecolumn' value='#{timestamp.to_s}' />"
 				else
 					ret += "<input type='hidden' name='new_columnname' value='#{timestamp.date}' />"
@@ -329,7 +338,8 @@ END
 				end
 
 				ret += <<END
-			<input title='#{timestamp}' class='#{klasse}' type='submit' name='columntime' value='#{timestamp.time_to_s}' />
+			<input title='#{timestamp}' class='#{klasse}' type='submit' value='#{chosenstr[klasse]}' />
+			<input type='hidden' name='columntime' value='#{timestamp.time_to_s}' />
 			<input type='hidden' name='add_remove_column_month' value='#{timestamp.date.strftime("%Y-%m")}' />
 			<input type='hidden' name='undo_revision' value='#{revision}' />
 		</div>
@@ -340,7 +350,7 @@ END
 			ret += "</tr>\n"
 		}
 
-		ret += "<tr>"
+		ret += "<tr><td></td>"
 		days.each{|d|
 			ret += <<END
 	<td>

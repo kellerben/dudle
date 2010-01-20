@@ -23,3 +23,8 @@ locale/dudle.pot: *.rb *.cgi
 
 %.mo: %.po
 	rmsgfmt $*.po -o $*.mo
+
+locale/%/dudle.po: locale/dudle.pot
+	msgmerge locale/$*/dudle.po locale/dudle.pot >/tmp/dudle_$*_tmp.po
+	mv /tmp/dudle_$*_tmp.po locale/$*/dudle.po
+	poedit locale/de/dudle.po

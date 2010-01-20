@@ -33,7 +33,7 @@ a:hover, a:active {
 }
 
 td.ayes, td.bmaybe, td.cno { cursor:default;}
-td.ayes, td.input-ayes, input.choosen  { background-color:#9C6}
+td.ayes, td.input-ayes, input.chosen  { background-color:#9C6}
 td.cno, td.input-cno { background-color:#F96 }
 td.bmaybe, td.input-bmaybe { background-color:#FF6}
 td.undecided { background-color:#DDD }
@@ -59,7 +59,7 @@ td.name {
 	background-color:#CCF;
 }
 
-input.navigation, input.disabled, input.choosen, input.notchoosen {
+input.navigation, input.disabled, input.chosen, input.notchosen {
 	border-width: 1px; 
 	border-style: solid;
 	border-color: black;
