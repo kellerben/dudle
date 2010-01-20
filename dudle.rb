@@ -166,6 +166,20 @@ READY
 
 	def out
 		@html << wizzard_nav if @is_config && @wizzardindex != @configtabs.size() -1
+
+		@html.add_cookie("lang",@cgi["lang"],"/",Time.now + (1*60*60*24*365)) if @cgi.include?("lang")
+		@html << "<div id='languageChooser'>"
+		lang = [
+			["en", "English"],
+			["de", "Deutsch"]
+			]
+		lang.each{|short,long|
+			@html << "<a href='?lang=#{short}'>" unless short == GetText.locale.language
+			@html << long
+			@html << "</a>" unless short == GetText.locale.language
+		}
+		@html << "</div>"
+
 		@html << "</div>"
 		@html << "</div></body>"
 		@html.out(@cgi)

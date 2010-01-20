@@ -306,3 +306,9 @@ form#ac_participant, form#ac {
 form#ac_participant, form#ac, form#ac_admin{
 	padding: 1em;
 }
+
+div#languageChooser{
+	margin-top: 2em;
+	text-align: center;
+	font-size: 80%;
+}
