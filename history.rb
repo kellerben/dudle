@@ -24,18 +24,19 @@ load "../dudle.rb"
 
 if $cgi.include?("revision")
 	revno=$cgi["revision"].to_i
-	versiontitle = "Poll of Version #{revno}"
-	$d = Dudle.new("History",revno)
+	$d = Dudle.new(revno)
+	versiontitle = _("Poll of Version") + " #{revno}"
 else
 	revno = VCS.revno
-	versiontitle = "Current Poll (Version #{revno})"
-	$d = Dudle.new("History")
+	$d = Dudle.new
+	versiontitle = _("Current Poll") + " (" + _("Version") + " #{revno})"
 end
 
+historystr = _("History")
 $d << <<HTML
 <h2>#{versiontitle}</h2>
 #{$d.table.to_html("",false)}
-<h2>History</h2>
+<h2>#{historystr}</h2>
 <div id='history'>
 #{$d.table.history_selectform($cgi.include?("revision") ? revno : nil, $cgi["history"])}
 

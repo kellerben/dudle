@@ -27,11 +27,11 @@ revbeforeedit = VCS.revno
 
 if $cgi.include?("undo_revision") && $cgi["undo_revision"].to_i < revbeforeedit
 	undorevision = $cgi["undo_revision"].to_i
-	$d = Dudle.new("Edit Columns",undorevision)
+	$d = Dudle.new(undorevision)
 	comment = $cgi.include?("redo") ? "Redo changes" : "Reverted Poll" 
 	$d.table.store("#{comment} to version #{undorevision}")
 else
-	$d = Dudle.new("Edit Columns")
+	$d = Dudle.new
 end
 
 $d.table.edit_column($cgi["columnid"],$cgi["new_columnname"],$cgi) if $cgi.include?("new_columnname")
@@ -41,10 +41,8 @@ $d.wizzard_redirect
 
 revno = VCS.revno
 
-$d << <<HTML
-<h2>Add and Remove Columns</h2>
-#{$d.table.edit_column_htmlform($cgi["editcolumn"],revno)}
-HTML
+$d << "<h2>" + _("Add and Remove Columns") + "</h2>"
+$d << $d.table.edit_column_htmlform($cgi["editcolumn"],revno)
 
 h = VCS.history
 urevs = h.undorevisions
@@ -63,11 +61,11 @@ if urevs.max
 	coltitle,action = urevs.max.comment.scan(/^Column (.*) (added|deleted|edited)$/).flatten
 	case action
 	when "added"
-		title["Undo"] = "Delete column #{coltitle}"
+		title["Undo"] = _("Delete column") + " #{coltitle}"
 	when "deleted"
-		title["Undo"] = "Add column #{coltitle}"
+		title["Undo"] = _("Add column") + " #{coltitle}"
 	when "edited"
-		title["Undo"] = "Edit column #{coltitle}"
+		title["Undo"] = _("Edit column") + " #{coltitle}"
 	end
 
 	curundorev = urevs.max.rev() +1 if rrevs.min
@@ -80,11 +78,11 @@ if rrevs.min
 	coltitle,action = rrevs.min.comment.scan(/^Column (.*) (added|deleted|edited)$/).flatten
 	case action
 	when "added"
-		title["Redo"] = "Add column #{coltitle}"
-	when "deleted"
-		title["Redo"] = "Delete column #{coltitle}"
-	when "edited"
-		title["Redo"] = "Edit column #{coltitle}"
+		title["Redo"] = _("Add column") + " #{coltitle}"
+	when "deleted"      
+		title["Redo"] = _("Delete column") + " #{coltitle}"
+	when "edited"       
+		title["Redo"] = _("Edit column") + " #{coltitle}"
 	end
 
 	hidden["Redo"] = "<input type='hidden' name='redo'/>"
@@ -92,15 +90,16 @@ end
 
 	$d << <<UNDOREDOREADY
 <div class='undo'>
-	<table summary='Undo/Redo functionallity'>
+	<table>
 		<tr>
 UNDOREDOREADY
+	localstr = {"Undo" => _("Undo"), "Redo" => _("Redo")}
 	["Undo","Redo"].each{|button|
 		$d << <<TD
 			<td>
 				<form method='post' action=''>
 					<div>
-						<input type='submit' title='#{title[button]}' value='#{button}' #{disabled[button]} />
+						<input type='submit' title='#{title[button]}' value='#{localstr[button]}' #{disabled[button]} />
 						<input type='hidden' name='undo_revision' value='#{undorevision[button]}' />
 						#{hidden["common"]}
 						#{hidden[button]}

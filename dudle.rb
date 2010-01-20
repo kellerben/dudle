@@ -22,6 +22,11 @@ require "cgi"
 
 $cgi = CGI.new
 
+require 'gettext'
+require 'gettext/cgi'
+include GetText
+GetText.cgi=$cgi
+
 $:.push("..")
 require "html"
 require "poll"
@@ -33,19 +38,19 @@ class Dudle
 	def tabs(active_tab)
 		ret = "<div id='tabs'><ul>"
 		tabs = []
-		tabs << ["Home",@basedir]
+		tabs << [_("Home"),@basedir]
 		if @is_poll
 			tabs << ["",""]
 			tabs += @usertabs
 			tabs << ["",""]
 			tabs += @configtabs
-			tabs << ["Delete Poll","delete_poll.cgi"]
+			tabs << [_("Delete Poll"),"delete_poll.cgi"]
 			tabs << ["",""]
 		end
-		tabs << ["Customize","customize.cgi"]
+		tabs << [_("Customize"),"customize.cgi"]
 		tabs.each{|tab,file|
-			case tab
-			when active_tab
+			case file
+			when _(active_tab)
 				ret += "<li id='active_tab' >&nbsp;#{tab}&nbsp;</li> "
 			when ""
 				ret += "<li class='separator_tab' />"
@@ -57,35 +62,41 @@ class Dudle
 		ret
 	end
 
-	def initialize(tabtitle, revision=nil)
+	def initialize(revision=nil)
 		@cgi = $cgi
-		@tabtitle = tabtitle
+		@tab = File.basename($0)
+		@tab = "." if @tab == "index.cgi"
+
 		if File.exists?("data.yaml") && !File.stat("data.yaml").directory?
 			@is_poll = true
 			@basedir = ".." 
+			GetText.bindtextdomain("dudle",:path => "#{@basedir}/locale/")
 			@revision = revision || VCS.revno
 			@table = YAML::load(VCS.cat(@revision, "data.yaml"))
 			@urlsuffix = File.basename(File.expand_path("."))
 			@title = @table.name
-			@html = HTML.new("dudle - #{@title} - #{@tabtitle}")
-			@html.header["Cache-Control"] = "no-cache"
 			# set-up tabs
 			@usertabs = [
-				["Poll","."],
-				["History","history.cgi"]
+				[_("Poll"),"."],
+				[_("History"),"history.cgi"]
 			]
 			@configtabs = [
-				["Edit Columns","edit_columns.cgi"],
-				["Invite Participants","invite_participants.cgi"],
-				["Access Control","access_control.cgi"],
-				["Overview","overview.cgi"]
+				[_("Edit Columns"),"edit_columns.cgi"],
+				[_("Invite Participants"),"invite_participants.cgi"],
+				[_("Access Control"),"access_control.cgi"],
+				[_("Overview"),"overview.cgi"]
 			]
-			confignames = @configtabs.collect{|name,file| name}
-			@is_config = confignames.include?(@tabtitle)
-			@wizzardindex = confignames.index(@tabtitle) if @is_config
+			configfiles = @configtabs.collect{|name,file| file}
+			@is_config = configfiles.include?(@tab)
+			@wizzardindex = configfiles.index(@tab) if @is_config
+
+			@tabtitle = (@usertabs + @configtabs).collect{|title,file| title if file == @tab}.compact[0]
+			@html = HTML.new("dudle - #{@title} - #{@tabtitle}")
+			@html.header["Cache-Control"] = "no-cache"
 		else
 			@is_poll = false
 			@basedir = "."
+			GetText.bindtextdomain("dudle",:path => "#{@basedir}/locale/")
 			@title = "dudle"
 			@html = HTML.new(@title)
 		end
@@ -113,7 +124,7 @@ class Dudle
 <div id='header2'></div>
 <div id='header3'></div>
 <div id='main'>
-#{tabs(@tabtitle)}
+#{tabs(@tab)}
 <div id='content'>
 	<h1>#{@title}</h1>
 HEAD
@@ -121,9 +132,9 @@ HEAD
 
 	def wizzard_nav
 		ret = "<div id='wizzard_navigation'><table><tr>"
-		[["Previous",@wizzardindex == 0],
-		 ["Next",@wizzardindex >= @configtabs.size()-2],
-		 ["Finish",@wizzardindex == @configtabs.size()-1]].each{|button,disabled|
+		[[_("Previous"),@wizzardindex == 0],
+		 [_("Next"),@wizzardindex >= @configtabs.size()-2],
+		 [_("Finish"),@wizzardindex == @configtabs.size()-1]].each{|button,disabled|
 			ret += <<READY
 				<td>
 					<form method='post' action=''>
@@ -139,14 +150,14 @@ READY
 	end
 
 	def wizzard_redirect
-		[["Previous",@wizzardindex-1],
-		 ["Next",@wizzardindex+1],
-		 ["Finish",@configtabs.size()-1]].each{|action,linkindex|
+		[[_("Previous"),@wizzardindex-1],
+		 [_("Next"),@wizzardindex+1],
+		 [_("Finish"),@configtabs.size()-1]].each{|action,linkindex|
 			if $cgi.include?(action)
 				@html.header["status"] = "REDIRECT"
 				@html.header["Cache-Control"] = "no-cache"
 				@html.header["Location"] = @configtabs[linkindex][1]
-				@html << "All changes were saved sucessfully. <a href=\"#{@configtabs[linkindex][1]}\">Proceed!</a>"
+				@html << _("All changes were saved sucessfully.") + " <a href=\"#{@configtabs[linkindex][1]}\">" + _("Proceed!") + "</a>"
 				out
 				exit
 			end

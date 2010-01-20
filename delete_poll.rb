@@ -22,32 +22,40 @@
 if __FILE__ == $0
 
 load "../dudle.rb"
-$d = Dudle.new("Delete Poll")
+$d = Dudle.new
 require "ftools"
 
-QUESTIONS = ["Yes, I know what I am doing!",
-             "I hate these stupid entry fields.",
-             "I am aware of the consequences.",
-             "Please delete this poll."]
+QUESTIONS = [_("Yes, I know what I am doing!"),
+             _("I hate these stupid entry fields."),
+             _("I am aware of the consequences."),
+             _("Please delete this poll.")]
 
 if $cgi.include?("confirmnumber")
  CONFIRM = $cgi["confirmnumber"].to_i
 	if $cgi["confirm"] == QUESTIONS[CONFIRM]
 		Dir.chdir("..")
 		File.move($d.urlsuffix, "/tmp/#{$d.urlsuffix}.#{rand(9999999)}")
+
+		deleteconfirmstr = _("The poll was deleted successfully!")
+		accidentstr = _("If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterministic amount of time, maybe it is already to late.")
+		nextthingsstr = _("Things you can do now are")
+		homepagestr = _("Return to dudle home and Schedule a new Poll")
+		wikipediastr = _("Browse Wikipedia")
+		googlestr = _("Search something with Google")
+
 		$d.html << <<SUCCESS
 <p class='textcolumn'>
-	The poll was deleted successfully!
+	#{deleteconfirmstr}
 </p>
 <p class='textcolumn'>
-	If this was done by accident, please contact the administrator of the system.
-	The poll can be recovered for an indeterministic amount of time, maybe it is already to late. </p>
+	#{accidentstr}
+</p>
 <div class='textcolumn'>
-	Things you can do now are
+	#{nextthingsstr}
 	<ul>
-		<li><a href='../'>Return to dudle home and Schedule a new Poll</a></li>
-		<li><a href='http://wikipedia.org'>Browse Wikipedia</a></li>
-		<li><a href='http://www.google.de'>Search something with Google</a></li>
+		<li><a href='../'>#{homepagestr}</a></li>
+		<li><a href='http://wikipedia.org'>#{wikipediastr}</a></li>
+		<li><a href='http://www.google.com'>#{googlestr}</a></li>
 	</ul>
 </div>
 SUCCESS
@@ -55,10 +63,12 @@ SUCCESS
 		exit
 	else
 		hint = <<HINT
-<table style='background:lightgray' summary='Error about wrong confirmation string'>
+<table style='background:lightgray'>
 	<tr>
 		<td style='text-align:right'>
-			To delete the poll, you have to type:
+HINT
+		hint += _("To delete the poll, you have to type:")
+		hint += <<HINT
 		</td>
 		<td class='warning' style='text-align:left'>
 			#{QUESTIONS[CONFIRM]}
@@ -66,7 +76,9 @@ SUCCESS
 	</tr>
 	<tr>
 		<td style='text-align:right'>
-			but you typed:
+HINT
+		hint += _("but you typed:")
+		hint += <<HINT
 		</td>
 		<td class='warning' style='text-align:left'>
 			#{$cgi["confirm"]}
@@ -78,17 +90,19 @@ HINT
 else
 	CONFIRM = rand(QUESTIONS.size)
 end
+
+$d.html << "<h2>" + _("Delete this Poll") + "</h2>"
+$d.html << _("You want to delete the poll named") + " <b>#{$d.table.name}</b>.<br />"
+$d.html << _("This is an irreversible action!") + "<br />"
+$d.html << _("If you are sure in what you are doing, please type into the form") + " " + _("“") + QUESTIONS[CONFIRM] + _("”")
+deletestr = _("Delete") 
 $d.html << <<TABLE
-	<h2>Delete this Poll</h2>
-	You want to delete the poll named <b>#{$d.table.name}</b>.<br />
-	This is an irreversible action!<br />
-	If you are sure in what you are doing, please type into the form “#{QUESTIONS[CONFIRM]}”
 	#{hint}
 	<form method='post' action=''>
 		<div>
 			<input type='hidden' name='confirmnumber' value='#{CONFIRM}' />
 			<input size='30' type='text' name='confirm' value='#{$cgi["confirm"]}' />
-			<input type='submit' value='Delete' />
+			<input type='submit' value='#{deletestr}' />
 		</div>
 	</form>
 TABLE

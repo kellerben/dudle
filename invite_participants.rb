@@ -23,7 +23,7 @@ if __FILE__ == $0
 
 load "../dudle.rb"
 
-$d = Dudle.new("Invite Participants")
+$d = Dudle.new
 
 if $cgi.include?("add_participant")
 	$d.table.add_participant("",$cgi["add_participant"],{})
@@ -31,8 +31,9 @@ end
 
 $d.wizzard_redirect
 
+inviteparticipantsstr = _("Invite Participants")
 $d << <<TABLE
-	<h2>Invite Participants</h2>
+	<h2>#{inviteparticipantsstr}</h2>
 	<form method='post' action=''>
 		#{$d.table.to_html("","invite")}
 	</form>

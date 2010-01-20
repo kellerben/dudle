@@ -176,7 +176,7 @@ class TimePollHead
 
 		ret += "<th class='invisible' /></tr><tr><th class='invisible'></th>"
 		head_count("%Y-%m-%d",false).each{|title,count|
-			ret += "<th colspan='#{count}'>#{Date.parse(title).strftime("%a, %d")}</th>\n"
+			ret += "<th colspan='#{count}'>#{Date.parse(title).strftime('%a, %d')}</th>\n"
 		}
 
 		def sortsymb(scols,col)
@@ -187,7 +187,7 @@ class TimePollHead
 		@data.sort.each{|date|
 			ret += "<th><a title='#{date}' href='?sort=#{CGI.escape(date.to_s)}'>#{date.time_to_s} #{sortsymb(scols,date.to_s)}</a></th>\n"
 		}
-		ret += "<th><a href='?'>Last Edit #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
+		ret += "<th><a href='?'>" + _("Last Edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
 		ret
 	end
 	
@@ -210,11 +210,11 @@ class TimePollHead
 		else
 			startdate = Date.parse("#{Date.today.year}-#{Date.today.month}-1")
 		end
+		hintstr = _("Click on the dates to add or remove columns.")
 		ret = <<END
-
 <table style='width:100%' summary='edit column'><tr><td style="vertical-align:top">
 <div id='AddRemoveColumndaysDescription' class='shorttextcolumn'>
-Click on the dates to add or remove columns.
+#{hintstr}
 </div>
 <table class='calendarday' summary='The day to vote for.'><tr>
 END
@@ -232,7 +232,7 @@ END
 END
 		end
 		ret += navi(MONTHBACK,startdate,revision)
-		ret += "<th colspan='3'>#{startdate.strftime("%b %Y")}</th>"
+		ret += "<th colspan='3'>#{startdate.strftime('%b %Y')}</th>"
 		ret += navi(MONTHFORWARD,startdate,revision)
 		 
 		ret += "</tr><tr>\n"
@@ -279,10 +279,12 @@ END
 		###########################
 		ret += "<td style='vertical-align:top'>"
 		if col_size > 0
-		ret += <<END
-<div class='shorttextcolumn'>
-Optional:<br/>
-Enter a concrete value as start time.
+			optstr = _("Optional:")
+			hintstr = _("Enter a concrete value as start time.")
+			ret += <<END
+<div id='ConcreteColumndaysDescription' class='shorttextcolumn'>
+#{optstr}<br/>
+#{hintstr}
 </div>
 <table class='calendarday' summary='The concrete timeslot'>
 <tr>
@@ -296,7 +298,7 @@ END
 		ret += "</tr><tr>"
 
 		head_count("%Y-%m-%d",true).each{|title,count|
-			ret += "<th>#{Date.parse(title).strftime("%a, %d")}</th>\n"
+			ret += "<th>#{Date.parse(title).strftime('%a, %d')}</th>\n"
 		}
 
 		ret += "</tr>"
@@ -351,9 +353,11 @@ END
 			if @data.include?(TimeString.new(d,nil))
 				ret += "<input type='hidden' name='columnid' value='#{TimeString.new(d,nil).to_s}' />"
 			end
+			addstr = _("Add")
+			hintstr = _("e.g.: 09:30, morning, afternoon")
 			ret += <<END
-				<input type="text" name='columntime' title='e.g.: 09:30, morning, afternoon' style="width: 7ex" /><br />
-				<input type="submit" value="Add" style="width: 100%" />
+				<input type="text" name='columntime' title='#{hintstr}' style="max-width: 10ex" /><br />
+				<input type="submit" value="#{addstr}" style="width: 100%" />
 			</div>
 		</form>
 	</td>

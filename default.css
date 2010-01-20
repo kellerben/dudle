@@ -84,7 +84,7 @@ table.calendarday {
 }
 
 div#AddRemoveColumndaysDescription{
-	max-width: 12em; 
+	max-width: 15em; 
 }
 
 table.calendarday th, table.calendarday td{
@@ -117,6 +117,9 @@ td.settingstable, table.settingstable td{
 }
 table.settingstable td.label{
 	text-align: right;
+}
+tr#usernamesetting {
+	height: 1.7em
 }
 
 td.historycomment{
@@ -208,10 +211,10 @@ html {
 
 .shorttextcolumn{
 	text-align: left;
-	max-width: 18em;
+	max-width: 20em;
 }
 .hint{
-	font-size:small;
+	font-size:0.9em;
 }
 
 div#tabs ul{

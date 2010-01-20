@@ -22,7 +22,7 @@
 
 if __FILE__ == $0
 load "../dudle.rb"
-$d = Dudle.new("Poll")
+$d = Dudle.new
 
 if $cgi.include?("add_participant")
 	if $cgi.include?("delete_participant")

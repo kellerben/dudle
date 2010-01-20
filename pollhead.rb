@@ -59,7 +59,7 @@ class PollHead
 SORTSYMBOL
 		end
 		ret = "<tr>"
-		ret += "<th><a href='?sort=name'>Name#{sortsymb(scols,"name")}</span></a></th>\n" unless showeditbuttons
+		ret += "<th><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</span></a></th>\n" unless showeditbuttons
 		@data.sort.each{|columntitle,columndescription|
 			ret += "<th"
 			ret += " id='active' " if activecolumn == columntitle
@@ -83,7 +83,7 @@ EDITDELETE
 			end
 			ret += "</th>"
 		}
-		ret += "<th><a href='?'>Last Edit#{sortsymb(scols,"timestamp")}</a></th>\n" unless showeditbuttons
+		ret += "<th><a href='?'>" + _("Last Edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n" unless showeditbuttons
 		ret += "</tr>\n"
 		ret
 	end
@@ -95,20 +95,24 @@ EDITDELETE
 			title = CGI.escapeHTML(title)
 			hiddeninput = "<input type='hidden' name='columnid' value=\"#{title}\" />"
 		end
+		columntitlestr = _("Columntitle")
+		descriptionstr = _("Description")
+		addeditstr = _("Add/Edit Column")
+		previewstr = _("Preview")
 		return <<END
 <form method='post' action=''>
 	<div>
-			<label for='columntitle'>Columntitle: </label>
+			<label for='columntitle'>#{columntitlestr}: </label>
 			<input id='columntitle' size='16' type='text' value="#{title}" name='new_columnname' />
-			<label for='columndescription'>Description: </label>
+			<label for='columndescription'>#{descriptionstr}: </label>
 			<input id='columndescription' size='30' type='text' value="#{description}" name='columndescription' />
 			<input type='hidden' name='undo_revision' value='#{revision}' />
 			#{hiddeninput}
-			<input type='submit' value='Add/Edit Column' />
+			<input type='submit' value='#{addeditstr}' />
 	</div>
 </form>
-<h2>Preview</h2>
-<table summary='Preview poll head'>
+<h2>#{previewstr}</h2>
+<table>
 #{to_html([],true,activecolumn)}
 </table>
 

@@ -73,7 +73,7 @@ class Poll
 			else
 				ret += "<tr class='participantrow'>\n"
 				ret += "<td class='name'>"
-				ret += "<a title='Edit user #{CGI.escapeHTML(participant)}' href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" if showparticipation
+				ret += "<a title='" + _("Edit user") + " #{CGI.escapeHTML(participant)}' href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" if showparticipation
 				ret += participant
 				ret += "<span class='edituser'> <sup>#{EDIT}</sup></span></a>" if showparticipation
 				ret += "</td>\n"
@@ -102,7 +102,7 @@ class Poll
 		ret += invite_to_html if invite
 
 		# SUMMARY
-		ret += "<tr id='summary'><td class='name'>total</td>\n"
+		ret += "<tr id='summary'><td class='name'>" + _("total") + "</td>\n"
 		@head.columns.each{|column|
 			yes = 0
 			undecided = 0
@@ -143,13 +143,14 @@ class Poll
 	end
 
 	def invite_to_html
+		invitestr = _("Invite")
 		ret = <<INVITE
 <tr id='add_participant'>
 <td class='name'>
 	<input size='16' type='text' name='add_participant' />
 </td>
 <td class='checkboxes' colspan='#{@head.col_size + 1}'>
-			<input type='submit' value='Invite' />
+			<input type='submit' value='#{invitestr}' />
 </td>
 </tr>
 INVITE
@@ -175,7 +176,8 @@ INVITE
 		@head.columns.each{|column|
 			ret += "<td class='checkboxes'><table summary='Input for one column' class='checkboxes'>"
 			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
-				ret += "<tr class='input-#{valbinary}'>
+				ret += <<TR
+				<tr class='input-#{valbinary}'>
 					<td class='input-#{valbinary}'>
 						<input type='radio' 
 							value='#{valbinary}' 
@@ -186,16 +188,17 @@ INVITE
 					<td class='input-#{valbinary}'>
 						<label for=\"add_participant_checked_#{CGI.escapeHTML(column.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\">#{valhuman}</label>
 					</td>
-			</tr>"
+			</tr>
+TR
 			}
 			ret += "</table></td>"
 		}
 		ret += "<td class='date'>"
 		if @data.include?(edituser)
-			ret += "<input type='submit' value='Save Changes' />"
-			ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='Delete User' />"
+			ret += "<input type='submit' value='" + _("Save Changes") + "' />"
+			ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='" + _("Delete User") + "' />"
 		else
-			ret += "<input type='submit' value='Save' />"
+			ret += "<input type='submit' value='" + _("Save") + "' />"
 		end
 		ret += "</td>\n"
 
@@ -206,19 +209,21 @@ INVITE
 
 	def comment_to_html
 		ret = "<div id='comments'>"
-		ret	+= "<h2>Comments</h2>"
+		ret	+= "<h2>" + _("Comments") + "</h2>"
 
+		saidstr = _("said on")
 		unless @comment.empty?
 			@comment.each_with_index{|c,i|
 				time,name,comment = c
+				deletestr = _("Delete")
 				ret += <<COMMENT
 <form method='post' action='.'>
 <div class='textcolumn'>
 		<h3 class='comment'>
-			#{name} said on #{time.strftime("%d.%m, %H:%M")}
+			#{name} #{saidstr} #{time.strftime("%d.%m., %H:%M")}
 			<input type='hidden' name='delete_comment' value='#{i}' />
 			&nbsp;
-			<input class='delete_comment_button' type='submit' value='delete' />
+			<input class='delete_comment_button' type='submit' value='#{deletestr}' />
 		</h3>
 		#{comment}
 </div>
@@ -228,13 +233,15 @@ COMMENT
 		end
 		
 		# ADD COMMENT
+		saysstr = _("says")
+		submitstr = _("Submit Comment")
 		ret += <<ADDCOMMENT
 		<form method='post' action='.'>
 			<div class='comment' id='add_comment'>
-					<input value='Anonymous' type='text' name='commentname' size='9' /> says&nbsp;
+					<input value='Anonymous' type='text' name='commentname' size='9' /> #{saysstr}&nbsp;
 					<br />
 					<textarea cols='50' rows='7' name='comment' ></textarea>
-					<br /><input type='submit' value='Submit Comment' />
+					<br /><input type='submit' value='#{submitstr}' />
 			</div>
 		</form>
 ADDCOMMENT
@@ -244,24 +251,26 @@ ADDCOMMENT
 	end
 
 	def history_selectform(revision, selected)
+		showhiststr = _("Show history items:")
 		ret = <<FORM
 <form method='get' action=''>
 	<div>
-		Show history items: 
+		#{showhiststr} 
 		<select name='history'>
 FORM
-		[["","All"],
-		 ["participants","Participant related"],
-		 ["columns","Column related"],
-		 ["comments","Comment related"],
-		 ["ac","Access Control related"]
+		[["",_("All")],
+		 ["participants",_("Participant related")],
+		 ["columns",_("Column related")],
+		 ["comments",_("Comment related")],
+		 ["ac",_("Access Control related")]
 			].each{|value,opt|
 			ret += "<option value='#{value}' #{selected == value ? "selected='selected'" : ""} >#{opt}</option>"
 		}
 		ret += "</select>"
 		ret += "<input type='hidden' name='revision' value='#{revision}' />" if revision
+		updatestr = _("Update")
 		ret += <<FORM
-		<input type='submit' value='Update' />
+		<input type='submit' value='#{updatestr}' />
 	</div>
 </form>
 FORM

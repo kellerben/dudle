@@ -25,22 +25,20 @@ if __FILE__ == $0
 $:.push("..")
 require "dudle"
 
-$d = Dudle.new("Customize")
+$d = Dudle.new
 
 
-$d << <<END
-<h2>Customize Personal Settings</h2>
-You need cookies enabled in order to personalize your settings.
-END
+$d << "<h2>" + _("Customize Personal Settings") + "</h2>"
+$d << _("You need cookies enabled in order to personalize your settings.")
 
-def choosetable(tablesummary, options, cursetting)
+def choosetable(options, cursetting)
 	ret = <<HEAD 
-<table summary='#{tablesummary}'>
+<table>
 	<tr>
-		<th>Current Setting</th>
-		<th>Description</th>
-	</tr>
 HEAD
+	ret += "<th>" + _("Current Setting") + "</th>"
+	ret += "<th>" + _("Description") + "</th>"
+	ret += "</tr>"
 	options.each{|description,href,title|
 		selected = href == cursetting
 		ret += "<tr><td>"
@@ -56,26 +54,22 @@ HEAD
 end
 
 
-a = [["Use special characters (#{UTFCHARS})","utf", "Use this option if you see the characters in the parenthesis."],
-     ["Use only normal strings","ascii","Use this option if you have problems with some characters."]]
+a = [[_("Use special characters") + " (#{UTFCHARS})","utf", _("Use this option if you see the characters in the parenthesis.")],
+     [_("Use only normal strings"),"ascii",_("Use this option if you have problems with some characters.")]]
 $d.html.add_cookie("ascii","true","/",Time.now + (1*60*60*24*365 * ($USEUTF ? -1 : 1 )))
-$d << <<CHARSET
-<div id='charset'>
-<h3>Charset</h3>
-#{choosetable("Charset settings",a,$USEUTF ? "utf" : "ascii")}
-</div>
-CHARSET
+$d << "<div id='charset'>"
+$d << "<h3>" + _("Charset")+ "</h3>"
+$d << choosetable(a,$USEUTF ? "utf" : "ascii")
+$d << "</div>"
 
 css = $cgi.cookies["css"][0]
 css = $cgi["css"] if $cgi.include?("css")
 css ||= "default.css"
 $d.html.add_cookie("css",css,"/",Time.now + (1*60*60*24*365 * (css == "dudle.css" ? -1 : 1 )))
-$d << <<CSS
-<div id='config_stylesheet'>
-<h3>Stylesheet</h3>
-#{choosetable("Stylesheet settings",$d.css.collect{|href| [href.scan(/([^\/]*)\.css/).flatten[0],"css=#{href}"]},"css=#{css}")}
-</div>
-CSS
+$d << "<div id='config_stylesheet'>"
+$d << "<h3>" + _("Stylesheet") + "</h3>"
+$d << choosetable($d.css.collect{|href| [href.scan(/([^\/]*)\.css/).flatten[0],"css=#{href}"]},"css=#{css}")
+$d << "</div>"
 
 
 username = $cgi.cookies["username"][0]
@@ -88,14 +82,17 @@ elsif $cgi.include?("username")
 end
 
 
+
+defaultuserstr = _("Default Username")
+usernamestr = _("Username:")
 $d << <<CHARSET
 <div id='config_user'>
-<h3>Default Username</h3>
+<h3>#{defaultuserstr}</h3>
 <form method='get' action=''>
-	<table summary="Set default username">
-		<tr>
+	<table>
+		<tr id='usernamesetting'>
 			<td>
-				<label for='username'>Username: </label>
+				<label for='username'>#{usernamestr} </label>
 			</td>
 			<td class='settingstable'>
 CHARSET
@@ -110,8 +107,8 @@ if username && !$cgi.include?("edit")
 		<tr>
 			<td></td>
 			<td class='settingstable'>
-				<input id='username' type='submit' value='Edit' />
 CHARSET
+	$d << "<input id='username' type='submit' value='" + _("Edit") + "' />"
 else
 	$d << <<CHARSET
 				<input id='username' type='text' value="#{username}" name='username' />
@@ -120,11 +117,11 @@ else
 		<tr>
 			<td></td>
 			<td class='settingstable'>
-				<input type='submit' value='Save' />
 CHARSET
+	$d << "<input type='submit' value='" + _("Save") + "' />"
 end
 
-$d.html << "<input type='submit' name='delete_username' value='Delete' />" if username
+$d.html << "<input type='submit' name='delete_username' value='" + _("Delete") + "' />" if username
 
 $d << <<CHARSET
 			</td>

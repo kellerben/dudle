@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 ############################################################################
 # Copyright 2009 Benjamin Kellermann                                       #
 #                                                                          #
@@ -19,31 +17,9 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-if __FILE__ == $0
+locale/dudle.pot: *.rb *.cgi
+	rm locale/dudle.pot
+	rgettext *.cgi *.rb -o locale/dudle.pot
 
-load "../dudle.rb"
-
-$d = Dudle.new
-
-$d.wizzard_redirect
-
-
-$d << _("The link to your poll is:")
-
-mailstr = _("Send this link via email...")
-nextstr = _("To the Vote interface")
-
-$d << <<END
-<pre>#{SITEURL}</pre>
-<a href='mailto:?subject=link%20to%20dudle%20poll%20about%20#{CGI.escapeHTML(CGI.escape($d.title).gsub("+","%20"))}&amp;body=#{SITEURL}'>#{mailstr}</a>
-<form method='get' action='.'>
-	<div style='margin-top:1ex'>
-		<input type='submit' value='#{nextstr}' />
-	</div>
-</form>
-END
-
-$d.out
-end
-
-
+%.mo: %.po
+	rmsgfmt $*.po -o $*.mo

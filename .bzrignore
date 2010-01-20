@@ -1,3 +1,5 @@
 intern
 config.rb
 css/*
+locale/dudle.pot
+locale/de/dudle.mo

@@ -29,12 +29,12 @@ else
 	exit
 end
 
-$d = Dudle.new("Home")
+$d = Dudle.new
 
 if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 	POLLTITLE=$cgi["create_poll"]
 	if POLLTITLE == ""
-		createnotice = "Please enter a descriptive title."
+		createnotice = _("Please enter a descriptive title.")
 	else
 		if $cgi["poll_url"] == ""
 			if POLLTITLE =~ /^[\w\-_]*$/ && !File.exist?(POLLTITLE)
@@ -48,9 +48,9 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 
 
 		if !(POLLURL =~ /^[\w\-_]*$/)
-			createnotice = "Custom address may only contain letters, numbers, and dashes."
+			createnotice = _("Custom address may only contain letters, numbers, and dashes.")
 		elsif File.exist?(POLLURL)
-			createnotice = "A Poll with this address already exists."
+			createnotice = _("A Poll with this address already exists.")
 		else Dir.mkdir(POLLURL)
 			Dir.chdir(POLLURL)
 			VCS.init
@@ -69,41 +69,50 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 			$d.html.header["status"] = "REDIRECT"
 			$d.html.header["Cache-Control"] = "no-cache"
 			$d.html.header["Location"] = SITEURL + POLLURL+ "/edit_columns.cgi"
-			$d << "The poll was created successfully. The link to your new poll is:<br /><a href=\"#{POLLURL}\">#{POLLURL}</a>"
+			$d << _("The poll was created successfully. The link to your new poll is:") + "<br /><a href=\"#{POLLURL}\">#{POLLURL}</a>"
 		end
 	end
 end
 
 unless $d.html.header["status"] == "REDIRECT"
 
+	$d << "<h2>"+ _("Create New Poll") + "</h2>"
+
+	titlestr = _("Title")
+	typestr = _("Type")
+	timepollstr = _("Event Schedule Poll (e.g. schedule a meeting)")
+	normalpollstr = _("Normal Poll (e.g. vote for what is the best coffee)")
+	customaddrstr = _("Custom address (optional)")
+	customaddrhintstr = _("May contain letters, numbers, and dashes.")
+
+	createstr = _("Create")
 	$d << <<CREATE
-<h2>Create New Poll</h2>
 <form method='post' action='.'>
-<table  class='settingstable' summary='Create a new Poll'>
+<table  class='settingstable'>
 <tr>
-	<td class='label'><label for="poll_name">Title:</label></td>
+	<td class='label'><label for="poll_name">#{titlestr}:</label></td>
 	<td><input id="poll_name" size='40' type='text' name='create_poll' value="#{CGI.escapeHTML($cgi["create_poll"])}" /></td>
 </tr>
 <tr>
-	<td class='label'>Type:</td>
+	<td class='label'>#{typestr}:</td>
 	<td>
 		<input id='chooseTime' type='radio' value='time' name='poll_type' checked='checked' />
-		<label for='chooseTime'>Event Schedule Poll (e.g. schedule a meeting)</label>
+		<label for='chooseTime'>#{timepollstr}</label>
 		<br />
 		<input id='chooseNormal' type='radio' value='normal' name='poll_type' />
-		<label for='chooseNormal'>Normal Poll (e.g. vote for what is the best coffee)</label>
+		<label for='chooseNormal'>#{normalpollstr}</label>
 	</td>
 </tr>
 <tr>
 	<td></td>
-	<td style='padding-bottom:0.7ex'><input type='submit' value='Create' /></td>
+	<td style='padding-bottom:0.7ex'><input type='submit' value='#{createstr}' /></td>
 </tr>
 <tr>
-	<td colspan='2' style='border-top:solid thin;padding-top:0.7ex;'>Custom address (optional):
-	<span class='hint'>May contain letters, numbers, and dashes.</span></td>
+	<td colspan='2' style='border-top:solid thin;padding-top:0.7ex;'>#{customaddrstr}:
+	<span class='hint'>#{customaddrhintstr}</span></td>
 </tr>
 <tr>
-	<td colspan='2'><label for="poll_url"><span class='hint'>#{SITEURL}</span></label><input id="poll_url" size='16' type='text' name='poll_url' value="#{CGI.escapeHTML($cgi["poll_url"])}" />
+	<td colspan='2'><label for="poll_url">#{SITEURL}</label><input id="poll_url" size='16' type='text' name='poll_url' value="#{CGI.escapeHTML($cgi["poll_url"])}" />
 	</td>
 </tr>
 CREATE

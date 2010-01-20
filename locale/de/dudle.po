@@ -1,0 +1,524 @@
+# ###########################################################################
+# Copyright 2009 Benjamin Kellermann                                       #
+#                                                                          #
+# This file is part of dudle.                                              #
+#                                                                          #
+# Dudle is free software: you can redistribute it and/or modify it under   #
+# the terms of the GNU Affero General Public License as published by       #
+# the Free Software Foundation, either version 3 of the License, or        #
+# (at your option) any later version.                                      #
+#                                                                          #
+# Dudle is distributed in the hope that it will be useful, but WITHOUT ANY #
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or        #
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public     #
+# License for more details.                                                #
+#                                                                          #
+# You should have received a copy of the GNU Affero General Public License #
+# along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
+# ###########################################################################
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2010-01-20 16:30+0100\n"
+"PO-Revision-Date: 2010-01-20 16:40+0100\n"
+"Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+
+#: customize.cgi:31
+#: customize.rb:31
+msgid "Customize Personal Settings"
+msgstr "Persönliche Einstellungen anpassen"
+
+#: customize.cgi:32
+#: customize.rb:32
+msgid "You need cookies enabled in order to personalize your settings."
+msgstr "Ihr Browser muss cookies akzeptieren um persönliche Einstellungen dauerhaft vorzunehmen."
+
+#: customize.cgi:39
+#: customize.rb:39
+msgid "Current Setting"
+msgstr "Momentane Einstellung"
+
+#: customize.cgi:40
+#: customize.rb:40
+#: pollhead.rb:99
+msgid "Description"
+msgstr "Beschreibung"
+
+#: customize.cgi:57
+#: customize.rb:57
+msgid "Use special characters"
+msgstr "Benutze spezielle Zeichen"
+
+#: customize.cgi:57
+#: customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "Benutzen Sie diese Einstellung, wenn Sie die Zeichen in den Klammern lesen können."
+
+#: customize.cgi:58
+#: customize.rb:58
+msgid "Use only normal strings"
+msgstr "Benutze nur gewöhnliche Zeichen."
+
+#: customize.cgi:58
+#: customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Benutzen Sie diese Einstellung, wenn Probleme mit der Darstellung einiger Zeichen auftreten."
+
+#: customize.cgi:61
+#: customize.rb:61
+msgid "Charset"
+msgstr "Zeichen"
+
+#: customize.cgi:70
+#: customize.rb:70
+msgid "Stylesheet"
+msgstr "Aussehen"
+
+#: customize.cgi:86
+#: customize.rb:86
+msgid "Default Username"
+msgstr "Voreingestellter Teilnehmername"
+
+#: customize.cgi:87
+#: access_control.rb:74
+#: customize.rb:87
+msgid "Username:"
+msgstr "Teilnehmername:"
+
+#: customize.cgi:111
+#: customize.rb:111
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: customize.cgi:121
+#: access_control.rb:121
+#: customize.rb:121
+#: poll.rb:201
+msgid "Save"
+msgstr "Speichern"
+
+#: customize.cgi:124
+#: access_control.rb:117
+#: customize.rb:124
+#: delete_poll.rb:98
+#: poll.rb:218
+msgid "Delete"
+msgstr "Löschen"
+
+#: index.cgi:37
+msgid "Please enter a descriptive title."
+msgstr "Bitte geben Sie einen Titel für die Umfrage ein."
+
+#: index.cgi:51
+msgid "Custom address may only contain letters, numbers, and dashes."
+msgstr "Die spezielle eigene URL darf nur Buchstaben, Zahlen, Bindestrich und Unterstrich enthalten."
+
+#: index.cgi:53
+msgid "A Poll with this address already exists."
+msgstr "Eine Umfrage mit dieser URL existiert bereits."
+
+#: index.cgi:72
+msgid "The poll was created successfully. The link to your new poll is:"
+msgstr "Die Umfrage wurde erfolgreich erstellt. Die Adresse der Umfrage lautet:"
+
+#: index.cgi:79
+msgid "Create New Poll"
+msgstr "Neue Umfrage erstellen"
+
+#: index.cgi:81
+msgid "Title"
+msgstr "Titel"
+
+#: index.cgi:82
+msgid "Type"
+msgstr "Typ"
+
+#: index.cgi:83
+msgid "Event Schedule Poll (e.g. schedule a meeting)"
+msgstr "Nach einer Zeit fragen (z.B. einen Besprechungstermin finden)"
+
+#: index.cgi:84
+msgid "Normal Poll (e.g. vote for what is the best coffee)"
+msgstr "Normale Umfrage (z.B. eine Umfrage über die beste Kaffeesorte)"
+
+#: index.cgi:85
+msgid "Custom address (optional)"
+msgstr "eigene URL (optional)"
+
+#: index.cgi:86
+msgid "May contain letters, numbers, and dashes."
+msgstr "Kann Buchstaben, Zahlen, Bindestriche und Unterstriche enthalten."
+
+#: index.cgi:88
+msgid "Create"
+msgstr "Erstellen"
+
+#: access_control.rb:87
+msgid "Password"
+msgstr "Passwort"
+
+#: access_control.rb:88
+msgid "repeat"
+msgstr "wiederholen"
+
+#: access_control.rb:114
+msgid "You have to remove the participant user before you can remove the administrator."
+msgstr "Der Benutzer „participant“ muss entfernt werden, bevor Sie den Administrator entfernen können."
+
+#: access_control.rb:139
+msgid "Only letters and digits are allowed in the username."
+msgstr "Der Benutzername darf nur Buchstaben und Zahlen enthalten."
+
+#: access_control.rb:141
+msgid "Passwords did not match."
+msgstr "Die Passwörter stimmen nicht überein."
+
+#: access_control.rb:174
+msgid "Change Access Control Settings"
+msgstr "Einstellungen der Zugriffskontrolle"
+
+#: access_control.rb:178
+msgid "not activated"
+msgstr "nicht aktiviert"
+
+#: access_control.rb:180
+msgid "Activate"
+msgstr "Aktivieren"
+
+#: access_control.rb:183
+msgid "will be activated when at least an admin user is configured"
+msgstr "wird aktiviert, wenn ein Administrator (Benutzername: „admin“) konfiguriert wurde"
+
+#: access_control.rb:185
+msgid "Deactivate"
+msgstr "Deaktivieren"
+
+#: access_control.rb:187
+msgid "activated"
+msgstr "aktiviert"
+
+#: access_control.rb:188
+msgid "You have to remove all users before you can deactivate the access control settings."
+msgstr "Sie müssen alle Benutzer entfernen, bevor Sie die Zugriffskontrolle deaktivieren können."
+
+#: access_control.rb:192
+msgid "You will be asked for the password you entered here after pressing save!"
+msgstr "Nach dem Speichern werden Sie nach dem Benutzernamen und diesem Passwort gefragt!"
+
+#: access_control.rb:195
+msgid "The user ‘admin’ has access to the vote as well as the configuration interface."
+msgstr "Der Benutzer „admin“ hat sowohl zur Abstimmungs- als auch zur Konfigurationsoberfläche Zugriff."
+
+#: access_control.rb:201
+msgid "The user ‘participant’ has only access to the vote interface."
+msgstr "Der Benutzer „participant“ hat nur zur Abstimmungsoberfläche Zugriff."
+
+#: access_control.rb:207
+msgid "Access control:"
+msgstr "Zugriffskontrolle:"
+
+#: delete_poll.rb:28
+msgid "Yes, I know what I am doing!"
+msgstr "Ja, ich weiß was ich mache!"
+
+#: delete_poll.rb:29
+msgid "I hate these stupid entry fields."
+msgstr "Ich hasse diese sinnlosen Eingabefelder."
+
+#: delete_poll.rb:30
+msgid "I am aware of the consequences."
+msgstr "Ich bin mir über die Konsequenzen bewusst."
+
+#: delete_poll.rb:31
+msgid "Please delete this poll."
+msgstr "Bitte lösche diese Umfrage."
+
+#: delete_poll.rb:39
+msgid "The poll was deleted successfully!"
+msgstr "Die Umfrage wurde erfolgreich gelöscht!"
+
+#: delete_poll.rb:40
+msgid "If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterministic amount of time, maybe it is already to late."
+msgstr "Wenn das ein Versehen war, kontaktieren Sie bitte umgehend den Administrator des Systems. Die Umfrage kann für einen unvorhersehbaren Zeitraum wiederhergestellt werden, vielleicht ist jetzt schon zu spät."
+
+#: delete_poll.rb:41
+msgid "Things you can do now are"
+msgstr "Dinge, die Sie jetzt machen können:"
+
+#: delete_poll.rb:42
+msgid "Return to dudle home and Schedule a new Poll"
+msgstr "Zurück zur dudle Hauptseite um eine neue Umfrage zu erstellen"
+
+#: delete_poll.rb:43
+msgid "Browse Wikipedia"
+msgstr "bei Wikipedia stöbern"
+
+#: delete_poll.rb:44
+msgid "Search something with Google"
+msgstr "Etwas mit google suchen"
+
+#: delete_poll.rb:70
+msgid "To delete the poll, you have to type:"
+msgstr "Um diese Umfrage zu löschen müssen Sie folgenden Satz eingeben:"
+
+#: delete_poll.rb:80
+msgid "but you typed:"
+msgstr "Ihre Eingabe lautete aber:"
+
+#: delete_poll.rb:94
+msgid "Delete this Poll"
+msgstr "Diese Umfrage löschen"
+
+#: delete_poll.rb:95
+msgid "You want to delete the poll named"
+msgstr "Sie wollen die Umfrage mit folgendem Namen löschen:"
+
+#: delete_poll.rb:96
+msgid "This is an irreversible action!"
+msgstr "Das Löschen der gesamten Umfrage ist unwiederrufbar!"
+
+#: delete_poll.rb:97
+msgid "If you are sure in what you are doing, please type into the form"
+msgstr "Wenn Sie sich sicher sind, dann geben Sie bitte nachfolgenden Satz ein:"
+
+#: delete_poll.rb:97
+msgid "“"
+msgstr "„"
+
+#: delete_poll.rb:97
+msgid "”"
+msgstr "“"
+
+#: dudle.rb:41
+msgid "Home"
+msgstr "Hauptseite"
+
+#: dudle.rb:47
+msgid "Delete Poll"
+msgstr "Lösche Umfrage"
+
+#: dudle.rb:50
+msgid "Customize"
+msgstr "Personalisieren"
+
+#: dudle.rb:80
+msgid "Poll"
+msgstr "Umfrage"
+
+#: dudle.rb:81
+#: history.rb:35
+msgid "History"
+msgstr "Versionen"
+
+#: dudle.rb:84
+msgid "Edit Columns"
+msgstr "Bearbeite Spalten"
+
+#: dudle.rb:85
+#: invite_participants.rb:34
+msgid "Invite Participants"
+msgstr "Teilnehmer einladen"
+
+#: dudle.rb:86
+msgid "Access Control"
+msgstr "Zugriffskontrolle"
+
+#: dudle.rb:87
+msgid "Overview"
+msgstr "Übersicht"
+
+#: dudle.rb:135
+#: dudle.rb:153
+msgid "Previous"
+msgstr "Zurück"
+
+#: dudle.rb:136
+#: dudle.rb:154
+msgid "Next"
+msgstr "Weiter"
+
+#: dudle.rb:137
+#: dudle.rb:155
+msgid "Finish"
+msgstr "Fertig"
+
+#: dudle.rb:160
+msgid "All changes were saved sucessfully."
+msgstr "Alle Änderungen wurden erfolgreich gespeichert."
+
+#: dudle.rb:160
+msgid "Proceed!"
+msgstr "Weiter"
+
+#: edit_columns.rb:44
+msgid "Add and Remove Columns"
+msgstr "Spalten hinzufügen oder entfernen"
+
+#: edit_columns.rb:64
+#: edit_columns.rb:83
+msgid "Delete column"
+msgstr "Lösche Spalte"
+
+#: edit_columns.rb:66
+#: edit_columns.rb:81
+msgid "Add column"
+msgstr "Füge Spalte hinzu"
+
+#: edit_columns.rb:68
+#: edit_columns.rb:85
+msgid "Edit column"
+msgstr "Bearbeite Spalte"
+
+#: edit_columns.rb:96
+msgid "Undo"
+msgstr "Rückgängig"
+
+#: edit_columns.rb:96
+msgid "Redo"
+msgstr "Wiederherstellen"
+
+#: history.rb:28
+msgid "Poll of Version"
+msgstr "Umfrage der Version"
+
+#: history.rb:32
+msgid "Current Poll"
+msgstr "Aktuelle Umfrage"
+
+#: history.rb:32
+#: log.rb:111
+msgid "Version"
+msgstr "Version"
+
+#: log.rb:111
+msgid "Date"
+msgstr "Datum"
+
+#: log.rb:111
+msgid "Comment"
+msgstr "Kommentar"
+
+#: overview.rb:31
+msgid "The link to your poll is:"
+msgstr "Die URL zu ihrer Umfrage ist:"
+
+#: overview.rb:33
+msgid "Send this link via email..."
+msgstr "Diese URL per E-Mail..."
+
+#: overview.rb:34
+msgid "To the Vote interface"
+msgstr "Zur Abstimmung"
+
+#: poll.rb:76
+msgid "Edit user"
+msgstr "Bearbeite Teilnehmer"
+
+#: poll.rb:105
+msgid "total"
+msgstr "Summe"
+
+#: poll.rb:146
+msgid "Invite"
+msgstr "Einladen"
+
+#: poll.rb:198
+msgid "Save Changes"
+msgstr "Speichern"
+
+#: poll.rb:199
+msgid "Delete User"
+msgstr "Lösche Teilnehmer"
+
+#: poll.rb:212
+msgid "Comments"
+msgstr "Kommentare"
+
+#: poll.rb:214
+msgid "said on"
+msgstr "sagte am"
+
+#: poll.rb:236
+msgid "says"
+msgstr "sagt"
+
+#: poll.rb:237
+msgid "Submit Comment"
+msgstr "Sende Kommentar"
+
+#: poll.rb:254
+msgid "Show history items:"
+msgstr "Zeige nur folgende Versionen:"
+
+#: poll.rb:261
+msgid "All"
+msgstr "Alle"
+
+#: poll.rb:262
+msgid "Participant related"
+msgstr "Teilnehmer betreffend"
+
+#: poll.rb:263
+msgid "Column related"
+msgstr "Spalten betreffend"
+
+#: poll.rb:264
+msgid "Comment related"
+msgstr "Kommentare betreffend"
+
+#: poll.rb:265
+msgid "Access Control related"
+msgstr "Zugriffskontrolle betreffend"
+
+#: poll.rb:271
+msgid "Update"
+msgstr "Aktualisieren"
+
+#: pollhead.rb:62
+msgid "Name"
+msgstr "Name"
+
+#: pollhead.rb:86
+#: timepollhead.rb:190
+msgid "Last Edit"
+msgstr "Letzte Änderung"
+
+#: pollhead.rb:98
+msgid "Columntitle"
+msgstr "Spaltenüberschrift"
+
+#: pollhead.rb:100
+msgid "Add/Edit Column"
+msgstr "Spalte bearbeiten/hinzufügen"
+
+#: pollhead.rb:101
+msgid "Preview"
+msgstr "Vorschau"
+
+#: timepollhead.rb:213
+msgid "Click on the dates to add or remove columns."
+msgstr "Klicken Sie auf ein Datum um es der Umfrage hinzuzufügen."
+
+#: timepollhead.rb:282
+msgid "Optional:"
+msgstr "Optional:"
+
+#: timepollhead.rb:283
+msgid "Enter a concrete value as start time."
+msgstr "Geben Sie eine Zeit für ein Datum ein."
+
+#: timepollhead.rb:356
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: timepollhead.rb:357
+msgid "e.g.: 09:30, morning, afternoon"
+msgstr "z.B.: 9:30, morgens, abends"
+

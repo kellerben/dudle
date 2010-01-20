@@ -107,7 +107,8 @@ class Log
 		@log.sort!
 	end
 	def to_html(unlinkedrevision,history)
-		ret = "<table summary='Historytable' ><tr><th>Version</th><th>Date</th><th>Comment</th></tr>"
+		ret = "<table><tr><th>"
+		ret += _("Version") + "</th><th>" + _("Date") + "</th><th>" + _("Comment") + "</th></tr>"
 		self.reverse_each{|l|
 			ret += l.to_html(unlinkedrevision != l.rev,history)
 		}
