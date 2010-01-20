@@ -45,7 +45,7 @@ NOTICE
 # Example 2: displays all available Polls
 notice += <<NOTICE
 <h2>Available Polls</h2>
-<table summary='Available Polls'>
+<table>
 	<tr>
 		<th>Poll</th><th>Last change</th>
 	</tr>

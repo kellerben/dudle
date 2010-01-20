@@ -63,7 +63,7 @@ class Poll
 			showparticipation = false
 			invite = true
 		end
-		ret = "<table border='1' summary='Main Poll table'>\n"
+		ret = "<table border='1'>\n"
 		
 		sortcolumns = $cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]
 		ret += @head.to_html(sortcolumns)
@@ -174,7 +174,7 @@ INVITE
 				value=\"#{edituser}\"/>"
 		ret += "</td>\n"
 		@head.columns.each{|column|
-			ret += "<td class='checkboxes'><table summary='Input for one column' class='checkboxes'>"
+			ret += "<td class='checkboxes'><table class='checkboxes'>"
 			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
 				ret += <<TR
 				<tr class='input-#{valbinary}'>

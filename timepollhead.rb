@@ -212,11 +212,11 @@ class TimePollHead
 		end
 		hintstr = _("Click on the dates to add or remove columns.")
 		ret = <<END
-<table style='width:100%' summary='edit column'><tr><td style="vertical-align:top">
+<table style='width:100%'><tr><td style="vertical-align:top">
 <div id='AddRemoveColumndaysDescription' class='shorttextcolumn'>
 #{hintstr}
 </div>
-<table class='calendarday' summary='The day to vote for.'><tr>
+<table class='calendarday'><tr>
 END
 		def navi val,curmonth,revision
 			return <<END
@@ -286,7 +286,7 @@ END
 #{optstr}<br/>
 #{hintstr}
 </div>
-<table class='calendarday' summary='The concrete timeslot'>
+<table class='calendarday'>
 <tr>
 END
 
