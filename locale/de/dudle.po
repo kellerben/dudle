@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-01-20 17:55+0100\n"
+"POT-Creation-Date: 2010-01-20 19:18+0100\n"
 "PO-Revision-Date: 2010-01-20 17:36+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
@@ -316,7 +316,7 @@ msgstr "Hauptseite"
 
 #: dudle.rb:47
 msgid "Delete Poll"
-msgstr "Lösche Umfrage"
+msgstr "Umfrage löschen"
 
 #: dudle.rb:50
 msgid "Customize"
@@ -416,7 +416,7 @@ msgstr "Die URL zu ihrer Umfrage ist:"
 
 #: overview.rb:33
 msgid "Send this link via email..."
-msgstr "Diese URL per E-Mail..."
+msgstr "Diese URL per E-Mail verschicken..."
 
 #: overview.rb:34
 msgid "To the Vote interface"
@@ -518,7 +518,7 @@ msgstr "Optional:"
 msgid "Enter a concrete value as start time."
 msgstr "Geben Sie eine Zeit für ein Datum ein."
 
-#: timepollhead.rb:293
+#: timepollhead.rb:299
 msgid "Time"
 msgstr "Zeit"
 
