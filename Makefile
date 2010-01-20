@@ -17,8 +17,10 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
+default: locale/de/dudle.mo
+
 locale/dudle.pot: *.rb *.cgi
-	rm locale/dudle.pot
+	rm -f locale/dudle.pot
 	rgettext *.cgi *.rb -o locale/dudle.pot
 
 %.mo: %.po
