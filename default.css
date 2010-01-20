@@ -217,6 +217,10 @@ html {
 	font-size:0.9em;
 }
 
+div#tabs{
+	min-width:65em;
+}
+
 div#tabs ul{
 	margin-top: 2em;
 }
@@ -230,7 +234,7 @@ div#tabs ul{
 	margin-left: 0em;
 	margin-bottom: 0em;
 	padding: 0em;
-	list-style-type: none;
+	list-style: none;
 }
 
 div#tabs li{
