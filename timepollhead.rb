@@ -88,12 +88,16 @@ class TimePollHead
 		parsed_date
 	end
 
-	# returns parsed title
+	# returns parsed title or nil in case of colum not changed
 	def edit_column(column, newtitle, cgi)
 		delete_column(column) if column != ""
 		parsed_date = TimeString.new(newtitle, cgi["columntime"] != "" ? cgi["columntime"] : nil)
-		@data << parsed_date unless @data.include?(parsed_date)
-		parsed_date.to_s
+		if @data.include?(parsed_date)
+			return nil
+		else
+			@data << parsed_date
+			parsed_date.to_s
+		end
 	end
 
 	# returns a sorted array, containing the big units and how often each small is in the big one
