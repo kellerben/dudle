@@ -26,66 +26,9 @@ class << Time
 	end
 end
 
+require "timestring"
+
 class TimePollHead 
-	class TimeString
-		attr_reader :date, :time
-		def initialize(date,time)
-			@date = date.class == Date ? date : Date.parse(date)
-			if time =~ /^\d[\d]?:\d[\d]?$/
-				begin
-#TODO: what to do with 24:00 ???
-#					if time == "24:00"
-#						@date += 1
-#						time = "00:00"
-#					end
-						@time = Time.parse("#{@date} #{time}")
-				rescue ArgumentError
-					@time = time
-				end
-			else
-				@time = time
-			end
-		end
-		def TimeString.from_s(string)
-			date = string.scan(/^(\d\d\d\d-\d\d-\d\d).*$/).flatten[0]
-			time = string.scan(/^\d\d\d\d-\d\d-\d\d (.*)$/).flatten[0]
-			TimeString.new(date,time)
-		end
-		def TimeString.now
-			TimeString.new(Date.today,Time.now)
-		end
-		include Comparable
-		def <=>(other)
-			if self.date == other.date
-				if self.time.class == String && other.time.class == String || self.time.class == Time && other.time.class == Time
-					self.time <=> other.time
-				elsif self.time.class == NilClass && other.time.class == NilClass
-					0
-				else
-					self.time.class == String ? 1 : -1
-				end
-			else
-				self.date <=> other.date
-			end
-		end
-		def to_s
-			if @time
-				"#{@date} #{time_to_s}"
-			else
-				@date.to_s
-			end
-		end
-		def inspect
-			"TS: date: #{@date} time: #{@time ? time_to_s : "nil"}"
-		end
-		def time_to_s
-			if @time.class == Time
-				return time.strftime("%H:%M")
-			else
-				return @time
-			end
-		end
-	end
 	def initialize
 		@data = []
 	end
@@ -149,8 +92,7 @@ class TimePollHead
 	def edit_column(column, newtitle, cgi)
 		delete_column(column) if column != ""
 		parsed_date = TimeString.new(newtitle, cgi["columntime"] != "" ? cgi["columntime"] : nil)
-		@data << parsed_date
-		@data.uniq!
+		@data << parsed_date unless @data.include?(parsed_date)
 		parsed_date.to_s
 	end
 
