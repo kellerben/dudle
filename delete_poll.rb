@@ -30,9 +30,10 @@ QUESTIONS = [_("Yes, I know what I am doing!"),
              _("I am aware of the consequences."),
              _("Please delete this poll.")]
 
+USERCONFIRM = $cgi["confirm"].strip
 if $cgi.include?("confirmnumber")
  CONFIRM = $cgi["confirmnumber"].to_i
-	if $cgi["confirm"] == QUESTIONS[CONFIRM]
+	if USERCONFIRM == QUESTIONS[CONFIRM]
 		Dir.chdir("..")
 		File.move($d.urlsuffix, "/tmp/#{$d.urlsuffix}.#{rand(9999999)}")
 
@@ -70,9 +71,7 @@ HINT
 		hint += _("To delete the poll, you have to type:")
 		hint += <<HINT
 		</td>
-		<td class='warning' style='text-align:left'>
-			#{QUESTIONS[CONFIRM]}
-		</td>
+		<td class='warning' style='text-align:left'>#{QUESTIONS[CONFIRM]}</td>
 	</tr>
 	<tr>
 		<td style='text-align:right'>
@@ -80,9 +79,7 @@ HINT
 		hint += _("but you typed:")
 		hint += <<HINT
 		</td>
-		<td class='warning' style='text-align:left'>
-			#{$cgi["confirm"]}
-		</td>
+		<td class='warning' style='text-align:left'>#{USERCONFIRM}</td>
 	</tr>
 </table>
 HINT
@@ -101,7 +98,7 @@ $d.html << <<TABLE
 	<form method='post' action=''>
 		<div>
 			<input type='hidden' name='confirmnumber' value='#{CONFIRM}' />
-			<input size='30' type='text' name='confirm' value='#{$cgi["confirm"]}' />
+			<input size='30' type='text' name='confirm' value='#{USERCONFIRM}' />
 			<input type='submit' value='#{deletestr}' />
 		</div>
 	</form>
