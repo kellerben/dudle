@@ -59,7 +59,7 @@ class PollHead
 SORTSYMBOL
 		end
 		ret = "<tr>"
-		ret += "<th><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</span></a></th>\n" unless showeditbuttons
+		ret += "<th><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>\n" unless showeditbuttons
 		@data.sort.each{|columntitle,columndescription|
 			ret += "<th"
 			ret += " id='active' " if activecolumn == columntitle
@@ -99,7 +99,7 @@ EDITDELETE
 		descriptionstr = _("Description")
 		addeditstr = _("Add/Edit Column")
 		previewstr = _("Preview")
-		return <<END
+		ret = <<END
 <form method='post' action=''>
 	<div>
 			<label for='columntitle'>#{columntitlestr}: </label>
@@ -111,11 +111,15 @@ EDITDELETE
 			<input type='submit' value='#{addeditstr}' />
 	</div>
 </form>
+END
+		if col_size > 0
+			ret += <<END
 <h2>#{previewstr}</h2>
 <table>
 #{to_html([],true,activecolumn)}
 </table>
-
 END
+		end
+		ret
 	end
 end
