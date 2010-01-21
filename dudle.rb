@@ -44,10 +44,10 @@ class Dudle
 			tabs += @usertabs
 			tabs << ["",""]
 			tabs += @configtabs
-			tabs << [_("Delete Poll"),"delete_poll.cgi"]
+			tabs << @deletetab
 			tabs << ["",""]
 		end
-		tabs << [_("Customize"),"customize.cgi"]
+		tabs << @customizetab
 		tabs.each{|tab,file|
 			case file
 			when _(active_tab)
@@ -60,6 +60,24 @@ class Dudle
 		}
 		ret += "</ul></div>"
 		ret
+	end
+
+	def inittabs
+		@customizetab = [_("Customize"),"customize.cgi"]
+		if @is_poll
+			# set-up tabs
+			@usertabs = [
+				[_("Poll"),"."],
+				[_("History"),"history.cgi"]
+			]
+			@configtabs = [
+				[_("Edit Columns"),"edit_columns.cgi"],
+				[_("Invite Participants"),"invite_participants.cgi"],
+				[_("Access Control"),"access_control.cgi"],
+				[_("Overview"),"overview.cgi"]
+			]
+			@deletetab = [_("Delete Poll"),"delete_poll.cgi"]
+		end
 	end
 
 	def initialize(revision=nil)
@@ -75,28 +93,21 @@ class Dudle
 			@table = YAML::load(VCS.cat(@revision, "data.yaml"))
 			@urlsuffix = File.basename(File.expand_path("."))
 			@title = @table.name
-			# set-up tabs
-			@usertabs = [
-				[_("Poll"),"."],
-				[_("History"),"history.cgi"]
-			]
-			@configtabs = [
-				[_("Edit Columns"),"edit_columns.cgi"],
-				[_("Invite Participants"),"invite_participants.cgi"],
-				[_("Access Control"),"access_control.cgi"],
-				[_("Overview"),"overview.cgi"]
-			]
+			
+			inittabs
+			
 			configfiles = @configtabs.collect{|name,file| file}
 			@is_config = configfiles.include?(@tab)
 			@wizzardindex = configfiles.index(@tab) if @is_config
 
-			@tabtitle = (@usertabs + @configtabs).collect{|title,file| title if file == @tab}.compact[0]
+			@tabtitle = (@usertabs + @configtabs + [@deletetab] + [@customizetab]).collect{|title,file| title if file == @tab}.compact[0]
 			@html = HTML.new("dudle - #{@title} - #{@tabtitle}")
 			@html.header["Cache-Control"] = "no-cache"
 		else
 			@is_poll = false
 			@basedir = "."
 			GetText.bindtextdomain("dudle",:path => "#{@basedir}/locale/")
+			inittabs
 			@title = "dudle"
 			@html = HTML.new(@title)
 		end
