@@ -26,6 +26,7 @@ require 'gettext'
 require 'gettext/cgi'
 include GetText
 GetText.cgi=$cgi
+GetText.output_charset = 'utf-8'
 
 $:.push("..")
 require "html"
