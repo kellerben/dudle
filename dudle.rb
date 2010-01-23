@@ -80,8 +80,12 @@ class Dudle
 			@deletetab = [_("Delete Poll"),"delete_poll.cgi"]
 		end
 	end
+	def revision
+		@requested_revision || VCS.revno
+	end
 
 	def initialize(revision=nil)
+		@requested_revision = revision 
 		@cgi = $cgi
 		@tab = File.basename($0)
 		@tab = "." if @tab == "index.cgi"
@@ -90,8 +94,7 @@ class Dudle
 			@is_poll = true
 			@basedir = ".." 
 			GetText.bindtextdomain("dudle",:path => "#{@basedir}/locale/")
-			@revision = revision || VCS.revno
-			@table = YAML::load(VCS.cat(@revision, "data.yaml"))
+			@table = YAML::load(VCS.cat(self.revision, "data.yaml"))
 			@urlsuffix = File.basename(File.expand_path("."))
 			@title = @table.name
 			
@@ -151,7 +154,7 @@ HEAD
 				<td>
 					<form method='post' action=''>
 						<div>
-							<input type='hidden' name='undo_revision' value='#{@revision}' />
+							<input type='hidden' name='undo_revision' value='#{self.revision}' />
 							<input type='submit' #{disabled ? "disabled='disabled'" : ""} name='#{button}' value='#{button}' />
 						</div>
 					</form>
