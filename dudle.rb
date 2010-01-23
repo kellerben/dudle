@@ -47,6 +47,8 @@ class Dudle
 			tabs += @configtabs
 			tabs << @deletetab
 			tabs << ["",""]
+		else
+			tabs << [_("About"),"about.cgi"]
 		end
 		tabs << @customizetab
 		tabs.each{|tab,file|

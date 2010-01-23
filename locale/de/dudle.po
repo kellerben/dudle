@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-01-23 21:29+0100\n"
-"PO-Revision-Date: 2010-01-23 21:29+0100\n"
+"POT-Creation-Date: 2010-01-23 23:35+0100\n"
+"PO-Revision-Date: 2010-01-23 23:35+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -30,6 +30,35 @@ msgstr ""
 "X-Poedit-Language: German\n"
 "X-Poedit-Country: GERMANY\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: about.cgi:28
+msgid ""
+"If you find a bug or have something else, which disturbes you, please let me "
+"know:"
+msgstr ""
+"Schreiben Sie mir bitte eine E-Mail, wenn Sie einen Bug finden oder etwas "
+"anderes haben, was Sie stört:"
+
+#: about.cgi:29
+msgid "give feedback"
+msgstr "Feedback"
+
+#: about.cgi:30
+msgid "--verbose"
+msgstr "--verbose"
+
+#: about.cgi:31
+msgid "The sourcecode of this application is available under the terms of"
+msgstr ""
+"Der Sourcecode zu dieser Applikation ist unter folgender Lizenz verfügbar:"
+
+#: about.cgi:32
+msgid "AGPL Version 3"
+msgstr "AGPL Version 3"
+
+#: about.cgi:34
+msgid "You can get the code, using"
+msgstr "Sie können sich den code herunterladen. Sie benötigen dazu"
 
 #: customize.cgi:31 customize.rb:31
 msgid "Customize Personal Settings"
@@ -148,6 +177,26 @@ msgstr "Kann Buchstaben, Zahlen, Bindestriche und Unterstriche enthalten."
 #: index.cgi:88
 msgid "Create"
 msgstr "Erstellen"
+
+#: index.cgi:134
+msgid "Examples"
+msgstr "Beispiele"
+
+#: index.cgi:135
+msgid ""
+"If you want to play around with the Tool, you may want to take a look at "
+"these Example Polls:"
+msgstr ""
+"Wenn sie diese Applikation ausprobieren möchten, können sie auch auf "
+"folgende Beispielumfragen schauen:"
+
+#: index.cgi:136
+msgid "Event Schedule Poll"
+msgstr "Nach einer Zeit fragen"
+
+#: index.cgi:137
+msgid "Normal Poll"
+msgstr "Eine normale Umfrage"
 
 #: access_control.rb:87
 msgid "Password"
@@ -313,55 +362,59 @@ msgstr "“"
 msgid "Home"
 msgstr "Hauptseite"
 
-#: dudle.rb:67
+#: dudle.rb:51
+msgid "About"
+msgstr "Über dudle"
+
+#: dudle.rb:69
 msgid "Customize"
 msgstr "Personalisieren"
 
-#: dudle.rb:71
+#: dudle.rb:73
 msgid "Poll"
 msgstr "Umfrage"
 
-#: dudle.rb:72 history.rb:35
+#: dudle.rb:74 history.rb:35
 msgid "History"
 msgstr "Versionen"
 
-#: dudle.rb:75
+#: dudle.rb:77
 msgid "Edit Columns"
 msgstr "Spalten bearbeiten"
 
-#: dudle.rb:76 invite_participants.rb:34
+#: dudle.rb:78 invite_participants.rb:34
 msgid "Invite Participants"
 msgstr "Teilnehmer einladen"
 
-#: dudle.rb:77
+#: dudle.rb:79
 msgid "Access Control"
 msgstr "Zugriffskontrolle"
 
-#: dudle.rb:78
+#: dudle.rb:80
 msgid "Overview"
 msgstr "Übersicht"
 
-#: dudle.rb:80
+#: dudle.rb:82
 msgid "Delete Poll"
 msgstr "Umfrage löschen"
 
-#: dudle.rb:147 dudle.rb:165
+#: dudle.rb:152 dudle.rb:170
 msgid "Previous"
 msgstr "Zurück"
 
-#: dudle.rb:148 dudle.rb:166
+#: dudle.rb:153 dudle.rb:171
 msgid "Next"
 msgstr "Weiter"
 
-#: dudle.rb:149 dudle.rb:167
+#: dudle.rb:154 dudle.rb:172
 msgid "Finish"
 msgstr "Fertig"
 
-#: dudle.rb:172
+#: dudle.rb:177
 msgid "All changes were saved sucessfully."
 msgstr "Alle Änderungen wurden erfolgreich gespeichert."
 
-#: dudle.rb:172
+#: dudle.rb:177
 msgid "Proceed!"
 msgstr "Weiter"
 
