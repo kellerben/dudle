@@ -90,10 +90,14 @@ class TimePollHead
 
 	# returns parsed title or nil in case of colum not changed
 	def edit_column(column, newtitle, cgi)
-		return nil if cgi.include?("columntime") && cgi["columntime"] == ""
+		if cgi.include?("columntime") && cgi["columntime"] == ""
+			@edit_column_error = _("To add some time different to the default ones, please enter some string here (e.g.: 09:30, morning, afternoon).")
+			return nil
+		end
 		delete_column(column) if column != ""
 		parsed_date = TimeString.new(newtitle, cgi["columntime"] != "" ? cgi["columntime"] : nil)
 		if @data.include?(parsed_date)
+			@edit_column_error = _("This Time was already choosen.")
 			return nil
 		else
 			@data << parsed_date
@@ -321,6 +325,7 @@ END
 END
 		}
 
+		ret += "</tr><tr><td colspan='#{days.size+1}' class='error'>#{@edit_column_error}</td>" if @edit_column_error
 		ret += "</tr></table>"
 		end
 		ret += "</td></tr></table>"
