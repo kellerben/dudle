@@ -90,6 +90,7 @@ class TimePollHead
 
 	# returns parsed title or nil in case of colum not changed
 	def edit_column(column, newtitle, cgi)
+		return nil if cgi.include?("columntime") && cgi["columntime"] == ""
 		delete_column(column) if column != ""
 		parsed_date = TimeString.new(newtitle, cgi["columntime"] != "" ? cgi["columntime"] : nil)
 		if @data.include?(parsed_date)
