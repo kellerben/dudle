@@ -26,24 +26,15 @@ load "git.rb"
 # Change this if the url is not determined correctly
 SITEURL = "http://#{$cgi.server_name}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
 
-# add the htmlcode in the Variable NOTICE to the startpage
-# Example 1: displays a static text
-notice = <<NOTICE
-<div>
-	<h2>Examples</h2>
-	If you want to play around with the Tool, you may want to take a look at these two Example Polls:<br />
-	<a href='coffeebreak'>Event Schedule Poll</a><br />
-	<a href='coffee'>Normal Poll</a>
-</div>
+# Add some Example Polls to the start page
+EXAMPLES = {
+	"event_schedule_example" => "coffeebreak",
+	"normal_example" => "coffee"
+}
 
-<div>
-	<h2>--verbose</h2>
-	Get the sourcecode with <a href="http://bazaar-vcs.org/">bazaar</a>:
-	<pre>bzr branch #{SITEURL} dudle</pre>
-</div>
-NOTICE
-# Example 2: displays all available Polls
-notice += <<NOTICE
+# add the htmlcode in the Variable NOTICE to the startpage
+# Example: displays all available Polls
+notice = <<NOTICE
 <h2>Available Polls</h2>
 <table>
 	<tr>
