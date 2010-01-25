@@ -25,7 +25,8 @@ load "../dudle.rb"
 $d = Dudle.new
 require "ftools"
 
-QUESTIONS = [_("Yes, I know what I am doing!"),
+QUESTIONS = [ "phahqu3Uib4neiRi",
+             _("Yes, I know what I am doing!"),
              _("I hate these stupid entry fields."),
              _("I am aware of the consequences."),
              _("Please delete this poll.")]
