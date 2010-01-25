@@ -31,6 +31,7 @@ class HTML
 		end
 
 		@body = ""
+		@htmlheader = ''
 		@css = []
 		@atom = []
 	end
@@ -52,6 +53,8 @@ HEAD
 			ret += "<link rel='alternate'  type='application/atom+xml' href='#{href}' />\n"
 		}
 
+		ret += @htmlheader
+
 		ret += "</head>"
 		ret
 	end
@@ -72,9 +75,19 @@ HEAD
 		@header["cookie"] ||= []
 		@header["cookie"] << c
 	end
+	def add_head_script(file)
+		add_html_head("<script type='text/javascript' src='#{file}'></script>")
+	end
+	def add_script(file)
+		self << "<script type='text/javascript' src='#{file}'></script>"
+	end
 	def << (bodycontent)
 		@body += bodycontent.chomp + "\n"
 	end
+	def add_html_head(headercontent)
+		@htmlheader += headercontent.chomp + "\n"
+	end
+
 	def out(cgi)
 		#FIXME: quick and dirty fix for encoding problem
 		{ 
