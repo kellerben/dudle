@@ -35,7 +35,7 @@ require "config"
 require "charset"
 
 class Dudle
-	attr_reader :html, :table, :urlsuffix, :css, :title
+	attr_reader :html, :table, :urlsuffix, :css, :title, :tab
 	def tabs(active_tab)
 		ret = "<div id='tabs'><ul>"
 		tabs = []
@@ -145,6 +145,15 @@ class Dudle
 <div id='content'>
 	<h1>#{@title}</h1>
 HEAD
+
+
+		###################
+		# init extenisons #
+		###################
+		@extensions = []
+		Dir.open("#{@basedir}/extensions/").each{|f|
+			@extensions << f if File.exists?("#{@basedir}/extensions/#{f}/main.rb")
+		}
 	end
 
 	def wizzard_nav
@@ -195,10 +204,16 @@ READY
 			@html << long
 			@html << "</a>" unless short == GetText.locale.language
 		}
-		@html << "</div>"
+		@html << "</div>" # languageChooser
 
-		@html << "</div>"
-		@html << "</div></body>"
+		@html << "</div>" # content
+		@html << "</div>" # main
+
+		@extensions.each{|e|
+			require "#{@basedir}/extensions/#{e}/main"
+		}
+
+		@html << "</body>"
 		@html.out(@cgi)
 	end
 
