@@ -36,8 +36,11 @@ require "charset"
 
 class Dudle
 	attr_reader :html, :table, :urlsuffix, :css, :title, :tab
+	def is_poll?
+		@is_poll
+	end
 	def tabs(active_tab)
-		ret = "<div id='tabs'><ul>"
+		ret = "<div id='tabs'><ul id='tablist'>"
 		tabs = []
 		tabs << [_("Home"),@basedir]
 		if @is_poll
@@ -145,7 +148,7 @@ class Dudle
 <div id='main'>
 #{tabs(@tab)}
 <div id='content'>
-	<h1>#{@title}</h1>
+	<h1 id='polltitle'>#{@title}</h1>
 HEAD
 
 
