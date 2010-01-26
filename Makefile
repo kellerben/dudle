@@ -28,5 +28,5 @@ locale/dudle.pot: *.rb *.cgi
 
 locale/%/dudle.po: locale/dudle.pot
 	msgmerge locale/$*/dudle.po locale/dudle.pot >/tmp/dudle_$*_tmp.po
-	mv /tmp/dudle_$*_tmp.po locale/$*/dudle.po
+	if [ "`msgcomm -u /tmp/dudle_de_tmp.po locale/de/dudle.po`" ];then mv /tmp/dudle_$*_tmp.po locale/$*/dudle.po; else touch locale/$*/dudle.po; fi
 	if [ "`postats -f locale/$*/dudle.po|tail -n1 |cut -d"(" -f3|cut -d")" -f1`" = "100%\n" ]; then poedit locale/$*/dudle.po; fi
