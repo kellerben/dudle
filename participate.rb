@@ -45,6 +45,13 @@ $d.table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_co
 
 $d.html.add_atom("atom.cgi") if File.exists?("../atom.rb")
 
+reloadstr = _("Reload")
+$d << <<END
+<div style='position:relative; top:-2ex;'>
+<a href='.'>#{reloadstr}</a>
+</div>
+END
+
 # TABLE
 $d << <<HTML
 <div id='polltable'>
