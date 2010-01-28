@@ -98,9 +98,9 @@ class TimeStringTest < Test::Unit::TestCase
 		b = TimeString.new("2010-01-22","1:00")
 		assert(a == b)
 		assert(a === b)
-		assert(a.equal? b)
-		assert(a.eql? b)
-		assert([a].include? b)
+		assert(a.equal?(b))
+		assert(a.eql?(b))
+		assert([a].include?(b))
 		assert_equal([a],[a,b].uniq)
 	end
 end
