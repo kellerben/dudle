@@ -83,7 +83,7 @@ if (errorstr)
 	$h << <<ERROR
 <br/>
 Please include the following as well:
-<pre style='background:#DDD;padding : 1em'>#{errorstr}</pre>
+<pre style='background:#DDD;padding : 1em'>#{CGI.escapeHTML(errorstr)}</pre>
 ERROR
 end
 
