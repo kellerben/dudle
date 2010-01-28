@@ -144,20 +144,7 @@ class TimePollHead
 	
 	def edit_column_htmlform(activecolumn, revision)
 		if $cgi.include?("add_remove_column_month")
-			if $cgi.params["add_remove_column_month"].size == 1
-				startdate = Date.parse("#{$cgi["add_remove_column_month"]}-1")
-			else
-				olddate = $cgi.params["add_remove_column_month"][1]
-				case $cgi["add_remove_column_month"]
-				when CGI.unescapeHTML(MONTHBACK)
-					startdate = Date.parse("#{olddate}-1")-1
-				when CGI.unescapeHTML(MONTHFORWARD)
-					startdate = Date.parse("#{olddate}-1")+31
-				else
-					exit
-				end
-				startdate = Date.parse("#{startdate.year}-#{startdate.month}-1")
-			end
+			startdate = Date.parse("#{$cgi["add_remove_column_month"]}-1")
 		else
 			startdate = Date.parse("#{Date.today.year}-#{Date.today.month}-1")
 		end
@@ -170,12 +157,20 @@ class TimePollHead
 <table class='calendarday'><tr>
 END
 		def navi val,curmonth,revision
+			case val
+			when MONTHBACK
+				navimonth = Date.parse("#{curmonth}-1")-1
+			when MONTHFORWARD
+				navimonth = Date.parse("#{curmonth}-1")+31
+			else
+				raise "Unknown navi value #{val}"
+			end
 			return <<END
 			<th colspan='2' style='padding:0px'>
 				<form method='post' action=''>
 					<div>
-						<input class='navigation' type='submit' name='add_remove_column_month' value='#{val}' />
-						<input type='hidden' name='add_remove_column_month' value='#{curmonth.strftime("%Y-%m")}' />
+						<input class='navigation' type='submit' value='#{val}' />
+						<input type='hidden' name='add_remove_column_month' value='#{navimonth.strftime("%Y-%m")}' />
 						<input type='hidden' name='undo_revision' value='#{revision}' />
 					</div>
 				</form>
