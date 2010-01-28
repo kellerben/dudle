@@ -26,6 +26,18 @@ load "git.rb"
 # Change this if the url is not determined correctly
 SITEURL = "http://#{$cgi.server_name}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
 
+# If you want to encourage the user to send bug reports, state the errorlog,
+# which you have configured in your apache conf with the ErrorLog directive.
+# In addition, you can change the email address to yours, if you want to
+# receive the mails instead of me (the developer).
+# You would do me a favor, if you configure this with my address, however,
+# if you do not want people to read parts of your error log, leave the 
+# ERRORLOG variable unset!
+# Make sure, that your apache can read this file 
+# (which usually is not the case for /var/log/apache2/*)
+#ERRORLOG = "/var/log/dudle_error.log"
+BUGREPORTMAIL = "Benjamin.Kellermann@tu-dresden.de"
+
 # Add some Example Polls to the start page
 EXAMPLES = {
 	"event_schedule_example" => "coffeebreak",

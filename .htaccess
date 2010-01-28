@@ -3,3 +3,5 @@
 	satisfy all
 	ErrorDocument 403 "You are not allowed to access .ht* files!"
 </Files>
+
+ErrorDocument 500 /error.cgi
