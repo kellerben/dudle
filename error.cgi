@@ -19,9 +19,18 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "dudle"
+require "cgi"
+$cgi = CGI.new
+require "config"
+require "html"
 
-$d = Dudle.new
+$h = HTML.new("Error")
+$h.add_css("/default.css","default",true)
+$h << <<END
+<div id='main'>
+<div id='content'>
+<h1>Error</h1>
+END
 
 def urlescape(str)
 	CGI.escapeHTML(CGI.escape(str).gsub("+","%20"))
@@ -46,7 +55,7 @@ if defined?(ERRORLOG)
 		errorstr = "Exception while opening #{ERRORLOG}:\n#{e}"
 	else
 		s = [a.pop]
-		s << a.pop while s.last.scan(/^\[([^\]]*)\] \[/).flatten[0] == a.last.scan(/^\[([^\]]*)\] \[/).flatten[0]
+		s << a.pop while s.last.scan(/^\[([^\]]*)\] \[/).flatten[0] == a.last.scan(/^\[([^\]]*)\] \[/).flatten[0] || a.last =~ /^[^\[]/
 		errorstr = s.reverse.join
 	end
 
@@ -63,7 +72,7 @@ Yours,
 
 MESSAGE
 
-	$d << <<ERROR
+	$h << <<ERROR
 An error occured while executing dudle.<br/>
 Please report you browser, operating system, and what you did to
 <a href='mailto:#{BUGREPORTMAIL}?subject=#{urlescape("Bug in dudle")}&amp;body=#{urlescape(errormessagebody)}'>#{BUGREPORTMAIL}</a>. 
@@ -71,11 +80,12 @@ ERROR
 
 if (errorstr)
 	
-	$d << <<ERROR
+	$h << <<ERROR
 <br/>
 Please include the following as well:
 <pre style='background:#DDD;padding : 1em'>#{errorstr}</pre>
 ERROR
 end
 
-$d.out
+$h << "</div></div>"
+$h.out($cgi)
