@@ -86,7 +86,7 @@ HINT
 HINT
 	end
 else
-	CONFIRM = rand(QUESTIONS.size)
+	CONFIRM = rand(QUESTIONS.size()-1) +1
 end
 
 $d.html << "<h2>" + _("Delete this Poll") + "</h2>"
