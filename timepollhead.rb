@@ -46,9 +46,7 @@ class TimePollHead
 	def concrete_times
 		h = {}
 		@data.each{|ds| h[ds.time_to_s] = true }
-		h.keys.compact.sort{|a,b|
-			TimeString.new(Date.today,a) <=> TimeString.new(Date.today,b)
-		}
+		h.keys
 	end
 	def date_included?(date)
 		ret = false
@@ -258,9 +256,15 @@ END
 			"notchosen" => _("notchosen"),
 			"disabled" => _("past")
 		}
-		times = []
-		(9..20).each{|i| times << "#{i.to_s.rjust(2,"0")}:00"}
-		times << concrete_times
+
+		times = concrete_times
+		realtimes = times.collect{|t| Time.parse(t) if t =~ /\d\d:\d\d/}.compact
+		[9,16].each{|i| realtimes << Time.parse("#{i.to_s.rjust(2,"0")}:00")}
+
+		first = realtimes.min.strftime("%H").to_i
+		last  = realtimes.max.strftime("%H").to_i
+
+		(first..last).each{|i| times << "#{i.to_s.rjust(2,"0")}:00" }
 		times.flatten.compact.uniq.sort.each{|time|
 			ret +="<tr>\n<td>#{time}</td>"
 			days.each{|day|
