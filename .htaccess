@@ -4,4 +4,8 @@
 	ErrorDocument 403 "You are not allowed to access .ht* files!"
 </Files>
 
+Options +ExecCGI
+AddHandler cgi-script .cgi
+DirectoryIndex index.cgi
+
 ErrorDocument 500 /error.cgi
