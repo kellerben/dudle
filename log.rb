@@ -155,7 +155,7 @@ class Log
 		revertrevs = []
 		redone = []
 		minrev = min.rev
-		(minrev..max.rev).reverse_each{|rev|
+		(minrev..max.rev).to_a.reverse.each{|rev|
 			action,r = self[rev].comment.scan(/^(.*) to version (\d*)$/).flatten
 			break unless r
 			if action =~ /^Redo changes/
