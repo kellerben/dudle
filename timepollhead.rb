@@ -166,10 +166,12 @@ END
 	def timenavi val,revision
 		return "" if @firsttime == 0 || @lasttime == 23
 		case val
-		when _("Earlier")
+		when EARLIER
+			str = EARLIER + " " + _("Earlier")
 			firsttime = [@firsttime-2,0].max
 			lasttime = @lasttime
-		when _("Later")
+		when LATER
+			str = LATER + " " + _("Later")
 			firsttime = @firsttime
 			lasttime = [@lasttime+2,23].min
 		else
@@ -180,7 +182,7 @@ END
 	<td style='padding:0px'>
 		<form method='post' action=''>
 			<div>
-				<input class='navigation' type='submit' value='#{val}' />
+				<input class='navigation' type='submit' value='#{str}' />
 				<input type='hidden' name='firsttime' value='#{firsttime.to_s.rjust(2,"0")}:00' />
 				<input type='hidden' name='lasttime' value='#{lasttime.to_s.rjust(2,"0")}:00' />
 				<input type='hidden' name='add_remove_column_month' value='#{@startdate.strftime("%Y-%m")}' />
@@ -306,7 +308,7 @@ END
 		}
 
 
-		ret += timenavi(_("Earlier"),revision)
+		ret += timenavi(EARLIER,revision)
 
 		(@firsttime..@lasttime).each{|i| times << "#{i.to_s.rjust(2,"0")}:00" }
 		times.flatten.compact.uniq.sort.each{|time|
@@ -345,7 +347,7 @@ END
 			}
 			ret += "</tr>\n"
 		}
-		ret += timenavi(_("Later"),revision)
+		ret += timenavi(LATER,revision)
 
 		ret += "<tr><td></td>"
 		days.each{|d|

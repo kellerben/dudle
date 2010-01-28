@@ -37,6 +37,8 @@ if $USEUTF
 	# Thanks to Antje for the symbols
 	MONTHBACK    = CGI.escapeHTML("◀")
 	MONTHFORWARD = CGI.escapeHTML("▶")
+	EARLIER = CGI.escapeHTML("▴")
+	LATER = CGI.escapeHTML("▾")
 
 	EDIT = CGI.escapeHTML("✍")
 	DELETE = CGI.escapeHTML("✖")
@@ -55,6 +57,8 @@ else
 
 	MONTHBACK    = CGI.escapeHTML("<")
 	MONTHFORWARD = CGI.escapeHTML(">")
+	EARLIER = CGI.escapeHTML("")
+	LATER = CGI.escapeHTML("")
 
 	EDIT = CGI.escapeHTML("edit")
 	DELETE = CGI.escapeHTML("delete")
