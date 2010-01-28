@@ -143,9 +143,9 @@ class TimePollHead
 	def datenavi val,revision
 		case val
 		when MONTHBACK
-			navimonth = Date.parse("#{@startdate.strftime("%Y-%m")}-1")-1
+			navimonth = Date.parse("#{@startdate.strftime('%Y-%m')}-1")-1
 		when MONTHFORWARD
-			navimonth = Date.parse("#{@startdate.strftime("%Y-%m")}-1")+31
+			navimonth = Date.parse("#{@startdate.strftime('%Y-%m')}-1")+31
 		else
 			raise "Unknown navi value #{val}"
 		end
