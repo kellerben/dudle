@@ -59,7 +59,7 @@ class Dudle
 			when _(active_tab)
 				ret += "<li id='active_tab' >&nbsp;#{tab}&nbsp;</li> "
 			when ""
-				ret += "<li class='separator_tab' />"
+				ret += "<li class='separator_tab'></li>"
 			else
 				ret += "<li class='nonactive_tab' ><a href='#{file}'>&nbsp;#{tab}&nbsp;</a></li> "
 			end

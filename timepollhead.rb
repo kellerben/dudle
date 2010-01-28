@@ -119,13 +119,13 @@ class TimePollHead
 		ret.sort
 	end
 	def to_html(scols,config = false,activecolumn = nil)
-		ret = "<tr><th class='invisible' />"
+		ret = "<tr><th class='invisible'></th>"
 		head_count("%Y-%m",false).each{|title,count|
 			year, month = title.split("-").collect{|e| e.to_i}
 			ret += "<th colspan='#{count}'>#{Date::ABBR_MONTHNAMES[month]} #{year}</th>\n"
 		}
 
-		ret += "<th class='invisible' /></tr><tr><th class='invisible'></th>"
+		ret += "<th class='invisible'></th></tr><tr><th class='invisible'></th>"
 		head_count("%Y-%m-%d",false).each{|title,count|
 			ret += "<th colspan='#{count}'>#{Date.parse(title).strftime('%a, %d')}</th>\n"
 		}
@@ -134,7 +134,7 @@ class TimePollHead
 			scols.include?(col) ? SORT : NOSORT
 		end
 
-		ret += "<th class='invisible' /></tr><tr><th><a href='?sort=name'>Name #{sortsymb(scols,"name")}</a></th>"
+		ret += "<th class='invisible'></th></tr><tr><th><a href='?sort=name'>Name #{sortsymb(scols,"name")}</a></th>"
 		@data.sort.each{|date|
 			ret += "<th><a title='#{date}' href='?sort=#{CGI.escape(date.to_s)}'>#{date.time_to_s} #{sortsymb(scols,date.to_s)}</a></th>\n"
 		}

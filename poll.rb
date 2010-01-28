@@ -137,7 +137,7 @@ class Poll
 			ret += "'>#{yes}</td>\n"
 		}
 
-		ret += "<td class='invisible' /></tr>"
+		ret += "<td class='invisible'></td></tr>"
 		ret += "</table>\n"
 		ret
 	end
@@ -165,7 +165,7 @@ INVITE
 			edituser = $cgi.cookies["username"][0] unless @data.include?($cgi.cookies["username"][0])
 			@head.columns.each{|k| checked[k] = NOVAL}
 		end
-		ret = "<tr id='separator'><td colspan='#{@head.col_size + 2}' class='invisible' /></tr>\n"
+		ret = "<tr id='separator'><td colspan='#{@head.col_size + 2}' class='invisible'></td></tr>\n"
 		ret += "<tr id='add_participant'>\n"
 		ret += "<td class='name'>
 			<input type='hidden' name='olduser' value=\"#{edituser}\" />
