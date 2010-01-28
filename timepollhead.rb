@@ -35,7 +35,7 @@ class TimePollHead
 	def col_size
 		@data.size
 	end
-	
+
 	# returns a sorted array of all columns
 	#	column should be the internal representation
 	#	column.to_s should deliver humanreadable form
@@ -140,12 +140,79 @@ class TimePollHead
 		ret
 	end
 	
-	def edit_column_htmlform(activecolumn, revision)
-		if $cgi.include?("add_remove_column_month")
-			startdate = Date.parse("#{$cgi["add_remove_column_month"]}-1")
+	def datenavi val,revision
+		case val
+		when MONTHBACK
+			navimonth = Date.parse("#{@startdate.strftime("%Y-%m")}-1")-1
+		when MONTHFORWARD
+			navimonth = Date.parse("#{@startdate.strftime("%Y-%m")}-1")+31
 		else
-			startdate = Date.parse("#{Date.today.year}-#{Date.today.month}-1")
+			raise "Unknown navi value #{val}"
 		end
+		return <<END
+		<th colspan='2' style='padding:0px'>
+			<form method='post' action=''>
+				<div>
+					<input class='navigation' type='submit' value='#{val}' />
+					<input type='hidden' name='add_remove_column_month' value='#{navimonth.strftime("%Y-%m")}' />
+					<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
+					<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
+					<input type='hidden' name='undo_revision' value='#{revision}' />
+				</div>
+			</form>
+		</th>
+END
+	end
+	def timenavi val,revision
+		return "" if @firsttime == 0 || @lasttime == 23
+		case val
+		when _("Earlier")
+			firsttime = [@firsttime-2,0].max
+			lasttime = @lasttime
+		when _("Later")
+			firsttime = @firsttime
+			lasttime = [@lasttime+2,23].min
+		else
+			raise "Unknown navi value #{val}"
+		end
+		return <<END
+<tr>
+	<td style='padding:0px'>
+		<form method='post' action=''>
+			<div>
+				<input class='navigation' type='submit' value='#{val}' />
+				<input type='hidden' name='firsttime' value='#{firsttime.to_s.rjust(2,"0")}:00' />
+				<input type='hidden' name='lasttime' value='#{lasttime.to_s.rjust(2,"0")}:00' />
+				<input type='hidden' name='add_remove_column_month' value='#{@startdate.strftime("%Y-%m")}' />
+				<input type='hidden' name='undo_revision' value='#{revision}' />
+			</div>
+		</form>
+	</td>
+</tr>
+END
+	end
+
+	
+	def edit_column_htmlform(activecolumn, revision)
+		# calculate start date, first and last time to show
+		if $cgi.include?("add_remove_column_month")
+			@startdate = Date.parse("#{$cgi["add_remove_column_month"]}-1")
+		else
+			@startdate = Date.parse("#{Date.today.year}-#{Date.today.month}-1")
+		end
+
+		times = concrete_times
+		realtimes = times.collect{|t| Time.parse(t) if t =~ /\d\d:\d\d/}.compact
+		[9,16].each{|i| realtimes << Time.parse("#{i.to_s.rjust(2,"0")}:00")}
+
+		["firsttime","lasttime"].each{|t|
+			realtimes << Time.parse($cgi[t]) if $cgi.include?(t)
+		}
+
+		@firsttime = realtimes.min.strftime("%H").to_i
+		@lasttime  = realtimes.max.strftime("%H").to_i
+		
+
 		hintstr = _("Click on the dates to add or remove columns.")
 		ret = <<END
 <table style='width:100%'><tr><td style="vertical-align:top">
@@ -154,40 +221,19 @@ class TimePollHead
 </div>
 <table class='calendarday'><tr>
 END
-		def navi val,curmonth,revision
-			case val
-			when MONTHBACK
-				navimonth = Date.parse("#{curmonth}-1")-1
-			when MONTHFORWARD
-				navimonth = Date.parse("#{curmonth}-1")+31
-			else
-				raise "Unknown navi value #{val}"
-			end
-			return <<END
-			<th colspan='2' style='padding:0px'>
-				<form method='post' action=''>
-					<div>
-						<input class='navigation' type='submit' value='#{val}' />
-						<input type='hidden' name='add_remove_column_month' value='#{navimonth.strftime("%Y-%m")}' />
-						<input type='hidden' name='undo_revision' value='#{revision}' />
-					</div>
-				</form>
-			</th>
-END
-		end
-		ret += navi(MONTHBACK,startdate,revision)
-		ret += "<th colspan='3'>#{startdate.strftime('%b %Y')}</th>"
-		ret += navi(MONTHFORWARD,startdate,revision)
+		ret += datenavi(MONTHBACK,revision)
+		ret += "<th colspan='3'>#{@startdate.strftime('%b %Y')}</th>"
+		ret += datenavi(MONTHFORWARD,revision)
 		 
 		ret += "</tr><tr>\n"
 
 		7.times{|i| ret += "<th class='weekday'>#{Date::ABBR_DAYNAMES[(i+1)%7]}</th>" }
 		ret += "</tr><tr>\n"
 		
-		((startdate.wday+7-1)%7).times{
+		((@startdate.wday+7-1)%7).times{
 			ret += "<td></td>"
 		}
-		d = startdate
+		d = @startdate
 		while true do
 			klasse = "notchosen"
 			varname = "new_columnname"
@@ -201,15 +247,17 @@ END
 	<form method='post' action=''>
 		<div>
 			<input class='#{klasse}' type='submit' value='#{d.day}' />
-			<input type='hidden' name='#{varname}' value='#{startdate.strftime("%Y-%m")}-#{d.day.to_s.rjust(2,"0")}' />
-			<input type='hidden' name='add_remove_column_month' value='#{startdate.strftime("%Y-%m")}' />
+			<input type='hidden' name='#{varname}' value='#{@startdate.strftime("%Y-%m")}-#{d.day.to_s.rjust(2,"0")}' />
+			<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
+			<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
+			<input type='hidden' name='add_remove_column_month' value='#{@startdate.strftime("%Y-%m")}' />
 			<input type='hidden' name='undo_revision' value='#{revision}' />
 		</div>
 	</form>
 </td>
 TD
 			d = d.next
-			break if d.month != startdate.month
+			break if d.month != @startdate.month
 			ret += "</tr><tr>\n" if d.wday == 1
 		end
 		ret += <<END
@@ -257,16 +305,12 @@ END
 			"disabled" => _("past")
 		}
 
-		times = concrete_times
-		realtimes = times.collect{|t| Time.parse(t) if t =~ /\d\d:\d\d/}.compact
-		[9,16].each{|i| realtimes << Time.parse("#{i.to_s.rjust(2,"0")}:00")}
 
-		first = realtimes.min.strftime("%H").to_i
-		last  = realtimes.max.strftime("%H").to_i
+		ret += timenavi(_("Earlier"),revision)
 
-		(first..last).each{|i| times << "#{i.to_s.rjust(2,"0")}:00" }
+		(@firsttime..@lasttime).each{|i| times << "#{i.to_s.rjust(2,"0")}:00" }
 		times.flatten.compact.uniq.sort.each{|time|
-			ret +="<tr>\n<td>#{time}</td>"
+			ret +="<tr>\n<td class='navigation'>#{time}</td>"
 			days.each{|day|
 				timestamp = TimeString.new(day,time)
 				klasse = "notchosen"
@@ -290,6 +334,8 @@ END
 				ret += <<END
 			<input title='#{timestamp}' class='#{klasse}' type='submit' value='#{chosenstr[klasse]}' />
 			<input type='hidden' name='columntime' value='#{timestamp.time_to_s}' />
+			<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
+			<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
 			<input type='hidden' name='add_remove_column_month' value='#{timestamp.date.strftime("%Y-%m")}' />
 			<input type='hidden' name='undo_revision' value='#{revision}' />
 		</div>
@@ -299,6 +345,7 @@ END
 			}
 			ret += "</tr>\n"
 		}
+		ret += timenavi(_("Later"),revision)
 
 		ret += "<tr><td></td>"
 		days.each{|d|
@@ -308,6 +355,8 @@ END
 			<div>
 				<input type='hidden' name='new_columnname' value='#{d.strftime("%Y-%m-%d")}' />
 				<input type='hidden' name='add_remove_column_month' value='#{d.strftime("%Y-%m")}' />
+				<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
+				<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
 				<input type='hidden' name='undo_revision' value='#{revision}' />
 END
 			if @data.include?(TimeString.new(d,nil))

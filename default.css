@@ -69,8 +69,10 @@ input.navigation, input.disabled, input.chosen, input.notchosen {
 }
 
 input.navigation {
-	background-color: #EEE;
 	border: none;
+}
+.navigation{
+	background-color: #EEE;
 }
 
 input.disabled { background-color:#eee;color:#ccc}
