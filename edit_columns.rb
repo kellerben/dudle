@@ -49,7 +49,10 @@ urevs = h.undorevisions
 rrevs = h.redorevisions
 
 disabled, title, undorevision, hidden = {},{},{},{}
-hidden["common"] = "<input type='hidden' name='add_remove_column_month' value='#{$cgi["add_remove_column_month"]}' />" if $cgi.include?("add_remove_column_month")
+hidden["common"] = ""
+["add_remove_column_month","firsttime","lasttime"].each{|v|
+	hidden["common"] += "<input type='hidden' name='#{v}' value='#{$cgi[v]}' />" if $cgi.include?(v)
+}
 ["Undo","Redo"].each{|button|
 	disabled[button] = "disabled='disabled'"
 }
