@@ -139,16 +139,14 @@ td {
 }
 
 tr#add_participant{
-	margin:5ex;
-	padding: 5ex;
+	background: #EEE;
 }
 
 tr.participantrow:hover {
 	background: #EEE;
 }
 
-tr.participantrow, tr#add_participant{ 
-	margin-top:5ex;
+tr.participantrow{ 
 	background-color:#fff;
 }
 	
