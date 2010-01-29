@@ -165,7 +165,7 @@ INVITE
 			edituser = $cgi.cookies["username"][0] unless @data.include?($cgi.cookies["username"][0])
 			@head.columns.each{|k| checked[k] = NOVAL}
 		end
-		ret = "<tr id='separator'><td colspan='#{@head.col_size + 2}' class='invisible'></td></tr>\n"
+		ret = "<tr id='separator_top'><td colspan='#{@head.col_size + 2}' class='invisible'></td></tr>\n"
 		ret += "<tr id='add_participant'>\n"
 		ret += "<td class='name'>
 			<input type='hidden' name='olduser' value=\"#{edituser}\" />
@@ -194,7 +194,7 @@ TR
 			}
 			ret += "</table></td>"
 		}
-		ret += "<td class='date'>"
+		ret += "<td>"
 		if @data.include?(edituser)
 			ret += "<input type='submit' value='" + _("Save Changes") + "' />"
 			ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='" + _("Delete User") + "' />"
@@ -204,6 +204,7 @@ TR
 		ret += "</td>\n"
 
 		ret += "</tr>\n"
+		ret += "<tr id='separator_bottom'><td colspan='#{@head.col_size + 2}' class='invisible'></td></tr>\n"
 
 		ret
 	end
