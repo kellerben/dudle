@@ -47,9 +47,11 @@ $d.html.add_atom("atom.cgi") if File.exists?("../atom.rb")
 
 reloadstr = _("Reload")
 $d << <<END
-<div style='position:relative; top:-2ex;'>
-<a href='.'>#{reloadstr}</a>
+<form method='get' action='.'>
+<div>
+<input value='#{reloadstr}' type='submit'/>
 </div>
+</form>
 END
 
 # TABLE
