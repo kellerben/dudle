@@ -74,7 +74,7 @@ MESSAGE
 
 	$h << <<ERROR
 An error occured while executing dudle.<br/>
-Please report you browser, operating system, and what you did to
+Please report your browser, operating system, and what you did to
 <a href='mailto:#{BUGREPORTMAIL}?subject=#{urlescape("Bug in dudle")}&amp;body=#{urlescape(errormessagebody)}'>#{BUGREPORTMAIL}</a>. 
 ERROR
 
