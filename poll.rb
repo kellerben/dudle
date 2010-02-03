@@ -23,6 +23,11 @@ require "time"
 require "pollhead"
 require "timepollhead"
 
+class String
+	def to_htmlID
+		CGI.escapeHTML(self.gsub(/[^A-Z^a-z^0-9^\-^_^:^\.]/,"."))
+	end
+end
 class Poll
 	attr_reader :head, :name
 	YESVAL   = "ayes"
@@ -124,7 +129,7 @@ class Poll
 				percent += "-#{(100.0*(undecided+yes)/@data.size).round}%"
 			end
 
-			ret += "<td class='sum' title='#{percent}' style='"
+			ret += "<td id='sum_#{column.to_htmlID}' class='sum' title='#{percent}' style='"
 			["","background-"].each {|c|
 				ret += "#{c}color: rgb("
 				3.times{ 
@@ -182,12 +187,12 @@ INVITE
 					<td class='input-#{valbinary}'>
 						<input type='radio' 
 							value='#{valbinary}' 
-							id=\"add_participant_checked_#{CGI.escapeHTML(column.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\" 
+							id=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\" 
 							name=\"add_participant_checked_#{CGI.escapeHTML(column.to_s)}\" 
 							title=\"#{CGI.escapeHTML(column.to_s)}\" #{checked[column] == valbinary ? "checked='checked'":""}/>
 					</td>
 					<td class='input-#{valbinary}'>
-						<label for=\"add_participant_checked_#{CGI.escapeHTML(column.to_s.gsub(" ","_").gsub("+","_"))}_#{valbinary}\">#{valhuman}</label>
+						<label for=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\">#{valhuman}</label>
 					</td>
 			</tr>
 TR
