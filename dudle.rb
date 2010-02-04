@@ -17,6 +17,7 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
+$KCODE = "u"
 require "yaml"
 require "cgi"
 
