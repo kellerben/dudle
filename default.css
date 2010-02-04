@@ -120,6 +120,13 @@ td.settingstable, table.settingstable td{
 table.settingstable td.label{
 	text-align: right;
 }
+td.separator_top{
+	border-top:solid thin;
+	padding-top:0.7ex;
+}
+td.separator_bottom{
+	padding-bottom:0.7ex;
+}
 tr#usernamesetting {
 	height: 1.7em
 }

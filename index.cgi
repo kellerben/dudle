@@ -105,10 +105,10 @@ unless $d.html.header["status"] == "REDIRECT"
 </tr>
 <tr>
 	<td></td>
-	<td style='padding-bottom:0.7ex'><input type='submit' value='#{createstr}' /></td>
+	<td class='separator_bottom'><input type='submit' value='#{createstr}' /></td>
 </tr>
 <tr>
-	<td colspan='2' style='border-top:solid thin;padding-top:0.7ex;'>#{customaddrstr}:
+	<td colspan='2' class='separator_top'>#{customaddrstr}:
 	<span class='hint'>#{customaddrhintstr}</span></td>
 </tr>
 <tr>
