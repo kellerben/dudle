@@ -57,7 +57,7 @@ END
 # TABLE
 $d << <<HTML
 <div id='polltable'>
-	<form method='post' action='.'>
+	<form method='post' action='.' accept-charset='utf-8'>
 		#{$d.table.to_html($cgi['edituser'])}
 	</form>
 </div>

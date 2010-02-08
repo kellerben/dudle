@@ -353,7 +353,7 @@ END
 		days.each{|d|
 			ret += <<END
 	<td>
-		<form method='post' action=''>
+		<form method='post' action='' accept-charset='utf-8'>
 			<div>
 				<input type='hidden' name='new_columnname' value='#{d.strftime("%Y-%m-%d")}' />
 				<input type='hidden' name='add_remove_column_month' value='#{d.strftime("%Y-%m")}' />
