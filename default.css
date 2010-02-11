@@ -142,7 +142,6 @@ td {
 	padding-right: 3px;
 	padding-bottom: 1px;
 	padding-top: 1px;
-	font-size:0.8em;
 }
 
 tr#add_participant{
@@ -168,7 +167,6 @@ td.polls {
 
 th { 
 	font-weight: normal;
-	font-size:0.8em;
 	padding-left: 3px;
 	padding-right: 3px;
 	background-color: #EEE;
@@ -178,12 +176,10 @@ th {
 td.date { 
 	color:#ccc;
 	text-align: left;
-	font-size:0.8em;
 }
 
 html {
 	background: #EEE;
-	color: #000;
 	font-family: Arial, Helvetica, sans-serif, serif, monospace, cursive, fantasy;
 }
 #main{
@@ -219,19 +215,16 @@ html {
 	max-width: 20em;
 }
 .hint{
-	font-size:0.9em;
+	font-size:85%;
 }
 
 div#tabs{
+	font-size:80%;
 	min-width:65em;
 }
 
 div#tabs ul{
 	margin-top: 2em;
-}
-
-div#tabs ul, p#history{
-	font-size: 0.8em;
 }
 
 div#tabs ul{
@@ -282,20 +275,12 @@ pre#configwarning {
 	color: red;
 }
 
-h1, h2, h3 {
-	color:#000;
-	margin-bottom:.5ex;
-}
 h1{
 	text-align:center;
-	font-size:1.8em;
 }
 
-h2 {
-	font-size:1.6em;
-}
-h3 {
-	font-size:1.3em;
+h3{
+	margin-bottom: 0.1em;
 }
 
 .comment {
@@ -313,5 +298,4 @@ form#ac_participant, form#ac, form#ac_admin{
 div#languageChooser{
 	margin-top: 2em;
 	text-align: center;
-	font-size: 80%;
 }
