@@ -23,6 +23,7 @@ require "time"
 require "pollhead"
 require "timepollhead"
 
+$KCODE = "u"
 class String
 	def to_htmlID
 		CGI.escapeHTML(self.gsub(/[^A-Z^a-z^0-9^\-^_^:^\.]/,"."))
@@ -243,7 +244,7 @@ COMMENT
 		saysstr = _("says")
 		submitstr = _("Submit Comment")
 		ret += <<ADDCOMMENT
-		<form method='post' action='.'>
+		<form method='post' action='.' accept-charset='utf-8'>
 			<div class='comment' id='add_comment'>
 					<input value='Anonymous' type='text' name='commentname' size='9' /> #{saysstr}&nbsp;
 					<br />

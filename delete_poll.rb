@@ -96,7 +96,7 @@ $d.html << _("If you are sure in what you are doing, please type into the form")
 deletestr = _("Delete") 
 $d.html << <<TABLE
 	#{hint}
-	<form method='post' action=''>
+	<form method='post' action='' accept-charset='utf-8'>
 		<div>
 			<input type='hidden' name='confirmnumber' value='#{CONFIRM}' />
 			<input size='30' type='text' name='confirm' value='#{USERCONFIRM}' />

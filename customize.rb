@@ -88,7 +88,7 @@ usernamestr = _("Username:")
 $d << <<CHARSET
 <div id='config_user'>
 <h3>#{defaultuserstr}</h3>
-<form method='get' action=''>
+<form method='get' action='' accept-charset='utf-8'>
 	<table>
 		<tr id='usernamesetting'>
 			<td>

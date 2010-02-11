@@ -100,7 +100,7 @@ EDITDELETE
 		addeditstr = _("Add/Edit Column")
 		previewstr = _("Preview")
 		ret = <<END
-<form method='post' action=''>
+<form method='post' action='' accept-charset='utf-8'>
 	<div>
 			<label for='columntitle'>#{columntitlestr}: </label>
 			<input id='columntitle' size='16' type='text' value="#{title}" name='new_columnname' />
