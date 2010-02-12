@@ -78,8 +78,17 @@ HEAD
 	def add_head_script(file)
 		add_html_head("<script type='text/javascript' src='#{file}'></script>")
 	end
-	def add_script(file)
+	def add_script_file(file)
 		self << "<script type='text/javascript' src='#{file}'></script>"
+	end
+	def add_script(script)
+		self << <<SCRIPT
+<script type="text/javascript">
+// <![CDATA[
+#{script}
+// ]]>
+</script>
+SCRIPT
 	end
 	def << (bodycontent)
 		@body += bodycontent.chomp + "\n"
