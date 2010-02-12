@@ -302,9 +302,9 @@ END
 		days = @data.sort.collect{|date| date.date }.uniq
 		
 		chosenstr = {
-			"chosen" => _("chosen"),
-			"notchosen" => _("notchosen"),
-			"disabled" => _("past")
+			"chosen" => _("Chosen"),
+			"notchosen" => _("Not Chosen"),
+			"disabled" => _("Past")
 		}
 
 
