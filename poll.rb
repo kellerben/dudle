@@ -246,7 +246,7 @@ COMMENT
 		ret += <<ADDCOMMENT
 		<form method='post' action='.' accept-charset='utf-8'>
 			<div class='comment' id='add_comment'>
-					<input value='Anonymous' type='text' name='commentname' size='9' /> #{saysstr}&nbsp;
+					<input value='#{$cgi.cookies["username"][0] || "Anonymous"}' type='text' name='commentname' size='9' /> #{saysstr}&nbsp;
 					<br />
 					<textarea cols='50' rows='7' name='comment' ></textarea>
 					<br /><input type='submit' value='#{submitstr}' />
