@@ -24,11 +24,7 @@ class HTML
 		@header = {}
 		@header["type"] = "text/html"
 #		@header["type"] = "application/xhtml+xml"
-		if $cgi.accept_charset =~ /utf-8/ || $cgi.accept_charset =~ /\*/
-			@header["charset"] = "utf-8"
-		else
-			@header["charset"] = "iso-8859-1"
-		end
+		@header["charset"] = "utf-8"
 
 		@body = ""
 		@htmlheader = ''
