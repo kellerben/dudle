@@ -35,7 +35,7 @@ inviteparticipantsstr = _("Invite Participants")
 $d << <<TABLE
 	<h2>#{inviteparticipantsstr}</h2>
 	<form method='post' action=''>
-		#{$d.table.to_html("","invite")}
+		#{$d.table.invite_to_html}
 	</form>
 TABLE
 
