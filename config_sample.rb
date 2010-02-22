@@ -38,6 +38,9 @@ SITEURL = "http://#{$cgi.server_name}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
 #ERRORLOG = "/var/log/dudle_error.log"
 BUGREPORTMAIL = "Benjamin.Kellermann@tu-dresden.de"
 
+# Send bug reports automatically with the programm “mail”
+AUTO_SEND_REPORT = false
+
 # Add some Example Polls to the start page
 EXAMPLES = {
 	"event_schedule_example" => "coffeebreak",

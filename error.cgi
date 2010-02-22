@@ -91,12 +91,15 @@ $h << "</div></div>"
 $h.out($cgi)
 
 
-tmpfile = "/tmp/error.#{rand(10000)}"
-File.open(tmpfile,"w"){|f| 
-	f << errorstr
-}
+if AUTO_SEND_REPORT
+	tmpfile = "/tmp/error.#{rand(10000)}"
+	File.open(tmpfile,"w"){|f| 
+		f << errorstr
+	}
 
-`mail -s "Bug in dudle" #{BUGREPORTMAIL} < #{tmpfile}`
+	`mail -s "Bug in dudle" #{BUGREPORTMAIL} < #{tmpfile}`
 
-File.delete(tmpfile)
+	File.delete(tmpfile)
+
+end
 
