@@ -204,7 +204,7 @@ END
 		end
 
 		times = concrete_times
-		realtimes = times.collect{|t| Time.parse(t) if t =~ /\d\d:\d\d/}.compact
+		realtimes = times.collect{|t| Time.parse(t) if t =~ /^\d\d:\d\d$/}.compact
 		[9,16].each{|i| realtimes << Time.parse("#{i.to_s.rjust(2,"0")}:00")}
 
 		["firsttime","lasttime"].each{|t|
@@ -311,7 +311,15 @@ END
 		ret += timenavi(EARLIER,revision)
 
 		(@firsttime..@lasttime).each{|i| times << "#{i.to_s.rjust(2,"0")}:00" }
-		times.flatten.compact.uniq.sort.each{|time|
+		times.flatten.compact.uniq.sort{|a,b|
+			if a =~ /^\d\d:\d\d$/ && !(b =~ /^\d\d:\d\d$/)
+				-1
+			elsif !(a =~ /^\d\d:\d\d$/) && b =~ /^\d\d:\d\d$/
+				1
+			else
+				a.to_i == b.to_i ? a <=> b : a.to_i <=> b.to_i
+			end
+		}.each{|time|
 			ret +="<tr>\n<td class='navigation'>#{time}</td>"
 			days.each{|day|
 				timestamp = TimeString.new(day,time)

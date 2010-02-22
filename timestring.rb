@@ -56,7 +56,9 @@ class TimeString
 	end
 	def <=>(other)
 		if self.date == other.date
-			if self.time.class == String && other.time.class == String || self.time.class == Time && other.time.class == Time
+			if self.time.class == String && other.time.class == String 
+				self.time.to_i == other.time.to_i ? self.time <=> other.time : self.time.to_i <=> other.time.to_i
+			elsif self.time.class == Time && other.time.class == Time
 				self.time <=> other.time
 			elsif self.time.class == NilClass && other.time.class == NilClass
 				0
