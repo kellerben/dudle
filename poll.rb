@@ -162,11 +162,12 @@ HEAD
 				has_voted = true unless @data[participant][column].nil?
 			}
 
-			ret += "<tr>"
 			if edituser == participant
+				ret += "<tr id='add_participant_row'>"
 				ret += add_participant_input(edituser)
 				ret += save_input(edituser,invitestr)
 			else
+				ret += "<tr class='participantrow'>"
 				ret += "<td class='name'>"
 				ret += userstring(participant,!has_voted)
 				ret += "</td>"
@@ -175,7 +176,7 @@ HEAD
 
 		}
 		unless @data.keys.include?(edituser)
-			ret += "<tr>"
+			ret += "<tr id='add_participant_row'>"
 			ret += add_participant_input(edituser)
 			ret += save_input(edituser,invitestr)
 			ret += "</tr>"
