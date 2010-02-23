@@ -63,7 +63,13 @@ class Poll
 		end
 	end
 
-	# showparticipation \in {true, false, "invite"}
+	def userstring(participant,link)
+		ret = ""
+		ret += "<a title='" + _("Edit user") + " #{CGI.escapeHTML(participant)}' href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" if link
+		ret += participant
+		ret += "<span class='edituser'> <sup>#{EDIT}</sup></span></a>" if link
+		ret
+	end
 	def to_html(edituser = "", showparticipation = true)
 		ret = "<table border='1'>\n"
 		
@@ -75,9 +81,7 @@ class Poll
 			else
 				ret += "<tr class='participantrow'>\n"
 				ret += "<td class='name'>"
-				ret += "<a title='" + _("Edit user") + " #{CGI.escapeHTML(participant)}' href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" if showparticipation
-				ret += participant
-				ret += "<span class='edituser'> <sup>#{EDIT}</sup></span></a>" if showparticipation
+				ret += userstring(participant,showparticipation)
 				ret += "</td>\n"
 				@head.columns.each{|column|
 					klasse = poll[column]
@@ -143,55 +147,62 @@ class Poll
 		ret
 	end
 
-	def invite_to_html
+	def invite_to_html(edituser)
 		invitestr = _("Invite")
 		namestr = _("Name")
-		deletestr = ("Delete")
 		ret = <<HEAD
-<table>
+<table id='participanttable' class='settingstable'>
 <tr>
 	<th>#{namestr}</th>
-	<td class='invisible'></td>
 </tr>
 HEAD
 		@data.keys.sort.each{|participant|
-			ret += <<ROW
-				<tr>
-					<td>#{participant}</td>
-ROW
 			has_voted = false
 			@head.columns.each{|column|
 				has_voted = true unless @data[participant][column].nil?
 			}
-			unless has_voted
-				ret += <<ROW
-					<td>
-						<form method='post' action=''>
-							<div>
-								<input type='hidden' name='delete_participant' value='#{participant}'/>
-								<input type='submit' value='#{deletestr}' />
-							</div>
-						</form>
-					</td>
-ROW
+
+			ret += "<tr>"
+			if edituser == participant
+				ret += add_participant_input(edituser)
+				ret += save_input(edituser,invitestr)
+			else
+				ret += "<td class='name'>"
+				ret += userstring(participant,!has_voted)
+				ret += "</td>"
 			end
 			ret += "</tr>"
-		}
 
-		ret += <<INVITE
-<tr>
-<td colspan='2'>
-	<form method='post' action=''>
-		<div>
-			<input size='10' type='text' name='add_participant' />
-			<input type='submit' value='#{invitestr}' />
-		</div>
-	</form>
-</td>
-</tr>
-</table>
-INVITE
+		}
+		unless @data.keys.include?(edituser)
+			ret += "<tr>"
+			ret += add_participant_input(edituser)
+			ret += save_input(edituser,invitestr)
+			ret += "</tr>"
+		end
+		ret += "</table>"
 		ret
+	end
+	def add_participant_input(edituser)
+		return <<END
+<td class='name'>
+	<input type='hidden' name='olduser' value=\"#{edituser}\" />
+	<input size='16' 
+		type='text' 
+		name='add_participant'
+		value="#{edituser}"/>
+</td>
+END
+	end
+	def save_input(edituser, savestring)
+		ret = "<td>"
+		if @data.include?(edituser)
+			ret += "<input type='submit' value='" + _("Save Changes") + "' />"
+			ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='" + _("Delete User") + "' />"
+		else
+			ret += "<input type='submit' value='#{savestring}' />"
+		end
+		ret += "</td>\n"
 	end
 
 	def participate_to_html(edituser)
@@ -203,14 +214,11 @@ INVITE
 			@head.columns.each{|k| checked[k] = NOVAL}
 		end
 		ret = "<tr id='separator_top'><td colspan='#{@head.col_size + 2}' class='invisible'></td></tr>\n"
+
 		ret += "<tr id='add_participant'>\n"
-		ret += "<td class='name'>
-			<input type='hidden' name='olduser' value=\"#{edituser}\" />
-			<input size='16' 
-				type='text' 
-				name='add_participant'
-				value=\"#{edituser}\"/>"
-		ret += "</td>\n"
+
+		ret += add_participant_input(edituser)
+
 		@head.columns.each{|column|
 			ret += "<td class='checkboxes'><table class='checkboxes'>"
 			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
@@ -231,14 +239,7 @@ TR
 			}
 			ret += "</table></td>"
 		}
-		ret += "<td>"
-		if @data.include?(edituser)
-			ret += "<input type='submit' value='" + _("Save Changes") + "' />"
-			ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='" + _("Delete User") + "' />"
-		else
-			ret += "<input type='submit' value='" + _("Save") + "' />"
-		end
-		ret += "</td>\n"
+		ret += save_input(edituser, _("Save"))
 
 		ret += "</tr>\n"
 		ret += "<tr id='separator_bottom'><td colspan='#{@head.col_size + 2}' class='invisible'></td></tr>\n"

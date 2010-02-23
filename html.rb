@@ -41,7 +41,8 @@ HEAD
 
 		@css = [@css[0]] + @css[1..-1].sort unless @css.empty?
 		@css.each{|title,href|
-			ret += "<link rel='stylesheet' type='text/css' href='#{href}' title='#{title}'/>\n"
+			titleattr = "title='#{title}'" if title != ""
+			ret += "<link rel='stylesheet' type='text/css' href='#{href}' #{titleattr}/>\n"
 			ret += "<link rel='stylesheet' type='text/css' href='#{href}' title='print' media='print' />\n" if title == "print"
 		}
 
@@ -54,7 +55,7 @@ HEAD
 		ret += "</head>"
 		ret
 	end
-	def add_css(href, title, default = false)
+	def add_css(href, title = "", default = false)
 		if default
 			@css.unshift([title,href])
 		else
