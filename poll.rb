@@ -185,11 +185,12 @@ HEAD
 	end
 	def add_participant_input(edituser)
 		return <<END
-<td class='name'>
+<td id='add_participant_input_td'>
 	<input type='hidden' name='olduser' value=\"#{edituser}\" />
 	<input size='16' 
 		type='text' 
 		name='add_participant'
+		id='add_participant_input'
 		value="#{edituser}"/>
 </td>
 END
@@ -200,7 +201,7 @@ END
 			ret += "<input type='submit' value='" + _("Save Changes") + "' />"
 			ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='" + _("Delete User") + "' />"
 		else
-			ret += "<input type='submit' value='#{savestring}' />"
+			ret += "<input id='savebutton' type='submit' value='#{savestring}' />"
 		end
 		ret += "</td>\n"
 	end

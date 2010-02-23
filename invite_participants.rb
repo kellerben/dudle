@@ -38,7 +38,7 @@ $d.wizzard_redirect
 inviteparticipantsstr = _("Invite Participants")
 $d << <<TABLE
 	<h2>#{inviteparticipantsstr}</h2>
-<form method='post' action='invite_participants.cgi' accept-charset='utf-8'>
+<form id='invite_participants_form' method='post' action='invite_participants.cgi' accept-charset='utf-8'>
 	#{$d.table.invite_to_html($cgi['edituser'])}
 </form>
 TABLE
