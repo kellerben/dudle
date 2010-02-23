@@ -146,6 +146,7 @@ class Poll
 	def invite_to_html
 		invitestr = _("Invite")
 		namestr = _("Name")
+		deletestr = ("Delete")
 		ret = <<HEAD
 <table>
 <tr>
@@ -153,19 +154,39 @@ class Poll
 	<td class='invisible'></td>
 </tr>
 HEAD
-		@data.each_key{|participant|
+		@data.keys.sort.each{|participant|
 			ret += <<ROW
-				<tr><td class='name'>#{participant}</td><td class='invisible'></td></tr>
+				<tr>
+					<td>#{participant}</td>
 ROW
+			has_voted = false
+			@head.columns.each{|column|
+				has_voted = true unless @data[participant][column].nil?
+			}
+			unless has_voted
+				ret += <<ROW
+					<td>
+						<form method='post' action=''>
+							<div>
+								<input type='hidden' name='delete_participant' value='#{participant}'/>
+								<input type='submit' value='#{deletestr}' />
+							</div>
+						</form>
+					</td>
+ROW
+			end
+			ret += "</tr>"
 		}
 
 		ret += <<INVITE
-<tr id='add_participant'>
-<td class='name'>
-	<input size='16' type='text' name='add_participant' />
-</td>
-<td class='checkboxes' colspan='#{@head.col_size + 1}'>
+<tr>
+<td colspan='2'>
+	<form method='post' action=''>
+		<div>
+			<input size='10' type='text' name='add_participant' />
 			<input type='submit' value='#{invitestr}' />
+		</div>
+	</form>
 </td>
 </tr>
 </table>
