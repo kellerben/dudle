@@ -131,10 +131,12 @@ NOTICE
 CREATE
 
 	if defined?(EXAMPLES)
-		$d << "<div><h2>" + _("Examples") + "</h2>"
-		$d << _("If you want to play around with the Tool, you may want to take a look at these Example Polls:") + "<br />"
-		$d << "<a href='#{EXAMPLES["event_schedule_example"]}'>" + _("Event Schedule Poll") + "</a><br />" if EXAMPLES["event_schedule_example"]
-		$d << "<a href='#{EXAMPLES["normal_example"]}'>" + _("Normal Poll") + "</a></div>" if EXAMPLES["normal_example"]
+		$d << "<div class='textcolumn'><h2>" + _("Examples") + "</h2>"
+		$d << _("If you want to play around with the Tool, you may want to take a look at these Example Polls:") 
+		$d << "<ul>"
+		$d << "<li><a href='#{EXAMPLES["event_schedule_example"]}'>" + _("Event Schedule Poll") + "</a></li>" if EXAMPLES["event_schedule_example"]
+		$d << "<li><a href='#{EXAMPLES["normal_example"]}'>" + _("Normal Poll") + "</a></li>" if EXAMPLES["normal_example"]
+		$d << "</ul></div>"
 	end
 
 	$d << NOTICE
