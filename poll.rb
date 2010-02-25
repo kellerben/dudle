@@ -199,7 +199,7 @@ END
 	def save_input(edituser, savestring)
 		ret = "<td>"
 		if @data.include?(edituser)
-			ret += "<input type='submit' value='" + _("Save Changes") + "' />"
+			ret += "<input id='savebutton' type='submit' value='" + _("Save Changes") + "' />"
 			ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='" + _("Delete User") + "' />"
 		else
 			ret += "<input id='savebutton' type='submit' value='#{savestring}' />"
