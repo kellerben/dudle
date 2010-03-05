@@ -187,7 +187,7 @@ msgid ""
 "If you want to play around with the Tool, you may want to take a look at "
 "these Example Polls:"
 msgstr ""
-"Wenn sie diese Applikation ausprobieren möchten, können sie auch auf "
+"Wenn Sie diese Applikation ausprobieren möchten, können Sie auch auf "
 "folgende Beispielumfragen schauen:"
 
 #: index.cgi:136
@@ -571,7 +571,7 @@ msgid ""
 "To add some time different to the default ones, please enter some string "
 "here (e.g.: 09:30, morning, afternoon)."
 msgstr ""
-"Geben sie eine Zeit ein, um eine andere als die vorgeschlagenen Zeiten "
+"Geben Sie eine Zeit ein, um eine andere als die vorgeschlagenen Zeiten "
 "auszuwählen (z.B.: 9:30, morgens, abends)."
 
 #: timepollhead.rb:98
