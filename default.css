@@ -244,7 +244,7 @@ div#tabs a{
 	text-decoration:none;
 }
 
-li#active_tab{
+li.active_tab{
 	border-style: solid solid none; 
 	padding-bottom: 1px;
 }
