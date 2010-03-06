@@ -108,11 +108,11 @@ msgstr "Aussehen"
 
 #: customize.cgi:86 customize.rb:86
 msgid "Default Username"
-msgstr "Voreingestellter Teilnehmername"
+msgstr "Voreingestellter Benutzername"
 
 #: customize.cgi:87 access_control.rb:74 customize.rb:87
 msgid "Username:"
-msgstr "Teilnehmername:"
+msgstr "Benutzername:"
 
 #: customize.cgi:111 customize.rb:111
 msgid "Edit"
