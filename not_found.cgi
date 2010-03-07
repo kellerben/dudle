@@ -36,11 +36,13 @@ $h << <<END
 		<p>
 		There are several reasons, why a Poll is deleted:
 		<ul>
-			<li>Somebody klicked on „Delete Poll“ and deleted the poll manually.</li>
+			<li>Somebody klicked on “Delete Poll” and deleted the poll manually.</li>
 			<li>The Poll was deleted by some cleanup-roundtrip.</li>
 		</ul>
-		If you think, the deletion was done by error, please contact the adminsistrator of the system.<br />
-		<a href='#{SITEURL}'>Return to dudle home and Schedule a new Poll.</a>
+		If you think, the deletion was done by error, please contact the adminsistrator of the system.
+		<ul>
+			<li><a href='#{SITEURL}'>Return to dudle home and Schedule a new Poll.</a></li>
+		</ul>
 		</p>
 	</div>
 </div>
