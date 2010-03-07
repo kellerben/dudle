@@ -61,10 +61,10 @@ SORTSYMBOL
 		ret = "<tr>"
 		ret += "<th><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>\n" unless showeditbuttons
 		@data.sort.each{|columntitle,columndescription|
-			ret += "<th"
+			ret += "<th title=\"#{columndescription}\""
 			ret += " id='active' " if activecolumn == columntitle
 			ret += ">"
-			ret += "<a title=\"#{columndescription}\" href=\"?sort=#{CGI.escapeHTML(CGI.escape(columntitle))}\">" unless showeditbuttons
+			ret += "<a href=\"?sort=#{CGI.escapeHTML(CGI.escape(columntitle))}\">" unless showeditbuttons
 			ret += "#{CGI.escapeHTML(columntitle)}"
 			ret += "#{sortsymb(scols,columntitle)}</a>" unless showeditbuttons
 			if showeditbuttons
