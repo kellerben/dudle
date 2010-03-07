@@ -9,3 +9,4 @@ AddHandler cgi-script .cgi
 DirectoryIndex index.cgi
 
 ErrorDocument 500 /error.cgi
+ErrorDocument 404 /not_found.cgi
