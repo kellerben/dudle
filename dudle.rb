@@ -97,6 +97,8 @@ class Dudle
 		@tab = "." if @tab == "index.cgi"
 
 		if File.exists?("data.yaml") && !File.stat("data.yaml").directory?
+			# log last read acces manually (no need to grep server logfiles)
+			File.open("last_read_access","w").close
 			@is_poll = true
 			@basedir = ".." 
 			GetText.bindtextdomain("dudle",:path => "#{@basedir}/locale/")
