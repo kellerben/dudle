@@ -91,7 +91,6 @@ div#AddRemoveColumndaysDescription{
 
 table.calendarday th, table.calendarday td{
 	min-width: 2em;
-	height: 2em;
 }
 
 table.calendarday form {
