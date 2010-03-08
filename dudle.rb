@@ -199,7 +199,7 @@ READY
 	end
 
 	def out
-		@html << wizzard_nav if @is_config && @wizzardindex != @configtabs.size() -1
+		@html << wizzard_nav if @is_config
 
 		@html.add_cookie("lang",@cgi["lang"],"/",Time.now + (1*60*60*24*365)) if @cgi.include?("lang")
 		@html << "<div id='languageChooser'>"
