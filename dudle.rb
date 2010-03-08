@@ -165,18 +165,7 @@ HEAD
 	end
 
 	def wizzard_nav
-		ret = "<div id='wizzard_navigation'>"
-		ret += "<table><tr>"
-
-		# add a timeline
-		ret += "<td colspan='3'>"
-		i = -1
-		ret += @configtabs.collect{|title,link|
-			"<a class='navigationlink' href='#{link}' title='#{title}'>#{NUMBERS[i+=1]}</a>"
-		}.join(DASH*2)
-		ret += "</td>"
-		ret += "</tr><tr>"
-
+		ret = "<div id='wizzard_navigation'><table><tr>"
 		[[_("Previous"),@wizzardindex == 0],
 		 [_("Next"),@wizzardindex >= @configtabs.size()-2],
 		 [_("Finish"),@wizzardindex == @configtabs.size()-1]].each{|button,disabled|
@@ -191,9 +180,7 @@ HEAD
 				</td>
 READY
 		}
-
-		ret += "</tr></table>"
-		ret += "</div>"
+		ret += "</tr></table></div>"
 	end
 
 	def wizzard_redirect

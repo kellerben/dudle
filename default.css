@@ -22,21 +22,9 @@
 	background-color: #FFF;
 }
 
-a.navigationlink {
-	color:#f96;
-	text-decoration:none;
-}
-a.navigationlink:visited {
-	color:#9c6;
-}
-a.navigationlink:active, a.navigationlink:hover {
-	color:#ff6;
-	text-decoration:none;
-}
-
 a, a:visited {
-	color:#36c;
-	text-decoration:none;
+color:#36c;
+text-decoration:none;
 }
 	
 a:hover, a:active {

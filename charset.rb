@@ -44,9 +44,6 @@ if $USEUTF
 	DELETE = CGI.escapeHTML("✖")
 
 	PASSWORDSTAR = CGI.escapeHTML("•")
-
-	NUMBERS = ["①","②","③","④"]
-	DASH = "─"
 else
 	NOSORT      = ''
 	SORT        = CGI.escapeHTML('^')
@@ -67,9 +64,6 @@ else
 	DELETE = CGI.escapeHTML("delete")
 
 	PASSWORDSTAR = CGI.escapeHTML("*")
-
-	NUMBERS = ["1","2","3","4"]
-	DASH = "-"
 end
 
-UTFCHARS = CGI.escapeHTML("✔✘◀▶✍✖•▾▴①②③④─")
+UTFCHARS = CGI.escapeHTML("✔✘◀▶✍✖•▾▴")
