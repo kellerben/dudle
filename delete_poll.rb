@@ -92,7 +92,7 @@ end
 $d.html << "<h2>" + _("Delete this Poll") + "</h2>"
 $d.html << _("You want to delete the poll named") + " <b>#{$d.table.name}</b>.<br />"
 $d.html << _("This is an irreversible action!") + "<br />"
-$d.html << _("If you are sure in what you are doing, please type into the form") + " " + _("“") + QUESTIONS[CONFIRM] + _("”")
+$d.html << _("If you are sure in what you are doing, please type “%{question}” into the form.") % {:question => QUESTIONS[CONFIRM]}
 deletestr = _("Delete") 
 $d.html << <<TABLE
 	#{hint}

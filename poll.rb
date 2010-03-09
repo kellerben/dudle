@@ -65,7 +65,7 @@ class Poll
 
 	def userstring(participant,link)
 		ret = ""
-		ret += "<a title='" + _("Edit user") + " #{CGI.escapeHTML(participant)}' href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" if link
+		ret += "<a title='" + _("Edit user %{user}") % {:user => CGI.escapeHTML(participant)} + "' href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" if link
 		ret += participant
 		ret += "<span class='edituser'> <sup>#{EDIT}</sup></span></a>" if link
 		ret
@@ -253,16 +253,16 @@ TR
 		ret = "<div id='comments'>"
 		ret	+= "<h2>" + _("Comments") + "</h2>"
 
-		saidstr = _("said on")
 		unless @comment.empty?
 			@comment.each_with_index{|c,i|
 				time,name,comment = c
+				saidstr = _("%{user} said on %{time}") % {:user => name, :time => time.strftime("%d.%m., %H:%M")}
 				deletestr = _("Delete")
 				ret += <<COMMENT
 <form method='post' action='.'>
 <div class='textcolumn'>
 		<h3 class='comment'>
-			#{name} #{saidstr} #{time.strftime("%d.%m., %H:%M")}
+			#{saidstr}
 			<input type='hidden' name='delete_comment' value='#{i}' />
 			&nbsp;
 			<input class='delete_comment_button' type='submit' value='#{deletestr}' />

@@ -25,11 +25,11 @@ load "../dudle.rb"
 if $cgi.include?("revision")
 	revno=$cgi["revision"].to_i
 	$d = Dudle.new(revno)
-	versiontitle = _("Poll of Version") + " #{revno}"
+	versiontitle = _("Poll of Version %{revisionnumber}") % {:revisionnumber => revno}
 else
 	revno = VCS.revno
 	$d = Dudle.new
-	versiontitle = _("Current Poll") + " (" + _("Version") + " #{revno})"
+	versiontitle = _("Current Poll (Version %{revisionnumber})") % {:revisionnumber => revno}
 end
 
 historystr = _("History")

@@ -32,7 +32,7 @@ $d << _("The link to your poll is:")
 
 mailstr = _("Send this link via email...")
 nextstr = _("To the Vote interface")
-subjectstr = _("Link to dudle poll about") + " " + $d.title
+subjectstr = _("Link to dudle poll about %{polltitle}") % {:title => $d.title}
 
 $d << <<END
 <pre>#{SITEURL}</pre>
