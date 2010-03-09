@@ -80,8 +80,8 @@ unless $d.html.header["status"] == "REDIRECT"
 
 	titlestr = _("Title")
 	typestr = _("Type")
-	timepollstr = _("Event Schedule Poll (e.g. schedule a meeting)")
-	normalpollstr = _("Normal Poll (e.g. vote for what is the best coffee)")
+	timepollstr = _("Event Schedule Poll (e.&thinsp;g., schedule a meeting)")
+	normalpollstr = _("Normal Poll (e.&thinsp;g., vote for what is the best coffee)")
 	customaddrstr = _("Custom address (optional)")
 	customaddrhintstr = _("May contain letters, numbers, and dashes.")
 

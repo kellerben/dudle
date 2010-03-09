@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-03-09 13:44+0100\n"
-"PO-Revision-Date: 2010-03-09 20:03+0100\n"
+"POT-Creation-Date: 2010-03-09 20:43+0100\n"
+"PO-Revision-Date: 2010-03-09 20:44+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -159,12 +159,12 @@ msgid "Type"
 msgstr "Typ"
 
 #: index.cgi:83
-msgid "Event Schedule Poll (e.g. schedule a meeting)"
-msgstr "Nach einer Zeit fragen (z.B. einen Besprechungstermin finden)"
+msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
+msgstr "Nach einer Zeit fragen (z.&thinsp;B. einen Besprechungstermin finden)"
 
 #: index.cgi:84
-msgid "Normal Poll (e.g. vote for what is the best coffee)"
-msgstr "Normale Umfrage (z.B. eine Umfrage über die beste Kaffeesorte)"
+msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
+msgstr "Normale Umfrage (z.&thinsp;B. eine Umfrage über die beste Kaffeesorte)"
 
 #: index.cgi:85
 msgid "Custom address (optional)"
@@ -541,8 +541,8 @@ msgid "Preview"
 msgstr "Vorschau"
 
 #: timepollhead.rb:92
-msgid "To add some time different to the default ones, please enter some string here (e.g.: 09:30, morning, afternoon)."
-msgstr "Geben Sie eine Zeit ein, um eine andere als die vorgeschlagenen Zeiten auszuwählen (z.B.: 9:30, morgens, abends)."
+msgid "To add some time different to the default ones, please enter some string here (e.&thinsp;g., 09:30, morning, afternoon)."
+msgstr "Geben Sie eine Zeit ein, um eine andere als die vorgeschlagenen Zeiten auszuwählen (z.&thinsp;B. 9:30, morgens, abends)."
 
 #: timepollhead.rb:98
 msgid "This Time was already choosen."
@@ -589,6 +589,6 @@ msgid "Add"
 msgstr "Hinzufügen"
 
 #: timepollhead.rb:376
-msgid "e.g.: 09:30, morning, afternoon"
-msgstr "z.B.: 9:30, morgens, abends"
+msgid "e.&thinsp;g., 09:30, morning, afternoon"
+msgstr "z.B., 9:30, morgens, abends"
 

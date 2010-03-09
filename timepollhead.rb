@@ -89,7 +89,7 @@ class TimePollHead
 	# returns parsed title or nil in case of colum not changed
 	def edit_column(column, newtitle, cgi)
 		if cgi.include?("columntime") && cgi["columntime"] == ""
-			@edit_column_error = _("To add some time different to the default ones, please enter some string here (e.g.: 09:30, morning, afternoon).")
+			@edit_column_error = _("To add some time different to the default ones, please enter some string here (e.&thinsp;g., 09:30, morning, afternoon).")
 			return nil
 		end
 		delete_column(column) if column != ""
@@ -373,7 +373,7 @@ END
 				ret += "<input type='hidden' name='columnid' value='#{TimeString.new(d,nil).to_s}' />"
 			end
 			addstr = _("Add")
-			hintstr = _("e.g.: 09:30, morning, afternoon")
+			hintstr = _("e.&thinsp;g., 09:30, morning, afternoon")
 			ret += <<END
 				<input type="text" name='columntime' title='#{hintstr}' style="max-width: 10ex" /><br />
 				<input type="submit" value="#{addstr}" style="width: 100%" />

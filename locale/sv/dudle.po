@@ -19,9 +19,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-03-09 14:41+0100\n"
+"POT-Creation-Date: 2010-03-09 20:43+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Erica Resare <erica.resare@kau.se>\n"
+"Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -155,11 +155,11 @@ msgid "Type"
 msgstr "Typ"
 
 #: index.cgi:83
-msgid "Event Schedule Poll (e.g. schedule a meeting)"
+msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Händelseschema Omröstning (t ex boka ett möte)"
 
 #: index.cgi:84
-msgid "Normal Poll (e.g. vote for what is the best coffee)"
+msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Normal omröstning (t ex rösta på bästa kaffet)"
 
 #: index.cgi:85
@@ -243,7 +243,13 @@ msgid "You will be asked for the password you entered here after pressing save!"
 msgstr "Efter att du har klickat på spara kommer du kommer att frågas efter lösenordet du nu skrev in! "
 
 #: access_control.rb:195
+msgid "The user ‘admin’ has access to the vote as well as the configuration interface."
+msgstr ""
+
 #: access_control.rb:201
+msgid "The user ‘participant’ has only access to the vote interface."
+msgstr ""
+
 #: access_control.rb:207
 msgid "Access control:"
 msgstr "Åtkomstkontroll:"
@@ -309,6 +315,9 @@ msgid "This is an irreversible action!"
 msgstr "Det går inte att ångra den här åtgärden!"
 
 #: delete_poll.rb:95
+msgid "If you are sure in what you are doing, please type “%{question}” into the form."
+msgstr ""
+
 #: dudle.rb:46
 msgid "Home"
 msgstr "Hem"
@@ -528,8 +537,8 @@ msgid "Preview"
 msgstr "Förhandsgranska"
 
 #: timepollhead.rb:92
-msgid "To add some time different to the default ones, please enter some string here (e.g.: 09:30, morning, afternoon)."
-msgstr "Lägg till fler tider än standardtiderna (t ex: 09:30, morgon, eftermiddag)"
+msgid "To add some time different to the default ones, please enter some string here (e.&thinsp;g., 09:30, morning, afternoon)."
+msgstr "Lägg till fler tider än standardtiderna (t ex 09:30, morgon, eftermiddag)"
 
 #: timepollhead.rb:98
 msgid "This Time was already choosen."
@@ -576,6 +585,6 @@ msgid "Add"
 msgstr "Lägg till"
 
 #: timepollhead.rb:376
-msgid "e.g.: 09:30, morning, afternoon"
-msgstr "t ex: 09:30, morgon, eftermiddag"
+msgid "e.&thinsp;g., 09:30, morning, afternoon"
+msgstr "t ex 09:30, morgon, eftermiddag"
 
