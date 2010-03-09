@@ -17,22 +17,24 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-default: locale/de/dudle.mo
+DOMAIN=dudle
 
-locale/dudle.pot: *.rb *.cgi
+default: $(foreach p,$(wildcard locale/*/$(DOMAIN).po), $(addsuffix .mo,$(basename $p)))
+
+locale/$(DOMAIN).pot: *.rb *.cgi
 	rm -f $@
 	rgettext *.cgi *.rb -o $@
 
 %.mo: %.po
 	rmsgfmt $*.po -o $*.mo
 
-locale/%/dudle.po: locale/dudle.pot
-	msgmerge locale/$*/dudle.po locale/dudle.pot >/tmp/dudle_$*_tmp.po
-	if [ "`msgcomm -u /tmp/dudle_$*_tmp.po locale/$*/dudle.po`" ];then\
-		mv /tmp/dudle_$*_tmp.po locale/$*/dudle.po;\
+locale/%/$(DOMAIN).po: locale/$(DOMAIN).pot
+	msgmerge locale/$*/$(DOMAIN).po locale/$(DOMAIN).pot >/tmp/$(DOMAIN)_$*_tmp.po
+	if [ "`msgcomm -u /tmp/$(DOMAIN)_$*_tmp.po locale/$*/$(DOMAIN).po`" ];then\
+		mv /tmp/$(DOMAIN)_$*_tmp.po locale/$*/$(DOMAIN).po;\
 	else\
-		touch locale/$*/dudle.po;\
+		touch locale/$*/$(DOMAIN).po;\
 	fi
-	if [ "`postats -f locale/$*/dudle.po|tail -n1 |cut -d"(" -f3|cut -d")" -f1`" = "100%\n" ];\
-		then poedit locale/$*/dudle.po;\
+	if [ "`postats -f locale/$*/$(DOMAIN).po|tail -n1 |cut -d"(" -f3|cut -d")" -f1`" = "100%\n" ];\
+		then poedit locale/$*/$(DOMAIN).po;\
 	fi
