@@ -205,7 +205,8 @@ READY
 		@html << "<div id='languageChooser'>"
 		lang = [
 			["en", "English"],
-			["de", "Deutsch"]
+			["de", "Deutsch"],
+			["sv", "Svenska"]
 			]
 		lang.each{|short,long|
 			@html << "<a href='?lang=#{short}'>" unless short == GetText.locale.language
