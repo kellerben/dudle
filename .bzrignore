@@ -1,5 +1,5 @@
 config.rb
 locale/dudle.pot
-locale/de/dudle.mo
+locale/*/dudle.mo
 css/*
 extensions/*

@@ -20,13 +20,19 @@
 default: locale/de/dudle.mo
 
 locale/dudle.pot: *.rb *.cgi
-	rm -f locale/dudle.pot
-	rgettext *.cgi *.rb -o locale/dudle.pot
+	rm -f $@
+	rgettext *.cgi *.rb -o $@
 
 %.mo: %.po
 	rmsgfmt $*.po -o $*.mo
 
 locale/%/dudle.po: locale/dudle.pot
 	msgmerge locale/$*/dudle.po locale/dudle.pot >/tmp/dudle_$*_tmp.po
-	if [ "`msgcomm -u /tmp/dudle_de_tmp.po locale/de/dudle.po`" ];then mv /tmp/dudle_$*_tmp.po locale/$*/dudle.po; else touch locale/$*/dudle.po; fi
-	if [ "`postats -f locale/$*/dudle.po|tail -n1 |cut -d"(" -f3|cut -d")" -f1`" = "100%\n" ]; then poedit locale/$*/dudle.po; fi
+	if [ "`msgcomm -u /tmp/dudle_$*_tmp.po locale/$*/dudle.po`" ];then\
+		mv /tmp/dudle_$*_tmp.po locale/$*/dudle.po;\
+	else\
+		touch locale/$*/dudle.po;\
+	fi
+	if [ "`postats -f locale/$*/dudle.po|tail -n1 |cut -d"(" -f3|cut -d")" -f1`" = "100%\n" ];\
+		then poedit locale/$*/dudle.po;\
+	fi
