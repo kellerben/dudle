@@ -1,5 +1,5 @@
 # ######################################################################## #
-# Copyright 2009 Benjamin Kellermann                                       #
+# Copyright 2009,2010 Benjamin Kellermann                                  #
 #                                                                          #
 # This file is part of dudle.                                              #
 #                                                                          #
@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2010-03-09 13:44+0100\n"
-"PO-Revision-Date: 2010-03-09 13:45+0100\n"
+"PO-Revision-Date: 2010-03-09 20:03+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -29,11 +29,12 @@ msgstr ""
 "X-Poedit-Basepath: ../../\n"
 "X-Poedit-Language: German\n"
 "X-Poedit-Country: GERMANY\n"
+"X-dudle-Language: Deutsch\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: about.cgi:29
 msgid "If you find a bug or have something else which disturbes you, please let me know: <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?subject=Feedback%20to%20dudle\">give feedback</a>"
-msgstr "Schreiben Sie mir bitte eine E-Mail, wenn Sie einen Bug finden oder etwas anderes haben, was Sie stört: <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_deutschland?subject=dudle%20Feedback\">Feedback</a>"
+msgstr "Schreiben Sie mir bitte eine E-Mail, wenn Sie einen Bug finden oder etwas anderes haben was Sie stört: <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_deutschland?subject=dudle%20Feedback\">Feedback</a>"
 
 #: about.cgi:31
 msgid "--verbose"
