@@ -28,8 +28,11 @@ require 'gettext/cgi'
 include GetText
 GetText.cgi=$cgi
 GetText.output_charset = 'utf-8'
+require "locale"
 
 $:.push("..")
+require "date_locale"
+
 require "html"
 require "poll"
 require "config"

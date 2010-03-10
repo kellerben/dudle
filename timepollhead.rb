@@ -120,7 +120,7 @@ class TimePollHead
 		ret = "<tr><th class='invisible'></th>"
 		head_count("%Y-%m",false).each{|title,count|
 			year, month = title.split("-").collect{|e| e.to_i}
-			ret += "<th colspan='#{count}'>#{Date::ABBR_MONTHNAMES[month]} #{year}</th>\n"
+			ret += "<th colspan='#{count}'>#{Date::DATE_TEXTS[Date_locale.get_language_key(Locale.current)][:abbr_monthnames][month]} #{year}</th>\n"
 		}
 
 		ret += "<th class='invisible'></th></tr><tr><th class='invisible'></th>"
@@ -229,7 +229,7 @@ END
 		 
 		ret += "</tr><tr>\n"
 
-		7.times{|i| ret += "<th class='weekday'>#{Date::ABBR_DAYNAMES[(i+1)%7]}</th>" }
+		7.times{|i| ret += "<th class='weekday'>#{Date::DATE_TEXTS[Date_locale.get_language_key(Locale.current)][:abbr_daynames][(i+1)%7]}</th>" }
 		ret += "</tr><tr>\n"
 		
 		((@startdate.wday+7-1)%7).times{
@@ -287,7 +287,7 @@ END
 		ret += "<th class='invisible'></th>"
 		head_count("%Y-%m",true).each{|title,count|
 			year,month = title.split("-").collect{|e| e.to_i}
-			ret += "<th colspan='#{count}'>#{Date::ABBR_MONTHNAMES[month]} #{year}</th>\n"
+			ret += "<th colspan='#{count}'>#{Date::DATE_TEXTS[Date_locale.get_language_key(Locale.current)][:abbr_monthnames][month]} #{year}</th>\n"
 		}
 
 		ret += "</tr><tr><th>" + _("Time") + "</th>"
