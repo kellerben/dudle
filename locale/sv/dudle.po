@@ -244,11 +244,11 @@ msgstr "Efter att du har klickat på spara kommer du kommer att frågas efter l�
 
 #: access_control.rb:195
 msgid "The user ‘admin’ has access to the vote as well as the configuration interface."
-msgstr "'Admin' har access till omröstningen såväl som till gränssnittet för konfigurering."
+msgstr "’Admin’ har access till omröstningen såväl som till gränssnittet för konfigurering."
 
 #: access_control.rb:201
 msgid "The user ‘participant’ has only access to the vote interface."
-msgstr "'Deltagare' har bara access till gränssnittet för omröstning"
+msgstr "’Deltagare’ har bara access till gränssnittet för omröstning"
 
 #: access_control.rb:207
 msgid "Access control:"
