@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2010-03-09 20:43+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
+"Last-Translator: Erica <erica.resare@kau.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,7 +52,7 @@ msgstr "Administrera Personliga Inställningar"
 #: customize.cgi:32
 #: customize.rb:32
 msgid "You need cookies enabled in order to personalize your settings."
-msgstr "Du behöver aktivera cookies fC6r att kunna personifiera dina inställningar"
+msgstr "Du behöver aktivera cookies för att kunna personifiera dina inställningar"
 
 #: customize.cgi:39
 #: customize.rb:39
@@ -244,11 +244,11 @@ msgstr "Efter att du har klickat på spara kommer du kommer att frågas efter l�
 
 #: access_control.rb:195
 msgid "The user ‘admin’ has access to the vote as well as the configuration interface."
-msgstr ""
+msgstr "'Admin' har access till omröstningen såväl som till gränssnittet för konfigurering."
 
 #: access_control.rb:201
 msgid "The user ‘participant’ has only access to the vote interface."
-msgstr ""
+msgstr "'Deltagare' har bara access till gränssnittet för omröstning"
 
 #: access_control.rb:207
 msgid "Access control:"
@@ -316,7 +316,7 @@ msgstr "Det går inte att ångra den här åtgärden!"
 
 #: delete_poll.rb:95
 msgid "If you are sure in what you are doing, please type “%{question}” into the form."
-msgstr ""
+msgstr "Om du vet vad du gör, vänligen skriv “%{question}” i formuläret."
 
 #: dudle.rb:46
 msgid "Home"
