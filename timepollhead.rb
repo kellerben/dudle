@@ -132,7 +132,7 @@ class TimePollHead
 			scols.include?(col) ? SORT : NOSORT
 		end
 
-		ret += "<th class='invisible'></th></tr><tr><th><a href='?sort=name'>Name #{sortsymb(scols,"name")}</a></th>"
+		ret += "<th class='invisible'></th></tr><tr><th><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>"
 		@data.sort.each{|date|
 			ret += "<th><a title='#{date}' href='?sort=#{CGI.escape(date.to_s)}'>#{date.time_to_s} #{sortsymb(scols,date.to_s)}</a></th>\n"
 		}
