@@ -164,13 +164,14 @@ class TimePollHead
 END
 	end
 	def timenavi val,revision
-		return "" if @firsttime == 0 || @lasttime == 23
 		case val
 		when EARLIER
+			return "" if @firsttime == 0 
 			str = EARLIER + " " + _("Earlier")
 			firsttime = [@firsttime-2,0].max
 			lasttime = @lasttime
 		when LATER
+			return "" if @lasttime == 23
 			str = LATER + " " + _("Later")
 			firsttime = @firsttime
 			lasttime = [@lasttime+2,23].min
