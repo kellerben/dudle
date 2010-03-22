@@ -204,7 +204,12 @@ END
 		end
 
 		times = concrete_times
-		realtimes = times.collect{|t| Time.parse(t) if t =~ /^\d\d:\d\d$/}.compact
+		realtimes = times.collect{|t|
+			begin
+				Time.parse(t) if t =~ /^\d\d:\d\d$/
+			rescue ArgumentError
+			end
+		}.compact
 		[9,16].each{|i| realtimes << Time.parse("#{i.to_s.rjust(2,"0")}:00")}
 
 		["firsttime","lasttime"].each{|t|
