@@ -219,6 +219,21 @@ END
 
 		@firsttime = realtimes.min.strftime("%H").to_i
 		@lasttime  = realtimes.max.strftime("%H").to_i
+	
+		def add_remove_button(klasse, buttonlabel, action, columnstring, revision, pretext = "")
+			return <<FORM
+<form method='post' action=''>
+	<div>
+		#{pretext}<input class='#{klasse}' type='submit' value='#{buttonlabel}' />
+		<input type='hidden' name='#{action}' value='#{columnstring}' />
+		<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
+		<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
+		<input type='hidden' name='add_remove_column_month' value='#{@startdate.strftime("%Y-%m")}' />
+		<input type='hidden' name='undo_revision' value='#{revision}' />
+	</div>
+</form>
+FORM
+		end
 		
 
 		hintstr = _("Click on the dates to add or remove columns.")
@@ -250,20 +265,7 @@ END
 				klasse = "chosen"
 				varname = "deletecolumn"
 			end
-			ret += <<TD
-<td class='calendarday'>
-	<form method='post' action=''>
-		<div>
-			<input class='#{klasse}' type='submit' value='#{d.day}' />
-			<input type='hidden' name='#{varname}' value='#{@startdate.strftime("%Y-%m")}-#{d.day.to_s.rjust(2,"0")}' />
-			<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
-			<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
-			<input type='hidden' name='add_remove_column_month' value='#{@startdate.strftime("%Y-%m")}' />
-			<input type='hidden' name='undo_revision' value='#{revision}' />
-		</div>
-	</form>
-</td>
-TD
+			ret += "<td class='calendarday'>#{add_remove_button(klasse, d.day, varname, d.strftime("%Y-%m-%d"),revision)}</td>"
 			d = d.next
 			break if d.month != @startdate.month
 			ret += "</tr><tr>\n" if d.wday == 1
@@ -300,19 +302,7 @@ END
 
 		head_count("%Y-%m-%d",true).each{|title,count|
 			coltime = Date.parse(title)
-			ret += <<TH
-<th>
-	<form method='post' action=''>
-		<div>
-			#{coltime.strftime('%a, %d')}&nbsp;<input class='delete' type='submit' value='#{DELETE}' />
-			<input type='hidden' name='deletecolumn' value='#{coltime.strftime("%Y-%m-%d")}' />
-			<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
-			<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
-			<input type='hidden' name='add_remove_column_month' value='#{@startdate.strftime("%Y-%m")}' />
-			<input type='hidden' name='undo_revision' value='#{revision}' />
-		</div>
-	</form></th>
-TH
+			ret += "<th>" + add_remove_button("delete",DELETE, "deletecolumn", coltime.strftime("%Y-%m-%d"), revision, "#{coltime.strftime('%a, %d')}&nbsp;") + "</th>"
 		}
 
 		ret += "</tr>"
@@ -344,33 +334,18 @@ TH
 				timestamp = TimeString.new(day,time)
 				klasse = "notchosen"
 				klasse = "disabled" if timestamp < TimeString.now
-				klasse = "chosen" if @data.include?(timestamp)
-				ret += <<END
-<td>
-	<form method='post' action="">
-		<div>
-			<!--Timestamp: #{timestamp} -->
-END
-				if klasse == "chosen"
-					ret += "<input type='hidden' name='deletecolumn' value='#{timestamp.to_s}' />"
+
+				if @data.include?(timestamp)
+					klasse = "chosen" 
+					hiddenvars = "<input type='hidden' name='deletecolumn' value='#{timestamp}' />"
 				else
-					ret += "<input type='hidden' name='new_columnname' value='#{timestamp.date}' />"
-					if @data.include?(TimeString.new(day,nil))
-						ret += "<input type='hidden' name='columnid' value='#{TimeString.new(day,nil).to_s}' />"
+					hiddenvars = "<input type='hidden' name='new_columnname' value='#{timestamp.date}' />"
+					if @data.include?(TimeString.new(day,nil)) # change day instead of removing it if no specific hour exists for this day
+						hiddenvars += "<input type='hidden' name='columnid' value='#{TimeString.new(day,nil)}' />"
 					end
 				end
+				ret += "<td>" + add_remove_button(klasse, chosenstr[klasse], "columntime", timestamp.time_to_s, revision, hiddenvars) + "</td>"
 
-				ret += <<END
-			<input title='#{timestamp}' class='#{klasse}' type='submit' value='#{chosenstr[klasse]}' />
-			<input type='hidden' name='columntime' value='#{timestamp.time_to_s}' />
-			<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
-			<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
-			<input type='hidden' name='add_remove_column_month' value='#{timestamp.date.strftime("%Y-%m")}' />
-			<input type='hidden' name='undo_revision' value='#{revision}' />
-		</div>
-	</form>
-</td>
-END
 			}
 			ret += "</tr>\n"
 		}
