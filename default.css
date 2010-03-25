@@ -34,6 +34,7 @@ a:hover, a:active {
 
 td.ayes, td.bmaybe, td.cno { cursor:default;}
 td.ayes, td.input-ayes, input.chosen  { background-color:#9C6}
+input.chosen:hover { background-color: #8B5 }
 td.cno, td.input-cno { background-color:#F96 }
 td.bmaybe, td.input-bmaybe { background-color:#FF6}
 td.undecided { background-color:#DDD }
@@ -59,6 +60,12 @@ td.name {
 	background-color:#CCF;
 }
 
+input.delete{
+	border: none; 
+	padding: 0px;
+	cursor: pointer;
+}
+
 input.navigation, input.disabled, input.chosen, input.notchosen {
 	border-width: 1px; 
 	border-style: solid;
@@ -71,11 +78,17 @@ input.navigation, input.disabled, input.chosen, input.notchosen {
 input.navigation {
 	border: none;
 }
-.navigation{
+.navigation, .notchosen, .disabled, .delete{
 	background-color: #EEE;
 }
 
-input.disabled { background-color:#eee;color:#ccc}
+.navigation:hover, .notchosen:hover, .disabled:hover, .delete:hover {
+	background-color: #CCC;
+}
+
+input.disabled {
+	color:#AAA
+}
 
 table { 
 	border: none; 

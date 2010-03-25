@@ -299,7 +299,20 @@ END
 		ret += "</tr><tr><th>" + _("Time") + "</th>"
 
 		head_count("%Y-%m-%d",true).each{|title,count|
-			ret += "<th>#{Date.parse(title).strftime('%a, %d')}</th>\n"
+			coltime = Date.parse(title)
+			ret += <<TH
+<th>
+	<form method='post' action=''>
+		<div>
+			#{coltime.strftime('%a, %d')}&nbsp;<input class='delete' type='submit' value='#{DELETE}' />
+			<input type='hidden' name='deletecolumn' value='#{coltime.strftime("%Y-%m-%d")}' />
+			<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
+			<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
+			<input type='hidden' name='add_remove_column_month' value='#{@startdate.strftime("%Y-%m")}' />
+			<input type='hidden' name='undo_revision' value='#{revision}' />
+		</div>
+	</form></th>
+TH
 		}
 
 		ret += "</tr>"
