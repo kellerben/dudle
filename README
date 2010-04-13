@@ -3,18 +3,19 @@ Author:
 Requirements:
  * ruby
  * git (preferred) or bzr
+ * libgettext-ruby (for localization)
 License: 
    GNU AGPL v3 or higer
    see file License
 
 === Installation ===
 1. Place this application into a directory where cgi-scripts are evaluated.
-   Make sure, that the webserver can execute ruby + bzr.
 2. Copy config_sample.rb to config.rb to start with a default configuration.
 3. The webserver needs the permission to write into the directory 
 4. You have to build a .mo file from the .po file in order to use the 
    localization. Type:
-      make locale/de/dudle.mo
-   If this does not work for you, you can download the .mo file from another
-   server, i.e., http://dudle.inf.tu-dresden.de/locale/de/dudle.mo and put it
+      make
+   This requires libgettext-ruby-util, potool, and make to be installed.
+   If this does not work for you, you can download the .mo files from another
+   server, e.g., put http://dudle.inf.tu-dresden.de/locale/de/dudle.mo
    into the directory locale/de.
