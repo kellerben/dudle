@@ -249,3 +249,8 @@ form#ac_participant, form#ac {
 form#ac_participant, form#ac, form#ac_admin{
 	padding: 1em;
 }
+
+#languageChooser {
+	margin-top:10px;
+	text-align:center;
+}
