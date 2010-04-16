@@ -17,6 +17,9 @@
 * along with dudle.  If not, see <http://www.gnu.org/licenses/>.           *
 ***************************************************************************/
 
+.invisible {
+	visibility: hidden;
+}
 
 td.ayes, input.chosen  { background-color:#0F0; }
 td.cno { background-color:#F00; }
@@ -88,8 +91,8 @@ tr.participantrow:hover {
 	background: #AAA;
 }
 
-div#add_comment,div#edit_column, div#history, div#backlink, input.delete_comment_button, tr#add_participant, div#configlink, div#tabs, p#history, span.edituser, span.sortsymb{
-	visibility: collapse;
+div#add_comment,div#edit_column, div#history, div#backlink, input.delete_comment_button, tr#add_participant, div#configlink, div#tabs, p#history, span.edituser, span.sortsymb, div#languageChooser, input[type=submit]{
+	display: none;
 }
 
 th { 
