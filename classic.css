@@ -181,6 +181,10 @@ html {
 	font-size:small;
 }
 
+div#tabs {
+	min-width:65em;
+}
+
 div#tabs ul{
 	margin-top: 2em;
 }
@@ -251,6 +255,6 @@ form#ac_participant, form#ac, form#ac_admin{
 }
 
 #languageChooser {
-	margin-top:10px;
-	text-align:center;
+	margin-top: 1em;
+	text-align: center;
 }
