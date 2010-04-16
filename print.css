@@ -21,9 +21,9 @@
 	visibility: hidden;
 }
 
-td.ayes, input.chosen  { background-color:#0F0; }
-td.cno { background-color:#F00; }
-td.bmaybe { background-color:#FF0; }
+td.ayes, input.chosen  { background-color:#9c6; }
+td.cno { background-color:#F96; }
+td.bmaybe { background-color:#FF6; }
 td.undecided { background-color:#DDD;color:#666 }
 
 td.name {
