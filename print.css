@@ -66,6 +66,7 @@ td.calendarday{
 
 table { 
 	border: none; 
+	border-spacing: 0;
 }
 
 td.create_poll{
@@ -77,10 +78,6 @@ td {
 	text-align:center;
 	border-width: 0px;
 	padding: 1px 3px;
-}
-
-td.sum, tr.participantrow, tr#add_participant, tr#summary { 
-	background-color:Silver;
 }
 
 td.polls {
@@ -97,18 +94,17 @@ div#add_comment,div#edit_column, div#history, div#backlink, input.delete_comment
 
 th { 
 	padding: 1px 3px;
-	color: white;
-	background-color:black;
 	font-weight: normal;
+	border-width: 0 1px 1px 1px;
+	border-style: dotted;
 }
 
 th a{
-	color: white;
 	text-decoration: none;
+	color: black;
 }
 
 td.date { 
-	color: Gray;
 	text-align: left;
 }
 
