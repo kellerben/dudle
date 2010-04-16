@@ -76,8 +76,9 @@ td.create_poll{
 td {
 	vertical-align:middle;
 	text-align:center;
-	border-width: 0px;
 	padding: 1px 3px;
+	border-width: 0 1px 1px 1px;
+	border-style: dotted;
 }
 
 td.polls {
