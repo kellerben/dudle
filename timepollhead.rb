@@ -129,7 +129,9 @@ class TimePollHead
 		}
 
 		def sortsymb(scols,col)
-			scols.include?(col) ? SORT : NOSORT
+			return <<SORTSYMBOL
+<span class='sortsymb'> #{scols.include?(col) ? SORT : NOSORT}</span>
+SORTSYMBOL
 		end
 
 		ret += "<th class='invisible'></th></tr><tr><th><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>"
