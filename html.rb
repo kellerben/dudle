@@ -42,8 +42,8 @@ HEAD
 		@css = [@css[0]] + @css[1..-1].sort unless @css.empty?
 		@css.each{|title,href|
 			titleattr = "title='#{title}'" if title != ""
-			ret += "<link rel='stylesheet' type='text/css' href='#{href}' #{titleattr}/>\n"
-			ret += "<link rel='stylesheet' type='text/css' href='#{href}' title='print' media='print' />\n" if title == "print"
+			ret += "<link rel='stylesheet' type='text/css' href='#{href}' #{titleattr} media='screen, projection, tv, handheld'/>\n"
+			ret += "<link rel='stylesheet' type='text/css' href='#{href}' media='print' />\n" if title == "print"
 		}
 
 		@atom.each{|href|
