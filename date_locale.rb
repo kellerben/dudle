@@ -183,9 +183,11 @@ module Date_locale
     #
     #What's the better solution? Check for locale, or check for the method :language?
     #
-    if defined?( Locale ) and lang.is_a?(Locale::TagList)
-    #~ if lang.respond_to?(:language)
-      Date_locale.set_target_encoding( lang.charset )
+    #if defined?( Locale ) and lang.is_a?(Locale::TagList)
+    if lang.respond_to?(:language)
+    	if lang.respond_to?(:charset) && lang.charset != nil
+				Date_locale.set_target_encoding( lang.charset )
+			end
       return lang.language.to_sym
     end
     
