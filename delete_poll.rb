@@ -36,7 +36,7 @@ if $cgi.include?("confirmnumber")
  CONFIRM = $cgi["confirmnumber"].to_i
 	if USERCONFIRM == QUESTIONS[CONFIRM]
 		Dir.chdir("..")
-		File.move($d.urlsuffix, "/tmp/#{$d.urlsuffix}.#{rand(9999999)}")
+		`mv #{$d.urlsuffix} /tmp/#{$d.urlsuffix}.#{rand(9999999)}`
 
 		deleteconfirmstr = _("The poll was deleted successfully!")
 		accidentstr = _("If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterministic amount of time, maybe it is already to late.")
