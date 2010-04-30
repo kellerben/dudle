@@ -40,7 +40,8 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 			if POLLTITLE =~ /^[\w\-_]*$/ && !File.exist?(POLLTITLE)
 				POLLURL = POLLTITLE
 			else
-				POLLURL = `pwgen -1`.chomp
+				chars = ("a".."z").to_a + ("1".."9").to_a 
+				POLLURL = Array.new(8){chars[rand(chars.size)]}.join
 			end
 		else
 			POLLURL=$cgi["poll_url"]
