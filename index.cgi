@@ -37,8 +37,9 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 		createnotice = _("Please enter a descriptive title.")
 	else
 		if $cgi["poll_url"] == ""
-			if POLLTITLE =~ /^[\w\-_]*$/ && !File.exist?(POLLTITLE)
-				POLLURL = POLLTITLE
+			guessurl = POLLTITLE.gsub(" ","_").gsub(/[\?\!\.]/,"")
+			if guessurl =~ /^[\w\-_]*$/ && !File.exist?(guessurl)
+				POLLURL = guessurl
 			else
 				chars = ("a".."z").to_a + ("1".."9").to_a 
 				POLLURL = Array.new(8){chars[rand(chars.size)]}.join
