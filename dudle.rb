@@ -221,11 +221,11 @@ READY
 		@html << "</div>" # content
 		@html << "</div>" # main
 
-		if File.exists?("#{@basedir}/extensions/")
-			@extensions.each{|e|
-				require "#{@basedir}/extensions/#{e}/main" 
-			}
-		end
+		@extensions.each{|e|
+			if File.exists?("#{@basedir}/extensions/#{e}/main.rb")
+				require "#{@basedir}/extensions/#{e}/main"
+			end
+		}
 
 		@html << "</body>"
 		@html.out(@cgi)
