@@ -267,7 +267,7 @@ END
 				klasse = "chosen"
 				varname = "deletecolumn"
 			end
-			ret += "<td class='calendarday'>#{add_remove_button(klasse, d.day, varname, d.strftime("%Y-%m-%d"),revision)}</td>"
+			ret += "<td class='calendarday'>#{add_remove_button(klasse, d.day, varname, d.strftime('%Y-%m-%d'),revision)}</td>"
 			d = d.next
 			break if d.month != @startdate.month
 			ret += "</tr><tr>\n" if d.wday == 1
