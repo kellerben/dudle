@@ -36,6 +36,8 @@ historystr = _("History")
 $d << <<HTML
 <h2>#{versiontitle}</h2>
 #{$d.table.to_html("",false)}
+
+#{$d.table.comment_to_html(false)}
 <h2>#{historystr}</h2>
 <div id='history'>
 #{$d.table.history_selectform($cgi.include?("revision") ? revno : nil, $cgi["history"])}

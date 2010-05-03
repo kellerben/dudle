@@ -249,44 +249,43 @@ TR
 		ret
 	end
 
-	def comment_to_html
+	def comment_to_html(editable = true)
 		ret = "<div id='comments'>"
 		ret	+= "<h2>" + _("Comments") + "</h2>"
 
 		unless @comment.empty?
 			@comment.each_with_index{|c,i|
 				time,name,comment = c
-				saidstr = _("%{user} said on %{time}") % {:user => name, :time => time.strftime("%d.%m., %H:%M")}
-				deletestr = _("Delete")
-				ret += <<COMMENT
-<form method='post' action='.'>
-<div class='textcolumn'>
-		<h3 class='comment'>
-			#{saidstr}
-			<input type='hidden' name='delete_comment' value='#{i}' />
-			&nbsp;
-			<input class='delete_comment_button' type='submit' value='#{deletestr}' />
-		</h3>
-		#{comment}
-</div>
-</form>
-COMMENT
+				ret += "<form method='post' action='.'>"
+				ret += "<div class='textcolumn'><h3 class='comment'>"
+				ret += _("%{user} said on %{time}") % {:user => name, :time => time.strftime("%d.%m., %H:%M")}
+				if editable
+					ret += "<input type='hidden' name='delete_comment' value='#{i}' />"
+					ret += "&nbsp;"
+					ret += "<input class='delete_comment_button' type='submit' value='"
+					ret += _("Delete")
+					ret += "' />"
+				end
+				ret += "</h3>#{comment}</div>"
+				ret += "</form>"
 			}
 		end
 		
-		# ADD COMMENT
-		saysstr = _("says")
-		submitstr = _("Submit Comment")
-		ret += <<ADDCOMMENT
-		<form method='post' action='.' accept-charset='utf-8'>
-			<div class='comment' id='add_comment'>
-					<input value='#{$cgi.cookies["username"][0] || "Anonymous"}' type='text' name='commentname' size='9' /> #{saysstr}&nbsp;
-					<br />
-					<textarea cols='50' rows='7' name='comment' ></textarea>
-					<br /><input type='submit' value='#{submitstr}' />
-			</div>
-		</form>
+		if editable
+			# ADD COMMENT
+			saysstr = _("says")
+			submitstr = _("Submit Comment")
+			ret += <<ADDCOMMENT
+<form method='post' action='.' accept-charset='utf-8'>
+	<div class='comment' id='add_comment'>
+		<input value='#{$cgi.cookies["username"][0] || "Anonymous"}' type='text' name='commentname' size='9' /> #{saysstr}&nbsp;
+		<br />
+		<textarea cols='50' rows='7' name='comment' ></textarea>
+		<br /><input type='submit' value='#{submitstr}' />
+	</div>
+</form>
 ADDCOMMENT
+		end
 
 		ret += "</div>\n"
 		ret
