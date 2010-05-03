@@ -19,3 +19,8 @@ License:
    If this does not work for you, you can download the .mo files from another
    server, e.g., put http://dudle.inf.tu-dresden.de/locale/de/dudle.mo
    into the directory locale/de.
+5. In order to let access control work correcly, the webserver needs 
+   auth_digest support. It therefore may help to type:
+     sudo a2enmod auth_digest
+6. In order to get atom-feed support you need ruby-ratom to be installed.
+     sudo gem install ratom
