@@ -251,7 +251,7 @@ TR
 
 	def comment_to_html(editable = true)
 		ret = "<div id='comments'>"
-		ret	+= "<h2>" + _("Comments") + "</h2>"
+		ret	+= "<h2>" + _("Comments") + "</h2>" if !@comment.empty? || editable
 
 		unless @comment.empty?
 			@comment.each_with_index{|c,i|
