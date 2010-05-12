@@ -26,7 +26,7 @@ require "timepollhead"
 $KCODE = "u"
 class String
 	def to_htmlID
-		CGI.escapeHTML(self.gsub(/[^A-Z^a-z^0-9^\-^_^:^\.]/,"."))
+		CGI.escapeHTML(self.gsub(/[^A-Za-z0-9_:.\-]/,"."))
 	end
 end
 class Poll
