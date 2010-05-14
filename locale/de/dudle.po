@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-03-09 20:43+0100\n"
-"PO-Revision-Date: 2010-03-09 20:44+0100\n"
+"POT-Creation-Date: 2010-05-14 12:02+0200\n"
+"PO-Revision-Date: 2010-05-14 12:04+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgstr "Momentane Einstellung"
 
 #: customize.cgi:40
 #: customize.rb:40
-#: pollhead.rb:99
+#: pollhead.rb:101
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -126,7 +126,7 @@ msgstr "Speichern"
 #: access_control.rb:117
 #: customize.rb:124
 #: delete_poll.rb:96
-#: poll.rb:260
+#: poll.rb:266
 msgid "Delete"
 msgstr "Löschen"
 
@@ -134,63 +134,63 @@ msgstr "Löschen"
 msgid "Please enter a descriptive title."
 msgstr "Bitte geben Sie einen Titel für die Umfrage ein."
 
-#: index.cgi:51
+#: index.cgi:53
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr "Die spezielle eigene URL darf nur Buchstaben, Zahlen, Bindestrich und Unterstrich enthalten."
 
-#: index.cgi:53
+#: index.cgi:55
 msgid "A Poll with this address already exists."
 msgstr "Eine Umfrage mit dieser URL existiert bereits."
 
-#: index.cgi:72
+#: index.cgi:74
 msgid "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr "Die Umfrage wurde erfolgreich erstellt. Die Adresse der Umfrage lautet: %{link}"
 
-#: index.cgi:79
+#: index.cgi:81
 msgid "Create New Poll"
 msgstr "Neue Umfrage erstellen"
 
-#: index.cgi:81
+#: index.cgi:83
 msgid "Title"
 msgstr "Titel"
 
-#: index.cgi:82
+#: index.cgi:84
 msgid "Type"
 msgstr "Typ"
 
-#: index.cgi:83
+#: index.cgi:85
 msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Nach einer Zeit fragen (z.&thinsp;B. einen Besprechungstermin finden)"
 
-#: index.cgi:84
+#: index.cgi:86
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Normale Umfrage (z.&thinsp;B. eine Umfrage über die beste Kaffeesorte)"
 
-#: index.cgi:85
+#: index.cgi:87
 msgid "Custom address (optional)"
 msgstr "eigene URL (optional)"
 
-#: index.cgi:86
+#: index.cgi:88
 msgid "May contain letters, numbers, and dashes."
 msgstr "Kann Buchstaben, Zahlen, Bindestriche und Unterstriche enthalten."
 
-#: index.cgi:88
+#: index.cgi:90
 msgid "Create"
 msgstr "Erstellen"
 
-#: index.cgi:134
+#: index.cgi:136
 msgid "Examples"
 msgstr "Beispiele"
 
-#: index.cgi:135
+#: index.cgi:137
 msgid "If you want to play around with the Tool, you may want to take a look at these Example Polls:"
 msgstr "Wenn Sie diese Applikation ausprobieren möchten, können Sie auch auf folgende Beispielumfragen schauen:"
 
-#: index.cgi:137
+#: index.cgi:139
 msgid "Event Schedule Poll"
 msgstr "Nach einer Zeit fragen"
 
-#: index.cgi:138
+#: index.cgi:140
 msgid "Normal Poll"
 msgstr "Eine normale Umfrage"
 
@@ -322,68 +322,68 @@ msgstr "Das Löschen der gesamten Umfrage ist unwiederrufbar!"
 msgid "If you are sure in what you are doing, please type “%{question}” into the form."
 msgstr "Wenn Sie sich sicher sind, dann geben Sie bitte „%{question}“ in das folgende Formular ein."
 
-#: dudle.rb:46
+#: dudle.rb:49
 msgid "Home"
 msgstr "Hauptseite"
 
-#: dudle.rb:55
+#: dudle.rb:58
 msgid "About"
 msgstr "Über dudle"
 
-#: dudle.rb:73
+#: dudle.rb:76
 msgid "Customize"
 msgstr "Personalisieren"
 
-#: dudle.rb:77
+#: dudle.rb:80
 msgid "Poll"
 msgstr "Umfrage"
 
-#: dudle.rb:78
+#: dudle.rb:81
 #: history.rb:35
 msgid "History"
 msgstr "Versionen"
 
-#: dudle.rb:81
+#: dudle.rb:84
 msgid "Edit Columns"
 msgstr "Spalten bearbeiten"
 
-#: dudle.rb:82
+#: dudle.rb:85
 #: invite_participants.rb:38
 msgid "Invite Participants"
 msgstr "Teilnehmer einladen"
 
-#: dudle.rb:83
+#: dudle.rb:86
 msgid "Access Control"
 msgstr "Zugriffskontrolle"
 
-#: dudle.rb:84
+#: dudle.rb:87
 msgid "Overview"
 msgstr "Übersicht"
 
-#: dudle.rb:86
+#: dudle.rb:89
 msgid "Delete Poll"
 msgstr "Umfrage löschen"
 
-#: dudle.rb:169
-#: dudle.rb:187
+#: dudle.rb:172
+#: dudle.rb:190
 msgid "Previous"
 msgstr "Zurück"
 
-#: dudle.rb:170
-#: dudle.rb:188
+#: dudle.rb:173
+#: dudle.rb:191
 msgid "Next"
 msgstr "Weiter"
 
-#: dudle.rb:171
-#: dudle.rb:189
+#: dudle.rb:174
+#: dudle.rb:192
 msgid "Finish"
 msgstr "Fertig"
 
-#: dudle.rb:194
+#: dudle.rb:197
 msgid "All changes were saved sucessfully."
 msgstr "Alle Änderungen wurden erfolgreich gespeichert."
 
-#: dudle.rb:194
+#: dudle.rb:197
 msgid "Proceed!"
 msgstr "Weiter"
 
@@ -468,6 +468,7 @@ msgstr "Einladen"
 
 #: poll.rb:152
 #: pollhead.rb:62
+#: timepollhead.rb:137
 msgid "Name"
 msgstr "Name"
 
@@ -483,60 +484,69 @@ msgstr "Lösche Teilnehmer"
 msgid "Comments"
 msgstr "Kommentare"
 
-#: poll.rb:259
+#: poll.rb:261
 msgid "%{user} said on %{time}"
 msgstr "%{user} sagte am %{time}"
 
-#: poll.rb:278
+#: poll.rb:276
 msgid "says"
 msgstr "sagt"
 
-#: poll.rb:279
+#: poll.rb:277
 msgid "Submit Comment"
 msgstr "Sende Kommentar"
 
-#: poll.rb:296
+#: poll.rb:295
 msgid "Show history items:"
 msgstr "Zeige nur folgende Versionen:"
 
-#: poll.rb:303
+#: poll.rb:302
 msgid "All"
 msgstr "Alle"
 
-#: poll.rb:304
+#: poll.rb:303
 msgid "Participant related"
 msgstr "Teilnehmer betreffend"
 
-#: poll.rb:305
+#: poll.rb:304
 msgid "Column related"
 msgstr "Spalten betreffend"
 
-#: poll.rb:306
+#: poll.rb:305
 msgid "Comment related"
 msgstr "Kommentare betreffend"
 
-#: poll.rb:307
+#: poll.rb:306
 msgid "Access Control related"
 msgstr "Zugriffskontrolle betreffend"
 
-#: poll.rb:313
+#: poll.rb:312
 msgid "Update"
 msgstr "Aktualisieren"
 
-#: pollhead.rb:86
-#: timepollhead.rb:139
+#: pollhead.rb:71
+msgid "Edit Column"
+msgstr "Bearbeite Spalte"
+
+#: pollhead.rb:72
+#: timepollhead.rb:226
+msgid "Delete Column"
+msgstr "Lösche Spalte"
+
+#: pollhead.rb:88
+#: timepollhead.rb:141
 msgid "Last Edit"
 msgstr "Letzte Änderung"
 
-#: pollhead.rb:98
+#: pollhead.rb:100
 msgid "Columntitle"
 msgstr "Spaltenüberschrift"
 
-#: pollhead.rb:100
+#: pollhead.rb:102
 msgid "Add/Edit Column"
 msgstr "Spalte bearbeiten/hinzufügen"
 
-#: pollhead.rb:101
+#: pollhead.rb:103
 msgid "Preview"
 msgstr "Vorschau"
 
@@ -548,47 +558,47 @@ msgstr "Geben Sie eine Zeit ein, um eine andere als die vorgeschlagenen Zeiten a
 msgid "This Time was already choosen."
 msgstr "Diese Zeit war schon gewählt."
 
-#: timepollhead.rb:170
+#: timepollhead.rb:172
 msgid "Earlier"
 msgstr "Früher"
 
-#: timepollhead.rb:174
+#: timepollhead.rb:177
 msgid "Later"
 msgstr "Später"
 
-#: timepollhead.rb:218
+#: timepollhead.rb:242
 msgid "Click on the dates to add or remove columns."
 msgstr "Klicken Sie auf ein Datum, um es der Umfrage hinzuzufügen."
 
-#: timepollhead.rb:276
+#: timepollhead.rb:287
 msgid "Optional:"
 msgstr "Optional:"
 
-#: timepollhead.rb:277
+#: timepollhead.rb:288
 msgid "Enter a concrete value as start time."
 msgstr "Geben Sie eine Zeit für ein Datum ein."
 
-#: timepollhead.rb:293
+#: timepollhead.rb:304
 msgid "Time"
 msgstr "Zeit"
 
-#: timepollhead.rb:305
+#: timepollhead.rb:317
 msgid "Chosen"
 msgstr "Gewählt"
 
-#: timepollhead.rb:306
+#: timepollhead.rb:318
 msgid "Not Chosen"
 msgstr "Nicht Gewählt"
 
-#: timepollhead.rb:307
+#: timepollhead.rb:319
 msgid "Past"
 msgstr "Vergangen"
 
-#: timepollhead.rb:375
+#: timepollhead.rb:372
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: timepollhead.rb:376
+#: timepollhead.rb:373
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "z.B., 9:30, morgens, abends"
 
