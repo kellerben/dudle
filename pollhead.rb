@@ -68,13 +68,15 @@ SORTSYMBOL
 			ret += "#{CGI.escapeHTML(columntitle)}"
 			ret += "#{sortsymb(scols,columntitle)}</a>" unless showeditbuttons
 			if showeditbuttons
+				editstr = _("Edit Column")
+				deletestr = _("Delete Column")
 				ret += <<EDITDELETE
 	<div>
 		<small>
-			<a href="?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}" title="edit">
+			<a href="?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}" title="#{editstr}">
 				#{EDIT}
 			</a>|
-			<a href="?deletecolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}" title="delete">
+			<a href="?deletecolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}" title="#{deletestr}">
 				#{DELETE}
 			</a>
 		</small>

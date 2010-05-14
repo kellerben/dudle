@@ -223,10 +223,11 @@ END
 		@lasttime  = realtimes.max.strftime("%H").to_i
 	
 		def add_remove_button(klasse, buttonlabel, action, columnstring, revision, pretext = "")
+			titlestr = _("Delete Column")
 			return <<FORM
 <form method='post' action=''>
 	<div>
-		#{pretext}<input class='#{klasse}' type='submit' value='#{buttonlabel}' />
+		#{pretext}<input title='#{titlestr}' class='#{klasse}' type='submit' value='#{buttonlabel}' />
 		<input type='hidden' name='#{action}' value='#{columnstring}' />
 		<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
 		<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
