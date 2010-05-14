@@ -48,13 +48,6 @@ class VCS
 		}
 		ret
 	end
-	
-	def VCS.longhistory dir
-		log = `#{BZRCMD} log -r -10.. "#{dir}"`.split("-"*60)
-		log.collect!{|s| s.scan(/\nrevno: (.*)\ncommitter.*\n.*\ntimestamp: (.*)\nmessage:\n  (.*)/).flatten}
-		log.shift
-		log.collect!{|r,t,c| [r.to_i,Time.parse(t),c]}
-	end
 
 	def VCS.commit comment
 		tmpfile = "/tmp/commitcomment.#{rand(10000)}"

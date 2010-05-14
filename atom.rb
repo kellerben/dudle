@@ -43,13 +43,13 @@ feed.updated = File.new("data.yaml").mtime
 feed.authors << Atom::Person.new(:name => 'dudle automatic notificator')
 feed.links << Atom::Link.new(:href => SITEURL + "atom.cgi", :rel => "self")
 
-log = VCS.longhistory "."
-log.each {|rev,time,comment|	
+log = VCS.history
+log.reverse_each {|l|	
 	feed.entries << Atom::Entry.new do |e|	
-		e.title = comment
-		e.links << Atom::Link.new(:href => "#{SITEURL}?revision=#{rev}")
-		e.id = "urn:#{poll.class}:#{poll.name}:rev=#{rev}"
-		e.updated = time
+		e.title = l.comment
+		e.links << Atom::Link.new(:href => "#{SITEURL}history.cgi?revision=#{l.rev}")
+		e.id = "urn:#{poll.class}:#{poll.name}:rev=#{l.rev}"
+		e.updated = l.timestamp
 	end
 }
 
