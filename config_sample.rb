@@ -21,7 +21,7 @@
 # bzr and git is implemented
 # Warning: bzr is slow!
 # Warning: git needs git >=1.6.5
-load "git.rb"
+require "git"
 
 # Change this if the url is not determined correctly
 SITEURL = "http://#{$cgi.server_name}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
