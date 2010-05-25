@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-05-25 15:04+0200\n"
-"PO-Revision-Date: 2010-05-25 15:04+0100\n"
+"POT-Creation-Date: 2010-05-25 16:15+0200\n"
+"PO-Revision-Date: 2010-05-25 16:16+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -118,7 +118,7 @@ msgstr "Bearbeiten"
 #: customize.cgi:121
 #: access_control.rb:121
 #: customize.rb:121
-#: poll.rb:277
+#: poll.rb:286
 msgid "Save"
 msgstr "Speichern"
 
@@ -126,7 +126,7 @@ msgstr "Speichern"
 #: access_control.rb:117
 #: customize.rb:124
 #: delete_poll.rb:96
-#: poll.rb:298
+#: poll.rb:307
 msgid "Delete"
 msgstr "Löschen"
 
@@ -463,77 +463,81 @@ msgid "Delete user %{user}"
 msgstr "Lösche Teilnehmer %{user}"
 
 #: poll.rb:122
-#, fuzzy
 msgid "Total"
 msgstr "Summe"
 
-#: poll.rb:163
+#: poll.rb:164
 msgid "Invite"
 msgstr "Einladen"
 
-#: poll.rb:164
+#: poll.rb:165
 #: pollhead.rb:62
 #: timepollhead.rb:137
 msgid "Name"
 msgstr "Name"
 
-#: poll.rb:212
-msgid "Save Changes"
-msgstr "Speichern"
+#: poll.rb:182
+msgid "Delete %{user}?"
+msgstr "Lösche Teilnehmer %{user}?"
 
-#: poll.rb:213
-msgid "Cancel"
-msgstr "Abbrechen"
-
-#: poll.rb:235
-msgid "Do you really want to delete user %{user}?"
-msgstr "Wollen sie den Teilnehmer %{user} wirklich löschen?"
-
-#: poll.rb:239
+#: poll.rb:185
+#: poll.rb:247
 msgid "Confirm"
 msgstr "Bestätigen"
 
-#: poll.rb:286
+#: poll.rb:218
+msgid "Save Changes"
+msgstr "Speichern"
+
+#: poll.rb:222
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: poll.rb:244
+msgid "Do you really want to delete user %{user}?"
+msgstr "Wollen sie den Teilnehmer %{user} wirklich löschen?"
+
+#: poll.rb:295
 msgid "Comments"
 msgstr "Kommentare"
 
-#: poll.rb:293
+#: poll.rb:302
 msgid "%{user} said on %{time}"
 msgstr "%{user} sagte am %{time}"
 
-#: poll.rb:308
+#: poll.rb:317
 msgid "says"
 msgstr "sagt"
 
-#: poll.rb:309
+#: poll.rb:318
 msgid "Submit Comment"
 msgstr "Sende Kommentar"
 
-#: poll.rb:327
+#: poll.rb:336
 msgid "Show history items:"
 msgstr "Zeige nur folgende Versionen:"
 
-#: poll.rb:334
+#: poll.rb:343
 msgid "All"
 msgstr "Alle"
 
-#: poll.rb:335
+#: poll.rb:344
 msgid "Participant related"
 msgstr "Teilnehmer betreffend"
 
-#: poll.rb:336
+#: poll.rb:345
 msgid "Column related"
 msgstr "Spalten betreffend"
 
-#: poll.rb:337
+#: poll.rb:346
 msgid "Comment related"
 msgstr "Kommentare betreffend"
 
-#: poll.rb:338
+#: poll.rb:347
 msgid "Access Control related"
 msgstr "Zugriffskontrolle betreffend"
 
-#: poll.rb:344
+#: poll.rb:353
 msgid "Update"
 msgstr "Aktualisieren"
 
