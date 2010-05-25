@@ -47,6 +47,7 @@ log = VCS.history
 log.reverse_each {|l|	
 	feed.entries << Atom::Entry.new do |e|	
 		e.title = l.comment
+#		e.content = Atom::Content::Xhtml.new("<p><a href=\"#{SITEURL}history.cgi?revision=#{l.rev}\">permalink</a>, <a href='#{SITEURL}' >current version</a></p>")
 		e.links << Atom::Link.new(:href => "#{SITEURL}history.cgi?revision=#{l.rev}")
 		e.id = "urn:#{poll.class}:#{poll.name}:rev=#{l.rev}"
 		e.updated = l.timestamp
