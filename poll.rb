@@ -65,24 +65,36 @@ class Poll
 
 	def userstring(participant,link)
 		ret = ""
-		ret += "<a title='" + _("Edit user %{user}") % {:user => CGI.escapeHTML(participant)} + "' href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" if link
+		if link
+			ret += "<td><span class='edituser'>"
+			ret += "<a title='" 
+			ret += _("Edit user %{user}") % {:user => CGI.escapeHTML(participant)} 
+			ret += "' href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" 
+			ret += EDIT
+			ret += "</a> | <a title='" 
+			ret += _("Delete user %{user}") % {:user => CGI.escapeHTML(participant)} 
+			ret += "' href=\"?deleteuser&amp;edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" 
+			ret += "#{DELETE}</a>"
+			ret += "</span></td>"
+			ret += "<td class='name'>"
+		else
+			ret += "<td class='invisible'></td><td class='name'>"
+		end
 		ret += participant
-		ret += "<span class='edituser'> <sup>#{EDIT}</sup></span></a>" if link
+		ret += "</td>"
 		ret
 	end
-	def to_html(edituser = "", showparticipation = true)
+	def to_html(showparticipation = true)
 		ret = "<table border='1'>\n"
 		
 		sortcolumns = $cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]
 		ret += @head.to_html(sortcolumns)
 		sort_data(sortcolumns).each{|participant,poll|
-			if edituser == participant
-				ret += participate_to_html(edituser)
+			if $cgi["edituser"] == participant
+				ret += participate_to_html
 			else
 				ret += "<tr class='participantrow'>\n"
-				ret += "<td class='name'>"
 				ret += userstring(participant,showparticipation)
-				ret += "</td>\n"
 				@head.columns.each{|column|
 					klasse = poll[column]
 					case klasse
@@ -104,10 +116,10 @@ class Poll
 		}
 
 		# PARTICIPATE
-		ret += participate_to_html(edituser) unless @data.keys.include?(edituser) || !showparticipation
+		ret += participate_to_html unless @data.keys.include?($cgi["edituser"]) || !showparticipation
 
 		# SUMMARY
-		ret += "<tr id='summary'><td class='name'>" + _("total") + "</td>\n"
+		ret += "<tr id='summary'><td colspan='2' class='name'>" + _("Total") + "</td>\n"
 		@head.columns.each{|column|
 			yes = 0
 			undecided = 0
@@ -147,13 +159,14 @@ class Poll
 		ret
 	end
 
-	def invite_to_html(edituser)
+	def invite_to_html
+		edituser = $cgi["edituser"]
 		invitestr = _("Invite")
 		namestr = _("Name")
 		ret = <<HEAD
 <table id='participanttable' class='settingstable'>
 <tr>
-	<th>#{namestr}</th>
+	<th colspan='2'>#{namestr}</th>
 </tr>
 HEAD
 		@data.keys.sort.each{|participant|
@@ -163,14 +176,20 @@ HEAD
 			}
 
 			if edituser == participant
-				ret += "<tr id='add_participant_row'>"
-				ret += add_participant_input(edituser)
-				ret += save_input(edituser,invitestr)
+				ret += "<tr id='add_participant'>"
+				if $cgi.include?("deleteuser")
+					ret += "<td class='name' colspan='2'>"
+					ret += _("Delete %{user}?") % {:user => $cgi["edituser"]}
+					ret += "<input type='hidden' name='delete_participant_confirm' value='#{$cgi["edituser"]}' />"
+					ret += "</td>"
+					ret += save_input(edituser, "", _("Confirm"))
+				else
+					ret += add_participant_input(edituser)
+					ret += save_input(edituser,invitestr)
+				end
 			else
 				ret += "<tr class='participantrow'>"
-				ret += "<td class='name'>"
 				ret += userstring(participant,!has_voted)
-				ret += "</td>"
 			end
 			ret += "</tr>"
 
@@ -186,7 +205,7 @@ HEAD
 	end
 	def add_participant_input(edituser)
 		return <<END
-<td id='add_participant_input_td'>
+<td colspan='2' id='add_participant_input_td'>
 	<input type='hidden' name='olduser' value=\"#{edituser}\" />
 	<input size='16' 
 		type='text' 
@@ -196,18 +215,42 @@ HEAD
 </td>
 END
 	end
-	def save_input(edituser, savestring)
+	def save_input(edituser, savestring, changestr = _("Save Changes"))
 		ret = "<td>"
 		if @data.include?(edituser)
-			ret += "<input id='savebutton' type='submit' value='" + _("Save Changes") + "' />"
-			ret += "<br /><input style='margin-top:1ex' type='submit' name='delete_participant' value='" + _("Delete User") + "' />"
+			ret += "<input id='savebutton' type='submit' value='#{changestr}' />"
+			ret += "<br /><input style='margin-top:1ex' type='submit' name='cancel' value='" + _("Cancel") + "' />"
 		else
 			ret += "<input id='savebutton' type='submit' value='#{savestring}' />"
 		end
 		ret += "</td>\n"
 	end
 
-	def participate_to_html(edituser)
+	def participate_to_html
+		ret = "<tr id='separator_top'><td colspan='#{@head.col_size + 3}' class='invisible'></td></tr>\n"
+
+		if $cgi.include?("deleteuser") && @data.include?($cgi["edituser"])
+			ret += deleteuser_to_html
+		else
+			ret += edituser_to_html
+		end
+		ret += "<tr id='separator_bottom'><td colspan='#{@head.col_size + 3}' class='invisible'></td></tr>\n"
+	end
+
+	def deleteuser_to_html
+		ret = "<tr id='add_participant'>\n"
+		ret += "<td colspan='2' class='name'>#{$cgi["edituser"]}</td>"
+		ret += "<td colspan='#{@head.col_size}'>"
+		ret += _("Do you really want to delete user %{user}?") % {:user => $cgi["edituser"]}
+		ret += "<input type='hidden' name='delete_participant_confirm' value='#{$cgi["edituser"]}' />"
+		ret += "</td>"
+		ret += save_input($cgi["edituser"], "", _("Confirm"))
+		ret += "</tr>"
+		ret
+	end
+
+	def edituser_to_html
+		edituser = $cgi["edituser"]
 		checked = {}
 		if @data.include?(edituser)
 			@head.columns.each{|k| checked[k] = @data[edituser][k]}
@@ -215,9 +258,8 @@ END
 			edituser = $cgi.cookies["username"][0] unless @data.include?($cgi.cookies["username"][0])
 			@head.columns.each{|k| checked[k] = NOVAL}
 		end
-		ret = "<tr id='separator_top'><td colspan='#{@head.col_size + 2}' class='invisible'></td></tr>\n"
 
-		ret += "<tr id='add_participant'>\n"
+		ret = "<tr id='add_participant'>\n"
 
 		ret += add_participant_input(edituser)
 
@@ -244,7 +286,6 @@ TR
 		ret += save_input(edituser, _("Save"))
 
 		ret += "</tr>\n"
-		ret += "<tr id='separator_bottom'><td colspan='#{@head.col_size + 2}' class='invisible'></td></tr>\n"
 
 		ret
 	end

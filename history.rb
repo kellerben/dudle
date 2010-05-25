@@ -35,7 +35,7 @@ end
 historystr = _("History")
 $d << <<HTML
 <h2>#{versiontitle}</h2>
-#{$d.table.to_html("",false)}
+#{$d.table.to_html(false)}
 
 #{$d.table.comment_to_html(false)}
 <h2>#{historystr}</h2>

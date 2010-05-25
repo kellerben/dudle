@@ -40,7 +40,7 @@ if $USEUTF
 	EARLIER = CGI.escapeHTML("▴")
 	LATER = CGI.escapeHTML("▾")
 
-	EDIT = CGI.escapeHTML("✍")
+	EDIT = CGI.escapeHTML("✎")
 	DELETE = CGI.escapeHTML("✖")
 
 	PASSWORDSTAR = CGI.escapeHTML("•")

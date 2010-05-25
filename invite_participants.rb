@@ -25,10 +25,10 @@ load "../dudle.rb"
 
 $d = Dudle.new
 
-if $cgi.include?("add_participant")
-	if $cgi.include?("delete_participant")
-		$d.table.delete($cgi["olduser"])
-	else
+unless $cgi.include?("cancel")
+	if $cgi.include?("delete_participant_confirm")
+		$d.table.delete($cgi["delete_participant_confirm"])
+	elsif $cgi.include?("add_participant")
 		$d.table.add_participant($cgi["olduser"],$cgi["add_participant"],{})
 	end
 end
@@ -39,7 +39,7 @@ inviteparticipantsstr = _("Invite Participants")
 $d << <<TABLE
 	<h2>#{inviteparticipantsstr}</h2>
 <form id='invite_participants_form' method='post' action='invite_participants.cgi' accept-charset='utf-8'>
-	#{$d.table.invite_to_html($cgi['edituser'])}
+	#{$d.table.invite_to_html}
 </form>
 TABLE
 

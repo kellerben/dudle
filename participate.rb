@@ -24,10 +24,10 @@ if __FILE__ == $0
 load "../dudle.rb"
 $d = Dudle.new
 
-if $cgi.include?("add_participant")
-	if $cgi.include?("delete_participant")
-		$d.table.delete($cgi["olduser"])
-	else
+unless $cgi.include?("cancel")
+	if $cgi.include?("delete_participant_confirm")
+		$d.table.delete($cgi["delete_participant_confirm"])
+	elsif $cgi.include?("add_participant")
 		agreed = {}
 		$cgi.params.each{|k,v|
 			if k =~ /^add_participant_checked_/
@@ -58,7 +58,7 @@ END
 $d << <<HTML
 <div id='polltable'>
 	<form method='post' action='.' accept-charset='utf-8'>
-		#{$d.table.to_html($cgi['edituser'])}
+		#{$d.table.to_html}
 	</form>
 </div>
 

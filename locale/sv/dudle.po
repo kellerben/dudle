@@ -19,9 +19,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-05-14 12:02+0200\n"
+"POT-Creation-Date: 2010-05-25 15:04+0200\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Erica <erica.resare@kau.se>\n"
+"Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -111,12 +111,12 @@ msgstr "Användarnamn:"
 msgid "Edit"
 msgstr "Redigera"
 
-#: customize.cgi:121 access_control.rb:121 customize.rb:121 poll.rb:244
+#: customize.cgi:121 access_control.rb:121 customize.rb:121 poll.rb:277
 msgid "Save"
 msgstr "Spara"
 
 #: customize.cgi:124 access_control.rb:117 customize.rb:124 delete_poll.rb:96
-#: poll.rb:266
+#: poll.rb:298
 msgid "Delete"
 msgstr "Radera"
 
@@ -462,71 +462,85 @@ msgstr "Länk till dudle omröstning om %{polltitle}"
 msgid "Reload"
 msgstr "Ladda om"
 
-#: poll.rb:68
+#: poll.rb:71
 msgid "Edit user %{user}"
 msgstr "Redigera användare %{user}"
 
-#: poll.rb:110
-msgid "total"
-msgstr "total"
+#: poll.rb:75
+#, fuzzy
+msgid "Delete user %{user}"
+msgstr "Redigera användare %{user}"
 
-#: poll.rb:151
+#: poll.rb:122
+msgid "Total"
+msgstr "Total"
+
+#: poll.rb:163
 msgid "Invite"
 msgstr "Bjud in"
 
-#: poll.rb:152 pollhead.rb:62 timepollhead.rb:137
+#: poll.rb:164 pollhead.rb:62 timepollhead.rb:137
 msgid "Name"
 msgstr "Namn"
 
-#: poll.rb:202
+#: poll.rb:212
 msgid "Save Changes"
 msgstr "Spara ändringar"
 
-#: poll.rb:203
-msgid "Delete User"
-msgstr "Radera användare"
+#: poll.rb:213
+msgid "Cancel"
+msgstr ""
 
-#: poll.rb:254
+#: poll.rb:235
+#, fuzzy
+msgid "Do you really want to delete user %{user}?"
+msgstr "Redigera användare %{user}"
+
+#: poll.rb:239
+msgid "Confirm"
+msgstr ""
+
+#: poll.rb:286
 msgid "Comments"
 msgstr "Kommentarer"
 
-#: poll.rb:261
+#: poll.rb:293
 msgid "%{user} said on %{time}"
 msgstr "sa %{user} %{time}"
 
-#: poll.rb:276
+#: poll.rb:308
 msgid "says"
 msgstr "säger"
 
-#: poll.rb:277
+#: poll.rb:309
 msgid "Submit Comment"
 msgstr "Skicka kommentarer"
 
-#: poll.rb:295
+#: poll.rb:327
 msgid "Show history items:"
 msgstr "Visa historik:"
 
-#: poll.rb:302
+#: poll.rb:334
 msgid "All"
 msgstr "Alla"
 
-#: poll.rb:303
+#: poll.rb:335
 msgid "Participant related"
 msgstr "Tillhörande deltagare"
 
-#: poll.rb:304
+#: poll.rb:336
 msgid "Column related"
 msgstr "Tillhörande kolumn"
 
-#: poll.rb:305
+#: poll.rb:337
 msgid "Comment related"
 msgstr "Tillhörande kommentar"
 
-#: poll.rb:306
+#: poll.rb:338
 msgid "Access Control related"
 msgstr "Tillhörande åtkomstkontroll"
 
-#: poll.rb:312
+#: poll.rb:344
 msgid "Update"
 msgstr "Uppdatera"
 
@@ -610,3 +624,6 @@ msgstr "Lägg till"
 #: timepollhead.rb:373
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "t ex 09:30, morgon, eftermiddag"
+
+#~ msgid "Delete User"
+#~ msgstr "Radera användare"

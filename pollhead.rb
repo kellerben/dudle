@@ -59,7 +59,7 @@ class PollHead
 SORTSYMBOL
 		end
 		ret = "<tr>"
-		ret += "<th><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>\n" unless showeditbuttons
+		ret += "<th colspan='2'><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>\n" unless showeditbuttons
 		@data.sort.each{|columntitle,columndescription|
 			ret += "<th title=\"#{columndescription}\""
 			ret += " id='active' " if activecolumn == columntitle

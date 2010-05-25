@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-05-14 12:02+0200\n"
-"PO-Revision-Date: 2010-05-14 12:04+0100\n"
+"POT-Creation-Date: 2010-05-25 15:04+0200\n"
+"PO-Revision-Date: 2010-05-25 15:04+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -118,7 +118,7 @@ msgstr "Bearbeiten"
 #: customize.cgi:121
 #: access_control.rb:121
 #: customize.rb:121
-#: poll.rb:244
+#: poll.rb:277
 msgid "Save"
 msgstr "Speichern"
 
@@ -126,7 +126,7 @@ msgstr "Speichern"
 #: access_control.rb:117
 #: customize.rb:124
 #: delete_poll.rb:96
-#: poll.rb:266
+#: poll.rb:298
 msgid "Delete"
 msgstr "Löschen"
 
@@ -454,73 +454,86 @@ msgstr "Dudle Umfrage über %{polltitle}"
 msgid "Reload"
 msgstr "Neu laden"
 
-#: poll.rb:68
+#: poll.rb:71
 msgid "Edit user %{user}"
 msgstr "Bearbeite Teilnehmer %{user}"
 
-#: poll.rb:110
-msgid "total"
+#: poll.rb:75
+msgid "Delete user %{user}"
+msgstr "Lösche Teilnehmer %{user}"
+
+#: poll.rb:122
+#, fuzzy
+msgid "Total"
 msgstr "Summe"
 
-#: poll.rb:151
+#: poll.rb:163
 msgid "Invite"
 msgstr "Einladen"
 
-#: poll.rb:152
+#: poll.rb:164
 #: pollhead.rb:62
 #: timepollhead.rb:137
 msgid "Name"
 msgstr "Name"
 
-#: poll.rb:202
+#: poll.rb:212
 msgid "Save Changes"
 msgstr "Speichern"
 
-#: poll.rb:203
-msgid "Delete User"
-msgstr "Lösche Teilnehmer"
+#: poll.rb:213
+msgid "Cancel"
+msgstr "Abbrechen"
 
-#: poll.rb:254
+#: poll.rb:235
+msgid "Do you really want to delete user %{user}?"
+msgstr "Wollen sie den Teilnehmer %{user} wirklich löschen?"
+
+#: poll.rb:239
+msgid "Confirm"
+msgstr "Bestätigen"
+
+#: poll.rb:286
 msgid "Comments"
 msgstr "Kommentare"
 
-#: poll.rb:261
+#: poll.rb:293
 msgid "%{user} said on %{time}"
 msgstr "%{user} sagte am %{time}"
 
-#: poll.rb:276
+#: poll.rb:308
 msgid "says"
 msgstr "sagt"
 
-#: poll.rb:277
+#: poll.rb:309
 msgid "Submit Comment"
 msgstr "Sende Kommentar"
 
-#: poll.rb:295
+#: poll.rb:327
 msgid "Show history items:"
 msgstr "Zeige nur folgende Versionen:"
 
-#: poll.rb:302
+#: poll.rb:334
 msgid "All"
 msgstr "Alle"
 
-#: poll.rb:303
+#: poll.rb:335
 msgid "Participant related"
 msgstr "Teilnehmer betreffend"
 
-#: poll.rb:304
+#: poll.rb:336
 msgid "Column related"
 msgstr "Spalten betreffend"
 
-#: poll.rb:305
+#: poll.rb:337
 msgid "Comment related"
 msgstr "Kommentare betreffend"
 
-#: poll.rb:306
+#: poll.rb:338
 msgid "Access Control related"
 msgstr "Zugriffskontrolle betreffend"
 
-#: poll.rb:312
+#: poll.rb:344
 msgid "Update"
 msgstr "Aktualisieren"
 
@@ -601,4 +614,7 @@ msgstr "Hinzufügen"
 #: timepollhead.rb:373
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "z.B., 9:30, morgens, abends"
+
+#~ msgid "Delete User"
+#~ msgstr "Lösche Teilnehmer"
 
