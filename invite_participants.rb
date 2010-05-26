@@ -26,8 +26,8 @@ load "../dudle.rb"
 $d = Dudle.new
 
 unless $cgi.include?("cancel")
-	if $cgi.include?("delete_participant_confirm")
-		$d.table.delete($cgi["delete_participant_confirm"])
+	if $cgi.include?("deleteuser")
+		$d.table.delete($cgi["edituser"])
 	elsif $cgi.include?("add_participant")
 		$d.table.add_participant($cgi["olduser"],$cgi["add_participant"],{})
 	end

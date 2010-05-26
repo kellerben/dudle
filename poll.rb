@@ -68,11 +68,11 @@ class Poll
 		if link
 			ret += "<td><span class='edituser'>"
 			ret += "<a title='" 
-			ret += _("Edit user %{user}") % {:user => CGI.escapeHTML(participant)} 
+			ret += _("Edit user %{user}...") % {:user => CGI.escapeHTML(participant)} 
 			ret += "' href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" 
 			ret += EDIT
 			ret += "</a> | <a title='" 
-			ret += _("Delete user %{user}") % {:user => CGI.escapeHTML(participant)} 
+			ret += _("Delete user %{user}...") % {:user => CGI.escapeHTML(participant)} 
 			ret += "' href=\"?deleteuser&amp;edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" 
 			ret += "#{DELETE}</a>"
 			ret += "</span></td>"
@@ -160,7 +160,7 @@ class Poll
 	end
 
 	def invite_to_html
-		edituser = $cgi["edituser"]
+		edituser = $cgi["edituser"] unless $cgi.include?("deleteuser")
 		invitestr = _("Invite")
 		namestr = _("Name")
 		ret = <<HEAD
@@ -177,16 +177,8 @@ HEAD
 
 			if edituser == participant
 				ret += "<tr id='add_participant'>"
-				if $cgi.include?("deleteuser")
-					ret += "<td class='name' colspan='2'>"
-					ret += _("Delete %{user}?") % {:user => $cgi["edituser"]}
-					ret += "<input type='hidden' name='delete_participant_confirm' value='#{$cgi["edituser"]}' />"
-					ret += "</td>"
-					ret += save_input(edituser, "", _("Confirm"))
-				else
-					ret += add_participant_input(edituser)
-					ret += save_input(edituser,invitestr)
-				end
+				ret += add_participant_input(edituser)
+				ret += save_input(edituser,invitestr)
 			else
 				ret += "<tr class='participantrow'>"
 				ret += userstring(participant,!has_voted)
@@ -195,7 +187,7 @@ HEAD
 
 		}
 		unless @data.keys.include?(edituser)
-			ret += "<tr id='add_participant_row'>"
+			ret += "<tr id='add_participant'>"
 			ret += add_participant_input(edituser)
 			ret += save_input(edituser,invitestr)
 			ret += "</tr>"
