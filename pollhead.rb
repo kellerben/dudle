@@ -68,8 +68,8 @@ SORTSYMBOL
 			ret += "#{CGI.escapeHTML(columntitle)}"
 			ret += "#{sortsymb(scols,columntitle)}</a>" unless showeditbuttons
 			if showeditbuttons
-				editstr = _("Edit Column")
-				deletestr = _("Delete Column")
+				editstr = _("Edit column")
+				deletestr = _("Delete column")
 				ret += <<EDITDELETE
 	<div>
 		<small>

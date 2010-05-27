@@ -223,7 +223,8 @@ END
 		@lasttime  = realtimes.max.strftime("%H").to_i
 	
 		def add_remove_button(klasse, buttonlabel, action, columnstring, revision, pretext = "")
-			titlestr = _("Delete Column")
+			titlestr = _("Add column") 
+			titlestr = _("Delete column") if klasse == "chosen"
 			return <<FORM
 <form method='post' action=''>
 	<div>
