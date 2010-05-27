@@ -164,7 +164,7 @@ class Poll
 		invitestr = _("Invite")
 		namestr = _("Name")
 		ret = <<HEAD
-<table id='participanttable' class='settingstable'>
+<table id='participanttable'>
 <tr>
 	<th colspan='2'>#{namestr}</th>
 </tr>
