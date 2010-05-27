@@ -20,6 +20,10 @@
 if __FILE__ == $0
 require "test/unit"
 require "pp"
+unless ARGV[0]
+	puts "Usage: ruby #{$0} (git|bzr)" 
+	exit
+end
 require ARGV[0]
 require "benchmark"
 
@@ -41,8 +45,9 @@ class VCS_test < Test::Unit::TestCase
 		@t = ""
 	end
 	def teardown
-		Dir.chdir("/")
-		`rm -rf #{@repo}`
+		puts @repo
+#		Dir.chdir("/")
+#		`rm -rf #{@repo}`
 		puts "#{@t}: #{@b}"
 	end
 	def test_cat
@@ -68,6 +73,8 @@ class VCS_test < Test::Unit::TestCase
 		@b += Benchmark.measure{
 			l = VCS.history
 		}.total
+		pp l
+		exit
 		assert_equal(@data.size,l.size)
 		@history.each_with_index{|h,revminusone|
 			assert_equal(h,l[revminusone+1].comment)

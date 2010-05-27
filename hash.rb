@@ -53,8 +53,8 @@ require "test/unit"
       assert_equal( 0,a.compare_by_values(a,[1,2,3]))
       assert_equal( 1,a.compare_by_values(b,[1,2,3]))
       assert_equal(-1,a.compare_by_values(c,[1,2,3]))
-      assert_equal( 1,c.compare_by_values(d,[1,2,3]))
-      assert_equal(-1,d.compare_by_values(c,[1,2,3]))
+      assert_equal(-1,c.compare_by_values(d,[1,2,3]))
+      assert_equal( 1,d.compare_by_values(c,[1,2,3]))
       assert_equal( 0,d.compare_by_values(c,[]))
     end
   end 

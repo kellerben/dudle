@@ -80,7 +80,7 @@ class Poll
 		else
 			ret += "<td class='invisible'></td><td class='name'>"
 		end
-		ret += participant
+		ret += "<span id='#{participant.to_htmlID}'>#{participant}</span>"
 		ret += "</td>"
 		ret
 	end
@@ -180,7 +180,7 @@ HEAD
 				ret += add_participant_input(edituser)
 				ret += save_input(edituser,invitestr)
 			else
-				ret += "<tr class='participantrow'>"
+				ret += "<tr id='#{participant.to_htmlID}_tr' class='participantrow'>"
 				ret += userstring(participant,!has_voted)
 			end
 			ret += "</tr>"
@@ -211,7 +211,7 @@ END
 		ret = "<td>"
 		if @data.include?(edituser)
 			ret += "<input id='savebutton' type='submit' value='#{changestr}' />"
-			ret += "<br /><input style='margin-top:1ex' type='submit' name='cancel' value='" + _("Cancel") + "' />"
+			ret += "<br /><input id='cancelbutton' style='margin-top:1ex' type='submit' name='cancel' value='" + _("Cancel") + "' />"
 		else
 			ret += "<input id='savebutton' type='submit' value='#{savestring}' />"
 		end
