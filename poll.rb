@@ -78,7 +78,7 @@ class Poll
 			ret += "</span></td>"
 			ret += "<td class='name'>"
 		else
-			ret += "<td class='invisible'></td><td class='name'>"
+			ret += "<td class='name' colspan='2'>"
 		end
 		ret += "<span id='#{participant.to_htmlID}'>#{participant}</span>"
 		ret += "</td>"
