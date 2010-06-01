@@ -217,7 +217,12 @@ module Date_locale
       monthnames  = DATE_TEXTS[lang][:monthnames]
       abbr_monthnames = DATE_TEXTS[lang][:abbr_monthnames]
     else
-      raise "Missing Support for locale #{lang.inspect}"
+      #raise "Missing Support for locale #{lang.inspect}"
+      #fallback to english
+			daynames = DATE_TEXTS[:en][:daynames]
+			abbr_daynames = DATE_TEXTS[:en][:abbr_daynames]
+			monthnames  = DATE_TEXTS[:en][:monthnames]
+			abbr_monthnames = DATE_TEXTS[:en][:abbr_monthnames]
     end
     
     #Make the original replacements, after....
