@@ -120,7 +120,7 @@ class TimePollHead
 		ret = "<tr><th class='invisible'></th>"
 		head_count("%Y-%m",false).each{|title,count|
 			year, month = title.split("-").collect{|e| e.to_i}
-			ret += "<th colspan='#{count}'>#{Date::DATE_TEXTS[Date_locale.get_language_key(Locale.current)][:abbr_monthnames][month]} #{year}</th>\n"
+			ret += "<th colspan='#{count}'>#{Date.parse("#{year}-#{month}-01").strftime("%b %Y")}</th>\n"
 		}
 
 		ret += "<th class='invisible'></th></tr><tr><th class='invisible'></th>"
