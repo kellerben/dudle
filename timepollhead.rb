@@ -40,7 +40,7 @@ class TimePollHead
 	#	column should be the internal representation
 	#	column.to_s should deliver humanreadable form
 	def columns
-		@data.sort.each.collect{|day| day.to_s}
+		@data.sort.collect{|day| day.to_s}
 	end
 
 	def concrete_times
