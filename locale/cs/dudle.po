@@ -1,0 +1,621 @@
+# ######################################################################## #
+# Copyright 2010 Jaromir Dobias                                            #
+#                                                                          #
+# This file is part of dudle.                                              #
+#                                                                          #
+# Dudle is free software: you can redistribute it and/or modify it under   #
+# the terms of the GNU Affero General Public License as published by       #
+# the Free Software Foundation, either version 3 of the License, or        #
+# (at your option) any later version.                                      #
+#                                                                          #
+# Dudle is distributed in the hope that it will be useful, but WITHOUT ANY #
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or        #
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public     #
+# License for more details.                                                #
+#                                                                          #
+# You should have received a copy of the GNU Affero General Public License #
+# along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
+# ######################################################################## #
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2010-07-07 14:21+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+
+#: about.cgi:29
+msgid ""
+"If you find a bug or have something else which disturbes you, please let me "
+"know: <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?"
+"subject=Feedback%20to%20dudle\">give feedback</a>"
+msgstr ""
+"Pokud narazíte na chybu nebo něco jiného, co vám vadí na této aplikaci, "
+"prosím kontaktujte mne: <a href=\"mailto:Benjamin_dot_Kellermann@tu-"
+"dresden_in_germany?subject=Feedback%20to%20dudle\">kontaktuj mne</a>"
+
+#: about.cgi:31
+msgid "--verbose"
+msgstr "--ukecaně"
+
+#: about.cgi:32
+msgid ""
+"The sourcecode of this application is available under the terms of <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+msgstr ""
+"Zdrojový kód této aplikace je dostupný pod licencí <a href='http://www.fsf."
+"org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+
+#: about.cgi:34
+msgid ""
+"You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</"
+"a>:"
+msgstr ""
+"Zdrojový kód lze získat pomocí nástroje <a href='http://bazaar-vcs."
+"org/'>bazaar</a>:"
+
+#: customize.cgi:31 customize.rb:31
+msgid "Customize Personal Settings"
+msgstr "Upravte své osobní nastavení"
+
+#: customize.cgi:32 customize.rb:32
+msgid "You need cookies enabled in order to personalize your settings."
+msgstr ""
+"Pro použití osobního nastavení je nutno povolit v prohlížeči použití cookies."
+
+#: customize.cgi:39 customize.rb:39
+msgid "Current Setting"
+msgstr "Současné nastavení"
+
+#: customize.cgi:40 customize.rb:40 pollhead.rb:101
+msgid "Description"
+msgstr "Popis"
+
+#: customize.cgi:57 customize.rb:57
+msgid "Use special characters"
+msgstr "Použij speciální znaky"
+
+#: customize.cgi:57 customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "Použij tuto volbu, pokud jsou znaky zobrazeny v závorkách."
+
+#: customize.cgi:58 customize.rb:58
+msgid "Use only normal strings"
+msgstr "Použij pouze normální řetězce"
+
+#: customize.cgi:58 customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Použij tuto volbu, pokud některé znaky nejsou zobrazeny správně."
+
+#: customize.cgi:61 customize.rb:61
+msgid "Charset"
+msgstr "Znaková sada"
+
+#: customize.cgi:70 customize.rb:70
+msgid "Stylesheet"
+msgstr "Šablona"
+
+#: customize.cgi:86 customize.rb:86
+msgid "Default Username"
+msgstr "Implicitní uživatelské jméno:"
+
+#: customize.cgi:87 access_control.rb:74 customize.rb:87
+msgid "Username:"
+msgstr "Uživatelské jméno:"
+
+#: customize.cgi:111 customize.rb:111
+msgid "Edit"
+msgstr "Upravit"
+
+#: customize.cgi:121 access_control.rb:121 customize.rb:121 poll.rb:278
+msgid "Save"
+msgstr "Uložit"
+
+#: customize.cgi:124 access_control.rb:117 customize.rb:124 delete_poll.rb:96
+#: poll.rb:299
+msgid "Delete"
+msgstr "Smazat"
+
+#: index.cgi:37
+msgid "Please enter a descriptive title."
+msgstr "Prosím vložit popisný nadpis."
+
+#: index.cgi:53
+msgid "Custom address may only contain letters, numbers, and dashes."
+msgstr "Volitelná adresa může obsahovat pouze písmena, čísla a pomlčky."
+
+#: index.cgi:55
+msgid "A Poll with this address already exists."
+msgstr "Hlasování s touto adresou již existuje."
+
+#: index.cgi:74
+msgid ""
+"The poll was created successfully. The link to your new poll is: %{link}"
+msgstr "Hlasování bylo úspěšně vytvořeno. Odkaz k novému hlasování je: %{link}"
+
+#: index.cgi:81
+msgid "Create New Poll"
+msgstr "Vytvořit nové hlasování"
+
+#: index.cgi:83
+msgid "Title"
+msgstr "Název"
+
+#: index.cgi:84
+msgid "Type"
+msgstr "Typ"
+
+#: index.cgi:85
+msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
+msgstr "Hlasování plánované události"
+
+#: index.cgi:86
+msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
+msgstr "Normální hlasování (např. hlasování, která káva je nejlepší)"
+
+#: index.cgi:87
+msgid "Custom address (optional)"
+msgstr "Volitelná adresa (nepovinné)"
+
+#: index.cgi:88
+msgid "May contain letters, numbers, and dashes."
+msgstr "Muže obsahovat písmena, čísla a pomlčky."
+
+#: index.cgi:90
+msgid "Create"
+msgstr "Vytvořit"
+
+#: index.cgi:136
+msgid "Examples"
+msgstr "Příklady"
+
+#: index.cgi:137
+msgid ""
+"If you want to play around with the Tool, you may want to take a look at "
+"these Example Polls:"
+msgstr ""
+"Pokud si chceš pohrát s tímto nástrojem, možná se ti budou hodit tyto "
+"příklady hlasování:"
+
+#: index.cgi:139
+msgid "Event Schedule Poll"
+msgstr "Hlasování Plánu Události"
+
+#: index.cgi:140
+msgid "Normal Poll"
+msgstr "Normální Hlasování"
+
+#: access_control.rb:87
+msgid "Password"
+msgstr "Heslo"
+
+#: access_control.rb:88
+msgid "repeat"
+msgstr "opakovat"
+
+#: access_control.rb:114
+msgid ""
+"You have to remove the participant user before you can remove the "
+"administrator."
+msgstr ""
+"Je potřeba smazat uživatele před tím, než je možné smazat administrátora."
+
+#: access_control.rb:139
+msgid "Only letters and digits are allowed in the username."
+msgstr "Uživatelské jméno může obsahovat pouze písmena a čísla."
+
+#: access_control.rb:141
+msgid "Passwords did not match."
+msgstr "Heslo neodpovídá."
+
+#: access_control.rb:174
+msgid "Change Access Control Settings"
+msgstr "Změnit nastavení přístupových práv"
+
+#: access_control.rb:178
+msgid "not activated"
+msgstr "neaktivní"
+
+#: access_control.rb:180
+msgid "Activate"
+msgstr "Aktivovat"
+
+#: access_control.rb:183
+msgid "will be activated when at least an admin user is configured"
+msgstr ""
+"bude aktivováno pokud je nakonfigurován alespoň administrátorský uživatel"
+
+#: access_control.rb:185
+msgid "Deactivate"
+msgstr "Deaktivovat"
+
+#: access_control.rb:187
+msgid "activated"
+msgstr "aktivní"
+
+#: access_control.rb:188
+msgid ""
+"You have to remove all users before you can deactivate the access control "
+"settings."
+msgstr ""
+"Je potřeba smazat všechny uživatele před tím, než je možné deaktivovat "
+"nastavení přístopových práv."
+
+#: access_control.rb:192
+msgid ""
+"You will be asked for the password you entered here after pressing save!"
+msgstr "Bude očekáváno vložení hesla po stisknutí tlačítka ulož!"
+
+#: access_control.rb:195
+msgid ""
+"The user ‘admin’ has access to the vote as well as the configuration "
+"interface."
+msgstr "Uživatel ‘admin’ má přístup k hlasu a také ke konfiguračnímu rozhraní."
+
+#: access_control.rb:201
+msgid "The user ‘participant’ has only access to the vote interface."
+msgstr "Pouze uživatel ‘účastník’ má přístup k hlasovacímu rozhraní."
+
+#: access_control.rb:207
+msgid "Access control:"
+msgstr "Řízení přístupu:"
+
+#: delete_poll.rb:29
+msgid "Yes, I know what I am doing!"
+msgstr "Ano, jsem si vědom toho, co dělám!"
+
+#: delete_poll.rb:30
+msgid "I hate these stupid entry fields."
+msgstr "Nesnáším tato přiblblá vstupní pole."
+
+#: delete_poll.rb:31
+msgid "I am aware of the consequences."
+msgstr "Jsem si vědom důsledků."
+
+#: delete_poll.rb:32
+msgid "Please delete this poll."
+msgstr "Prosím smazat toto hlasování."
+
+#: delete_poll.rb:41
+msgid "The poll was deleted successfully!"
+msgstr "Hlasování bylo úspěšně smazáno!"
+
+#: delete_poll.rb:42
+msgid ""
+"If this was done by accident, please contact the administrator of the "
+"system. The poll can be recovered for an indeterministic amount of time, "
+"maybe it is already to late."
+msgstr ""
+"Prosím informuj administrátora, pokud k této situaci došlo nešťastnou "
+"náhodou. Hlasování může být zpětně obnoveno, pokud ještě není pozdě."
+
+#: delete_poll.rb:43
+msgid "Things you can do now are"
+msgstr "Věci, které nyní můžeš dělat jsou"
+
+#: delete_poll.rb:44
+msgid "Return to dudle home and Schedule a new Poll"
+msgstr "Návrat zpět na domovskou stránku dudle a naplánovat nové hlasování"
+
+#: delete_poll.rb:45
+msgid "Browse Wikipedia"
+msgstr "Prohlížej Wikipedii"
+
+#: delete_poll.rb:46
+msgid "Search something with Google"
+msgstr "Hledej pomocí vyhledávače Google."
+
+#: delete_poll.rb:72
+msgid "To delete the poll, you have to type:"
+msgstr "Pro smazání hlasování je potřeba napsat:"
+
+#: delete_poll.rb:80
+msgid "but you typed:"
+msgstr "ale zadali jste:"
+
+#: delete_poll.rb:92
+msgid "Delete this Poll"
+msgstr "Smazat toto Hlasování"
+
+#: delete_poll.rb:93
+msgid "You want to delete the poll named"
+msgstr "Přejete si smazat hlasování nazváno"
+
+#: delete_poll.rb:94
+msgid "This is an irreversible action!"
+msgstr "Tuto akci nelze vrátit zpět!"
+
+#: delete_poll.rb:95
+msgid ""
+"If you are sure in what you are doing, please type “%{question}” into the "
+"form."
+msgstr ""
+"Pokud chceš opravdu vykonat tuto akci, prosím napiš do vstupního pole “%"
+"{question}”."
+
+#: dudle.rb:49
+msgid "Home"
+msgstr "Domů"
+
+#: dudle.rb:58
+msgid "About"
+msgstr "O aplikaci"
+
+#: dudle.rb:76
+msgid "Customize"
+msgstr "Přizpůsobit"
+
+#: dudle.rb:80
+msgid "Poll"
+msgstr "Hlasování"
+
+#: dudle.rb:81 history.rb:35
+msgid "History"
+msgstr "Historie"
+
+#: dudle.rb:84
+msgid "Edit Columns"
+msgstr "Edituj sloupce"
+
+#: dudle.rb:85 invite_participants.rb:38
+msgid "Invite Participants"
+msgstr "Pozvat účastníky"
+
+#: dudle.rb:86
+msgid "Access Control"
+msgstr "Řízení Přístupu"
+
+#: dudle.rb:87
+msgid "Overview"
+msgstr "Přehled"
+
+#: dudle.rb:89
+msgid "Delete Poll"
+msgstr "Smazat hlasování"
+
+#: dudle.rb:172 dudle.rb:190
+msgid "Previous"
+msgstr "Předchozí"
+
+#: dudle.rb:173 dudle.rb:191
+msgid "Next"
+msgstr "Následující"
+
+#: dudle.rb:174 dudle.rb:192
+msgid "Finish"
+msgstr "Dokončit"
+
+#: dudle.rb:197
+msgid "All changes were saved sucessfully."
+msgstr "Všechny změny byly úspěšně uloženy."
+
+#: dudle.rb:197
+msgid "Proceed!"
+msgstr "Vykonat!"
+
+#: edit_columns.rb:44
+msgid "Add and Remove Columns"
+msgstr "Přidat a Odebrat Sloupce"
+
+#: edit_columns.rb:67 edit_columns.rb:86 pollhead.rb:72 timepollhead.rb:227
+msgid "Delete column"
+msgstr "Vymaž sloupec"
+
+#: edit_columns.rb:69 edit_columns.rb:84 timepollhead.rb:226
+msgid "Add column"
+msgstr "Přidej sloupec"
+
+#: edit_columns.rb:71 edit_columns.rb:88 pollhead.rb:71
+msgid "Edit column"
+msgstr "Edituj sloupec"
+
+#: edit_columns.rb:99
+msgid "Undo"
+msgstr "Zpět"
+
+#: edit_columns.rb:99
+msgid "Redo"
+msgstr "Odvolat zpět"
+
+#: history.rb:28
+msgid "Poll of Version %{revisionnumber}"
+msgstr "Hlasování verze %{revisionnumber}"
+
+#: history.rb:32
+msgid "Current Poll (Version %{revisionnumber})"
+msgstr "Aktuální Hlasování (Verze %{revisionnumber})"
+
+#: log.rb:111
+msgid "Version"
+msgstr "Verze"
+
+#: log.rb:111
+msgid "Date"
+msgstr "Datum"
+
+#: log.rb:111
+msgid "Comment"
+msgstr "Komentář"
+
+#: overview.rb:31
+msgid "The link to your poll is:"
+msgstr "Odkaz tvého hlasování je:"
+
+#: overview.rb:33
+msgid "Send this link via email..."
+msgstr "Pošli odkaz prostřednictvím e-mailu..."
+
+#: overview.rb:34
+msgid "To the Vote interface"
+msgstr "K hlasovacímu rozhraní"
+
+#: overview.rb:35
+msgid "Link to dudle poll about %{polltitle}"
+msgstr "Odkaz k dudle hlasování o %{polltitle}"
+
+#: participate.rb:48
+msgid "Reload"
+msgstr "Obnovit"
+
+#: poll.rb:71
+#, fuzzy
+msgid "Edit user %{user}..."
+msgstr "Upravit uživatele %{user}"
+
+#: poll.rb:75
+#, fuzzy
+msgid "Delete user %{user}..."
+msgstr "Upravit uživatele %{user}"
+
+#: poll.rb:122
+#, fuzzy
+msgid "Total"
+msgstr "celkem"
+
+#: poll.rb:164
+msgid "Invite"
+msgstr "Pozvat"
+
+#: poll.rb:165 pollhead.rb:62 timepollhead.rb:137
+msgid "Name"
+msgstr "Jméno"
+
+#: poll.rb:210
+msgid "Save Changes"
+msgstr "Uložit Změny"
+
+#: poll.rb:214
+msgid "Cancel"
+msgstr ""
+
+#: poll.rb:236
+msgid "Do you really want to delete user %{user}?"
+msgstr ""
+
+#: poll.rb:239
+msgid "Confirm"
+msgstr ""
+
+#: poll.rb:287
+msgid "Comments"
+msgstr "Komentáře"
+
+#: poll.rb:294
+msgid "%{user} said on %{time}"
+msgstr "%{user} řekl v %{time}"
+
+#: poll.rb:309
+msgid "says"
+msgstr "říká"
+
+#: poll.rb:310
+msgid "Submit Comment"
+msgstr "Odešli Komentář"
+
+#: poll.rb:328
+msgid "Show history items:"
+msgstr "Zobraz položky historie"
+
+#: poll.rb:335
+msgid "All"
+msgstr "Vše"
+
+#: poll.rb:336
+msgid "Participant related"
+msgstr "Související s účastníkem"
+
+#: poll.rb:337
+msgid "Column related"
+msgstr "Související se sloupcem"
+
+#: poll.rb:338
+msgid "Comment related"
+msgstr "Související s komentářem"
+
+#: poll.rb:339
+msgid "Access Control related"
+msgstr "Související s řízením přistupu"
+
+#: poll.rb:345
+msgid "Update"
+msgstr "Aktualizace"
+
+#: pollhead.rb:88 timepollhead.rb:141
+msgid "Last Edit"
+msgstr "Poslední Úprava"
+
+#: pollhead.rb:100
+msgid "Columntitle"
+msgstr "Název sloupce"
+
+#: pollhead.rb:102
+msgid "Add/Edit Column"
+msgstr "Přidat/Editovat sloupec"
+
+#: pollhead.rb:103
+msgid "Preview"
+msgstr "Náhled"
+
+#: timepollhead.rb:92
+msgid ""
+"To add some time different to the default ones, please enter some string "
+"here (e.&thinsp;g., 09:30, morning, afternoon)."
+msgstr ""
+"Pro přidání jiné než implicitní hodnoty času zde prosím zadejte patřičný "
+"časový údaj (např., 09:30, ráno, odpoledne)."
+
+#: timepollhead.rb:98
+msgid "This Time was already choosen."
+msgstr "Tento čas již byl vybrán."
+
+#: timepollhead.rb:172
+msgid "Earlier"
+msgstr "Dříve"
+
+#: timepollhead.rb:177
+msgid "Later"
+msgstr "Později"
+
+#: timepollhead.rb:243
+msgid "Click on the dates to add or remove columns."
+msgstr "Pro přidání nebo odebrání sloupce klikněte na datum."
+
+#: timepollhead.rb:291
+msgid "Optional:"
+msgstr "Volitelné:"
+
+#: timepollhead.rb:292
+msgid "Enter a concrete value as start time."
+msgstr "Vložte"
+
+#: timepollhead.rb:308
+msgid "Time"
+msgstr "Čas"
+
+#: timepollhead.rb:321
+msgid "Chosen"
+msgstr "Vybráno"
+
+#: timepollhead.rb:322
+msgid "Not Chosen"
+msgstr "Nevybráno"
+
+#: timepollhead.rb:323
+msgid "Past"
+msgstr "Předchozí"
+
+#: timepollhead.rb:376
+msgid "Add"
+msgstr "Přidat"
+
+#: timepollhead.rb:377
+msgid "e.&thinsp;g., 09:30, morning, afternoon"
+msgstr "např. 09:30, ráno, odpoledne"
+
+#~ msgid "Delete User"
+#~ msgstr "Vymaž Uživatele"

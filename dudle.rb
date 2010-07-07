@@ -209,6 +209,7 @@ READY
 		lang = [
 			["en", "English"],
 			["de", "Deutsch"],
+			["cs", "Česky"],
 			["sv", "Svenska"]
 			]
 		lang.each{|short,long|
