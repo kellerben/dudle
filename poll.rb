@@ -25,8 +25,23 @@ require "timepollhead"
 
 $KCODE = "u"
 class String
+	@@htmlidcache = {}
+	@@htmlidncache = {}
+
+	# FIXME: htmlid should not depend on the order it is requested
 	def to_htmlID
-		CGI.escapeHTML(self.gsub(/[^A-Za-z0-9_:.\-]/,"."))
+		if @@htmlidcache[self]
+			id = @@htmlidcache[self]
+		else
+			id = self.gsub(/[^A-Za-z0-9_:.\-]/,".")
+			if @@htmlidncache[id]
+				@@htmlidncache[id] += 1
+				id += @@htmlidncache[id].to_s
+			end
+			@@htmlidncache[id] = -1
+			@@htmlidcache[self] = id
+		end
+		return id
 	end
 end
 class Poll
@@ -510,4 +525,17 @@ class PollTest < Test::Unit::TestCase
 	end
 end
 
+class StringTest < Test::Unit::TestCase
+	def test_htmlid
+		assert_equal("foo.bar.",   "foo bar ".to_htmlID);
+		assert_equal("foo.bar.",   "foo bar ".to_htmlID);
+		assert_equal("foo.bar.0",  "foo.bar ".to_htmlID);
+		assert_equal("foo.bar.00", "foo.bar 0".to_htmlID);
+		assert_equal("foo.bar.",   "foo bar ".to_htmlID);
+		assert_equal("foo.bar.1",  "foo bar.".to_htmlID);
+		assert_equal("foo.bar.2",  "foo?bar.".to_htmlID);
+		assert_equal("foo.bar.3",  "foo bar?".to_htmlID);
+		assert_equal("foo.bar.2",  "foo?bar.".to_htmlID);
+	end
+end
 end
