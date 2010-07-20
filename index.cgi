@@ -70,7 +70,7 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 			Dir.chdir("..")
 			$d.html.header["status"] = "REDIRECT"
 			$d.html.header["Cache-Control"] = "no-cache"
-			$d.html.header["Location"] = SITEURL + POLLURL+ "/edit_columns.cgi"
+			$d.html.header["Location"] = SITEURL + POLLURL + "/edit_columns.cgi"
 			$d << _("The poll was created successfully. The link to your new poll is: %{link}") % {:link => "<br /><a href=\"#{POLLURL}\">#{POLLURL}</a>"}
 		end
 	end

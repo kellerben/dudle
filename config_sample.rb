@@ -23,8 +23,19 @@
 # Warning: git needs git >=1.6.5
 require "git"
 
-# Change this if the url is not determined correctly
-SITEURL = "http://#{$cgi.server_name}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
+# Change the SITEURL if the url is not determined correctly
+case $cgi.server_port
+when 80
+	protocol = "http"
+	port = ""
+when 443
+	protocol = "https"
+	port = ""
+else
+	protocol = "http"
+	port = ":#{$cgi.server_port}"
+end
+SITEURL = "#{protocol}://#{$cgi.server_name}#{port}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
 
 # If you want to encourage the user to send bug reports, state the errorlog,
 # which you have configured in your apache conf with the ErrorLog directive.
