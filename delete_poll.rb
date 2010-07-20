@@ -37,6 +37,13 @@ if $cgi.include?("confirmnumber")
 	if USERCONFIRM == QUESTIONS[CONFIRM]
 		Dir.chdir("..")
 		`mv #{$d.urlsuffix} /tmp/#{$d.urlsuffix}.#{rand(9999999)}`
+		if $cgi.include?("return")
+			$d.html.header["status"] = "REDIRECT"
+			$d.html.header["Cache-Control"] = "no-cache"
+			$d.html.header["Location"] = SITEURL + $cgi["return"]
+			$d.out
+			exit
+		end
 
 		deleteconfirmstr = _("The poll was deleted successfully!")
 		accidentstr = _("If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterministic amount of time, maybe it is already to late.")
