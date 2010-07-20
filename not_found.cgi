@@ -19,29 +19,36 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "cgi"
-$cgi = CGI.new
-require "config"
-require "html"
+require "dudle"
+GetText.bindtextdomain("dudle",:path => "./locale/")
 
-$h = HTML.new("Error")
+
+title = _("Poll Not Found")
+$h = HTML.new(title)
 $h.add_css("/default.css","default",true)
+str = [_("The requested Poll was not found."),
+       _("There are several reasons, why a Poll is deleted:"),
+       _("Somebody klicked on “Delete Poll” and deleted the poll manually."),
+       _("The Poll was deleted by the administrator because it was not accessed for a long time."),
+       _("If you think, the deletion was done by error, please contact the adminsistrator of the system."),
+       _("Return to dudle home and Schedule a new Poll")]
+
 $h << <<END
 <div id='main'>
 	<div id='content'>
-		<h1>Not Found</h1>
+		<h1>#{title}</h1>
 		<p>
-		The requested Document was not found.
+		#{str[0]}
 		</p>
 		<p>
-		There are several reasons, why a Poll is deleted:
+		#{str[1]}
 		<ul>
-			<li>Somebody klicked on “Delete Poll” and deleted the poll manually.</li>
-			<li>The Poll was deleted by some cleanup-roundtrip.</li>
+			<li>#{str[2]}</li>
+			<li>#{str[3]}</li>
 		</ul>
-		If you think, the deletion was done by error, please contact the adminsistrator of the system.
+		#{str[4]}
 		<ul>
-			<li><a href='#{SITEURL}'>Return to dudle home and Schedule a new Poll.</a></li>
+			<li><a href='#{SITEURL}'>#{str[5]}</a></li>
 		</ul>
 		</p>
 	</div>

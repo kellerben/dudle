@@ -22,31 +22,30 @@
 require "cgi"
 $cgi = CGI.new
 require "config"
+require 'gettext'
+require 'gettext/cgi'
+include GetText
+GetText.cgi=$cgi
+GetText.output_charset = 'utf-8'
+require "locale"
+
+GetText.bindtextdomain("dudle",:path => "./locale/")
+
 require "html"
 
-$h = HTML.new("Error")
+title = _("Error")
+$h = HTML.new(title)
 $h.add_css("/default.css","default",true)
 $h << <<END
 <div id='main'>
 <div id='content'>
-<h1>Error</h1>
+<h1>#{title}</h1>
 END
 
 def urlescape(str)
 	CGI.escapeHTML(CGI.escape(str).gsub("+","%20"))
 end
 
-errormessagebody = <<MESSAGE
-Hi!
-
-I found a bug in your application at #{SITEURL}.
-I did the following:
-
-<please describe what you did>
-<e.g., I wanted to sent a comment to the poll.>
-
-I am using <please state your browser and operating system>
-MESSAGE
 
 if defined?(ERRORLOG)
 	begin
@@ -59,30 +58,20 @@ if defined?(ERRORLOG)
 		errorstr = s.reverse.join
 	end
 
-	errormessagebody += <<MESSAGE
-
-The following error was printed:
-#{errorstr}
-MESSAGE
+	errormessage = "\n" + _("The following error was printed:") + "\n" + errorstr
 
 end
-errormessagebody += <<MESSAGE
 
-Yours,
+	errormessagebody = _("Hi!\n\nI found a bug in your application at %{urlofsite}.\nI did the following:\n\n<please describe what you did>\n<e.g., I wanted to sent a comment to the poll.>\n\nI am using <please state your browser and operating system>\n%{errormessage}\nYours,\n") % {:errormessage => errormessage, :urlofsite => SITEURL}
+	subject = _("Bug in dudle")
 
-MESSAGE
-
-	$h << <<ERROR
-An error occured while executing dudle.<br/>
-Please report your browser, operating system, and what you did to
-<a href='mailto:#{BUGREPORTMAIL}?subject=#{urlescape("Bug in dudle")}&amp;body=#{urlescape(errormessagebody)}'>#{BUGREPORTMAIL}</a>. 
-ERROR
+	$h << _("An error occured while executing dudle.<br/>Please send an error report, including your browser, operating system, and what you did to %{admin}.") % {:admin => "<a href='mailto:#{BUGREPORTMAIL}?subject=#{urlescape(subject)}&amp;body=#{urlescape(errormessagebody)}'>#{BUGREPORTMAIL}</a>"}
 
 if (errorstr)
-	
+	errorheadstr = _("Please include the following as well:")
 	$h << <<ERROR
 <br/>
-Please include the following as well:
+#{errorheadstr}
 <pre style='background:#DDD;padding : 1em'>#{CGI.escapeHTML(errorstr)}</pre>
 ERROR
 end

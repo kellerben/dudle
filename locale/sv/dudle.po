@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-05-26 08:56+0200\n"
+"POT-Creation-Date: 2010-07-20 10:29+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
@@ -111,14 +111,51 @@ msgstr "Användarnamn:"
 msgid "Edit"
 msgstr "Redigera"
 
-#: customize.cgi:121 access_control.rb:121 customize.rb:121 poll.rb:286
+#: customize.cgi:121 access_control.rb:121 customize.rb:121 poll.rb:293
 msgid "Save"
 msgstr "Spara"
 
-#: customize.cgi:124 access_control.rb:117 customize.rb:124 delete_poll.rb:96
-#: poll.rb:307
+#: customize.cgi:124 access_control.rb:117 customize.rb:124 delete_poll.rb:103
+#: poll.rb:314
 msgid "Delete"
 msgstr "Radera"
+
+#: error.cgi:36
+msgid "Error"
+msgstr ""
+
+#: error.cgi:61
+msgid "The following error was printed:"
+msgstr ""
+
+#: error.cgi:65
+msgid ""
+"Hi!\n"
+"\n"
+"I found a bug in your application at %{urlofsite}.\n"
+"I did the following:\n"
+"\n"
+"<please describe what you did>\n"
+"<e.g., I wanted to sent a comment to the poll.>\n"
+"\n"
+"I am using <please state your browser and operating system>\n"
+"%{errormessage}\n"
+"Yours,\n"
+msgstr ""
+
+#: error.cgi:66
+msgid "Bug in dudle"
+msgstr ""
+
+#: error.cgi:68
+msgid ""
+"An error occured while executing dudle.<br/>Please send an error report, "
+"including your browser, operating system, and what you did to %{admin}."
+msgstr ""
+
+#: error.cgi:71
+msgid "Please include the following as well:"
+msgstr ""
 
 #: index.cgi:37
 msgid "Please enter a descriptive title."
@@ -188,6 +225,39 @@ msgstr "Händelseschema Omröstning"
 #: index.cgi:140
 msgid "Normal Poll"
 msgstr "Normal omröstning"
+
+#: not_found.cgi:26
+#, fuzzy
+msgid "Poll Not Found"
+msgstr "Inte vald"
+
+#: not_found.cgi:29
+msgid "The requested Poll was not found."
+msgstr ""
+
+#: not_found.cgi:30
+msgid "There are several reasons, why a Poll is deleted:"
+msgstr ""
+
+#: not_found.cgi:31
+msgid "Somebody klicked on “Delete Poll” and deleted the poll manually."
+msgstr ""
+
+#: not_found.cgi:32
+msgid ""
+"The Poll was deleted by the administrator because it was not accessed for a "
+"long time."
+msgstr ""
+
+#: not_found.cgi:33
+msgid ""
+"If you think, the deletion was done by error, please contact the "
+"adminsistrator of the system."
+msgstr ""
+
+#: not_found.cgi:34 delete_poll.rb:51
+msgid "Return to dudle home and Schedule a new Poll"
+msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
 
 #: access_control.rb:87
 msgid "Password"
@@ -282,11 +352,11 @@ msgstr "Jag är medveten om konsekvenserna."
 msgid "Please delete this poll."
 msgstr "Vänligen radera denna omröstning."
 
-#: delete_poll.rb:41
+#: delete_poll.rb:48
 msgid "The poll was deleted successfully!"
 msgstr "Omröstningen raderad!"
 
-#: delete_poll.rb:42
+#: delete_poll.rb:49
 msgid ""
 "If this was done by accident, please contact the administrator of the "
 "system. The poll can be recovered for an indeterministic amount of time, "
@@ -296,43 +366,39 @@ msgstr ""
 "Omröstningen kan återskapas inom en viss tid, det kan tyvärr redan vara för "
 "sent."
 
-#: delete_poll.rb:43
+#: delete_poll.rb:50
 msgid "Things you can do now are"
 msgstr "Vad du kan göra nu är"
 
-#: delete_poll.rb:44
-msgid "Return to dudle home and Schedule a new Poll"
-msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
-
-#: delete_poll.rb:45
+#: delete_poll.rb:52
 msgid "Browse Wikipedia"
 msgstr "Kolla Wikipedia"
 
-#: delete_poll.rb:46
+#: delete_poll.rb:53
 msgid "Search something with Google"
 msgstr "Sök efter något med hjälp av Google"
 
-#: delete_poll.rb:72
+#: delete_poll.rb:79
 msgid "To delete the poll, you have to type:"
 msgstr "För att radera omröstningen måste du skriva:"
 
-#: delete_poll.rb:80
+#: delete_poll.rb:87
 msgid "but you typed:"
 msgstr "men du skrev:"
 
-#: delete_poll.rb:92
+#: delete_poll.rb:99
 msgid "Delete this Poll"
 msgstr "Ta bort den här omröstningen"
 
-#: delete_poll.rb:93
+#: delete_poll.rb:100
 msgid "You want to delete the poll named"
 msgstr "Du vill ta bort omröstningen med rubriken"
 
-#: delete_poll.rb:94
+#: delete_poll.rb:101
 msgid "This is an irreversible action!"
 msgstr "Det går inte att ångra den här åtgärden!"
 
-#: delete_poll.rb:95
+#: delete_poll.rb:102
 msgid ""
 "If you are sure in what you are doing, please type “%{question}” into the "
 "form."
@@ -402,15 +468,15 @@ msgstr "Fortsätt!"
 msgid "Add and Remove Columns"
 msgstr "Lägg till eller ta bort kolumner"
 
-#: edit_columns.rb:67 edit_columns.rb:86
+#: edit_columns.rb:67 edit_columns.rb:86 pollhead.rb:72 timepollhead.rb:227
 msgid "Delete column"
 msgstr "Ta bort kolumn"
 
-#: edit_columns.rb:69 edit_columns.rb:84
+#: edit_columns.rb:69 edit_columns.rb:84 timepollhead.rb:226
 msgid "Add column"
 msgstr "Lägg till kolumn"
 
-#: edit_columns.rb:71 edit_columns.rb:88
+#: edit_columns.rb:71 edit_columns.rb:88 pollhead.rb:71
 msgid "Edit column"
 msgstr "Redigera kolumn"
 
@@ -462,103 +528,88 @@ msgstr "Länk till dudle omröstning om %{polltitle}"
 msgid "Reload"
 msgstr "Ladda om"
 
-#: poll.rb:71
+#: poll.rb:86
 #, fuzzy
 msgid "Edit user %{user}..."
 msgstr "Redigera användare %{user}"
 
-#: poll.rb:75
+#: poll.rb:90
 #, fuzzy
 msgid "Delete user %{user}..."
 msgstr "Redigera användare %{user}"
 
-#: poll.rb:122
+#: poll.rb:137
 msgid "Total"
 msgstr "Total"
 
-#: poll.rb:164
+#: poll.rb:179
 msgid "Invite"
 msgstr "Bjud in"
 
-#: poll.rb:165 pollhead.rb:62 timepollhead.rb:137
+#: poll.rb:180 pollhead.rb:62 timepollhead.rb:137
 msgid "Name"
 msgstr "Namn"
 
-#: poll.rb:182
-#, fuzzy
-msgid "Delete %{user}?"
-msgstr "Redigera användare %{user}"
-
-#: poll.rb:185 poll.rb:247
-msgid "Confirm"
-msgstr ""
-
-#: poll.rb:218
+#: poll.rb:225
 msgid "Save Changes"
 msgstr "Spara ändringar"
 
-#: poll.rb:222
+#: poll.rb:229
 msgid "Cancel"
 msgstr ""
 
-#: poll.rb:244
+#: poll.rb:251
 #, fuzzy
 msgid "Do you really want to delete user %{user}?"
 msgstr "Redigera användare %{user}"
 
-#: poll.rb:295
+#: poll.rb:254
+msgid "Confirm"
+msgstr ""
+
+#: poll.rb:302
 msgid "Comments"
 msgstr "Kommentarer"
 
-#: poll.rb:302
+#: poll.rb:309
 msgid "%{user} said on %{time}"
 msgstr "sa %{user} %{time}"
 
-#: poll.rb:317
+#: poll.rb:324
 msgid "says"
 msgstr "säger"
 
-#: poll.rb:318
+#: poll.rb:325
 msgid "Submit Comment"
 msgstr "Skicka kommentarer"
 
-#: poll.rb:336
+#: poll.rb:343
 msgid "Show history items:"
 msgstr "Visa historik:"
 
-#: poll.rb:343
+#: poll.rb:350
 msgid "All"
 msgstr "Alla"
 
-#: poll.rb:344
+#: poll.rb:351
 msgid "Participant related"
 msgstr "Tillhörande deltagare"
 
-#: poll.rb:345
+#: poll.rb:352
 msgid "Column related"
 msgstr "Tillhörande kolumn"
 
-#: poll.rb:346
+#: poll.rb:353
 msgid "Comment related"
 msgstr "Tillhörande kommentar"
 
-#: poll.rb:347
+#: poll.rb:354
 msgid "Access Control related"
 msgstr "Tillhörande åtkomstkontroll"
 
-#: poll.rb:353
+#: poll.rb:360
 msgid "Update"
 msgstr "Uppdatera"
-
-#: pollhead.rb:71
-#, fuzzy
-msgid "Edit Column"
-msgstr "Redigera kolumner"
-
-#: pollhead.rb:72 timepollhead.rb:226
-#, fuzzy
-msgid "Delete Column"
-msgstr "Ta bort kolumn"
 
 #: pollhead.rb:88 timepollhead.rb:141
 msgid "Last Edit"
@@ -595,41 +646,53 @@ msgstr "Tidigare"
 msgid "Later"
 msgstr "Senare"
 
-#: timepollhead.rb:242
+#: timepollhead.rb:243
 msgid "Click on the dates to add or remove columns."
 msgstr "Klicka på datumen för att lägga till eller ta bort kolumner."
 
-#: timepollhead.rb:287
+#: timepollhead.rb:291
 msgid "Optional:"
 msgstr "Valfri:"
 
-#: timepollhead.rb:288
+#: timepollhead.rb:292
 msgid "Enter a concrete value as start time."
 msgstr "Ange en giltig starttid."
 
-#: timepollhead.rb:304
+#: timepollhead.rb:308
 msgid "Time"
 msgstr "Tid"
 
-#: timepollhead.rb:317
+#: timepollhead.rb:321
 msgid "Chosen"
 msgstr "Vald"
 
-#: timepollhead.rb:318
+#: timepollhead.rb:322
 msgid "Not Chosen"
 msgstr "Inte vald"
 
-#: timepollhead.rb:319
+#: timepollhead.rb:323
 msgid "Past"
 msgstr "Efter"
 
-#: timepollhead.rb:372
+#: timepollhead.rb:376
 msgid "Add"
 msgstr "Lägg till"
 
-#: timepollhead.rb:373
+#: timepollhead.rb:377
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "t ex 09:30, morgon, eftermiddag"
+
+#, fuzzy
+#~ msgid "Delete %{user}?"
+#~ msgstr "Redigera användare %{user}"
+
+#, fuzzy
+#~ msgid "Edit Column"
+#~ msgstr "Redigera kolumner"
+
+#, fuzzy
+#~ msgid "Delete Column"
+#~ msgstr "Ta bort kolumn"
 
 #~ msgid "Delete User"
 #~ msgstr "Radera användare"
