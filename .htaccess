@@ -10,3 +10,4 @@ DirectoryIndex index.cgi
 
 ErrorDocument 500 /error.cgi
 ErrorDocument 404 /not_found.cgi
+ErrorDocument 401 /authorization_required.cgi

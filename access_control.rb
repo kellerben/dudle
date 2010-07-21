@@ -41,6 +41,7 @@ AuthType digest
 AuthName "dudle"
 AuthUserFile "#{File.expand_path(".").gsub('"','\\\\"')}/.htdigest"
 Require user admin
+ErrorDocument 401 /authorization_required.cgi?user=admin&poll=#{CGI.escape($d.urlsuffix)}
 </Files>
 HTACCESS
 		end
@@ -50,6 +51,7 @@ AuthType digest
 AuthName "dudle"
 AuthUserFile "#{File.expand_path(".").gsub('"','\\\\"')}/.htdigest"
 Require valid-user
+ErrorDocument 401 /authorization_required.cgi?user=participant&poll=#{CGI.escape($d.urlsuffix)}
 HTACCESS
 		end
 	}
@@ -142,7 +144,7 @@ if $cgi.include?("ac_user")
 	else
 		if $cgi.include?("ac_create")
 			add_to_htdigest(user,$cgi["ac_password0"])
-			acusers[user] = type 
+			acusers[user] = true 
 			write_htaccess(acusers)
 		end
 

@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-07-20 10:29+0200\n"
-"PO-Revision-Date: 2010-07-20 10:31+0100\n"
+"POT-Creation-Date: 2010-07-21 07:20+0200\n"
+"PO-Revision-Date: 2010-07-21 07:21+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -47,6 +47,33 @@ msgstr "Der Sourcecode zu dieser Applikation ist unter der Lizenz <a href='http:
 #: about.cgi:34
 msgid "You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</a>:"
 msgstr "Sie können sich den Quellcode mit <a href='http://bazaar-vcs.org/'>bazaar</a> herunterladen:"
+
+#: authorization_required.cgi:30
+#: authorization_required.cgi:42
+msgid "Authorization Required"
+msgstr "Anmeldung Erforderlich"
+
+#: authorization_required.cgi:33
+msgid "The configuration of this Poll is protected by password!"
+msgstr "Die Konfiguration dieser Umfrage ist passwortgeschützt!"
+
+#: authorization_required.cgi:35
+msgid "This Poll is protected by password!"
+msgstr "Diese Umfrage ist passwortgeschützt!"
+
+#: authorization_required.cgi:37
+msgid "In order to proceed, you have to give the password for user %{user}."
+msgstr "Um fortzufahren müssen Sie das Passwort für den Benutzer %{user} eingeben."
+
+#: authorization_required.cgi:45
+#: not_found.cgi:34
+#: delete_poll.rb:51
+msgid "Return to dudle home and Schedule a new Poll"
+msgstr "Zurück zur dudle Hauptseite um eine neue Umfrage zu erstellen"
+
+#: authorization_required.cgi:46
+msgid "You have to authorize in order to request this page!"
+msgstr "Um auf diese Seite zugreifen zu können müssen Sie sich autorisieren."
 
 #: customize.cgi:31
 #: customize.rb:31
@@ -105,7 +132,7 @@ msgid "Default Username"
 msgstr "Voreingestellter Benutzername"
 
 #: customize.cgi:87
-#: access_control.rb:74
+#: access_control.rb:76
 #: customize.rb:87
 msgid "Username:"
 msgstr "Benutzername:"
@@ -116,14 +143,14 @@ msgid "Edit"
 msgstr "Bearbeiten"
 
 #: customize.cgi:121
-#: access_control.rb:121
+#: access_control.rb:123
 #: customize.rb:121
 #: poll.rb:293
 msgid "Save"
 msgstr "Speichern"
 
 #: customize.cgi:124
-#: access_control.rb:117
+#: access_control.rb:119
 #: customize.rb:124
 #: delete_poll.rb:103
 #: poll.rb:314
@@ -264,72 +291,67 @@ msgstr "Die Umfrage wurde vom Administrator gelöscht, weil lange nicht auf sie 
 msgid "If you think, the deletion was done by error, please contact the adminsistrator of the system."
 msgstr "Bitte kontaktieren Sie den Administrator des Systems, wenn Sie denken, dass die Umfrage versehentlich gelöscht wurde."
 
-#: not_found.cgi:34
-#: delete_poll.rb:51
-msgid "Return to dudle home and Schedule a new Poll"
-msgstr "Zurück zur dudle Hauptseite um eine neue Umfrage zu erstellen"
-
-#: access_control.rb:87
+#: access_control.rb:89
 msgid "Password"
 msgstr "Passwort"
 
-#: access_control.rb:88
+#: access_control.rb:90
 msgid "repeat"
 msgstr "wiederholen"
 
-#: access_control.rb:114
+#: access_control.rb:116
 msgid "You have to remove the participant user before you can remove the administrator."
 msgstr "Der Benutzer „participant“ muss entfernt werden, bevor Sie den Administrator entfernen können."
 
-#: access_control.rb:139
+#: access_control.rb:141
 msgid "Only letters and digits are allowed in the username."
 msgstr "Der Benutzername darf nur Buchstaben und Zahlen enthalten."
 
-#: access_control.rb:141
+#: access_control.rb:143
 msgid "Passwords did not match."
 msgstr "Die Passwörter stimmen nicht überein."
 
-#: access_control.rb:174
+#: access_control.rb:176
 msgid "Change Access Control Settings"
 msgstr "Einstellungen der Zugriffskontrolle"
 
-#: access_control.rb:178
+#: access_control.rb:180
 msgid "not activated"
 msgstr "nicht aktiviert"
 
-#: access_control.rb:180
+#: access_control.rb:182
 msgid "Activate"
 msgstr "Aktivieren"
 
-#: access_control.rb:183
+#: access_control.rb:185
 msgid "will be activated when at least an admin user is configured"
 msgstr "wird aktiviert, wenn ein Administrator (Benutzername: „admin“) konfiguriert wurde"
 
-#: access_control.rb:185
+#: access_control.rb:187
 msgid "Deactivate"
 msgstr "Deaktivieren"
 
-#: access_control.rb:187
+#: access_control.rb:189
 msgid "activated"
 msgstr "aktiviert"
 
-#: access_control.rb:188
+#: access_control.rb:190
 msgid "You have to remove all users before you can deactivate the access control settings."
 msgstr "Sie müssen alle Benutzer entfernen, bevor Sie die Zugriffskontrolle deaktivieren können."
 
-#: access_control.rb:192
+#: access_control.rb:194
 msgid "You will be asked for the password you entered here after pressing save!"
 msgstr "Nach dem Speichern werden Sie nach dem Benutzernamen und diesem Passwort gefragt!"
 
-#: access_control.rb:195
+#: access_control.rb:197
 msgid "The user ‘admin’ has access to the vote as well as the configuration interface."
 msgstr "Der Benutzer „admin“ hat sowohl zur Abstimmungs- als auch zur Konfigurationsoberfläche Zugriff."
 
-#: access_control.rb:201
+#: access_control.rb:203
 msgid "The user ‘participant’ has only access to the vote interface."
 msgstr "Der Benutzer „participant“ hat nur zur Abstimmungsoberfläche Zugriff."
 
-#: access_control.rb:207
+#: access_control.rb:209
 msgid "Access control:"
 msgstr "Zugriffskontrolle:"
 

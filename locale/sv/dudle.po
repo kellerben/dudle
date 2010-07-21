@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-07-20 10:29+0200\n"
+"POT-Creation-Date: 2010-07-21 07:20+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
@@ -57,6 +57,30 @@ msgid ""
 msgstr ""
 "Du kan få tillgång till koden om du använder <a href='http://bazaar-vcs."
 "org/'>bazaar</a>:"
+
+#: authorization_required.cgi:30 authorization_required.cgi:42
+msgid "Authorization Required"
+msgstr ""
+
+#: authorization_required.cgi:33
+msgid "The configuration of this Poll is protected by password!"
+msgstr ""
+
+#: authorization_required.cgi:35
+msgid "This Poll is protected by password!"
+msgstr ""
+
+#: authorization_required.cgi:37
+msgid "In order to proceed, you have to give the password for user %{user}."
+msgstr ""
+
+#: authorization_required.cgi:45 not_found.cgi:34 delete_poll.rb:51
+msgid "Return to dudle home and Schedule a new Poll"
+msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
+
+#: authorization_required.cgi:46
+msgid "You have to authorize in order to request this page!"
+msgstr ""
 
 #: customize.cgi:31 customize.rb:31
 msgid "Customize Personal Settings"
@@ -103,7 +127,7 @@ msgstr "Stilmall"
 msgid "Default Username"
 msgstr "Standard användarnamn"
 
-#: customize.cgi:87 access_control.rb:74 customize.rb:87
+#: customize.cgi:87 access_control.rb:76 customize.rb:87
 msgid "Username:"
 msgstr "Användarnamn:"
 
@@ -111,11 +135,11 @@ msgstr "Användarnamn:"
 msgid "Edit"
 msgstr "Redigera"
 
-#: customize.cgi:121 access_control.rb:121 customize.rb:121 poll.rb:293
+#: customize.cgi:121 access_control.rb:123 customize.rb:121 poll.rb:293
 msgid "Save"
 msgstr "Spara"
 
-#: customize.cgi:124 access_control.rb:117 customize.rb:124 delete_poll.rb:103
+#: customize.cgi:124 access_control.rb:119 customize.rb:124 delete_poll.rb:103
 #: poll.rb:314
 msgid "Delete"
 msgstr "Radera"
@@ -255,57 +279,53 @@ msgid ""
 "adminsistrator of the system."
 msgstr ""
 
-#: not_found.cgi:34 delete_poll.rb:51
-msgid "Return to dudle home and Schedule a new Poll"
-msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
-
-#: access_control.rb:87
+#: access_control.rb:89
 msgid "Password"
 msgstr "Lösenord"
 
-#: access_control.rb:88
+#: access_control.rb:90
 msgid "repeat"
 msgstr "upprepa"
 
-#: access_control.rb:114
+#: access_control.rb:116
 msgid ""
 "You have to remove the participant user before you can remove the "
 "administrator."
 msgstr "Du måste ta bort deltagaren innan du kan radera administratören "
 
-#: access_control.rb:139
+#: access_control.rb:141
 msgid "Only letters and digits are allowed in the username."
 msgstr "Bara bokstäver och siffror är tillåtet i användarnamnet"
 
-#: access_control.rb:141
+#: access_control.rb:143
 msgid "Passwords did not match."
 msgstr "Lösenorden matchar inte."
 
-#: access_control.rb:174
+#: access_control.rb:176
 msgid "Change Access Control Settings"
 msgstr "Ändra inställningarna för åtkomstkontroll"
 
-#: access_control.rb:178
+#: access_control.rb:180
 msgid "not activated"
 msgstr "inte aktiverad"
 
-#: access_control.rb:180
+#: access_control.rb:182
 msgid "Activate"
 msgstr "Aktivera"
 
-#: access_control.rb:183
+#: access_control.rb:185
 msgid "will be activated when at least an admin user is configured"
 msgstr "aktiveras när minst en administratör är konfigurerad"
 
-#: access_control.rb:185
+#: access_control.rb:187
 msgid "Deactivate"
 msgstr "Avaktivera"
 
-#: access_control.rb:187
+#: access_control.rb:189
 msgid "activated"
 msgstr "aktiverad"
 
-#: access_control.rb:188
+#: access_control.rb:190
 msgid ""
 "You have to remove all users before you can deactivate the access control "
 "settings."
@@ -313,14 +333,14 @@ msgstr ""
 "Du måste radera alla användare innan du kan avaktivera inställningarna för "
 "åtkomstkontrollen."
 
-#: access_control.rb:192
+#: access_control.rb:194
 msgid ""
 "You will be asked for the password you entered here after pressing save!"
 msgstr ""
 "Efter att du har klickat på spara kommer du kommer att frågas efter "
 "lösenordet du nu skrev in! "
 
-#: access_control.rb:195
+#: access_control.rb:197
 msgid ""
 "The user ‘admin’ has access to the vote as well as the configuration "
 "interface."
@@ -328,11 +348,11 @@ msgstr ""
 "’Admin’ har access till omröstningen såväl som till gränssnittet för "
 "konfigurering."
 
-#: access_control.rb:201
+#: access_control.rb:203
 msgid "The user ‘participant’ has only access to the vote interface."
 msgstr "’Deltagare’ har bara access till gränssnittet för omröstning"
 
-#: access_control.rb:207
+#: access_control.rb:209
 msgid "Access control:"
 msgstr "Åtkomstkontroll:"
 
