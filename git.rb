@@ -26,6 +26,10 @@ class VCS
 		`#{GITCMD} init`
 	end
 
+	def VCS.rm file
+		`#{GITCMD} rm #{file}`
+	end
+
 	def VCS.add file
 		`#{GITCMD} add #{file}`
 	end

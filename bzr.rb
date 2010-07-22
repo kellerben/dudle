@@ -26,6 +26,10 @@ class VCS
 		`#{BZRCMD} init`
 	end
 
+	def VCS.rm file
+		`#{BZRCMD} rm #{file}`
+	end
+
 	def VCS.add file
 		`#{BZRCMD} add #{file}`
 	end
