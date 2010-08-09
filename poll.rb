@@ -302,13 +302,12 @@ TR
 		ret	+= "<h2>" + _("Comments") + "</h2>" if !@comment.empty? || editable
 
 		unless @comment.empty?
-			@comment.each_with_index{|c,i|
-				time,name,comment = c
+			@comment.each{|time,name,comment|
 				ret += "<form method='post' action='.'>"
 				ret += "<div class='textcolumn'><h3 class='comment'>"
 				ret += _("%{user} said on %{time}") % {:user => name, :time => time.strftime("%d.%m., %H:%M")}
 				if editable
-					ret += "<input type='hidden' name='delete_comment' value='#{i}' />"
+					ret += "<input type='hidden' name='delete_comment' value='#{time.strftime("%s")}' />"
 					ret += "&nbsp;"
 					ret += "<input class='delete_comment_button' type='submit' value='"
 					ret += _("Delete")
@@ -432,8 +431,12 @@ FORM
 		store "Comment added by #{name}"
 	end
 
-	def delete_comment index
-		store "Comment from #{@comment.delete_at(index)[1]} deleted"
+	def delete_comment deltime
+		@comment.each_with_index{|c,i|
+			if c[0].strftime("%s") == deltime
+				store "Comment from #{@comment.delete_at(i)[1]} deleted"
+			end
+		}
 	end
 
 	###############################

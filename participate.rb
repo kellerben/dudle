@@ -40,7 +40,7 @@ unless $cgi.include?("cancel")
 end
 
 $d.table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi["comment"] != ""
-$d.table.delete_comment($cgi["delete_comment"].to_i) if $cgi.include?("delete_comment")
+$d.table.delete_comment($cgi["delete_comment"]) if $cgi.include?("delete_comment")
 
 
 $d.html.add_atom("atom.cgi") if File.exists?("../atom.rb")
