@@ -79,3 +79,7 @@ NOTICE
 }
 notice += "</table>"
 NOTICE = notice
+
+# choose a default stylesheet
+# e.g., "classic.css", "css/foobar.css", ...
+DEFAULT_CSS = "default.css"

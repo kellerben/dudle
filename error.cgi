@@ -35,8 +35,11 @@ require "html"
 
 title = _("Error")
 $h = HTML.new(title)
-$h.add_css("/default.css","default",true)
+$h.add_css("/#{DEFAULT_CSS}","default",true)
 $h << <<END
+<div id='header1'></div>
+<div id='header2'></div>
+<div id='header3'></div>
 <div id='main'>
 <div id='content'>
 <h1>#{title}</h1>

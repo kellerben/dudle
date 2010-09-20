@@ -41,10 +41,13 @@ else
 	GetText.bindtextdomain("dudle",:path => "./locale/")
 	title = _("Authorization Required")
 	$h = HTML.new(title)
-	$h.add_css("/default.css","default",true)
+	$h.add_css("/#{DEFAULT_CSS}","default",true)
 	returnstr = _("Return to dudle home and Schedule a new Poll")
 	authstr = _("You have to authorize in order to request this page!")
 	$h << <<END
+	<div id='header1'></div>
+	<div id='header2'></div>
+	<div id='header3'></div>
 	<div id='main'>
 		<div id='content'>
 			<h1>#{title}</h1>

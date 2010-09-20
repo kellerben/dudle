@@ -25,7 +25,7 @@ GetText.bindtextdomain("dudle",:path => "./locale/")
 
 title = _("Poll Not Found")
 $h = HTML.new(title)
-$h.add_css("/default.css","default",true)
+$h.add_css("/#{DEFAULT_CSS}","default",true)
 str = [_("The requested Poll was not found."),
        _("There are several reasons, why a Poll is deleted:"),
        _("Somebody klicked on “Delete Poll” and deleted the poll manually."),
@@ -34,6 +34,9 @@ str = [_("The requested Poll was not found."),
        _("Return to dudle home and Schedule a new Poll")]
 
 $h << <<END
+<div id='header1'></div>
+<div id='header2'></div>
+<div id='header3'></div>
 <div id='main'>
 	<div id='content'>
 		<h1>#{title}</h1>

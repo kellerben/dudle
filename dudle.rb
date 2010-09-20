@@ -137,10 +137,10 @@ class Dudle
 		}
 		if $cgi.include?("css")
 			@user_css = $cgi["css"] 
-			@html.add_cookie("css",@user_css,"/",Time.now + (1*60*60*24*365 * (@user_css == "default.css" ? -1 : 1 )))
+			@html.add_cookie("css",@user_css,"/",Time.now + (1*60*60*24*365 * (@user_css == DEFAULT_CSS ? -1 : 1 )))
 		else
 			@user_css = $cgi.cookies["css"][0]
-			@user_css ||= "default.css"
+			@user_css ||= DEFAULT_CSS
 		end
 
 		if $cgi.user_agent =~ /.*MSIE [567]\..*/
