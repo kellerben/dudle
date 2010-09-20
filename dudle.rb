@@ -219,9 +219,11 @@ READY
 			["sv", "Svenska"]
 			]
 		lang.each{|short,long|
-			@html << "<a href='?lang=#{short}'>" unless short == GetText.locale.language
-			@html << long
-			@html << "</a>" unless short == GetText.locale.language
+			if short == GetText.locale.language
+				@html << long
+			else
+				@html << "<a href='?lang=#{short}'>#{long}</a>"
+			end
 		}
 		@html << "</div>" # languageChooser
 
