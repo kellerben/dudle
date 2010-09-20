@@ -39,7 +39,7 @@ require "config"
 require "charset"
 
 class Dudle
-	attr_reader :html, :table, :urlsuffix, :css, :title, :tab
+	attr_reader :html, :table, :urlsuffix, :css, :user_css, :title, :tab
 	def is_poll?
 		@is_poll
 	end
@@ -135,15 +135,21 @@ class Dudle
 				@css << "css/#{f}"
 			end
 		}
-		default = $cgi["css"]
-		default = $cgi.cookies["css"][0] if default == ""
+		if $cgi.include?("css")
+			@user_css = $cgi["css"] 
+			@html.add_cookie("css",@user_css,"/",Time.now + (1*60*60*24*365 * (@user_css == "default.css" ? -1 : 1 )))
+		else
+			@user_css = $cgi.cookies["css"][0]
+			@user_css ||= "default.css"
+		end
+
 		if $cgi.user_agent =~ /.*MSIE [567]\..*/
-			css = [default ? default : "default.css"]
+			css = [@user_css]
 		else
 			css = @css
 		end
 		css.each{|href|
-			@html.add_css("#{@basedir}/#{href}",href.scan(/([^\/]*)\.css/).flatten[0] ,href == default)
+			@html.add_css("#{@basedir}/#{href}",href.scan(/([^\/]*)\.css/).flatten[0] ,href == @user_css)
 		}
 
 		@html << <<HEAD

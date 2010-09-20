@@ -62,13 +62,9 @@ $d << "<h3>" + _("Charset")+ "</h3>"
 $d << choosetable(a,$USEUTF ? "utf" : "ascii")
 $d << "</div>"
 
-css = $cgi.cookies["css"][0]
-css = $cgi["css"] if $cgi.include?("css")
-css ||= "default.css"
-$d.html.add_cookie("css",css,"/",Time.now + (1*60*60*24*365 * (css == "dudle.css" ? -1 : 1 )))
 $d << "<div id='config_stylesheet'>"
 $d << "<h3>" + _("Stylesheet") + "</h3>"
-$d << choosetable($d.css.collect{|href| [href.scan(/([^\/]*)\.css/).flatten[0],"css=#{href}"]},"css=#{css}")
+$d << choosetable($d.css.collect{|href| [href.scan(/([^\/]*)\.css/).flatten[0],"css=#{href}"]},"css=#{$d.user_css}")
 $d << "</div>"
 
 
