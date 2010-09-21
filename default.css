@@ -116,6 +116,11 @@ table.calendarday td {
 	margin: 0px;
 }
 
+table.calendarday td.navigation{
+	padding-left: 0.5ex;
+	padding-right: 0.5ex;
+}
+
 table.calendarday td input{
 	margin: 0px;
 	padding: 1px;
