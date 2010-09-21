@@ -212,6 +212,10 @@ html {
 	padding-left: 0;
 	margin-top: 2ex;
 }
+#wizzard_navigation table, #wizzard_navigation table td{
+	padding-left:0;
+	border-spacing:0;
+}
 
 .textcolumn, .shorttextcolumn{
 	line-height: 1.4em;
@@ -285,6 +289,7 @@ pre#configwarning {
 
 .warning, .error{
 	color: red;
+	text-align: left;
 }
 
 h1{
