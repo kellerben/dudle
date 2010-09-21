@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-07-21 07:20+0200\n"
+"POT-Creation-Date: 2010-09-21 18:01+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -75,7 +75,7 @@ msgstr ""
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 
-#: authorization_required.cgi:45 not_found.cgi:34 delete_poll.rb:51
+#: authorization_required.cgi:45 not_found.cgi:34
 msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Návrat zpět na domovskou stránku dudle a naplánovat nové hlasování"
 
@@ -120,28 +120,28 @@ msgstr "Použij tuto volbu, pokud některé znaky nejsou zobrazeny správně."
 msgid "Charset"
 msgstr "Znaková sada"
 
-#: customize.cgi:70 customize.rb:70
+#: customize.cgi:66 customize.rb:66
 msgid "Stylesheet"
 msgstr "Šablona"
 
-#: customize.cgi:86 customize.rb:86
+#: customize.cgi:82 customize.rb:82
 msgid "Default Username"
 msgstr "Implicitní uživatelské jméno:"
 
-#: customize.cgi:87 access_control.rb:76 customize.rb:87
+#: customize.cgi:83 access_control.rb:76 customize.rb:83
 msgid "Username:"
 msgstr "Uživatelské jméno:"
 
-#: customize.cgi:111 customize.rb:111
+#: customize.cgi:107 customize.rb:107
 msgid "Edit"
 msgstr "Upravit"
 
-#: customize.cgi:121 access_control.rb:123 customize.rb:121 poll.rb:293
+#: customize.cgi:117 access_control.rb:123 customize.rb:117 poll.rb:293
 msgid "Save"
 msgstr "Uložit"
 
-#: customize.cgi:124 access_control.rb:119 customize.rb:124 delete_poll.rb:103
-#: poll.rb:314
+#: customize.cgi:120 access_control.rb:119 customize.rb:120 delete_poll.rb:103
+#: poll.rb:313
 msgid "Delete"
 msgstr "Smazat"
 
@@ -149,11 +149,11 @@ msgstr "Smazat"
 msgid "Error"
 msgstr ""
 
-#: error.cgi:61
+#: error.cgi:64
 msgid "The following error was printed:"
 msgstr ""
 
-#: error.cgi:65
+#: error.cgi:68
 msgid ""
 "Hi!\n"
 "\n"
@@ -168,17 +168,17 @@ msgid ""
 "Yours,\n"
 msgstr ""
 
-#: error.cgi:66
+#: error.cgi:69
 msgid "Bug in dudle"
 msgstr ""
 
-#: error.cgi:68
+#: error.cgi:71
 msgid ""
 "An error occured while executing dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
 
-#: error.cgi:71
+#: error.cgi:74
 msgid "Please include the following as well:"
 msgstr ""
 
@@ -388,6 +388,11 @@ msgstr ""
 msgid "Things you can do now are"
 msgstr "Věci, které nyní můžeš dělat jsou"
 
+#: delete_poll.rb:51
+#, fuzzy
+msgid "Return to dudle home and schedule a new poll"
+msgstr "Návrat zpět na domovskou stránku dudle a naplánovat nové hlasování"
+
 #: delete_poll.rb:52
 msgid "Browse Wikipedia"
 msgstr "Prohlížej Wikipedii"
@@ -464,23 +469,23 @@ msgstr "Přehled"
 msgid "Delete Poll"
 msgstr "Smazat hlasování"
 
-#: dudle.rb:172 dudle.rb:190
+#: dudle.rb:178 dudle.rb:196
 msgid "Previous"
 msgstr "Předchozí"
 
-#: dudle.rb:173 dudle.rb:191
+#: dudle.rb:179 dudle.rb:197
 msgid "Next"
 msgstr "Následující"
 
-#: dudle.rb:174 dudle.rb:192
+#: dudle.rb:180 dudle.rb:198
 msgid "Finish"
 msgstr "Dokončit"
 
-#: dudle.rb:197
+#: dudle.rb:203
 msgid "All changes were saved sucessfully."
 msgstr "Všechny změny byly úspěšně uloženy."
 
-#: dudle.rb:197
+#: dudle.rb:203
 msgid "Proceed!"
 msgstr "Vykonat!"
 
@@ -591,43 +596,43 @@ msgstr ""
 msgid "Comments"
 msgstr "Komentáře"
 
-#: poll.rb:309
+#: poll.rb:308
 msgid "%{user} said on %{time}"
 msgstr "%{user} řekl v %{time}"
 
-#: poll.rb:324
+#: poll.rb:323
 msgid "says"
 msgstr "říká"
 
-#: poll.rb:325
+#: poll.rb:324
 msgid "Submit Comment"
 msgstr "Odešli Komentář"
 
-#: poll.rb:343
+#: poll.rb:342
 msgid "Show history items:"
 msgstr "Zobraz položky historie"
 
-#: poll.rb:350
+#: poll.rb:349
 msgid "All"
 msgstr "Vše"
 
-#: poll.rb:351
+#: poll.rb:350
 msgid "Participant related"
 msgstr "Související s účastníkem"
 
-#: poll.rb:352
+#: poll.rb:351
 msgid "Column related"
 msgstr "Související se sloupcem"
 
-#: poll.rb:353
+#: poll.rb:352
 msgid "Comment related"
 msgstr "Související s komentářem"
 
-#: poll.rb:354
+#: poll.rb:353
 msgid "Access Control related"
 msgstr "Související s řízením přistupu"
 
-#: poll.rb:360
+#: poll.rb:359
 msgid "Update"
 msgstr "Aktualizace"
 
