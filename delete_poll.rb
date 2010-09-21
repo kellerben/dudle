@@ -48,7 +48,7 @@ if $cgi.include?("confirmnumber")
 		deleteconfirmstr = _("The poll was deleted successfully!")
 		accidentstr = _("If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterministic amount of time, maybe it is already to late.")
 		nextthingsstr = _("Things you can do now are")
-		homepagestr = _("Return to dudle home and Schedule a new Poll")
+		homepagestr = _("Return to dudle home and schedule a new poll")
 		wikipediastr = _("Browse Wikipedia")
 		googlestr = _("Search something with Google")
 
