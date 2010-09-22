@@ -31,6 +31,9 @@ $cgi = CGI.new
 feed = Atom::Feed.new 
 olddir = File.expand_path(".")
 Dir.chdir("..")
+def _(string)
+	string
+end
 load "config.rb"
 require "poll"
 Dir.chdir(olddir)
