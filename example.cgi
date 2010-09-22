@@ -26,23 +26,32 @@ def _(string)
 end
 require "config"
 
-source = nil
-EXAMPLES.each{|poll|
-	source = poll[:url] if $cgi["poll"] == poll[:url]
+poll = nil
+EXAMPLES.each{|p|
+	poll = p if $cgi["poll"] == p[:url]
 }
 
-raise "Example not found" unless source
-target = "#{source}_#{Time.now.to_i}"
+raise "Example not found" unless poll
 
-while (File.exists?(target))
-	target += "I"
+targeturl = poll[:url]
+
+if poll[:new_environment]
+	targeturl += "_#{Time.now.to_i}"
+
+	while (File.exists?(targeturl))
+		targeturl += "I"
+	end
+	VCS.branch(poll[:url],targeturl)
 end
-VCS.branch(source,target)
-`rm #{target}/.htaccess`
-`rm #{target}/.htdigest`
+
+if poll[:revno]
+	Dir.chdir(targeturl)
+	VCS.revert(poll[:revno])
+	Dir.chdir("..")
+end
 
 $cgi.out({
 	"status" => "REDIRECT",
 	"Cache-Control" => "no-cache",
-	"Location" => SITEURL + target
+	"Location" => SITEURL + targeturl
 }){""}

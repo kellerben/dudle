@@ -67,6 +67,11 @@ class VCS
 		`#{GITCMD} clone #{source} #{target}`
 	end
 
+	def VCS.revert revno
+		revhash = `#{GITCMD} log --format="%H"`.split("\n").reverse[revno-1]
+		`#{GITCMD} checkout #{revhash} .`
+		VCS.commit("Reverted Poll to version #{revno}")
+	end
 end
 
 

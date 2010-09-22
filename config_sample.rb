@@ -61,10 +61,16 @@ AUTO_SEND_REPORT = false
 EXAMPLES = [
 	{
 		:url => "coffeebreak",
-		:description => _("Event Schedule Poll")
+		:description => _("Event Schedule Poll"),
+		:new_environment => true,
 	},{
 		:url => "coffee",
-		:description => _("Normal Poll")
+		:description => _("Normal Poll"),
+		:revno => 34
+	},{
+		:url => "Cheater",
+		:description => "Cheater",
+		:hidden => true
 	}
 ]
 
@@ -81,7 +87,7 @@ Dir.glob("*/data.yaml").sort_by{|f|
 	File.new(f).mtime
 }.reverse.collect{|f| f.gsub(/\/data\.yaml$/,'') }.each{|site|
 	notice += <<NOTICE
-<tr>
+<tr class='participantrow'>
 	<td class='polls'><a href='./#{CGI.escapeHTML(site).gsub("'","%27")}/'>#{CGI.escapeHTML(site)}</a></td>
 	<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>
 </tr>
