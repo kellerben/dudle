@@ -53,10 +53,20 @@ BUGREPORTMAIL = "Benjamin.Kellermann@tu-dresden.de"
 AUTO_SEND_REPORT = false
 
 # Add some Example Polls to the start page
-EXAMPLES = {
-	"event_schedule_example" => "coffeebreak",
-	"normal_example" => "coffee"
-}
+# you may create those using the normal interface
+# and make them password protected afterwards
+# .htaccess and .htdigest are deleted after 
+# example creation (defining password protected 
+# examples is not possible therefore)
+EXAMPLES = [
+	{
+		:url => "coffeebreak",
+		:description => _("Event Schedule Poll")
+	},{
+		:url => "coffee",
+		:description => _("Normal Poll")
+	}
+]
 
 # add the htmlcode in the Variable NOTICE to the startpage
 # Example: displays all available Polls

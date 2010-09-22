@@ -1,5 +1,7 @@
+#!/usr/bin/env ruby
+
 ############################################################################
-# Copyright 2009,2010 Benjamin Kellermann                                  #
+# Copyright 2010 Benjamin Kellermann                                       #
 #                                                                          #
 # This file is part of dudle.                                              #
 #                                                                          #
@@ -17,56 +19,30 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "time"
-require "log"
-
-class VCS
-	GITCMD="export LC_ALL=de_DE.UTF-8; git"
-	def VCS.init
-		`#{GITCMD} init`
-	end
-
-	def VCS.rm file
-		`#{GITCMD} rm #{file}`
-	end
-
-	def VCS.add file
-		`#{GITCMD} add #{file}`
-	end
-
-	def VCS.revno
-		`#{GITCMD} log --oneline`.scan("\n").size
-	end
-
-	def VCS.cat revision, file
-		revs = `#{GITCMD} log --format="format:%H"`.scan(/^(.*)$/).flatten.reverse
-		`#{GITCMD} show #{revs[revision-1]}:#{file}`
-	end
-
-	def VCS.history
-		log = `#{GITCMD} log --format="format:%s|%ai"`.split("\n").reverse
-		ret = Log.new
-		log.each_with_index{|s,i|
-			a = s.scan(/^([^\|]*)(.*)$/).flatten
-			ret.add(i+1, Time.parse(a[1]), a[0])
-		}
-		ret
-	end
-
-	def VCS.commit comment
-		tmpfile = "/tmp/commitcomment.#{rand(10000)}"
-		File.open(tmpfile,"w"){|f|
-			f<<comment
-		}
-		ret = `#{GITCMD} commit -a -F #{tmpfile}`
-		File.delete(tmpfile)
-		ret
-	end
-	
-	def VCS.branch source, target
-		`#{GITCMD} clone #{source} #{target}`
-	end
-
+require "cgi"
+$cgi = CGI.new
+def _(string)
+	string
 end
+require "config"
 
+source = nil
+EXAMPLES.each{|poll|
+	source = poll[:url] if $cgi["poll"] == poll[:url]
+}
 
+raise "Example not found" unless source
+target = "#{source}_#{Time.now.to_i}"
+
+while (File.exists?(target))
+	target += "I"
+end
+VCS.branch(source,target)
+`rm #{target}/.htaccess`
+`rm #{target}/.htdigest`
+
+$cgi.out({
+	"status" => "REDIRECT",
+	"Cache-Control" => "no-cache",
+	"Location" => SITEURL + target
+}){""}

@@ -21,7 +21,6 @@
 
 require "cgi"
 $cgi = CGI.new
-require "config"
 require 'gettext'
 require 'gettext/cgi'
 include GetText
@@ -30,6 +29,8 @@ GetText.output_charset = 'utf-8'
 require "locale"
 
 GetText.bindtextdomain("dudle",:path => "./locale/")
+
+require "config"
 
 require "html"
 

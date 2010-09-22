@@ -62,4 +62,8 @@ class VCS
 		File.delete(tmpfile)
 		ret
 	end
+
+	def VCS.branch source, target
+		`#{BZRCMD} branch #{source} #{target}`
+	end
 end

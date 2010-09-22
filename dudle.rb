@@ -30,6 +30,14 @@ GetText.cgi=$cgi
 GetText.output_charset = 'utf-8'
 require "locale"
 
+if File.exists?("data.yaml") && !File.stat("data.yaml").directory?
+	$is_poll = true
+	GetText.bindtextdomain("dudle",:path => "../locale/")
+else
+	$is_poll = false
+	GetText.bindtextdomain("dudle",:path => "./locale/")
+end
+
 $:.push("..")
 require "date_locale"
 
@@ -41,13 +49,13 @@ require "charset"
 class Dudle
 	attr_reader :html, :table, :urlsuffix, :css, :user_css, :title, :tab
 	def is_poll?
-		@is_poll
+		$is_poll
 	end
 	def tabs(active_tab)
 		ret = "<div id='tabs'><ul id='tablist'>"
 		tabs = []
 		tabs << [_("Home"),@basedir]
-		if @is_poll
+		if $is_poll
 			tabs << ["",""]
 			tabs += @usertabs
 			tabs << ["",""]
@@ -74,7 +82,7 @@ class Dudle
 
 	def inittabs
 		@customizetab = [_("Customize"),"customize.cgi"]
-		if @is_poll
+		if $is_poll
 			# set-up tabs
 			@usertabs = [
 				[_("Poll"),"."],
@@ -99,12 +107,11 @@ class Dudle
 		@tab = File.basename($0)
 		@tab = "." if @tab == "index.cgi"
 
-		if File.exists?("data.yaml") && !File.stat("data.yaml").directory?
+		if $is_poll
 			# log last read acces manually (no need to grep server logfiles)
 			File.open("last_read_access","w").close
-			@is_poll = true
+			$is_poll = true
 			@basedir = ".." 
-			GetText.bindtextdomain("dudle",:path => "#{@basedir}/locale/")
 			@table = YAML::load(VCS.cat(self.revision, "data.yaml"))
 			@urlsuffix = File.basename(File.expand_path("."))
 			@title = @table.name
@@ -119,9 +126,7 @@ class Dudle
 			@html = HTML.new("dudle - #{@title} - #{@tabtitle}")
 			@html.header["Cache-Control"] = "no-cache"
 		else
-			@is_poll = false
 			@basedir = "."
-			GetText.bindtextdomain("dudle",:path => "#{@basedir}/locale/")
 			inittabs
 			@title = "dudle"
 			@html = HTML.new(@title)
