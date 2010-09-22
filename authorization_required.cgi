@@ -24,7 +24,8 @@ require "dudle"
 
 if $cgi.include?("poll")
 
-Dir.chdir($cgi["poll"])
+	Dir.chdir($cgi["poll"])
+	$is_poll = true
 	$d = Dudle.new
 
 	$d << "<h2>" + _("Authorization Required") + "</h2>"
