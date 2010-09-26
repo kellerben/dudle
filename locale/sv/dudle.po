@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-09-21 18:01+0200\n"
+"POT-Creation-Date: 2010-09-26 20:14+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
@@ -29,130 +29,138 @@ msgstr ""
 "X-dudle-Language: Svenska\n"
 
 #: about.cgi:29
-msgid ""
-"If you find a bug or have something else which disturbes you, please let me "
-"know: <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?"
-"subject=Feedback%20to%20dudle\">give feedback</a>"
-msgstr ""
-"Om du hittar en bugg eller något annat störande, vänligen underrätta mig: <a "
-"href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?subject=Feedback%"
-"20to%20dudle\">ge återkoppling</a>"
+msgid "If you find a bug or have something else which disturbes you, please let me know: <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?subject=Feedback%20to%20dudle\">give feedback</a>"
+msgstr "Om du hittar en bugg eller något annat störande, vänligen underrätta mig: <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?subject=Feedback%20to%20dudle\">ge återkoppling</a>"
 
 #: about.cgi:31
 msgid "--verbose"
 msgstr "--omständlig"
 
 #: about.cgi:32
-msgid ""
-"The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
-msgstr ""
-"Källkoden för denna applikation finns tillgänglig under perioden <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+msgid "The sourcecode of this application is available under the terms of <a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+msgstr "Källkoden för denna applikation finns tillgänglig under perioden <a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
 
 #: about.cgi:34
-msgid ""
-"You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</"
-"a>:"
-msgstr ""
-"Du kan få tillgång till koden om du använder <a href='http://bazaar-vcs."
-"org/'>bazaar</a>:"
+msgid "You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</a>:"
+msgstr "Du kan få tillgång till koden om du använder <a href='http://bazaar-vcs.org/'>bazaar</a>:"
 
-#: authorization_required.cgi:30 authorization_required.cgi:42
+#: authorization_required.cgi:31
+#: authorization_required.cgi:43
 msgid "Authorization Required"
 msgstr ""
 
-#: authorization_required.cgi:33
+#: authorization_required.cgi:34
 msgid "The configuration of this Poll is protected by password!"
 msgstr ""
 
-#: authorization_required.cgi:35
+#: authorization_required.cgi:36
 msgid "This Poll is protected by password!"
 msgstr ""
 
-#: authorization_required.cgi:37
+#: authorization_required.cgi:38
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 
-#: authorization_required.cgi:45 not_found.cgi:34
+#: authorization_required.cgi:46
+#: not_found.cgi:34
 msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
 
-#: authorization_required.cgi:46
+#: authorization_required.cgi:47
 msgid "You have to authorize in order to request this page!"
 msgstr ""
 
-#: customize.cgi:31 customize.rb:31
+#: customize.cgi:31
+#: customize.rb:31
 msgid "Customize Personal Settings"
 msgstr "Administrera Personliga Inställningar"
 
-#: customize.cgi:32 customize.rb:32
+#: customize.cgi:32
+#: customize.rb:32
 msgid "You need cookies enabled in order to personalize your settings."
-msgstr ""
-"Du behöver aktivera cookies för att kunna personifiera dina inställningar"
+msgstr "Du behöver aktivera cookies för att kunna personifiera dina inställningar"
 
-#: customize.cgi:39 customize.rb:39
+#: customize.cgi:39
+#: customize.rb:39
 msgid "Current Setting"
 msgstr "Inställning"
 
-#: customize.cgi:40 customize.rb:40 pollhead.rb:101
+#: customize.cgi:40
+#: customize.rb:40
+#: pollhead.rb:101
 msgid "Description"
 msgstr "Beskrivning"
 
-#: customize.cgi:57 customize.rb:57
+#: customize.cgi:57
+#: customize.rb:57
 msgid "Use special characters"
 msgstr "Använd specialtecken"
 
-#: customize.cgi:57 customize.rb:57
+#: customize.cgi:57
+#: customize.rb:57
 msgid "Use this option if you see the characters in the parenthesis."
 msgstr "Använd den här funktionen om du ser tecknen i parantesen."
 
-#: customize.cgi:58 customize.rb:58
+#: customize.cgi:58
+#: customize.rb:58
 msgid "Use only normal strings"
 msgstr "Använd bara normalsträngar"
 
-#: customize.cgi:58 customize.rb:58
+#: customize.cgi:58
+#: customize.rb:58
 msgid "Use this option if you have problems with some characters."
 msgstr "Använd det här alternativet om du har problem med några bokstäver."
 
-#: customize.cgi:61 customize.rb:61
+#: customize.cgi:61
+#: customize.rb:61
 msgid "Charset"
 msgstr "Teckenuppsättning"
 
-#: customize.cgi:66 customize.rb:66
+#: customize.cgi:66
+#: customize.rb:66
 msgid "Stylesheet"
 msgstr "Stilmall"
 
-#: customize.cgi:82 customize.rb:82
+#: customize.cgi:82
+#: customize.rb:82
 msgid "Default Username"
 msgstr "Standard användarnamn"
 
-#: customize.cgi:83 access_control.rb:76 customize.rb:83
+#: customize.cgi:83
+#: access_control.rb:76
+#: customize.rb:83
 msgid "Username:"
 msgstr "Användarnamn:"
 
-#: customize.cgi:107 customize.rb:107
+#: customize.cgi:107
+#: customize.rb:107
 msgid "Edit"
 msgstr "Redigera"
 
-#: customize.cgi:117 access_control.rb:123 customize.rb:117 poll.rb:293
+#: customize.cgi:117
+#: access_control.rb:123
+#: customize.rb:117
+#: poll.rb:293
 msgid "Save"
 msgstr "Spara"
 
-#: customize.cgi:120 access_control.rb:119 customize.rb:120 delete_poll.rb:103
+#: customize.cgi:120
+#: access_control.rb:119
+#: customize.rb:120
+#: delete_poll.rb:103
 #: poll.rb:313
 msgid "Delete"
 msgstr "Radera"
 
-#: error.cgi:36
+#: error.cgi:37
 msgid "Error"
 msgstr ""
 
-#: error.cgi:64
+#: error.cgi:65
 msgid "The following error was printed:"
 msgstr ""
 
-#: error.cgi:68
+#: error.cgi:69
 msgid ""
 "Hi!\n"
 "\n"
@@ -167,17 +175,15 @@ msgid ""
 "Yours,\n"
 msgstr ""
 
-#: error.cgi:69
+#: error.cgi:70
 msgid "Bug in dudle"
 msgstr ""
 
-#: error.cgi:71
-msgid ""
-"An error occured while executing dudle.<br/>Please send an error report, "
-"including your browser, operating system, and what you did to %{admin}."
+#: error.cgi:72
+msgid "An error occured while executing dudle.<br/>Please send an error report, including your browser, operating system, and what you did to %{admin}."
 msgstr ""
 
-#: error.cgi:74
+#: error.cgi:75
 msgid "Please include the following as well:"
 msgstr ""
 
@@ -194,8 +200,7 @@ msgid "A Poll with this address already exists."
 msgstr "En omröstning med den här adressen finns redan."
 
 #: index.cgi:74
-msgid ""
-"The poll was created successfully. The link to your new poll is: %{link}"
+msgid "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr "En omröstning har skapats. Länken till din omröstning är: %{link}"
 
 #: index.cgi:81
@@ -235,20 +240,8 @@ msgid "Examples"
 msgstr "Exempel"
 
 #: index.cgi:137
-msgid ""
-"If you want to play around with the Tool, you may want to take a look at "
-"these Example Polls:"
-msgstr ""
-"Om du vill leka med verktyget bör du ta en titt på dessa exempel på "
-"Omröstningar:"
-
-#: index.cgi:139
-msgid "Event Schedule Poll"
-msgstr "Händelseschema Omröstning"
-
-#: index.cgi:140
-msgid "Normal Poll"
-msgstr "Normal omröstning"
+msgid "If you want to play with the application, you may want to take a look at these example polls:"
+msgstr "Om du vill leka med verktyget bör du ta en titt på dessa exempel på Omröstningar:"
 
 #: not_found.cgi:26
 #, fuzzy
@@ -268,15 +261,11 @@ msgid "Somebody klicked on “Delete Poll” and deleted the poll manually."
 msgstr ""
 
 #: not_found.cgi:32
-msgid ""
-"The Poll was deleted by the administrator because it was not accessed for a "
-"long time."
+msgid "The Poll was deleted by the administrator because it was not accessed for a long time."
 msgstr ""
 
 #: not_found.cgi:33
-msgid ""
-"If you think, the deletion was done by error, please contact the "
-"adminsistrator of the system."
+msgid "If you think, the deletion was done by error, please contact the adminsistrator of the system."
 msgstr ""
 
 #: access_control.rb:89
@@ -288,9 +277,7 @@ msgid "repeat"
 msgstr "upprepa"
 
 #: access_control.rb:116
-msgid ""
-"You have to remove the participant user before you can remove the "
-"administrator."
+msgid "You have to remove the participant user before you can remove the administrator."
 msgstr "Du måste ta bort deltagaren innan du kan radera administratören "
 
 #: access_control.rb:141
@@ -326,27 +313,16 @@ msgid "activated"
 msgstr "aktiverad"
 
 #: access_control.rb:190
-msgid ""
-"You have to remove all users before you can deactivate the access control "
-"settings."
-msgstr ""
-"Du måste radera alla användare innan du kan avaktivera inställningarna för "
-"åtkomstkontrollen."
+msgid "You have to remove all users before you can deactivate the access control settings."
+msgstr "Du måste radera alla användare innan du kan avaktivera inställningarna för åtkomstkontrollen."
 
 #: access_control.rb:194
-msgid ""
-"You will be asked for the password you entered here after pressing save!"
-msgstr ""
-"Efter att du har klickat på spara kommer du kommer att frågas efter "
-"lösenordet du nu skrev in! "
+msgid "You will be asked for the password you entered here after pressing save!"
+msgstr "Efter att du har klickat på spara kommer du kommer att frågas efter lösenordet du nu skrev in! "
 
 #: access_control.rb:197
-msgid ""
-"The user ‘admin’ has access to the vote as well as the configuration "
-"interface."
-msgstr ""
-"’Admin’ har access till omröstningen såväl som till gränssnittet för "
-"konfigurering."
+msgid "The user ‘admin’ has access to the vote as well as the configuration interface."
+msgstr "’Admin’ har access till omröstningen såväl som till gränssnittet för konfigurering."
 
 #: access_control.rb:203
 msgid "The user ‘participant’ has only access to the vote interface."
@@ -355,6 +331,14 @@ msgstr "’Deltagare’ har bara access till gränssnittet för omröstning"
 #: access_control.rb:209
 msgid "Access control:"
 msgstr "Åtkomstkontroll:"
+
+#: config_sample.rb:64
+msgid "Event Schedule Poll"
+msgstr "Händelseschema Omröstning"
+
+#: config_sample.rb:68
+msgid "Normal Poll"
+msgstr "Normal omröstning"
 
 #: delete_poll.rb:29
 msgid "Yes, I know what I am doing!"
@@ -377,21 +361,14 @@ msgid "The poll was deleted successfully!"
 msgstr "Omröstningen raderad!"
 
 #: delete_poll.rb:49
-msgid ""
-"If this was done by accident, please contact the administrator of the "
-"system. The poll can be recovered for an indeterministic amount of time, "
-"maybe it is already to late."
-msgstr ""
-"Om detta skedde av misstag, vänligen kontakta administratören av systemet. "
-"Omröstningen kan återskapas inom en viss tid, det kan tyvärr redan vara för "
-"sent."
+msgid "If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterministic amount of time, maybe it is already to late."
+msgstr "Om detta skedde av misstag, vänligen kontakta administratören av systemet. Omröstningen kan återskapas inom en viss tid, det kan tyvärr redan vara för sent."
 
 #: delete_poll.rb:50
 msgid "Things you can do now are"
 msgstr "Vad du kan göra nu är"
 
 #: delete_poll.rb:51
-#, fuzzy
 msgid "Return to dudle home and schedule a new poll"
 msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
 
@@ -424,68 +401,71 @@ msgid "This is an irreversible action!"
 msgstr "Det går inte att ångra den här åtgärden!"
 
 #: delete_poll.rb:102
-msgid ""
-"If you are sure in what you are doing, please type “%{question}” into the "
-"form."
+msgid "If you are sure in what you are doing, please type “%{question}” into the form."
 msgstr "Om du vet vad du gör, vänligen skriv “%{question}” i formuläret."
 
-#: dudle.rb:49
+#: dudle.rb:57
 msgid "Home"
 msgstr "Hem"
 
-#: dudle.rb:58
+#: dudle.rb:66
 msgid "About"
 msgstr "Om"
 
-#: dudle.rb:76
+#: dudle.rb:84
 msgid "Customize"
 msgstr "Egna inställningar"
 
-#: dudle.rb:80
+#: dudle.rb:88
 msgid "Poll"
 msgstr "Omröstning"
 
-#: dudle.rb:81 history.rb:35
+#: dudle.rb:89
+#: history.rb:35
 msgid "History"
 msgstr "Historia"
 
-#: dudle.rb:84
+#: dudle.rb:92
 msgid "Edit Columns"
 msgstr "Redigera kolumner"
 
-#: dudle.rb:85 invite_participants.rb:38
+#: dudle.rb:93
+#: invite_participants.rb:38
 msgid "Invite Participants"
 msgstr "Bjud in deltagare"
 
-#: dudle.rb:86
+#: dudle.rb:94
 msgid "Access Control"
 msgstr "Åtkomstkontroll"
 
-#: dudle.rb:87
+#: dudle.rb:95
 msgid "Overview"
 msgstr "Översikt"
 
-#: dudle.rb:89
+#: dudle.rb:97
 msgid "Delete Poll"
 msgstr "Radera omröstning"
 
-#: dudle.rb:178 dudle.rb:196
+#: dudle.rb:183
+#: dudle.rb:201
 msgid "Previous"
 msgstr "Föregående"
 
-#: dudle.rb:179 dudle.rb:197
+#: dudle.rb:184
+#: dudle.rb:202
 msgid "Next"
 msgstr "Nästa"
 
-#: dudle.rb:180 dudle.rb:198
+#: dudle.rb:185
+#: dudle.rb:203
 msgid "Finish"
 msgstr "Klar"
 
-#: dudle.rb:203
+#: dudle.rb:208
 msgid "All changes were saved sucessfully."
 msgstr "Alla ändringar sparades."
 
-#: dudle.rb:203
+#: dudle.rb:208
 msgid "Proceed!"
 msgstr "Fortsätt!"
 
@@ -493,15 +473,22 @@ msgstr "Fortsätt!"
 msgid "Add and Remove Columns"
 msgstr "Lägg till eller ta bort kolumner"
 
-#: edit_columns.rb:67 edit_columns.rb:86 pollhead.rb:72 timepollhead.rb:227
+#: edit_columns.rb:67
+#: edit_columns.rb:86
+#: pollhead.rb:72
+#: timepollhead.rb:227
 msgid "Delete column"
 msgstr "Ta bort kolumn"
 
-#: edit_columns.rb:69 edit_columns.rb:84 timepollhead.rb:226
+#: edit_columns.rb:69
+#: edit_columns.rb:84
+#: timepollhead.rb:226
 msgid "Add column"
 msgstr "Lägg till kolumn"
 
-#: edit_columns.rb:71 edit_columns.rb:88 pollhead.rb:71
+#: edit_columns.rb:71
+#: edit_columns.rb:88
+#: pollhead.rb:71
 msgid "Edit column"
 msgstr "Redigera kolumn"
 
@@ -571,7 +558,9 @@ msgstr "Total"
 msgid "Invite"
 msgstr "Bjud in"
 
-#: poll.rb:180 pollhead.rb:62 timepollhead.rb:137
+#: poll.rb:180
+#: pollhead.rb:62
+#: timepollhead.rb:137
 msgid "Name"
 msgstr "Namn"
 
@@ -636,7 +625,8 @@ msgstr "Tillhörande åtkomstkontroll"
 msgid "Update"
 msgstr "Uppdatera"
 
-#: pollhead.rb:88 timepollhead.rb:141
+#: pollhead.rb:88
+#: timepollhead.rb:141
 msgid "Last Edit"
 msgstr "Senast ändrat"
 
@@ -653,11 +643,8 @@ msgid "Preview"
 msgstr "Förhandsgranska"
 
 #: timepollhead.rb:92
-msgid ""
-"To add some time different to the default ones, please enter some string "
-"here (e.&thinsp;g., 09:30, morning, afternoon)."
-msgstr ""
-"Lägg till fler tider än standardtiderna (t ex 09:30, morgon, eftermiddag)"
+msgid "To add some time different to the default ones, please enter some string here (e.&thinsp;g., 09:30, morning, afternoon)."
+msgstr "Lägg till fler tider än standardtiderna (t ex 09:30, morgon, eftermiddag)"
 
 #: timepollhead.rb:98
 msgid "This Time was already choosen."
@@ -718,6 +705,6 @@ msgstr "t ex 09:30, morgon, eftermiddag"
 #, fuzzy
 #~ msgid "Delete Column"
 #~ msgstr "Ta bort kolumn"
-
 #~ msgid "Delete User"
 #~ msgstr "Radera användare"
+
