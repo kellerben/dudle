@@ -24,7 +24,7 @@ load "../dudle.rb"
 
 if $cgi.include?("revision")
 	revno=$cgi["revision"].to_i
-	$d = Dudle.new(revno)
+	$d = Dudle.new(:revision => revno)
 	versiontitle = _("Poll of Version %{revisionnumber}") % {:revisionnumber => revno}
 else
 	revno = VCS.revno

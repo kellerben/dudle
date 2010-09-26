@@ -21,12 +21,11 @@
 
 require "dudle"
 
-
 if $cgi.include?("poll")
 
 	Dir.chdir($cgi["poll"])
 	$is_poll = true
-	$d = Dudle.new
+	$d = Dudle.new(:hide_lang_chooser => true)
 
 	$d << "<h2>" + _("Authorization Required") + "</h2>"
 	case $cgi["user"]
@@ -39,29 +38,18 @@ if $cgi.include?("poll")
 
 	$d.out
 else
-	GetText.bindtextdomain("dudle",:path => "./locale/")
-	title = _("Authorization Required")
-	$h = HTML.new(title)
-	$h.add_css("/#{DEFAULT_CSS}","default",true)
+	$d = Dudle.new(:title => _("Authorization Required"), :hide_lang_chooser => true)
 	returnstr = _("Return to dudle home and Schedule a new Poll")
 	authstr = _("You have to authorize in order to request this page!")
-	$h << <<END
-	<div id='header1'></div>
-	<div id='header2'></div>
-	<div id='header3'></div>
-	<div id='main'>
-		<div id='content'>
-			<h1>#{title}</h1>
-			<p>#{authstr}</p>
-			<ul>
-				<li><a href='#{SITEURL}'>#{returnstr}</a></li>
-			</ul>
-			</p>
-		</div>
-	</div>
+	$d << <<END
+	<p>#{authstr}</p>
+	<ul>
+		<li><a href='#{SITEURL}'>#{returnstr}</a></li>
+	</ul>
+	</p>
 END
 
-	$h.out($cgi)
+	$d.out
 
 end
 

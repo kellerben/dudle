@@ -27,7 +27,7 @@ revbeforeedit = VCS.revno
 
 if $cgi.include?("undo_revision") && $cgi["undo_revision"].to_i < revbeforeedit
 	undorevision = $cgi["undo_revision"].to_i
-	$d = Dudle.new(undorevision)
+	$d = Dudle.new(:revision => undorevision)
 	comment = $cgi.include?("redo") ? "Redo changes" : "Reverted Poll" 
 	$d.table.store("#{comment} to version #{undorevision}")
 else

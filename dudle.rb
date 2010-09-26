@@ -32,10 +32,10 @@ require "locale"
 
 if File.exists?("data.yaml") && !File.stat("data.yaml").directory?
 	$is_poll = true
-	GetText.bindtextdomain("dudle",:path => "../locale/")
+	GetText.bindtextdomain("dudle", :path => Dir.pwd + "/../locale/")
 else
 	$is_poll = false
-	GetText.bindtextdomain("dudle",:path => "./locale/")
+	GetText.bindtextdomain("dudle", :path => Dir.pwd + "/locale/")
 end
 
 $:.push("..")
@@ -101,8 +101,9 @@ class Dudle
 		@requested_revision || VCS.revno
 	end
 
-	def initialize(revision=nil)
-		@requested_revision = revision 
+	def initialize(params = {:revision => nil, :title => nil, :hide_lang_chooser => nil})
+		@requested_revision = params[:revision]
+		@hide_lang_chooser = params[:hide_lang_chooser]
 		@cgi = $cgi
 		@tab = File.basename($0)
 		@tab = "." if @tab == "index.cgi"
@@ -128,7 +129,7 @@ class Dudle
 		else
 			@basedir = "."
 			inittabs
-			@title = "dudle"
+			@title = params[:title] || "dudle"
 			@html = HTML.new(@title)
 		end
 
@@ -223,13 +224,15 @@ READY
 			["cs", "Česky"],
 			["sv", "Svenska"]
 			]
-		lang.each{|short,long|
-			if short == GetText.locale.language
-				@html << long
-			else
-				@html << "<a href='?lang=#{short}'>#{long}</a>"
-			end
-		}
+		unless @hide_lang_chooser
+			lang.each{|short,long|
+				if short == GetText.locale.language
+					@html << long
+				else
+					@html << "<a href='?lang=#{short}'>#{long}</a>"
+				end
+			}
+		end
 		@html << "</div>" # languageChooser
 
 		@html << "</div>" # content

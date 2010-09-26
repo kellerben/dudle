@@ -19,32 +19,8 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "cgi"
-$cgi = CGI.new
-require 'gettext'
-require 'gettext/cgi'
-include GetText
-GetText.cgi=$cgi
-GetText.output_charset = 'utf-8'
-require "locale"
-
-GetText.bindtextdomain("dudle",:path => "./locale/")
-
-require "config"
-
-require "html"
-
-title = _("Error")
-$h = HTML.new(title)
-$h.add_css("/#{DEFAULT_CSS}","default",true)
-$h << <<END
-<div id='header1'></div>
-<div id='header2'></div>
-<div id='header3'></div>
-<div id='main'>
-<div id='content'>
-<h1>#{title}</h1>
-END
+require "dudle"
+$d = Dudle.new(:title => _("Error"), :hide_lang_chooser => true)
 
 def urlescape(str)
 	CGI.escapeHTML(CGI.escape(str).gsub("+","%20"))
@@ -69,19 +45,18 @@ end
 	errormessagebody = _("Hi!\n\nI found a bug in your application at %{urlofsite}.\nI did the following:\n\n<please describe what you did>\n<e.g., I wanted to sent a comment to the poll.>\n\nI am using <please state your browser and operating system>\n%{errormessage}\nYours,\n") % {:errormessage => errormessage, :urlofsite => SITEURL}
 	subject = _("Bug in dudle")
 
-	$h << _("An error occured while executing dudle.<br/>Please send an error report, including your browser, operating system, and what you did to %{admin}.") % {:admin => "<a href='mailto:#{BUGREPORTMAIL}?subject=#{urlescape(subject)}&amp;body=#{urlescape(errormessagebody)}'>#{BUGREPORTMAIL}</a>"}
+	$d << _("An error occured while executing dudle.<br/>Please send an error report, including your browser, operating system, and what you did to %{admin}.") % {:admin => "<a href='mailto:#{BUGREPORTMAIL}?subject=#{urlescape(subject)}&amp;body=#{urlescape(errormessagebody)}'>#{BUGREPORTMAIL}</a>"}
 
 if (errorstr)
 	errorheadstr = _("Please include the following as well:")
-	$h << <<ERROR
+	$d << <<ERROR
 <br/>
 #{errorheadstr}
 <pre style='background:#DDD;padding : 1em'>#{CGI.escapeHTML(errorstr)}</pre>
 ERROR
 end
 
-$h << "</div></div>"
-$h.out($cgi)
+$d.out
 
 
 if AUTO_SEND_REPORT
