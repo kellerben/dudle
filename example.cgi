@@ -31,7 +31,7 @@ EXAMPLES.each{|p|
 	poll = p if $cgi["poll"] == p[:url]
 }
 
-raise "Example not found" unless poll
+raise "Example not found: '#{$cgi["poll"]}'" unless poll
 
 targeturl = poll[:url]
 
