@@ -2,7 +2,7 @@ Author:
    Benjamin Kellermann <Benjamin dot Kellermann at tu-dresden in germany>
 Requirements:
  * ruby
- * git (preferred) or bzr
+ * git (preferred and default setting) or bzr
  * libgettext-ruby (for localization)
 License: 
    GNU AGPL v3 or higer
