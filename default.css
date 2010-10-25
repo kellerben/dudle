@@ -236,7 +236,8 @@ html {
 	max-width: 20em;
 }
 .hint{
-	font-size:85%;
+	font-size: small;
+	line-height: 1.4em;
 }
 
 div#tabs{

@@ -98,7 +98,7 @@ EDITDELETE
 			hiddeninput = "<input type='hidden' name='columnid' value=\"#{title}\" />"
 		end
 		columntitlestr = _("Columntitle")
-		descriptionstr = _("Description")
+		descriptionstr = _("Description (optional)")
 		addeditstr = _("Add/Edit Column")
 		previewstr = _("Preview")
 		ret = <<END
