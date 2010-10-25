@@ -52,7 +52,29 @@ BUGREPORTMAIL = "Benjamin.Kellermann@tu-dresden.de"
 # Send bug reports automatically with the programm “mail”
 AUTO_SEND_REPORT = false
 
-# Add some Example Polls to the start page
+# add the htmlcode in the Variable INDEXNOTICE to the startpage
+# Example: displays all available Polls
+indexnotice = <<INDEXNOTICE
+<h2>Available Polls</h2>
+<table>
+	<tr>
+		<th>Poll</th><th>Last change</th>
+	</tr>
+INDEXNOTICE
+Dir.glob("*/data.yaml").sort_by{|f|
+	File.new(f).mtime
+}.reverse.collect{|f| f.gsub(/\/data\.yaml$/,'') }.each{|site|
+	indexnotice += <<INDEXNOTICE
+<tr class='participantrow'>
+	<td class='polls'><a href='./#{CGI.escapeHTML(site).gsub("'","%27")}/'>#{CGI.escapeHTML(site)}</a></td>
+	<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>
+</tr>
+INDEXNOTICE
+}
+indexnotice += "</table>"
+INDEXNOTICE = indexnotice
+
+# Add some Example Polls to the example page
 # you may create those using the normal interface
 # and make them password protected afterwards
 # .htaccess and .htdigest are deleted after 
@@ -74,27 +96,17 @@ EXAMPLES = [
 	}
 ]
 
-# add the htmlcode in the Variable NOTICE to the startpage
+# add the htmlcode in the Variable EXAMPLENOTICE to the startpage
 # Example: displays all available Polls
-notice = <<NOTICE
-<h2>Available Polls</h2>
-<table>
-	<tr>
-		<th>Poll</th><th>Last change</th>
-	</tr>
-NOTICE
-Dir.glob("*/data.yaml").sort_by{|f|
-	File.new(f).mtime
-}.reverse.collect{|f| f.gsub(/\/data\.yaml$/,'') }.each{|site|
-	notice += <<NOTICE
-<tr class='participantrow'>
-	<td class='polls'><a href='./#{CGI.escapeHTML(site).gsub("'","%27")}/'>#{CGI.escapeHTML(site)}</a></td>
-	<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>
-</tr>
-NOTICE
-}
-notice += "</table>"
-NOTICE = notice
+examplenotice = <<EXAMPLENOTICE
+	<h2>Screencasts</h2>
+	<ol>
+		<li><a href="0-register.ogv">Register a new user</a></li>
+		<li><a href="1-setup.ogv">Setup a new poll</a></li>
+		<li><a href="2-participate.ogv">Participate in a poll</a></li>
+	</ol>
+EXAMPLENOTICE
+EXAMPLENOTICE = examplenotice
 
 # choose a default stylesheet
 # e.g., "classic.css", "css/foobar.css", ...

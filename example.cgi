@@ -19,39 +19,58 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "cgi"
-$cgi = CGI.new
-def _(string)
-	string
-end
-require "config"
+if __FILE__ == $0
 
-poll = nil
-EXAMPLES.each{|p|
-	poll = p if $cgi["poll"] == p[:url]
-}
+require "dudle"
 
-raise "Example not found: '#{$cgi["poll"]}'" unless poll
+$d = Dudle.new
 
-targeturl = poll[:url]
+if $cgi.include?("poll")
 
-if poll[:new_environment]
-	targeturl += "_#{Time.now.to_i}"
+	poll = nil
+	EXAMPLES.each{|p|
+		poll = p if $cgi["poll"] == p[:url]
+	}
 
-	while (File.exists?(targeturl))
-		targeturl += "I"
+	raise "Example not found: '#{$cgi["poll"]}'" unless poll
+
+	targeturl = poll[:url]
+
+	if poll[:new_environment]
+		targeturl += "_#{Time.now.to_i}"
+
+		while (File.exists?(targeturl))
+			targeturl += "I"
+		end
+		VCS.branch(poll[:url],targeturl)
 	end
-	VCS.branch(poll[:url],targeturl)
+
+	if poll[:revno]
+		Dir.chdir(targeturl)
+		VCS.revert(poll[:revno])
+		Dir.chdir("..")
+	end
+
+	$d.html.header["status"] = "REDIRECT"
+	$d.html.header["Cache-Control"] = "no-cache"
+	$d.html.header["Location"] = SITEURL + targeturl
+
+else
+	if defined?(EXAMPLES)
+		$d << "<div class='textcolumn'><h2>" + _("Examples") + "</h2>"
+		$d << _("If you want to play with the application, you may want to take a look at these example polls:") 
+		$d << "<ul>"
+		EXAMPLES.each{|poll|
+			$d << "<li><a href='example.cgi?poll=#{poll[:url]}'>#{poll[:description]}</a></li>" unless poll[:hidden]
+		}
+		$d << "</ul></div>"
+	end
+
+	$d << EXAMPLENOTICE
 end
 
-if poll[:revno]
-	Dir.chdir(targeturl)
-	VCS.revert(poll[:revno])
-	Dir.chdir("..")
-end
 
-$cgi.out({
-	"status" => "REDIRECT",
-	"Cache-Control" => "no-cache",
-	"Location" => SITEURL + targeturl
-}){""}
+$d.out
+
+
+end

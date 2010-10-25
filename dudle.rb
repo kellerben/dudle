@@ -63,6 +63,7 @@ class Dudle
 			tabs << @deletetab
 			tabs << ["",""]
 		else
+			tabs << [_("Examples"),"example.cgi"]
 			tabs << [_("About"),"about.cgi"]
 		end
 		tabs << @customizetab

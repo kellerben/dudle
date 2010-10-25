@@ -132,17 +132,8 @@ NOTICE
 </form>
 CREATE
 
-	if defined?(EXAMPLES)
-		$d << "<div class='textcolumn'><h2>" + _("Examples") + "</h2>"
-		$d << _("If you want to play with the application, you may want to take a look at these example polls:") 
-		$d << "<ul>"
-		EXAMPLES.each{|poll|
-			$d << "<li><a href='example.cgi?poll=#{poll[:url]}'>#{poll[:description]}</a></li>" unless poll[:hidden]
-		}
-		$d << "</ul></div>"
-	end
 
-	$d << NOTICE
+	$d << INDEXNOTICE
 end
 
 $d.out
