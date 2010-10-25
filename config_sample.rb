@@ -96,8 +96,7 @@ EXAMPLES = [
 	}
 ]
 
-# add the htmlcode in the Variable EXAMPLENOTICE to the startpage
-# Example: displays all available Polls
+# add the htmlcode in the Variable EXAMPLENOTICE to the example page
 examplenotice = <<EXAMPLENOTICE
 	<h2>Screencasts</h2>
 	<ol>
@@ -107,6 +106,18 @@ examplenotice = <<EXAMPLENOTICE
 	</ol>
 EXAMPLENOTICE
 EXAMPLENOTICE = examplenotice
+
+# add the htmlcode in the Variable ABOUTNOTICE to the about page
+aboutnotice = <<ABOUTNOTICE
+<div class='textcolumn'>
+	<h2>Bugs/Features</h2>
+	<ul>
+		<li><a href="Bugs">Report a Bug</a></li>
+		<li><a href="Features">Request a Feature</a></li>
+	</ul>
+</div>
+ABOUTNOTICE
+ABOUTNOTICE = aboutnotice
 
 # choose a default stylesheet
 # e.g., "classic.css", "css/foobar.css", ...

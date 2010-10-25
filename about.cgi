@@ -34,6 +34,7 @@ $d << "<br />"
 $d << _("You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</a>:")
 $d << "<pre>bzr branch #{SITEURL} dudle</pre></div>"
 
+$d << ABOUTNOTICE
 
 $d.out
 end
