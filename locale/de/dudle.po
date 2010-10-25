@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-10-22 12:06+0200\n"
-"PO-Revision-Date: 2010-10-22 12:07+0100\n"
+"POT-Creation-Date: 2010-10-25 21:51+0200\n"
+"PO-Revision-Date: 2010-10-25 21:51+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "Language: \n"
@@ -202,6 +202,15 @@ msgstr "Während der Ausführung von dudle gab es einen Fehler.<br/>Bitte schick
 msgid "Please include the following as well:"
 msgstr "Bitte schicken Sie auch die folgende Fehlermeldung:"
 
+#: example.cgi:60
+#: dudle.rb:66
+msgid "Examples"
+msgstr "Beispiele"
+
+#: example.cgi:61
+msgid "If you want to play with the application, you may want to take a look at these example polls:"
+msgstr "Wenn Sie diese Applikation ausprobieren möchten, können Sie auch auf folgende Beispielumfragen schauen:"
+
 #: index.cgi:37
 msgid "Please enter a descriptive title."
 msgstr "Bitte geben Sie einen Titel für die Umfrage ein."
@@ -249,14 +258,6 @@ msgstr "Kann Buchstaben, Zahlen, Bindestriche und Unterstriche enthalten."
 #: index.cgi:90
 msgid "Create"
 msgstr "Erstellen"
-
-#: index.cgi:136
-msgid "Examples"
-msgstr "Beispiele"
-
-#: index.cgi:137
-msgid "If you want to play with the application, you may want to take a look at these example polls:"
-msgstr "Wenn Sie diese Applikation ausprobieren möchten, können Sie auch auf folgende Beispielumfragen schauen:"
 
 #: not_found.cgi:26
 msgid "Poll Not Found"
@@ -346,11 +347,11 @@ msgstr "Der Benutzer „participant“ hat nur zur Abstimmungsoberfläche Zugrif
 msgid "Access control:"
 msgstr "Zugriffskontrolle:"
 
-#: config_sample.rb:64
+#: config_sample.rb:86
 msgid "Event Schedule Poll"
 msgstr "Nach einer Zeit fragen"
 
-#: config_sample.rb:68
+#: config_sample.rb:90
 msgid "Normal Poll"
 msgstr "Eine normale Umfrage"
 
@@ -422,64 +423,64 @@ msgstr "Wenn Sie sich sicher sind, dann geben Sie bitte „%{question}“ in das
 msgid "Home"
 msgstr "Hauptseite"
 
-#: dudle.rb:66
+#: dudle.rb:67
 msgid "About"
 msgstr "Über dudle"
 
-#: dudle.rb:84
+#: dudle.rb:85
 msgid "Customize"
 msgstr "Personalisieren"
 
-#: dudle.rb:88
+#: dudle.rb:89
 msgid "Poll"
 msgstr "Umfrage"
 
-#: dudle.rb:89
+#: dudle.rb:90
 #: history.rb:35
 msgid "History"
 msgstr "Versionen"
 
-#: dudle.rb:92
+#: dudle.rb:93
 msgid "Edit Columns"
 msgstr "Spalten bearbeiten"
 
-#: dudle.rb:93
+#: dudle.rb:94
 #: invite_participants.rb:38
 msgid "Invite Participants"
 msgstr "Teilnehmer einladen"
 
-#: dudle.rb:94
+#: dudle.rb:95
 msgid "Access Control"
 msgstr "Zugriffskontrolle"
 
-#: dudle.rb:95
+#: dudle.rb:96
 msgid "Overview"
 msgstr "Übersicht"
 
-#: dudle.rb:97
+#: dudle.rb:98
 msgid "Delete Poll"
 msgstr "Umfrage löschen"
 
-#: dudle.rb:184
-#: dudle.rb:202
+#: dudle.rb:185
+#: dudle.rb:203
 msgid "Previous"
 msgstr "Zurück"
 
-#: dudle.rb:185
-#: dudle.rb:203
+#: dudle.rb:186
+#: dudle.rb:204
 msgid "Next"
 msgstr "Weiter"
 
-#: dudle.rb:186
-#: dudle.rb:204
+#: dudle.rb:187
+#: dudle.rb:205
 msgid "Finish"
 msgstr "Fertig"
 
-#: dudle.rb:209
+#: dudle.rb:210
 msgid "All changes were saved sucessfully."
 msgstr "Alle Änderungen wurden erfolgreich gespeichert."
 
-#: dudle.rb:209
+#: dudle.rb:210
 msgid "Proceed!"
 msgstr "Weiter"
 
@@ -642,8 +643,8 @@ msgid "Last Edit"
 msgstr "Letzte Änderung"
 
 #: pollhead.rb:100
-msgid "Columntitle"
-msgstr "Spaltenüberschrift"
+msgid "Alternative"
+msgstr "Alternative"
 
 #: pollhead.rb:101
 msgid "Description (optional)"
@@ -656,6 +657,10 @@ msgstr "Spalte bearbeiten/hinzufügen"
 #: pollhead.rb:103
 msgid "Preview"
 msgstr "Vorschau"
+
+#: pollhead.rb:104
+msgid "Enter all alternatives (columns), you want to ask the participants of the poll. The participants will state one vote for every alternative you give here separately."
+msgstr "Geben Sie alle Alternativen (Spalten) ein, nach denen in der Umfrage gefragt werden soll. Die Teilnehmer der Umfrage können für jede Alternative einzeln ihre Stimme abgeben."
 
 #: timepollhead.rb:92
 msgid "To add some time different to the default ones, please enter some string here (e.&thinsp;g., 09:30, morning, afternoon)."

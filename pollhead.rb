@@ -97,21 +97,30 @@ EDITDELETE
 			title = CGI.escapeHTML(title)
 			hiddeninput = "<input type='hidden' name='columnid' value=\"#{title}\" />"
 		end
-		columntitlestr = _("Columntitle")
+		columntitlestr = _("Alternative")
 		descriptionstr = _("Description (optional)")
 		addeditstr = _("Add/Edit Column")
 		previewstr = _("Preview")
+		hint = _("Enter all alternatives (columns), you want to ask the participants of the poll. The participants will state one vote for every alternative you give here separately.")
 		ret = <<END
 <form method='post' action='' accept-charset='utf-8'>
-	<div>
-			<label for='columntitle'>#{columntitlestr}: </label>
-			<input id='columntitle' size='16' type='text' value="#{title}" name='new_columnname' />
-			<label for='columndescription'>#{descriptionstr}: </label>
-			<input id='columndescription' size='30' type='text' value="#{description}" name='columndescription' />
-			<input type='hidden' name='undo_revision' value='#{revision}' />
-			#{hiddeninput}
-			<input type='submit' value='#{addeditstr}' />
-	</div>
+	<div class='textcolumn'>#{hint}</div>
+	<table class='settingstable'>
+		<tr>
+			<td class='label'><label for='columntitle'>#{columntitlestr}:</label></td>
+			<td><input id='columntitle' type='text' value="#{title}" name='new_columnname' /></td>
+		</tr><tr>
+			<td class='label'><label for='columndescription'>#{descriptionstr}:</label></td>
+			<td><input id='columndescription' type='text' value="#{description}" name='columndescription' /></td>
+		</tr><tr>
+			<td></td>
+			<td>
+				<input type='hidden' name='undo_revision' value='#{revision}' />
+				#{hiddeninput}
+				<input type='submit' value='#{addeditstr}' />
+			</td>
+		</tr>
+	</table>
 </form>
 END
 		if col_size > 0

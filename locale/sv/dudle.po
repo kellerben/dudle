@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-10-22 12:06+0200\n"
+"POT-Creation-Date: 2010-10-25 21:51+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
@@ -182,6 +182,18 @@ msgstr ""
 msgid "Please include the following as well:"
 msgstr ""
 
+#: example.cgi:60 dudle.rb:66
+msgid "Examples"
+msgstr "Exempel"
+
+#: example.cgi:61
+msgid ""
+"If you want to play with the application, you may want to take a look at "
+"these example polls:"
+msgstr ""
+"Om du vill leka med verktyget bör du ta en titt på dessa exempel på "
+"Omröstningar:"
+
 #: index.cgi:37
 msgid "Please enter a descriptive title."
 msgstr "Vänligen skriv en beskrivande titel."
@@ -230,18 +242,6 @@ msgstr "Bör innehålla bokstäver, nummer och tankestreck"
 #: index.cgi:90
 msgid "Create"
 msgstr "Skapa"
-
-#: index.cgi:136
-msgid "Examples"
-msgstr "Exempel"
-
-#: index.cgi:137
-msgid ""
-"If you want to play with the application, you may want to take a look at "
-"these example polls:"
-msgstr ""
-"Om du vill leka med verktyget bör du ta en titt på dessa exempel på "
-"Omröstningar:"
 
 #: not_found.cgi:26
 #, fuzzy
@@ -349,11 +349,11 @@ msgstr "’Deltagare’ har bara access till gränssnittet för omröstning"
 msgid "Access control:"
 msgstr "Åtkomstkontroll:"
 
-#: config_sample.rb:64
+#: config_sample.rb:86
 msgid "Event Schedule Poll"
 msgstr "Händelseschema Omröstning"
 
-#: config_sample.rb:68
+#: config_sample.rb:90
 msgid "Normal Poll"
 msgstr "Normal omröstning"
 
@@ -433,59 +433,59 @@ msgstr "Om du vet vad du gör, vänligen skriv “%{question}” i formuläret."
 msgid "Home"
 msgstr "Hem"
 
-#: dudle.rb:66
+#: dudle.rb:67
 msgid "About"
 msgstr "Om"
 
-#: dudle.rb:84
+#: dudle.rb:85
 msgid "Customize"
 msgstr "Egna inställningar"
 
-#: dudle.rb:88
+#: dudle.rb:89
 msgid "Poll"
 msgstr "Omröstning"
 
-#: dudle.rb:89 history.rb:35
+#: dudle.rb:90 history.rb:35
 msgid "History"
 msgstr "Historia"
 
-#: dudle.rb:92
+#: dudle.rb:93
 msgid "Edit Columns"
 msgstr "Redigera kolumner"
 
-#: dudle.rb:93 invite_participants.rb:38
+#: dudle.rb:94 invite_participants.rb:38
 msgid "Invite Participants"
 msgstr "Bjud in deltagare"
 
-#: dudle.rb:94
+#: dudle.rb:95
 msgid "Access Control"
 msgstr "Åtkomstkontroll"
 
-#: dudle.rb:95
+#: dudle.rb:96
 msgid "Overview"
 msgstr "Översikt"
 
-#: dudle.rb:97
+#: dudle.rb:98
 msgid "Delete Poll"
 msgstr "Radera omröstning"
 
-#: dudle.rb:184 dudle.rb:202
+#: dudle.rb:185 dudle.rb:203
 msgid "Previous"
 msgstr "Föregående"
 
-#: dudle.rb:185 dudle.rb:203
+#: dudle.rb:186 dudle.rb:204
 msgid "Next"
 msgstr "Nästa"
 
-#: dudle.rb:186 dudle.rb:204
+#: dudle.rb:187 dudle.rb:205
 msgid "Finish"
 msgstr "Klar"
 
-#: dudle.rb:209
+#: dudle.rb:210
 msgid "All changes were saved sucessfully."
 msgstr "Alla ändringar sparades."
 
-#: dudle.rb:209
+#: dudle.rb:210
 msgid "Proceed!"
 msgstr "Fortsätt!"
 
@@ -641,7 +641,8 @@ msgid "Last Edit"
 msgstr "Senast ändrat"
 
 #: pollhead.rb:100
-msgid "Columntitle"
+#, fuzzy
+msgid "Alternative"
 msgstr "Kolumntitel"
 
 #: pollhead.rb:101
@@ -656,6 +657,13 @@ msgstr "Lägg till/redigera kolumn"
 #: pollhead.rb:103
 msgid "Preview"
 msgstr "Förhandsgranska"
+
+#: pollhead.rb:104
+msgid ""
+"Enter all alternatives (columns), you want to ask the participants of the "
+"poll. The participants will state one vote for every alternative you give "
+"here separately."
+msgstr ""
 
 #: timepollhead.rb:92
 msgid ""
