@@ -20,7 +20,7 @@
 ############################################################################
 
 require "dudle"
-$d = Dudle.new(:title => "foo", :hide_lang_chooser => true)
+$d = Dudle.new(:hide_lang_chooser => true)
 
 
 title = _("Poll Not Found")
