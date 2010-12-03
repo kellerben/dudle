@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-10-25 21:51+0200\n"
+"POT-Creation-Date: 2010-12-03 15:13+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
@@ -549,9 +549,9 @@ msgstr "Till gränssnittet för röstning"
 msgid "Link to dudle poll about %{polltitle}"
 msgstr "Länk till dudle omröstning om %{polltitle}"
 
-#: participate.rb:48
-msgid "Reload"
-msgstr "Ladda om"
+#: participate.rb:59
+msgid "The changes were saved, you should be redirected to %{link}."
+msgstr ""
 
 #: poll.rb:86
 #, fuzzy
@@ -719,6 +719,9 @@ msgstr "Lägg till"
 #: timepollhead.rb:377
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "t ex 09:30, morgon, eftermiddag"
+
+#~ msgid "Reload"
+#~ msgstr "Ladda om"
 
 #, fuzzy
 #~ msgid "Delete %{user}?"

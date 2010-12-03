@@ -24,9 +24,11 @@ if __FILE__ == $0
 load "../dudle.rb"
 $d = Dudle.new
 
+edit = false
 unless $cgi.include?("cancel")
 	if $cgi.include?("delete_participant_confirm")
 		$d.table.delete($cgi["delete_participant_confirm"])
+		edit = true
 	elsif $cgi.include?("add_participant")
 		agreed = {}
 		$cgi.params.each{|k,v|
@@ -36,23 +38,29 @@ unless $cgi.include?("cancel")
 		}
 
 		$d.table.add_participant($cgi["olduser"],$cgi["add_participant"],agreed)
+		edit = true
 	end
 end
 
-$d.table.add_comment($cgi["commentname"],$cgi["comment"]) if $cgi["comment"] != ""
-$d.table.delete_comment($cgi["delete_comment"]) if $cgi.include?("delete_comment")
+if $cgi["comment"] != ""
+	$d.table.add_comment($cgi["commentname"],$cgi["comment"])
+	edit = true
+end
 
+if $cgi.include?("delete_comment")
+	$d.table.delete_comment($cgi["delete_comment"]) 
+	edit = true
+end
+
+if edit
+	$d.html.header["status"] = "REDIRECT"
+	$d.html.header["Cache-Control"] = "no-cache"
+	$d.html.header["Location"] = SITEURL 
+	$d << _("The changes were saved, you should be redirected to %{link}.") % {:link => "<a href=\"#{SITEURL}\">#{SITEURL}</a>"}
+
+else
 
 $d.html.add_atom("atom.cgi") if File.exists?("../atom.rb")
-
-reloadstr = _("Reload")
-$d << <<END
-<form method='get' action='.'>
-<div>
-<input value='#{reloadstr}' type='submit'/>
-</div>
-</form>
-END
 
 # TABLE
 $d << <<HTML
@@ -64,6 +72,8 @@ $d << <<HTML
 
 #{$d.table.comment_to_html}
 HTML
+
+end
 
 $d.out
 end

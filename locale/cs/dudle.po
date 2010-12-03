@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-10-25 21:51+0200\n"
+"POT-Creation-Date: 2010-12-03 15:13+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
@@ -549,9 +549,9 @@ msgstr "K hlasovacímu rozhraní"
 msgid "Link to dudle poll about %{polltitle}"
 msgstr "Odkaz k dudle hlasování o %{polltitle}"
 
-#: participate.rb:48
-msgid "Reload"
-msgstr "Obnovit"
+#: participate.rb:59
+msgid "The changes were saved, you should be redirected to %{link}."
+msgstr ""
 
 #: poll.rb:86
 #, fuzzy
@@ -720,6 +720,9 @@ msgstr "Přidat"
 #: timepollhead.rb:377
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "např. 09:30, ráno, odpoledne"
+
+#~ msgid "Reload"
+#~ msgstr "Obnovit"
 
 #~ msgid "Delete User"
 #~ msgstr "Vymaž Uživatele"

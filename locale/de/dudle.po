@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-10-25 21:51+0200\n"
-"PO-Revision-Date: 2010-10-25 21:51+0100\n"
+"POT-Creation-Date: 2010-12-03 15:13+0100\n"
+"PO-Revision-Date: 2010-12-03 15:14+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "Language: \n"
@@ -551,9 +551,9 @@ msgstr "Zur Abstimmung"
 msgid "Link to dudle poll about %{polltitle}"
 msgstr "Dudle Umfrage über %{polltitle}"
 
-#: participate.rb:48
-msgid "Reload"
-msgstr "Neu laden"
+#: participate.rb:59
+msgid "The changes were saved, you should be redirected to %{link}."
+msgstr "Die Änderungen wurden gespeichert. Sie sollten zu %{link} weitergeleitet werden."
 
 #: poll.rb:86
 msgid "Edit user %{user}..."
@@ -714,6 +714,8 @@ msgstr "Hinzufügen"
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "z.B., 9:30, morgens, abends"
 
+#~ msgid "Reload"
+#~ msgstr "Neu laden"
 #~ msgid "Delete %{user}?"
 #~ msgstr "Lösche Teilnehmer %{user}?"
 #~ msgid "Edit Column"
