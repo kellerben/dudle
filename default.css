@@ -60,7 +60,7 @@ td.name {
 	background-color:#CCF;
 }
 
-input.delete{
+input.delete, input.toggle{
 	border: none; 
 	padding: 0px;
 	cursor: pointer;
@@ -78,11 +78,11 @@ input.navigation, input.disabled, input.chosen, input.notchosen {
 input.navigation {
 	border: none;
 }
-.navigation, .notchosen, .disabled, .delete{
+.navigation, .notchosen, .disabled, .delete, .toggle{
 	background-color: #EEE;
 }
 
-.navigation:hover, .notchosen:hover, .disabled:hover, .delete:hover {
+.navigation:hover, .notchosen:hover, .disabled:hover, .delete:hover, .toggle:hover {
 	background-color: #CCC;
 }
 
@@ -104,6 +104,10 @@ div#AddRemoveColumndaysDescription{
 
 table.calendarday th, table.calendarday td{
 	min-width: 2em;
+}
+
+table.calendarday td.navigation{
+	min-width: 0em;
 }
 
 table.calendarday form {

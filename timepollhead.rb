@@ -28,7 +28,7 @@ end
 
 require "timestring"
 
-class TimePollHead 
+class TimePollHead
 	def initialize
 		@data = []
 	end
@@ -59,8 +59,14 @@ class TimePollHead
 	# column is in human readable form
 	# returns true if deletion sucessfull
 	def delete_column(column)
+		if $cgi.include?("togglealloff") # delete one time
+				head_count("%Y-%m-%d",false).each{|day,num|
+					@data.delete(TimeString.new(day,column))
+				}
+			return true
+		end
 		col = TimeString.from_s(column)
-		if col.time 
+		if col.time
 			ret = @data.delete(TimeString.from_s(column)) != nil
 			@data << TimeString.new(col.date,nil) unless date_included?(col.date)
 			return ret
@@ -88,6 +94,14 @@ class TimePollHead
 
 	# returns parsed title or nil in case of colum not changed
 	def edit_column(column, newtitle, cgi)
+		if cgi.include?("toggleallon")
+				head_count("%Y-%m-%d",false).each{|day,num|
+					parsed_date = TimeString.new(day,newtitle)
+					delete_column(day) if @data.include?(TimeString.new(day,nil))
+					@data << parsed_date unless @data.include?(parsed_date)
+				}
+			return newtitle
+		end
 		if cgi.include?("columntime") && cgi["columntime"] == ""
 			@edit_column_error = _("To add some time different to the default ones, please enter some string here (e.&thinsp;g., 09:30, morning, afternoon).")
 			return nil
@@ -141,7 +155,7 @@ SORTSYMBOL
 		ret += "<th><a href='?'>" + _("Last Edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
 		ret
 	end
-	
+
 	def datenavi val,revision
 		case val
 		when MONTHBACK
@@ -168,7 +182,7 @@ END
 	def timenavi val,revision
 		case val
 		when EARLIER
-			return "" if @firsttime == 0 
+			return "" if @firsttime == 0
 			str = EARLIER + " " + _("Earlier")
 			firsttime = [@firsttime-2,0].max
 			lasttime = @lasttime
@@ -182,7 +196,7 @@ END
 		end
 		return <<END
 <tr>
-	<td style='padding:0px'>
+	<td style='padding:0px' colspan='2'>
 		<form method='post' action=''>
 			<div>
 				<input class='navigation' type='submit' value='#{str}' />
@@ -197,7 +211,7 @@ END
 END
 	end
 
-	
+
 	def edit_column_htmlform(activecolumn, revision)
 		# calculate start date, first and last time to show
 		if $cgi.include?("add_remove_column_month")
@@ -221,9 +235,9 @@ END
 
 		@firsttime = realtimes.min.strftime("%H").to_i
 		@lasttime  = realtimes.max.strftime("%H").to_i
-	
+
 		def add_remove_button(klasse, buttonlabel, action, columnstring, revision, pretext = "")
-			titlestr = _("Add column") 
+			titlestr = _("Add column")
 			titlestr = _("Delete column") if klasse == "chosen"
 			return <<FORM
 <form method='post' action=''>
@@ -238,7 +252,7 @@ END
 </form>
 FORM
 		end
-		
+
 
 		hintstr = _("Click on the dates to add or remove columns.")
 		ret = <<END
@@ -251,15 +265,15 @@ END
 		ret += datenavi(MONTHBACK,revision)
 		ret += "<th colspan='3'>#{@startdate.strftime('%b %Y')}</th>"
 		ret += datenavi(MONTHFORWARD,revision)
-		 
+
 		ret += "</tr><tr>\n"
 
 		7.times{|i|
 			# 2010-03-01 was a Monday, so we can use this month for a dirty hack
-			ret += "<th class='weekday'>#{Date.parse("2010-03-0#{i+1}").strftime("%a")}</th>" 
+			ret += "<th class='weekday'>#{Date.parse("2010-03-0#{i+1}").strftime("%a")}</th>"
 		}
 		ret += "</tr><tr>\n"
-		
+
 		((@startdate.wday+7-1)%7).times{
 			ret += "<td></td>"
 		}
@@ -281,7 +295,7 @@ END
 </tr></table>
 </td>
 END
-		
+
 
 		###########################
 		# starting hour input
@@ -299,13 +313,13 @@ END
 <tr>
 END
 
-		ret += "<th class='invisible'></th>"
+		ret += "<th class='invisible' colspan='2'></th>"
 		head_count("%Y-%m",true).each{|title,count|
 			year,month = title.split("-").collect{|e| e.to_i}
 			ret += "<th colspan='#{count}'>#{Date.parse("#{year}-#{month}-01").strftime("%b %Y")}</th>\n"
 		}
 
-		ret += "</tr><tr><th>" + _("Time") + "</th>"
+		ret += "</tr><tr><th colspan='2'>" + _("Time") + "</th>"
 
 		head_count("%Y-%m-%d",true).each{|title,count|
 			coltime = Date.parse(title)
@@ -316,7 +330,7 @@ END
 
 
 		days = @data.sort.collect{|date| date.date }.uniq
-		
+
 		chosenstr = {
 			"chosen" => _("Chosen"),
 			"notchosen" => _("Not Chosen"),
@@ -336,14 +350,42 @@ END
 				a.to_i == b.to_i ? a <=> b : a.to_i <=> b.to_i
 			end
 		}.each{|time|
-			ret +="<tr>\n<td class='navigation'>#{time}</td>"
+			ret += <<END
+		<tr>
+			<td class='navigation'>#{time}</td>
+			<td class='navigation'>
+				<form method='post' action='' accept-charset='utf-8'>
+					<div>
+						<input type='hidden' name='add_remove_column_month' value='#{@startdate.strftime("%Y-%m")}' />
+						<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
+						<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
+						<input type='hidden' name='undo_revision' value='#{revision}' />
+						<input type='submit' class='toggle' title='Toggle the whole row' value='#{MONTHFORWARD}' />
+END
+			# check, if some date of the row is unchecked
+			if head_count("%Y-%m-%d",false).collect{|day,num|
+				@data.include?(TimeString.new(day,time))
+			}.include?(false)
+				# toggle all on
+				ret += "<input type='hidden' name='toggleallon' value='true' />"
+				ret += "<input type='hidden' name='new_columnname' value='#{time}' />"
+			else
+				# toggle all off
+				ret += "<input type='hidden' name='togglealloff' value='true' />"
+				ret += "<input type='hidden' name='deletecolumn' value='#{time}' />"
+			end
+			ret += <<END
+					</div>
+				</form>
+			</td>
+END
 			days.each{|day|
 				timestamp = TimeString.new(day,time)
 				klasse = "notchosen"
 				klasse = "disabled" if timestamp < TimeString.now
 
 				if @data.include?(timestamp)
-					klasse = "chosen" 
+					klasse = "chosen"
 					hiddenvars = "<input type='hidden' name='deletecolumn' value='#{timestamp}' />"
 				else
 					hiddenvars = "<input type='hidden' name='new_columnname' value='#{timestamp.date}' />"
@@ -358,7 +400,7 @@ END
 		}
 		ret += timenavi(LATER,revision)
 
-		ret += "<tr><td></td>"
+		ret += "<tr><td colspan='2'></td>"
 		days.each{|d|
 			ret += <<END
 	<td>
