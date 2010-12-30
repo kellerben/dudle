@@ -56,21 +56,28 @@ class TimePollHead
 		ret
 	end
 
+	# deletes one concrete column
+	# adds the empty day, if it was the last concrete time of the day
+	# returns true if deletion successful
+	def delete_concrete_column(col)
+		ret = @data.delete(col) != nil
+		@data << TimeString.new(col.date,nil) unless date_included?(col.date)
+		ret
+	end
+
 	# column is in human readable form
-	# returns true if deletion sucessfull
+	# returns true if deletion successful
 	def delete_column(column)
 		if $cgi.include?("togglealloff") # delete one time
 				head_count("%Y-%m-%d",false).each{|day,num|
-					@data.delete(TimeString.new(day,column))
+					delete_concrete_column(TimeString.new(day,column))
 				}
 			return true
 		end
 		col = TimeString.from_s(column)
 		if col.time
-			ret = @data.delete(TimeString.from_s(column)) != nil
-			@data << TimeString.new(col.date,nil) unless date_included?(col.date)
-			return ret
-		else
+			return delete_concrete_column(col)
+		else # delete all concrete times on the given day
 			deldata = []
 			@data.each{|ts|
 				deldata << ts if ts.date == col.date
