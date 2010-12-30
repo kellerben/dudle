@@ -33,6 +33,7 @@ td.checkboxes {
 	padding-left: 0px;
 	padding-right: 0px;
 }
+
 table.checkboxes{
 	width: 100%;
 	border-collapse: collapse;
@@ -49,6 +50,14 @@ td.name {
 
 #active {
 	background-color:#A00;
+}
+
+input.delete, input.toggle{
+	border: none; 
+	padding: 0px;
+	cursor: pointer;
+	background-color: #000;
+	color: #FFF;
 }
 
 td.name a,td.name a:visited {
@@ -73,6 +82,10 @@ input.navigation, input.disabled, input.chosen, input.notchosen {
 input.navigation {
 	color: white; 
 	background-color: black;
+}
+.navigation, .delete, .toggle{
+	background-color: #000;
+	color: #FFF;
 }
 
 input.disabled { background-color:#DDD;color:#BBB}
@@ -171,10 +184,12 @@ html {
 }
 
 .textcolumn{
+	text-align: justify;
 	max-width: 45em;
 }
 
 .shorttextcolumn{
+	text-align: left;
 	max-width: 20em;
 }
 .hint{
@@ -210,7 +225,7 @@ div#tabs a{
 	text-decoration:none;
 }
 
-li#active_tab{
+li.active_tab{
 	border-style: solid solid none; 
 	padding-bottom: 1px;
 }
