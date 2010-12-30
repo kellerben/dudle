@@ -238,7 +238,7 @@ END
 
 		def add_remove_button(klasse, buttonlabel, action, columnstring, revision, pretext = "")
 			titlestr = _("Add column")
-			titlestr = _("Delete column") if klasse == "chosen"
+			titlestr = _("Delete column") if klasse == "chosen" || klasse == "delete"
 			return <<FORM
 <form method='post' action=''>
 	<div>
