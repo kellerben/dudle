@@ -367,7 +367,6 @@ END
 						<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
 						<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
 						<input type='hidden' name='undo_revision' value='#{revision}' />
-						<input type='submit' class='toggle' title='Toggle the whole row' value='#{MONTHFORWARD}' />
 END
 			# check, if some date of the row is unchecked
 			if head_count("%Y-%m-%d",false).collect{|day,num|
@@ -376,11 +375,14 @@ END
 				# toggle all on
 				ret += "<input type='hidden' name='toggleallon' value='true' />"
 				ret += "<input type='hidden' name='new_columnname' value='#{time}' />"
+				titlestr = _("Select the whole row")
 			else
 				# toggle all off
 				ret += "<input type='hidden' name='togglealloff' value='true' />"
 				ret += "<input type='hidden' name='deletecolumn' value='#{time}' />"
+				titlestr = _("Deselect the whole row")
 			end
+			ret += "<input type='submit' class='toggle' title='#{titlestr}' value='#{MONTHFORWARD}' />"
 			ret += <<END
 					</div>
 				</form>

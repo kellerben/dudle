@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-12-03 15:13+0100\n"
+"POT-Creation-Date: 2011-01-12 09:45+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
@@ -493,11 +493,11 @@ msgstr "Fortsätt!"
 msgid "Add and Remove Columns"
 msgstr "Lägg till eller ta bort kolumner"
 
-#: edit_columns.rb:67 edit_columns.rb:86 pollhead.rb:72 timepollhead.rb:227
+#: edit_columns.rb:67 edit_columns.rb:86 pollhead.rb:72 timepollhead.rb:248
 msgid "Delete column"
 msgstr "Ta bort kolumn"
 
-#: edit_columns.rb:69 edit_columns.rb:84 timepollhead.rb:226
+#: edit_columns.rb:69 edit_columns.rb:84 timepollhead.rb:247
 msgid "Add column"
 msgstr "Lägg till kolumn"
 
@@ -571,7 +571,7 @@ msgstr "Total"
 msgid "Invite"
 msgstr "Bjud in"
 
-#: poll.rb:180 pollhead.rb:62 timepollhead.rb:137
+#: poll.rb:180 pollhead.rb:62 timepollhead.rb:158
 msgid "Name"
 msgstr "Namn"
 
@@ -636,7 +636,7 @@ msgstr "Tillhörande åtkomstkontroll"
 msgid "Update"
 msgstr "Uppdatera"
 
-#: pollhead.rb:88 timepollhead.rb:141
+#: pollhead.rb:88 timepollhead.rb:162
 msgid "Last Edit"
 msgstr "Senast ändrat"
 
@@ -665,58 +665,66 @@ msgid ""
 "here separately."
 msgstr ""
 
-#: timepollhead.rb:92
+#: timepollhead.rb:113
 msgid ""
 "To add some time different to the default ones, please enter some string "
 "here (e.&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "Lägg till fler tider än standardtiderna (t ex 09:30, morgon, eftermiddag)"
 
-#: timepollhead.rb:98
+#: timepollhead.rb:119
 msgid "This Time was already choosen."
 msgstr "Tidpunkten är redan vald."
 
-#: timepollhead.rb:172
+#: timepollhead.rb:193
 msgid "Earlier"
 msgstr "Tidigare"
 
-#: timepollhead.rb:177
+#: timepollhead.rb:198
 msgid "Later"
 msgstr "Senare"
 
-#: timepollhead.rb:243
+#: timepollhead.rb:264
 msgid "Click on the dates to add or remove columns."
 msgstr "Klicka på datumen för att lägga till eller ta bort kolumner."
 
-#: timepollhead.rb:291
+#: timepollhead.rb:312
 msgid "Optional:"
 msgstr "Valfri:"
 
-#: timepollhead.rb:292
+#: timepollhead.rb:313
 msgid "Enter a concrete value as start time."
 msgstr "Ange en giltig starttid."
 
-#: timepollhead.rb:308
+#: timepollhead.rb:329
 msgid "Time"
 msgstr "Tid"
 
-#: timepollhead.rb:321
+#: timepollhead.rb:342
 msgid "Chosen"
 msgstr "Vald"
 
-#: timepollhead.rb:322
+#: timepollhead.rb:343
 msgid "Not Chosen"
 msgstr "Inte vald"
 
-#: timepollhead.rb:323
+#: timepollhead.rb:344
 msgid "Past"
 msgstr "Efter"
 
-#: timepollhead.rb:376
+#: timepollhead.rb:378
+msgid "Select the whole row"
+msgstr ""
+
+#: timepollhead.rb:383
+msgid "Deselect the whole row"
+msgstr ""
+
+#: timepollhead.rb:427
 msgid "Add"
 msgstr "Lägg till"
 
-#: timepollhead.rb:377
+#: timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "t ex 09:30, morgon, eftermiddag"
 

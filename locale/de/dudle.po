@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-12-03 15:13+0100\n"
-"PO-Revision-Date: 2010-12-03 15:14+0100\n"
+"POT-Creation-Date: 2011-01-12 09:45+0100\n"
+"PO-Revision-Date: 2011-01-12 09:46+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "Language: \n"
@@ -491,13 +491,13 @@ msgstr "Spalten hinzufügen oder entfernen"
 #: edit_columns.rb:67
 #: edit_columns.rb:86
 #: pollhead.rb:72
-#: timepollhead.rb:227
+#: timepollhead.rb:248
 msgid "Delete column"
 msgstr "Lösche Spalte"
 
 #: edit_columns.rb:69
 #: edit_columns.rb:84
-#: timepollhead.rb:226
+#: timepollhead.rb:247
 msgid "Add column"
 msgstr "Füge Spalte hinzu"
 
@@ -573,7 +573,7 @@ msgstr "Einladen"
 
 #: poll.rb:180
 #: pollhead.rb:62
-#: timepollhead.rb:137
+#: timepollhead.rb:158
 msgid "Name"
 msgstr "Name"
 
@@ -638,7 +638,7 @@ msgid "Update"
 msgstr "Aktualisieren"
 
 #: pollhead.rb:88
-#: timepollhead.rb:141
+#: timepollhead.rb:162
 msgid "Last Edit"
 msgstr "Letzte Änderung"
 
@@ -662,55 +662,63 @@ msgstr "Vorschau"
 msgid "Enter all alternatives (columns), you want to ask the participants of the poll. The participants will state one vote for every alternative you give here separately."
 msgstr "Geben Sie alle Alternativen (Spalten) ein, nach denen in der Umfrage gefragt werden soll. Die Teilnehmer der Umfrage können für jede Alternative einzeln ihre Stimme abgeben."
 
-#: timepollhead.rb:92
+#: timepollhead.rb:113
 msgid "To add some time different to the default ones, please enter some string here (e.&thinsp;g., 09:30, morning, afternoon)."
 msgstr "Geben Sie eine Zeit ein, um eine andere als die vorgeschlagenen Zeiten auszuwählen (z.&thinsp;B. 9:30, morgens, abends)."
 
-#: timepollhead.rb:98
+#: timepollhead.rb:119
 msgid "This Time was already choosen."
 msgstr "Diese Zeit war schon gewählt."
 
-#: timepollhead.rb:172
+#: timepollhead.rb:193
 msgid "Earlier"
 msgstr "Früher"
 
-#: timepollhead.rb:177
+#: timepollhead.rb:198
 msgid "Later"
 msgstr "Später"
 
-#: timepollhead.rb:243
+#: timepollhead.rb:264
 msgid "Click on the dates to add or remove columns."
 msgstr "Klicken Sie auf ein Datum, um es der Umfrage hinzuzufügen."
 
-#: timepollhead.rb:291
+#: timepollhead.rb:312
 msgid "Optional:"
 msgstr "Optional:"
 
-#: timepollhead.rb:292
+#: timepollhead.rb:313
 msgid "Enter a concrete value as start time."
 msgstr "Geben Sie eine Zeit für ein Datum ein."
 
-#: timepollhead.rb:308
+#: timepollhead.rb:329
 msgid "Time"
 msgstr "Zeit"
 
-#: timepollhead.rb:321
+#: timepollhead.rb:342
 msgid "Chosen"
 msgstr "Gewählt"
 
-#: timepollhead.rb:322
+#: timepollhead.rb:343
 msgid "Not Chosen"
 msgstr "Nicht Gewählt"
 
-#: timepollhead.rb:323
+#: timepollhead.rb:344
 msgid "Past"
 msgstr "Vergangen"
 
-#: timepollhead.rb:376
+#: timepollhead.rb:378
+msgid "Select the whole row"
+msgstr "Wähle die ganze Zeile aus"
+
+#: timepollhead.rb:383
+msgid "Deselect the whole row"
+msgstr "Die Auswahl der ganzen Zeile entfernen"
+
+#: timepollhead.rb:427
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: timepollhead.rb:377
+#: timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "z.B., 9:30, morgens, abends"
 
