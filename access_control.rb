@@ -41,7 +41,7 @@ AuthType digest
 AuthName "dudle"
 AuthUserFile "#{File.expand_path(".").gsub('"','\\\\"')}/.htdigest"
 Require user admin
-ErrorDocument 401 /authorization_required.cgi?user=admin&poll=#{CGI.escape($d.urlsuffix)}
+ErrorDocument 401 #{$cgi.script_name.gsub(/[^\/]*\/[^\/]*$/,"")}authorization_required.cgi?user=admin&poll=#{CGI.escape($d.urlsuffix)}
 </Files>
 HTACCESS
 		end
@@ -51,7 +51,7 @@ AuthType digest
 AuthName "dudle"
 AuthUserFile "#{File.expand_path(".").gsub('"','\\\\"')}/.htdigest"
 Require valid-user
-ErrorDocument 401 /authorization_required.cgi?user=participant&poll=#{CGI.escape($d.urlsuffix)}
+ErrorDocument 401 #{$cgi.script_name.gsub(/[^\/]*\/[^\/]*$/,"")}authorization_required.cgi?user=participant&poll=#{CGI.escape($d.urlsuffix)}
 HTACCESS
 		end
 	}
