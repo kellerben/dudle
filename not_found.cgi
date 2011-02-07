@@ -20,8 +20,11 @@
 ############################################################################
 
 require "dudle"
-$d = Dudle.new(:hide_lang_chooser => true)
-
+if File.exists?(Dir.pwd + File.dirname(ENV["REDIRECT_URL"]))
+	$d = Dudle.new(:hide_lang_chooser => true)
+else
+	$d = Dudle.new(:hide_lang_chooser => true, :relative_dir => "../")
+end
 
 title = _("Poll Not Found")
 

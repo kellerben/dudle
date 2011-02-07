@@ -19,8 +19,10 @@
 
 class HTML
 	attr_accessor :body, :header
-	def initialize(title)
+	attr_reader :relative_dir
+	def initialize(title, relative_dir = "")
 		@title = title
+		@relative_dir = relative_dir
 		@header = {}
 		@header["type"] = "text/html"
 #		@header["type"] = "application/xhtml+xml"
@@ -42,12 +44,12 @@ HEAD
 		@css = [@css[0]] + @css[1..-1].sort unless @css.empty?
 		@css.each{|title,href|
 			titleattr = "title='#{title}'" if title != ""
-			ret += "<link rel='stylesheet' type='text/css' href='#{href}' #{titleattr} media='screen, projection, tv, handheld'/>\n"
-			ret += "<link rel='stylesheet' type='text/css' href='#{href}' media='print' />\n" if title == "print"
+			ret += "<link rel='stylesheet' type='text/css' href='#{@relative_dir}#{href}' #{titleattr} media='screen, projection, tv, handheld'/>\n"
+			ret += "<link rel='stylesheet' type='text/css' href='#{@relative_dir}#{href}' media='print' />\n" if title == "print"
 		}
 
 		@atom.each{|href|
-			ret += "<link rel='alternate'  type='application/atom+xml' href='#{href}' />\n"
+			ret += "<link rel='alternate'  type='application/atom+xml' href='#{@relative_dir}#{href}' />\n"
 		}
 
 		ret += @htmlheader
@@ -73,10 +75,10 @@ HEAD
 		@header["cookie"] << c
 	end
 	def add_head_script(file)
-		add_html_head("<script type='text/javascript' src='#{file}'></script>")
+		add_html_head("<script type='text/javascript' src='#{@relative_dir}#{file}'></script>")
 	end
 	def add_script_file(file)
-		self << "<script type='text/javascript' src='#{file}'></script>"
+		self << "<script type='text/javascript' src='#{@relative_dir}#{file}'></script>"
 	end
 	def add_script(script)
 		self << <<SCRIPT

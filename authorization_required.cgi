@@ -25,7 +25,13 @@ if $cgi.include?("poll")
 
 	Dir.chdir($cgi["poll"])
 	$is_poll = true
-	$d = Dudle.new(:hide_lang_chooser => true)
+
+	# check for trailing slash
+	if ENV["REDIRECT_URL"] =~ /#{$cgi["poll"]}$/
+		$d = Dudle.new(:hide_lang_chooser => true, :relative_dir => "#{$cgi["poll"]}/")
+	else
+		$d = Dudle.new(:hide_lang_chooser => true)
+	end
 
 	$d << "<h2>" + _("Authorization Required") + "</h2>"
 	case $cgi["user"]

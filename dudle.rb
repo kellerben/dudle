@@ -74,7 +74,7 @@ class Dudle
 			when ""
 				ret += "<li class='separator_tab'></li>"
 			else
-				ret += "<li class='nonactive_tab' ><a href='#{file}'>&nbsp;#{tab}&nbsp;</a></li> "
+				ret += "<li class='nonactive_tab' ><a href='#{@html.relative_dir}#{file}'>&nbsp;#{tab}&nbsp;</a></li> "
 			end
 		}
 		ret += "</ul></div>"
@@ -83,7 +83,7 @@ class Dudle
 
 	def inittabs
 		@customizetab = [_("Customize"),"customize.cgi"]
-		if $is_poll
+		if is_poll?
 			# set-up tabs
 			@usertabs = [
 				[_("Poll"),"."],
@@ -102,36 +102,35 @@ class Dudle
 		@requested_revision || VCS.revno
 	end
 
-	def initialize(params = {:revision => nil, :title => nil, :hide_lang_chooser => nil})
+	def initialize(params = {:revision => nil, :title => nil, :hide_lang_chooser => nil, :relative_dir => ""})
 		@requested_revision = params[:revision]
 		@hide_lang_chooser = params[:hide_lang_chooser]
 		@cgi = $cgi
 		@tab = File.basename($0)
 		@tab = "." if @tab == "index.cgi"
 
-		if $is_poll
+		inittabs
+
+		if is_poll?
 			# log last read acces manually (no need to grep server logfiles)
 			File.open("last_read_access","w").close
-			$is_poll = true
 			@basedir = ".." 
 			@table = YAML::load(VCS.cat(self.revision, "data.yaml"))
 			@urlsuffix = File.basename(File.expand_path("."))
 			@title = @table.name
 			
-			inittabs
 			
 			configfiles = @configtabs.collect{|name,file| file}
 			@is_config = configfiles.include?(@tab)
 			@wizzardindex = configfiles.index(@tab) if @is_config
 
 			@tabtitle = (@usertabs + @configtabs + [@deletetab] + [@customizetab]).collect{|title,file| title if file == @tab}.compact[0]
-			@html = HTML.new("dudle - #{@title} - #{@tabtitle}")
+			@html = HTML.new("dudle - #{@title} - #{@tabtitle}",params[:relative_dir])
 			@html.header["Cache-Control"] = "no-cache"
 		else
 			@basedir = "."
-			inittabs
 			@title = params[:title] || "dudle"
-			@html = HTML.new(@title)
+			@html = HTML.new(@title,params[:relative_dir])
 		end
 
 

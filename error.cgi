@@ -20,7 +20,12 @@
 ############################################################################
 
 require "dudle"
-$d = Dudle.new(:title => _("Error"), :hide_lang_chooser => true)
+# check for trailing slash
+if ENV["REDIRECT_URL"] =~ /#{$cgi["poll"]}$/
+	$d = Dudle.new(:title => _("Error"), :hide_lang_chooser => true, :relative_dir => "#{$cgi["poll"]}/")
+else
+	$d = Dudle.new(:title => _("Error"), :hide_lang_chooser => true)
+end
 
 def urlescape(str)
 	CGI.escapeHTML(CGI.escape(str).gsub("+","%20"))
