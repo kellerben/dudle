@@ -4,6 +4,7 @@ Requirements:
  * ruby
  * git (preferred and default setting) or bzr
  * libgettext-ruby (for localization)
+ * htdigest command line tool (sudo aptitude install apache2-utils)
 License: 
    GNU AGPL v3 or higer
    see file License
