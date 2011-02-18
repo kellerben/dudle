@@ -100,7 +100,7 @@ class Poll
 		ret
 	end
 	def to_html(showparticipation = true)
-		ret = "<table border='1'>\n"
+		ret = "<table class='polltable'>\n"
 		
 		sortcolumns = $cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]
 		ret += @head.to_html(sortcolumns)
@@ -275,14 +275,14 @@ END
 			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
 				ret += <<TR
 				<tr class='input-#{valbinary}'>
-					<td class='input-#{valbinary}'>
+					<td class='input-radio'>
 						<input type='radio' 
 							value='#{valbinary}' 
 							id=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\" 
 							name=\"add_participant_checked_#{CGI.escapeHTML(column.to_s)}\" 
 							title=\"#{CGI.escapeHTML(column.to_s)}\" #{checked[column] == valbinary ? "checked='checked'":""}/>
 					</td>
-					<td class='input-#{valbinary}'>
+					<td class='input-label'>
 						<label for=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\">#{valhuman}</label>
 					</td>
 			</tr>

@@ -33,10 +33,10 @@ a:hover, a:active {
 }
 
 td.ayes, td.bmaybe, td.cno { cursor:default;}
-td.ayes, td.input-ayes, input.chosen  { background-color:#9C6}
+td.ayes, tr.input-ayes td, input.chosen  { background-color:#9C6}
 input.chosen:hover { background-color: #8B5 }
-td.cno, td.input-cno { background-color:#F96 }
-td.bmaybe, td.input-bmaybe { background-color:#FF6}
+td.cno, tr.input-cno td { background-color:#F96 }
+td.bmaybe, tr.input-bmaybe td { background-color:#FF6}
 td.undecided { background-color:#DDD }
 
 td.checkboxes {
@@ -48,6 +48,7 @@ td.checkboxes {
 table.checkboxes{
 	width: 100%;
 	border-collapse: collapse;
+	border:none;
 }
 
 label { cursor: pointer; }
@@ -213,6 +214,7 @@ html {
 	padding: 2em;
 	color: #000;
 	border: solid 1px #000;
+	border-bottom: none;
 	top: 0px;
 	margin-top: 0px;
 }
@@ -323,6 +325,10 @@ form#ac_participant, form#ac, form#ac_admin{
 }
 
 div#languageChooser{
-	margin-top: 2em;
+	background: #fff;
+	padding: 2em;
+	color: #000;
+	border: solid 1px #000;
+	border-top: none;
 	text-align: center;
 }

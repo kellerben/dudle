@@ -163,6 +163,8 @@ class Dudle
 <div id='header1'></div>
 <div id='header2'></div>
 <div id='header3'></div>
+<div id='header4'></div>
+<div id='header5'></div>
 <div id='main'>
 #{tabs(@tab)}
 <div id='content'>
@@ -217,6 +219,7 @@ READY
 		@html << wizzard_nav if @is_config
 
 		@html.add_cookie("lang",@cgi["lang"],"/",Time.now + (1*60*60*24*365)) if @cgi.include?("lang")
+		@html << "</div>" # content
 		@html << "<div id='languageChooser'>"
 		lang = [
 			["en", "English"],
@@ -235,9 +238,14 @@ READY
 		end
 		@html << "</div>" # languageChooser
 
-		@html << "</div>" # content
 		@html << "</div>" # main
-
+		@html << <<FOOT
+<div id='footer1'></div>
+<div id='footer2'></div>
+<div id='footer3'></div>
+<div id='footer4'></div>
+<div id='footer5'></div>
+FOOT
 		@extensions.each{|e|
 			if File.exists?("#{@basedir}/extensions/#{e}/main.rb")
 				require "#{@basedir}/extensions/#{e}/main"

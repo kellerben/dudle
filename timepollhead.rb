@@ -203,7 +203,7 @@ END
 		end
 		return <<END
 <tr>
-	<td style='padding:0px' colspan='2'>
+	<td class='navigation' colspan='2'>
 		<form method='post' action=''>
 			<div>
 				<input class='navigation' type='submit' value='#{str}' />
@@ -282,7 +282,7 @@ END
 		ret += "</tr><tr>\n"
 
 		((@startdate.wday+7-1)%7).times{
-			ret += "<td></td>"
+			ret += "<td class='invisible'></td>"
 		}
 		d = @startdate
 		while true do
@@ -409,10 +409,10 @@ END
 		}
 		ret += timenavi(LATER,revision)
 
-		ret += "<tr><td colspan='2'></td>"
+		ret += "<tr><td colspan='2' class='invisible'></td>"
 		days.each{|d|
 			ret += <<END
-	<td>
+	<td class='addColumnManual'>
 		<form method='post' action='' accept-charset='utf-8'>
 			<div>
 				<input type='hidden' name='new_columnname' value='#{d.strftime("%Y-%m-%d")}' />
