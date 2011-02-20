@@ -273,3 +273,8 @@ form#ac_participant, form#ac, form#ac_admin{
 	margin-top: 1em;
 	text-align: center;
 }
+
+div#languageChooser li {
+	list-style:none;
+	display: inline;
+}

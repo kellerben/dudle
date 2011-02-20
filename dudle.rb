@@ -220,7 +220,7 @@ READY
 
 		@html.add_cookie("lang",@cgi["lang"],"/",Time.now + (1*60*60*24*365)) if @cgi.include?("lang")
 		@html << "</div>" # content
-		@html << "<div id='languageChooser'>"
+		@html << "<div id='languageChooser'><ul>"
 		lang = [
 			["en", "English"],
 			["de", "Deutsch"],
@@ -232,11 +232,11 @@ READY
 				if short == GetText.locale.language
 					@html << long
 				else
-					@html << "<a href='?lang=#{short}'>#{long}</a>"
+					@html << "<li><a href='?lang=#{short}'>#{long}</a></li>"
 				end
 			}
 		end
-		@html << "</div>" # languageChooser
+		@html << "</ul></div>" # languageChooser
 
 		@html << "</div>" # main
 		@html << <<FOOT

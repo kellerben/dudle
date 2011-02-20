@@ -332,3 +332,9 @@ div#languageChooser{
 	border-top: none;
 	text-align: center;
 }
+
+div#languageChooser li {
+	list-style:none;
+	display: inline;
+}
+
