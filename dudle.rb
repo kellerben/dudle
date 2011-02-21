@@ -230,9 +230,9 @@ READY
 		unless @hide_lang_chooser
 			lang.each{|short,long|
 				if short == GetText.locale.language
-					@html << long
+					@html << "<li class='lang'>#{long}</li>"
 				else
-					@html << "<li><a href='?lang=#{short}'>#{long}</a></li>"
+					@html << "<li class='lang'><a href='?lang=#{short}'>#{long}</a></li>"
 				end
 			}
 		end
