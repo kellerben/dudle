@@ -100,7 +100,8 @@ class Poll
 		ret
 	end
 	def to_html(showparticipation = true)
-		ret = "<table class='polltable'>\n"
+		# border=1 for textbrowsers ;--)
+		ret = "<table class='polltable' border='1'>\n"
 		
 		sortcolumns = $cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]
 		ret += @head.to_html(sortcolumns)

@@ -63,7 +63,6 @@ td.name {
 
 input.delete, input.toggle{
 	border: none; 
-	padding: 0px;
 	cursor: pointer;
 }
 
@@ -129,6 +128,13 @@ table.calendarday td.navigation{
 table.calendarday td input{
 	margin: 0px;
 	padding: 1px;
+}
+
+table.calendarday th input.delete {
+	padding: 0px;
+}
+table.calendarday td input.toggle {
+	padding:0 0.5em 0 0.5em;
 }
 
 div.undo{

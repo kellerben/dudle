@@ -360,7 +360,7 @@ END
 			ret += <<END
 		<tr>
 			<td class='navigation'>#{time}</td>
-			<td class='navigation'>
+			<td class='navigation' style='padding:0px'>
 				<form method='post' action='' accept-charset='utf-8'>
 					<div>
 						<input type='hidden' name='add_remove_column_month' value='#{@startdate.strftime("%Y-%m")}' />
