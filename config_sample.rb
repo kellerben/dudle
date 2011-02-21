@@ -37,6 +37,16 @@ else
 end
 SITEURL = "#{protocol}://#{$cgi.server_name}#{port}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
 
+# You may insert some sites, which are under your site
+# A breadcrumb will be generated in the way:
+# TUD -> ... -> Fakultät Informatik -> Professur DuD -> dudle -> poll
+BREADCRUMBS = [
+	"<a href='http://tu-dresden.de'>TUD</a>",
+	"...",
+	"<a href='http://www.inf.tu-dresden.de'>Fakultät Informatik</a>",
+	"<a href='http://dud.inf.tu-dresden.de'>Professur Datenschutz und Datensicherheit</a>"
+]
+
 # If you want to encourage the user to send bug reports, state the errorlog,
 # which you have configured in your apache conf with the ErrorLog directive.
 # In addition, you can change the email address to yours, if you want to

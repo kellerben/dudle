@@ -51,23 +51,9 @@ class Dudle
 	def is_poll?
 		$is_poll
 	end
-	def tabs(active_tab)
+	def tabs_to_html(active_tab)
 		ret = "<div id='tabs'><ul id='tablist'>"
-		tabs = []
-		tabs << [_("Home"),@basedir]
-		if $is_poll
-			tabs << ["",""]
-			tabs += @usertabs
-			tabs << ["",""]
-			tabs += @configtabs
-			tabs << @deletetab
-			tabs << ["",""]
-		else
-			tabs << [_("Examples"),"example.cgi"]
-			tabs << [_("About"),"about.cgi"]
-		end
-		tabs << @customizetab
-		tabs.each{|tab,file|
+		@tabs.each{|tab,file|
 			case file
 			when _(active_tab)
 				ret += "<li id='active_tab' class='active_tab' >&nbsp;#{tab}&nbsp;</li> "
@@ -82,24 +68,52 @@ class Dudle
 	end
 
 	def inittabs
-		@customizetab = [_("Customize"),"customize.cgi"]
+		@tabs = []
+		@tabs << [_("Home"),@basedir]
 		if is_poll?
-			# set-up tabs
-			@usertabs = [
-				[_("Poll"),"."],
-				[_("History"),"history.cgi"]
-			]
+			@tabs << ["",""]
+			@tabs << [_("Poll"),"."]
+			@tabs << [_("History"),"history.cgi"]
+			@tabs << ["",""]
 			@configtabs = [
 				[_("Edit Columns"),"edit_columns.cgi"],
 				[_("Invite Participants"),"invite_participants.cgi"],
 				[_("Access Control"),"access_control.cgi"],
 				[_("Overview"),"overview.cgi"]
 			]
-			@deletetab = [_("Delete Poll"),"delete_poll.cgi"]
+			@tabs += @configtabs
+			@tabs << [_("Delete Poll"),"delete_poll.cgi"]
+			@tabs << ["",""]
+		else
+			@tabs << [_("Examples"),"example.cgi"]
+			@tabs << [_("About"),"about.cgi"]
 		end
+		@tabs << [_("Customize"),"customize.cgi"]
+		@tabtitle = @tabs.collect{|title,file| title if file == @tab}.compact[0]
 	end
 	def revision
 		@requested_revision || VCS.revno
+	end
+	def breadcrumbs
+		if defined?(BREADCRUMBS)
+			crumbs = BREADCRUMBS
+		else
+			crumbs = []
+		end
+		crumbs << "<a href='#{@basedir}'>" + _("Dudle Home") + "</a>"
+		if is_poll?
+			if @tab == "."
+				crumbs << @title
+			else
+				crumbs << "<a href='.'>#{@title}</a>"
+				crumbs << @tabtitle
+			end
+		else
+			if @tab != "."
+				crumbs << @tabtitle
+			end
+		end
+		"<div id=breadcrumbs><ul><li class='breadcrumb'>#{crumbs.join("</li><li class='breadcrumb'>")}</li></ul></div>"
 	end
 
 	def initialize(params = {:revision => nil, :title => nil, :hide_lang_chooser => nil, :relative_dir => ""})
@@ -109,12 +123,11 @@ class Dudle
 		@tab = File.basename($0)
 		@tab = "." if @tab == "index.cgi"
 
-		inittabs
-
 		if is_poll?
 			# log last read acces manually (no need to grep server logfiles)
 			File.open("last_read_access","w").close
 			@basedir = ".." 
+			inittabs
 			@table = YAML::load(VCS.cat(self.revision, "data.yaml"))
 			@urlsuffix = File.basename(File.expand_path("."))
 			@title = @table.name
@@ -124,11 +137,11 @@ class Dudle
 			@is_config = configfiles.include?(@tab)
 			@wizzardindex = configfiles.index(@tab) if @is_config
 
-			@tabtitle = (@usertabs + @configtabs + [@deletetab] + [@customizetab]).collect{|title,file| title if file == @tab}.compact[0]
 			@html = HTML.new("dudle - #{@title} - #{@tabtitle}",params[:relative_dir])
 			@html.header["Cache-Control"] = "no-cache"
 		else
 			@basedir = "."
+			inittabs
 			@title = params[:title] || "dudle"
 			@html = HTML.new(@title,params[:relative_dir])
 		end
@@ -165,8 +178,9 @@ class Dudle
 <div id='header3'></div>
 <div id='header4'></div>
 <div id='header5'></div>
+#{breadcrumbs}
 <div id='main'>
-#{tabs(@tab)}
+#{tabs_to_html(@tab)}
 <div id='content'>
 	<h1 id='polltitle'>#{@title}</h1>
 HEAD

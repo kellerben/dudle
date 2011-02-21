@@ -252,6 +252,10 @@ html {
 	line-height: 1.4em;
 }
 
+#breadcrumbs {
+	display: none;
+}
+
 div#tabs{
 	font-size:80%;
 	min-width:65em;
