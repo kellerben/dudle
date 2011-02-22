@@ -57,7 +57,7 @@ td.name {
 	text-align:right;
 }
 
-#active {
+#active, #active input.delete{
 	background-color:#CCF;
 }
 
@@ -82,7 +82,13 @@ input.navigation {
 	background-color: #EEE;
 }
 
-.navigation:hover, .notchosen:hover, .disabled:hover, .delete:hover, .toggle:hover {
+a.editcolumn {
+	color: black;
+}
+a.editcolumn:hover {
+	text-decoration:none;
+}
+.navigation:hover, .notchosen:hover, .disabled:hover, .editcolumn:hover, #active .delete:hover, .delete:hover, .toggle:hover {
 	background-color: #CCC;
 }
 

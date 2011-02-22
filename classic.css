@@ -48,7 +48,7 @@ td.name {
 	text-align:right;
 }
 
-#active {
+#active, #active input.delete {
 	background-color:#A00;
 }
 

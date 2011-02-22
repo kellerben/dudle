@@ -71,16 +71,15 @@ SORTSYMBOL
 				editstr = _("Edit column")
 				deletestr = _("Delete column")
 				ret += <<EDITDELETE
-	<div>
-		<small>
-			<a href="?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}" title="#{editstr}">
+<form method='post' action=''>
+	<div class='editdelete'>
+			<a class='editcolumn' href="?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}" title="#{editstr}">
 				#{EDIT}
 			</a>|
-			<a href="?deletecolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}" title="#{deletestr}">
-				#{DELETE}
-			</a>
-		</small>
+		<input style='padding:0;margin:0' title='#{deletestr}' class='delete' type='submit' value='#{DELETE}' />
+		<input type='hidden' name='deletecolumn' value='#{CGI.escapeHTML(CGI.escape(columntitle))}' />
 	</div>
+</form>
 EDITDELETE
 			end
 			ret += "</th>"
