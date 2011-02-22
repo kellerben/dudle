@@ -113,7 +113,7 @@ class Dudle
 				crumbs << @tabtitle
 			end
 		end
-		"<div id=breadcrumbs><ul><li class='breadcrumb'>#{crumbs.join("</li><li class='breadcrumb'>")}</li></ul></div>"
+		"<div id='breadcrumbs'><ul><li class='breadcrumb'>#{crumbs.join("</li><li class='breadcrumb'>")}</li></ul></div>"
 	end
 
 	def initialize(params = {:revision => nil, :title => nil, :hide_lang_chooser => nil, :relative_dir => ""})
