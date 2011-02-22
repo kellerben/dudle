@@ -267,7 +267,7 @@ FORM
 <div id='AddRemoveColumndaysDescription' class='shorttextcolumn'>
 #{hintstr}
 </div>
-<table class='calendarday'><tr>
+<table border='1' class='calendarday'><tr>
 END
 		ret += datenavi(MONTHBACK,revision)
 		ret += "<th colspan='3'>#{@startdate.strftime('%b %Y')}</th>"
@@ -316,7 +316,7 @@ END
 #{optstr}<br/>
 #{hintstr}
 </div>
-<table class='calendarday'>
+<table border='1' class='calendarday'>
 <tr>
 END
 
