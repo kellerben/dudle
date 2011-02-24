@@ -56,6 +56,9 @@ BREADCRUMBS = [
 # ERRORLOG variable unset!
 # Make sure, that your apache can read this file 
 # (which usually is not the case for /var/log/apache2/*)
+# DO NOT FORGET TO ADD THE ERROR LOG TO LOGROTATE IF YOU CHANGE THE PATH TO
+# OTHER THAN /var/log/apache2/* !
+# If you do not know what to do what I am speaking about, leave it as it is!
 #ERRORLOG = "/var/log/dudle_error.log"
 BUGREPORTMAIL = "Benjamin.Kellermann@tu-dresden.de"
 
