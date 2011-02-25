@@ -22,27 +22,33 @@
 require "dudle"
 
 if $cgi.include?("poll")
+	if File.directory?($cgi["poll"])
+		Dir.chdir($cgi["poll"])
+		$is_poll = true
 
-	Dir.chdir($cgi["poll"])
-	$is_poll = true
+		# check for trailing slash
+		if ENV["REDIRECT_URL"] =~ /#{$cgi["poll"]}$/
+			$d = Dudle.new(:hide_lang_chooser => true, :relative_dir => "#{$cgi["poll"]}/")
+		else
+			$d = Dudle.new(:hide_lang_chooser => true)
+		end
 
-	# check for trailing slash
-	if ENV["REDIRECT_URL"] =~ /#{$cgi["poll"]}$/
-		$d = Dudle.new(:hide_lang_chooser => true, :relative_dir => "#{$cgi["poll"]}/")
+		$d << "<h2>" + _("Authorization Required") + "</h2>"
+		case $cgi["user"]
+		when "admin"
+			$d << _("The configuration of this Poll is protected by password!")
+		when "participant"
+			$d << _("This Poll is protected by password!")
+		end
+		$d << _("In order to proceed, you have to give the password for user %{user}.") % {:user => "<code>#{$cgi["user"]}</code>"}
+
+		$d.out
+
 	else
-		$d = Dudle.new(:hide_lang_chooser => true)
+		$cgi = CGI.new
+		$cgi.out({"status" => "BAD_REQUEST"}){""}
 	end
 
-	$d << "<h2>" + _("Authorization Required") + "</h2>"
-	case $cgi["user"]
-	when "admin"
-		$d << _("The configuration of this Poll is protected by password!")
-	when "participant"
-		$d << _("This Poll is protected by password!")
-	end
-	$d << _("In order to proceed, you have to give the password for user %{user}.") % {:user => "<code>#{$cgi["user"]}</code>"}
-
-	$d.out
 else
 	$d = Dudle.new(:title => _("Authorization Required"), :hide_lang_chooser => true)
 	returnstr = _("Return to dudle home and Schedule a new Poll")
