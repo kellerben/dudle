@@ -337,8 +337,10 @@ TR
 			}
 		end
 
-		ret += "<a class='top_bottom_ref' href='#top' title='"
-		ret += _("Go Up") + "'>#{GOUP}</a>" if @comment.size > 5
+		if @comment.size > 5
+			ret += "<a class='top_bottom_ref' href='#top' title='"
+			ret += _("Go Up") + "'>#{GOUP}</a>"
+		end
 
 		
 		if editable
