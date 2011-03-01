@@ -172,7 +172,7 @@ class Dudle
 		}
 
 		@html << <<HEAD
-<body>
+<body><div id="top"></div>
 <div id='header1'></div>
 <div id='header2'></div>
 <div id='header3'></div>

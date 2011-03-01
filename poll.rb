@@ -300,12 +300,30 @@ TR
 
 	def comment_to_html(editable = true)
 		ret = "<div id='comments'>"
-		ret	+= "<h2>" + _("Comments") + "</h2>" if !@comment.empty? || editable
+		ret	+= "<h2>" + _("Comments") if !@comment.empty? || editable
+			if $cgi.include?("comments_reverse")
+				ret	+= " <a class='comment_sort' href='?' title='"
+				ret += _("Sort oldest comment first") + "'>#{REVERSESORT}</a>" 
+			else
+				ret	+= " <a class='comment_sort' href='?comments_reverse' title='"
+				ret += _("Sort newest comment first") + "'>#{SORT}</a>"
+			end
+
+		if @comment.size > 5
+			ret += " <a class='top_bottom_ref' href='#comment#{@comment.size - 1}' title='"
+			ret += _("Go to last comment") + "'>#{GODOWN}</a>" 
+		end
+
+		ret	+= "</h2>" if !@comment.empty? || editable
 
 		unless @comment.empty?
-			@comment.each{|time,name,comment|
+			i = 0 # for commentanchor
+			c = @comment.dup
+			c.reverse! if $cgi.include?("comments_reverse")
+			c.each{|time,name,comment|
 				ret += "<form method='post' action='.'>"
-				ret += "<div class='textcolumn'><h3 class='comment'>"
+				ret += "<div class='textcolumn'><h3 class='comment' id='comment#{i}'>"
+				i += 1
 				ret += _("%{user} said on %{time}") % {:user => name, :time => time.strftime("%d.%m., %H:%M")}
 				if editable
 					ret += "<input type='hidden' name='delete_comment' value='#{time.strftime("%s")}' />"
@@ -318,6 +336,10 @@ TR
 				ret += "</form>"
 			}
 		end
+
+		ret += "<a class='top_bottom_ref' href='#top' title='"
+		ret += _("Go Up") + "'>#{GOUP}</a>" if @comment.size > 5
+
 		
 		if editable
 			# ADD COMMENT

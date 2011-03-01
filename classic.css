@@ -22,6 +22,10 @@
 	background-color: #FFF;
 }
 
+a.comment_sort, a.top_bottom_ref {
+	font-size: small;
+}
+
 
 td.ayes, td.bmaybe, td.cno { cursor:default; }
 td.ayes{ background-color:#0F0; }

@@ -1,5 +1,6 @@
 /***************************************************************************
-* Copyright 2009,2010 Benjamin Kellermann, Stefanie Pötzsch                *
+* Copyright 2009,2010,2011 Benjamin Kellermann                             *
+*           2010 Stefanie Pötzsch                                          *
 *                                                                          *
 * This file is part of dudle.                                              *
 *                                                                          *
@@ -30,6 +31,9 @@ text-decoration:none;
 a:hover, a:active {
 	color:#36c;
 	text-decoration:underline;
+}
+a.comment_sort, a.top_bottom_ref {
+	font-size: small;
 }
 
 td.ayes, td.bmaybe, td.cno { cursor:default;}

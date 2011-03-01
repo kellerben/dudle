@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-01-12 09:45+0100\n"
+"POT-Creation-Date: 2011-03-01 08:51+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
@@ -59,27 +59,27 @@ msgstr ""
 "Du kan få tillgång till koden om du använder <a href='http://bazaar-vcs."
 "org/'>bazaar</a>:"
 
-#: authorization_required.cgi:30 authorization_required.cgi:41
+#: authorization_required.cgi:36 authorization_required.cgi:53
 msgid "Authorization Required"
 msgstr ""
 
-#: authorization_required.cgi:33
+#: authorization_required.cgi:39
 msgid "The configuration of this Poll is protected by password!"
 msgstr ""
 
-#: authorization_required.cgi:35
+#: authorization_required.cgi:41
 msgid "This Poll is protected by password!"
 msgstr ""
 
-#: authorization_required.cgi:37
+#: authorization_required.cgi:43
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 
-#: authorization_required.cgi:42 not_found.cgi:33
+#: authorization_required.cgi:54 not_found.cgi:36
 msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
 
-#: authorization_required.cgi:43
+#: authorization_required.cgi:55
 msgid "You have to authorize in order to request this page!"
 msgstr ""
 
@@ -136,24 +136,24 @@ msgstr "Användarnamn:"
 msgid "Edit"
 msgstr "Redigera"
 
-#: customize.cgi:117 access_control.rb:123 customize.rb:117 poll.rb:293
+#: customize.cgi:117 access_control.rb:123 customize.rb:117 poll.rb:294
 msgid "Save"
 msgstr "Spara"
 
 #: customize.cgi:120 access_control.rb:119 customize.rb:120 delete_poll.rb:103
-#: poll.rb:313
+#: poll.rb:332
 msgid "Delete"
 msgstr "Radera"
 
-#: error.cgi:23
+#: error.cgi:25 error.cgi:27
 msgid "Error"
 msgstr ""
 
-#: error.cgi:41
+#: error.cgi:46
 msgid "The following error was printed:"
 msgstr ""
 
-#: error.cgi:45
+#: error.cgi:50
 msgid ""
 "Hi!\n"
 "\n"
@@ -168,21 +168,21 @@ msgid ""
 "Yours,\n"
 msgstr ""
 
-#: error.cgi:46
+#: error.cgi:51
 msgid "Bug in dudle"
 msgstr ""
 
-#: error.cgi:48
+#: error.cgi:53
 msgid ""
 "An error occured while executing dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
 
-#: error.cgi:51
+#: error.cgi:56
 msgid "Please include the following as well:"
 msgstr ""
 
-#: example.cgi:60 dudle.rb:66
+#: example.cgi:60 dudle.rb:88
 msgid "Examples"
 msgstr "Exempel"
 
@@ -243,30 +243,30 @@ msgstr "Bör innehålla bokstäver, nummer och tankestreck"
 msgid "Create"
 msgstr "Skapa"
 
-#: not_found.cgi:26
+#: not_found.cgi:29
 #, fuzzy
 msgid "Poll Not Found"
 msgstr "Inte vald"
 
-#: not_found.cgi:28
+#: not_found.cgi:31
 msgid "The requested Poll was not found."
 msgstr ""
 
-#: not_found.cgi:29
+#: not_found.cgi:32
 msgid "There are several reasons, why a Poll is deleted:"
 msgstr ""
 
-#: not_found.cgi:30
+#: not_found.cgi:33
 msgid "Somebody klicked on “Delete Poll” and deleted the poll manually."
 msgstr ""
 
-#: not_found.cgi:31
+#: not_found.cgi:34
 msgid ""
 "The Poll was deleted by the administrator because it was not accessed for a "
 "long time."
 msgstr ""
 
-#: not_found.cgi:32
+#: not_found.cgi:35
 msgid ""
 "If you think, the deletion was done by error, please contact the "
 "adminsistrator of the system."
@@ -349,11 +349,11 @@ msgstr "’Deltagare’ har bara access till gränssnittet för omröstning"
 msgid "Access control:"
 msgstr "Åtkomstkontroll:"
 
-#: config_sample.rb:86
+#: config_sample.rb:99
 msgid "Event Schedule Poll"
 msgstr "Händelseschema Omröstning"
 
-#: config_sample.rb:90
+#: config_sample.rb:103
 msgid "Normal Poll"
 msgstr "Normal omröstning"
 
@@ -429,63 +429,67 @@ msgid ""
 "form."
 msgstr "Om du vet vad du gör, vänligen skriv “%{question}” i formuläret."
 
-#: dudle.rb:57
+#: dudle.rb:72
 msgid "Home"
 msgstr "Hem"
 
-#: dudle.rb:67
-msgid "About"
-msgstr "Om"
-
-#: dudle.rb:85
-msgid "Customize"
-msgstr "Egna inställningar"
-
-#: dudle.rb:89
+#: dudle.rb:75
 msgid "Poll"
 msgstr "Omröstning"
 
-#: dudle.rb:90 history.rb:35
+#: dudle.rb:76 history.rb:35
 msgid "History"
 msgstr "Historia"
 
-#: dudle.rb:93
+#: dudle.rb:79
 msgid "Edit Columns"
 msgstr "Redigera kolumner"
 
-#: dudle.rb:94 invite_participants.rb:38
+#: dudle.rb:80 invite_participants.rb:38
 msgid "Invite Participants"
 msgstr "Bjud in deltagare"
 
-#: dudle.rb:95
+#: dudle.rb:81
 msgid "Access Control"
 msgstr "Åtkomstkontroll"
 
-#: dudle.rb:96
+#: dudle.rb:82
 msgid "Overview"
 msgstr "Översikt"
 
-#: dudle.rb:98
+#: dudle.rb:85
 msgid "Delete Poll"
 msgstr "Radera omröstning"
 
-#: dudle.rb:185 dudle.rb:203
+#: dudle.rb:89
+msgid "About"
+msgstr "Om"
+
+#: dudle.rb:91
+msgid "Customize"
+msgstr "Egna inställningar"
+
+#: dudle.rb:103
+msgid "Dudle Home"
+msgstr ""
+
+#: dudle.rb:200 dudle.rb:218
 msgid "Previous"
 msgstr "Föregående"
 
-#: dudle.rb:186 dudle.rb:204
+#: dudle.rb:201 dudle.rb:219
 msgid "Next"
 msgstr "Nästa"
 
-#: dudle.rb:187 dudle.rb:205
+#: dudle.rb:202 dudle.rb:220
 msgid "Finish"
 msgstr "Klar"
 
-#: dudle.rb:210
+#: dudle.rb:225
 msgid "All changes were saved sucessfully."
 msgstr "Alla ändringar sparades."
 
-#: dudle.rb:210
+#: dudle.rb:225
 msgid "Proceed!"
 msgstr "Fortsätt!"
 
@@ -563,102 +567,118 @@ msgstr "Redigera användare %{user}"
 msgid "Delete user %{user}..."
 msgstr "Redigera användare %{user}"
 
-#: poll.rb:137
+#: poll.rb:138
 msgid "Total"
 msgstr "Total"
 
-#: poll.rb:179
+#: poll.rb:180
 msgid "Invite"
 msgstr "Bjud in"
 
-#: poll.rb:180 pollhead.rb:62 timepollhead.rb:158
+#: poll.rb:181 pollhead.rb:62 timepollhead.rb:158
 msgid "Name"
 msgstr "Namn"
 
-#: poll.rb:225
+#: poll.rb:226
 msgid "Save Changes"
 msgstr "Spara ändringar"
 
-#: poll.rb:229
+#: poll.rb:230
 msgid "Cancel"
 msgstr ""
 
-#: poll.rb:251
+#: poll.rb:252
 #, fuzzy
 msgid "Do you really want to delete user %{user}?"
 msgstr "Redigera användare %{user}"
 
-#: poll.rb:254
+#: poll.rb:255
 msgid "Confirm"
 msgstr ""
 
-#: poll.rb:302
+#: poll.rb:303
 msgid "Comments"
 msgstr "Kommentarer"
 
-#: poll.rb:308
+#: poll.rb:306
+msgid "Sort oldest comment first"
+msgstr ""
+
+#: poll.rb:309
+msgid "Sort newest comment first"
+msgstr ""
+
+#: poll.rb:314
+msgid "Go to last comment"
+msgstr ""
+
+#: poll.rb:327
 msgid "%{user} said on %{time}"
 msgstr "sa %{user} %{time}"
 
-#: poll.rb:323
+#: poll.rb:341
+msgid "Go Up"
+msgstr ""
+
+#: poll.rb:346
 msgid "says"
 msgstr "säger"
 
-#: poll.rb:324
+#: poll.rb:347
 msgid "Submit Comment"
 msgstr "Skicka kommentarer"
 
-#: poll.rb:342
+#: poll.rb:365
 msgid "Show history items:"
 msgstr "Visa historik:"
 
-#: poll.rb:349
+#: poll.rb:372
 msgid "All"
 msgstr "Alla"
 
-#: poll.rb:350
+#: poll.rb:373
 msgid "Participant related"
 msgstr "Tillhörande deltagare"
 
-#: poll.rb:351
+#: poll.rb:374
 msgid "Column related"
 msgstr "Tillhörande kolumn"
 
-#: poll.rb:352
+#: poll.rb:375
 msgid "Comment related"
 msgstr "Tillhörande kommentar"
 
-#: poll.rb:353
+#: poll.rb:376
 msgid "Access Control related"
 msgstr "Tillhörande åtkomstkontroll"
 
-#: poll.rb:359
+#: poll.rb:382
 msgid "Update"
 msgstr "Uppdatera"
 
-#: pollhead.rb:88 timepollhead.rb:162
+#: pollhead.rb:87 timepollhead.rb:162
 msgid "Last Edit"
 msgstr "Senast ändrat"
 
-#: pollhead.rb:100
+#: pollhead.rb:99
 #, fuzzy
 msgid "Alternative"
 msgstr "Kolumntitel"
 
-#: pollhead.rb:101
+#: pollhead.rb:100
 #, fuzzy
 msgid "Description (optional)"
 msgstr "Beskrivning"
 
-#: pollhead.rb:102
+#: pollhead.rb:101
 msgid "Add/Edit Column"
 msgstr "Lägg till/redigera kolumn"
 
-#: pollhead.rb:103
+#: pollhead.rb:102
 msgid "Preview"
 msgstr "Förhandsgranska"
 
-#: pollhead.rb:104
+#: pollhead.rb:103
 msgid ""
 "Enter all alternatives (columns), you want to ask the participants of the "
 "poll. The participants will state one vote for every alternative you give "

@@ -27,6 +27,8 @@ if $USEUTF
 	NOSORT      = CGI.escapeHTML('▾▴')
 	SORT        = CGI.escapeHTML('▴')
 	REVERSESORT = CGI.escapeHTML('▾')
+	GODOWN      = CGI.escapeHTML('⇩')
+	GOUP        = CGI.escapeHTML('⇧')
 
 	YES      = CGI.escapeHTML('✔')
 	NO       = CGI.escapeHTML('✘')
@@ -48,6 +50,8 @@ else
 	NOSORT      = ''
 	SORT        = CGI.escapeHTML('^')
 	REVERSESORT = CGI.escapeHTML('reverse')
+	GODOWN      = CGI.escapeHTML('down')
+	GOUP        = CGI.escapeHTML('up')
 
 	YES      = CGI.escapeHTML('OK')
 	NO       = CGI.escapeHTML('NO')

@@ -221,7 +221,7 @@ tr.participantrow:hover {
 	background: #AAA;
 }
 
-div#add_comment,div#edit_column, div#history, div#backlink, input.delete_comment_button, tr#add_participant, div#configlink, div#tabs, p#history, span.edituser, span.sortsymb, div#languageChooser, input[type=submit], div#breadcrumbs {
+div#add_comment,div#edit_column, div#history, div#backlink, input.delete_comment_button, tr#add_participant, div#configlink, div#tabs, p#history, span.edituser, span.sortsymb, div#languageChooser, input[type=submit], div#breadcrumbs, a.comment_sort, a.top_bottom_ref {
 	display: none;
 }
 
