@@ -102,7 +102,7 @@ UNDOREDOREADY
 			<td>
 				<form method='post' action=''>
 					<div>
-						<input type='submit' title='#{title[button]}' value='#{localstr[button]}' #{disabled[button]} />
+						<input type='submit' title="#{CGI.escapeHTML(title[button].to_s)}" value='#{localstr[button]}' #{disabled[button]} />
 						<input type='hidden' name='undo_revision' value='#{undorevision[button]}' />
 						#{hidden["common"]}
 						#{hidden[button]}

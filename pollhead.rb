@@ -77,7 +77,7 @@ SORTSYMBOL
 				#{EDIT}
 			</a>|
 		<input style='padding:0;margin:0' title='#{deletestr}' class='delete' type='submit' value='#{DELETE}' />
-		<input type='hidden' name='deletecolumn' value='#{CGI.escapeHTML(CGI.escape(columntitle))}' />
+		<input type='hidden' name='deletecolumn' value="#{CGI.escapeHTML(columntitle)}" />
 	</div>
 </form>
 EDITDELETE
