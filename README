@@ -1,12 +1,12 @@
 Author:
-   Benjamin Kellermann <Benjamin dot Kellermann at tu-dresden in germany>
+   Benjamin Kellermann <Benjamin dot Kellermann at tu-dresden in Germany>
 Requirements:
  * ruby
  * git (preferred and default setting) or bzr
  * libgettext-ruby (for localization)
  * htdigest command line tool (sudo aptitude install apache2-utils)
 License: 
-   GNU AGPL v3 or higer
+   GNU AGPL v3 or higher
    see file License
 
 === Installation ===
@@ -18,10 +18,26 @@ License:
       make
    This requires libgettext-ruby-util, potool, and make to be installed.
    If this does not work for you, you can download the .mo files from another
-   server, e.g., put http://dudle.inf.tu-dresden.de/locale/de/dudle.mo
+   server, e.g., put https://dudle.inf.tu-dresden.de/locale/de/dudle.mo
    into the directory locale/de.
-5. In order to let access control work correcly, the webserver needs 
+5. In order to let access control work correctly, the webserver needs 
    auth_digest support. It therefore may help to type:
      sudo a2enmod auth_digest
 6. In order to get atom-feed support you need ruby-ratom to be installed.
      sudo gem install ratom
+
+=== Pimp your Installation ===
+ * If you want to create your own Stylesheet, you just have to put it in
+   the folder »$DUDLE_HOME_FOLDER/css/«. Afterwards you may config this one
+   to be the default Stylesheet. Examples can be found here:
+     https://dudle.inf.tu-dresden.de/css/
+   This is a bazaar repository as well, so you may branch it if you want…
+     cd $DUDLE_HOME_FOLDER/css
+     bzr branch https://dudle.inf.tu-dresden.de/css/ .
+   Send me your Stylesheet if you want it to appear at 
+   https://dudle.inf.tu-dresden.de
+ * If you want to extend the functionality you might want to place a file
+   »main.rb« in $DUDLE_HOME_FOLDER/extension/$YOUR_EXTENSION/main.rb
+   Examples can be found here:
+     https://dudle.inf.tu-dresden.de/unstable/extensions/
+   (which again is a repository ;--))
