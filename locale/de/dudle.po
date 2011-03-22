@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-03-01 08:51+0100\n"
-"PO-Revision-Date: 2011-03-01 08:55+0100\n"
+"PO-Revision-Date: 2011-03-18 16:55+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "Language: \n"
@@ -542,7 +542,7 @@ msgstr "Kommentar"
 
 #: overview.rb:31
 msgid "The link to your poll is:"
-msgstr "Die URL zu ihrer Umfrage ist:"
+msgstr "Die URL zu Ihrer Umfrage ist:"
 
 #: overview.rb:33
 msgid "Send this link via email..."
