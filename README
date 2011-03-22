@@ -1,8 +1,8 @@
 Author:
    Benjamin Kellermann <Benjamin dot Kellermann at tu-dresden in Germany>
 Requirements:
- * ruby
- * git (preferred and default setting) or bzr
+ * ruby >=1.8
+ * git >=1.6.5 (preferred and default setting) or bzr
  * libgettext-ruby (for localization)
  * htdigest command line tool (sudo aptitude install apache2-utils)
 License: 
