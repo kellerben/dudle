@@ -237,6 +237,7 @@ READY
 		@html << "<div id='languageChooser'><ul>"
 		lang = [
 			["en", "English"],
+			["fr", "Français"],
 			["de", "Deutsch"],
 			["cs", "Česky"],
 			["sv", "Svenska"]
