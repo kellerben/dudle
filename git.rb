@@ -35,7 +35,8 @@ class VCS
 	end
 
 	def VCS.revno
-		`#{GITCMD} log --oneline`.scan("\n").size
+		# there is a bug in git log --format, which supresses the \n on the last line
+		`#{GITCMD} log --format="format:x"`.scan("\n").size + 1
 	end
 
 	def VCS.cat revision, file

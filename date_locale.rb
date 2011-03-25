@@ -1,4 +1,4 @@
-#
+# coding: utf-8
 #Make a 'localization' for Date, DateTime and Time.
 #
 #This is not using locale, but if you use locale, it is detected and locale sensitive.
