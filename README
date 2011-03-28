@@ -8,7 +8,7 @@ Requirements:
 License: 
    GNU AGPL v3 or higher
    see file License
-
+ 
 === Installation ===
 1. Place this application into a directory where cgi-scripts are evaluated.
 2. Copy config_sample.rb to config.rb to start with a default configuration.
@@ -17,13 +17,15 @@ License:
    localization. Type:
       make
    This requires libgettext-ruby-util, potool, and make to be installed.
+     sudo aptitude install libgettext-ruby-util potool make
    If this does not work for you, you can download the .mo files from another
    server, e.g., put https://dudle.inf.tu-dresden.de/locale/de/dudle.mo
    into the directory locale/de.
 5. In order to let access control work correctly, the webserver needs 
    auth_digest support. It therefore may help to type:
      sudo a2enmod auth_digest
-6. In order to get atom-feed support you need ruby-ratom to be installed.
+6. In order to get atom-feed support you need ruby-ratom to be installed. E.g.:
+     sudo aptitude install rubygems ruby-dev libxml2-dev zlib1g-dev
      sudo gem install ratom
 
 === Pimp your Installation ===
