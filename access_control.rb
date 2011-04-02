@@ -105,7 +105,7 @@ PASS
 	ret += <<FORM
 	<tr>
 		<td></td>
-		<td class='shorttextcolumn'>#{acusers.include?(userarray[0]) ? "" : hint}</td>
+		<td id='#{userarray[0]}hint' class='shorttextcolumn'>#{acusers.include?(userarray[0]) ? "" : hint}</td>
 	</tr>
 	<tr>
 		<td></td>
