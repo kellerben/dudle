@@ -35,9 +35,9 @@ nextstr = _("To the Vote interface")
 subjectstr = _("Link to dudle poll about %{polltitle}") % {:polltitle => $d.title}
 
 $d << <<END
-<pre>#{SITEURL}</pre>
-<a href='mailto:?subject=#{CGI.escapeHTML(CGI.escape(subjectstr).gsub("+","%20"))}&amp;body=#{SITEURL}'>#{mailstr}</a>
-<form method='get' action='.'>
+<pre id="humanReadableURL">#{SITEURL}</pre>
+<a id="mailtoURL" href='mailto:?subject=#{CGI.escapeHTML(CGI.escape(subjectstr).gsub("+","%20"))}&amp;body=#{SITEURL}'>#{mailstr}</a>
+<form id='clickURL' method='get' action='.'>
 	<div style='margin-top:1ex'>
 		<input type='submit' value='#{nextstr}' />
 	</div>
