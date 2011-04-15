@@ -194,10 +194,25 @@ tr.participantrow{
 	background-color:#fff;
 }
 	
-td.sum, tr#summary { 
-	margin-top:5ex;
+tr#summary { 
 	background-color:#eee;
 }
+td.sum, tr#summary { 
+	margin-top:5ex;
+}
+td.sum{ color: #FFF}
+td.match_100{background-color: #000000; }
+td.match_90{ background-color: #111111; }
+td.match_80{ background-color: #222222; }
+td.match_70{ background-color: #333333; }
+td.match_60{ background-color: #444444; }
+td.match_50{ background-color: #555555; }
+td.match_40{ background-color: #666666; }
+td.match_30{ background-color: #777777; }
+td.match_20{ background-color: #888888; }
+td.match_10{ background-color: #999999; }
+td.match_0{  background-color: #AAAAAA; }
+
 	
 td.polls {
 	text-align:left;

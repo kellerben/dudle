@@ -150,24 +150,14 @@ class Poll
 			if @data.empty?
 				percent_f = 0
 			else
-				percent_f = 100*yes/@data.size
+				percent_f = 100.0*yes/@data.size
 			end
-			percent = "#{percent_f}%" unless @data.empty?
+			percent = "#{percent_f.round}%" unless @data.empty?
 			if undecided > 0
-				percent += "-#{(100.0*(undecided+yes)/@data.size).round}%"
+				percent += "-#{(100.0*(undecided+yes)/@data.size).round} %"
 			end
 
-			ret += "<td id='sum_#{column.to_htmlID}' class='sum' title='#{percent}' style='"
-			["","background-"].each {|c|
-				ret += "#{c}color: rgb("
-				3.times{ 
-					ret += (c == "" ? "#{155+percent_f}" : "#{100-percent_f}")
-					ret += ","
-				}
-				ret.chop!
-				ret += ");"
-			}
-			ret += "'>#{yes}</td>\n"
+			ret += "<td id='sum_#{column.to_htmlID}' class='sum match_#{(percent_f/10).round*10}' title='#{percent}'>#{yes}</td>\n"
 		}
 
 		ret += "<td class='invisible'></td></tr>"

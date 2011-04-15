@@ -140,7 +140,7 @@ td {
 	padding-right: 3px;
 }
 
-td.sum, tr.participantrow, tr#add_participant, tr#summary { 
+tr.participantrow, tr#add_participant, tr#summary { 
 	background-color:Silver;
 }
 
