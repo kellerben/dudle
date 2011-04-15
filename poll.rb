@@ -46,9 +46,9 @@ class String
 end
 class Poll
 	attr_reader :head, :name
-	YESVAL   = "ayes"
-	MAYBEVAL = "bmaybe"
-	NOVAL    = "cno"
+	YESVAL   = "a_yes__"
+	MAYBEVAL = "b_maybe"
+	NOVAL    = "c_no___"
 	def initialize name,type
 		@name = name
 
@@ -112,17 +112,19 @@ class Poll
 				ret += "<tr class='participantrow'>\n"
 				ret += userstring(participant,showparticipation)
 				@head.columns.each{|column|
-					klasse = poll[column]
-					case klasse
+					case poll[column]
 					when nil
 						value = UNKNOWN
 						klasse = "undecided"
-					when YESVAL
+					when /yes/ # allow anything containing yes (backward compatibility)
 						value = YES
-					when NOVAL
+						klasse = YESVAL
+					when /no/
 						value = NO
-					when MAYBEVAL
+						klasse = NOVAL
+					when /maybe/
 						value = MAYBE
+						klasse = MAYBEVAL
 					end
 					ret += "<td class='#{klasse}' title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(column.to_s)}\">#{value}</td>\n"
 				}
@@ -140,9 +142,9 @@ class Poll
 			yes = 0
 			undecided = 0
 			@data.each_value{|participant|
-				if participant[column] == YESVAL
+				if participant[column] =~ /yes/
 					yes += 1
-				elsif !participant.has_key?(column) or participant[column] == MAYBEVAL
+				elsif !participant.has_key?(column) or participant[column] =~ /maybe/
 					undecided += 1
 				end
 			}

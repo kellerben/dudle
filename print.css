@@ -153,9 +153,9 @@ tr#summary td.sum[title|='0%']{
 }
 
 
-td.ayes, input.chosen  { background-color:#9c6; }
-td.cno { background-color:#F96; }
-td.bmaybe { background-color:#FF6; }
+td.a_yes__, input.chosen  { background-color:#9c6; }
+td.c_no___ { background-color:#F96; }
+td.b_maybe { background-color:#FF6; }
 td.undecided { background-color:#DDD;color:#666 }
 
 td.name {
