@@ -66,7 +66,7 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 				File.open(f,"w").close
 				VCS.add(f)
 			}
-			Poll.new(POLLTITLE,$cgi["poll_type"])
+			Poll.new(CGI.escapeHTML(POLLTITLE),$cgi["poll_type"])
 			Dir.chdir("..")
 			$d.html.header["status"] = "REDIRECT"
 			$d.html.header["Cache-Control"] = "no-cache"
