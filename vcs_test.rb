@@ -24,7 +24,7 @@ unless ARGV[0]
 	puts "Usage: ruby #{$0} (git|bzr)" 
 	exit
 end
-require ARGV[0]
+require "vcs_#{ARGV[0]}"
 require "benchmark"
 
 class VCS_test < Test::Unit::TestCase

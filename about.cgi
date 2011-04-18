@@ -32,9 +32,9 @@ $d << "<div><h2>" + _("--verbose") + "</h2>"
 $d << _("The sourcecode of this application is available under the terms of <a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>") 
 $d << "<br />"
 $d << _("You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</a>:")
-$d << "<pre>bzr branch #{SITEURL} dudle</pre></div>"
+$d << "<pre>bzr branch #{$conf.siteurl} dudle</pre></div>"
 
-$d << ABOUTNOTICE
+$d << $conf.aboutnotice
 
 $d.out
 end

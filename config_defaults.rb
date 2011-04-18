@@ -1,5 +1,4 @@
-#!/usr/bin/env ruby
-
+# coding: utf-8
 ############################################################################
 # Copyright 2009,2010 Benjamin Kellermann                                  #
 #                                                                          #
@@ -19,32 +18,61 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-if __FILE__ == $0
+require "ostruct"
+$conf = OpenStruct.new
 
-load "../dudle.rb"
+$conf.vcs = "git"
 
-$d = Dudle.new
+case $cgi.server_port
+when 80
+	protocol = "http"
+	port = ""
+when 443
+	protocol = "https"
+	port = ""
+else
+	protocol = "http"
+	port = ":#{$cgi.server_port}"
+end
+$conf.siteurl = "#{protocol}://#{$cgi.server_name}#{port}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
 
-$d.wizzard_redirect
+$conf.breadcrumbs = []
+
+$conf.errorlog = ""
+$conf.bugreportmail = "Benjamin.Kellermann@tu-dresden.de"
+$conf.auto_send_report = false
+
+$conf.indexnotice = <<INDEXNOTICE
+<h2>Available Polls</h2>
+<table>
+	<tr>
+		<th>Poll</th><th>Last change</th>
+	</tr>
+INDEXNOTICE
+Dir.glob("*/data.yaml").sort_by{|f|
+	File.new(f).mtime
+}.reverse.collect{|f| f.gsub(/\/data\.yaml$/,'') }.each{|site|
+	$conf.indexnotice += <<INDEXNOTICE
+<tr class='participantrow'>
+	<td class='polls'><a href='./#{CGI.escapeHTML(site).gsub("'","%27")}/'>#{CGI.escapeHTML(site)}</a></td>
+	<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>
+</tr>
+INDEXNOTICE
+}
+$conf.indexnotice += "</table>"
+
+$conf.examples = []
+
+$conf.examplenotice = ""
+
+$conf.aboutnotice = ""
+
+$conf.default_css = "default.css"
 
 
-$d << _("The link to your poll is:")
-
-mailstr = _("Send this link via email...")
-nextstr = _("To the Vote interface")
-subjectstr = _("Link to dudle poll about %{polltitle}") % {:polltitle => $d.title}
-
-$d << <<END
-<pre id="humanReadableURL">#{$conf.siteurl}</pre>
-<a id="mailtoURL" href='mailto:?subject=#{CGI.escapeHTML(CGI.escape(subjectstr).gsub("+","%20"))}&amp;body=#{$conf.siteurl}'>#{mailstr}</a>
-<form id='clickURL' method='get' action='.'>
-	<div style='margin-top:1ex'>
-		<input type='submit' value='#{nextstr}' />
-	</div>
-</form>
-END
-
-$d.out
+if File.exists?("config.rb")
+	require "config"
 end
 
+require "vcs_#{$conf.vcs}"
 

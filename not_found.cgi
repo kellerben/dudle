@@ -47,7 +47,7 @@ $d << <<END
 		</ul>
 		#{str[4]}
 		<ul>
-			<li><a href='#{SITEURL}'>#{str[5]}</a></li>
+			<li><a href='#{$conf.siteurl}'>#{str[5]}</a></li>
 		</ul>
 		</p>
 END

@@ -11,7 +11,9 @@ License:
  
 === Installation ===
 1. Place this application into a directory where cgi-scripts are evaluated.
-2. Copy config_sample.rb to config.rb to start with a default configuration.
+2. If you want to change some configuration, state it in the file »config.rb«
+   (see config_sample.rb for help)
+   to start with a default configuration.
 3. The webserver needs the permission to write into the directory 
 4. You have to build a .mo file from the .po file in order to use the 
    localization. Type:

@@ -32,11 +32,11 @@ def urlescape(str)
 end
 
 
-if defined?(ERRORLOG)
+if File.exists?($conf.errorlog)
 	begin
-		a = File.open(ERRORLOG,"r").to_a
+		a = File.open($conf.errorlog,"r").to_a
 	rescue Exception => e
-		errorstr = "Exception while opening #{ERRORLOG}:\n#{e}"
+		errorstr = "Exception while opening #{$conf.errorlog}:\n#{e}"
 	else
 		s = [a.pop]
 		s << a.pop while s.last.scan(/^\[([^\]]*)\] \[/).flatten[0] == a.last.scan(/^\[([^\]]*)\] \[/).flatten[0] || a.last =~ /^[^\[]/
@@ -47,10 +47,10 @@ if defined?(ERRORLOG)
 
 end
 
-	errormessagebody = _("Hi!\n\nI found a bug in your application at %{urlofsite}.\nI did the following:\n\n<please describe what you did>\n<e.g., I wanted to sent a comment to the poll.>\n\nI am using <please state your browser and operating system>\n%{errormessage}\nYours,\n") % {:errormessage => errormessage, :urlofsite => SITEURL}
+	errormessagebody = _("Hi!\n\nI found a bug in your application at %{urlofsite}.\nI did the following:\n\n<please describe what you did>\n<e.g., I wanted to sent a comment to the poll.>\n\nI am using <please state your browser and operating system>\n%{errormessage}\nYours,\n") % {:errormessage => errormessage, :urlofsite => $conf.siteurl}
 	subject = _("Bug in dudle")
 
-	$d << _("An error occured while executing dudle.<br/>Please send an error report, including your browser, operating system, and what you did to %{admin}.") % {:admin => "<a href='mailto:#{BUGREPORTMAIL}?subject=#{urlescape(subject)}&amp;body=#{urlescape(errormessagebody)}'>#{BUGREPORTMAIL}</a>"}
+	$d << _("An error occured while executing dudle.<br/>Please send an error report, including your browser, operating system, and what you did to %{admin}.") % {:admin => "<a href='mailto:#{$conf.bugreportmail}?subject=#{urlescape(subject)}&amp;body=#{urlescape(errormessagebody)}'>#{$conf.bugreportmail}</a>"}
 
 if (errorstr)
 	errorheadstr = _("Please include the following as well:")
@@ -64,13 +64,13 @@ end
 $d.out
 
 
-if AUTO_SEND_REPORT
+if $conf.auto_send_report
 	tmpfile = "/tmp/error.#{rand(10000)}"
 	File.open(tmpfile,"w"){|f| 
 		f << errorstr
 	}
 
-	`mail -s "Bug in dudle" #{BUGREPORTMAIL} < #{tmpfile}`
+	`mail -s "Bug in dudle" #{$conf.bugreportmail} < #{tmpfile}`
 
 	File.delete(tmpfile)
 

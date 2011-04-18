@@ -44,7 +44,7 @@ require "date_locale"
 
 require "html"
 require "poll"
-require "config"
+require "config_defaults"
 require "charset"
 
 class Dudle
@@ -96,11 +96,7 @@ class Dudle
 		@requested_revision || VCS.revno
 	end
 	def breadcrumbs
-		if defined?(BREADCRUMBS)
-			crumbs = BREADCRUMBS
-		else
-			crumbs = []
-		end
+		crumbs = $conf.breadcrumbs
 		crumbs << "<a href='#{@basedir}'>" + _("Dudle Home") + "</a>"
 		if is_poll?
 			if @tab == "."
@@ -157,10 +153,10 @@ class Dudle
 		}
 		if $cgi.include?("css")
 			@user_css = $cgi["css"] 
-			@html.add_cookie("css",@user_css,"/",Time.now + (1*60*60*24*365 * (@user_css == DEFAULT_CSS ? -1 : 1 )))
+			@html.add_cookie("css",@user_css,"/",Time.now + (1*60*60*24*365 * (@user_css == $conf.default_css ? -1 : 1 )))
 		else
 			@user_css = $cgi.cookies["css"][0]
-			@user_css ||= DEFAULT_CSS
+			@user_css ||= $conf.default_css
 		end
 
 		if $cgi.user_agent =~ /.*MSIE [567]\..*/

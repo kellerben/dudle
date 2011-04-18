@@ -22,12 +22,12 @@
 if __FILE__ == $0
 
 
-if File.exists?("config.rb")
+# if File.exists?("config.rb")
 	require "dudle"
-else
-	puts "\nPlease configure me in the file config.rb"
-	exit
-end
+# else
+#   puts "\nPlease configure me in the file config.rb"
+#   exit
+# end
 
 $d = Dudle.new
 
@@ -70,7 +70,7 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 			Dir.chdir("..")
 			$d.html.header["status"] = "REDIRECT"
 			$d.html.header["Cache-Control"] = "no-cache"
-			$d.html.header["Location"] = SITEURL + POLLURL + "/edit_columns.cgi"
+			$d.html.header["Location"] = $conf.siteurl + POLLURL + "/edit_columns.cgi"
 			$d << _("The poll was created successfully. The link to your new poll is: %{link}") % {:link => "<br /><a href=\"#{POLLURL}\">#{POLLURL}</a>"}
 		end
 	end
@@ -114,7 +114,7 @@ unless $d.html.header["status"] == "REDIRECT"
 	<span class='hint'>#{customaddrhintstr}</span></td>
 </tr>
 <tr>
-	<td colspan='2'><label for="poll_url">#{SITEURL}</label><input id="poll_url" size='16' type='text' name='poll_url' value="#{CGI.escapeHTML($cgi["poll_url"])}" />
+	<td colspan='2'><label for="poll_url">#{$conf.siteurl}</label><input id="poll_url" size='16' type='text' name='poll_url' value="#{CGI.escapeHTML($cgi["poll_url"])}" />
 	</td>
 </tr>
 CREATE
@@ -133,7 +133,7 @@ NOTICE
 CREATE
 
 
-	$d << INDEXNOTICE
+	$d << $conf.indexnotice
 end
 
 $d.out

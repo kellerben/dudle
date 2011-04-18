@@ -55,8 +55,8 @@ end
 if edit
 	$d.html.header["status"] = "REDIRECT"
 	$d.html.header["Cache-Control"] = "no-cache"
-	$d.html.header["Location"] = SITEURL 
-	$d << _("The changes were saved, you should be redirected to %{link}.") % {:link => "<a href=\"#{SITEURL}\">#{SITEURL}</a>"}
+	$d.html.header["Location"] = $conf.siteurl 
+	$d << _("The changes were saved, you should be redirected to %{link}.") % {:link => "<a href=\"#{$conf.siteurl}\">#{$conf.siteurl}</a>"}
 
 else
 

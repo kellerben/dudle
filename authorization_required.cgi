@@ -56,7 +56,7 @@ else
 	$d << <<END
 	<p>#{authstr}</p>
 	<ul>
-		<li><a href='#{SITEURL}'>#{returnstr}</a></li>
+		<li><a href='#{$conf.siteurl}'>#{returnstr}</a></li>
 	</ul>
 	</p>
 END

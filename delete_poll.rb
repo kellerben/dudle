@@ -40,7 +40,7 @@ if $cgi.include?("confirmnumber")
 		if $cgi.include?("return")
 			$d.html.header["status"] = "REDIRECT"
 			$d.html.header["Cache-Control"] = "no-cache"
-			$d.html.header["Location"] = SITEURL + $cgi["return"]
+			$d.html.header["Location"] = $conf.siteurl + $cgi["return"]
 			$d.out
 			exit
 		end
