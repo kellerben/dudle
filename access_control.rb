@@ -64,7 +64,7 @@ HTACCESS
 end
 def add_to_htdigest(user,password)
 	fork {
-		IO.popen("htdigest .htdigest dudle #{user}","w+"){|htdigest|
+		IO.popen("htdigest .htdigest dudle #{user} 2>/dev/null","w+"){|htdigest|
 			htdigest.sync
 			htdigest.puts(password)
 			htdigest.puts(password)
