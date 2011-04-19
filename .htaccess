@@ -1,8 +1,17 @@
-<Files ~ "^\.ht.*">
+<FilesMatch "^\.ht.*">
 	deny from all
 	satisfy all
-	ErrorDocument 403 "You are not allowed to access .ht* files!"
-</Files>
+	ErrorDocument 403 "Access to these files is forbidden!"
+</FilesMatch>
+
+<FilesMatch "^data.yaml$">
+	deny from all
+	satisfy all
+	ErrorDocument 403 "Access to these files is forbidden!"
+</FilesMatch>
+
+RewriteEngine On
+RewriteRule \.git.* /data.yaml
 
 Options +ExecCGI
 AddHandler cgi-script .cgi
