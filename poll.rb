@@ -33,7 +33,7 @@ class String
 		if @@htmlidcache[self]
 			id = @@htmlidcache[self]
 		else
-			id = self.gsub(/[^A-Za-z0-9_:.\-]/,".")
+			id = self.gsub(/[^A-Za-z0-9_\-]/,"_")
 			if @@htmlidncache[id]
 				@@htmlidncache[id] += 1
 				id += @@htmlidncache[id].to_s
