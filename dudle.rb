@@ -187,7 +187,7 @@ HEAD
 		# init extenisons #
 		###################
 		@extensions = []
-		Dir.open("#{@basedir}/extensions/").each{|f|
+		Dir.open("#{@basedir}/extensions/").sort.each{|f|
 			@extensions << f if File.exists?("#{@basedir}/extensions/#{f}/main.rb")
 		}
 	end
@@ -260,6 +260,7 @@ READY
 FOOT
 		@extensions.each{|e|
 			if File.exists?("#{@basedir}/extensions/#{e}/main.rb")
+				$current_ext_dir = e
 				require "#{@basedir}/extensions/#{e}/main"
 			end
 		}
