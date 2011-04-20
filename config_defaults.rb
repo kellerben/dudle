@@ -70,7 +70,7 @@ $conf.aboutnotice = ""
 $conf.default_css = "default.css"
 
 
-if File.exists?("config.rb")
+if File.exists?("config.rb") || File.exists?("../config.rb")
 	require "config"
 end
 

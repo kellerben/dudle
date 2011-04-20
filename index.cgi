@@ -22,12 +22,7 @@
 if __FILE__ == $0
 
 
-# if File.exists?("config.rb")
-	require "dudle"
-# else
-#   puts "\nPlease configure me in the file config.rb"
-#   exit
-# end
+require "dudle"
 
 $d = Dudle.new
 
