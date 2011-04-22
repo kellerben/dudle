@@ -34,7 +34,7 @@ Dir.chdir("..")
 def _(string)
 	string
 end
-load "config.rb"
+require "config_defaults"
 require "poll"
 Dir.chdir(olddir)
 
