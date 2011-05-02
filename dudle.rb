@@ -170,11 +170,10 @@ class Dudle
 
 		@html << <<HEAD
 <body><div id="top"></div>
-<div id='header1'></div>
-<div id='header2'></div>
-<div id='header3'></div>
-<div id='header4'></div>
-<div id='header5'></div>
+HEAD
+		$conf.header.each{|h| @html << h }
+
+		@html << <<HEAD
 #{breadcrumbs}
 <div id='main'>
 #{tabs_to_html(@tab)}
@@ -251,13 +250,7 @@ READY
 		@html << "</ul></div>" # languageChooser
 
 		@html << "</div>" # main
-		@html << <<FOOT
-<div id='footer1'></div>
-<div id='footer2'></div>
-<div id='footer3'></div>
-<div id='footer4'></div>
-<div id='footer5'></div>
-FOOT
+		$conf.footer.each{|f| @html << f }
 		@extensions.each{|e|
 			if File.exists?("#{@basedir}/extensions/#{e}/main.rb")
 				$current_ext_dir = e
