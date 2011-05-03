@@ -1,5 +1,5 @@
 # ######################################################################## #
-# Copyright 2011 Eric Seigne, Florent Fourcot                              #
+# Copyright 2011 Eric Seigne, Florent Fourcot, Gilles Seban                #
 #                                                                          #
 # This file is part of dudle.                                              #
 #                                                                          #
@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-03-01 08:51+0100\n"
-"PO-Revision-Date: 2011-04-11 15:15+0100\n"
-"Last-Translator: Florent Fourcot\n"
+"PO-Revision-Date: 2011-05-03 16:46+0100\n"
+"Last-Translator: Gilles Seban\n"
 "Language-Team: \n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgstr "Autorisation requise"
 
 #: authorization_required.cgi:39
 msgid "The configuration of this Poll is protected by password!"
-msgstr "La configuration de ce sondage est protégé par un mot de passe !"
+msgstr "La configuration de ce sondage est protégée par un mot de passe !"
 
 #: authorization_required.cgi:41
 msgid "This Poll is protected by password!"
@@ -83,7 +83,7 @@ msgstr "Préférences"
 #: customize.cgi:32
 #: customize.rb:32
 msgid "You need cookies enabled in order to personalize your settings."
-msgstr "Les cookies doivent être activés pour activer les préférences."
+msgstr "Les cookies doivent être activés pour personnaliser vos préférences."
 
 #: customize.cgi:39
 #: customize.rb:39
