@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-03-01 08:51+0100\n"
+"POT-Creation-Date: 2011-05-10 23:12+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
@@ -60,7 +60,7 @@ msgstr ""
 "Zdrojový kód lze získat pomocí nástroje <a href='http://bazaar-vcs."
 "org/'>bazaar</a>:"
 
-#: authorization_required.cgi:36 authorization_required.cgi:53
+#: authorization_required.cgi:36 authorization_required.cgi:52
 msgid "Authorization Required"
 msgstr ""
 
@@ -76,11 +76,11 @@ msgstr ""
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 
-#: authorization_required.cgi:54 not_found.cgi:36
+#: authorization_required.cgi:53 not_found.cgi:36
 msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Návrat zpět na domovskou stránku dudle a naplánovat nové hlasování"
 
-#: authorization_required.cgi:55
+#: authorization_required.cgi:54
 msgid "You have to authorize in order to request this page!"
 msgstr ""
 
@@ -137,12 +137,12 @@ msgstr "Uživatelské jméno:"
 msgid "Edit"
 msgstr "Upravit"
 
-#: customize.cgi:117 access_control.rb:123 customize.rb:117 poll.rb:294
+#: customize.cgi:117 access_control.rb:123 customize.rb:117 poll.rb:286
 msgid "Save"
 msgstr "Uložit"
 
 #: customize.cgi:120 access_control.rb:119 customize.rb:120 delete_poll.rb:103
-#: poll.rb:332
+#: poll.rb:324
 msgid "Delete"
 msgstr "Smazat"
 
@@ -183,7 +183,7 @@ msgstr ""
 msgid "Please include the following as well:"
 msgstr ""
 
-#: example.cgi:60 dudle.rb:88
+#: example.cgi:60 dudle.rb:89
 msgid "Examples"
 msgstr "Příklady"
 
@@ -195,52 +195,52 @@ msgstr ""
 "Pokud si chceš pohrát s tímto nástrojem, možná se ti budou hodit tyto "
 "příklady hlasování:"
 
-#: index.cgi:37
+#: index.cgi:32
 msgid "Please enter a descriptive title."
 msgstr "Prosím vložit popisný nadpis."
 
-#: index.cgi:53
+#: index.cgi:48
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr "Volitelná adresa může obsahovat pouze písmena, čísla a pomlčky."
 
-#: index.cgi:55
+#: index.cgi:50
 msgid "A Poll with this address already exists."
 msgstr "Hlasování s touto adresou již existuje."
 
-#: index.cgi:74
+#: index.cgi:69
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr "Hlasování bylo úspěšně vytvořeno. Odkaz k novému hlasování je: %{link}"
 
-#: index.cgi:81
+#: index.cgi:76
 msgid "Create New Poll"
 msgstr "Vytvořit nové hlasování"
 
-#: index.cgi:83
+#: index.cgi:78
 msgid "Title"
 msgstr "Název"
 
-#: index.cgi:84
+#: index.cgi:79
 msgid "Type"
 msgstr "Typ"
 
-#: index.cgi:85
+#: index.cgi:80
 msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Hlasování plánované události"
 
-#: index.cgi:86
+#: index.cgi:81
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Normální hlasování (např. hlasování, která káva je nejlepší)"
 
-#: index.cgi:87
+#: index.cgi:82
 msgid "Custom address (optional)"
 msgstr "Volitelná adresa (nepovinné)"
 
-#: index.cgi:88
+#: index.cgi:83
 msgid "May contain letters, numbers, and dashes."
 msgstr "Muže obsahovat písmena, čísla a pomlčky."
 
-#: index.cgi:90
+#: index.cgi:85
 msgid "Create"
 msgstr "Vytvořit"
 
@@ -258,7 +258,7 @@ msgid "There are several reasons, why a Poll is deleted:"
 msgstr ""
 
 #: not_found.cgi:33
-msgid "Somebody klicked on “Delete Poll” and deleted the poll manually."
+msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
 msgstr ""
 
 #: not_found.cgi:34
@@ -348,14 +348,6 @@ msgstr "Pouze uživatel ‘účastník’ má přístup k hlasovacímu rozhraní
 msgid "Access control:"
 msgstr "Řízení přístupu:"
 
-#: config_sample.rb:99
-msgid "Event Schedule Poll"
-msgstr "Hlasování Plánu Události"
-
-#: config_sample.rb:103
-msgid "Normal Poll"
-msgstr "Normální Hlasování"
-
 #: delete_poll.rb:29
 msgid "Yes, I know what I am doing!"
 msgstr "Ano, jsem si vědom toho, co dělám!"
@@ -429,67 +421,67 @@ msgstr ""
 "Pokud chceš opravdu vykonat tuto akci, prosím napiš do vstupního pole "
 "“%{question}”."
 
-#: dudle.rb:72
+#: dudle.rb:73
 msgid "Home"
 msgstr "Domů"
 
-#: dudle.rb:75
+#: dudle.rb:76
 msgid "Poll"
 msgstr "Hlasování"
 
-#: dudle.rb:76 history.rb:35
+#: dudle.rb:77 history.rb:35
 msgid "History"
 msgstr "Historie"
 
-#: dudle.rb:79
+#: dudle.rb:80
 msgid "Edit Columns"
 msgstr "Edituj sloupce"
 
-#: dudle.rb:80 invite_participants.rb:38
+#: dudle.rb:81 invite_participants.rb:38
 msgid "Invite Participants"
 msgstr "Pozvat účastníky"
 
-#: dudle.rb:81
+#: dudle.rb:82
 msgid "Access Control"
 msgstr "Řízení Přístupu"
 
-#: dudle.rb:82
+#: dudle.rb:83
 msgid "Overview"
 msgstr "Přehled"
 
-#: dudle.rb:85
+#: dudle.rb:86
 msgid "Delete Poll"
 msgstr "Smazat hlasování"
 
-#: dudle.rb:89
+#: dudle.rb:90
 msgid "About"
 msgstr "O aplikaci"
 
-#: dudle.rb:91
+#: dudle.rb:92
 msgid "Customize"
 msgstr "Přizpůsobit"
 
-#: dudle.rb:103
+#: dudle.rb:100
 msgid "Dudle Home"
 msgstr ""
 
-#: dudle.rb:200 dudle.rb:218
+#: dudle.rb:196 dudle.rb:214
 msgid "Previous"
 msgstr "Předchozí"
 
-#: dudle.rb:201 dudle.rb:219
+#: dudle.rb:197 dudle.rb:215
 msgid "Next"
 msgstr "Následující"
 
-#: dudle.rb:202 dudle.rb:220
+#: dudle.rb:198 dudle.rb:216
 msgid "Finish"
 msgstr "Dokončit"
 
-#: dudle.rb:225
+#: dudle.rb:221
 msgid "All changes were saved sucessfully."
 msgstr "Všechny změny byly úspěšně uloženy."
 
-#: dudle.rb:225
+#: dudle.rb:221
 msgid "Proceed!"
 msgstr "Vykonat!"
 
@@ -567,92 +559,92 @@ msgstr "Upravit uživatele %{user}"
 msgid "Delete user %{user}..."
 msgstr "Upravit uživatele %{user}"
 
-#: poll.rb:138
+#: poll.rb:140
 #, fuzzy
 msgid "Total"
 msgstr "celkem"
 
-#: poll.rb:180
+#: poll.rb:172
 msgid "Invite"
 msgstr "Pozvat"
 
-#: poll.rb:181 pollhead.rb:62 timepollhead.rb:158
+#: poll.rb:173 pollhead.rb:62 timepollhead.rb:158
 msgid "Name"
 msgstr "Jméno"
 
-#: poll.rb:226
+#: poll.rb:218
 msgid "Save Changes"
 msgstr "Uložit Změny"
 
-#: poll.rb:230
+#: poll.rb:222
 msgid "Cancel"
 msgstr ""
 
-#: poll.rb:252
+#: poll.rb:244
 msgid "Do you really want to delete user %{user}?"
 msgstr ""
 
-#: poll.rb:255
+#: poll.rb:247
 msgid "Confirm"
 msgstr ""
 
-#: poll.rb:303
+#: poll.rb:295
 msgid "Comments"
 msgstr "Komentáře"
 
-#: poll.rb:306
+#: poll.rb:298
 msgid "Sort oldest comment first"
 msgstr ""
 
-#: poll.rb:309
+#: poll.rb:301
 msgid "Sort newest comment first"
 msgstr ""
 
-#: poll.rb:314
+#: poll.rb:306
 msgid "Go to last comment"
 msgstr ""
 
-#: poll.rb:327
+#: poll.rb:319
 msgid "%{user} said on %{time}"
 msgstr "%{user} řekl v %{time}"
 
-#: poll.rb:341
+#: poll.rb:334
 msgid "Go Up"
 msgstr ""
 
-#: poll.rb:346
+#: poll.rb:340
 msgid "says"
 msgstr "říká"
 
-#: poll.rb:347
+#: poll.rb:341
 msgid "Submit Comment"
 msgstr "Odešli Komentář"
 
-#: poll.rb:365
+#: poll.rb:359
 msgid "Show history items:"
 msgstr "Zobraz položky historie"
 
-#: poll.rb:372
+#: poll.rb:366
 msgid "All"
 msgstr "Vše"
 
-#: poll.rb:373
+#: poll.rb:367
 msgid "Participant related"
 msgstr "Související s účastníkem"
 
-#: poll.rb:374
+#: poll.rb:368
 msgid "Column related"
 msgstr "Související se sloupcem"
 
-#: poll.rb:375
+#: poll.rb:369
 msgid "Comment related"
 msgstr "Související s komentářem"
 
-#: poll.rb:376
+#: poll.rb:370
 msgid "Access Control related"
 msgstr "Související s řízením přistupu"
 
-#: poll.rb:382
+#: poll.rb:376
 msgid "Update"
 msgstr "Aktualizace"
 
@@ -748,6 +740,12 @@ msgstr "Přidat"
 #: timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "např. 09:30, ráno, odpoledne"
+
+#~ msgid "Event Schedule Poll"
+#~ msgstr "Hlasování Plánu Události"
+
+#~ msgid "Normal Poll"
+#~ msgstr "Normální Hlasování"
 
 #~ msgid "Reload"
 #~ msgstr "Obnovit"

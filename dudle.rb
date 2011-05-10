@@ -235,6 +235,7 @@ READY
 			["en", "English"],
 			["fr", "Français"],
 			["de", "Deutsch"],
+			["it", "Italiano"],
 			["cs", "Česky"],
 			["sv", "Svenska"]
 			]

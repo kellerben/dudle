@@ -30,7 +30,7 @@ title = _("Poll Not Found")
 
 str = [_("The requested Poll was not found."),
        _("There are several reasons, why a Poll is deleted:"),
-       _("Somebody klicked on “Delete Poll” and deleted the poll manually."),
+       _("Somebody clicked on “Delete Poll” and deleted the poll manually."),
        _("The Poll was deleted by the administrator because it was not accessed for a long time."),
        _("If you think, the deletion was done by error, please contact the adminsistrator of the system."),
        _("Return to dudle home and Schedule a new Poll")]
