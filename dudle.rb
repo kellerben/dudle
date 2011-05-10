@@ -22,7 +22,7 @@ $KCODE = "u"
 require "yaml"
 require "cgi"
 
-$cgi = CGI.new
+$cgi = CGI.new unless $cgi
 
 require 'gettext'
 require 'gettext/cgi'

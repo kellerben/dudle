@@ -45,7 +45,6 @@ if $cgi.include?("poll")
 		$d.out
 
 	else
-		$cgi = CGI.new
 		$cgi.out({"status" => "BAD_REQUEST"}){""}
 	end
 
