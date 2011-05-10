@@ -336,7 +336,6 @@ pre#configwarning {
 
 .warning, .error{
 	color: red;
-	text-align: left;
 }
 
 h1{

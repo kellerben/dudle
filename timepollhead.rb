@@ -435,8 +435,8 @@ END
 END
 		}
 
-		ret += "</tr><tr><td colspan='#{days.size+1}' class='error'>#{@edit_column_error}</td>" if @edit_column_error
 		ret += "</tr></table>"
+		ret += "<div class='error textcolumn'>#{@edit_column_error}</div>" if @edit_column_error
 		end
 		ret += "</td></tr></table>"
 		ret
