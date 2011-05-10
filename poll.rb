@@ -340,7 +340,7 @@ TR
 			saysstr = _("says")
 			submitstr = _("Submit Comment")
 			ret += <<ADDCOMMENT
-<form method='post' action='.' accept-charset='utf-8'>
+<form method='post' action='.' accept-charset='utf-8' id='newcomment'>
 	<div class='comment' id='add_comment'>
 		<input value='#{$cgi.cookies["username"][0] || "Anonymous"}' type='text' name='commentname' size='9' /> #{saysstr}&nbsp;
 		<br />
