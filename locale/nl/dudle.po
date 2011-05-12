@@ -1,0 +1,762 @@
+# ###########################################################################
+# Copyright 2011 Joeri de Ruiter                                           #
+#                                                                          #
+# This file is part of dudle.                                              #
+#                                                                          #
+# Dudle is free software: you can redistribute it and/or modify it under   #
+# the terms of the GNU Affero General Public License as published by       #
+# the Free Software Foundation, either version 3 of the License, or        #
+# (at your option) any later version.                                      #
+#                                                                          #
+# Dudle is distributed in the hope that it will be useful, but WITHOUT ANY #
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or        #
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public     #
+# License for more details.                                                #
+#                                                                          #
+# You should have received a copy of the GNU Affero General Public License #
+# along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
+# ###########################################################################
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2011-05-12 11:24+0200\n"
+"PO-Revision-Date: 2011-05-11 13:46+0100\n"
+"Last-Translator: Joeri de Ruiter <joeri@cs.ru.nl>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: about.cgi:29
+msgid ""
+"If you find a bug or have something else which disturbes you, please let me "
+"know: <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?"
+"subject=Feedback%20to%20dudle\">give feedback</a>"
+msgstr ""
+"Als je een fout hebt gevonden of een andere opmerking hebt, laat dit dan "
+"weten:  <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?"
+"subject=Feedback%20to%20dudle\">geef feedback</a>"
+
+#: about.cgi:31
+msgid "--verbose"
+msgstr "--verbose"
+
+#: about.cgi:32
+msgid ""
+"The sourcecode of this application is available under the terms of <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+msgstr ""
+"De broncode van deze applicatie is verkrijgbaar onder de voorwaarden van <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Versie 3</"
+"a>. "
+
+#: about.cgi:34
+msgid ""
+"You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</"
+"a>:"
+msgstr ""
+"De broncode is verkrijgbaar met behulp van <a href='http://bazaar-vcs."
+"org/'>bazaar</a>: "
+
+#: authorization_required.cgi:36 authorization_required.cgi:52
+msgid "Authorization Required"
+msgstr "Authorisatie Vereist"
+
+#: authorization_required.cgi:39
+msgid "The configuration of this Poll is protected by password!"
+msgstr "De instellingen voor deze Poll zijn beveiligd met een wachtwoord!"
+
+#: authorization_required.cgi:41
+msgid "This Poll is protected by password!"
+msgstr "Deze Poll is beveiligd met een wachtwoord!"
+
+#: authorization_required.cgi:43
+msgid "In order to proceed, you have to give the password for user %{user}."
+msgstr ""
+"Om door te kunnen gaan moet het wachtwoord voor gebruiker %{user} worden "
+"ingevoerd."
+
+#: authorization_required.cgi:53 not_found.cgi:36
+msgid "Return to dudle home and Schedule a new Poll"
+msgstr "Keer terug naar dudle home en plan een nieuwe Poll"
+
+#: authorization_required.cgi:54
+msgid "You have to authorize in order to request this page!"
+msgstr "Je moet je authoriseren om deze pagina te kunnen bekijken!"
+
+#: customize.cgi:31 customize.rb:31
+msgid "Customize Personal Settings"
+msgstr "Wijzig Persoonlijke Instellingen"
+
+#: customize.cgi:32 customize.rb:32
+msgid "You need cookies enabled in order to personalize your settings."
+msgstr "Cookies moeten aanstaan om je instellingen aan te passen."
+
+#: customize.cgi:39 customize.rb:39
+msgid "Current Setting"
+msgstr "Huidige Instelling"
+
+#: customize.cgi:40 customize.rb:40
+msgid "Description"
+msgstr "Beschrijving"
+
+#: customize.cgi:57 customize.rb:57
+msgid "Use special characters"
+msgstr "Gebruik speciale tekens"
+
+#: customize.cgi:57 customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "Kies deze optie als je de tekens tussen de haakjes kan zien."
+
+#: customize.cgi:58 customize.rb:58
+msgid "Use only normal strings"
+msgstr "Gebruik alleen gewone tekens"
+
+#: customize.cgi:58 customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Kies deze optie als je problemen hebt met sommige tekens"
+
+#: customize.cgi:61 customize.rb:61
+msgid "Charset"
+msgstr "Karakter set"
+
+#: customize.cgi:66 customize.rb:66
+msgid "Stylesheet"
+msgstr "Stylesheet"
+
+#: customize.cgi:82 customize.rb:82
+msgid "Default Username"
+msgstr "Standaard Gebruikersnaam"
+
+#: customize.cgi:83 access_control.rb:76 customize.rb:83
+msgid "Username:"
+msgstr "Gebuikersnaam:"
+
+#: customize.cgi:107 customize.rb:107
+msgid "Edit"
+msgstr "Wijzig"
+
+#: customize.cgi:117 access_control.rb:123 customize.rb:117 poll.rb:286
+msgid "Save"
+msgstr "Opslaan"
+
+#: customize.cgi:120 access_control.rb:119 customize.rb:120 delete_poll.rb:103
+#: poll.rb:324
+msgid "Delete"
+msgstr "Verwijder"
+
+#: error.cgi:25 error.cgi:27
+msgid "Error"
+msgstr "Fout"
+
+#: error.cgi:46
+msgid "The following error was printed:"
+msgstr "De volgende foutmelding werd weergegeven:"
+
+#: error.cgi:50
+msgid ""
+"Hi!\n"
+"\n"
+"I found a bug in your application at %{urlofsite}.\n"
+"I did the following:\n"
+"\n"
+"<please describe what you did>\n"
+"<e.g., I wanted to sent a comment to the poll.>\n"
+"\n"
+"I am using <please state your browser and operating system>\n"
+"%{errormessage}\n"
+"Yours,\n"
+msgstr ""
+"Hi!\n"
+"\n"
+"Ik heb een fout gevonden in de applicatie op %{urlofsite}.\n"
+"Ik heb het volgende gedaan:\n"
+"\n"
+"<beschrijf wat je hebt gedaan>\n"
+"<bijvoorbeeld, ik wou een reactie plaatsen bij een poll.>\n"
+"\n"
+"Ik gebruik <noem je browser en besturingssysteem>\n"
+"%{errormessage}\n"
+"Groeten,\n"
+
+#: error.cgi:51
+msgid "Bug in dudle"
+msgstr "Fout in dudle"
+
+#: error.cgi:53
+msgid ""
+"An error occured while executing dudle.<br/>Please send an error report, "
+"including your browser, operating system, and what you did to %{admin}."
+msgstr ""
+"Er is een fout opgetreden tijdens het uitvoeren van dudle.<br/>Stuur "
+"alsjeblieft een melding hiervan, inclusief je browser, besturingssysteem, en "
+"wat je probeerde naar %{admin}"
+
+#: error.cgi:56
+msgid "Please include the following as well:"
+msgstr "Voeg u alstublieft het volgende ook toe:"
+
+#: example.cgi:60 dudle.rb:89
+msgid "Examples"
+msgstr "Voorbeelden"
+
+#: example.cgi:61
+msgid ""
+"If you want to play with the application, you may want to take a look at "
+"these example polls:"
+msgstr ""
+"Als je de applicatie wilt uitproberen, kan je de volgende voorbeelden "
+"bekijken:"
+
+#: index.cgi:32
+msgid "Please enter a descriptive title."
+msgstr "Voer een beschrijvende titel in."
+
+#: index.cgi:48
+msgid "Custom address may only contain letters, numbers, and dashes."
+msgstr "Het aangepaste adres mag alleen letters, cijfers en '-' bevatten."
+
+#: index.cgi:50
+msgid "A Poll with this address already exists."
+msgstr "Een Poll met dit adres bestaat al."
+
+#: index.cgi:69
+msgid ""
+"The poll was created successfully. The link to your new poll is: %{link}"
+msgstr ""
+"De poll was succesvol aangemaakt. De link naar je nieuwe poll is: %{link}"
+
+#: index.cgi:76
+msgid "Create New Poll"
+msgstr "Maak Nieuwe Poll"
+
+#: index.cgi:78
+msgid "Title"
+msgstr "Titel"
+
+#: index.cgi:79
+msgid "Type"
+msgstr "Type"
+
+#: index.cgi:80
+msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
+msgstr "Evenement Plannen Poll (bijvoorbeeld een vergadering plannen)"
+
+#: index.cgi:81
+msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
+msgstr "Normale Poll (bijvoorbeeld stemmen wat de beste koffie is)"
+
+#: index.cgi:82
+msgid "Custom address (optional)"
+msgstr "Aangepast adres (optioneel)"
+
+#: index.cgi:83
+msgid "May contain letters, numbers, and dashes."
+msgstr "Mag letters, cijfers en '-' bevatten."
+
+#: index.cgi:85
+msgid "Create"
+msgstr "Maak aan"
+
+#: not_found.cgi:29
+msgid "Poll Not Found"
+msgstr "Poll Niet Gevonden"
+
+#: not_found.cgi:31
+msgid "The requested Poll was not found."
+msgstr "De opgevraagde Poll is niet gevonden."
+
+#: not_found.cgi:32
+msgid "There are several reasons, why a Poll is deleted:"
+msgstr "Er zijn verschillende redenen waarom een Poll is verwijderd"
+
+#: not_found.cgi:33
+#, fuzzy
+msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
+msgstr ""
+"Iemand heeft op “Verwijder Poll” geklikt en de poll handmatig verwijderd."
+
+#: not_found.cgi:34
+msgid ""
+"The Poll was deleted by the administrator because it was not accessed for a "
+"long time."
+msgstr ""
+"De Poll was verwijderd door een beheerder omdat de Poll lange tijd niet meer "
+"was bezocht."
+
+#: not_found.cgi:35
+msgid ""
+"If you think, the deletion was done by error, please contact the "
+"adminsistrator of the system."
+msgstr ""
+"Als u denkt dat deze verwijdering per ongeluk is gedaan, neem dan contact op "
+"met de beheerder van het systeem."
+
+#: access_control.rb:89
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: access_control.rb:90
+msgid "repeat"
+msgstr "herhaal"
+
+#: access_control.rb:116
+msgid ""
+"You have to remove the participant user before you can remove the "
+"administrator."
+msgstr ""
+"De 'participant' gebruiker moet worden verwijderd voordat de 'admin' "
+"gebruiker kan worden verwijderd."
+
+#: access_control.rb:141
+msgid "Only letters and digits are allowed in the username."
+msgstr "In de gebruikersnaam zijn alleen letters en cijfers toegestaan."
+
+#: access_control.rb:143
+msgid "Passwords did not match."
+msgstr "Wachtwoorden kwamen niet overeen."
+
+#: access_control.rb:176
+msgid "Change Access Control Settings"
+msgstr "Wijzig Toegangsrechten"
+
+#: access_control.rb:180
+msgid "not activated"
+msgstr "niet geactiveerd"
+
+#: access_control.rb:182
+msgid "Activate"
+msgstr "Activeer"
+
+#: access_control.rb:185
+msgid "will be activated when at least an admin user is configured"
+msgstr ""
+"zal worden geactiveerd zodra tenminste één admin gebruiker is geconfigureerd"
+
+#: access_control.rb:187
+msgid "Deactivate"
+msgstr "Deactiveer"
+
+#: access_control.rb:189
+msgid "activated"
+msgstr "geactiveerd"
+
+#: access_control.rb:190
+msgid ""
+"You have to remove all users before you can deactivate the access control "
+"settings."
+msgstr ""
+"Alle gebruikers moeten zijn verwijderd voordat de toegangsrechten kunnen "
+"worden gedeactiveerd."
+
+#: access_control.rb:194
+msgid ""
+"You will be asked for the password you entered here after pressing save!"
+msgstr ""
+"Na het klikken op 'Opslaan' zal om het ingevoerde wachtwoord worden gevraagd."
+
+#: access_control.rb:197
+msgid ""
+"The user ‘admin’ has access to the vote as well as the configuration "
+"interface."
+msgstr ""
+"De gebruiker 'admin' heeft toegang tot de stem en configuratie interfaces."
+
+#: access_control.rb:203
+msgid "The user ‘participant’ has only access to the vote interface."
+msgstr "De gebruiker 'participant' heeft alleen toegang tot de stem interface."
+
+#: access_control.rb:209
+msgid "Access control:"
+msgstr "Toegangsrechten:"
+
+#: delete_poll.rb:29
+msgid "Yes, I know what I am doing!"
+msgstr "Ja, ik weet wat ik doe!"
+
+#: delete_poll.rb:30
+msgid "I hate these stupid entry fields."
+msgstr "Ik heb een hekel aan deze stomme invoervelden."
+
+#: delete_poll.rb:31
+msgid "I am aware of the consequences."
+msgstr "Ik ben me bewust van de gevolgen."
+
+#: delete_poll.rb:32
+msgid "Please delete this poll."
+msgstr "Verwijder deze poll."
+
+#: delete_poll.rb:48
+msgid "The poll was deleted successfully!"
+msgstr "De Poll was succesvol verwijderd!"
+
+#: delete_poll.rb:49
+msgid ""
+"If this was done by accident, please contact the administrator of the "
+"system. The poll can be recovered for an indeterministic amount of time, "
+"maybe it is already to late."
+msgstr ""
+"Als dit per ongeluk is gebeurd, neem dan contact op met de beheerder van het "
+"systeem. De poll kan voor onbepaalde tijd worden hersteld, misschien is het "
+"al te laat."
+
+#: delete_poll.rb:50
+msgid "Things you can do now are"
+msgstr "Je kan nu de volgende dingen doen"
+
+#: delete_poll.rb:51
+msgid "Return to dudle home and schedule a new poll"
+msgstr "Keer terug naar dudle home en plan een nieuwe poll"
+
+#: delete_poll.rb:52
+msgid "Browse Wikipedia"
+msgstr "Browse Wikipedia"
+
+#: delete_poll.rb:53
+msgid "Search something with Google"
+msgstr "Zoek iets met Google"
+
+#: delete_poll.rb:79
+msgid "To delete the poll, you have to type:"
+msgstr "Om deze poll te verwijderen moet je het volgende intypen:"
+
+#: delete_poll.rb:87
+msgid "but you typed:"
+msgstr "maar je hebt het volgende ingetypt:"
+
+#: delete_poll.rb:99
+msgid "Delete this Poll"
+msgstr "Verwijder deze Poll"
+
+#: delete_poll.rb:100
+msgid "You want to delete the poll named"
+msgstr "Je wil de poll verwijderen met de naam"
+
+#: delete_poll.rb:101
+msgid "This is an irreversible action!"
+msgstr "Deze actie kan niet ongedaan worden gemaakt!"
+
+#: delete_poll.rb:102
+msgid ""
+"If you are sure in what you are doing, please type “%{question}” into the "
+"form."
+msgstr ""
+"Indien je zeker weet wat je doet, voer dan “%{question}” in in het formulier."
+
+#: dudle.rb:73
+msgid "Home"
+msgstr "Home"
+
+#: dudle.rb:76
+msgid "Poll"
+msgstr "Poll"
+
+#: dudle.rb:77 history.rb:35
+msgid "History"
+msgstr "Geschiedenis"
+
+#: dudle.rb:80
+msgid "Edit Columns"
+msgstr "Wijzig Kolommen"
+
+#: dudle.rb:81 invite_participants.rb:38
+msgid "Invite Participants"
+msgstr "Nodig deelnemers uit"
+
+#: dudle.rb:82
+msgid "Access Control"
+msgstr "Toegangsrechten"
+
+#: dudle.rb:83
+msgid "Overview"
+msgstr "Overzicht"
+
+#: dudle.rb:86
+msgid "Delete Poll"
+msgstr "Verwijder Poll"
+
+#: dudle.rb:90
+msgid "About"
+msgstr "Over"
+
+#: dudle.rb:92
+msgid "Customize"
+msgstr "Aanpassen"
+
+#: dudle.rb:100
+msgid "Dudle Home"
+msgstr "Dudle Home"
+
+#: dudle.rb:196 dudle.rb:214
+msgid "Previous"
+msgstr "Vorige"
+
+#: dudle.rb:197 dudle.rb:215
+msgid "Next"
+msgstr "Volgende"
+
+#: dudle.rb:198 dudle.rb:216
+msgid "Finish"
+msgstr "Afronden"
+
+#: dudle.rb:221
+msgid "All changes were saved sucessfully."
+msgstr "Alle wijzigingen zijn succesvol opgeslagen."
+
+#: dudle.rb:221
+msgid "Proceed!"
+msgstr "Doorgaan!"
+
+#: edit_columns.rb:44
+msgid "Add and Remove Columns"
+msgstr "Voeg toe / Verwijder Kolommen"
+
+#: edit_columns.rb:67 edit_columns.rb:86 pollhead.rb:72 timepollhead.rb:248
+msgid "Delete column"
+msgstr "Verwijder kolom"
+
+#: edit_columns.rb:69 edit_columns.rb:84 timepollhead.rb:247
+msgid "Add column"
+msgstr "Voeg kolom toe"
+
+#: edit_columns.rb:71 edit_columns.rb:88 pollhead.rb:71
+msgid "Edit column"
+msgstr "Wijzig kolom"
+
+#: edit_columns.rb:99
+msgid "Undo"
+msgstr "Undo"
+
+#: edit_columns.rb:99
+msgid "Redo"
+msgstr "Redo"
+
+#: history.rb:28
+msgid "Poll of Version %{revisionnumber}"
+msgstr "Poll van Versie %{revisionnumber}"
+
+#: history.rb:32
+msgid "Current Poll (Version %{revisionnumber})"
+msgstr "Huidige Poll (Versie %{revisionnumber})"
+
+#: log.rb:111
+msgid "Version"
+msgstr "Versie"
+
+#: log.rb:111
+msgid "Date"
+msgstr "Datum"
+
+#: log.rb:111
+msgid "Comment"
+msgstr "Commentaar"
+
+#: overview.rb:31
+msgid "The link to your poll is:"
+msgstr "De link naar de poll is:"
+
+#: overview.rb:33
+msgid "Send this link via email..."
+msgstr "Verstuur deze link per email..."
+
+#: overview.rb:34
+msgid "To the Vote interface"
+msgstr "Naar de Stem interface"
+
+#: overview.rb:35
+msgid "Link to dudle poll about %{polltitle}"
+msgstr "Link naar dudle poll over %{polltitle}"
+
+#: participate.rb:59
+msgid "The changes were saved, you should be redirected to %{link}."
+msgstr "De wijzigingen zijn opgeslagen, je wordt doorgestuurd naar %{link}."
+
+#: poll.rb:86
+msgid "Edit user %{user}..."
+msgstr "Wijzig gebruiker %{user}..."
+
+#: poll.rb:90
+msgid "Delete user %{user}..."
+msgstr "Verwijder gebruiker %{user}..."
+
+#: poll.rb:140
+msgid "Total"
+msgstr "Totaal"
+
+#: poll.rb:172
+msgid "Invite"
+msgstr "Nodig uit"
+
+#: poll.rb:173 pollhead.rb:62 timepollhead.rb:158
+msgid "Name"
+msgstr "Naam"
+
+#: poll.rb:218
+msgid "Save Changes"
+msgstr "Wijzigingen Opslaan"
+
+#: poll.rb:222
+msgid "Cancel"
+msgstr "Annuleer"
+
+#: poll.rb:244
+msgid "Do you really want to delete user %{user}?"
+msgstr "Weet je zeker dat je gebruiker %{user} wilt verwijderen?"
+
+#: poll.rb:247
+msgid "Confirm"
+msgstr "Bevestig"
+
+#: poll.rb:295
+msgid "Comments"
+msgstr "Reacties"
+
+#: poll.rb:298
+msgid "Sort oldest comment first"
+msgstr "Sorteer oudste reactie eerst"
+
+#: poll.rb:301
+msgid "Sort newest comment first"
+msgstr "Sorteer nieuwste reactie eerst"
+
+#: poll.rb:306
+msgid "Go to last comment"
+msgstr "Ga naar laatste reactie"
+
+#: poll.rb:319
+msgid "%{user} said on %{time}"
+msgstr "%{user} zei op %{time}"
+
+#: poll.rb:334
+msgid "Go Up"
+msgstr "Ga Omhoog"
+
+#: poll.rb:340
+msgid "says"
+msgstr "zegt"
+
+#: poll.rb:341
+msgid "Submit Comment"
+msgstr "Verstuur Reactie"
+
+#: poll.rb:359
+msgid "Show history items:"
+msgstr "Toon geschiedenis items:"
+
+#: poll.rb:366
+msgid "All"
+msgstr "Alle"
+
+#: poll.rb:367
+msgid "Participant related"
+msgstr "Deelnemer gerelateerd"
+
+#: poll.rb:368
+msgid "Column related"
+msgstr "Kolom gerelateerd"
+
+#: poll.rb:369
+msgid "Comment related"
+msgstr "Reactie gerelateerd"
+
+#: poll.rb:370
+msgid "Access Control related"
+msgstr "Toegangsrechten gerelateerd"
+
+#: poll.rb:376
+msgid "Update"
+msgstr "Wijzig"
+
+#: pollhead.rb:87 timepollhead.rb:162
+msgid "Last Edit"
+msgstr "Laatste Wijziging"
+
+#: pollhead.rb:99
+msgid "Alternative"
+msgstr "Alternatief"
+
+#: pollhead.rb:100
+msgid "Description (optional)"
+msgstr "Beschrijving (optioneel)"
+
+#: pollhead.rb:101
+msgid "Add/Edit Column"
+msgstr "Voeg toe/Wijzig kolom"
+
+#: pollhead.rb:102
+msgid "Preview"
+msgstr "Voorbeeld"
+
+#: pollhead.rb:103
+msgid ""
+"Enter all alternatives (columns), you want to ask the participants of the "
+"poll. The participants will state one vote for every alternative you give "
+"here separately."
+msgstr ""
+"Voer alle alternatieven (kolommen) in die je de deelnemers van de poll wilt "
+"vragen. De deelnemers geven een aparte stem voor elk van deze alternatieven."
+
+#: timepollhead.rb:113
+msgid ""
+"To add some time different to the default ones, please enter some string "
+"here (e.&thinsp;g., 09:30, morning, afternoon)."
+msgstr ""
+"Om een andere tijd toe te voegen dan de standaard tijden, voer hier tekst in "
+"(bijvoorbeeld 09:30, ochtend, middag)."
+
+#: timepollhead.rb:119
+msgid "This Time was already choosen."
+msgstr "Deze Tijd is al gekozen."
+
+#: timepollhead.rb:193
+msgid "Earlier"
+msgstr "Vroeger"
+
+#: timepollhead.rb:198
+msgid "Later"
+msgstr "Later"
+
+#: timepollhead.rb:264
+msgid "Click on the dates to add or remove columns."
+msgstr "Klik op de data om kolommen toe te voegen of te verwijderen."
+
+#: timepollhead.rb:312
+msgid "Optional:"
+msgstr "Optioneel:"
+
+#: timepollhead.rb:313
+msgid "Enter a concrete value as start time."
+msgstr "Voer een concrete waarde in als start tijd."
+
+#: timepollhead.rb:329
+msgid "Time"
+msgstr "Tijd"
+
+#: timepollhead.rb:342
+msgid "Chosen"
+msgstr "Gekozen"
+
+#: timepollhead.rb:343
+msgid "Not Chosen"
+msgstr "Niet Gekozen"
+
+#: timepollhead.rb:344
+msgid "Past"
+msgstr "Voorbij"
+
+#: timepollhead.rb:378
+msgid "Select the whole row"
+msgstr "Selecteer de volledige rij"
+
+#: timepollhead.rb:383
+msgid "Deselect the whole row"
+msgstr "Deselecteer de volledige rij"
+
+#: timepollhead.rb:427
+msgid "Add"
+msgstr "Voeg toe"
+
+#: timepollhead.rb:428
+msgid "e.&thinsp;g., 09:30, morning, afternoon"
+msgstr "bijvoorbeeld 09:30, ochtend, middag"
