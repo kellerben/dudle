@@ -28,20 +28,27 @@ $d = Dudle.new
 $d.wizzard_redirect
 
 
-$d << _("The link to your poll is:")
+$d << _("The next steps are:")
 
 mailstr = _("Send this link via email...")
-nextstr = _("To the Vote interface")
+nextstr = _("Visit the poll yourself:")
 subjectstr = _("Link to dudle poll about %{polltitle}") % {:polltitle => $d.title}
 
 $d << <<END
-<pre id="humanReadableURL">#{$conf.siteurl}</pre>
-<a id="mailtoURL" href='mailto:?subject=#{CGI.escapeHTML(CGI.escape(subjectstr).gsub("+","%20"))}&amp;body=#{$conf.siteurl}'>#{mailstr}</a>
-<form id='clickURL' method='get' action='.'>
-	<div style='margin-top:1ex'>
-		<input type='submit' value='#{nextstr}' />
-	</div>
-</form>
+<ol>
+	<li>
+		Send the link to all participants:
+		<ul>
+			<li><input id="humanReadableURL" value="#{$conf.siteurl}" type="text" size="80" readonly="readonly"></li>
+			<li><a id="mailtoURL" href='mailto:?subject=#{CGI.escapeHTML(CGI.escape(subjectstr).gsub("+","%20"))}&amp;body=#{$conf.siteurl}'>#{mailstr}</a></li>
+		</ul>
+	</li>
+	<li>
+		#{nextstr}
+		<ul>
+			<li><a href="#{$conf.siteurl}">#{$conf.siteurl}</a></li>
+		</ul>
+	</ol>
 END
 
 $d.out

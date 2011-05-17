@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-05-10 23:12+0200\n"
+"POT-Creation-Date: 2011-05-17 16:06+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
@@ -80,7 +80,7 @@ msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
 
 #: authorization_required.cgi:54
-msgid "You have to authorize in order to request this page!"
+msgid "You have to authorize yourself in order to access this page!"
 msgstr ""
 
 #: customize.cgi:31 customize.rb:31
@@ -489,7 +489,7 @@ msgstr "Fortsätt!"
 msgid "Add and Remove Columns"
 msgstr "Lägg till eller ta bort kolumner"
 
-#: edit_columns.rb:67 edit_columns.rb:86 pollhead.rb:72 timepollhead.rb:248
+#: edit_columns.rb:67 edit_columns.rb:86 timepollhead.rb:248
 msgid "Delete column"
 msgstr "Ta bort kolumn"
 
@@ -497,7 +497,7 @@ msgstr "Ta bort kolumn"
 msgid "Add column"
 msgstr "Lägg till kolumn"
 
-#: edit_columns.rb:71 edit_columns.rb:88 pollhead.rb:71
+#: edit_columns.rb:71 edit_columns.rb:88
 msgid "Edit column"
 msgstr "Redigera kolumn"
 
@@ -530,16 +530,16 @@ msgid "Comment"
 msgstr "Kommentar"
 
 #: overview.rb:31
-msgid "The link to your poll is:"
-msgstr "Länk till din omröstning:"
+msgid "The next steps are:"
+msgstr ""
 
 #: overview.rb:33
 msgid "Send this link via email..."
 msgstr "Skicka länken via email..."
 
 #: overview.rb:34
-msgid "To the Vote interface"
-msgstr "Till gränssnittet för röstning"
+msgid "Visit the poll yourself:"
+msgstr ""
 
 #: overview.rb:35
 msgid "Link to dudle poll about %{polltitle}"
@@ -550,14 +550,12 @@ msgid "The changes were saved, you should be redirected to %{link}."
 msgstr ""
 
 #: poll.rb:86
-#, fuzzy
 msgid "Edit user %{user}..."
-msgstr "Redigera användare %{user}"
+msgstr "Redigera användare %{user}..."
 
 #: poll.rb:90
-#, fuzzy
 msgid "Delete user %{user}..."
-msgstr "Redigera användare %{user}"
+msgstr "Redigera användare %{user}..."
 
 #: poll.rb:140
 msgid "Total"
@@ -648,14 +646,24 @@ msgstr "Tillhörande åtkomstkontroll"
 msgid "Update"
 msgstr "Uppdatera"
 
+#: pollhead.rb:71
+#, fuzzy
+msgid "Edit Option"
+msgstr "Redigera kolumn"
+
+#: pollhead.rb:72
+#, fuzzy
+msgid "Delete Option"
+msgstr "Ta bort kolumn"
+
 #: pollhead.rb:87 timepollhead.rb:162
 msgid "Last Edit"
 msgstr "Senast ändrat"
 
 #: pollhead.rb:99
 #, fuzzy
-msgid "Alternative"
-msgstr "Kolumntitel"
+msgid "Option"
+msgstr "Valfri:"
 
 #: pollhead.rb:100
 #, fuzzy
@@ -663,7 +671,8 @@ msgid "Description (optional)"
 msgstr "Beskrivning"
 
 #: pollhead.rb:101
-msgid "Add/Edit Column"
+#, fuzzy
+msgid "Add/Edit Option"
 msgstr "Lägg till/redigera kolumn"
 
 #: pollhead.rb:102
@@ -672,9 +681,9 @@ msgstr "Förhandsgranska"
 
 #: pollhead.rb:103
 msgid ""
-"Enter all alternatives (columns), you want to ask the participants of the "
-"poll. The participants will state one vote for every alternative you give "
-"here separately."
+"Enter all Options (columns), you want to ask the participants of the poll. "
+"The participants will state one vote for every option you give here "
+"separately."
 msgstr ""
 
 #: timepollhead.rb:113
@@ -739,6 +748,16 @@ msgstr "Lägg till"
 #: timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "t ex 09:30, morgon, eftermiddag"
+
+#~ msgid "The link to your poll is:"
+#~ msgstr "Länk till din omröstning:"
+
+#~ msgid "To the Vote interface"
+#~ msgstr "Till gränssnittet för röstning"
+
+#, fuzzy
+#~ msgid "Alternative"
+#~ msgstr "Kolumntitel"
 
 #~ msgid "Event Schedule Poll"
 #~ msgstr "Händelseschema Omröstning"

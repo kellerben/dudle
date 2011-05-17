@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-05-10 23:12+0200\n"
+"POT-Creation-Date: 2011-05-17 16:06+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
@@ -81,7 +81,7 @@ msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Návrat zpět na domovskou stránku dudle a naplánovat nové hlasování"
 
 #: authorization_required.cgi:54
-msgid "You have to authorize in order to request this page!"
+msgid "You have to authorize yourself in order to access this page!"
 msgstr ""
 
 #: customize.cgi:31 customize.rb:31
@@ -489,7 +489,7 @@ msgstr "Vykonat!"
 msgid "Add and Remove Columns"
 msgstr "Přidat a Odebrat Sloupce"
 
-#: edit_columns.rb:67 edit_columns.rb:86 pollhead.rb:72 timepollhead.rb:248
+#: edit_columns.rb:67 edit_columns.rb:86 timepollhead.rb:248
 msgid "Delete column"
 msgstr "Vymaž sloupec"
 
@@ -497,7 +497,7 @@ msgstr "Vymaž sloupec"
 msgid "Add column"
 msgstr "Přidej sloupec"
 
-#: edit_columns.rb:71 edit_columns.rb:88 pollhead.rb:71
+#: edit_columns.rb:71 edit_columns.rb:88
 msgid "Edit column"
 msgstr "Edituj sloupec"
 
@@ -530,16 +530,16 @@ msgid "Comment"
 msgstr "Komentář"
 
 #: overview.rb:31
-msgid "The link to your poll is:"
-msgstr "Odkaz tvého hlasování je:"
+msgid "The next steps are:"
+msgstr ""
 
 #: overview.rb:33
 msgid "Send this link via email..."
 msgstr "Pošli odkaz prostřednictvím e-mailu..."
 
 #: overview.rb:34
-msgid "To the Vote interface"
-msgstr "K hlasovacímu rozhraní"
+msgid "Visit the poll yourself:"
+msgstr ""
 
 #: overview.rb:35
 msgid "Link to dudle poll about %{polltitle}"
@@ -550,14 +550,12 @@ msgid "The changes were saved, you should be redirected to %{link}."
 msgstr ""
 
 #: poll.rb:86
-#, fuzzy
 msgid "Edit user %{user}..."
-msgstr "Upravit uživatele %{user}"
+msgstr "Upravit uživatele %{user}..."
 
 #: poll.rb:90
-#, fuzzy
 msgid "Delete user %{user}..."
-msgstr "Upravit uživatele %{user}"
+msgstr "Upravit uživatele %{user}..."
 
 #: poll.rb:140
 #, fuzzy
@@ -648,14 +646,24 @@ msgstr "Související s řízením přistupu"
 msgid "Update"
 msgstr "Aktualizace"
 
+#: pollhead.rb:71
+#, fuzzy
+msgid "Edit Option"
+msgstr "Edituj sloupec"
+
+#: pollhead.rb:72
+#, fuzzy
+msgid "Delete Option"
+msgstr "Vymaž sloupec"
+
 #: pollhead.rb:87 timepollhead.rb:162
 msgid "Last Edit"
 msgstr "Poslední Úprava"
 
 #: pollhead.rb:99
 #, fuzzy
-msgid "Alternative"
-msgstr "Název sloupce"
+msgid "Option"
+msgstr "Volitelné:"
 
 #: pollhead.rb:100
 #, fuzzy
@@ -663,7 +671,8 @@ msgid "Description (optional)"
 msgstr "Popis"
 
 #: pollhead.rb:101
-msgid "Add/Edit Column"
+#, fuzzy
+msgid "Add/Edit Option"
 msgstr "Přidat/Editovat sloupec"
 
 #: pollhead.rb:102
@@ -672,9 +681,9 @@ msgstr "Náhled"
 
 #: pollhead.rb:103
 msgid ""
-"Enter all alternatives (columns), you want to ask the participants of the "
-"poll. The participants will state one vote for every alternative you give "
-"here separately."
+"Enter all Options (columns), you want to ask the participants of the poll. "
+"The participants will state one vote for every option you give here "
+"separately."
 msgstr ""
 
 #: timepollhead.rb:113
@@ -740,6 +749,16 @@ msgstr "Přidat"
 #: timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "např. 09:30, ráno, odpoledne"
+
+#~ msgid "The link to your poll is:"
+#~ msgstr "Odkaz tvého hlasování je:"
+
+#~ msgid "To the Vote interface"
+#~ msgstr "K hlasovacímu rozhraní"
+
+#, fuzzy
+#~ msgid "Alternative"
+#~ msgstr "Název sloupce"
 
 #~ msgid "Event Schedule Poll"
 #~ msgstr "Hlasování Plánu Události"

@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-05-10 23:12+0200\n"
+"POT-Creation-Date: 2011-05-17 16:06+0200\n"
 "PO-Revision-Date: 2011-05-03 16:46+0100\n"
 "Last-Translator: Gilles Seban\n"
 "Language-Team: \n"
@@ -87,7 +87,7 @@ msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Retour à la page d'accueil et créer un nouveau sondage"
 
 #: authorization_required.cgi:54
-msgid "You have to authorize in order to request this page!"
+msgid "You have to authorize yourself in order to access this page!"
 msgstr "Vous devez vous identifier pour afficher cette page !"
 
 #: customize.cgi:31 customize.rb:31
@@ -512,7 +512,7 @@ msgstr ""
 msgid "Add and Remove Columns"
 msgstr "Ajouter et supprimer des colonnes"
 
-#: edit_columns.rb:67 edit_columns.rb:86 pollhead.rb:72 timepollhead.rb:248
+#: edit_columns.rb:67 edit_columns.rb:86 timepollhead.rb:248
 msgid "Delete column"
 msgstr "Supprimer une colonne"
 
@@ -520,7 +520,7 @@ msgstr "Supprimer une colonne"
 msgid "Add column"
 msgstr "Ajouter une colonne"
 
-#: edit_columns.rb:71 edit_columns.rb:88 pollhead.rb:71
+#: edit_columns.rb:71 edit_columns.rb:88
 msgid "Edit column"
 msgstr "Éditer une colonne"
 
@@ -553,16 +553,16 @@ msgid "Comment"
 msgstr "Commentaire"
 
 #: overview.rb:31
-msgid "The link to your poll is:"
-msgstr "Le lien de votre sondage est :"
+msgid "The next steps are:"
+msgstr ""
 
 #: overview.rb:33
 msgid "Send this link via email..."
 msgstr "Envoyer ce lien par email..."
 
 #: overview.rb:34
-msgid "To the Vote interface"
-msgstr "Vers la page de vote"
+msgid "Visit the poll yourself:"
+msgstr ""
 
 #: overview.rb:35
 msgid "Link to dudle poll about %{polltitle}"
@@ -670,20 +670,32 @@ msgstr ""
 msgid "Update"
 msgstr "Mettre à jour"
 
+#: pollhead.rb:71
+#, fuzzy
+msgid "Edit Option"
+msgstr "Éditer une colonne"
+
+#: pollhead.rb:72
+#, fuzzy
+msgid "Delete Option"
+msgstr "Supprimer une colonne"
+
 #: pollhead.rb:87 timepollhead.rb:162
 msgid "Last Edit"
 msgstr "Dernière édition"
 
 #: pollhead.rb:99
-msgid "Alternative"
-msgstr "Alternative"
+#, fuzzy
+msgid "Option"
+msgstr "Optionnel :"
 
 #: pollhead.rb:100
 msgid "Description (optional)"
 msgstr "Description (optionnel)"
 
 #: pollhead.rb:101
-msgid "Add/Edit Column"
+#, fuzzy
+msgid "Add/Edit Option"
 msgstr "Ajouter/Éditer la colonne"
 
 #: pollhead.rb:102
@@ -692,9 +704,9 @@ msgstr "Prévisualiser"
 
 #: pollhead.rb:103
 msgid ""
-"Enter all alternatives (columns), you want to ask the participants of the "
-"poll. The participants will state one vote for every alternative you give "
-"here separately."
+"Enter all Options (columns), you want to ask the participants of the poll. "
+"The participants will state one vote for every option you give here "
+"separately."
 msgstr ""
 
 #: timepollhead.rb:113
@@ -758,6 +770,15 @@ msgstr "Ajouter"
 #: timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr ""
+
+#~ msgid "The link to your poll is:"
+#~ msgstr "Le lien de votre sondage est :"
+
+#~ msgid "To the Vote interface"
+#~ msgstr "Vers la page de vote"
+
+#~ msgid "Alternative"
+#~ msgstr "Alternative"
 
 #~ msgid "Event Schedule Poll"
 #~ msgstr "Sondage de choix de date"

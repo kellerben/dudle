@@ -68,8 +68,8 @@ SORTSYMBOL
 			ret += "#{CGI.escapeHTML(columntitle)}"
 			ret += "#{sortsymb(scols,columntitle)}</a>" unless showeditbuttons
 			if showeditbuttons
-				editstr = _("Edit column")
-				deletestr = _("Delete column")
+				editstr = _("Edit Option")
+				deletestr = _("Delete Option")
 				ret += <<EDITDELETE
 <form method='post' action=''>
 	<div class='editdelete'>
@@ -96,11 +96,11 @@ EDITDELETE
 			title = CGI.escapeHTML(title)
 			hiddeninput = "<input type='hidden' name='columnid' value=\"#{title}\" />"
 		end
-		columntitlestr = _("Alternative")
+		columntitlestr = _("Option")
 		descriptionstr = _("Description (optional)")
-		addeditstr = _("Add/Edit Column")
+		addeditstr = _("Add/Edit Option")
 		previewstr = _("Preview")
-		hint = _("Enter all alternatives (columns), you want to ask the participants of the poll. The participants will state one vote for every alternative you give here separately.")
+		hint = _("Enter all Options (columns), you want to ask the participants of the poll. The participants will state one vote for every option you give here separately.")
 		ret = <<END
 <form method='post' action='' accept-charset='utf-8'>
 	<div class='textcolumn'>#{hint}</div>

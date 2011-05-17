@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-05-12 11:24+0200\n"
+"POT-Creation-Date: 2011-05-17 16:06+0200\n"
 "PO-Revision-Date: 2011-05-11 13:46+0100\n"
 "Last-Translator: Joeri de Ruiter <joeri@cs.ru.nl>\n"
 "Language-Team: \n"
@@ -82,7 +82,7 @@ msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Keer terug naar dudle home en plan een nieuwe Poll"
 
 #: authorization_required.cgi:54
-msgid "You have to authorize in order to request this page!"
+msgid "You have to authorize yourself in order to access this page!"
 msgstr "Je moet je authoriseren om deze pagina te kunnen bekijken!"
 
 #: customize.cgi:31 customize.rb:31
@@ -512,7 +512,7 @@ msgstr "Doorgaan!"
 msgid "Add and Remove Columns"
 msgstr "Voeg toe / Verwijder Kolommen"
 
-#: edit_columns.rb:67 edit_columns.rb:86 pollhead.rb:72 timepollhead.rb:248
+#: edit_columns.rb:67 edit_columns.rb:86 timepollhead.rb:248
 msgid "Delete column"
 msgstr "Verwijder kolom"
 
@@ -520,7 +520,7 @@ msgstr "Verwijder kolom"
 msgid "Add column"
 msgstr "Voeg kolom toe"
 
-#: edit_columns.rb:71 edit_columns.rb:88 pollhead.rb:71
+#: edit_columns.rb:71 edit_columns.rb:88
 msgid "Edit column"
 msgstr "Wijzig kolom"
 
@@ -553,16 +553,16 @@ msgid "Comment"
 msgstr "Commentaar"
 
 #: overview.rb:31
-msgid "The link to your poll is:"
-msgstr "De link naar de poll is:"
+msgid "The next steps are:"
+msgstr ""
 
 #: overview.rb:33
 msgid "Send this link via email..."
 msgstr "Verstuur deze link per email..."
 
 #: overview.rb:34
-msgid "To the Vote interface"
-msgstr "Naar de Stem interface"
+msgid "Visit the poll yourself:"
+msgstr ""
 
 #: overview.rb:35
 msgid "Link to dudle poll about %{polltitle}"
@@ -668,20 +668,32 @@ msgstr "Toegangsrechten gerelateerd"
 msgid "Update"
 msgstr "Wijzig"
 
+#: pollhead.rb:71
+#, fuzzy
+msgid "Edit Option"
+msgstr "Wijzig kolom"
+
+#: pollhead.rb:72
+#, fuzzy
+msgid "Delete Option"
+msgstr "Verwijder kolom"
+
 #: pollhead.rb:87 timepollhead.rb:162
 msgid "Last Edit"
 msgstr "Laatste Wijziging"
 
 #: pollhead.rb:99
-msgid "Alternative"
-msgstr "Alternatief"
+#, fuzzy
+msgid "Option"
+msgstr "Optioneel:"
 
 #: pollhead.rb:100
 msgid "Description (optional)"
 msgstr "Beschrijving (optioneel)"
 
 #: pollhead.rb:101
-msgid "Add/Edit Column"
+#, fuzzy
+msgid "Add/Edit Option"
 msgstr "Voeg toe/Wijzig kolom"
 
 #: pollhead.rb:102
@@ -689,10 +701,11 @@ msgid "Preview"
 msgstr "Voorbeeld"
 
 #: pollhead.rb:103
+#, fuzzy
 msgid ""
-"Enter all alternatives (columns), you want to ask the participants of the "
-"poll. The participants will state one vote for every alternative you give "
-"here separately."
+"Enter all Options (columns), you want to ask the participants of the poll. "
+"The participants will state one vote for every option you give here "
+"separately."
 msgstr ""
 "Voer alle alternatieven (kolommen) in die je de deelnemers van de poll wilt "
 "vragen. De deelnemers geven een aparte stem voor elk van deze alternatieven."
@@ -760,3 +773,12 @@ msgstr "Voeg toe"
 #: timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "bijvoorbeeld 09:30, ochtend, middag"
+
+#~ msgid "The link to your poll is:"
+#~ msgstr "De link naar de poll is:"
+
+#~ msgid "To the Vote interface"
+#~ msgstr "Naar de Stem interface"
+
+#~ msgid "Alternative"
+#~ msgstr "Alternatief"
