@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-05-17 16:06+0200\n"
+"POT-Creation-Date: 2011-05-17 16:15+0200\n"
 "PO-Revision-Date: 2011-05-10 07:31+0200\n"
 "Last-Translator: Eros Pedrini\n"
 "Language-Team: \n"
@@ -563,14 +563,18 @@ msgid "The next steps are:"
 msgstr ""
 
 #: overview.rb:33
+msgid "Send the link to all participants:"
+msgstr ""
+
+#: overview.rb:34
 msgid "Send this link via email..."
 msgstr "Spedisci questo link via email..."
 
-#: overview.rb:34
+#: overview.rb:35
 msgid "Visit the poll yourself:"
 msgstr ""
 
-#: overview.rb:35
+#: overview.rb:36
 msgid "Link to dudle poll about %{polltitle}"
 msgstr "Link al sondaggio di Dudle su %{polltitle}"
 

@@ -30,14 +30,14 @@ $d.wizzard_redirect
 
 $d << _("The next steps are:")
 
+sendlink = _("Send the link to all participants:")
 mailstr = _("Send this link via email...")
 nextstr = _("Visit the poll yourself:")
 subjectstr = _("Link to dudle poll about %{polltitle}") % {:polltitle => $d.title}
-
 $d << <<END
 <ol>
 	<li>
-		Send the link to all participants:
+		#{sendlink}
 		<ul>
 			<li><input id="humanReadableURL" value="#{$conf.siteurl}" type="text" size="80" readonly="readonly"></li>
 			<li><a id="mailtoURL" href='mailto:?subject=#{CGI.escapeHTML(CGI.escape(subjectstr).gsub("+","%20"))}&amp;body=#{$conf.siteurl}'>#{mailstr}</a></li>

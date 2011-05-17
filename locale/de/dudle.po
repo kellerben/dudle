@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-05-17 16:06+0200\n"
-"PO-Revision-Date: 2011-05-17 16:08+0100\n"
+"POT-Creation-Date: 2011-05-17 16:15+0200\n"
+"PO-Revision-Date: 2011-05-17 16:16+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "Language: \n"
@@ -535,14 +535,18 @@ msgid "The next steps are:"
 msgstr "Die nächsten Schritte sind:"
 
 #: overview.rb:33
+msgid "Send the link to all participants:"
+msgstr "Senden sie diesen Link zu allen Teilnehmern:"
+
+#: overview.rb:34
 msgid "Send this link via email..."
 msgstr "Diese URL per E-Mail verschicken..."
 
-#: overview.rb:34
+#: overview.rb:35
 msgid "Visit the poll yourself:"
 msgstr "Besuchen Sie selbst die Umfrage:"
 
-#: overview.rb:35
+#: overview.rb:36
 msgid "Link to dudle poll about %{polltitle}"
 msgstr "Dudle Umfrage über %{polltitle}"
 
