@@ -23,7 +23,7 @@ if __FILE__ == $0
 
 load "../dudle.rb"
 $d = Dudle.new
-require "ftools"
+require "fileutils"
 
 QUESTIONS = [ "phahqu3Uib4neiRi",
              _("Yes, I know what I am doing!"),
@@ -36,7 +36,9 @@ if $cgi.include?("confirmnumber")
  CONFIRM = $cgi["confirmnumber"].to_i
 	if USERCONFIRM == QUESTIONS[CONFIRM]
 		Dir.chdir("..")
-		File.move($d.urlsuffix, "/tmp/#{$d.urlsuffix}.#{rand(9999999)}")
+		FileUtils.cp_r($d.urlsuffix, "/tmp/#{$d.urlsuffix}.#{rand(9999999)}")
+		FileUtils.rm_r($d.urlsuffix)
+
 		if $cgi.include?("return")
 			$d.html.header["status"] = "REDIRECT"
 			$d.html.header["Cache-Control"] = "no-cache"
