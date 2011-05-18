@@ -21,34 +21,34 @@ require "time"
 require "log"
 
 class VCS
-	GITCMD="export LC_ALL=de_DE.UTF-8; git"
+	GITCMD="git"
 	def VCS.init
-		`#{GITCMD} init`
+		%x{#{GITCMD} init}
 	end
 
 	def VCS.rm file
-		`#{GITCMD} rm #{file}`
+		%x{#{GITCMD} rm #{file}}
 	end
 
 	def VCS.add file
-		`#{GITCMD} add #{file}`
+		%x{#{GITCMD} add #{file}}
 	end
 
 	def VCS.revno
 		# there is a bug in git log --format, which supresses the \n on the last line
-		`#{GITCMD} log --format="format:x"`.scan("\n").size + 1
+		%x{#{GITCMD} log --format="format:x"}.scan("\n").size + 1
 	end
 
 	def VCS.cat revision, file
-		revs = `#{GITCMD} log --format="format:%H"`.scan(/^(.*)$/).flatten.reverse
-		`#{GITCMD} show #{revs[revision-1]}:#{file}`
+		revs = %x{#{GITCMD} log --format=format:%H}.scan(/^(.*)$/).flatten.reverse
+		%x{#{GITCMD} show #{revs[revision-1]}:#{file}}
 	end
 
 	def VCS.history
-		log = `#{GITCMD} log --format="format:%s|%ai"`.split("\n").reverse
+		log = %x{#{GITCMD} log --format=format:"%s\t%ai"}.split("\n").reverse
 		ret = Log.new
 		log.each_with_index{|s,i|
-			a = s.scan(/^([^\|]*)(.*)$/).flatten
+			a = s.scan(/^([^\t]*)(.*)$/).flatten
 			ret.add(i+1, Time.parse(a[1]), a[0])
 		}
 		ret
@@ -59,18 +59,18 @@ class VCS
 		File.open(tmpfile,"w"){|f|
 			f<<comment
 		}
-		ret = `#{GITCMD} commit -a -F #{tmpfile}`
+		ret = %x{#{GITCMD} commit -a -F #{tmpfile}}
 		File.delete(tmpfile)
 		ret
 	end
 	
 	def VCS.branch source, target
-		`#{GITCMD} clone #{source} #{target}`
+		%x{#{GITCMD} clone #{source} #{target}}
 	end
 
 	def VCS.revert revno
-		revhash = `#{GITCMD} log --format="%H"`.split("\n").reverse[revno-1]
-		`#{GITCMD} checkout #{revhash} .`
+		revhash = %x{#{GITCMD} log --format=%H}.split("\n").reverse[revno-1]
+		%x{#{GITCMD} checkout #{revhash} .}
 		VCS.commit("Reverted Poll to version #{revno}")
 	end
 end

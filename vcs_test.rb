@@ -47,7 +47,7 @@ class VCS_test < Test::Unit::TestCase
 	def teardown
 		puts @repo
 #		Dir.chdir("/")
-#		`rm -rf #{@repo}`
+#		%x{rm -rf #{@repo}}
 		puts "#{@t}: #{@b}"
 	end
 	def test_cat

@@ -70,7 +70,7 @@ if $conf.auto_send_report
 		f << errorstr
 	}
 
-	`mail -s "Bug in dudle" #{$conf.bugreportmail} < #{tmpfile}`
+	%x{mail -s "Bug in dudle" #{$conf.bugreportmail} < #{tmpfile}}
 
 	File.delete(tmpfile)
 

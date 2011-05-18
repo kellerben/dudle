@@ -23,27 +23,27 @@ require "log"
 class VCS
 	BZRCMD="export LC_ALL=de_DE.UTF-8; bzr"
 	def VCS.init
-		`#{BZRCMD} init`
+		%x{#{BZRCMD} init}
 	end
 
 	def VCS.rm file
-		`#{BZRCMD} rm #{file}`
+		%x{#{BZRCMD} rm #{file}}
 	end
 
 	def VCS.add file
-		`#{BZRCMD} add #{file}`
+		%x{#{BZRCMD} add #{file}}
 	end
 
 	def VCS.revno
-		`#{BZRCMD} revno`.to_i
+		%x{#{BZRCMD} revno}.to_i
 	end
 
 	def VCS.cat revision, file
-		`#{BZRCMD} cat -r #{revision.to_i} #{file}`
+		%x{#{BZRCMD} cat -r #{revision.to_i} #{file}}
 	end
 
 	def VCS.history
-		log = `#{BZRCMD} log --forward`.split("-"*60)
+		log = %x{#{BZRCMD} log --forward}.split("-"*60)
 		ret = Log.new
 		log.shift
 		log.each{|s| 
@@ -58,12 +58,12 @@ class VCS
 		File.open(tmpfile,"w"){|f|
 			f<<comment
 		}
-		ret = `#{BZRCMD} commit -q -F #{tmpfile}`
+		ret = %x{#{BZRCMD} commit -q -F #{tmpfile}}
 		File.delete(tmpfile)
 		ret
 	end
 
 	def VCS.branch source, target
-		`#{BZRCMD} branch #{source} #{target}`
+		%x{#{BZRCMD} branch #{source} #{target}}
 	end
 end

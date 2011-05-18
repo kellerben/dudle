@@ -36,7 +36,7 @@ if $cgi.include?("confirmnumber")
  CONFIRM = $cgi["confirmnumber"].to_i
 	if USERCONFIRM == QUESTIONS[CONFIRM]
 		Dir.chdir("..")
-		`mv #{$d.urlsuffix} /tmp/#{$d.urlsuffix}.#{rand(9999999)}`
+		File.move($d.urlsuffix, "/tmp/#{$d.urlsuffix}.#{rand(9999999)}")
 		if $cgi.include?("return")
 			$d.html.header["status"] = "REDIRECT"
 			$d.html.header["Cache-Control"] = "no-cache"
@@ -52,7 +52,7 @@ if $cgi.include?("confirmnumber")
 		wikipediastr = _("Browse Wikipedia")
 		googlestr = _("Search something with Google")
 
-		$d.html << <<SUCCESS
+		$d.html << %{
 <p class='textcolumn'>
 	#{deleteconfirmstr}
 </p>
@@ -67,30 +67,30 @@ if $cgi.include?("confirmnumber")
 		<li><a href='http://www.google.com'>#{googlestr}</a></li>
 	</ul>
 </div>
-SUCCESS
+		}
 		$d.out
 		exit
 	else
-		hint = <<HINT
+		hint = %{
 <table style='background:lightgray'>
 	<tr>
 		<td style='text-align:right'>
-HINT
+}
 		hint += _("To delete the poll, you have to type:")
-		hint += <<HINT
+		hint += %{
 		</td>
 		<td class='warning' style='text-align:left'>#{QUESTIONS[CONFIRM]}</td>
 	</tr>
 	<tr>
 		<td style='text-align:right'>
-HINT
+}
 		hint += _("but you typed:")
-		hint += <<HINT
+		hint += %{
 		</td>
 		<td class='warning' style='text-align:left'>#{USERCONFIRM}</td>
 	</tr>
 </table>
-HINT
+}
 	end
 else
 	CONFIRM = rand(QUESTIONS.size()-1) +1
@@ -101,7 +101,7 @@ $d.html << _("You want to delete the poll named") + " <b>#{$d.table.name}</b>.<b
 $d.html << _("This is an irreversible action!") + "<br />"
 $d.html << _("If you are sure in what you are doing, please type “%{question}” into the form.") % {:question => QUESTIONS[CONFIRM]}
 deletestr = _("Delete") 
-$d.html << <<TABLE
+$d.html << %{
 	#{hint}
 	<form method='post' action='' accept-charset='utf-8'>
 		<div>
@@ -110,7 +110,7 @@ $d.html << <<TABLE
 			<input type='submit' value='#{deletestr}' />
 		</div>
 	</form>
-TABLE
+}
 
 $d.out
 
