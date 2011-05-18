@@ -19,33 +19,38 @@
 
 require "time"
 require "log"
+require "open3"
+
+def runcmd *args
+	Open3.popen3(*args) {|i,o,e,t| o.read }
+end
 
 class VCS
 	GITCMD="git"
 	def VCS.init
-		%x{#{GITCMD} init}
+		runcmd(GITCMD, "init")
 	end
 
 	def VCS.rm file
-		%x{#{GITCMD} rm #{file}}
+		runcmd(GITCMD, "rm", file)
 	end
 
 	def VCS.add file
-		%x{#{GITCMD} add #{file}}
+		runcmd(GITCMD, "add", file)
 	end
 
 	def VCS.revno
 		# there is a bug in git log --format, which supresses the \n on the last line
-		%x{#{GITCMD} log --format="format:x"}.scan("\n").size + 1
+		runcmd(GITCMD, "log", "--format=format:x").scan("\n").size + 1
 	end
 
 	def VCS.cat revision, file
-		revs = %x{#{GITCMD} log --format=format:%H}.scan(/^(.*)$/).flatten.reverse
-		%x{#{GITCMD} show #{revs[revision-1]}:#{file}}
+		revs = runcmd(GITCMD, "log", "--format=format:%H").scan(/^(.*)$/).flatten.reverse
+		runcmd(GITCMD, "show", "#{revs[revision-1]}:#{file}")
 	end
 
 	def VCS.history
-		log = %x{#{GITCMD} log --format=format:"%s\t%ai"}.split("\n").reverse
+		log = runcmd(GITCMD, "log", "--format=format:%s\t%ai").split("\n").reverse
 		ret = Log.new
 		log.each_with_index{|s,i|
 			a = s.scan(/^([^\t]*)(.*)$/).flatten
@@ -59,18 +64,18 @@ class VCS
 		File.open(tmpfile,"w"){|f|
 			f<<comment
 		}
-		ret = %x{#{GITCMD} commit -a -F #{tmpfile}}
+		ret = runcmd(GITCMD, "commit", "-a", "-F", tmpfile)
 		File.delete(tmpfile)
 		ret
 	end
 	
 	def VCS.branch source, target
-		%x{#{GITCMD} clone #{source} #{target}}
+		runcmd(GITCMD, "clone", source, target)
 	end
 
 	def VCS.revert revno
-		revhash = %x{#{GITCMD} log --format=%H}.split("\n").reverse[revno-1]
-		%x{#{GITCMD} checkout #{revhash} .}
+		revhash = runcmd(GITCMD, "log", "--format=%H").split("\n").reverse[revno-1]
+		runcmd(GITCMD, "checkout", revhash, ".")
 		VCS.commit("Reverted Poll to version #{revno}")
 	end
 end
