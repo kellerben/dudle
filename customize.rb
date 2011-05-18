@@ -72,7 +72,7 @@ username = $cgi.cookies["username"][0]
 if $cgi.include?("delete_username")
 	$d.html.add_cookie("username","","/",Time.now - 1*60*60*24*365)
 	username = nil
-elsif $cgi.include?("username") 
+elsif $cgi.include?("username") && $cgi["username"] != ""
 	username = $cgi["username"]
 	$d.html.add_cookie("username",username,"/",Time.now + 1*60*60*24*365)
 end
