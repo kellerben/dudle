@@ -44,4 +44,7 @@ License:
    »main.rb« in $DUDLE_HOME_FOLDER/extension/$YOUR_EXTENSION/main.rb
    Examples can be found here:
      https://dudle.inf.tu-dresden.de/unstable/extensions/
-   (which again is a repository ;--))
+     which again are repositories ;--) e.g.:
+     cd $DUDLE_HOME_FOLDER/dudle/extensions/
+     bzr branch https://dudle.inf.tu-dresden.de/unstable/extensions/10_participate/
+     bzr branch https://dudle.inf.tu-dresden.de/unstable/extensions/symcrypt/
