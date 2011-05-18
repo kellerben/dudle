@@ -22,6 +22,7 @@
 if __FILE__ == $0
 
 load "../dudle.rb"
+require "digest"
 
 $d = Dudle.new
 
@@ -63,12 +64,8 @@ HTACCESS
 	end
 end
 def add_to_htdigest(user,password)
-	fork {
-		IO.popen("htdigest .htdigest dudle #{user} 2>/dev/null","w+"){|htdigest|
-			htdigest.sync
-			htdigest.puts(password)
-			htdigest.puts(password)
-		}
+	File.open(".htdigest","a"){|f|
+		f << "#{user}:dudle:#{Digest::MD5.hexdigest("#{user}:dudle:#{password}")}\n"
 	}
 end
 
