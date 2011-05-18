@@ -45,7 +45,7 @@ class VCS
 	end
 
 	def VCS.cat revision, file
-		revs = runcmd(GITCMD, "log", "--format=format:%H").scan(/^(.*)$/).flatten.reverse
+		revs = runcmd(GITCMD, "log", "--format=format:%H").split("\n").reverse
 		runcmd(GITCMD, "show", "#{revs[revision-1]}:#{file}")
 	end
 
