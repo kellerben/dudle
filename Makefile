@@ -19,22 +19,25 @@
 
 DOMAIN=dudle
 
-default: $(foreach p,$(wildcard locale/*/$(DOMAIN).po), $(addsuffix .mo,$(basename $p)))
+locale: $(foreach p,$(wildcard locale/*/$(DOMAIN).po), $(addsuffix .mo,$(basename $p)))
 
 locale/$(DOMAIN).pot: *.rb *.cgi
 	rm -f $@
 	rgettext *.cgi *.rb -o $@
 
 %.mo: %.po
-	rmsgfmt $*.po -o $*.mo
+	msgfmt $*.po -o $*.mo
 
 locale/%/$(DOMAIN).po: locale/$(DOMAIN).pot
-	msgmerge locale/$*/$(DOMAIN).po locale/$(DOMAIN).pot >/tmp/$(DOMAIN)_$*_tmp.po
-	if [ "`msgcomm -u /tmp/$(DOMAIN)_$*_tmp.po locale/$*/$(DOMAIN).po`" ];then\
-		mv /tmp/$(DOMAIN)_$*_tmp.po locale/$*/$(DOMAIN).po;\
+	msgmerge $@ $? >/tmp/$(DOMAIN)_$*_tmp.po
+	if [ "`msgcomm -u /tmp/$(DOMAIN)_$*_tmp.po $@`" ];then\
+		mv /tmp/$(DOMAIN)_$*_tmp.po $@;\
 	else\
-		touch locale/$*/$(DOMAIN).po;\
+		touch $@;\
 	fi
-	if [ "`postats -f locale/$*/$(DOMAIN).po|tail -n1 |cut -d"(" -f3|cut -d")" -f1`" = "100%\n" ];\
-		then poedit locale/$*/$(DOMAIN).po;\
+	@if [ "`potool -fnt $@ -s`" != "0" -o "`potool -ff $@ -s`" != "0" ];then\
+		echo "WARNING: There are untranslated Strings in $@";\
+		if [ "X:$$DUDLE_POEDIT_AUTO" = "X:$*" ]; then\
+			poedit $@;\
+		fi;\
 	fi

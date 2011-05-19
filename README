@@ -47,3 +47,10 @@ License:
      cd $DUDLE_HOME_FOLDER/dudle/extensions/
      bzr branch https://dudle.inf.tu-dresden.de/unstable/extensions/10_participate/
      bzr branch https://dudle.inf.tu-dresden.de/unstable/extensions/symcrypt/
+
+=== Translators ===
+If you set $DUDLE_POEDIT_AUTO to your lang, poedit will launch automatically when building the application.
+E.g.:
+	export DUDLE_POEDIT_AUTO=fr
+	bzr pull
+	make # will launch poedit if new french strings are to be translated
