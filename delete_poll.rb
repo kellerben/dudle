@@ -31,7 +31,7 @@ QUESTIONS = [ "phahqu3Uib4neiRi",
              _("I am aware of the consequences."),
              _("Please delete this poll.")]
 
-USERCONFIRM = $cgi["confirm"].strip
+USERCONFIRM = CGI.escapeHTML($cgi["confirm"].strip)
 if $cgi.include?("confirmnumber")
  CONFIRM = $cgi["confirmnumber"].to_i
 	if USERCONFIRM == QUESTIONS[CONFIRM]
@@ -107,9 +107,9 @@ $d.html << %{
 	#{hint}
 	<form method='post' action='' accept-charset='utf-8'>
 		<div>
-			<input type='hidden' name='confirmnumber' value='#{CONFIRM}' />
-			<input size='30' type='text' name='confirm' value='#{USERCONFIRM}' />
-			<input type='submit' value='#{deletestr}' />
+			<input type='hidden' name='confirmnumber' value="#{CONFIRM}" />
+			<input size='30' type='text' name='confirm' value="#{USERCONFIRM}" />
+			<input type='submit' value="#{deletestr}" />
 		</div>
 	</form>
 }
