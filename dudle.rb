@@ -186,8 +186,15 @@ HEAD
 		# init extenisons #
 		###################
 		@extensions = []
+		$d = self # FIXME: this is dirty, but extensions need to know table elem 
 		Dir.open("#{@basedir}/extensions/").sort.each{|f|
-			@extensions << f if File.exists?("#{@basedir}/extensions/#{f}/main.rb")
+			if File.exists?("#{@basedir}/extensions/#{f}/main.rb")
+				@extensions << f 
+				if File.exists?("#{@basedir}/extensions/#{f}/preload.rb")
+					$current_ext_dir = f
+					require "#{@basedir}/extensions/#{f}/preload"
+				end
+			end
 		}
 	end
 

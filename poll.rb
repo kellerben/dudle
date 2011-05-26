@@ -49,6 +49,12 @@ class Poll
 	YESVAL   = "a_yes__"
 	MAYBEVAL = "b_maybe"
 	NOVAL    = "c_no___"
+
+	@@table_html_hooks = []
+	def Poll.table_html_hooks
+		@@table_html_hooks
+	end
+
 	def initialize name,type
 		@name = name
 
@@ -132,6 +138,8 @@ class Poll
 				ret += "</tr>\n"
 			end
 		}
+
+		@@table_html_hooks.each{|hook| ret += hook.call(ret)}
 
 		# PARTICIPATE
 		ret += participate_to_html unless @data.keys.include?($cgi["edituser"]) || !showparticipation
