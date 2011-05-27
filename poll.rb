@@ -107,10 +107,11 @@ class Poll
 	end
 	def to_html(showparticipation = true)
 		# border=1 for textbrowsers ;--)
-		ret = "<table class='polltable' border='1'>\n"
+		ret = "<table id='participanttable' class='polltable' border='1'>\n"
 		
 		sortcolumns = $cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]
-		ret += @head.to_html(sortcolumns)
+		ret += "<thead>#{@head.to_html(sortcolumns)}</thead>"
+		ret += "<tbody id='participants'>"
 		sort_data(sortcolumns).each{|participant,poll|
 			if $cgi["edituser"] == participant
 				ret += participate_to_html
@@ -141,6 +142,7 @@ class Poll
 
 		@@table_html_hooks.each{|hook| ret += hook.call(ret)}
 
+		ret += "</tbody><tbody>"
 		# PARTICIPATE
 		ret += participate_to_html unless @data.keys.include?($cgi["edituser"]) || !showparticipation
 
@@ -171,7 +173,7 @@ class Poll
 		}
 
 		ret += "<td class='invisible'></td></tr>"
-		ret += "</table>\n"
+		ret += "</tbody></table>\n"
 		ret
 	end
 
