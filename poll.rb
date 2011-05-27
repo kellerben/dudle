@@ -135,7 +135,7 @@ class Poll
 					end
 					ret += "<td class='#{klasse}' title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(column.to_s)}\">#{value}</td>\n"
 				}
-				ret += "<td class='date'>#{poll['timestamp'].strftime('%d.%m,&nbsp;%H:%M')}</td>"
+				ret += "<td class='date'>#{poll['timestamp'].strftime('%c')}</td>"
 				ret += "</tr>\n"
 			end
 		}
