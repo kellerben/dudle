@@ -116,7 +116,7 @@ class Poll
 			if $cgi["edituser"] == participant
 				ret += participate_to_html
 			else
-				ret += "<tr class='participantrow'>\n"
+				ret += "<tr id='#{participant.to_htmlID}_tr' class='participantrow'>\n"
 				ret += userstring(participant,showparticipation)
 				@head.columns.each{|column|
 					case poll[column]
