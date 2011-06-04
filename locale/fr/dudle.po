@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-05-17 16:15+0200\n"
-"PO-Revision-Date: 2011-05-03 16:46+0100\n"
+"PO-Revision-Date: 2011-06-03 16:57+0100\n"
 "Last-Translator: Gilles Seban\n"
 "Language-Team: \n"
 "Language: \n"
@@ -402,7 +402,7 @@ msgstr ""
 
 #: delete_poll.rb:50
 msgid "Things you can do now are"
-msgstr ""
+msgstr "Choses que vous pouvez faire maintenant"
 
 #: delete_poll.rb:51
 msgid "Return to dudle home and schedule a new poll"
@@ -458,7 +458,7 @@ msgstr "Historique"
 
 #: dudle.rb:80
 msgid "Edit Columns"
-msgstr ""
+msgstr "Éditer les colonnes"
 
 #: dudle.rb:81 invite_participants.rb:38
 msgid "Invite Participants"
@@ -538,7 +538,7 @@ msgstr ""
 
 #: history.rb:32
 msgid "Current Poll (Version %{revisionnumber})"
-msgstr ""
+msgstr "Sondage courant (Version %{revisionnumber})"
 
 #: log.rb:111
 msgid "Version"
@@ -554,11 +554,11 @@ msgstr "Commentaire"
 
 #: overview.rb:31
 msgid "The next steps are:"
-msgstr ""
+msgstr "Les étapes suivantes sont : "
 
 #: overview.rb:33
 msgid "Send the link to all participants:"
-msgstr ""
+msgstr "Envoyer ce lien à tous les participants : "
 
 #: overview.rb:34
 msgid "Send this link via email..."
@@ -566,7 +566,7 @@ msgstr "Envoyer ce lien par email..."
 
 #: overview.rb:35
 msgid "Visit the poll yourself:"
-msgstr ""
+msgstr "Aller sur le sondage : "
 
 #: overview.rb:36
 msgid "Link to dudle poll about %{polltitle}"
@@ -632,7 +632,7 @@ msgstr "Aller au dernier commentaire"
 
 #: poll.rb:319
 msgid "%{user} said on %{time}"
-msgstr "{user} a dit à %{time}"
+msgstr "%{user} a dit à %{time}"
 
 #: poll.rb:334
 msgid "Go Up"
@@ -648,7 +648,7 @@ msgstr "Sauvegarder le commentaire"
 
 #: poll.rb:359
 msgid "Show history items:"
-msgstr ""
+msgstr "Montrer les éléments de l'historique : "
 
 #: poll.rb:366
 msgid "All"
@@ -656,19 +656,19 @@ msgstr "Tous"
 
 #: poll.rb:367
 msgid "Participant related"
-msgstr ""
+msgstr "liés aux participants"
 
 #: poll.rb:368
 msgid "Column related"
-msgstr ""
+msgstr "liés aux colonnes"
 
 #: poll.rb:369
 msgid "Comment related"
-msgstr ""
+msgstr "liés aux commentaires"
 
 #: poll.rb:370
 msgid "Access Control related"
-msgstr ""
+msgstr "liés au contrôle d'accès"
 
 #: poll.rb:376
 msgid "Update"
@@ -721,7 +721,7 @@ msgstr ""
 
 #: timepollhead.rb:119
 msgid "This Time was already choosen."
-msgstr ""
+msgstr "Cette heure est déjà choisie."
 
 #: timepollhead.rb:193
 msgid "Earlier"
@@ -741,7 +741,7 @@ msgstr "Optionnel :"
 
 #: timepollhead.rb:313
 msgid "Enter a concrete value as start time."
-msgstr ""
+msgstr "Entrer une heure de début."
 
 #: timepollhead.rb:329
 msgid "Time"
@@ -749,15 +749,15 @@ msgstr "Heure"
 
 #: timepollhead.rb:342
 msgid "Chosen"
-msgstr ""
+msgstr "Choisi"
 
 #: timepollhead.rb:343
 msgid "Not Chosen"
-msgstr ""
+msgstr "Non choisi"
 
 #: timepollhead.rb:344
 msgid "Past"
-msgstr ""
+msgstr "Passé"
 
 #: timepollhead.rb:378
 msgid "Select the whole row"
@@ -773,7 +773,7 @@ msgstr "Ajouter"
 
 #: timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
-msgstr ""
+msgstr "ex : 09:30, matin, après-midi"
 
 #~ msgid "The link to your poll is:"
 #~ msgstr "Le lien de votre sondage est :"
