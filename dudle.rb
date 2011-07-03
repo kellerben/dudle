@@ -237,6 +237,7 @@ READY
 			["de", "Deutsch"],
 			["it", "Italiano"],
 			["nl", "Nederlands"],
+			["hu", "Magyar"],
 			["cs", "Česky"],
 			["sv", "Svenska"]
 			]
