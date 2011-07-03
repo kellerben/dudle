@@ -19,14 +19,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-05-17 16:15+0200\n"
+"POT-Creation-Date: 2011-05-17 16:16+0200\n"
 "PO-Revision-Date: 2011-05-11 13:46+0100\n"
 "Last-Translator: Joeri de Ruiter <joeri@cs.ru.nl>\n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #: about.cgi:29
 msgid ""
@@ -370,6 +370,14 @@ msgstr "De gebruiker 'participant' heeft alleen toegang tot de stem interface."
 #: access_control.rb:209
 msgid "Access control:"
 msgstr "Toegangsrechten:"
+
+#: config.rb:26
+msgid "Event Schedule Poll"
+msgstr ""
+
+#: config.rb:30
+msgid "Normal Poll"
+msgstr ""
 
 #: delete_poll.rb:29
 msgid "Yes, I know what I am doing!"
