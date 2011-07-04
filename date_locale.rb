@@ -146,6 +146,12 @@ module Date_locale
       :daynames => %w{Nedelja Ponedeljak Utorak Sreda Četvrtak Petak Subota},
       :abbr_daynames => %w{Ned Pon Uto Sre Čet Pet Sub},
      },
+   :hu => {
+      :monthnames => [nil] + %w{január február március május június július augusztus szeptember október november december},
+      :abbr_monthnames => [nil] + %w{jan feb már ápr máj jún júl aug sze okt nov dec},
+      :daynames => %w{vasárnap hétfő kedd szerda csütörtök péntek szombat},
+      :abbr_daynames => %w{vas hét ked sze csü pén szo},
+     },
   }
   #~ puts DATE_TEXTS.to_yaml
     
