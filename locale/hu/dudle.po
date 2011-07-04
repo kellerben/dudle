@@ -18,15 +18,16 @@
 ############################################################################
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: 2011-06-04 21:26+0200\n"
-"PO-Revision-Date: \n"
+"Project-Id-Version: 510\n"
+"POT-Creation-Date: 2011-07-03 23:47+0200\n"
+"PO-Revision-Date: 2011-07-04 06:55+0200\n"
 "Last-Translator: Gabor Kiss <kissg@ssg.ki.iif.hu>\n"
 "Language-Team: \n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-Country: HUNGARY\n"
 
@@ -36,7 +37,7 @@ msgstr "Ha bármi hibát, hiányosságot, fennakadást tapasztalsz, jelezd a sze
 
 #: about.cgi:31
 msgid "--verbose"
-msgstr "--verbose"
+msgstr ""
 
 #: about.cgi:32
 msgid "The sourcecode of this application is available under the terms of <a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
@@ -328,7 +329,7 @@ msgstr "Az ’admin’ felhasználó a szavazáshoz és a konfiguráló felület
 
 #: access_control.rb:200
 msgid "The user ‘participant’ has only access to the vote interface."
-msgstr "A ’résztvevő’ csak szavazhat."
+msgstr "A ’participant’ felhasználó csak szavazhat."
 
 #: access_control.rb:206
 msgid "Access control:"
@@ -434,7 +435,7 @@ msgstr "Hozzáférés-szabályozás"
 
 #: dudle.rb:83
 msgid "Overview"
-msgstr "Áttekintés"
+msgstr "Végső teendők"
 
 #: dudle.rb:86
 msgid "Delete Poll"
@@ -442,7 +443,7 @@ msgstr "Szavazás törlése"
 
 #: dudle.rb:90
 msgid "About"
-msgstr "Névjegy"
+msgstr "A programról"
 
 #: dudle.rb:92
 msgid "Customize"
@@ -510,7 +511,7 @@ msgstr "A szavazás %{revisionnumber}. verziója"
 
 #: history.rb:32
 msgid "Current Poll (Version %{revisionnumber})"
-msgstr ""
+msgstr "A szavazás aktuális állása (%{revisionnumber}. verzió)"
 
 #: log.rb:111
 msgid "Version"
@@ -526,7 +527,7 @@ msgstr "Esemény"
 
 #: overview.rb:31
 msgid "The next steps are:"
-msgstr "További teendők:"
+msgstr "Már csak annyi dolgod van, hogy"
 
 #: overview.rb:33
 msgid "Send the link to all participants:"
@@ -546,7 +547,7 @@ msgstr "A %{polltitle} tárgyú szavazásra mutató link"
 
 #: participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."
-msgstr ""
+msgstr "Sikeresen elmentve. A folytatáshoz kattints ide: %{link}."
 
 #: poll.rb:86
 msgid "Edit user %{user}..."
@@ -628,19 +629,19 @@ msgstr "Mindegyik"
 
 #: poll.rb:367
 msgid "Participant related"
-msgstr "A résztvevőkkel kapcsolatos"
+msgstr "A szavazókkal kapcsolatosak"
 
 #: poll.rb:368
 msgid "Column related"
-msgstr "Az oszlopokkal kapcsolatos"
+msgstr "Az oszlopokkal kapcsolatosak"
 
 #: poll.rb:369
 msgid "Comment related"
-msgstr "A megjegyzésekkel kapcsolatos"
+msgstr "A megjegyzésekkel kapcsolatosak"
 
 #: poll.rb:370
 msgid "Access Control related"
-msgstr "A hozzáféréssel kapcsolatos"
+msgstr "A hozzáféréssel kapcsolatosak"
 
 #: poll.rb:376
 msgid "Update"

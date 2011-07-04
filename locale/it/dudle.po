@@ -19,14 +19,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-05-17 16:16+0200\n"
+"POT-Creation-Date: 2011-07-04 00:00+0200\n"
 "PO-Revision-Date: 2011-05-10 07:31+0200\n"
 "Last-Translator: Eros Pedrini\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 
 #: about.cgi:29
 msgid ""
@@ -48,8 +48,8 @@ msgid ""
 "href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
 msgstr ""
 "Il codice sorgente di questa applicazione è reso disponibile secondo i "
-"termini della licenza <a href='http://www.fsf.org/licensing/licenses/agpl-"
-"3.0.html'>AGPL Versione 3</a>"
+"termini della licenza <a href='http://www.fsf.org/licensing/licenses/"
+"agpl-3.0.html'>AGPL Versione 3</a>"
 
 #: about.cgi:34
 msgid ""
@@ -130,7 +130,7 @@ msgstr "Foglio di Stile"
 msgid "Default Username"
 msgstr "Nome Utente Predefinito"
 
-#: customize.cgi:83 access_control.rb:76 customize.rb:83
+#: customize.cgi:83 access_control.rb:73 customize.rb:83
 msgid "Username:"
 msgstr "Nome Utente:"
 
@@ -138,12 +138,12 @@ msgstr "Nome Utente:"
 msgid "Edit"
 msgstr "Modifica"
 
-#: customize.cgi:117 access_control.rb:123 customize.rb:117 poll.rb:286
+#: customize.cgi:117 access_control.rb:120 customize.rb:117 poll.rb:296
 msgid "Save"
 msgstr "Salva"
 
-#: customize.cgi:120 access_control.rb:119 customize.rb:120 delete_poll.rb:103
-#: poll.rb:324
+#: customize.cgi:120 access_control.rb:116 customize.rb:120 delete_poll.rb:105
+#: poll.rb:334
 msgid "Delete"
 msgstr "Elimina"
 
@@ -298,15 +298,15 @@ msgstr ""
 "Se credi che l'eliminazione sia stata accidentale, puoi contattare "
 "l'amministratore del servizio."
 
-#: access_control.rb:89
+#: access_control.rb:86
 msgid "Password"
 msgstr "Password"
 
-#: access_control.rb:90
+#: access_control.rb:87
 msgid "repeat"
 msgstr "ripeti"
 
-#: access_control.rb:116
+#: access_control.rb:113
 msgid ""
 "You have to remove the participant user before you can remove the "
 "administrator."
@@ -314,39 +314,39 @@ msgstr ""
 "Prima di poter rimuovere l'amministratore, devi rimuovere tutti gli altri "
 "partecipanti."
 
-#: access_control.rb:141
+#: access_control.rb:138
 msgid "Only letters and digits are allowed in the username."
 msgstr "Il Nome Utente può essere composto solo da lettere e numeri."
 
-#: access_control.rb:143
+#: access_control.rb:140
 msgid "Passwords did not match."
 msgstr "La Password non corrisponde."
 
-#: access_control.rb:176
+#: access_control.rb:173
 msgid "Change Access Control Settings"
 msgstr "Cambia le Impostazioni per il Controllo degli Accessi"
 
-#: access_control.rb:180
+#: access_control.rb:177
 msgid "not activated"
 msgstr "non attivato"
 
-#: access_control.rb:182
+#: access_control.rb:179
 msgid "Activate"
 msgstr "Attiva"
 
-#: access_control.rb:185
+#: access_control.rb:182
 msgid "will be activated when at least an admin user is configured"
 msgstr "verrà attivato quando almeno un amministratore sarà configurato"
 
-#: access_control.rb:187
+#: access_control.rb:184
 msgid "Deactivate"
 msgstr "Disattiva"
 
-#: access_control.rb:189
+#: access_control.rb:186
 msgid "activated"
 msgstr "attivato"
 
-#: access_control.rb:190
+#: access_control.rb:187
 msgid ""
 "You have to remove all users before you can deactivate the access control "
 "settings."
@@ -354,14 +354,14 @@ msgstr ""
 "Prima di poter disattivare le impostazioni per il controllo dell'accesso "
 "bisogna eliminare tutti gli utenti."
 
-#: access_control.rb:194
+#: access_control.rb:191
 msgid ""
 "You will be asked for the password you entered here after pressing save!"
 msgstr ""
 "La password che hai inserito qui, ti verrà richiesta dopo che hai premuto "
 "Salva!"
 
-#: access_control.rb:197
+#: access_control.rb:194
 msgid ""
 "The user ‘admin’ has access to the vote as well as the configuration "
 "interface."
@@ -369,22 +369,14 @@ msgstr ""
 "L'utente ‘amministratore’ ha accesso all'interfaccia di votazione e "
 "all'interfaccia di configurazione."
 
-#: access_control.rb:203
+#: access_control.rb:200
 msgid "The user ‘participant’ has only access to the vote interface."
 msgstr ""
 "L'utente ‘partecipante’ ha accesso solamente all'interfaccia di votazione."
 
-#: access_control.rb:209
+#: access_control.rb:206
 msgid "Access control:"
 msgstr "Controllo dell'Accesso:"
-
-#: config.rb:26
-msgid "Event Schedule Poll"
-msgstr ""
-
-#: config.rb:30
-msgid "Normal Poll"
-msgstr ""
 
 #: delete_poll.rb:29
 msgid "Yes, I know what I am doing!"
@@ -402,11 +394,11 @@ msgstr "Conosco le conseguenze."
 msgid "Please delete this poll."
 msgstr "Si prega di cancellare questo sondaggio."
 
-#: delete_poll.rb:48
+#: delete_poll.rb:50
 msgid "The poll was deleted successfully!"
 msgstr "Il sondaggio è stato cancellato!"
 
-#: delete_poll.rb:49
+#: delete_poll.rb:51
 msgid ""
 "If this was done by accident, please contact the administrator of the "
 "system. The poll can be recovered for an indeterministic amount of time, "
@@ -415,43 +407,43 @@ msgstr ""
 "Se questo è stato fatto per sbaglio, contatta l'amministratore del servizio. "
 "Il sondaggio potrebbe essere ripristinato se non è troppo tardi."
 
-#: delete_poll.rb:50
+#: delete_poll.rb:52
 msgid "Things you can do now are"
 msgstr "Quello che puoi fare ora"
 
-#: delete_poll.rb:51
+#: delete_poll.rb:53
 msgid "Return to dudle home and schedule a new poll"
 msgstr "Ritorna alla pagina principale di Dudle e Programma un nuovo Sondaggio"
 
-#: delete_poll.rb:52
+#: delete_poll.rb:54
 msgid "Browse Wikipedia"
 msgstr "Vai su Wikipedia"
 
-#: delete_poll.rb:53
+#: delete_poll.rb:55
 msgid "Search something with Google"
 msgstr "Cerca in Google"
 
-#: delete_poll.rb:79
+#: delete_poll.rb:81
 msgid "To delete the poll, you have to type:"
 msgstr "Per eliminare un sondaggio, devi scrivere:"
 
-#: delete_poll.rb:87
+#: delete_poll.rb:89
 msgid "but you typed:"
 msgstr "ma tu hai scritto:"
 
-#: delete_poll.rb:99
+#: delete_poll.rb:101
 msgid "Delete this Poll"
 msgstr "Cancella questo Sondaggio"
 
-#: delete_poll.rb:100
+#: delete_poll.rb:102
 msgid "You want to delete the poll named"
 msgstr "Vuoi eliminare il sondaggio che si chiama"
 
-#: delete_poll.rb:101
+#: delete_poll.rb:103
 msgid "This is an irreversible action!"
 msgstr "Questa azione non può essere annullata!"
 
-#: delete_poll.rb:102
+#: delete_poll.rb:104
 msgid ""
 "If you are sure in what you are doing, please type “%{question}” into the "
 "form."
@@ -502,23 +494,23 @@ msgstr "Personalizza"
 msgid "Dudle Home"
 msgstr "Pagina Principale di Dudle"
 
-#: dudle.rb:196 dudle.rb:214
+#: dudle.rb:203 dudle.rb:221
 msgid "Previous"
 msgstr "Precedente"
 
-#: dudle.rb:197 dudle.rb:215
+#: dudle.rb:204 dudle.rb:222
 msgid "Next"
 msgstr "Successivo"
 
-#: dudle.rb:198 dudle.rb:216
+#: dudle.rb:205 dudle.rb:223
 msgid "Finish"
 msgstr "Fine"
 
-#: dudle.rb:221
+#: dudle.rb:228
 msgid "All changes were saved sucessfully."
 msgstr "Tutti i cambiamenti sono stati salvati."
 
-#: dudle.rb:221
+#: dudle.rb:228
 msgid "Proceed!"
 msgstr "Procedi!"
 
@@ -590,99 +582,99 @@ msgstr "Link al sondaggio di Dudle su %{polltitle}"
 msgid "The changes were saved, you should be redirected to %{link}."
 msgstr "I cambiamenti sono stati salvati, dovresti essere ridiretto a %{link}."
 
-#: poll.rb:86
+#: poll.rb:92
 msgid "Edit user %{user}..."
 msgstr "Modifica l'utente %{user}..."
 
-#: poll.rb:90
+#: poll.rb:96
 msgid "Delete user %{user}..."
 msgstr "Elimina l'utente %{user}..."
 
-#: poll.rb:140
+#: poll.rb:150
 msgid "Total"
 msgstr "Totale"
 
-#: poll.rb:172
+#: poll.rb:182
 msgid "Invite"
 msgstr "Invita"
 
-#: poll.rb:173 pollhead.rb:62 timepollhead.rb:158
+#: poll.rb:183 pollhead.rb:62 timepollhead.rb:158
 msgid "Name"
 msgstr "Nome"
 
-#: poll.rb:218
+#: poll.rb:228
 msgid "Save Changes"
 msgstr "Salva i Cambiamenti"
 
-#: poll.rb:222
+#: poll.rb:232
 msgid "Cancel"
 msgstr "Annulla"
 
-#: poll.rb:244
+#: poll.rb:254
 msgid "Do you really want to delete user %{user}?"
 msgstr "Vuoi veramente eliminare l'utente %{user}?"
 
-#: poll.rb:247
+#: poll.rb:257
 msgid "Confirm"
 msgstr "Conferma"
 
-#: poll.rb:295
+#: poll.rb:305
 msgid "Comments"
 msgstr "Commenti"
 
-#: poll.rb:298
+#: poll.rb:308
 msgid "Sort oldest comment first"
 msgstr "Ordina: prima i commenti più vecchi"
 
-#: poll.rb:301
+#: poll.rb:311
 msgid "Sort newest comment first"
 msgstr "Ordina: prima i commenti più nuovi"
 
-#: poll.rb:306
+#: poll.rb:316
 msgid "Go to last comment"
 msgstr "Val all'ultimo commento"
 
-#: poll.rb:319
+#: poll.rb:329
 msgid "%{user} said on %{time}"
 msgstr "alle %{time}, %{user} ha detto "
 
-#: poll.rb:334
+#: poll.rb:344
 msgid "Go Up"
 msgstr "Sali"
 
-#: poll.rb:340
+#: poll.rb:350
 msgid "says"
 msgstr "dice"
 
-#: poll.rb:341
+#: poll.rb:351
 msgid "Submit Comment"
 msgstr "Invia Commento"
 
-#: poll.rb:359
+#: poll.rb:369
 msgid "Show history items:"
 msgstr "Mostra gli elementi nello storico:"
 
-#: poll.rb:366
+#: poll.rb:376
 msgid "All"
 msgstr "Tutti"
 
-#: poll.rb:367
+#: poll.rb:377
 msgid "Participant related"
 msgstr "Partecipante correlato"
 
-#: poll.rb:368
+#: poll.rb:378
 msgid "Column related"
 msgstr "Colonna correlata"
 
-#: poll.rb:369
+#: poll.rb:379
 msgid "Comment related"
 msgstr "Commento correlato"
 
-#: poll.rb:370
+#: poll.rb:380
 msgid "Access Control related"
 msgstr "Controllo dell'Accesso correlato"
 
-#: poll.rb:376
+#: poll.rb:386
 msgid "Update"
 msgstr "Aggiorna"
 

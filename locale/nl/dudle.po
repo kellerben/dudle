@@ -19,14 +19,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-05-17 16:16+0200\n"
+"POT-Creation-Date: 2011-07-04 00:00+0200\n"
 "PO-Revision-Date: 2011-05-11 13:46+0100\n"
 "Last-Translator: Joeri de Ruiter <joeri@cs.ru.nl>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 
 #: about.cgi:29
 msgid ""
@@ -129,7 +129,7 @@ msgstr "Stylesheet"
 msgid "Default Username"
 msgstr "Standaard Gebruikersnaam"
 
-#: customize.cgi:83 access_control.rb:76 customize.rb:83
+#: customize.cgi:83 access_control.rb:73 customize.rb:83
 msgid "Username:"
 msgstr "Gebuikersnaam:"
 
@@ -137,12 +137,12 @@ msgstr "Gebuikersnaam:"
 msgid "Edit"
 msgstr "Wijzig"
 
-#: customize.cgi:117 access_control.rb:123 customize.rb:117 poll.rb:286
+#: customize.cgi:117 access_control.rb:120 customize.rb:117 poll.rb:296
 msgid "Save"
 msgstr "Opslaan"
 
-#: customize.cgi:120 access_control.rb:119 customize.rb:120 delete_poll.rb:103
-#: poll.rb:324
+#: customize.cgi:120 access_control.rb:116 customize.rb:120 delete_poll.rb:105
+#: poll.rb:334
 msgid "Delete"
 msgstr "Verwijder"
 
@@ -293,15 +293,15 @@ msgstr ""
 "Als u denkt dat deze verwijdering per ongeluk is gedaan, neem dan contact op "
 "met de beheerder van het systeem."
 
-#: access_control.rb:89
+#: access_control.rb:86
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: access_control.rb:90
+#: access_control.rb:87
 msgid "repeat"
 msgstr "herhaal"
 
-#: access_control.rb:116
+#: access_control.rb:113
 msgid ""
 "You have to remove the participant user before you can remove the "
 "administrator."
@@ -309,40 +309,40 @@ msgstr ""
 "De 'participant' gebruiker moet worden verwijderd voordat de 'admin' "
 "gebruiker kan worden verwijderd."
 
-#: access_control.rb:141
+#: access_control.rb:138
 msgid "Only letters and digits are allowed in the username."
 msgstr "In de gebruikersnaam zijn alleen letters en cijfers toegestaan."
 
-#: access_control.rb:143
+#: access_control.rb:140
 msgid "Passwords did not match."
 msgstr "Wachtwoorden kwamen niet overeen."
 
-#: access_control.rb:176
+#: access_control.rb:173
 msgid "Change Access Control Settings"
 msgstr "Wijzig Toegangsrechten"
 
-#: access_control.rb:180
+#: access_control.rb:177
 msgid "not activated"
 msgstr "niet geactiveerd"
 
-#: access_control.rb:182
+#: access_control.rb:179
 msgid "Activate"
 msgstr "Activeer"
 
-#: access_control.rb:185
+#: access_control.rb:182
 msgid "will be activated when at least an admin user is configured"
 msgstr ""
 "zal worden geactiveerd zodra tenminste één admin gebruiker is geconfigureerd"
 
-#: access_control.rb:187
+#: access_control.rb:184
 msgid "Deactivate"
 msgstr "Deactiveer"
 
-#: access_control.rb:189
+#: access_control.rb:186
 msgid "activated"
 msgstr "geactiveerd"
 
-#: access_control.rb:190
+#: access_control.rb:187
 msgid ""
 "You have to remove all users before you can deactivate the access control "
 "settings."
@@ -350,34 +350,26 @@ msgstr ""
 "Alle gebruikers moeten zijn verwijderd voordat de toegangsrechten kunnen "
 "worden gedeactiveerd."
 
-#: access_control.rb:194
+#: access_control.rb:191
 msgid ""
 "You will be asked for the password you entered here after pressing save!"
 msgstr ""
 "Na het klikken op 'Opslaan' zal om het ingevoerde wachtwoord worden gevraagd."
 
-#: access_control.rb:197
+#: access_control.rb:194
 msgid ""
 "The user ‘admin’ has access to the vote as well as the configuration "
 "interface."
 msgstr ""
 "De gebruiker 'admin' heeft toegang tot de stem en configuratie interfaces."
 
-#: access_control.rb:203
+#: access_control.rb:200
 msgid "The user ‘participant’ has only access to the vote interface."
 msgstr "De gebruiker 'participant' heeft alleen toegang tot de stem interface."
 
-#: access_control.rb:209
+#: access_control.rb:206
 msgid "Access control:"
 msgstr "Toegangsrechten:"
-
-#: config.rb:26
-msgid "Event Schedule Poll"
-msgstr ""
-
-#: config.rb:30
-msgid "Normal Poll"
-msgstr ""
 
 #: delete_poll.rb:29
 msgid "Yes, I know what I am doing!"
@@ -395,11 +387,11 @@ msgstr "Ik ben me bewust van de gevolgen."
 msgid "Please delete this poll."
 msgstr "Verwijder deze poll."
 
-#: delete_poll.rb:48
+#: delete_poll.rb:50
 msgid "The poll was deleted successfully!"
 msgstr "De Poll was succesvol verwijderd!"
 
-#: delete_poll.rb:49
+#: delete_poll.rb:51
 msgid ""
 "If this was done by accident, please contact the administrator of the "
 "system. The poll can be recovered for an indeterministic amount of time, "
@@ -409,43 +401,43 @@ msgstr ""
 "systeem. De poll kan voor onbepaalde tijd worden hersteld, misschien is het "
 "al te laat."
 
-#: delete_poll.rb:50
+#: delete_poll.rb:52
 msgid "Things you can do now are"
 msgstr "Je kan nu de volgende dingen doen"
 
-#: delete_poll.rb:51
+#: delete_poll.rb:53
 msgid "Return to dudle home and schedule a new poll"
 msgstr "Keer terug naar dudle home en plan een nieuwe poll"
 
-#: delete_poll.rb:52
+#: delete_poll.rb:54
 msgid "Browse Wikipedia"
 msgstr "Browse Wikipedia"
 
-#: delete_poll.rb:53
+#: delete_poll.rb:55
 msgid "Search something with Google"
 msgstr "Zoek iets met Google"
 
-#: delete_poll.rb:79
+#: delete_poll.rb:81
 msgid "To delete the poll, you have to type:"
 msgstr "Om deze poll te verwijderen moet je het volgende intypen:"
 
-#: delete_poll.rb:87
+#: delete_poll.rb:89
 msgid "but you typed:"
 msgstr "maar je hebt het volgende ingetypt:"
 
-#: delete_poll.rb:99
+#: delete_poll.rb:101
 msgid "Delete this Poll"
 msgstr "Verwijder deze Poll"
 
-#: delete_poll.rb:100
+#: delete_poll.rb:102
 msgid "You want to delete the poll named"
 msgstr "Je wil de poll verwijderen met de naam"
 
-#: delete_poll.rb:101
+#: delete_poll.rb:103
 msgid "This is an irreversible action!"
 msgstr "Deze actie kan niet ongedaan worden gemaakt!"
 
-#: delete_poll.rb:102
+#: delete_poll.rb:104
 msgid ""
 "If you are sure in what you are doing, please type “%{question}” into the "
 "form."
@@ -496,23 +488,23 @@ msgstr "Aanpassen"
 msgid "Dudle Home"
 msgstr "Dudle Home"
 
-#: dudle.rb:196 dudle.rb:214
+#: dudle.rb:203 dudle.rb:221
 msgid "Previous"
 msgstr "Vorige"
 
-#: dudle.rb:197 dudle.rb:215
+#: dudle.rb:204 dudle.rb:222
 msgid "Next"
 msgstr "Volgende"
 
-#: dudle.rb:198 dudle.rb:216
+#: dudle.rb:205 dudle.rb:223
 msgid "Finish"
 msgstr "Afronden"
 
-#: dudle.rb:221
+#: dudle.rb:228
 msgid "All changes were saved sucessfully."
 msgstr "Alle wijzigingen zijn succesvol opgeslagen."
 
-#: dudle.rb:221
+#: dudle.rb:228
 msgid "Proceed!"
 msgstr "Doorgaan!"
 
@@ -584,99 +576,99 @@ msgstr "Link naar dudle poll over %{polltitle}"
 msgid "The changes were saved, you should be redirected to %{link}."
 msgstr "De wijzigingen zijn opgeslagen, je wordt doorgestuurd naar %{link}."
 
-#: poll.rb:86
+#: poll.rb:92
 msgid "Edit user %{user}..."
 msgstr "Wijzig gebruiker %{user}..."
 
-#: poll.rb:90
+#: poll.rb:96
 msgid "Delete user %{user}..."
 msgstr "Verwijder gebruiker %{user}..."
 
-#: poll.rb:140
+#: poll.rb:150
 msgid "Total"
 msgstr "Totaal"
 
-#: poll.rb:172
+#: poll.rb:182
 msgid "Invite"
 msgstr "Nodig uit"
 
-#: poll.rb:173 pollhead.rb:62 timepollhead.rb:158
+#: poll.rb:183 pollhead.rb:62 timepollhead.rb:158
 msgid "Name"
 msgstr "Naam"
 
-#: poll.rb:218
+#: poll.rb:228
 msgid "Save Changes"
 msgstr "Wijzigingen Opslaan"
 
-#: poll.rb:222
+#: poll.rb:232
 msgid "Cancel"
 msgstr "Annuleer"
 
-#: poll.rb:244
+#: poll.rb:254
 msgid "Do you really want to delete user %{user}?"
 msgstr "Weet je zeker dat je gebruiker %{user} wilt verwijderen?"
 
-#: poll.rb:247
+#: poll.rb:257
 msgid "Confirm"
 msgstr "Bevestig"
 
-#: poll.rb:295
+#: poll.rb:305
 msgid "Comments"
 msgstr "Reacties"
 
-#: poll.rb:298
+#: poll.rb:308
 msgid "Sort oldest comment first"
 msgstr "Sorteer oudste reactie eerst"
 
-#: poll.rb:301
+#: poll.rb:311
 msgid "Sort newest comment first"
 msgstr "Sorteer nieuwste reactie eerst"
 
-#: poll.rb:306
+#: poll.rb:316
 msgid "Go to last comment"
 msgstr "Ga naar laatste reactie"
 
-#: poll.rb:319
+#: poll.rb:329
 msgid "%{user} said on %{time}"
 msgstr "%{user} zei op %{time}"
 
-#: poll.rb:334
+#: poll.rb:344
 msgid "Go Up"
 msgstr "Ga Omhoog"
 
-#: poll.rb:340
+#: poll.rb:350
 msgid "says"
 msgstr "zegt"
 
-#: poll.rb:341
+#: poll.rb:351
 msgid "Submit Comment"
 msgstr "Verstuur Reactie"
 
-#: poll.rb:359
+#: poll.rb:369
 msgid "Show history items:"
 msgstr "Toon geschiedenis items:"
 
-#: poll.rb:366
+#: poll.rb:376
 msgid "All"
 msgstr "Alle"
 
-#: poll.rb:367
+#: poll.rb:377
 msgid "Participant related"
 msgstr "Deelnemer gerelateerd"
 
-#: poll.rb:368
+#: poll.rb:378
 msgid "Column related"
 msgstr "Kolom gerelateerd"
 
-#: poll.rb:369
+#: poll.rb:379
 msgid "Comment related"
 msgstr "Reactie gerelateerd"
 
-#: poll.rb:370
+#: poll.rb:380
 msgid "Access Control related"
 msgstr "Toegangsrechten gerelateerd"
 
-#: poll.rb:376
+#: poll.rb:386
 msgid "Update"
 msgstr "Wijzig"
 
