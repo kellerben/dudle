@@ -24,134 +24,30 @@
 .invisible {
 	visibility: hidden;
 }
-tr#summary td.sum{
-	color: inherit !important;
-	background-color: inherit !important;
-}
-tr#summary td.sum[title='100%']{
-	background-color: #9c6 !important;
-}
-tr#summary td.sum[title|='99%'],
-tr#summary td.sum[title|='98%'],
-tr#summary td.sum[title|='97%'],
-tr#summary td.sum[title|='96%'],
-tr#summary td.sum[title|='95%'],
-tr#summary td.sum[title|='94%'],
-tr#summary td.sum[title|='93%'],
-tr#summary td.sum[title|='92%'],
-tr#summary td.sum[title|='91%'],
-tr#summary td.sum[title|='90%']{
-	background-color: #add666 !important;
-}
-tr#summary td.sum[title|='89%'],
-tr#summary td.sum[title|='88%'],
-tr#summary td.sum[title|='87%'],
-tr#summary td.sum[title|='86%'],
-tr#summary td.sum[title|='85%'],
-tr#summary td.sum[title|='84%'],
-tr#summary td.sum[title|='83%'],
-tr#summary td.sum[title|='82%'],
-tr#summary td.sum[title|='81%'],
-tr#summary td.sum[title|='80%']{
-	background-color: #c1e066 !important;
-}
-tr#summary td.sum[title|='79%'],
-tr#summary td.sum[title|='78%'],
-tr#summary td.sum[title|='77%'],
-tr#summary td.sum[title|='76%'],
-tr#summary td.sum[title|='75%'],
-tr#summary td.sum[title|='74%'],
-tr#summary td.sum[title|='73%'],
-tr#summary td.sum[title|='72%'],
-tr#summary td.sum[title|='71%'],
-tr#summary td.sum[title|='70%']{
-	background-color: #d6ea66 !important;
-}
-tr#summary td.sum[title|='69%'], 
-tr#summary td.sum[title|='68%'], 
-tr#summary td.sum[title|='67%'], 
-tr#summary td.sum[title|='66%'], 
-tr#summary td.sum[title|='65%'], 
-tr#summary td.sum[title|='64%'], 
-tr#summary td.sum[title|='63%'], 
-tr#summary td.sum[title|='62%'], 
-tr#summary td.sum[title|='61%'], 
-tr#summary td.sum[title|='60%']{
-	background-color: #eaf466 !important;
-}
-tr#summary td.sum[title|='59%'],
-tr#summary td.sum[title|='58%'],
-tr#summary td.sum[title|='57%'],
-tr#summary td.sum[title|='56%'],
-tr#summary td.sum[title|='55%'],
-tr#summary td.sum[title|='54%'],
-tr#summary td.sum[title|='53%'],
-tr#summary td.sum[title|='52%'],
-tr#summary td.sum[title|='51%'],
-tr#summary td.sum[title|='50%']{
-	background-color: #FF6 !important;
-}
-tr#summary td.sum[title|='49%'],
-tr#summary td.sum[title|='48%'],
-tr#summary td.sum[title|='47%'],
-tr#summary td.sum[title|='46%'],
-tr#summary td.sum[title|='45%'],
-tr#summary td.sum[title|='44%'],
-tr#summary td.sum[title|='43%'],
-tr#summary td.sum[title|='42%'],
-tr#summary td.sum[title|='41%'],
-tr#summary td.sum[title|='40%']{
-	background-color: #FFea66 !important;
-}
-tr#summary td.sum[title|='39%'],
-tr#summary td.sum[title|='38%'],
-tr#summary td.sum[title|='37%'],
-tr#summary td.sum[title|='36%'],
-tr#summary td.sum[title|='35%'],
-tr#summary td.sum[title|='34%'],
-tr#summary td.sum[title|='33%'],
-tr#summary td.sum[title|='32%'],
-tr#summary td.sum[title|='31%'],
-tr#summary td.sum[title|='30%']{
-	background-color: #FFd666 !important;
-}
-tr#summary td.sum[title|='29%'],
-tr#summary td.sum[title|='28%'],
-tr#summary td.sum[title|='27%'],
-tr#summary td.sum[title|='25%'],
-tr#summary td.sum[title|='25'],
-tr#summary td.sum[title|='24%'],
-tr#summary td.sum[title|='23%'],
-tr#summary td.sum[title|='22%'],
-tr#summary td.sum[title|='21%'],
-tr#summary td.sum[title|='20%']{
-	background-color: #FFc166 !important;
-}
-tr#summary td.sum[title|='19%'],
-tr#summary td.sum[title|='18'],
-tr#summary td.sum[title|='17%'],
-tr#summary td.sum[title|='16%'],
-tr#summary td.sum[title|='15%'],
-tr#summary td.sum[title|='14%'],
-tr#summary td.sum[title|='13%'],
-tr#summary td.sum[title|='12%'],
-tr#summary td.sum[title|='11%'],
-tr#summary td.sum[title|='10%']{
-	background-color: #FFad66 !important;
-}
-tr#summary td.sum[title|='9%'],
-tr#summary td.sum[title|='8%'],
-tr#summary td.sum[title|='7%'],
-tr#summary td.sum[title|='6%'],
-tr#summary td.sum[title|='5%'],
-tr#summary td.sum[title|='4%'],
-tr#summary td.sum[title|='3%'],
-tr#summary td.sum[title|='2%'],
-tr#summary td.sum[title|='1%'],
-tr#summary td.sum[title|='0%']{
-	background-color: #F96 !important;
+th.invisible,
+td.invisible{
+	border-style: none;
 }
 
+tr.participantrow td:first-child {
+	border-right-style: none;
+}
+tr.participantrow td.name {
+	border-left-style: none;
+}
+
+
+td.match_100{ background-color: #99cc66 !important; }
+td.match_90 { background-color: #add666 !important; }
+td.match_80 { background-color: #c1e066 !important; }
+td.match_70 { background-color: #d6ea66 !important; }
+td.match_60 { background-color: #eaf466 !important; }
+td.match_50 { background-color: #ffff66 !important; }
+td.match_40 { background-color: #FFea66 !important; }
+td.match_30 { background-color: #FFd666 !important; }
+td.match_20 { background-color: #FFc166 !important; }
+td.match_10 { background-color: #FFad66 !important; }
+td.match_0  { background-color: #FF9966 !important; }
 
 td.a_yes__, input.chosen  { background-color:#9c6; }
 td.c_no___ { background-color:#F96; }
@@ -199,6 +95,7 @@ td.calendarday{
 table { 
 	border: none; 
 	border-spacing: 0;
+	border-collapse: collapse;
 }
 
 td.create_poll{
@@ -209,7 +106,7 @@ td {
 	vertical-align:middle;
 	text-align:center;
 	padding: 1px 3px;
-	border-width: 0 1px 1px 1px;
+	border-width: 1px;
 	border-style: dotted;
 }
 
@@ -228,7 +125,7 @@ div#add_comment,div#edit_column, div#history, div#backlink, input.delete_comment
 th { 
 	padding: 1px 3px;
 	font-weight: normal;
-	border-width: 0 1px 1px 1px;
+	border-width: 1px;
 	border-style: dotted;
 }
 

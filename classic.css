@@ -139,6 +139,9 @@ td {
 	padding-left: 3px;
 	padding-right: 3px;
 }
+#polltable {
+	overflow: auto;
+}
 
 tr.participantrow, tr#add_participant, tr#summary { 
 	background-color:Silver;
@@ -176,7 +179,6 @@ html {
 #main{
 	margin-left: auto;
 	margin-right:auto; 
-	display:table;
 }
 #content {
 	background: white;

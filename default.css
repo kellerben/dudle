@@ -182,6 +182,9 @@ td {
 	padding-top: 1px;
 }
 
+#polltable {
+	overflow: auto;
+}
 tr#add_participant{
 	background: #EEE;
 }
@@ -238,7 +241,6 @@ html {
 #main{
 	margin-left: auto;
 	margin-right:auto; 
-	display:table;
 }
 #content {
 	background: #fff;
