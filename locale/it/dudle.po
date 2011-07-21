@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-07-04 00:00+0200\n"
+"POT-Creation-Date: 2011-07-21 07:48+0200\n"
 "PO-Revision-Date: 2011-05-10 07:31+0200\n"
 "Last-Translator: Eros Pedrini\n"
 "Language-Team: \n"
@@ -142,7 +142,7 @@ msgstr "Modifica"
 msgid "Save"
 msgstr "Salva"
 
-#: customize.cgi:120 access_control.rb:116 customize.rb:120 delete_poll.rb:105
+#: customize.cgi:120 access_control.rb:116 customize.rb:120 delete_poll.rb:113
 #: poll.rb:334
 msgid "Delete"
 msgstr "Elimina"
@@ -394,11 +394,15 @@ msgstr "Conosco le conseguenze."
 msgid "Please delete this poll."
 msgstr "Si prega di cancellare questo sondaggio."
 
-#: delete_poll.rb:50
+#: delete_poll.rb:43
+msgid "Example polls can not be deleted."
+msgstr ""
+
+#: delete_poll.rb:57
 msgid "The poll was deleted successfully!"
 msgstr "Il sondaggio è stato cancellato!"
 
-#: delete_poll.rb:51
+#: delete_poll.rb:58
 msgid ""
 "If this was done by accident, please contact the administrator of the "
 "system. The poll can be recovered for an indeterministic amount of time, "
@@ -407,43 +411,43 @@ msgstr ""
 "Se questo è stato fatto per sbaglio, contatta l'amministratore del servizio. "
 "Il sondaggio potrebbe essere ripristinato se non è troppo tardi."
 
-#: delete_poll.rb:52
+#: delete_poll.rb:60
 msgid "Things you can do now are"
 msgstr "Quello che puoi fare ora"
 
-#: delete_poll.rb:53
+#: delete_poll.rb:61
 msgid "Return to dudle home and schedule a new poll"
 msgstr "Ritorna alla pagina principale di Dudle e Programma un nuovo Sondaggio"
 
-#: delete_poll.rb:54
+#: delete_poll.rb:62
 msgid "Browse Wikipedia"
 msgstr "Vai su Wikipedia"
 
-#: delete_poll.rb:55
+#: delete_poll.rb:63
 msgid "Search something with Google"
 msgstr "Cerca in Google"
 
-#: delete_poll.rb:81
+#: delete_poll.rb:89
 msgid "To delete the poll, you have to type:"
 msgstr "Per eliminare un sondaggio, devi scrivere:"
 
-#: delete_poll.rb:89
+#: delete_poll.rb:97
 msgid "but you typed:"
 msgstr "ma tu hai scritto:"
 
-#: delete_poll.rb:101
+#: delete_poll.rb:109
 msgid "Delete this Poll"
 msgstr "Cancella questo Sondaggio"
 
-#: delete_poll.rb:102
+#: delete_poll.rb:110
 msgid "You want to delete the poll named"
 msgstr "Vuoi eliminare il sondaggio che si chiama"
 
-#: delete_poll.rb:103
+#: delete_poll.rb:111
 msgid "This is an irreversible action!"
 msgstr "Questa azione non può essere annullata!"
 
-#: delete_poll.rb:104
+#: delete_poll.rb:112
 msgid ""
 "If you are sure in what you are doing, please type “%{question}” into the "
 "form."

@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-05-17 16:15+0200\n"
-"PO-Revision-Date: 2011-05-17 16:16+0100\n"
+"POT-Creation-Date: 2011-07-21 07:48+0200\n"
+"PO-Revision-Date: 2011-07-21 07:48+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
 "Language: \n"
@@ -131,7 +131,7 @@ msgid "Default Username"
 msgstr "Voreingestellter Benutzername"
 
 #: customize.cgi:83
-#: access_control.rb:76
+#: access_control.rb:73
 #: customize.rb:83
 msgid "Username:"
 msgstr "Benutzername:"
@@ -142,17 +142,17 @@ msgid "Edit"
 msgstr "Bearbeiten"
 
 #: customize.cgi:117
-#: access_control.rb:123
+#: access_control.rb:120
 #: customize.rb:117
-#: poll.rb:286
+#: poll.rb:296
 msgid "Save"
 msgstr "Speichern"
 
 #: customize.cgi:120
-#: access_control.rb:119
+#: access_control.rb:116
 #: customize.rb:120
-#: delete_poll.rb:103
-#: poll.rb:324
+#: delete_poll.rb:113
+#: poll.rb:334
 msgid "Delete"
 msgstr "Löschen"
 
@@ -284,67 +284,67 @@ msgstr "Die Umfrage wurde vom Administrator gelöscht, weil lange nicht auf sie 
 msgid "If you think, the deletion was done by error, please contact the adminsistrator of the system."
 msgstr "Bitte kontaktieren Sie den Administrator des Systems, wenn Sie denken, dass die Umfrage versehentlich gelöscht wurde."
 
-#: access_control.rb:89
+#: access_control.rb:86
 msgid "Password"
 msgstr "Passwort"
 
-#: access_control.rb:90
+#: access_control.rb:87
 msgid "repeat"
 msgstr "wiederholen"
 
-#: access_control.rb:116
+#: access_control.rb:113
 msgid "You have to remove the participant user before you can remove the administrator."
 msgstr "Der Benutzer „participant“ muss entfernt werden, bevor Sie den Administrator entfernen können."
 
-#: access_control.rb:141
+#: access_control.rb:138
 msgid "Only letters and digits are allowed in the username."
 msgstr "Der Benutzername darf nur Buchstaben und Zahlen enthalten."
 
-#: access_control.rb:143
+#: access_control.rb:140
 msgid "Passwords did not match."
 msgstr "Die Passwörter stimmen nicht überein."
 
-#: access_control.rb:176
+#: access_control.rb:173
 msgid "Change Access Control Settings"
 msgstr "Einstellungen der Zugriffskontrolle"
 
-#: access_control.rb:180
+#: access_control.rb:177
 msgid "not activated"
 msgstr "nicht aktiviert"
 
-#: access_control.rb:182
+#: access_control.rb:179
 msgid "Activate"
 msgstr "Aktivieren"
 
-#: access_control.rb:185
+#: access_control.rb:182
 msgid "will be activated when at least an admin user is configured"
 msgstr "wird aktiviert, wenn ein Administrator (Benutzername: „admin“) konfiguriert wurde"
 
-#: access_control.rb:187
+#: access_control.rb:184
 msgid "Deactivate"
 msgstr "Deaktivieren"
 
-#: access_control.rb:189
+#: access_control.rb:186
 msgid "activated"
 msgstr "aktiviert"
 
-#: access_control.rb:190
+#: access_control.rb:187
 msgid "You have to remove all users before you can deactivate the access control settings."
 msgstr "Sie müssen alle Benutzer entfernen, bevor Sie die Zugriffskontrolle deaktivieren können."
 
-#: access_control.rb:194
+#: access_control.rb:191
 msgid "You will be asked for the password you entered here after pressing save!"
 msgstr "Nach dem Speichern werden Sie nach dem Benutzernamen und diesem Passwort gefragt!"
 
-#: access_control.rb:197
+#: access_control.rb:194
 msgid "The user ‘admin’ has access to the vote as well as the configuration interface."
 msgstr "Der Benutzer „admin“ hat sowohl zur Abstimmungs- als auch zur Konfigurationsoberfläche Zugriff."
 
-#: access_control.rb:203
+#: access_control.rb:200
 msgid "The user ‘participant’ has only access to the vote interface."
 msgstr "Der Benutzer „participant“ hat nur zur Abstimmungsoberfläche Zugriff."
 
-#: access_control.rb:209
+#: access_control.rb:206
 msgid "Access control:"
 msgstr "Zugriffskontrolle:"
 
@@ -364,51 +364,55 @@ msgstr "Ich bin mir über die Konsequenzen bewusst."
 msgid "Please delete this poll."
 msgstr "Bitte lösche diese Umfrage."
 
-#: delete_poll.rb:48
+#: delete_poll.rb:43
+msgid "Example polls can not be deleted."
+msgstr "Beispielumfragen können nicht gelöscht werden."
+
+#: delete_poll.rb:57
 msgid "The poll was deleted successfully!"
 msgstr "Die Umfrage wurde erfolgreich gelöscht!"
 
-#: delete_poll.rb:49
+#: delete_poll.rb:58
 msgid "If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterministic amount of time, maybe it is already to late."
 msgstr "Wenn das ein Versehen war, kontaktieren Sie bitte umgehend den Administrator des Systems. Die Umfrage kann für einen unvorhersehbaren Zeitraum wiederhergestellt werden, vielleicht ist jetzt schon zu spät."
 
-#: delete_poll.rb:50
+#: delete_poll.rb:60
 msgid "Things you can do now are"
 msgstr "Dinge, die Sie jetzt machen können:"
 
-#: delete_poll.rb:51
+#: delete_poll.rb:61
 msgid "Return to dudle home and schedule a new poll"
 msgstr "Zurück zur dudle Hauptseite um eine neue Umfrage zu erstellen"
 
-#: delete_poll.rb:52
+#: delete_poll.rb:62
 msgid "Browse Wikipedia"
 msgstr "bei Wikipedia stöbern"
 
-#: delete_poll.rb:53
+#: delete_poll.rb:63
 msgid "Search something with Google"
 msgstr "Etwas mit google suchen"
 
-#: delete_poll.rb:79
+#: delete_poll.rb:89
 msgid "To delete the poll, you have to type:"
 msgstr "Um diese Umfrage zu löschen müssen Sie folgenden Satz eingeben:"
 
-#: delete_poll.rb:87
+#: delete_poll.rb:97
 msgid "but you typed:"
 msgstr "Ihre Eingabe lautete aber:"
 
-#: delete_poll.rb:99
+#: delete_poll.rb:109
 msgid "Delete this Poll"
 msgstr "Diese Umfrage löschen"
 
-#: delete_poll.rb:100
+#: delete_poll.rb:110
 msgid "You want to delete the poll named"
 msgstr "Sie wollen die Umfrage mit folgendem Namen löschen:"
 
-#: delete_poll.rb:101
+#: delete_poll.rb:111
 msgid "This is an irreversible action!"
 msgstr "Das Löschen der gesamten Umfrage ist unwiederrufbar!"
 
-#: delete_poll.rb:102
+#: delete_poll.rb:112
 msgid "If you are sure in what you are doing, please type “%{question}” into the form."
 msgstr "Wenn Sie sich sicher sind, dann geben Sie bitte „%{question}“ in das folgende Formular ein."
 
@@ -458,26 +462,26 @@ msgstr "Personalisieren"
 msgid "Dudle Home"
 msgstr "Dudle Startseite"
 
-#: dudle.rb:196
-#: dudle.rb:214
+#: dudle.rb:203
+#: dudle.rb:221
 msgid "Previous"
 msgstr "Zurück"
 
-#: dudle.rb:197
-#: dudle.rb:215
+#: dudle.rb:204
+#: dudle.rb:222
 msgid "Next"
 msgstr "Weiter"
 
-#: dudle.rb:198
-#: dudle.rb:216
+#: dudle.rb:205
+#: dudle.rb:223
 msgid "Finish"
 msgstr "Fertig"
 
-#: dudle.rb:221
+#: dudle.rb:228
 msgid "All changes were saved sucessfully."
 msgstr "Alle Änderungen wurden erfolgreich gespeichert."
 
-#: dudle.rb:221
+#: dudle.rb:228
 msgid "Proceed!"
 msgstr "Weiter"
 
@@ -554,101 +558,101 @@ msgstr "Dudle Umfrage über %{polltitle}"
 msgid "The changes were saved, you should be redirected to %{link}."
 msgstr "Die Änderungen wurden gespeichert. Sie sollten zu %{link} weitergeleitet werden."
 
-#: poll.rb:86
+#: poll.rb:92
 msgid "Edit user %{user}..."
 msgstr "Bearbeite Teilnehmer %{user}..."
 
-#: poll.rb:90
+#: poll.rb:96
 msgid "Delete user %{user}..."
 msgstr "Lösche Teilnehmer %{user}..."
 
-#: poll.rb:140
+#: poll.rb:150
 msgid "Total"
 msgstr "Summe"
 
-#: poll.rb:172
+#: poll.rb:182
 msgid "Invite"
 msgstr "Einladen"
 
-#: poll.rb:173
+#: poll.rb:183
 #: pollhead.rb:62
 #: timepollhead.rb:158
 msgid "Name"
 msgstr "Name"
 
-#: poll.rb:218
+#: poll.rb:228
 msgid "Save Changes"
 msgstr "Speichern"
 
-#: poll.rb:222
+#: poll.rb:232
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: poll.rb:244
+#: poll.rb:254
 msgid "Do you really want to delete user %{user}?"
 msgstr "Wollen Sie den Teilnehmer %{user} wirklich löschen?"
 
-#: poll.rb:247
+#: poll.rb:257
 msgid "Confirm"
 msgstr "Bestätigen"
 
-#: poll.rb:295
+#: poll.rb:305
 msgid "Comments"
 msgstr "Kommentare"
 
-#: poll.rb:298
+#: poll.rb:308
 msgid "Sort oldest comment first"
 msgstr "Sortiere das älteste Kommentar als erstes"
 
-#: poll.rb:301
+#: poll.rb:311
 msgid "Sort newest comment first"
 msgstr "Sortiere das neueste Kommentar als erstes"
 
-#: poll.rb:306
+#: poll.rb:316
 msgid "Go to last comment"
 msgstr "Springe zum letzten Kommentar"
 
-#: poll.rb:319
+#: poll.rb:329
 msgid "%{user} said on %{time}"
 msgstr "%{user} sagte am %{time}"
 
-#: poll.rb:334
+#: poll.rb:344
 msgid "Go Up"
 msgstr "Gehe nach oben"
 
-#: poll.rb:340
+#: poll.rb:350
 msgid "says"
 msgstr "sagt"
 
-#: poll.rb:341
+#: poll.rb:351
 msgid "Submit Comment"
 msgstr "Sende Kommentar"
 
-#: poll.rb:359
+#: poll.rb:369
 msgid "Show history items:"
 msgstr "Zeige nur folgende Versionen:"
 
-#: poll.rb:366
+#: poll.rb:376
 msgid "All"
 msgstr "Alle"
 
-#: poll.rb:367
+#: poll.rb:377
 msgid "Participant related"
 msgstr "Teilnehmer betreffend"
 
-#: poll.rb:368
+#: poll.rb:378
 msgid "Column related"
 msgstr "Spalten betreffend"
 
-#: poll.rb:369
+#: poll.rb:379
 msgid "Comment related"
 msgstr "Kommentare betreffend"
 
-#: poll.rb:370
+#: poll.rb:380
 msgid "Access Control related"
 msgstr "Zugriffskontrolle betreffend"
 
-#: poll.rb:376
+#: poll.rb:386
 msgid "Update"
 msgstr "Aktualisieren"
 

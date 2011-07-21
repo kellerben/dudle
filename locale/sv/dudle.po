@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-05-17 16:15+0200\n"
+"POT-Creation-Date: 2011-07-21 07:48+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
 "Language-Team: \n"
@@ -128,7 +128,7 @@ msgstr "Stilmall"
 msgid "Default Username"
 msgstr "Standard användarnamn"
 
-#: customize.cgi:83 access_control.rb:76 customize.rb:83
+#: customize.cgi:83 access_control.rb:73 customize.rb:83
 msgid "Username:"
 msgstr "Användarnamn:"
 
@@ -136,12 +136,12 @@ msgstr "Användarnamn:"
 msgid "Edit"
 msgstr "Redigera"
 
-#: customize.cgi:117 access_control.rb:123 customize.rb:117 poll.rb:286
+#: customize.cgi:117 access_control.rb:120 customize.rb:117 poll.rb:296
 msgid "Save"
 msgstr "Spara"
 
-#: customize.cgi:120 access_control.rb:119 customize.rb:120 delete_poll.rb:103
-#: poll.rb:324
+#: customize.cgi:120 access_control.rb:116 customize.rb:120 delete_poll.rb:113
+#: poll.rb:334
 msgid "Delete"
 msgstr "Radera"
 
@@ -272,53 +272,53 @@ msgid ""
 "adminsistrator of the system."
 msgstr ""
 
-#: access_control.rb:89
+#: access_control.rb:86
 msgid "Password"
 msgstr "Lösenord"
 
-#: access_control.rb:90
+#: access_control.rb:87
 msgid "repeat"
 msgstr "upprepa"
 
-#: access_control.rb:116
+#: access_control.rb:113
 msgid ""
 "You have to remove the participant user before you can remove the "
 "administrator."
 msgstr "Du måste ta bort deltagaren innan du kan radera administratören "
 
-#: access_control.rb:141
+#: access_control.rb:138
 msgid "Only letters and digits are allowed in the username."
 msgstr "Bara bokstäver och siffror är tillåtet i användarnamnet"
 
-#: access_control.rb:143
+#: access_control.rb:140
 msgid "Passwords did not match."
 msgstr "Lösenorden matchar inte."
 
-#: access_control.rb:176
+#: access_control.rb:173
 msgid "Change Access Control Settings"
 msgstr "Ändra inställningarna för åtkomstkontroll"
 
-#: access_control.rb:180
+#: access_control.rb:177
 msgid "not activated"
 msgstr "inte aktiverad"
 
-#: access_control.rb:182
+#: access_control.rb:179
 msgid "Activate"
 msgstr "Aktivera"
 
-#: access_control.rb:185
+#: access_control.rb:182
 msgid "will be activated when at least an admin user is configured"
 msgstr "aktiveras när minst en administratör är konfigurerad"
 
-#: access_control.rb:187
+#: access_control.rb:184
 msgid "Deactivate"
 msgstr "Avaktivera"
 
-#: access_control.rb:189
+#: access_control.rb:186
 msgid "activated"
 msgstr "aktiverad"
 
-#: access_control.rb:190
+#: access_control.rb:187
 msgid ""
 "You have to remove all users before you can deactivate the access control "
 "settings."
@@ -326,14 +326,14 @@ msgstr ""
 "Du måste radera alla användare innan du kan avaktivera inställningarna för "
 "åtkomstkontrollen."
 
-#: access_control.rb:194
+#: access_control.rb:191
 msgid ""
 "You will be asked for the password you entered here after pressing save!"
 msgstr ""
 "Efter att du har klickat på spara kommer du kommer att frågas efter "
 "lösenordet du nu skrev in! "
 
-#: access_control.rb:197
+#: access_control.rb:194
 msgid ""
 "The user ‘admin’ has access to the vote as well as the configuration "
 "interface."
@@ -341,11 +341,11 @@ msgstr ""
 "’Admin’ har access till omröstningen såväl som till gränssnittet för "
 "konfigurering."
 
-#: access_control.rb:203
+#: access_control.rb:200
 msgid "The user ‘participant’ has only access to the vote interface."
 msgstr "’Deltagare’ har bara access till gränssnittet för omröstning"
 
-#: access_control.rb:209
+#: access_control.rb:206
 msgid "Access control:"
 msgstr "Åtkomstkontroll:"
 
@@ -365,11 +365,15 @@ msgstr "Jag är medveten om konsekvenserna."
 msgid "Please delete this poll."
 msgstr "Vänligen radera denna omröstning."
 
-#: delete_poll.rb:48
+#: delete_poll.rb:43
+msgid "Example polls can not be deleted."
+msgstr ""
+
+#: delete_poll.rb:57
 msgid "The poll was deleted successfully!"
 msgstr "Omröstningen raderad!"
 
-#: delete_poll.rb:49
+#: delete_poll.rb:58
 msgid ""
 "If this was done by accident, please contact the administrator of the "
 "system. The poll can be recovered for an indeterministic amount of time, "
@@ -379,43 +383,43 @@ msgstr ""
 "Omröstningen kan återskapas inom en viss tid, det kan tyvärr redan vara för "
 "sent."
 
-#: delete_poll.rb:50
+#: delete_poll.rb:60
 msgid "Things you can do now are"
 msgstr "Vad du kan göra nu är"
 
-#: delete_poll.rb:51
+#: delete_poll.rb:61
 msgid "Return to dudle home and schedule a new poll"
 msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
 
-#: delete_poll.rb:52
+#: delete_poll.rb:62
 msgid "Browse Wikipedia"
 msgstr "Kolla Wikipedia"
 
-#: delete_poll.rb:53
+#: delete_poll.rb:63
 msgid "Search something with Google"
 msgstr "Sök efter något med hjälp av Google"
 
-#: delete_poll.rb:79
+#: delete_poll.rb:89
 msgid "To delete the poll, you have to type:"
 msgstr "För att radera omröstningen måste du skriva:"
 
-#: delete_poll.rb:87
+#: delete_poll.rb:97
 msgid "but you typed:"
 msgstr "men du skrev:"
 
-#: delete_poll.rb:99
+#: delete_poll.rb:109
 msgid "Delete this Poll"
 msgstr "Ta bort den här omröstningen"
 
-#: delete_poll.rb:100
+#: delete_poll.rb:110
 msgid "You want to delete the poll named"
 msgstr "Du vill ta bort omröstningen med rubriken"
 
-#: delete_poll.rb:101
+#: delete_poll.rb:111
 msgid "This is an irreversible action!"
 msgstr "Det går inte att ångra den här åtgärden!"
 
-#: delete_poll.rb:102
+#: delete_poll.rb:112
 msgid ""
 "If you are sure in what you are doing, please type “%{question}” into the "
 "form."
@@ -465,23 +469,23 @@ msgstr "Egna inställningar"
 msgid "Dudle Home"
 msgstr ""
 
-#: dudle.rb:196 dudle.rb:214
+#: dudle.rb:203 dudle.rb:221
 msgid "Previous"
 msgstr "Föregående"
 
-#: dudle.rb:197 dudle.rb:215
+#: dudle.rb:204 dudle.rb:222
 msgid "Next"
 msgstr "Nästa"
 
-#: dudle.rb:198 dudle.rb:216
+#: dudle.rb:205 dudle.rb:223
 msgid "Finish"
 msgstr "Klar"
 
-#: dudle.rb:221
+#: dudle.rb:228
 msgid "All changes were saved sucessfully."
 msgstr "Alla ändringar sparades."
 
-#: dudle.rb:221
+#: dudle.rb:228
 msgid "Proceed!"
 msgstr "Fortsätt!"
 
@@ -553,100 +557,100 @@ msgstr "Länk till dudle omröstning om %{polltitle}"
 msgid "The changes were saved, you should be redirected to %{link}."
 msgstr ""
 
-#: poll.rb:86
+#: poll.rb:92
 msgid "Edit user %{user}..."
 msgstr "Redigera användare %{user}..."
 
-#: poll.rb:90
+#: poll.rb:96
 msgid "Delete user %{user}..."
 msgstr "Redigera användare %{user}..."
 
-#: poll.rb:140
+#: poll.rb:150
 msgid "Total"
 msgstr "Total"
 
-#: poll.rb:172
+#: poll.rb:182
 msgid "Invite"
 msgstr "Bjud in"
 
-#: poll.rb:173 pollhead.rb:62 timepollhead.rb:158
+#: poll.rb:183 pollhead.rb:62 timepollhead.rb:158
 msgid "Name"
 msgstr "Namn"
 
-#: poll.rb:218
+#: poll.rb:228
 msgid "Save Changes"
 msgstr "Spara ändringar"
 
-#: poll.rb:222
+#: poll.rb:232
 msgid "Cancel"
 msgstr ""
 
-#: poll.rb:244
+#: poll.rb:254
 #, fuzzy
 msgid "Do you really want to delete user %{user}?"
 msgstr "Redigera användare %{user}"
 
-#: poll.rb:247
+#: poll.rb:257
 msgid "Confirm"
 msgstr ""
 
-#: poll.rb:295
+#: poll.rb:305
 msgid "Comments"
 msgstr "Kommentarer"
 
-#: poll.rb:298
+#: poll.rb:308
 msgid "Sort oldest comment first"
 msgstr ""
 
-#: poll.rb:301
+#: poll.rb:311
 msgid "Sort newest comment first"
 msgstr ""
 
-#: poll.rb:306
+#: poll.rb:316
 msgid "Go to last comment"
 msgstr ""
 
-#: poll.rb:319
+#: poll.rb:329
 msgid "%{user} said on %{time}"
 msgstr "sa %{user} %{time}"
 
-#: poll.rb:334
+#: poll.rb:344
 msgid "Go Up"
 msgstr ""
 
-#: poll.rb:340
+#: poll.rb:350
 msgid "says"
 msgstr "säger"
 
-#: poll.rb:341
+#: poll.rb:351
 msgid "Submit Comment"
 msgstr "Skicka kommentarer"
 
-#: poll.rb:359
+#: poll.rb:369
 msgid "Show history items:"
 msgstr "Visa historik:"
 
-#: poll.rb:366
+#: poll.rb:376
 msgid "All"
 msgstr "Alla"
 
-#: poll.rb:367
+#: poll.rb:377
 msgid "Participant related"
 msgstr "Tillhörande deltagare"
 
-#: poll.rb:368
+#: poll.rb:378
 msgid "Column related"
 msgstr "Tillhörande kolumn"
 
-#: poll.rb:369
+#: poll.rb:379
 msgid "Comment related"
 msgstr "Tillhörande kommentar"
 
-#: poll.rb:370
+#: poll.rb:380
 msgid "Access Control related"
 msgstr "Tillhörande åtkomstkontroll"
 
-#: poll.rb:376
+#: poll.rb:386
 msgid "Update"
 msgstr "Uppdatera"
 

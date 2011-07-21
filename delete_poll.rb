@@ -36,19 +36,25 @@ if $cgi.include?("confirmnumber")
  CONFIRM = $cgi["confirmnumber"].to_i
 	if USERCONFIRM == QUESTIONS[CONFIRM]
 		Dir.chdir("..")
-		FileUtils.cp_r($d.urlsuffix, "/tmp/#{$d.urlsuffix}.#{rand(9999999)}")
-		FileUtils.rm_r($d.urlsuffix)
 
-		if $cgi.include?("return")
-			$d.html.header["status"] = "REDIRECT"
-			$d.html.header["Cache-Control"] = "no-cache"
-			$d.html.header["Location"] = $conf.siteurl + $cgi["return"]
-			$d.out
-			exit
+		if $conf.examples.collect{|e| e[:url] }.include?($d.urlsuffix)
+			deleteconfirmstr =  _("Example polls can not be deleted.")
+			accidentstr = ""
+		else
+			FileUtils.cp_r($d.urlsuffix, "/tmp/#{$d.urlsuffix}.#{rand(9999999)}")
+			FileUtils.rm_r($d.urlsuffix)
+
+			if $cgi.include?("return")
+				$d.html.header["status"] = "REDIRECT"
+				$d.html.header["Cache-Control"] = "no-cache"
+				$d.html.header["Location"] = $conf.siteurl + $cgi["return"]
+				$d.out
+				exit
+			end
+
+			deleteconfirmstr = _("The poll was deleted successfully!")
+			accidentstr = _("If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterministic amount of time, maybe it is already to late.")
 		end
-
-		deleteconfirmstr = _("The poll was deleted successfully!")
-		accidentstr = _("If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterministic amount of time, maybe it is already to late.")
 		nextthingsstr = _("Things you can do now are")
 		homepagestr = _("Return to dudle home and schedule a new poll")
 		wikipediastr = _("Browse Wikipedia")
