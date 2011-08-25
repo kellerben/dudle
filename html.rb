@@ -40,6 +40,7 @@ class HTML
 	<meta http-equiv="Content-Type" content="#{@header["type"]}; charset=#{@header["charset"]}" /> 
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<title>#{@title}</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 HEAD
 
 		@css = [@css[0]] + @css[1..-1].sort unless @css.empty?
