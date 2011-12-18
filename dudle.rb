@@ -240,12 +240,14 @@ READY
 		@html << "<div id='languageChooser'><ul>"
 		lang = [
 			["en", "English"],
+			["es", "Español"],
 			["fr", "Français"],
 			["de", "Deutsch"],
 			["it", "Italiano"],
 			["nl", "Nederlands"],
 			["hu", "Magyar"],
 			["cs", "Česky"],
+			["ca", "Català"],
 			["sv", "Svenska"]
 			]
 		unless @hide_lang_chooser
