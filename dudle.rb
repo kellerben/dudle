@@ -248,7 +248,8 @@ READY
 			["hu", "Magyar"],
 			["cs", "Česky"],
 			["ca", "Català"],
-			["sv", "Svenska"]
+			["sv", "Svenska"],
+			["gl", "Galego"]
 			]
 		unless @hide_lang_chooser
 			lang.each{|short,long|
