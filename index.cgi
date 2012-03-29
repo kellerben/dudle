@@ -44,7 +44,7 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 		end
 
 
-		if !(POLLURL =~ /^[\w\-_]*$/)
+		if !(POLLURL =~ /\A[\w\-_]*\Z/)
 			createnotice = _("Custom address may only contain letters, numbers, and dashes.")
 		elsif File.exist?(POLLURL)
 			createnotice = _("A Poll with this address already exists.")
