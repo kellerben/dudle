@@ -14,14 +14,16 @@ License:
    (see config_sample.rb for help)
    to start with a default configuration.
 3. The webserver needs the permission to write into the directory 
-4. You have to build a .mo file from the .po file in order to use the 
-   localization. Type:
-      make
-   This requires libgettext-ruby-util, potool, and make to be installed.
-     sudo aptitude install libgettext-ruby-util potool make
-   If this does not work for you, you can download the .mo files from another
-   server, e.g., put https://dudle.inf.tu-dresden.de/locale/de/dudle.mo
-   into the directory locale/de.
+4. You need .mo files in order to use localisations. 
+   You have 2 possibilities:
+   a. Run this small script to fetch the files from the main server:
+        cd $DUDLE_INSTALLATION_PATH
+        for i in locale/??; do
+          wget -O $i/dudle.mo https://dudle.inf.tu-dresden.de/locale/`basename $i`/dudle.mo
+        done
+   b. Build them on your own. This requires libgettext-ruby-util, potool, and make to be installed.
+        sudo aptitude install libgettext-ruby-util potool make
+        make
 5. In order to let access control work correctly, the webserver needs 
    auth_digest support. It therefore may help to type:
      sudo a2enmod auth_digest

@@ -240,13 +240,16 @@ READY
 		@html << "<div id='languageChooser'><ul>"
 		lang = [
 			["en", "English"],
+			["es", "Español"],
 			["fr", "Français"],
 			["de", "Deutsch"],
 			["it", "Italiano"],
 			["nl", "Nederlands"],
 			["hu", "Magyar"],
 			["cs", "Česky"],
-			["sv", "Svenska"]
+			["ca", "Català"],
+			["sv", "Svenska"],
+			["gl", "Galego"]
 			]
 		unless @hide_lang_chooser
 			lang.each{|short,long|
