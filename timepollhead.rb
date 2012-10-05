@@ -157,7 +157,7 @@ SORTSYMBOL
 
 		ret += "<th class='invisible'></th></tr><tr><th colspan='2'><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>"
 		@data.sort.each{|date|
-			ret += "<th><a title='#{date}' href='?sort=#{CGI.escape(date.to_s)}'>#{date.time_to_s} #{sortsymb(scols,date.to_s)}</a></th>\n"
+			ret += "<th><a title=\"#{CGI.escapeHTML(date.to_s)}\" href=\"?sort=#{CGI.escape(CGI.escapeHTML(date.to_s))}\">#{CGI.escapeHTML(date.time_to_s)} #{sortsymb(scols,date.to_s)}</a></th>\n"
 		}
 		ret += "<th><a href='?'>" + _("Last Edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
 		ret
@@ -249,11 +249,11 @@ END
 			return <<FORM
 <form method='post' action=''>
 	<div>
-		#{pretext}<input title='#{titlestr}' class='#{klasse}' type='submit' value='#{buttonlabel}' />
-		<input type='hidden' name='#{action}' value='#{columnstring}' />
-		<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
-		<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
-		<input type='hidden' name='add_remove_column_month' value='#{@startdate.strftime("%Y-%m")}' />
+		#{pretext}<input title='#{titlestr}' class='#{klasse}' type='submit' value="#{buttonlabel}" />
+		<input type='hidden' name='#{action}' value="#{CGI.escapeHTML(columnstring)}" />
+		<input type='hidden' name='firsttime' value="#{@firsttime.to_s.rjust(2,"0")}:00" />
+		<input type='hidden' name='lasttime' value="#{@lasttime.to_s.rjust(2,"0")}:00" />
+		<input type='hidden' name='add_remove_column_month' value="#{@startdate.strftime("%Y-%m")}" />
 		<input type='hidden' name='undo_revision' value='#{revision}' />
 	</div>
 </form>
@@ -359,7 +359,7 @@ END
 		}.each{|time|
 			ret += <<END
 		<tr>
-			<td class='navigation'>#{time}</td>
+			<td class='navigation'>#{CGI.escapeHTML(time)}</td>
 			<td class='navigation' style='padding:0px'>
 				<form method='post' action='' accept-charset='utf-8'>
 					<div>
@@ -374,12 +374,12 @@ END
 			}.include?(false)
 				# toggle all on
 				ret += "<input type='hidden' name='toggleallon' value='true' />"
-				ret += "<input type='hidden' name='new_columnname' value='#{time}' />"
+				ret += "<input type='hidden' name='new_columnname' value=\"#{CGI.escapeHTML(time)}\" />"
 				titlestr = _("Select the whole row")
 			else
 				# toggle all off
 				ret += "<input type='hidden' name='togglealloff' value='true' />"
-				ret += "<input type='hidden' name='deletecolumn' value='#{time}' />"
+				ret += "<input type='hidden' name='deletecolumn' value=\"#{CGI.escapeHTML(time)}\" />"
 				titlestr = _("Deselect the whole row")
 			end
 			ret += "<input type='submit' class='toggle' title='#{titlestr}' value='#{MONTHFORWARD}' />"
@@ -395,14 +395,14 @@ END
 
 				if @data.include?(timestamp)
 					klasse = "chosen"
-					hiddenvars = "<input type='hidden' name='deletecolumn' value='#{timestamp}' />"
+					hiddenvars = "<input type='hidden' name='deletecolumn' value=\"#{CGI.escapeHTML(timestamp.to_s)}\" />"
 				else
-					hiddenvars = "<input type='hidden' name='new_columnname' value='#{timestamp.date}' />"
+					hiddenvars = "<input type='hidden' name='new_columnname' value=\"#{timestamp.date}\" />"
 					if @data.include?(TimeString.new(day,nil)) # change day instead of removing it if no specific hour exists for this day
-						hiddenvars += "<input type='hidden' name='columnid' value='#{TimeString.new(day,nil)}' />"
+						hiddenvars += "<input type='hidden' name='columnid' value=\"#{TimeString.new(day,nil)}\" />"
 					end
 				end
-				ret += "<td>" + add_remove_button(klasse, chosenstr[klasse], "columntime", timestamp.time_to_s, revision, hiddenvars) + "</td>"
+				ret += "<td>" + add_remove_button(klasse, chosenstr[klasse], "columntime", CGI.escapeHTML(timestamp.time_to_s.to_s), revision, hiddenvars) + "</td>"
 
 			}
 			ret += "</tr>\n"
