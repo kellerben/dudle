@@ -83,7 +83,7 @@ class TimeString
 		if @time.class == Time
 			return time.strftime("%H:%M")
 		else
-			return @time
+			return @time.to_s
 		end
 	end
 end
