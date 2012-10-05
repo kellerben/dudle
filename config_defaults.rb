@@ -45,7 +45,7 @@ $conf.footer = []
 }
 
 $conf.errorlog = ""
-$conf.bugreportmail = "Benjamin.Kellermann@tu-dresden.de"
+$conf.bugreportmail = "Benjamin.Kellermann@gmx.de"
 $conf.auto_send_report = false
 
 $conf.indexnotice = <<INDEXNOTICE

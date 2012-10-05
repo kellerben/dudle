@@ -55,7 +55,7 @@
 # If you do not know what to do what I am speaking about, just do not uncomment
 # the next line
 #$conf.errorlog = "/var/log/dudle_error.log"
-#$conf.bugreportmail = "Benjamin.Kellermann@tu-dresden.de"
+#$conf.bugreportmail = "Benjamin.Kellermann@gmx.de"
 
 # Send bug reports automatically with the programm “mail”
 #$conf.auto_send_report = false

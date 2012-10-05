@@ -26,7 +26,7 @@ require "dudle"
 $d = Dudle.new
 
 $d << "<div>" 
-$d << _('If you find a bug or have something else which disturbes you, please let me know: <a href="mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?subject=Feedback%20to%20dudle">give feedback</a>')
+$d << _('If you find a bug or have something else which disturbes you, please let me know: <a href="mailto:Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20dudle">give feedback</a>')
 $d << "</div>"
 $d << "<div><h2>" + _("--verbose") + "</h2>"
 $d << _("The sourcecode of this application is available under the terms of <a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>") 
