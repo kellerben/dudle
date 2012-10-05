@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-12-18 01:34+0100\n"
+"POT-Creation-Date: 2012-10-05 21:24+0200\n"
 "PO-Revision-Date: 2011-05-10 07:31+0200\n"
 "Last-Translator: Eros Pedrini\n"
 "Language-Team: \n"
@@ -31,11 +31,11 @@ msgstr ""
 #: about.cgi:29
 msgid ""
 "If you find a bug or have something else which disturbes you, please let me "
-"know: <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?"
+"know: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
 "subject=Feedback%20to%20dudle\">give feedback</a>"
 msgstr ""
 "Se trovi degli errori o qualsiasi altra cosa che ti infastidisce, fammelo "
-"sapere: <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?"
+"sapere: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
 "subject=Feedback%20to%20dudle\">scrivimi</a>"
 
 #: about.cgi:31
@@ -378,11 +378,11 @@ msgstr ""
 msgid "Access control:"
 msgstr "Controllo dell'Accesso:"
 
-#: config.rb:26
+#: config.rb:25
 msgid "Event Schedule Poll"
 msgstr ""
 
-#: config.rb:30
+#: config.rb:29
 msgid "Normal Poll"
 msgstr ""
 
@@ -705,8 +705,9 @@ msgid "Last Edit"
 msgstr "Ultima Modifica"
 
 #: pollhead.rb:99
+#, fuzzy
 msgid "Option"
-msgstr ""
+msgstr "Modifica Colonna"
 
 #: pollhead.rb:100
 msgid "Description (optional)"
@@ -757,8 +758,9 @@ msgid "Click on the dates to add or remove columns."
 msgstr "Seleziona le date per aggiungere o rimuovere le colonne."
 
 #: timepollhead.rb:312
+#, fuzzy
 msgid "Optional:"
-msgstr ""
+msgstr "Modifica Colonna"
 
 #: timepollhead.rb:313
 msgid "Enter a concrete value as start time."

@@ -19,14 +19,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-07-21 07:48+0200\n"
+"POT-Creation-Date: 2012-10-05 21:24+0200\n"
 "PO-Revision-Date: 2011-06-03 16:57+0100\n"
 "Last-Translator: Gilles Seban\n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Basepath: ../../\n"
 "X-Poedit-Language: French\n"
 "X-Poedit-Country: FRANCE\n"
@@ -36,12 +36,12 @@ msgstr ""
 #: about.cgi:29
 msgid ""
 "If you find a bug or have something else which disturbes you, please let me "
-"know: <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?"
+"know: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
 "subject=Feedback%20to%20dudle\">give feedback</a>"
 msgstr ""
 "Si vous trouvez un bug ou qu'un truc vous dérange, indiquez-le moi (de "
 "préférence en anglais ou allemand) : <a href=\"mailto:"
-"Benjamin_dot_Kellermann@tu-dresden_in_deutschland?subject=dudle%20Feedback"
+"Benjamin_dot_Kellermann@gmx_in_deutschland?subject=dudle%20Feedback"
 "\">Feedback</a>"
 
 #: about.cgi:31
@@ -147,7 +147,7 @@ msgstr "Éditer"
 msgid "Save"
 msgstr "Enregistrer"
 
-#: customize.cgi:120 access_control.rb:116 customize.rb:120 delete_poll.rb:113
+#: customize.cgi:120 access_control.rb:116 customize.rb:120 delete_poll.rb:111
 #: poll.rb:334
 msgid "Delete"
 msgstr "Supprimer"
@@ -223,8 +223,8 @@ msgstr "Un sondage ayant cette adresse existe déjà."
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr ""
-"Le sondage a été créé avec succès. Le lien vers votre nouveau sondage "
-"est : %{link}"
+"Le sondage a été créé avec succès. Le lien vers votre nouveau sondage est : %"
+"{link}"
 
 #: index.cgi:76
 msgid "Create New Poll"
@@ -370,6 +370,14 @@ msgstr "L'utilisateur 'participant’ n'a accès qu'au vote."
 msgid "Access control:"
 msgstr "Contrôle d'accès :"
 
+#: config.rb:25
+msgid "Event Schedule Poll"
+msgstr "Sondage de choix de date"
+
+#: config.rb:29
+msgid "Normal Poll"
+msgstr "Sondage normal"
+
 #: delete_poll.rb:29
 msgid "Yes, I know what I am doing!"
 msgstr "Oui, je sais ce que je fais !"
@@ -386,15 +394,15 @@ msgstr "Je suis conscient des conséquences de mes actes."
 msgid "Please delete this poll."
 msgstr "Supprimez ce sondage."
 
-#: delete_poll.rb:43
+#: delete_poll.rb:41
 msgid "Example polls can not be deleted."
 msgstr ""
 
-#: delete_poll.rb:57
+#: delete_poll.rb:55
 msgid "The poll was deleted successfully!"
 msgstr "Ce sondage a été supprimé !"
 
-#: delete_poll.rb:58
+#: delete_poll.rb:56
 msgid ""
 "If this was done by accident, please contact the administrator of the "
 "system. The poll can be recovered for an indeterministic amount of time, "
@@ -404,43 +412,43 @@ msgstr ""
 "l'administrateur du système. Votre sondage peut-être restauré durant une "
 "durée indeterminée, peut-être est-il déjà trop tard."
 
-#: delete_poll.rb:60
+#: delete_poll.rb:58
 msgid "Things you can do now are"
 msgstr "Choses que vous pouvez faire maintenant"
 
-#: delete_poll.rb:61
+#: delete_poll.rb:59
 msgid "Return to dudle home and schedule a new poll"
 msgstr "Retourner à la page d'acceuil et créer un nouveau sondage"
 
-#: delete_poll.rb:62
+#: delete_poll.rb:60
 msgid "Browse Wikipedia"
 msgstr "Naviguer sur Wikipedia"
 
-#: delete_poll.rb:63
+#: delete_poll.rb:61
 msgid "Search something with Google"
 msgstr "Chercher quelque chose avec Google"
 
-#: delete_poll.rb:89
+#: delete_poll.rb:87
 msgid "To delete the poll, you have to type:"
 msgstr "Pour supprimer ce sondage, vous devez taper :"
 
-#: delete_poll.rb:97
+#: delete_poll.rb:95
 msgid "but you typed:"
 msgstr "mais vous avez tapé :"
 
-#: delete_poll.rb:109
+#: delete_poll.rb:107
 msgid "Delete this Poll"
 msgstr "Supprimer ce sondage"
 
-#: delete_poll.rb:110
+#: delete_poll.rb:108
 msgid "You want to delete the poll named"
 msgstr "Vous voulez supprimez le sondage nommé"
 
-#: delete_poll.rb:111
+#: delete_poll.rb:109
 msgid "This is an irreversible action!"
 msgstr "C'est une action irréversible !"
 
-#: delete_poll.rb:112
+#: delete_poll.rb:110
 msgid ""
 "If you are sure in what you are doing, please type “%{question}” into the "
 "form."
@@ -537,8 +545,9 @@ msgid "Redo"
 msgstr "Répéter"
 
 #: history.rb:28
+#, fuzzy
 msgid "Poll of Version %{revisionnumber}"
-msgstr ""
+msgstr "Sondage courant (Version %{revisionnumber})"
 
 #: history.rb:32
 msgid "Current Poll (Version %{revisionnumber})"
@@ -579,8 +588,8 @@ msgstr "Lien vers le sondage dudle \"%{polltitle}\""
 #: participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."
 msgstr ""
-"Les modifications ont été sauvegardées, vous devriez être redirigé vers "
-"%{link}."
+"Les modifications ont été sauvegardées, vous devriez être redirigé vers %"
+"{link}."
 
 #: poll.rb:92
 msgid "Edit user %{user}..."
@@ -787,9 +796,3 @@ msgstr "ex : 09:30, matin, après-midi"
 
 #~ msgid "Alternative"
 #~ msgstr "Alternative"
-
-#~ msgid "Event Schedule Poll"
-#~ msgstr "Sondage de choix de date"
-
-#~ msgid "Normal Poll"
-#~ msgstr "Sondage normal"

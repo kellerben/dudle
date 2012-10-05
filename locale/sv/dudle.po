@@ -19,25 +19,25 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-07-21 07:48+0200\n"
+"POT-Creation-Date: 2012-10-05 21:24+0200\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@tu-dresden.de>\n"
+"Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@gmx.de>\n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-dudle-Language: Svenska\n"
 
 #: about.cgi:29
 msgid ""
 "If you find a bug or have something else which disturbes you, please let me "
-"know: <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?"
+"know: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
 "subject=Feedback%20to%20dudle\">give feedback</a>"
 msgstr ""
 "Om du hittar en bugg eller något annat störande, vänligen underrätta mig: <a "
-"href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?subject=Feedback"
-"%20to%20dudle\">ge återkoppling</a>"
+"href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%"
+"20to%20dudle\">ge återkoppling</a>"
 
 #: about.cgi:31
 msgid "--verbose"
@@ -140,7 +140,7 @@ msgstr "Redigera"
 msgid "Save"
 msgstr "Spara"
 
-#: customize.cgi:120 access_control.rb:116 customize.rb:120 delete_poll.rb:113
+#: customize.cgi:120 access_control.rb:116 customize.rb:120 delete_poll.rb:111
 #: poll.rb:334
 msgid "Delete"
 msgstr "Radera"
@@ -349,6 +349,14 @@ msgstr "’Deltagare’ har bara access till gränssnittet för omröstning"
 msgid "Access control:"
 msgstr "Åtkomstkontroll:"
 
+#: config.rb:25
+msgid "Event Schedule Poll"
+msgstr "Händelseschema Omröstning"
+
+#: config.rb:29
+msgid "Normal Poll"
+msgstr "Normal omröstning"
+
 #: delete_poll.rb:29
 msgid "Yes, I know what I am doing!"
 msgstr "Ja, jag vet vad jag gör!"
@@ -365,15 +373,15 @@ msgstr "Jag är medveten om konsekvenserna."
 msgid "Please delete this poll."
 msgstr "Vänligen radera denna omröstning."
 
-#: delete_poll.rb:43
+#: delete_poll.rb:41
 msgid "Example polls can not be deleted."
 msgstr ""
 
-#: delete_poll.rb:57
+#: delete_poll.rb:55
 msgid "The poll was deleted successfully!"
 msgstr "Omröstningen raderad!"
 
-#: delete_poll.rb:58
+#: delete_poll.rb:56
 msgid ""
 "If this was done by accident, please contact the administrator of the "
 "system. The poll can be recovered for an indeterministic amount of time, "
@@ -383,43 +391,43 @@ msgstr ""
 "Omröstningen kan återskapas inom en viss tid, det kan tyvärr redan vara för "
 "sent."
 
-#: delete_poll.rb:60
+#: delete_poll.rb:58
 msgid "Things you can do now are"
 msgstr "Vad du kan göra nu är"
 
-#: delete_poll.rb:61
+#: delete_poll.rb:59
 msgid "Return to dudle home and schedule a new poll"
 msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
 
-#: delete_poll.rb:62
+#: delete_poll.rb:60
 msgid "Browse Wikipedia"
 msgstr "Kolla Wikipedia"
 
-#: delete_poll.rb:63
+#: delete_poll.rb:61
 msgid "Search something with Google"
 msgstr "Sök efter något med hjälp av Google"
 
-#: delete_poll.rb:89
+#: delete_poll.rb:87
 msgid "To delete the poll, you have to type:"
 msgstr "För att radera omröstningen måste du skriva:"
 
-#: delete_poll.rb:97
+#: delete_poll.rb:95
 msgid "but you typed:"
 msgstr "men du skrev:"
 
-#: delete_poll.rb:109
+#: delete_poll.rb:107
 msgid "Delete this Poll"
 msgstr "Ta bort den här omröstningen"
 
-#: delete_poll.rb:110
+#: delete_poll.rb:108
 msgid "You want to delete the poll named"
 msgstr "Du vill ta bort omröstningen med rubriken"
 
-#: delete_poll.rb:111
+#: delete_poll.rb:109
 msgid "This is an irreversible action!"
 msgstr "Det går inte att ångra den här åtgärden!"
 
-#: delete_poll.rb:112
+#: delete_poll.rb:110
 msgid ""
 "If you are sure in what you are doing, please type “%{question}” into the "
 "form."
@@ -766,12 +774,6 @@ msgstr "t ex 09:30, morgon, eftermiddag"
 #, fuzzy
 #~ msgid "Alternative"
 #~ msgstr "Kolumntitel"
-
-#~ msgid "Event Schedule Poll"
-#~ msgstr "Händelseschema Omröstning"
-
-#~ msgid "Normal Poll"
-#~ msgstr "Normal omröstning"
 
 #~ msgid "Reload"
 #~ msgstr "Ladda om"

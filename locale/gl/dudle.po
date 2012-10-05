@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
-"POT-Creation-Date: 2011-12-18 01:34+0100\n"
+"POT-Creation-Date: 2012-10-05 21:21+0200\n"
 "PO-Revision-Date: 2011-12-28 15:41+0100\n"
 "Last-Translator: Daniel Espinheira <daniel.espinheira@gmail.com>\n"
 "Language-Team: ngzngl <daniel.espinheira@gmail.com>\n"
@@ -18,23 +18,38 @@ msgstr ""
 "X-Poedit-Country: SPAIN\n"
 
 #: about.cgi:29
-msgid "If you find a bug or have something else which disturbes you, please let me know: <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?subject=Feedback%20to%20dudle\">give feedback</a>"
-msgstr "Se atopas algún erro ponte en contacto : <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?subject=Feedback%20to%20dudle\">enviar correo</a>"
+#, fuzzy
+msgid ""
+"If you find a bug or have something else which disturbes you, please let me "
+"know: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
+"subject=Feedback%20to%20dudle\">give feedback</a>"
+msgstr ""
+"Se atopas algún erro ponte en contacto : <a href=\"mailto:"
+"Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20dudle"
+"\">enviar correo</a>"
 
 #: about.cgi:31
 msgid "--verbose"
 msgstr "--verbose"
 
 #: about.cgi:32
-msgid "The sourcecode of this application is available under the terms of <a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
-msgstr "O código fonte deste aplicativo está dispoñible baixo os termos da licenza  <a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+msgid ""
+"The sourcecode of this application is available under the terms of <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+msgstr ""
+"O código fonte deste aplicativo está dispoñible baixo os termos da licenza  "
+"<a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version "
+"3</a>"
 
 #: about.cgi:34
-msgid "You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</a>:"
-msgstr "Podes obter o código fonte, utilizando <a href='http://bazaar-vcs.org/'>bazaar</a>:"
+msgid ""
+"You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</"
+"a>:"
+msgstr ""
+"Podes obter o código fonte, utilizando <a href='http://bazaar-vcs."
+"org/'>bazaar</a>:"
 
-#: authorization_required.cgi:36
-#: authorization_required.cgi:52
+#: authorization_required.cgi:36 authorization_required.cgi:52
 msgid "Authorization Required"
 msgstr "Requírese autenticación"
 
@@ -48,10 +63,10 @@ msgstr "Esta Enquisa está protexida por contrasinal!"
 
 #: authorization_required.cgi:43
 msgid "In order to proceed, you have to give the password for user %{user}."
-msgstr "Para continuar debes proporcionar o contrasinal para a usuaria  %{user}."
+msgstr ""
+"Para continuar debes proporcionar o contrasinal para a usuaria  %{user}."
 
-#: authorization_required.cgi:53
-#: not_found.cgi:36
+#: authorization_required.cgi:53 not_found.cgi:36
 msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Volver ao inicio de dudle e crear unha nova Enquisa"
 
@@ -59,89 +74,68 @@ msgstr "Volver ao inicio de dudle e crear unha nova Enquisa"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Debes autorizarte para acceder a esta páxina!"
 
-#: customize.cgi:31
-#: customize.rb:31
+#: customize.cgi:31 customize.rb:31
 msgid "Customize Personal Settings"
 msgstr "Definir configuración persoal"
 
-#: customize.cgi:32
-#: customize.rb:32
+#: customize.cgi:32 customize.rb:32
 msgid "You need cookies enabled in order to personalize your settings."
 msgstr "Precisas activar as cookies para poder mudar a túa configuración"
 
-#: customize.cgi:39
-#: customize.rb:39
+#: customize.cgi:39 customize.rb:39
 msgid "Current Setting"
 msgstr "Configuración actual"
 
-#: customize.cgi:40
-#: customize.rb:40
+#: customize.cgi:40 customize.rb:40
 msgid "Description"
 msgstr "Descrición"
 
-#: customize.cgi:57
-#: customize.rb:57
+#: customize.cgi:57 customize.rb:57
 msgid "Use special characters"
 msgstr "Usar caracteres especiais"
 
-#: customize.cgi:57
-#: customize.rb:57
+#: customize.cgi:57 customize.rb:57
 msgid "Use this option if you see the characters in the parenthesis."
 msgstr "Utiliza esta opción se ves os caracteres entre parénteses."
 
-#: customize.cgi:58
-#: customize.rb:58
+#: customize.cgi:58 customize.rb:58
 msgid "Use only normal strings"
 msgstr "Utilizar só textos normais"
 
-#: customize.cgi:58
-#: customize.rb:58
+#: customize.cgi:58 customize.rb:58
 msgid "Use this option if you have problems with some characters."
 msgstr "Utiliza esta opción se tes problemas con algúns caracteres"
 
-#: customize.cgi:61
-#: customize.rb:61
+#: customize.cgi:61 customize.rb:61
 msgid "Charset"
 msgstr "Código de caracteres"
 
-#: customize.cgi:66
-#: customize.rb:66
+#: customize.cgi:66 customize.rb:66
 msgid "Stylesheet"
 msgstr "Folla de estilo"
 
-#: customize.cgi:82
-#: customize.rb:82
+#: customize.cgi:82 customize.rb:82
 msgid "Default Username"
 msgstr "Nome de usuaria predeterminado"
 
-#: customize.cgi:83
-#: access_control.rb:73
-#: customize.rb:83
+#: customize.cgi:83 access_control.rb:73 customize.rb:83
 msgid "Username:"
 msgstr "Nome de usuaria:"
 
-#: customize.cgi:107
-#: customize.rb:107
+#: customize.cgi:107 customize.rb:107
 msgid "Edit"
 msgstr "Editar"
 
-#: customize.cgi:117
-#: access_control.rb:120
-#: customize.rb:117
-#: poll.rb:296
+#: customize.cgi:117 access_control.rb:120 customize.rb:117 poll.rb:296
 msgid "Save"
 msgstr "Gardar"
 
-#: customize.cgi:120
-#: access_control.rb:116
-#: customize.rb:120
-#: delete_poll.rb:111
+#: customize.cgi:120 access_control.rb:116 customize.rb:120 delete_poll.rb:111
 #: poll.rb:334
 msgid "Delete"
 msgstr "Eliminar"
 
-#: error.cgi:25
-#: error.cgi:27
+#: error.cgi:25 error.cgi:27
 msgid "Error"
 msgstr "Erro"
 
@@ -180,21 +174,28 @@ msgid "Bug in dudle"
 msgstr "Erro en dudle"
 
 #: error.cgi:53
-msgid "An error occured while executing dudle.<br/>Please send an error report, including your browser, operating system, and what you did to %{admin}."
-msgstr "Houbo un erro mentres se executaba dudle.<br/>Envía un informe do erro, incluíndo o teu navegador, sistema operativo e o que fixeches a %{admin}."
+msgid ""
+"An error occured while executing dudle.<br/>Please send an error report, "
+"including your browser, operating system, and what you did to %{admin}."
+msgstr ""
+"Houbo un erro mentres se executaba dudle.<br/>Envía un informe do erro, "
+"incluíndo o teu navegador, sistema operativo e o que fixeches a %{admin}."
 
 #: error.cgi:56
 msgid "Please include the following as well:"
 msgstr "Inclúe tamén o seguinte:"
 
-#: example.cgi:60
-#: dudle.rb:89
+#: example.cgi:60 dudle.rb:89
 msgid "Examples"
 msgstr "Exemplos"
 
 #: example.cgi:61
-msgid "If you want to play with the application, you may want to take a look at these example polls:"
-msgstr "Se queres xogar co aplicativo, tal vez queiras mirar estas enquisas de exemplo:"
+msgid ""
+"If you want to play with the application, you may want to take a look at "
+"these example polls:"
+msgstr ""
+"Se queres xogar co aplicativo, tal vez queiras mirar estas enquisas de "
+"exemplo:"
 
 #: index.cgi:32
 msgid "Please enter a descriptive title."
@@ -209,8 +210,10 @@ msgid "A Poll with this address already exists."
 msgstr "Xa existe unha Enquisa con este enderezo."
 
 #: index.cgi:69
-msgid "The poll was created successfully. The link to your new poll is: %{link}"
-msgstr "Creouse a enquisa correctamente. A ligazón á túa nova enquisa é:%{link}"
+msgid ""
+"The poll was created successfully. The link to your new poll is: %{link}"
+msgstr ""
+"Creouse a enquisa correctamente. A ligazón á túa nova enquisa é:%{link}"
 
 #: index.cgi:76
 msgid "Create New Poll"
@@ -258,15 +261,24 @@ msgstr "Hai varias razóns polas que se borra unha enquisa:"
 
 #: not_found.cgi:33
 msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
-msgstr "Alguén premeu sobre \"Eliminar Enquisa\" e eliminou a enquisa manualmente."
+msgstr ""
+"Alguén premeu sobre \"Eliminar Enquisa\" e eliminou a enquisa manualmente."
 
 #: not_found.cgi:34
-msgid "The Poll was deleted by the administrator because it was not accessed for a long time."
-msgstr "A administradora eliminou a enquisa porque ninguén accedeu durante un longo período de tempo."
+msgid ""
+"The Poll was deleted by the administrator because it was not accessed for a "
+"long time."
+msgstr ""
+"A administradora eliminou a enquisa porque ninguén accedeu durante un longo "
+"período de tempo."
 
 #: not_found.cgi:35
-msgid "If you think, the deletion was done by error, please contact the adminsistrator of the system."
-msgstr "Se che parece que a eliminación desta enquisa foi un erro, contacta coa administradora do sistema."
+msgid ""
+"If you think, the deletion was done by error, please contact the "
+"adminsistrator of the system."
+msgstr ""
+"Se che parece que a eliminación desta enquisa foi un erro, contacta coa "
+"administradora do sistema."
 
 #: access_control.rb:86
 msgid "Password"
@@ -277,8 +289,11 @@ msgid "repeat"
 msgstr "repetir"
 
 #: access_control.rb:113
-msgid "You have to remove the participant user before you can remove the administrator."
-msgstr "Tes que eliminar a usuaria participante antes de eliminar a administradora."
+msgid ""
+"You have to remove the participant user before you can remove the "
+"administrator."
+msgstr ""
+"Tes que eliminar a usuaria participante antes de eliminar a administradora."
 
 #: access_control.rb:138
 msgid "Only letters and digits are allowed in the username."
@@ -302,7 +317,8 @@ msgstr "Activado"
 
 #: access_control.rb:182
 msgid "will be activated when at least an admin user is configured"
-msgstr "activarase en canto se configure unha usuaria con permisos de administración"
+msgstr ""
+"activarase en canto se configure unha usuaria con permisos de administración"
 
 #: access_control.rb:184
 msgid "Deactivate"
@@ -313,16 +329,25 @@ msgid "activated"
 msgstr "activado"
 
 #: access_control.rb:187
-msgid "You have to remove all users before you can deactivate the access control settings."
-msgstr "Tes que eliminar todas as usuarias antes de desactivar a configuración de control de acceso."
+msgid ""
+"You have to remove all users before you can deactivate the access control "
+"settings."
+msgstr ""
+"Tes que eliminar todas as usuarias antes de desactivar a configuración de "
+"control de acceso."
 
 #: access_control.rb:191
-msgid "You will be asked for the password you entered here after pressing save!"
-msgstr "Pediráseche o contrasinal que inseriches aquí despois de darlle a gardar!"
+msgid ""
+"You will be asked for the password you entered here after pressing save!"
+msgstr ""
+"Pediráseche o contrasinal que inseriches aquí despois de darlle a gardar!"
 
 #: access_control.rb:194
-msgid "The user ‘admin’ has access to the vote as well as the configuration interface."
-msgstr "A usuaria 'admin' ten acceso ao voto e tamén á interface de configuración."
+msgid ""
+"The user ‘admin’ has access to the vote as well as the configuration "
+"interface."
+msgstr ""
+"A usuaria 'admin' ten acceso ao voto e tamén á interface de configuración."
 
 #: access_control.rb:200
 msgid "The user ‘participant’ has only access to the vote interface."
@@ -332,11 +357,11 @@ msgstr "A usuaria 'participante' só ten acceso á interface de voto."
 msgid "Access control:"
 msgstr "Control de acceso:"
 
-#: config.rb:26
+#: config.rb:25
 msgid "Event Schedule Poll"
 msgstr "Enquisa de Programación de Evento"
 
-#: config.rb:30
+#: config.rb:29
 msgid "Normal Poll"
 msgstr "Enquisa Normal"
 
@@ -365,8 +390,14 @@ msgid "The poll was deleted successfully!"
 msgstr "Eliminouse a enquisa!"
 
 #: delete_poll.rb:56
-msgid "If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterministic amount of time, maybe it is already to late."
-msgstr "Se fixeches iso por accidente, contacta coa persoa que administra o sistema. A enquisa pódese recuperar por un período de tempo indeterminado, quizáis xa é demasiado tarde."
+msgid ""
+"If this was done by accident, please contact the administrator of the "
+"system. The poll can be recovered for an indeterministic amount of time, "
+"maybe it is already to late."
+msgstr ""
+"Se fixeches iso por accidente, contacta coa persoa que administra o sistema. "
+"A enquisa pódese recuperar por un período de tempo indeterminado, quizáis xa "
+"é demasiado tarde."
 
 #: delete_poll.rb:58
 msgid "Things you can do now are"
@@ -405,8 +436,11 @@ msgid "This is an irreversible action!"
 msgstr "Esta acción é irreversible!"
 
 #: delete_poll.rb:110
-msgid "If you are sure in what you are doing, please type “%{question}” into the form."
-msgstr "Se estás segura do que estás a facer, escribe  “%{question}” no formulario."
+msgid ""
+"If you are sure in what you are doing, please type “%{question}” into the "
+"form."
+msgstr ""
+"Se estás segura do que estás a facer, escribe  “%{question}” no formulario."
 
 #: dudle.rb:73
 msgid "Home"
@@ -416,8 +450,7 @@ msgstr "Inicio"
 msgid "Poll"
 msgstr "Enquisa"
 
-#: dudle.rb:77
-#: history.rb:35
+#: dudle.rb:77 history.rb:35
 msgid "History"
 msgstr "Histórico"
 
@@ -425,8 +458,7 @@ msgstr "Histórico"
 msgid "Edit Columns"
 msgstr "Editar Columnas"
 
-#: dudle.rb:81
-#: invite_participants.rb:38
+#: dudle.rb:81 invite_participants.rb:38
 msgid "Invite Participants"
 msgstr "Invitar Participantes"
 
@@ -454,18 +486,15 @@ msgstr "Configurar"
 msgid "Dudle Home"
 msgstr "Inicio de Dudle"
 
-#: dudle.rb:203
-#: dudle.rb:221
+#: dudle.rb:203 dudle.rb:221
 msgid "Previous"
 msgstr "Anterior"
 
-#: dudle.rb:204
-#: dudle.rb:222
+#: dudle.rb:204 dudle.rb:222
 msgid "Next"
 msgstr "Seguinte"
 
-#: dudle.rb:205
-#: dudle.rb:223
+#: dudle.rb:205 dudle.rb:223
 msgid "Finish"
 msgstr "Finalizar"
 
@@ -481,20 +510,15 @@ msgstr "Proceder!"
 msgid "Add and Remove Columns"
 msgstr "Engadir e Eliminar Columnas"
 
-#: edit_columns.rb:67
-#: edit_columns.rb:86
-#: timepollhead.rb:248
+#: edit_columns.rb:67 edit_columns.rb:86 timepollhead.rb:248
 msgid "Delete column"
 msgstr "Eliminar columna"
 
-#: edit_columns.rb:69
-#: edit_columns.rb:84
-#: timepollhead.rb:247
+#: edit_columns.rb:69 edit_columns.rb:84 timepollhead.rb:247
 msgid "Add column"
 msgstr "Engadir columna"
 
-#: edit_columns.rb:71
-#: edit_columns.rb:88
+#: edit_columns.rb:71 edit_columns.rb:88
 msgid "Edit column"
 msgstr "Editar columna"
 
@@ -566,9 +590,7 @@ msgstr "Total"
 msgid "Invite"
 msgstr "Convidar"
 
-#: poll.rb:183
-#: pollhead.rb:62
-#: timepollhead.rb:158
+#: poll.rb:183 pollhead.rb:62 timepollhead.rb:158
 msgid "Name"
 msgstr "Nome"
 
@@ -656,8 +678,7 @@ msgstr "Opción Editar"
 msgid "Delete Option"
 msgstr "Opción Eliminar"
 
-#: pollhead.rb:87
-#: timepollhead.rb:162
+#: pollhead.rb:87 timepollhead.rb:162
 msgid "Last Edit"
 msgstr "Última Edición"
 
@@ -678,12 +699,21 @@ msgid "Preview"
 msgstr "Previsualizar"
 
 #: pollhead.rb:103
-msgid "Enter all Options (columns), you want to ask the participants of the poll. The participants will state one vote for every option you give here separately."
-msgstr "Inserir todas as Opcións (columnas) que queres que as participantes da enquisa contesten. As participantes un voto por cada opción por separado."
+msgid ""
+"Enter all Options (columns), you want to ask the participants of the poll. "
+"The participants will state one vote for every option you give here "
+"separately."
+msgstr ""
+"Inserir todas as Opcións (columnas) que queres que as participantes da "
+"enquisa contesten. As participantes un voto por cada opción por separado."
 
 #: timepollhead.rb:113
-msgid "To add some time different to the default ones, please enter some string here (e.&thinsp;g., 09:30, morning, afternoon)."
-msgstr "Para engadir unha hora diferente ás predeterminadas, escribe o texto aquí (p.ex: 09:30, mañá, tarde)."
+msgid ""
+"To add some time different to the default ones, please enter some string "
+"here (e.&thinsp;g., 09:30, morning, afternoon)."
+msgstr ""
+"Para engadir unha hora diferente ás predeterminadas, escribe o texto aquí (p."
+"ex: 09:30, mañá, tarde)."
 
 #: timepollhead.rb:119
 msgid "This Time was already choosen."
@@ -740,4 +770,3 @@ msgstr "Engadir"
 #: timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "p.ex: 09:30, mañá, tarde"
-

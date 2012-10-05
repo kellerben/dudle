@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-12-18 01:34+0100\n"
+"POT-Creation-Date: 2012-10-05 21:24+0200\n"
 "PO-Revision-Date: 2011-05-11 13:46+0100\n"
 "Last-Translator: Joeri de Ruiter <joeri@cs.ru.nl>\n"
 "Language-Team: \n"
@@ -31,11 +31,11 @@ msgstr ""
 #: about.cgi:29
 msgid ""
 "If you find a bug or have something else which disturbes you, please let me "
-"know: <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?"
+"know: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
 "subject=Feedback%20to%20dudle\">give feedback</a>"
 msgstr ""
 "Als je een fout hebt gevonden of een andere opmerking hebt, laat dit dan "
-"weten:  <a href=\"mailto:Benjamin_dot_Kellermann@tu-dresden_in_germany?"
+"weten:  <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
 "subject=Feedback%20to%20dudle\">geef feedback</a>"
 
 #: about.cgi:31
@@ -371,11 +371,11 @@ msgstr "De gebruiker 'participant' heeft alleen toegang tot de stem interface."
 msgid "Access control:"
 msgstr "Toegangsrechten:"
 
-#: config.rb:26
+#: config.rb:25
 msgid "Event Schedule Poll"
 msgstr ""
 
-#: config.rb:30
+#: config.rb:29
 msgid "Normal Poll"
 msgstr ""
 
