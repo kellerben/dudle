@@ -249,7 +249,7 @@ msgstr ""
 
 #: index.cgi:81
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
-msgstr "Sondaggio Tradizionale (e.&thinsp;g., vora per il caffé migliore)"
+msgstr "Sondaggio Tradizionale (e.&thinsp;g., vota per il caffé migliore)"
 
 #: index.cgi:82
 msgid "Custom address (optional)"
@@ -464,7 +464,7 @@ msgstr ""
 
 #: dudle.rb:73
 msgid "Home"
-msgstr "Home (Pagina Princiaple)"
+msgstr "Home (Pagina Principale)"
 
 #: dudle.rb:76
 msgid "Poll"
