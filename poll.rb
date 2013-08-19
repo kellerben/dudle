@@ -178,7 +178,7 @@ class Poll
 	end
 
 	def invite_to_html
-		edituser = CGI.escapeHTML($cgi["edituser"]) unless $cgi.include?("deleteuser")
+		edituser = $cgi["edituser"] unless $cgi.include?("deleteuser")
 		invitestr = _("Invite")
 		namestr = _("Name")
 		ret = <<HEAD
@@ -248,25 +248,24 @@ END
 	end
 
 	def deleteuser_to_html
-		edituser = CGI.escapeHTML($cgi["edituser"])
 		ret = "<tr id='add_participant'>\n"
-		ret += "<td colspan='2' class='name'>#{edituser}</td>"
+		ret += "<td colspan='2' class='name'>#{$cgi["edituser"]}</td>"
 		ret += "<td colspan='#{@head.col_size}'>"
-		ret += _("Do you really want to delete user %{user}?") % {:user => edituser}
-		ret += "<input type='hidden' name='delete_participant_confirm' value='#{edituser}' />"
+		ret += _("Do you really want to delete user %{user}?") % {:user => $cgi["edituser"]}
+		ret += "<input type='hidden' name='delete_participant_confirm' value='#{$cgi["edituser"]}' />"
 		ret += "</td>"
-		ret += save_input(edituser, "", _("Confirm"))
+		ret += save_input($cgi["edituser"], "", _("Confirm"))
 		ret += "</tr>"
 		ret
 	end
 
 	def edituser_to_html
-		edituser = CGI.escapeHTML($cgi["edituser"]) 
+		edituser = $cgi["edituser"]
 		checked = {}
 		if @data.include?(edituser)
 			@head.columns.each{|k| checked[k] = @data[edituser][k]}
 		else
-			edituser = CGI.escapeHTML($cgi.cookies["username"][0]) unless @data.include?($cgi.cookies["username"][0])
+			edituser = $cgi.cookies["username"][0] unless @data.include?($cgi.cookies["username"][0])
 			@head.columns.each{|k| checked[k] = NOVAL}
 		end
 
