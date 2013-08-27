@@ -47,6 +47,7 @@ $conf.footer = []
 $conf.errorlog = ""
 $conf.bugreportmail = "Benjamin.Kellermann@gmx.de"
 $conf.auto_send_report = false
+$conf.known_errors = []
 
 $conf.indexnotice = <<INDEXNOTICE
 <h2>Available Polls</h2>

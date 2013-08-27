@@ -63,8 +63,12 @@ end
 
 $d.out
 
+known = false
+$conf.known_errors.each{|err|
+	known = true if errorstr.index(err)
+}
 
-if $conf.auto_send_report
+if $conf.auto_send_report && !known
 	tmpfile = "/tmp/error.#{rand(10000)}"
 	File.open(tmpfile,"w"){|f| 
 		f << errorstr
