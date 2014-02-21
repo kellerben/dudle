@@ -30,7 +30,10 @@ License:
 6. In order to get atom-feed support you need ruby-ratom to be installed. E.g.:
      sudo aptitude install rubygems ruby-dev libxml2-dev zlib1g-dev
      sudo gem install ratom
-7. Try to open http://$YOUR_SERVER/check.cgi to check if your config seems to work.
+7. for RUBY 1.9 you need to add 
+   	SetEnv RUBYLIB $DUDLE_INSTALLATION_PATH
+   to your .htaccess
+8. Try to open http://$YOUR_SERVER/check.cgi to check if your config seems to work.
 
 === Pimp your Installation ===
  * If you want to create your own Stylesheet, you just have to put it in
