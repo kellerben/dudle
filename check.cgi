@@ -19,8 +19,10 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
+
 if __FILE__ == $0
 	require "pp"
+	puts "Content-type: text/plain\n"
 	puts
 
 problems = []
