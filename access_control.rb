@@ -40,7 +40,7 @@ def write_htaccess(acusers)
 			htaccess << <<HTACCESS
 <Files ~ "^(edit_columns|invite_participants|access_control|delete_poll).cgi$">
 AuthType digest
-AuthName "dudle"
+AuthName "dudle-#{$d.urlsuffix.gsub('"', '\\\\"')}"
 AuthUserFile "#{File.expand_path(".").gsub('"','\\\\"')}/.htdigest"
 Require user admin
 ErrorDocument 401 #{$cgi.script_name.gsub(/[^\/]*\/[^\/]*$/,"")}authorization_required.cgi?user=admin&poll=#{CGI.escape($d.urlsuffix)}
@@ -50,7 +50,7 @@ HTACCESS
 		if acusers.include?("participant")
 			htaccess << <<HTACCESS
 AuthType digest
-AuthName "dudle"
+AuthName "dudle-#{$d.urlsuffix.gsub('"', '\\\\"')}"
 AuthUserFile "#{File.expand_path(".").gsub('"','\\\\"')}/.htdigest"
 Require valid-user
 ErrorDocument 401 #{$cgi.script_name.gsub(/[^\/]*\/[^\/]*$/,"")}authorization_required.cgi?user=participant&poll=#{CGI.escape($d.urlsuffix)}
@@ -66,7 +66,7 @@ HTACCESS
 end
 def add_to_htdigest(user,password)
 	File.open(".htdigest","a"){|f|
-		f << "#{user}:dudle:#{Digest::MD5.hexdigest("#{user}:dudle:#{password}")}\n"
+		f << "#{user}:dudle-#{$d.urlsuffix.gsub(':', '\\:')}:#{Digest::MD5.hexdigest("#{user}:dudle-#{$d.urlsuffix.gsub(':', '\\:')}:#{password}")}\n"
 	}
 end
 
