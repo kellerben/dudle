@@ -18,7 +18,7 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-$KCODE = "u"
+$KCODE = "u" if RUBY_VERSION < '1.9.0'
 require "yaml"
 require "cgi"
 

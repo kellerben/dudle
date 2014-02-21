@@ -23,7 +23,7 @@ require "time"
 require "pollhead"
 require "timepollhead"
 
-$KCODE = "u"
+$KCODE = "u" if RUBY_VERSION < '1.9.0'
 class String
 	@@htmlidcache = {}
 	@@htmlidncache = {}
