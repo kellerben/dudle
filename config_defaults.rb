@@ -49,24 +49,7 @@ $conf.bugreportmail = "Benjamin.Kellermann@gmx.de"
 $conf.auto_send_report = false
 $conf.known_errors = []
 
-$conf.indexnotice = <<INDEXNOTICE
-<h2>Available Polls</h2>
-<table>
-	<tr>
-		<th>Poll</th><th>Last change</th>
-	</tr>
-INDEXNOTICE
-Dir.glob("*/data.yaml").sort_by{|f|
-	File.new(f).mtime
-}.reverse.collect{|f| f.gsub(/\/data\.yaml$/,'') }.each{|site|
-	$conf.indexnotice += <<INDEXNOTICE
-<tr class='participantrow'>
-	<td class='polls'><a href='./#{CGI.escapeHTML(site).gsub("'","%27")}/'>#{CGI.escapeHTML(site)}</a></td>
-	<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>
-</tr>
-INDEXNOTICE
-}
-$conf.indexnotice += "</table>"
+$conf.indexnotice = ""
 
 $conf.examples = []
 
