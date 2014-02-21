@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2012-10-05 21:24+0200\n"
+"POT-Creation-Date: 2014-02-21 22:01+0100\n"
 "PO-Revision-Date: 2011-05-10 07:31+0200\n"
 "Last-Translator: Eros Pedrini\n"
 "Language-Team: \n"
@@ -126,23 +126,23 @@ msgstr "Insieme di Caratteri"
 msgid "Stylesheet"
 msgstr "Foglio di Stile"
 
-#: customize.cgi:82 customize.rb:82
+#: customize.cgi:83 customize.rb:83
 msgid "Default Username"
 msgstr "Nome Utente Predefinito"
 
-#: customize.cgi:83 access_control.rb:73 customize.rb:83
+#: customize.cgi:84 access_control.rb:73 customize.rb:84
 msgid "Username:"
 msgstr "Nome Utente:"
 
-#: customize.cgi:107 customize.rb:107
+#: customize.cgi:108 customize.rb:108
 msgid "Edit"
 msgstr "Modifica"
 
-#: customize.cgi:117 access_control.rb:120 customize.rb:117 poll.rb:296
+#: customize.cgi:118 access_control.rb:120 customize.rb:118 poll.rb:296
 msgid "Save"
 msgstr "Salva"
 
-#: customize.cgi:120 access_control.rb:116 customize.rb:120 delete_poll.rb:111
+#: customize.cgi:121 access_control.rb:116 customize.rb:121 delete_poll.rb:111
 #: poll.rb:334
 msgid "Delete"
 msgstr "Elimina"
@@ -378,11 +378,11 @@ msgstr ""
 msgid "Access control:"
 msgstr "Controllo dell'Accesso:"
 
-#: config.rb:25
+#: config.rb:36
 msgid "Event Schedule Poll"
 msgstr ""
 
-#: config.rb:29
+#: config.rb:40
 msgid "Normal Poll"
 msgstr ""
 
@@ -432,7 +432,8 @@ msgid "Browse Wikipedia"
 msgstr "Vai su Wikipedia"
 
 #: delete_poll.rb:61
-msgid "Search something with Google"
+#, fuzzy
+msgid "Search something in the Internet"
 msgstr "Cerca in Google"
 
 #: delete_poll.rb:87

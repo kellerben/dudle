@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-10-05 21:21+0200\n"
+"POT-Creation-Date: 2014-02-21 22:01+0100\n"
 "PO-Revision-Date: 2011-12-17 02:00+0100\n"
 "Last-Translator: Laura Mora i Aubert <blackhold@marsupi.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -112,23 +112,23 @@ msgstr "Codificació de caràcters"
 msgid "Stylesheet"
 msgstr "Full d'estils"
 
-#: customize.cgi:82 customize.rb:82
+#: customize.cgi:83 customize.rb:83
 msgid "Default Username"
 msgstr "Usuari per defecte"
 
-#: customize.cgi:83 access_control.rb:73 customize.rb:83
+#: customize.cgi:84 access_control.rb:73 customize.rb:84
 msgid "Username:"
 msgstr "Usuari:"
 
-#: customize.cgi:107 customize.rb:107
+#: customize.cgi:108 customize.rb:108
 msgid "Edit"
 msgstr "Modifica"
 
-#: customize.cgi:117 access_control.rb:120 customize.rb:117 poll.rb:296
+#: customize.cgi:118 access_control.rb:120 customize.rb:118 poll.rb:296
 msgid "Save"
 msgstr "Desa"
 
-#: customize.cgi:120 access_control.rb:116 customize.rb:120 delete_poll.rb:111
+#: customize.cgi:121 access_control.rb:116 customize.rb:121 delete_poll.rb:111
 #: poll.rb:334
 msgid "Delete"
 msgstr "Esborra"
@@ -355,11 +355,11 @@ msgstr "El usuari ‘participant’ només pot votar."
 msgid "Access control:"
 msgstr "Control d'accés:"
 
-#: config.rb:25
+#: config.rb:36
 msgid "Event Schedule Poll"
 msgstr "Enquesta de data"
 
-#: config.rb:29
+#: config.rb:40
 msgid "Normal Poll"
 msgstr "Enquesta"
 
@@ -410,7 +410,8 @@ msgid "Browse Wikipedia"
 msgstr "Cerca a la Viquipèdia"
 
 #: delete_poll.rb:61
-msgid "Search something with Google"
+#, fuzzy
+msgid "Search something in the Internet"
 msgstr "Cerca fent servir Google"
 
 #: delete_poll.rb:87

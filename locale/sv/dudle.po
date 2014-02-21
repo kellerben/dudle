@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2012-10-05 21:24+0200\n"
+"POT-Creation-Date: 2014-02-21 22:01+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@gmx.de>\n"
 "Language-Team: \n"
@@ -36,8 +36,8 @@ msgid ""
 "subject=Feedback%20to%20dudle\">give feedback</a>"
 msgstr ""
 "Om du hittar en bugg eller något annat störande, vänligen underrätta mig: <a "
-"href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%"
-"20to%20dudle\">ge återkoppling</a>"
+"href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%"
+"20dudle\">ge återkoppling</a>"
 
 #: about.cgi:31
 msgid "--verbose"
@@ -124,23 +124,23 @@ msgstr "Teckenuppsättning"
 msgid "Stylesheet"
 msgstr "Stilmall"
 
-#: customize.cgi:82 customize.rb:82
+#: customize.cgi:83 customize.rb:83
 msgid "Default Username"
 msgstr "Standard användarnamn"
 
-#: customize.cgi:83 access_control.rb:73 customize.rb:83
+#: customize.cgi:84 access_control.rb:73 customize.rb:84
 msgid "Username:"
 msgstr "Användarnamn:"
 
-#: customize.cgi:107 customize.rb:107
+#: customize.cgi:108 customize.rb:108
 msgid "Edit"
 msgstr "Redigera"
 
-#: customize.cgi:117 access_control.rb:120 customize.rb:117 poll.rb:296
+#: customize.cgi:118 access_control.rb:120 customize.rb:118 poll.rb:296
 msgid "Save"
 msgstr "Spara"
 
-#: customize.cgi:120 access_control.rb:116 customize.rb:120 delete_poll.rb:111
+#: customize.cgi:121 access_control.rb:116 customize.rb:121 delete_poll.rb:111
 #: poll.rb:334
 msgid "Delete"
 msgstr "Radera"
@@ -349,11 +349,11 @@ msgstr "’Deltagare’ har bara access till gränssnittet för omröstning"
 msgid "Access control:"
 msgstr "Åtkomstkontroll:"
 
-#: config.rb:25
+#: config.rb:36
 msgid "Event Schedule Poll"
 msgstr "Händelseschema Omröstning"
 
-#: config.rb:29
+#: config.rb:40
 msgid "Normal Poll"
 msgstr "Normal omröstning"
 
@@ -404,7 +404,8 @@ msgid "Browse Wikipedia"
 msgstr "Kolla Wikipedia"
 
 #: delete_poll.rb:61
-msgid "Search something with Google"
+#, fuzzy
+msgid "Search something in the Internet"
 msgstr "Sök efter något med hjälp av Google"
 
 #: delete_poll.rb:87

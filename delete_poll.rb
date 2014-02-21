@@ -58,7 +58,7 @@ if $cgi.include?("confirmnumber")
 		nextthingsstr = _("Things you can do now are")
 		homepagestr = _("Return to dudle home and schedule a new poll")
 		wikipediastr = _("Browse Wikipedia")
-		googlestr = _("Search something with Google")
+		searchstr = _("Search something in the Internet")
 
 		$d.html << %{
 <p class='textcolumn'>
@@ -72,7 +72,7 @@ if $cgi.include?("confirmnumber")
 	<ul>
 		<li><a href='../'>#{homepagestr}</a></li>
 		<li><a href='http://wikipedia.org'>#{wikipediastr}</a></li>
-		<li><a href='http://www.google.com'>#{googlestr}</a></li>
+		<li><a href='https://duckduckgo.com'>#{searchstr}</a></li>
 	</ul>
 </div>
 		}

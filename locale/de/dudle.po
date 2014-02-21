@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2012-10-05 21:21+0200\n"
+"POT-Creation-Date: 2014-02-21 22:01+0100\n"
 "PO-Revision-Date: 2011-07-21 07:48+0100\n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@gmx.de>\n"
 "Language-Team: \n"
@@ -40,8 +40,9 @@ msgid ""
 "subject=Feedback%20to%20dudle\">give feedback</a>"
 msgstr ""
 "Schreiben Sie mir bitte eine E-Mail, wenn Sie einen Bug finden oder etwas "
-"anderes haben was Sie stört: <a href=\"mailto:Benjamin_dot_Kellermann@gmx"
-"_in_deutschland?subject=dudle%20Feedback\">Feedback</a>"
+"anderes haben was Sie stört: <a href=\"mailto:"
+"Benjamin_dot_Kellermann@gmx_in_deutschland?subject=dudle%20Feedback"
+"\">Feedback</a>"
 
 #: about.cgi:31
 msgid "--verbose"
@@ -134,23 +135,23 @@ msgstr "Zeichen"
 msgid "Stylesheet"
 msgstr "Aussehen"
 
-#: customize.cgi:82 customize.rb:82
+#: customize.cgi:83 customize.rb:83
 msgid "Default Username"
 msgstr "Voreingestellter Benutzername"
 
-#: customize.cgi:83 access_control.rb:73 customize.rb:83
+#: customize.cgi:84 access_control.rb:73 customize.rb:84
 msgid "Username:"
 msgstr "Benutzername:"
 
-#: customize.cgi:107 customize.rb:107
+#: customize.cgi:108 customize.rb:108
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: customize.cgi:117 access_control.rb:120 customize.rb:117 poll.rb:296
+#: customize.cgi:118 access_control.rb:120 customize.rb:118 poll.rb:296
 msgid "Save"
 msgstr "Speichern"
 
-#: customize.cgi:120 access_control.rb:116 customize.rb:120 delete_poll.rb:111
+#: customize.cgi:121 access_control.rb:116 customize.rb:121 delete_poll.rb:111
 #: poll.rb:334
 msgid "Delete"
 msgstr "Löschen"
@@ -385,11 +386,11 @@ msgstr "Der Benutzer „participant“ hat nur zur Abstimmungsoberfläche Zugrif
 msgid "Access control:"
 msgstr "Zugriffskontrolle:"
 
-#: config.rb:25
+#: config.rb:36
 msgid "Event Schedule Poll"
 msgstr "Nach einer Zeit fragen"
 
-#: config.rb:29
+#: config.rb:40
 msgid "Normal Poll"
 msgstr "Eine normale Umfrage"
 
@@ -440,8 +441,8 @@ msgid "Browse Wikipedia"
 msgstr "bei Wikipedia stöbern"
 
 #: delete_poll.rb:61
-msgid "Search something with Google"
-msgstr "Etwas mit google suchen"
+msgid "Search something in the Internet"
+msgstr "Etwas im Internet suchen"
 
 #: delete_poll.rb:87
 msgid "To delete the poll, you have to type:"
