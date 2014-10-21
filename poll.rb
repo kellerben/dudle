@@ -88,20 +88,20 @@ class Poll
 		ret = ""
 		if link
 			ret += "<td><span class='edituser'>"
-			ret += "<a title='" 
+			ret += "<a title=\"" 
 			ret += _("Edit user %{user}...") % {:user => CGI.escapeHTML(participant)} 
-			ret += "' href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" 
+			ret += "\" href=\"?edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" 
 			ret += EDIT
-			ret += "</a> | <a title='" 
+			ret += "</a> | <a title=\"" 
 			ret += _("Delete user %{user}...") % {:user => CGI.escapeHTML(participant)} 
-			ret += "' href=\"?deleteuser&amp;edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" 
+			ret += "\" href=\"?deleteuser&amp;edituser=#{CGI.escapeHTML(CGI.escape(participant))}\">" 
 			ret += "#{DELETE}</a>"
 			ret += "</span></td>"
 			ret += "<td class='name'>"
 		else
 			ret += "<td class='name' colspan='2'>"
 		end
-		ret += "<span id='#{participant.to_htmlID}'>#{participant}</span>"
+		ret += "<span id=\"#{participant.to_htmlID}\">#{participant}</span>"
 		ret += "</td>"
 		ret
 	end
@@ -116,7 +116,7 @@ class Poll
 			if $cgi["edituser"] == participant
 				ret += participate_to_html
 			else
-				ret += "<tr id='#{participant.to_htmlID}_tr' class='participantrow'>\n"
+				ret += "<tr id=\"#{participant.to_htmlID}_tr\" class='participantrow'>\n"
 				ret += userstring(participant,showparticipation)
 				@head.columns.each{|column|
 					case poll[column]
@@ -133,7 +133,7 @@ class Poll
 						value = MAYBE
 						klasse = MAYBEVAL
 					end
-					ret += "<td class='#{klasse}' title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(column.to_s)}\">#{value}</td>\n"
+					ret += "<td class=\"#{klasse}\" title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(column.to_s)}\">#{value}</td>\n"
 				}
 				ret += "<td class='date'>#{poll['timestamp'].strftime('%c')}</td>"
 				ret += "</tr>\n"
@@ -169,7 +169,7 @@ class Poll
 				percent += "-#{(100.0*(undecided+yes)/@data.size).round} %"
 			end
 
-			ret += "<td id='sum_#{column.to_htmlID}' class='sum match_#{(percent_f/10).round*10}' title='#{percent}'>#{yes}</td>\n"
+			ret += "<td id=\"sum_#{column.to_htmlID}\" class=\"sum match_#{(percent_f/10).round*10}\" title=\"#{percent}\">#{yes}</td>\n"
 		}
 
 		ret += "<td class='invisible'></td></tr>"
@@ -216,22 +216,22 @@ HEAD
 	def add_participant_input(edituser)
 		return <<END
 <td colspan='2' id='add_participant_input_td'>
-	<input type='hidden' name='olduser' value=\"#{edituser}\" />
+	<input type='hidden' name='olduser' value="#{CGI.escapeHTML(edituser.to_s)}" />
 	<input size='16' 
 		type='text' 
 		name='add_participant'
 		id='add_participant_input'
-		value="#{edituser}"/>
+		value="#{CGI.escapeHTML(edituser.to_s)}"/>
 </td>
 END
 	end
 	def save_input(edituser, savestring, changestr = _("Save Changes"))
 		ret = "<td>"
 		if @data.include?(edituser)
-			ret += "<input id='savebutton' type='submit' value='#{changestr}' />"
+			ret += "<input id='savebutton' type='submit' value=\"#{changestr}\" />"
 			ret += "<br /><input id='cancelbutton' style='margin-top:1ex' type='submit' name='cancel' value='" + _("Cancel") + "' />"
 		else
-			ret += "<input id='savebutton' type='submit' value='#{savestring}' />"
+			ret += "<input id='savebutton' type='submit' value=\"#{savestring}\" />"
 		end
 		ret += "</td>\n"
 	end
@@ -249,10 +249,10 @@ END
 
 	def deleteuser_to_html
 		ret = "<tr id='add_participant'>\n"
-		ret += "<td colspan='2' class='name'>#{$cgi["edituser"]}</td>"
+		ret += "<td colspan='2' class='name'>#{CGI.escapeHTML($cgi["edituser"])}</td>"
 		ret += "<td colspan='#{@head.col_size}'>"
-		ret += _("Do you really want to delete user %{user}?") % {:user => $cgi["edituser"]}
-		ret += "<input type='hidden' name='delete_participant_confirm' value='#{$cgi["edituser"]}' />"
+		ret += _("Do you really want to delete user %{user}?") % {:user => CGI.escapeHTML($cgi["edituser"])}
+		ret += "<input type='hidden' name='delete_participant_confirm' value='#{CGI.escapeHTML($cgi["edituser"])}' />"
 		ret += "</td>"
 		ret += save_input($cgi["edituser"], "", _("Confirm"))
 		ret += "</tr>"
@@ -352,7 +352,7 @@ TR
 			ret += <<ADDCOMMENT
 <form method='post' action='.' accept-charset='utf-8' id='newcomment'>
 	<div class='comment' id='add_comment'>
-		<input value='#{$cgi.cookies["username"][0] || "Anonymous"}' type='text' name='commentname' size='9' /> #{saysstr}&nbsp;
+		<input value="#{CGI.escapeHTML($cgi.cookies["username"][0] || "Anonymous")}" type='text' name='commentname' size='9' /> #{saysstr}&nbsp;
 		<br />
 		<textarea cols='50' rows='7' name='comment' ></textarea>
 		<br /><input type='submit' value='#{submitstr}' />
@@ -382,7 +382,7 @@ FORM
 			ret += "<option value='#{value}' #{selected == value ? "selected='selected'" : ""} >#{opt}</option>"
 		}
 		ret += "</select>"
-		ret += "<input type='hidden' name='revision' value='#{revision}' />" if revision
+		ret += "<input type='hidden' name='revision' value=\"#{CGI.escapeHTML(revision)}\" />" if revision
 		updatestr = _("Update")
 		ret += <<FORM
 		<input type='submit' value='#{updatestr}' />

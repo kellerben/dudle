@@ -69,13 +69,11 @@ $d << "</div>"
 
 
 username = $cgi.cookies["username"][0]
-username = CGI.escapeHTML(username) if username
 if $cgi.include?("delete_username")
 	$d.html.add_cookie("username","","/",Time.now - 1*60*60*24*365)
-	username = nil
+	username = ""
 elsif $cgi.include?("username") && $cgi["username"] != ""
-	username = CGI.escapeHTML($cgi["username"])
-	$d.html.add_cookie("username",username,"/",Time.now + 1*60*60*24*365)
+	$d.html.add_cookie("username",$cgi["username"],"/",Time.now + 1*60*60*24*365)
 end
 
 
@@ -96,8 +94,8 @@ CHARSET
 
 if username && !$cgi.include?("edit")
 	$d << <<CHARSET
-				<span>#{username}</span>
-				<input type='hidden' value="#{username}" name='username' />
+				<span>#{CGI.escapeHTML(username)}</span>
+				<input type='hidden' value="#{CGI.escapeHTML(username)}" name='username' />
 				<input type='hidden' value="true" name='edit' />
 			</td>
 		</tr>
@@ -108,7 +106,7 @@ CHARSET
 	$d << "<input id='username' type='submit' value='" + _("Edit") + "' />"
 else
 	$d << <<CHARSET
-				<input id='username' type='text' value="#{username}" name='username' />
+				<input id='username' type='text' value="#{CGI.escapeHTML(username.to_s)}" name='username' />
 			</td>
 		</tr>
 		<tr>
