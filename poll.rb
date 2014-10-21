@@ -382,7 +382,7 @@ FORM
 			ret += "<option value='#{value}' #{selected == value ? "selected='selected'" : ""} >#{opt}</option>"
 		}
 		ret += "</select>"
-		ret += "<input type='hidden' name='revision' value=\"#{CGI.escapeHTML(revision)}\" />" if revision
+		ret += "<input type='hidden' name='revision' value=\"#{revision}\" />" if revision
 		updatestr = _("Update")
 		ret += <<FORM
 		<input type='submit' value='#{updatestr}' />
