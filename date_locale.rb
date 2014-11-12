@@ -7,7 +7,6 @@
 #
 
 
-require 'iconv'
 require 'date'
 
 #
@@ -165,20 +164,6 @@ module Date_locale
     return DATE_TEXTS[lang]
   end
   
-  #Set default converter
-  #~ @@encoding_converter = Iconv.new( 'iso-8859-1', 'utf-8' )
-  
-  #
-  #The daynames are encoded in UTF (I hope ;-) ).
-  #With this method you can define a global converter.
-  #
-  #Example:
-  #     Date_locale.set_target_encoding( 'iso-8859-1')
-  #
-  def self.set_target_encoding( enc )
-    @@encoding_converter = Iconv.new( enc, 'utf-8' )
-  end
-
 
   #
   #Get the key for the wanted language.
@@ -245,11 +230,7 @@ module Date_locale
             end
           }
         )
-    if defined? @@encoding_converter
-      @@encoding_converter.iconv(result)
-    else
-      result
-    end
+    result.encode("utf-8")
   end #strftime_locale(format = '%F', lang = :en )
 
 end #module Date_locale

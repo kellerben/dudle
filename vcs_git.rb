@@ -18,7 +18,7 @@
 ############################################################################
 
 require "time"
-require "log"
+require_relative "log"
 require "open3"
 
 def runcmd *args

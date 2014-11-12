@@ -21,7 +21,7 @@
 
 if __FILE__ == $0
 
-require "dudle"
+require_relative "dudle"
 
 $d = Dudle.new
 

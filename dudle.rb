@@ -40,12 +40,12 @@ else
 end
 
 $:.push("..")
-require "date_locale"
+require_relative "date_locale"
 
-require "html"
-require "poll"
-require "config_defaults"
-require "charset"
+require_relative "html"
+require_relative "poll"
+require_relative "config_defaults"
+require_relative "charset"
 
 class Dudle
 	attr_reader :html, :table, :urlsuffix, :css, :user_css, :title, :tab

@@ -18,7 +18,7 @@
 ############################################################################
 
 require "time"
-require "log"
+require_relative "log"
 
 class VCS
 	BZRCMD="export LC_ALL=de_DE.UTF-8; bzr"

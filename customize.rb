@@ -23,7 +23,7 @@
 if __FILE__ == $0
 
 $:.push("..")
-require "dudle"
+require_relative "dudle"
 
 $d = Dudle.new
 

@@ -61,8 +61,8 @@ $conf.default_css = "default.css"
 
 
 if File.exists?("config.rb") || File.exists?("../config.rb")
-	require "config"
+	require_relative "config"
 end
 
-require "vcs_#{$conf.vcs}"
+require_relative "vcs_#{$conf.vcs}"
 

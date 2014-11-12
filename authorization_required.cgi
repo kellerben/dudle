@@ -19,7 +19,7 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "dudle"
+require_relative "dudle"
 
 if $cgi.include?("poll")
 	if File.directory?($cgi["poll"])

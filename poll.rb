@@ -17,11 +17,11 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "hash"
+require_relative "hash"
 require "yaml"
 require "time"
-require "pollhead"
-require "timepollhead"
+require_relative "pollhead"
+require_relative "timepollhead"
 
 $KCODE = "u" if RUBY_VERSION < '1.9.0'
 class String

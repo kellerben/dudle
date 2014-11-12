@@ -33,7 +33,7 @@ begin
 	hints << "You might want to config your environment within the file 'config.rb' (see 'config_sample.rb' for a starting point)" unless File.exists?("config.rb")
 
 begin
-	require "dudle"
+	require_relative "dudle"
 	#require "rubygems"
 	#require "atom" FIXME: rename atom.rb
 rescue LoadError => e

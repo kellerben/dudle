@@ -19,7 +19,7 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "dudle"
+require_relative "dudle"
 if File.exists?(Dir.pwd + File.dirname(ENV["REDIRECT_URL"]))
 	$d = Dudle.new(:hide_lang_chooser => true)
 else

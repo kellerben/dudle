@@ -26,7 +26,7 @@ class << Time
 	end
 end
 
-require "timestring"
+require_relative "timestring"
 
 class TimePollHead
 	def initialize
