@@ -1,3 +1,4 @@
+# encoding: utf-8
 ############################################################################
 # Copyright 2009,2010 Benjamin Kellermann                                  #
 #                                                                          #
@@ -22,7 +23,7 @@ require_relative "log"
 require "open3"
 
 def runcmd *args
-	Open3.popen3(*args) {|i,o,e,t| o.read }
+	Open3.popen3(*args) {|i,o,e,t| o.read.force_encoding('utf-8') }
 end
 
 class VCS
