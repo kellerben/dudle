@@ -163,6 +163,7 @@ if $cgi.include?("ac_user")
 				f << line unless line =~ /^#{deleteuser}:/
 			}
 		}
+		File.chmod(0600, ".htdigest")
 		write_htaccess(acusers)
 	end
 end
