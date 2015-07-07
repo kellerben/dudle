@@ -241,6 +241,7 @@ READY
 		lang = [
 			["en", "English"],
 			["es", "Español"],
+			["pt_BR", "Português brasileiro"],
 			["fr", "Français"],
 			["de", "Deutsch"],
 			["it", "Italiano"],
