@@ -87,10 +87,10 @@ module Date_locale
       :abbr_daynames => %w{su ma ti ke to pe la},
      },
    :fr => {
-      :monthnames => [nil] + %w{Janvier Février Mars Avril Mai Juin Juillet Août Septembre Octobre Novembre Decembre},
-      :abbr_monthnames => [nil] + %w{Jan Fév Mar Avr Mai Jui Jul Aoû Sep Oct Nov Déc},
-      :daynames => %w{Dimanche Lundi Mardi Mercredi Jeudi Vendredi Samedi},
-      :abbr_daynames => %w{Dim Lun Mar Mer Jeu Ven Sam},
+      :monthnames => [nil] + %w{janvier février mars avril mai juin juillet août septembre octobre novembre decembre},
+      :abbr_monthnames => [nil] + %w{jan fév mar avr mai jun jul aoû sep oct nov déc},
+      :daynames => %w{dimanche lundi mardi mercredi jeudi vendredi samedi},
+      :abbr_daynames => %w{dim lun mar mer jeu ven sam},
      },
    :it => {
       :monthnames => [nil] + %w{Gennaio Febbraio Marzo Aprile Maggio Giugno Luglio Agosto Settembre Ottobre Novembre Dicembre },
