@@ -123,7 +123,7 @@ class Dudle
 		if is_poll?
 			# log last read acces manually (no need to grep server logfiles)
 			File.open("last_read_access","w").close
-			@basedir = ".." 
+			@basedir = ".."
 			inittabs
 			@table = YAML::load(VCS.cat(self.revision, "data.yaml"))
 			@urlsuffix = File.basename(File.expand_path("."))
@@ -146,13 +146,15 @@ class Dudle
 
 		
 		@css = ["default", "classic", "print"].collect{|f| f + ".css"}
-		Dir.open("#{@basedir}/css/").each{|f|
-			if f =~ /\.css$/ 
-				@css << "css/#{f}"
-			end
-		}
+		if Dir.exists?("#{@basedir}/css/")
+			Dir.open("#{@basedir}/css/").each{|f|
+				if f =~ /\.css$/
+					@css << "css/#{f}"
+				end
+			}
+		end
 		if $cgi.include?("css")
-			@user_css = $cgi["css"] 
+			@user_css = $cgi["css"]
 			@html.add_cookie("css",@user_css,"/",Time.now + (1*60*60*24*365 * (@user_css == $conf.default_css ? -1 : 1 )))
 		else
 			@user_css = $cgi.cookies["css"][0]
@@ -186,16 +188,18 @@ HEAD
 		# init extenisons #
 		###################
 		@extensions = []
-		$d = self # FIXME: this is dirty, but extensions need to know table elem 
-		Dir.open("#{@basedir}/extensions/").sort.each{|f|
-			if File.exists?("#{@basedir}/extensions/#{f}/main.rb")
-				@extensions << f 
-				if File.exists?("#{@basedir}/extensions/#{f}/preload.rb")
-					$current_ext_dir = f
-					require "#{@basedir}/extensions/#{f}/preload"
+		$d = self # FIXME: this is dirty, but extensions need to know table elem
+		if Dir.exists?("#{@basedir}/extensions/")
+			Dir.open("#{@basedir}/extensions/").sort.each{|f|
+				if File.exists?("#{@basedir}/extensions/#{f}/main.rb")
+					@extensions << f
+					if File.exists?("#{@basedir}/extensions/#{f}/preload.rb")
+						$current_ext_dir = f
+						require "#{@basedir}/extensions/#{f}/preload"
+					end
 				end
-			end
-		}
+			}
+		end
 	end
 
 	def wizzard_nav
