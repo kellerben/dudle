@@ -46,11 +46,8 @@ unless File.exists?("locale/de/dudle.mo")
 	problems << ["If you want a language other than English, you will need a localization and therefore need ot build the .mo files. Refer the README for details."]
 end
 
-begin
-	dir = "."
-	File.open("#{dir}koSai8ahye9shoTh","w")
-rescue Errno::EACCES => e
-	problems << ["Your webserver needs write access to #{dir}"]
+unless File.writable?(".")
+	problems << ["Your webserver needs write access to #{File.expand_path(".")}"]
 end
 
 rescue Exception => e
