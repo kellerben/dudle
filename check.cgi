@@ -48,6 +48,24 @@ end
 
 unless File.writable?(".")
 	problems << ["Your webserver needs write access to #{File.expand_path(".")}"]
+else
+	testdir = "this-is-a-test-directory-created-by-check.cgi-it-should-be-deleted"
+	Dir.mkdir(testdir)
+	Dir.chdir(testdir)
+	VCS.init
+	teststring = "This is a test"
+	File.open("testfile","w") {|file|
+		file << teststring
+	}
+	File.symlink("../participate.rb","index.cgi")
+	VCS.add("testfile")
+	VCS.commit("Test commit")
+	if VCS.cat(VCS.revno, "testfile") != teststring
+		problems << ["git commit is not working! Please try to set the following within your .htaccess:",'SetEnv GIT_AUTHOR_NAME="http user"','SetEnv GIT_AUTHOR_EMAIL=foo@example.org','SetEnv GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"','SetEnv GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"']
+	end
+	Dir.chdir("..")
+	require "fileutils"
+	FileUtils.rm_r(testdir)
 end
 
 rescue Exception => e
