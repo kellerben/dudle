@@ -29,7 +29,7 @@ module Date_locale
       :monthnames => [nil] + %w{gener febrer març abril maig juny juliol agost setembre octubre novembre desembre},
       :abbr_monthnames => [nil] + %w{gen feb mar abr mai jun jul ago set oct nov des},
       :daynames => %w{diumenge dilluns dimarts dimecres dijous divendres dissabte},
-      :abbr_daynames => %w{dmg dll dmt dmc djs dvn dsb},
+      :abbr_daynames => %w{dg dl dt dc dj dv ds},
      },
    :cf => {
       :monthnames => [nil] + %w{Janvier Février Mars Avril Mai Juin Juillet Août Septembre Octobre Novembre Décembre},
