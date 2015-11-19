@@ -33,12 +33,15 @@ License:
 7. for RUBY 1.9 you need to add 
    	SetEnv RUBYLIB $DUDLE_INSTALLATION_PATH
    to your .htaccess
-8. It might be the case, that you have to set some additional Variables in your .htaccess:
+8. to make titles with umlauts working you need to set the encoding e.g. by adding
+        SetEnv RUBYOPT "-E UTF-8:UTF-8"
+   to your .htaccess
+9. It might be the case, that you have to set some additional Variables in your .htaccess:
    	SetEnv GIT_AUTHOR_NAME="http user"
     SetEnv GIT_AUTHOR_EMAIL=foo@example.org
     SetEnv GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
     SetEnv GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
-9. Try to open http://$YOUR_SERVER/check.cgi to check if your config seems to work.
+10. Try to open http://$YOUR_SERVER/check.cgi to check if your config seems to work.
 
 === Pimp your Installation ===
  * If you want to create your own Stylesheet, you just have to put it in
