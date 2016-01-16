@@ -34,8 +34,8 @@ Dir.chdir("..")
 def _(string)
 	string
 end
-require "config_defaults"
-require "poll"
+require_relative "config_defaults"
+require_relative "poll"
 Dir.chdir(olddir)
 
 poll = YAML::load_file("data.yaml")
