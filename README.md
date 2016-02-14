@@ -25,39 +25,47 @@ License:
 3. The webserver needs the permission to write into the directory 
 4. You need .mo files in order to use localisations. 
    You have 2 possibilities:
-   1. Run this small script to fetch the files from the main server:
+    
+    a. Run this small script to fetch the files from the main server:
+      
       ```bash
       cd $DUDLE_INSTALLATION_PATH
       for i in locale/??; do
       	wget -O $i/dudle.mo https://dudle.inf.tu-dresden.de/locale/`basename $i`/dudle.mo
       done
       ```
-   2. Build them on your own. This requires gettext, libgettext-ruby-util, potool, and make to be installed.
+    b. Build them on your own. This requires gettext, libgettext-ruby-util, potool, and make to be installed.
+      
       ```bash
       sudo aptitude install gettect libgettext-ruby-util potool make
       make
       ```
 5. In order to let access control work correctly, the webserver needs 
    auth_digest support. It therefore may help to type:
+   
    ```bash
    sudo a2enmod auth_digest
    ```
 6. In order to get atom-feed support you need ruby-ratom to be installed. E.g.:
+   
    ```bash
    sudo aptitude install rubygems ruby-dev libxml2-dev zlib1g-dev
    sudo gem install ratom
    ```
 7. for RUBY 1.9 you need to add 
+   
    ```bash
    SetEnv RUBYLIB $DUDLE_INSTALLATION_PATH
    ```
    to your .htaccess
 8. to make titles with umlauts working you need to set the encoding e.g. by adding
+   
    ```bash
    SetEnv RUBYOPT "-E UTF-8:UTF-8"
    ```
    to your .htaccess
 9. It might be the case, that you have to set some additional Variables in your .htaccess:
+   	
    	```bash
     SetEnv GIT_AUTHOR_NAME="http user"
     SetEnv GIT_AUTHOR_EMAIL=foo@example.org
@@ -72,6 +80,7 @@ License:
    to be the default Stylesheet. Examples can be found here:
      https://dudle.inf.tu-dresden.de/css/
    This is a bazaar repository as well, so you may branch it if you want…
+   
    ```bash
    cd $DUDLE_HOME_FOLDER/css
    bzr branch https://dudle.inf.tu-dresden.de/css/ .
@@ -83,6 +92,7 @@ License:
    Examples can be found here:
      https://dudle.inf.tu-dresden.de/unstable/extensions/
      which again are repositories ;--) e.g.:
+    
      ```bash
      cd $DUDLE_HOME_FOLDER/dudle/extensions/
      bzr branch https://dudle.inf.tu-dresden.de/unstable/extensions/10_participate/
@@ -92,6 +102,7 @@ License:
 ## Translators
 If you set $DUDLE_POEDIT_AUTO to your lang, poedit will launch automatically when building the application.
 E.g.:
+
 ```bash
 export DUDLE_POEDIT_AUTO=fr
 bzr pull
