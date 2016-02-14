@@ -4,6 +4,7 @@ Requirements:
  * ruby >=1.8
  * git >=1.6.5 (preferred and default setting) or bzr
  * libgettext-ruby (for localization)
+ * gettext (for generating localizations files)
 License: 
    GNU AGPL v3 or higher
    see file License
