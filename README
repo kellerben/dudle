@@ -4,6 +4,7 @@ Requirements:
  * ruby >=1.8
  * git >=1.6.5 (preferred and default setting) or bzr
  * libgettext-ruby (for localization)
+ * gettext (for generating localizations)
 License: 
    GNU AGPL v3 or higher
    see file License
@@ -22,7 +23,7 @@ License:
           wget -O $i/dudle.mo https://dudle.inf.tu-dresden.de/locale/`basename $i`/dudle.mo
         done
    b. Build them on your own. This requires libgettext-ruby-util, potool, and make to be installed.
-        sudo aptitude install libgettext-ruby-util potool make
+        sudo aptitude install gettext libgettext-ruby-util potool make
         make
 5. In order to let access control work correctly, the webserver needs 
    auth_digest support. It therefore may help to type:
