@@ -13,11 +13,11 @@ GNU AGPL v3 or higher (see file License)
  
 # Installation
 1. Place this application into a directory where cgi-scripts are evaluated.
-2. If you want to change some configuration, state it in the file »config.rb«
-   (see config_sample.rb for help)
+2. If you want to change some configuration, state it in the file `config.rb`
+   (see `config_sample.rb` for help)
    to start with a default configuration.
 3. The webserver needs the permission to write into the directory 
-4. You need .mo files in order to use localisations. 
+4. You need `.mo` files in order to use localisations. 
    You have 2 possibilities:
    1. Run this small script to fetch the files from the main server:
 
@@ -74,8 +74,8 @@ GNU AGPL v3 or higher (see file License)
  
 # Pimp your Installation
  * If you want to create your own Stylesheet, you just have to put it in
-   the folder »$DUDLE_HOME_FOLDER/css/«. Afterwards you may config this one
-   to be the default Stylesheet. Examples can be found here:
+   the folder `$DUDLE_HOME_FOLDER/css/`. Afterwards you may config this
+   one to be the default Stylesheet. Examples can be found here:
      https://dudle.inf.tu-dresden.de/css/
    This is a bazaar repository as well, so you may branch it if you want…
 
@@ -86,7 +86,7 @@ GNU AGPL v3 or higher (see file License)
    Send me your Stylesheet if you want it to appear at 
    https://dudle.inf.tu-dresden.de
  * If you want to extend the functionality you might want to place a file
-   »main.rb« in $DUDLE_HOME_FOLDER/extension/$YOUR_EXTENSION/main.rb
+   `main.rb` in `$DUDLE_HOME_FOLDER/extension/$YOUR_EXTENSION/main.rb`
    Examples can be found here:
      https://dudle.inf.tu-dresden.de/unstable/extensions/
      which again are repositories ;--) e.g.:
@@ -98,7 +98,7 @@ GNU AGPL v3 or higher (see file License)
      ```
 
 # Translators
-If you set $DUDLE_POEDIT_AUTO to your lang, poedit will launch
+If you set `$DUDLE_POEDIT_AUTO` to your lang, poedit will launch
 automatically when building the application. E.g.:
 
 ```sh
