@@ -28,7 +28,7 @@ License:
     
     a. Run this small script to fetch the files from the main server:
       
-      ```bash
+      ```sh
       cd $DUDLE_INSTALLATION_PATH
       for i in locale/??; do
       	wget -O $i/dudle.mo https://dudle.inf.tu-dresden.de/locale/`basename $i`/dudle.mo
@@ -36,37 +36,37 @@ License:
       ```
     b. Build them on your own. This requires gettext, libgettext-ruby-util, potool, and make to be installed.
       
-      ```bash
+      ```sh
       sudo aptitude install gettect libgettext-ruby-util potool make
       make
       ```
 5. In order to let access control work correctly, the webserver needs 
    auth_digest support. It therefore may help to type:
    
-   ```bash
+   ```sh
    sudo a2enmod auth_digest
    ```
 6. In order to get atom-feed support you need ruby-ratom to be installed. E.g.:
    
-   ```bash
+   ```sh
    sudo aptitude install rubygems ruby-dev libxml2-dev zlib1g-dev
    sudo gem install ratom
    ```
 7. for RUBY 1.9 you need to add 
    
-   ```bash
+   ```sh
    SetEnv RUBYLIB $DUDLE_INSTALLATION_PATH
    ```
    to your .htaccess
 8. to make titles with umlauts working you need to set the encoding e.g. by adding
    
-   ```bash
+   ```sh
    SetEnv RUBYOPT "-E UTF-8:UTF-8"
    ```
    to your .htaccess
 9. It might be the case, that you have to set some additional Variables in your .htaccess:
    	
-   	```bash
+   	```sh
     SetEnv GIT_AUTHOR_NAME="http user"
     SetEnv GIT_AUTHOR_EMAIL=foo@example.org
     SetEnv GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
@@ -81,7 +81,7 @@ License:
      https://dudle.inf.tu-dresden.de/css/
    This is a bazaar repository as well, so you may branch it if you want…
    
-   ```bash
+   ```sh
    cd $DUDLE_HOME_FOLDER/css
    bzr branch https://dudle.inf.tu-dresden.de/css/ .
    ```
@@ -93,7 +93,7 @@ License:
      https://dudle.inf.tu-dresden.de/unstable/extensions/
      which again are repositories ;--) e.g.:
     
-     ```bash
+     ```sh
      cd $DUDLE_HOME_FOLDER/dudle/extensions/
      bzr branch https://dudle.inf.tu-dresden.de/unstable/extensions/10_participate/
      bzr branch https://dudle.inf.tu-dresden.de/unstable/extensions/symcrypt/
@@ -103,7 +103,7 @@ License:
 If you set $DUDLE_POEDIT_AUTO to your lang, poedit will launch automatically when building the application.
 E.g.:
 
-```bash
+```sh
 export DUDLE_POEDIT_AUTO=fr
 bzr pull
 make # will launch poedit if new french strings are to be translated
