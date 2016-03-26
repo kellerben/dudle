@@ -72,6 +72,9 @@ GNU AGPL v3 or higher (see file License)
 10. Try to open http://$YOUR_SERVER/check.cgi to check if your config
     seems to work.
  
+# Docker image
+There is a docker image availabe at https://hub.docker.com/r/fonk/dudle/
+
 # Pimp your Installation
  * If you want to create your own Stylesheet, you just have to put it in
    the folder `$DUDLE_HOME_FOLDER/css/`. Afterwards you may config this
