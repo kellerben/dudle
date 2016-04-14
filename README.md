@@ -74,6 +74,8 @@ GNU AGPL v3 or higher (see file License)
     (You need an absolute path here!)
 11. Try to open http://$YOUR_SERVER/check.cgi to check if your config
     seems to work.
+12. You may want to install a cronjob to cleanup dudle polls. 
+    See dudle_cleanup for an example.
  
 # Docker image
 There are two docker image available
