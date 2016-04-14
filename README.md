@@ -73,7 +73,9 @@ GNU AGPL v3 or higher (see file License)
     seems to work.
  
 # Docker image
-There is a docker image availabe at https://hub.docker.com/r/fonk/dudle/
+There are two docker image availabe
+ *  https://hub.docker.com/r/fonk/dudle/ with the code from here https://github.com/fonk/docker-dudle
+ *  https://github.com/jpkorva/dudle-docker
 
 # Pimp your Installation
  * If you want to create your own Stylesheet, you just have to put it in
