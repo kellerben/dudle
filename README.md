@@ -8,8 +8,8 @@ GNU AGPL v3 or higher (see file License)
 # Requirements
  * ruby >=1.8
  * git >=1.6.5 (preferred and default setting) or bzr
- * libgettext-ruby (for localization)
- * gettext (for generating localization files)
+ * ruby-gettext (for localization)
+ * gettext, potool, make (optional, if you want to generate localization files)
  
 # Installation
 1. Place this application into a directory where cgi-scripts are evaluated.
@@ -28,10 +28,10 @@ GNU AGPL v3 or higher (see file License)
       done
       ```
    2. Build them on your own. This requires gettext,
-      libgettext-ruby-util, potool, and make to be installed.
+      ruby-gettext, potool, and make to be installed.
 
       ```sh
-      sudo aptitude install gettect libgettext-ruby-util potool make
+      sudo aptitude install gettext potool make
       make
       ```
 5. In order to let access control work correctly, the webserver needs 
