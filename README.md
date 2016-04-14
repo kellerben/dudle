@@ -17,7 +17,7 @@ GNU AGPL v3 or higher (see file License)
    (see `config_sample.rb` for help)
    to start with a default configuration.
 3. The webserver needs the permission to write into the directory 
-4. You need `.mo` files in order to use localisations. 
+4. You need `.mo` files in order to use localisation.
    You have 2 possibilities:
    1. Run this small script to fetch the files from the main server:
 
@@ -69,7 +69,10 @@ GNU AGPL v3 or higher (see file License)
     SetEnv GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
     SetEnv GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
     ```
-10. Try to open http://$YOUR_SERVER/check.cgi to check if your config
+10. If you installed dudle to a subdirectory (i.e. http://$YOUR_SERVER/$SOMEDIR/...),
+    than you want to adopt the ErrorDocument directives in your .htaccess.
+    (You need an absolute path here!)
+11. Try to open http://$YOUR_SERVER/check.cgi to check if your config
     seems to work.
  
 # Docker image
