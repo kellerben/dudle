@@ -73,7 +73,7 @@ GNU AGPL v3 or higher (see file License)
     seems to work.
  
 # Docker image
-There are two docker image availabe
+There are two docker image available
  *  https://hub.docker.com/r/fonk/dudle/ with the code from here https://github.com/fonk/docker-dudle
  *  https://github.com/jpkorva/dudle-docker
 
