@@ -45,7 +45,7 @@ class PollHead
 		parsedtitle = newtitle.strip
 
 		if parsedtitle != ""
-			@data[parsedtitle] = CGI.escapeHTML(cgi["columndescription"].strip)
+			@data[parsedtitle] = cgi["columndescription"].strip
 			return parsedtitle
 		else 
 			return false
@@ -61,10 +61,10 @@ SORTSYMBOL
 		ret = "<tr>"
 		ret += "<th colspan='2'><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>\n" unless showeditbuttons
 		@data.sort.each{|columntitle,columndescription|
-			ret += "<th title=\"#{columndescription}\""
+			ret += "<th title=\"#{CGI.escapeHTML(columndescription)}\""
 			ret += " id='active' " if activecolumn == columntitle
 			ret += ">"
-			ret += "<a href=\"?sort=#{CGI.escapeHTML(CGI.escape(columntitle))}\">" unless showeditbuttons
+			ret += "<a href=\"?sort=#{CGI.escape(columntitle)}\">" unless showeditbuttons
 			ret += "#{CGI.escapeHTML(columntitle)}"
 			ret += "#{sortsymb(scols,columntitle)}</a>" unless showeditbuttons
 			if showeditbuttons
@@ -73,7 +73,7 @@ SORTSYMBOL
 				ret += <<EDITDELETE
 <form method='post' action=''>
 	<div class='editdelete'>
-			<a class='editcolumn' href="?editcolumn=#{CGI.escapeHTML(CGI.escape(columntitle))}" title="#{editstr}">
+			<a class='editcolumn' href="?editcolumn=#{CGI.escape(columntitle)}" title="#{editstr}">
 				#{EDIT}
 			</a>|
 		<input style='padding:0;margin:0' title='#{deletestr}' class='delete' type='submit' value='#{DELETE}' />
@@ -110,7 +110,7 @@ EDITDELETE
 			<td><input id='columntitle' type='text' value="#{title}" name='new_columnname' /></td>
 		</tr><tr>
 			<td class='label'><label for='columndescription'>#{descriptionstr}:</label></td>
-			<td><input id='columndescription' type='text' value="#{description}" name='columndescription' /></td>
+			<td><input id='columndescription' type='text' value="#{CGI.escapeHTML(description.to_s)}" name='columndescription' /></td>
 		</tr><tr>
 			<td></td>
 			<td>

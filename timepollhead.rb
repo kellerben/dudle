@@ -157,7 +157,7 @@ SORTSYMBOL
 
 		ret += "<th class='invisible'></th></tr><tr><th colspan='2'><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>"
 		@data.sort.each{|date|
-			ret += "<th><a title=\"#{CGI.escapeHTML(date.to_s)}\" href=\"?sort=#{CGI.escape(CGI.escapeHTML(date.to_s))}\">#{CGI.escapeHTML(date.time_to_s)} #{sortsymb(scols,date.to_s)}</a></th>\n"
+			ret += "<th><a title=\"#{CGI.escapeHTML(date.to_s)}\" href=\"?sort=#{CGI.escape(date.to_s)}\">#{CGI.escapeHTML(date.time_to_s)} #{sortsymb(scols,date.to_s)}</a></th>\n"
 		}
 		ret += "<th><a href='?'>" + _("Last Edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
 		ret
