@@ -60,7 +60,7 @@
 # Send bug reports automatically with the programm “mail”
 #$conf.auto_send_report = false
 
-# add the htmlcode in the Variable INDEXNOTICE to the startpage
+# Add the following htmlcode to the startpage.
 # Example: displays all available Polls
 #$conf.indexnotice = <<INDEXNOTICE
 #<h2>Available Polls</h2>
@@ -82,8 +82,8 @@
 #$conf.indexnotice += "</table>"
 
 
-# Add some Example Polls to the example page
-# you may create those using the normal interface
+# Add some Example Polls to the example page.
+# You may create those using the normal interface
 # and make them password protected afterwards
 # .htaccess and .htdigest are deleted after 
 # example creation (defining password protected 
@@ -104,7 +104,7 @@
 #	}
 #]
 
-# add the htmlcode in the Variable EXAMPLENOTICE to the example page
+# Add the following htmlcode to the example page.
 #$conf.examplenotice = <<EXAMPLENOTICE
 #	<h2>Screencasts</h2>
 #	<ol>
@@ -114,7 +114,7 @@
 #	</ol>
 #EXAMPLENOTICE
 
-# add the htmlcode in the Variable ABOUTNOTICE to the about page
+# Add the following htmlcode to the about page.
 #$conf.aboutnotice = <<ABOUTNOTICE
 #<div class='textcolumn'>
 #	<h2>Bugs/Features</h2>
