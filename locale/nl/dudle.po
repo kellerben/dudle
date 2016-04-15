@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-07 22:09+0200\n"
+"POT-Creation-Date: 2016-04-15 14:24+0200\n"
 "PO-Revision-Date: 2011-05-11 13:46+0100\n"
 "Last-Translator: Joeri de Ruiter <joeri@cs.ru.nl>\n"
 "Language-Team: \n"
@@ -81,12 +81,12 @@ msgstr ""
 "gebruiker kan worden verwijderd."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll-flocktry.rb:334 ../poll.rb:334
+#: ../delete_poll.rb:112 ../poll.rb:334
 msgid "Delete"
 msgstr "Verwijder"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll-flocktry.rb:296 ../poll.rb:296
+#: ../poll.rb:296
 msgid "Save"
 msgstr "Opslaan"
 
@@ -98,32 +98,32 @@ msgstr "In de gebruikersnaam zijn alleen letters en cijfers toegestaan."
 msgid "Passwords did not match."
 msgstr "Wachtwoorden kwamen niet overeen."
 
-#: ../access_control.rb:174
+#: ../access_control.rb:175
 msgid "Change Access Control Settings"
 msgstr "Wijzig Toegangsrechten"
 
-#: ../access_control.rb:178
+#: ../access_control.rb:179
 msgid "not activated"
 msgstr "niet geactiveerd"
 
-#: ../access_control.rb:180
+#: ../access_control.rb:181
 msgid "Activate"
 msgstr "Activeer"
 
-#: ../access_control.rb:183
+#: ../access_control.rb:184
 msgid "will be activated when at least an admin user is configured"
 msgstr ""
 "zal worden geactiveerd zodra tenminste één admin gebruiker is geconfigureerd"
 
-#: ../access_control.rb:185
+#: ../access_control.rb:186
 msgid "Deactivate"
 msgstr "Deactiveer"
 
-#: ../access_control.rb:187
+#: ../access_control.rb:188
 msgid "activated"
 msgstr "geactiveerd"
 
-#: ../access_control.rb:188
+#: ../access_control.rb:189
 msgid ""
 "You have to remove all users before you can deactivate the access control "
 "settings."
@@ -131,24 +131,24 @@ msgstr ""
 "Alle gebruikers moeten zijn verwijderd voordat de toegangsrechten kunnen "
 "worden gedeactiveerd."
 
-#: ../access_control.rb:192
+#: ../access_control.rb:193
 msgid ""
 "You will be asked for the password you entered here after pressing save!"
 msgstr ""
 "Na het klikken op 'Opslaan' zal om het ingevoerde wachtwoord worden gevraagd."
 
-#: ../access_control.rb:195
+#: ../access_control.rb:196
 msgid ""
 "The user ‘admin’ has access to the vote as well as the configuration "
 "interface."
 msgstr ""
 "De gebruiker 'admin' heeft toegang tot de stem en configuratie interfaces."
 
-#: ../access_control.rb:201
+#: ../access_control.rb:202
 msgid "The user ‘participant’ has only access to the vote interface."
 msgstr "De gebruiker 'participant' heeft alleen toegang tot de stem interface."
 
-#: ../access_control.rb:207
+#: ../access_control.rb:208
 msgid "Access control:"
 msgstr "Toegangsrechten:"
 
@@ -195,20 +195,20 @@ msgid "Description"
 msgstr "Beschrijving"
 
 #: ../customize.cgi:57 ../customize.rb:57
-msgid "Use this option if you see the characters in the parenthesis."
-msgstr "Kies deze optie als je de tekens tussen de haakjes kan zien."
-
-#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use special characters"
 msgstr "Gebruik speciale tekens"
 
-#: ../customize.cgi:58 ../customize.rb:58
-msgid "Use this option if you have problems with some characters."
-msgstr "Kies deze optie als je problemen hebt met sommige tekens"
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "Kies deze optie als je de tekens tussen de haakjes kan zien."
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
 msgstr "Gebruik alleen gewone tekens"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Kies deze optie als je problemen hebt met sommige tekens"
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -352,25 +352,25 @@ msgstr "Aanpassen"
 msgid "Dudle Home"
 msgstr "Dudle Home"
 
-#: ../dudle.rb:203 ../dudle.rb:221
+#: ../dudle.rb:207 ../dudle.rb:225
 msgid "Previous"
 msgstr "Vorige"
 
-#: ../dudle.rb:204 ../dudle.rb:222
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Next"
 msgstr "Volgende"
 
-#: ../dudle.rb:205 ../dudle.rb:223
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Finish"
 msgstr "Afronden"
 
-#: ../dudle.rb:228
-msgid "Proceed!"
-msgstr "Doorgaan!"
-
-#: ../dudle.rb:228
+#: ../dudle.rb:232
 msgid "All changes were saved sucessfully."
 msgstr "Alle wijzigingen zijn succesvol opgeslagen."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Doorgaan!"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -389,12 +389,12 @@ msgid "Edit column"
 msgstr "Wijzig kolom"
 
 #: ../edit_columns.rb:99
-msgid "Undo"
-msgstr "Undo"
-
-#: ../edit_columns.rb:99
 msgid "Redo"
 msgstr "Redo"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Undo"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -514,6 +514,10 @@ msgid "Create"
 msgstr "Maak aan"
 
 #: ../log.rb:111
+msgid "Date"
+msgstr "Datum"
+
+#: ../log.rb:111
 msgid "Version"
 msgstr "Versie"
 
@@ -521,9 +525,19 @@ msgstr "Versie"
 msgid "Comment"
 msgstr "Commentaar"
 
-#: ../log.rb:111
-msgid "Date"
-msgstr "Datum"
+#: ../maintenance.cgi:25 ../maintenance.cgi:27
+msgid "Maintenance"
+msgstr ""
+
+#: ../maintenance.cgi:36
+msgid "This site is currently under maintenance!"
+msgstr ""
+
+#: ../maintenance.cgi:39
+msgid ""
+"You should not browse to this file directly. Please create a file named "
+"\"maintenance.html\" to enable the maintenance mode."
+msgstr ""
 
 #: ../not_found.cgi:29
 msgid "Poll Not Found"
@@ -583,100 +597,99 @@ msgstr "Link naar dudle poll over %{polltitle}"
 msgid "The changes were saved, you should be redirected to %{link}."
 msgstr "De wijzigingen zijn opgeslagen, je wordt doorgestuurd naar %{link}."
 
-#: ../poll-flocktry.rb:92 ../poll.rb:92
+#: ../poll.rb:92
 msgid "Edit user %{user}..."
 msgstr "Wijzig gebruiker %{user}..."
 
-#: ../poll-flocktry.rb:96 ../poll.rb:96
+#: ../poll.rb:96
 msgid "Delete user %{user}..."
 msgstr "Verwijder gebruiker %{user}..."
 
-#: ../poll-flocktry.rb:150 ../poll.rb:150
+#: ../poll.rb:150
 msgid "Total"
 msgstr "Totaal"
 
-#: ../poll-flocktry.rb:182 ../poll.rb:182
+#: ../poll.rb:182
 msgid "Invite"
 msgstr "Nodig uit"
 
-#: ../poll-flocktry.rb:183 ../poll.rb:183 ../pollhead.rb:62
-#: ../timepollhead.rb:158
+#: ../poll.rb:183 ../pollhead.rb:62 ../timepollhead.rb:158
 msgid "Name"
 msgstr "Naam"
 
-#: ../poll-flocktry.rb:228 ../poll.rb:228
+#: ../poll.rb:228
 msgid "Save Changes"
 msgstr "Wijzigingen Opslaan"
 
-#: ../poll-flocktry.rb:232 ../poll.rb:232
+#: ../poll.rb:232
 msgid "Cancel"
 msgstr "Annuleer"
 
-#: ../poll-flocktry.rb:254 ../poll.rb:254
+#: ../poll.rb:254
 msgid "Do you really want to delete user %{user}?"
 msgstr "Weet je zeker dat je gebruiker %{user} wilt verwijderen?"
 
-#: ../poll-flocktry.rb:257 ../poll.rb:257
+#: ../poll.rb:257
 msgid "Confirm"
 msgstr "Bevestig"
 
-#: ../poll-flocktry.rb:305 ../poll.rb:305
+#: ../poll.rb:305
 msgid "Comments"
 msgstr "Reacties"
 
-#: ../poll-flocktry.rb:308 ../poll.rb:308
+#: ../poll.rb:308
 msgid "Sort oldest comment first"
 msgstr "Sorteer oudste reactie eerst"
 
-#: ../poll-flocktry.rb:311 ../poll.rb:311
+#: ../poll.rb:311
 msgid "Sort newest comment first"
 msgstr "Sorteer nieuwste reactie eerst"
 
-#: ../poll-flocktry.rb:316 ../poll.rb:316
+#: ../poll.rb:316
 msgid "Go to last comment"
 msgstr "Ga naar laatste reactie"
 
-#: ../poll-flocktry.rb:329 ../poll.rb:329
+#: ../poll.rb:329
 msgid "%{user} said on %{time}"
 msgstr "%{user} zei op %{time}"
 
-#: ../poll-flocktry.rb:344 ../poll.rb:344
+#: ../poll.rb:344
 msgid "Go Up"
 msgstr "Ga Omhoog"
 
-#: ../poll-flocktry.rb:350 ../poll.rb:350
+#: ../poll.rb:350
 msgid "says"
 msgstr "zegt"
 
-#: ../poll-flocktry.rb:351 ../poll.rb:351
+#: ../poll.rb:351
 msgid "Submit Comment"
 msgstr "Verstuur Reactie"
 
-#: ../poll-flocktry.rb:369 ../poll.rb:369
+#: ../poll.rb:369
 msgid "Show history items:"
 msgstr "Toon geschiedenis items:"
 
-#: ../poll-flocktry.rb:376 ../poll.rb:376
+#: ../poll.rb:376
 msgid "All"
 msgstr "Alle"
 
-#: ../poll-flocktry.rb:377 ../poll.rb:377
+#: ../poll.rb:377
 msgid "Participant related"
 msgstr "Deelnemer gerelateerd"
 
-#: ../poll-flocktry.rb:378 ../poll.rb:378
+#: ../poll.rb:378
 msgid "Column related"
 msgstr "Kolom gerelateerd"
 
-#: ../poll-flocktry.rb:379 ../poll.rb:379
+#: ../poll.rb:379
 msgid "Comment related"
 msgstr "Reactie gerelateerd"
 
-#: ../poll-flocktry.rb:380 ../poll.rb:380
+#: ../poll.rb:380
 msgid "Access Control related"
 msgstr "Toegangsrechten gerelateerd"
 
-#: ../poll-flocktry.rb:386 ../poll.rb:386
+#: ../poll.rb:386
 msgid "Update"
 msgstr "Wijzig"
 

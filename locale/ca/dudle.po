@@ -6,17 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-02-21 22:01+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-15 14:24+0200\n"
 "PO-Revision-Date: 2011-12-17 02:00+0100\n"
 "Last-Translator: Laura Mora i Aubert <blackhold@marsupi.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: about.cgi:29
+#: ../about.cgi:29
 msgid ""
 "If you find a bug or have something else which disturbes you, please let me "
 "know: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
@@ -26,11 +27,11 @@ msgstr ""
 "saber: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
 "subject=Feedback%20to%20dudle\">envia el teu feedback</a>"
 
-#: about.cgi:31
+#: ../about.cgi:31
 msgid "--verbose"
 msgstr "--verbose"
 
-#: about.cgi:32
+#: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
 "href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
@@ -38,7 +39,7 @@ msgstr ""
 "El codi font d'aquesta aplicació està disponible sota els termes de la <a "
 "href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Versió 3</a>"
 
-#: about.cgi:34
+#: ../about.cgi:34
 msgid ""
 "You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</"
 "a>:"
@@ -46,102 +47,349 @@ msgstr ""
 "Pots descarregar-te el codi font, utilitzant <a href='http://bazaar-vcs."
 "org/'>bazaar</a>:"
 
-#: authorization_required.cgi:36 authorization_required.cgi:52
+#: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
+msgid "Username:"
+msgstr "Usuari:"
+
+#: ../access_control.rb:87
+msgid "Password"
+msgstr "Contrasenya"
+
+#: ../access_control.rb:88
+msgid "repeat"
+msgstr "torna a escriure-la"
+
+#: ../access_control.rb:114
+msgid ""
+"You have to remove the participant user before you can remove the "
+"administrator."
+msgstr ""
+"Primer has de treure els usuaris participants abans de que en puguis "
+"esborrar l'administrador."
+
+#: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
+#: ../delete_poll.rb:112 ../poll.rb:334
+msgid "Delete"
+msgstr "Esborra"
+
+#: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
+#: ../poll.rb:296
+msgid "Save"
+msgstr "Desa"
+
+#: ../access_control.rb:139
+msgid "Only letters and digits are allowed in the username."
+msgstr "En el nom d'usuari només es permeten lletres i números."
+
+#: ../access_control.rb:141
+msgid "Passwords did not match."
+msgstr "Les contrasenyes no concorden."
+
+#: ../access_control.rb:175
+msgid "Change Access Control Settings"
+msgstr "Canvia les opcions de control d'accés"
+
+#: ../access_control.rb:179
+msgid "not activated"
+msgstr "sense activar"
+
+#: ../access_control.rb:181
+msgid "Activate"
+msgstr "Activa"
+
+#: ../access_control.rb:184
+msgid "will be activated when at least an admin user is configured"
+msgstr "s'activarà quan hi hagi almenys un administrador"
+
+#: ../access_control.rb:186
+msgid "Deactivate"
+msgstr "Desactiva"
+
+#: ../access_control.rb:188
+msgid "activated"
+msgstr "activat"
+
+#: ../access_control.rb:189
+msgid ""
+"You have to remove all users before you can deactivate the access control "
+"settings."
+msgstr ""
+"Primer has de treure tots els usuaris, aleshores podràs desactivar les "
+"opcions de control d'accés"
+
+#: ../access_control.rb:193
+msgid ""
+"You will be asked for the password you entered here after pressing save!"
+msgstr "Se't demanarà la contrasenya al prémer desa!"
+
+#: ../access_control.rb:196
+msgid ""
+"The user ‘admin’ has access to the vote as well as the configuration "
+"interface."
+msgstr "El usuari ‘admin’ pot votar i configurar la interfície."
+
+#: ../access_control.rb:202
+msgid "The user ‘participant’ has only access to the vote interface."
+msgstr "El usuari ‘participant’ només pot votar."
+
+#: ../access_control.rb:208
+msgid "Access control:"
+msgstr "Control d'accés:"
+
+#: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization Required"
 msgstr "Es requereix autorització"
 
-#: authorization_required.cgi:39
+#: ../authorization_required.cgi:39
 msgid "The configuration of this Poll is protected by password!"
 msgstr "La configuració d'aquesta enquesta està protegida amb contrasenya!"
 
-#: authorization_required.cgi:41
+#: ../authorization_required.cgi:41
 msgid "This Poll is protected by password!"
 msgstr "Aquesta enquesta està protegida amb contrasenya!"
 
-#: authorization_required.cgi:43
+#: ../authorization_required.cgi:43
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Per continuar, has de definir la contrasenya per al usuari %{user}."
 
-#: authorization_required.cgi:53 not_found.cgi:36
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
 msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Torna a la pàgina d'inici de dudle i programa una nova Enquesta"
 
-#: authorization_required.cgi:54
+#: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "T'has d'identificar per accedir a aquesta pàgina!"
 
-#: customize.cgi:31 customize.rb:31
+#: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize Personal Settings"
 msgstr "Personalitza els teus paràmetres"
 
-#: customize.cgi:32 customize.rb:32
+#: ../customize.cgi:32 ../customize.rb:32
 msgid "You need cookies enabled in order to personalize your settings."
 msgstr ""
 "Per a personalitzar els teus paràmetres has de tenir les cookies activades"
 
-#: customize.cgi:39 customize.rb:39
+#: ../customize.cgi:39 ../customize.rb:39
 msgid "Current Setting"
 msgstr "Configuració actual"
 
-#: customize.cgi:40 customize.rb:40
+#: ../customize.cgi:40 ../customize.rb:40
 msgid "Description"
 msgstr "Descripció"
 
-#: customize.cgi:57 customize.rb:57
+#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use special characters"
 msgstr "Fes servir caràcters especials"
 
-#: customize.cgi:57 customize.rb:57
+#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use this option if you see the characters in the parenthesis."
 msgstr ""
 "Fes servir aquesta opció si veus els caràcters que estan entre parèntesi"
 
-#: customize.cgi:58 customize.rb:58
+#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
 msgstr "No facis servir caràcters especials"
 
-#: customize.cgi:58 customize.rb:58
+#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use this option if you have problems with some characters."
 msgstr "Fes servir aquesta opció si no veus els caràcters especials."
 
-#: customize.cgi:61 customize.rb:61
+#: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
 msgstr "Codificació de caràcters"
 
-#: customize.cgi:66 customize.rb:66
+#: ../customize.cgi:66 ../customize.rb:66
 msgid "Stylesheet"
 msgstr "Full d'estils"
 
-#: customize.cgi:83 customize.rb:83
+#: ../customize.cgi:81 ../customize.rb:81
 msgid "Default Username"
 msgstr "Usuari per defecte"
 
-#: customize.cgi:84 access_control.rb:73 customize.rb:84
-msgid "Username:"
-msgstr "Usuari:"
-
-#: customize.cgi:108 customize.rb:108
+#: ../customize.cgi:106 ../customize.rb:106
 msgid "Edit"
 msgstr "Modifica"
 
-#: customize.cgi:118 access_control.rb:120 customize.rb:118 poll.rb:296
-msgid "Save"
-msgstr "Desa"
+#: ../delete_poll.rb:30
+msgid "Yes, I know what I am doing!"
+msgstr "Si, sé què estic fent!"
 
-#: customize.cgi:121 access_control.rb:116 customize.rb:121 delete_poll.rb:111
-#: poll.rb:334
-msgid "Delete"
-msgstr "Esborra"
+#: ../delete_poll.rb:31
+msgid "I hate these stupid entry fields."
+msgstr "Odio aquests camps d'entrada."
 
-#: error.cgi:25 error.cgi:27
+#: ../delete_poll.rb:32
+msgid "I am aware of the consequences."
+msgstr "Estic al corrent de les conseqüències."
+
+#: ../delete_poll.rb:33
+msgid "Please delete this poll."
+msgstr "Si us plau, esborra aquesta enquesta."
+
+#: ../delete_poll.rb:42
+msgid "Example polls can not be deleted."
+msgstr "Les enquestes d'exemple no es poden esborrar."
+
+#: ../delete_poll.rb:56
+msgid "The poll was deleted successfully!"
+msgstr "L'enquesta s'ha esborrat correctament!"
+
+#: ../delete_poll.rb:57
+msgid ""
+"If this was done by accident, please contact the administrator of the "
+"system. The poll can be recovered for an indeterministic amount of time, "
+"maybe it is already to late."
+msgstr ""
+"Si es va fer sense voler, si us plau contacta amb l'administrador del "
+"sistema. L'enquesta es pot restaurar en un període raonable de temps, potser "
+"encara no és massa tard."
+
+#: ../delete_poll.rb:59
+msgid "Things you can do now are"
+msgstr "El què pots fer ara és"
+
+#: ../delete_poll.rb:60
+msgid "Return to dudle home and schedule a new poll"
+msgstr "Tornar a la pàgina d'inici de dudle i crear una altra enquesta"
+
+#: ../delete_poll.rb:61
+msgid "Browse Wikipedia"
+msgstr "Cerca a la Viquipèdia"
+
+#: ../delete_poll.rb:62
+#, fuzzy
+msgid "Search something in the Internet"
+msgstr "Cerca fent servir Google"
+
+#: ../delete_poll.rb:88
+msgid "To delete the poll, you have to type:"
+msgstr "Per a esborrar l'enquesta has d'escriure:"
+
+#: ../delete_poll.rb:96
+msgid "but you typed:"
+msgstr "però has escrit:"
+
+#: ../delete_poll.rb:108
+msgid "Delete this Poll"
+msgstr "Esborra aquesta enquesta"
+
+#: ../delete_poll.rb:109
+msgid "You want to delete the poll named"
+msgstr "Vols esborrar l'enquesta"
+
+#: ../delete_poll.rb:110
+msgid "This is an irreversible action!"
+msgstr "Aquesta acció no té marxa enrere!"
+
+#: ../delete_poll.rb:111
+msgid ""
+"If you are sure in what you are doing, please type “%{question}” into the "
+"form."
+msgstr ""
+"Si estàs segur del què estàs fent, si us plau escriu “%{question}” al "
+"formulari."
+
+#: ../dudle.rb:73
+msgid "Home"
+msgstr "Inici"
+
+#: ../dudle.rb:76
+msgid "Poll"
+msgstr "Enquesta"
+
+#: ../dudle.rb:77 ../history.rb:35
+msgid "History"
+msgstr "Història"
+
+#: ../dudle.rb:80
+msgid "Edit Columns"
+msgstr "Modifica columnes"
+
+#: ../dudle.rb:81 ../invite_participants.rb:38
+msgid "Invite Participants"
+msgstr "Convida a participants"
+
+#: ../dudle.rb:82
+msgid "Access Control"
+msgstr "Control d'Accés"
+
+#: ../dudle.rb:83
+msgid "Overview"
+msgstr "Informació general"
+
+#: ../dudle.rb:86
+msgid "Delete Poll"
+msgstr "Esborra enquesta"
+
+#: ../dudle.rb:89 ../example.cgi:60
+msgid "Examples"
+msgstr "Exemples"
+
+#: ../dudle.rb:90
+msgid "About"
+msgstr "Sobre"
+
+#: ../dudle.rb:92
+msgid "Customize"
+msgstr "Personalitza"
+
+#: ../dudle.rb:100
+msgid "Dudle Home"
+msgstr "Inici Dudle"
+
+#: ../dudle.rb:207 ../dudle.rb:225
+msgid "Previous"
+msgstr "Anterior"
+
+#: ../dudle.rb:208 ../dudle.rb:226
+msgid "Next"
+msgstr "Següent"
+
+#: ../dudle.rb:209 ../dudle.rb:227
+msgid "Finish"
+msgstr "Acaba"
+
+#: ../dudle.rb:232
+msgid "All changes were saved sucessfully."
+msgstr "S'han desat tots els canvis."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Endavant!"
+
+#: ../edit_columns.rb:44
+msgid "Add and Remove Columns"
+msgstr "Afegeix o esborra columnes"
+
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+msgid "Delete column"
+msgstr "Esborra columna"
+
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+msgid "Add column"
+msgstr "Afegeix columna"
+
+#: ../edit_columns.rb:71 ../edit_columns.rb:88
+msgid "Edit column"
+msgstr "Modifica columna"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Refés"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Desfés"
+
+#: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
 msgstr "Error"
 
-#: error.cgi:46
+#: ../error.cgi:46
 msgid "The following error was printed:"
 msgstr "Hi ha hagut aquest error:"
 
-#: error.cgi:50
+#: ../error.cgi:50
 msgid ""
 "Hi!\n"
 "\n"
@@ -168,11 +416,11 @@ msgstr ""
 "%{errormessage}\n"
 "Atentament,\n"
 
-#: error.cgi:51
+#: ../error.cgi:51
 msgid "Bug in dudle"
 msgstr "Error al dudle"
 
-#: error.cgi:53
+#: ../error.cgi:53
 msgid ""
 "An error occured while executing dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
@@ -181,15 +429,11 @@ msgstr ""
 "d'error, especificant el teu navegador, sistema operatiu, i el què has fet a "
 "%{admin}."
 
-#: error.cgi:56
+#: ../error.cgi:56
 msgid "Please include the following as well:"
 msgstr "Si us plau adjunta també això:"
 
-#: example.cgi:60 dudle.rb:89
-msgid "Examples"
-msgstr "Exemples"
-
-#: example.cgi:61
+#: ../example.cgi:61
 msgid ""
 "If you want to play with the application, you may want to take a look at "
 "these example polls:"
@@ -197,74 +441,108 @@ msgstr ""
 "Si vols jugar amb l'aplicació, possiblement voldràs fer una ullada a "
 "aquestes enquestes d'exemple:"
 
-#: index.cgi:32
+#: ../history.rb:28
+msgid "Poll of Version %{revisionnumber}"
+msgstr "Enquesta de la versió %{revisionnumber}"
+
+#: ../history.rb:32
+msgid "Current Poll (Version %{revisionnumber})"
+msgstr "Enquesta actual (Versió %{revisionnumber})"
+
+#: ../index.cgi:32
 msgid "Please enter a descriptive title."
 msgstr "Si us plau, introdueix un títol descriptiu."
 
-#: index.cgi:48
+#: ../index.cgi:48
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr ""
 "Les direccions personalitzades només poden tenir lletres, números i barres."
 
-#: index.cgi:50
+#: ../index.cgi:50
 msgid "A Poll with this address already exists."
 msgstr "Ja hi ha una altra enquesta amb aquest nom."
 
-#: index.cgi:69
+#: ../index.cgi:69
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr ""
 "L'enquesta s'ha creat amb èxit. El vincle cap a la teva enquesta és: %{link}"
 
-#: index.cgi:76
+#: ../index.cgi:76
 msgid "Create New Poll"
 msgstr "Crea una Enquesta"
 
-#: index.cgi:78
+#: ../index.cgi:78
 msgid "Title"
 msgstr "Títol"
 
-#: index.cgi:79
+#: ../index.cgi:79
 msgid "Type"
 msgstr "Tipus"
 
-#: index.cgi:80
+#: ../index.cgi:80
 msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Enquesta de data (ex. planifica una reunió)"
 
-#: index.cgi:81
+#: ../index.cgi:81
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Enquesta (ex. vota per el millor tipus de cafè)"
 
-#: index.cgi:82
+#: ../index.cgi:82
 msgid "Custom address (optional)"
 msgstr "Direcció personalitzada (opcional)"
 
-#: index.cgi:83
+#: ../index.cgi:83
 msgid "May contain letters, numbers, and dashes."
 msgstr "Hauria de tenir lletres, números i barres."
 
-#: index.cgi:85
+#: ../index.cgi:85
 msgid "Create"
 msgstr "Crea"
 
-#: not_found.cgi:29
+#: ../log.rb:111
+msgid "Date"
+msgstr "Data"
+
+#: ../log.rb:111
+msgid "Version"
+msgstr "Versió"
+
+#: ../log.rb:111
+msgid "Comment"
+msgstr "Comentari"
+
+#: ../maintenance.cgi:25 ../maintenance.cgi:27
+msgid "Maintenance"
+msgstr ""
+
+#: ../maintenance.cgi:36
+msgid "This site is currently under maintenance!"
+msgstr ""
+
+#: ../maintenance.cgi:39
+msgid ""
+"You should not browse to this file directly. Please create a file named "
+"\"maintenance.html\" to enable the maintenance mode."
+msgstr ""
+
+#: ../not_found.cgi:29
 msgid "Poll Not Found"
 msgstr "Aquesta enquesta no existeix"
 
-#: not_found.cgi:31
+#: ../not_found.cgi:31
 msgid "The requested Poll was not found."
 msgstr "Aquesta enquesta no existeix"
 
-#: not_found.cgi:32
+#: ../not_found.cgi:32
 msgid "There are several reasons, why a Poll is deleted:"
 msgstr "Hi ha varis motius per a què s'hagi esborrat una enquesta:"
 
-#: not_found.cgi:33
+#: ../not_found.cgi:33
 msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
 msgstr "Algú ha clicat a “Esborrar enquesta“ i l'ha esborrat manualment."
 
-#: not_found.cgi:34
+#: ../not_found.cgi:34
 msgid ""
 "The Poll was deleted by the administrator because it was not accessed for a "
 "long time."
@@ -272,7 +550,7 @@ msgstr ""
 "L'administrador l'ha esborrat perquè no s'hi ha accedit des de fa molt de "
 "temps."
 
-#: not_found.cgi:35
+#: ../not_found.cgi:35
 msgid ""
 "If you think, the deletion was done by error, please contact the "
 "adminsistrator of the system."
@@ -280,425 +558,155 @@ msgstr ""
 "Si creus que s'ha esborrat per error, si us plau, contacta amb "
 "l'administrador del sistema."
 
-#: access_control.rb:86
-msgid "Password"
-msgstr "Contrasenya"
-
-#: access_control.rb:87
-msgid "repeat"
-msgstr "torna a escriure-la"
-
-#: access_control.rb:113
-msgid ""
-"You have to remove the participant user before you can remove the "
-"administrator."
-msgstr ""
-"Primer has de treure els usuaris participants abans de que en puguis "
-"esborrar l'administrador."
-
-#: access_control.rb:138
-msgid "Only letters and digits are allowed in the username."
-msgstr "En el nom d'usuari només es permeten lletres i números."
-
-#: access_control.rb:140
-msgid "Passwords did not match."
-msgstr "Les contrasenyes no concorden."
-
-#: access_control.rb:173
-msgid "Change Access Control Settings"
-msgstr "Canvia les opcions de control d'accés"
-
-#: access_control.rb:177
-msgid "not activated"
-msgstr "sense activar"
-
-#: access_control.rb:179
-msgid "Activate"
-msgstr "Activa"
-
-#: access_control.rb:182
-msgid "will be activated when at least an admin user is configured"
-msgstr "s'activarà quan hi hagi almenys un administrador"
-
-#: access_control.rb:184
-msgid "Deactivate"
-msgstr "Desactiva"
-
-#: access_control.rb:186
-msgid "activated"
-msgstr "activat"
-
-#: access_control.rb:187
-msgid ""
-"You have to remove all users before you can deactivate the access control "
-"settings."
-msgstr ""
-"Primer has de treure tots els usuaris, aleshores podràs desactivar les "
-"opcions de control d'accés"
-
-#: access_control.rb:191
-msgid ""
-"You will be asked for the password you entered here after pressing save!"
-msgstr "Se't demanarà la contrasenya al prémer desa!"
-
-#: access_control.rb:194
-msgid ""
-"The user ‘admin’ has access to the vote as well as the configuration "
-"interface."
-msgstr "El usuari ‘admin’ pot votar i configurar la interfície."
-
-#: access_control.rb:200
-msgid "The user ‘participant’ has only access to the vote interface."
-msgstr "El usuari ‘participant’ només pot votar."
-
-#: access_control.rb:206
-msgid "Access control:"
-msgstr "Control d'accés:"
-
-#: config.rb:36
-msgid "Event Schedule Poll"
-msgstr "Enquesta de data"
-
-#: config.rb:40
-msgid "Normal Poll"
-msgstr "Enquesta"
-
-#: delete_poll.rb:29
-msgid "Yes, I know what I am doing!"
-msgstr "Si, sé què estic fent!"
-
-#: delete_poll.rb:30
-msgid "I hate these stupid entry fields."
-msgstr "Odio aquests camps d'entrada."
-
-#: delete_poll.rb:31
-msgid "I am aware of the consequences."
-msgstr "Estic al corrent de les conseqüències."
-
-#: delete_poll.rb:32
-msgid "Please delete this poll."
-msgstr "Si us plau, esborra aquesta enquesta."
-
-#: delete_poll.rb:41
-msgid "Example polls can not be deleted."
-msgstr "Les enquestes d'exemple no es poden esborrar."
-
-#: delete_poll.rb:55
-msgid "The poll was deleted successfully!"
-msgstr "L'enquesta s'ha esborrat correctament!"
-
-#: delete_poll.rb:56
-msgid ""
-"If this was done by accident, please contact the administrator of the "
-"system. The poll can be recovered for an indeterministic amount of time, "
-"maybe it is already to late."
-msgstr ""
-"Si es va fer sense voler, si us plau contacta amb l'administrador del "
-"sistema. L'enquesta es pot restaurar en un període raonable de temps, potser "
-"encara no és massa tard."
-
-#: delete_poll.rb:58
-msgid "Things you can do now are"
-msgstr "El què pots fer ara és"
-
-#: delete_poll.rb:59
-msgid "Return to dudle home and schedule a new poll"
-msgstr "Tornar a la pàgina d'inici de dudle i crear una altra enquesta"
-
-#: delete_poll.rb:60
-msgid "Browse Wikipedia"
-msgstr "Cerca a la Viquipèdia"
-
-#: delete_poll.rb:61
-#, fuzzy
-msgid "Search something in the Internet"
-msgstr "Cerca fent servir Google"
-
-#: delete_poll.rb:87
-msgid "To delete the poll, you have to type:"
-msgstr "Per a esborrar l'enquesta has d'escriure:"
-
-#: delete_poll.rb:95
-msgid "but you typed:"
-msgstr "però has escrit:"
-
-#: delete_poll.rb:107
-msgid "Delete this Poll"
-msgstr "Esborra aquesta enquesta"
-
-#: delete_poll.rb:108
-msgid "You want to delete the poll named"
-msgstr "Vols esborrar l'enquesta"
-
-#: delete_poll.rb:109
-msgid "This is an irreversible action!"
-msgstr "Aquesta acció no té marxa enrere!"
-
-#: delete_poll.rb:110
-msgid ""
-"If you are sure in what you are doing, please type “%{question}” into the "
-"form."
-msgstr ""
-"Si estàs segur del què estàs fent, si us plau escriu “%{question}” al "
-"formulari."
-
-#: dudle.rb:73
-msgid "Home"
-msgstr "Inici"
-
-#: dudle.rb:76
-msgid "Poll"
-msgstr "Enquesta"
-
-#: dudle.rb:77 history.rb:35
-msgid "History"
-msgstr "Història"
-
-#: dudle.rb:80
-msgid "Edit Columns"
-msgstr "Modifica columnes"
-
-#: dudle.rb:81 invite_participants.rb:38
-msgid "Invite Participants"
-msgstr "Convida a participants"
-
-#: dudle.rb:82
-msgid "Access Control"
-msgstr "Control d'Accés"
-
-#: dudle.rb:83
-msgid "Overview"
-msgstr "Informació general"
-
-#: dudle.rb:86
-msgid "Delete Poll"
-msgstr "Esborra enquesta"
-
-#: dudle.rb:90
-msgid "About"
-msgstr "Sobre"
-
-#: dudle.rb:92
-msgid "Customize"
-msgstr "Personalitza"
-
-#: dudle.rb:100
-msgid "Dudle Home"
-msgstr "Inici Dudle"
-
-#: dudle.rb:203 dudle.rb:221
-msgid "Previous"
-msgstr "Anterior"
-
-#: dudle.rb:204 dudle.rb:222
-msgid "Next"
-msgstr "Següent"
-
-#: dudle.rb:205 dudle.rb:223
-msgid "Finish"
-msgstr "Acaba"
-
-#: dudle.rb:228
-msgid "All changes were saved sucessfully."
-msgstr "S'han desat tots els canvis."
-
-#: dudle.rb:228
-msgid "Proceed!"
-msgstr "Endavant!"
-
-#: edit_columns.rb:44
-msgid "Add and Remove Columns"
-msgstr "Afegeix o esborra columnes"
-
-#: edit_columns.rb:67 edit_columns.rb:86 timepollhead.rb:248
-msgid "Delete column"
-msgstr "Esborra columna"
-
-#: edit_columns.rb:69 edit_columns.rb:84 timepollhead.rb:247
-msgid "Add column"
-msgstr "Afegeix columna"
-
-#: edit_columns.rb:71 edit_columns.rb:88
-msgid "Edit column"
-msgstr "Modifica columna"
-
-#: edit_columns.rb:99
-msgid "Undo"
-msgstr "Desfés"
-
-#: edit_columns.rb:99
-msgid "Redo"
-msgstr "Refés"
-
-#: history.rb:28
-msgid "Poll of Version %{revisionnumber}"
-msgstr "Enquesta de la versió %{revisionnumber}"
-
-#: history.rb:32
-msgid "Current Poll (Version %{revisionnumber})"
-msgstr "Enquesta actual (Versió %{revisionnumber})"
-
-#: log.rb:111
-msgid "Version"
-msgstr "Versió"
-
-#: log.rb:111
-msgid "Date"
-msgstr "Data"
-
-#: log.rb:111
-msgid "Comment"
-msgstr "Comentari"
-
-#: overview.rb:31
+#: ../overview.rb:31
 msgid "The next steps are:"
 msgstr "Els pròxims passos són:"
 
-#: overview.rb:33
+#: ../overview.rb:33
 msgid "Send the link to all participants:"
 msgstr "Enviar el vincle a tots els participants:"
 
-#: overview.rb:34
+#: ../overview.rb:34
 msgid "Send this link via email..."
 msgstr "Enviar el vincle per correu electrònic..."
 
-#: overview.rb:35
+#: ../overview.rb:35
 msgid "Visit the poll yourself:"
 msgstr "Veure l'enquesta:"
 
-#: overview.rb:36
+#: ../overview.rb:36
 msgid "Link to dudle poll about %{polltitle}"
 msgstr "Vincular l'enquesta %{polltitle}"
 
-#: participate.rb:59
+#: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."
 msgstr "S'han desat els canvis, redirigint a %{link}."
 
-#: poll.rb:92
+#: ../poll.rb:92
 msgid "Edit user %{user}..."
 msgstr "Modifica usuari %{user}..."
 
-#: poll.rb:96
+#: ../poll.rb:96
 msgid "Delete user %{user}..."
 msgstr "Esborra usuari %{user}..."
 
-#: poll.rb:150
+#: ../poll.rb:150
 msgid "Total"
 msgstr "Total"
 
-#: poll.rb:182
+#: ../poll.rb:182
 msgid "Invite"
 msgstr "Convida"
 
-#: poll.rb:183 pollhead.rb:62 timepollhead.rb:158
+#: ../poll.rb:183 ../pollhead.rb:62 ../timepollhead.rb:158
 msgid "Name"
 msgstr "Nom"
 
-#: poll.rb:228
+#: ../poll.rb:228
 msgid "Save Changes"
 msgstr "Desa els canvis"
 
-#: poll.rb:232
+#: ../poll.rb:232
 msgid "Cancel"
 msgstr "Avorta"
 
-#: poll.rb:254
+#: ../poll.rb:254
 msgid "Do you really want to delete user %{user}?"
 msgstr "Realment vols esborrar el usuari %{user}?"
 
-#: poll.rb:257
+#: ../poll.rb:257
 msgid "Confirm"
 msgstr "Accepta"
 
-#: poll.rb:305
+#: ../poll.rb:305
 msgid "Comments"
 msgstr "Comentaris"
 
-#: poll.rb:308
+#: ../poll.rb:308
 msgid "Sort oldest comment first"
 msgstr "Els comentaris més antics primer"
 
-#: poll.rb:311
+#: ../poll.rb:311
 msgid "Sort newest comment first"
 msgstr "Els comentaris més nous primer"
 
-#: poll.rb:316
+#: ../poll.rb:316
 msgid "Go to last comment"
 msgstr "Vés a l'últim comentari"
 
-#: poll.rb:329
+#: ../poll.rb:329
 msgid "%{user} said on %{time}"
 msgstr "%{user} ha dit al %{time}"
 
-#: poll.rb:344
+#: ../poll.rb:344
 msgid "Go Up"
 msgstr "Amunt"
 
-#: poll.rb:350
+#: ../poll.rb:350
 msgid "says"
 msgstr "Diu"
 
-#: poll.rb:351
+#: ../poll.rb:351
 msgid "Submit Comment"
 msgstr "Envia un comentari"
 
-#: poll.rb:369
+#: ../poll.rb:369
 msgid "Show history items:"
 msgstr "Mostra l'històric:"
 
-#: poll.rb:376
+#: ../poll.rb:376
 msgid "All"
 msgstr "Tot"
 
-#: poll.rb:377
+#: ../poll.rb:377
 msgid "Participant related"
 msgstr "Participants relacionats"
 
-#: poll.rb:378
+#: ../poll.rb:378
 msgid "Column related"
 msgstr "Columnes relacionades"
 
-#: poll.rb:379
+#: ../poll.rb:379
 msgid "Comment related"
 msgstr "Comentaris relacionats"
 
-#: poll.rb:380
+#: ../poll.rb:380
 msgid "Access Control related"
 msgstr "Controls d'accés relacionats"
 
-#: poll.rb:386
+#: ../poll.rb:386
 msgid "Update"
 msgstr "Actualitza"
 
-#: pollhead.rb:71
+#: ../pollhead.rb:71
 msgid "Edit Option"
 msgstr "Modifica la opció"
 
-#: pollhead.rb:72
+#: ../pollhead.rb:72
 msgid "Delete Option"
 msgstr "Esborra la opció"
 
-#: pollhead.rb:87 timepollhead.rb:162
+#: ../pollhead.rb:87 ../timepollhead.rb:162
 msgid "Last Edit"
 msgstr "Darrera modificació"
 
-#: pollhead.rb:99
+#: ../pollhead.rb:99
 msgid "Option"
 msgstr "Opció"
 
-#: pollhead.rb:100
+#: ../pollhead.rb:100
 msgid "Description (optional)"
 msgstr "Descripció (opcional)"
 
-#: pollhead.rb:101
+#: ../pollhead.rb:101
 msgid "Add/Edit Option"
 msgstr "Afegeix/Esborra Opció"
 
-#: pollhead.rb:102
+#: ../pollhead.rb:102
 msgid "Preview"
 msgstr "Previsualització"
 
-#: pollhead.rb:103
+#: ../pollhead.rb:103
 msgid ""
 "Enter all Options (columns), you want to ask the participants of the poll. "
 "The participants will state one vote for every option you give here "
@@ -707,7 +715,7 @@ msgstr ""
 "Introdueix totes les opcions (columnes) que vols preguntar als usuaris de "
 "l'enquesta. Els participants definiran un vot per cada opció definida."
 
-#: timepollhead.rb:113
+#: ../timepollhead.rb:113
 msgid ""
 "To add some time different to the default ones, please enter some string "
 "here (e.&thinsp;g., 09:30, morning, afternoon)."
@@ -715,58 +723,64 @@ msgstr ""
 "Per definir-ne alguns de diferents als que hi ha per defecte, si us plau "
 "introdueix el text aquí (ex. 09:30, matí, tarda)."
 
-#: timepollhead.rb:119
+#: ../timepollhead.rb:119
 msgid "This Time was already choosen."
 msgstr "Ja s'ha escollit."
 
-#: timepollhead.rb:193
+#: ../timepollhead.rb:193
 msgid "Earlier"
 msgstr "Abans"
 
-#: timepollhead.rb:198
+#: ../timepollhead.rb:198
 msgid "Later"
 msgstr "Més tard"
 
-#: timepollhead.rb:264
+#: ../timepollhead.rb:264
 msgid "Click on the dates to add or remove columns."
 msgstr "Prem a les dates per afegir o esborrar columnes."
 
-#: timepollhead.rb:312
+#: ../timepollhead.rb:312
 msgid "Optional:"
 msgstr "Opcional:"
 
-#: timepollhead.rb:313
+#: ../timepollhead.rb:313
 msgid "Enter a concrete value as start time."
 msgstr "Hora d'inici."
 
-#: timepollhead.rb:329
+#: ../timepollhead.rb:329
 msgid "Time"
 msgstr "Hora"
 
-#: timepollhead.rb:342
+#: ../timepollhead.rb:342
 msgid "Chosen"
 msgstr "Escollits"
 
-#: timepollhead.rb:343
+#: ../timepollhead.rb:343
 msgid "Not Chosen"
 msgstr "Sense escollir"
 
-#: timepollhead.rb:344
+#: ../timepollhead.rb:344
 msgid "Past"
 msgstr "Passat"
 
-#: timepollhead.rb:378
+#: ../timepollhead.rb:378
 msgid "Select the whole row"
 msgstr "Marca tota la fila"
 
-#: timepollhead.rb:383
+#: ../timepollhead.rb:383
 msgid "Deselect the whole row"
 msgstr "Desmarca tota la fila"
 
-#: timepollhead.rb:427
+#: ../timepollhead.rb:427
 msgid "Add"
 msgstr "Afegir"
 
-#: timepollhead.rb:428
+#: ../timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "ex. 09:30, matí, tarda"
+
+#~ msgid "Event Schedule Poll"
+#~ msgstr "Enquesta de data"
+
+#~ msgid "Normal Poll"
+#~ msgstr "Enquesta"

@@ -3,3 +3,4 @@ locale/dudle.pot
 locale/*/dudle.mo
 css/*
 extensions/*
+maintenance.html

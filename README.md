@@ -76,6 +76,15 @@ GNU AGPL v3 or higher (see file License)
     seems to work.
 12. You may want to install a cronjob to cleanup dudle polls. 
     See dudle_cleanup for an example.
+13. You can enable a maintenance mode if you need to change something
+    with your installation. Using this mode, all users will see a static
+    message and are not able to change anything. In order to enable this
+    mode, create a file named `/maintenance.html` which may include a
+    custom message. E.g.:
+
+    ```sh
+    echo "<div>We are updating the servers and expect to be online on 0 am, January 1st, 1970 (UTC).</div>" > $DUDLE_INSTALLATION_PATH/maintenance.html
+    ```
  
 # Docker image
 There are two docker image available

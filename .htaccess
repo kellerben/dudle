@@ -1,3 +1,15 @@
+RewriteEngine On
+#RewriteCond %{REMOTE_ADDR} !127.0.0.1
+RewriteCond %{DOCUMENT_ROOT}/maintenance.cgi -f
+RewriteCond %{DOCUMENT_ROOT}/maintenance.html -f
+RewriteCond %{SCRIPT_FILENAME} !maintenance.cgi
+RewriteCond %{SCRIPT_FILENAME} !css/*
+RewriteCond %{SCRIPT_FILENAME} !.*css
+RewriteCond %{SCRIPT_FILENAME} !favicon.ico
+RewriteRule ^.*$ /maintenance.cgi [R=503,L]
+ErrorDocument 503 /maintenance.cgi
+
+
 <FilesMatch "^\.ht.*">
 	deny from all
 	satisfy all

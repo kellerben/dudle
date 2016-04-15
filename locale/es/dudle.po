@@ -7,16 +7,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-02-21 22:01+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-15 14:24+0200\n"
 "PO-Revision-Date: 2011-07-21 10:05+0200\n"
 "Last-Translator: Laura Mora i Aubert <blackhold@marsupi.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: about.cgi:29
+#: ../about.cgi:29
 msgid ""
 "If you find a bug or have something else which disturbes you, please let me "
 "know: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
@@ -26,11 +28,11 @@ msgstr ""
 "contacta conmigo: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
 "subject=Feedback%20to%20dudle\">manda tu feedback</a>"
 
-#: about.cgi:31
+#: ../about.cgi:31
 msgid "--verbose"
 msgstr "--verbose"
 
-#: about.cgi:32
+#: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
 "href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
@@ -39,7 +41,7 @@ msgstr ""
 "<a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Versión "
 "3</a>"
 
-#: about.cgi:34
+#: ../about.cgi:34
 msgid ""
 "You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</"
 "a>:"
@@ -47,103 +49,350 @@ msgstr ""
 "Puedes descargarte el código fuente, usando <a href='http://bazaar-vcs."
 "org/'>bazaar</a>:"
 
-#: authorization_required.cgi:36 authorization_required.cgi:52
+#: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
+msgid "Username:"
+msgstr "Usuario:"
+
+#: ../access_control.rb:87
+msgid "Password"
+msgstr "Contraseña"
+
+#: ../access_control.rb:88
+msgid "repeat"
+msgstr "repítela"
+
+#: ../access_control.rb:114
+msgid ""
+"You have to remove the participant user before you can remove the "
+"administrator."
+msgstr ""
+"Primero tendrías que sacar a los usuarios participantes antes de que puedas "
+"borrar el administrador."
+
+#: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
+#: ../delete_poll.rb:112 ../poll.rb:334
+msgid "Delete"
+msgstr "Borra"
+
+#: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
+#: ../poll.rb:296
+msgid "Save"
+msgstr "Guarda"
+
+#: ../access_control.rb:139
+msgid "Only letters and digits are allowed in the username."
+msgstr "En el nombre de usuario sólo se permiten letras y números."
+
+#: ../access_control.rb:141
+msgid "Passwords did not match."
+msgstr "Las contraseñas no coinciden."
+
+#: ../access_control.rb:175
+msgid "Change Access Control Settings"
+msgstr "Cambia las opciones de control de acceso"
+
+#: ../access_control.rb:179
+msgid "not activated"
+msgstr "sin activar"
+
+#: ../access_control.rb:181
+msgid "Activate"
+msgstr "Activa"
+
+#: ../access_control.rb:184
+msgid "will be activated when at least an admin user is configured"
+msgstr "se activará cuando haya al menos un administrador"
+
+#: ../access_control.rb:186
+msgid "Deactivate"
+msgstr "Desactiva"
+
+#: ../access_control.rb:188
+msgid "activated"
+msgstr "activado"
+
+#: ../access_control.rb:189
+msgid ""
+"You have to remove all users before you can deactivate the access control "
+"settings."
+msgstr ""
+"Primero tienes que sacar a todos los usuarios, luego podrás desactivar las "
+"opciones de control de acceso"
+
+#: ../access_control.rb:193
+msgid ""
+"You will be asked for the password you entered here after pressing save!"
+msgstr "Se pedirá la contraseña al pulsar guardar!"
+
+#: ../access_control.rb:196
+msgid ""
+"The user ‘admin’ has access to the vote as well as the configuration "
+"interface."
+msgstr "El usuario ‘admin’ puede votar y configurar el interfaz."
+
+#: ../access_control.rb:202
+msgid "The user ‘participant’ has only access to the vote interface."
+msgstr "El usuario ‘participante’ sólo puede votar."
+
+#: ../access_control.rb:208
+msgid "Access control:"
+msgstr "Control de acceso:"
+
+#: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization Required"
 msgstr "Se requiere identificación"
 
-#: authorization_required.cgi:39
+#: ../authorization_required.cgi:39
 msgid "The configuration of this Poll is protected by password!"
 msgstr "La configuración de esta encuesta está protegida con contraseña!"
 
-#: authorization_required.cgi:41
+#: ../authorization_required.cgi:41
 msgid "This Poll is protected by password!"
 msgstr "Esta encuesta está protegida con contraseña!"
 
-#: authorization_required.cgi:43
+#: ../authorization_required.cgi:43
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 "Para continuar, tienes que definir la contraseña para el usuario %{user}."
 
-#: authorization_required.cgi:53 not_found.cgi:36
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
 msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Vuelve a la página de inicio de dudle y programa una nueva Encuesta"
 
-#: authorization_required.cgi:54
+#: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Te tienes que identificar para acceder a esta página!"
 
-#: customize.cgi:31 customize.rb:31
+#: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize Personal Settings"
 msgstr "Personaliza tus parámetros"
 
-#: customize.cgi:32 customize.rb:32
+#: ../customize.cgi:32 ../customize.rb:32
 msgid "You need cookies enabled in order to personalize your settings."
 msgstr ""
 "Para personalizar tus parámetros tienes que tener las cookies activadas"
 
-#: customize.cgi:39 customize.rb:39
+#: ../customize.cgi:39 ../customize.rb:39
 msgid "Current Setting"
 msgstr "Configuración actual"
 
-#: customize.cgi:40 customize.rb:40
+#: ../customize.cgi:40 ../customize.rb:40
 msgid "Description"
 msgstr "Descripción"
 
-#: customize.cgi:57 customize.rb:57
+#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use special characters"
 msgstr "Usa caracteres especiales"
 
-#: customize.cgi:57 customize.rb:57
+#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use this option if you see the characters in the parenthesis."
 msgstr ""
 "Usa esta opción si puedes ver los caracteres que están entre paréntesis"
 
-#: customize.cgi:58 customize.rb:58
+#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
 msgstr "No uses caracteres especiales"
 
-#: customize.cgi:58 customize.rb:58
+#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use this option if you have problems with some characters."
 msgstr "Usa esta opción si no puedes ver los caracteres especiales."
 
-#: customize.cgi:61 customize.rb:61
+#: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
 msgstr "Codificación de caracteres"
 
-#: customize.cgi:66 customize.rb:66
+#: ../customize.cgi:66 ../customize.rb:66
 msgid "Stylesheet"
 msgstr "Hoja de estilos"
 
-#: customize.cgi:83 customize.rb:83
+#: ../customize.cgi:81 ../customize.rb:81
 msgid "Default Username"
 msgstr "Usuario por defecto"
 
-#: customize.cgi:84 access_control.rb:73 customize.rb:84
-msgid "Username:"
-msgstr "Usuario:"
-
-#: customize.cgi:108 customize.rb:108
+#: ../customize.cgi:106 ../customize.rb:106
 msgid "Edit"
 msgstr "Modifica"
 
-#: customize.cgi:118 access_control.rb:120 customize.rb:118 poll.rb:296
-msgid "Save"
-msgstr "Guarda"
+#: ../delete_poll.rb:30
+msgid "Yes, I know what I am doing!"
+msgstr "Si, sé lo que estoy haciendo!"
 
-#: customize.cgi:121 access_control.rb:116 customize.rb:121 delete_poll.rb:111
-#: poll.rb:334
-msgid "Delete"
-msgstr "Borra"
+#: ../delete_poll.rb:31
+msgid "I hate these stupid entry fields."
+msgstr "Odio estos campos de entrada."
 
-#: error.cgi:25 error.cgi:27
+#: ../delete_poll.rb:32
+msgid "I am aware of the consequences."
+msgstr "Estoy al caso de las consecuencias."
+
+#: ../delete_poll.rb:33
+msgid "Please delete this poll."
+msgstr "Por favor, borra esta encuesta."
+
+#: ../delete_poll.rb:42
+msgid "Example polls can not be deleted."
+msgstr "Las encuestas de ejemplo no se pueden borrar."
+
+#: ../delete_poll.rb:56
+msgid "The poll was deleted successfully!"
+msgstr "La encuesta se ha borrado correctamente!"
+
+#: ../delete_poll.rb:57
+msgid ""
+"If this was done by accident, please contact the administrator of the "
+"system. The poll can be recovered for an indeterministic amount of time, "
+"maybe it is already to late."
+msgstr ""
+"Si se hizo sin querer, por favor contacta con el administrador del sistema. "
+"La encuesta se puede restablecer por un periodo de tiempo razonable, quizás "
+"aún no es demasiado tarde."
+
+#: ../delete_poll.rb:59
+msgid "Things you can do now are"
+msgstr "Lo que puedes hacer ahora es"
+
+#: ../delete_poll.rb:60
+msgid "Return to dudle home and schedule a new poll"
+msgstr "Volver a la página de inicio de dudle y crear otra encuesta"
+
+#: ../delete_poll.rb:61
+msgid "Browse Wikipedia"
+msgstr "Buscar en la Wikipedia"
+
+#: ../delete_poll.rb:62
+#, fuzzy
+msgid "Search something in the Internet"
+msgstr "Buscar usando Google"
+
+#: ../delete_poll.rb:88
+msgid "To delete the poll, you have to type:"
+msgstr "Para borrar la encuesta tienes que escribir:"
+
+#: ../delete_poll.rb:96
+msgid "but you typed:"
+msgstr "pero has escrito:"
+
+#: ../delete_poll.rb:108
+msgid "Delete this Poll"
+msgstr "Borra esta encuesta"
+
+#: ../delete_poll.rb:109
+msgid "You want to delete the poll named"
+msgstr "¿Quieres borrar la encuesta"
+
+#: ../delete_poll.rb:110
+msgid "This is an irreversible action!"
+msgstr "Esta acción no tiene marcha atrás!"
+
+#: ../delete_poll.rb:111
+msgid ""
+"If you are sure in what you are doing, please type “%{question}” into the "
+"form."
+msgstr ""
+"Si estás seguro de lo que estás haciendo, por favor escribe “%{question}” en "
+"el formulario."
+
+#: ../dudle.rb:73
+msgid "Home"
+msgstr "Inicio"
+
+#: ../dudle.rb:76
+msgid "Poll"
+msgstr "Encuesta"
+
+#: ../dudle.rb:77 ../history.rb:35
+msgid "History"
+msgstr "Histórico"
+
+#: ../dudle.rb:80
+msgid "Edit Columns"
+msgstr "Modifica columnas"
+
+#: ../dudle.rb:81 ../invite_participants.rb:38
+msgid "Invite Participants"
+msgstr "Invita a participantes"
+
+#: ../dudle.rb:82
+msgid "Access Control"
+msgstr "Control de acceso"
+
+#: ../dudle.rb:83
+msgid "Overview"
+msgstr "Información general"
+
+#: ../dudle.rb:86
+msgid "Delete Poll"
+msgstr "Borra encuesta"
+
+#: ../dudle.rb:89 ../example.cgi:60
+msgid "Examples"
+msgstr "Ejemplos"
+
+#: ../dudle.rb:90
+msgid "About"
+msgstr "Sobre"
+
+#: ../dudle.rb:92
+msgid "Customize"
+msgstr "Personaliza"
+
+#: ../dudle.rb:100
+msgid "Dudle Home"
+msgstr "Inicio Dudle"
+
+#: ../dudle.rb:207 ../dudle.rb:225
+msgid "Previous"
+msgstr "Anterior"
+
+#: ../dudle.rb:208 ../dudle.rb:226
+msgid "Next"
+msgstr "Siguiente"
+
+#: ../dudle.rb:209 ../dudle.rb:227
+msgid "Finish"
+msgstr "Termina"
+
+#: ../dudle.rb:232
+msgid "All changes were saved sucessfully."
+msgstr "Se han guardado todos los cambios."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Adelante!"
+
+#: ../edit_columns.rb:44
+msgid "Add and Remove Columns"
+msgstr "Añadir o borrar columnas"
+
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+msgid "Delete column"
+msgstr "Borrar columna"
+
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+msgid "Add column"
+msgstr "Añadir columna"
+
+#: ../edit_columns.rb:71 ../edit_columns.rb:88
+msgid "Edit column"
+msgstr "Modifica columna"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Rehacer"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Deshacer"
+
+#: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
 msgstr "Error"
 
-#: error.cgi:46
+#: ../error.cgi:46
 msgid "The following error was printed:"
 msgstr "Ha ocurrido este error:"
 
-#: error.cgi:50
+#: ../error.cgi:50
 msgid ""
 "Hi!\n"
 "\n"
@@ -170,28 +419,24 @@ msgstr ""
 "%{errormessage}\n"
 "Atentamente,\n"
 
-#: error.cgi:51
+#: ../error.cgi:51
 msgid "Bug in dudle"
 msgstr "Error en dudle"
 
-#: error.cgi:53
+#: ../error.cgi:53
 msgid ""
 "An error occured while executing dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
 "Ha ocurrido un error al ejecutar dudle.<br/>Por favor, manda un informe de "
-"error, indicando tu navegador, sistemas operativo y acción realizada a %"
-"{admin}."
+"error, indicando tu navegador, sistemas operativo y acción realizada a "
+"%{admin}."
 
-#: error.cgi:56
+#: ../error.cgi:56
 msgid "Please include the following as well:"
 msgstr "Por favor incluye también esto:"
 
-#: example.cgi:60 dudle.rb:89
-msgid "Examples"
-msgstr "Ejemplos"
-
-#: example.cgi:61
+#: ../example.cgi:61
 msgid ""
 "If you want to play with the application, you may want to take a look at "
 "these example polls:"
@@ -199,75 +444,109 @@ msgstr ""
 "Si quieres jugar con la aplicación, posiblemente estarás interesado en ver "
 "estas encuestas de ejemplo:"
 
-#: index.cgi:32
+#: ../history.rb:28
+msgid "Poll of Version %{revisionnumber}"
+msgstr "Encuesta de la versión %{revisionnumber}"
+
+#: ../history.rb:32
+msgid "Current Poll (Version %{revisionnumber})"
+msgstr "Encuesta actual (Versió %{revisionnumber})"
+
+#: ../index.cgi:32
 msgid "Please enter a descriptive title."
 msgstr "Por favor, introduce un título descriptivo."
 
-#: index.cgi:48
+#: ../index.cgi:48
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr ""
 "Las direcciones personalizadas sólo pueden tener letras, números y barras."
 
-#: index.cgi:50
+#: ../index.cgi:50
 msgid "A Poll with this address already exists."
 msgstr "Ya existe otra encuesta con este nombre."
 
-#: index.cgi:69
+#: ../index.cgi:69
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr ""
-"La encuesta se ha creado correctamente. El vínculo hacia tu encuesta es: %"
-"{link}"
+"La encuesta se ha creado correctamente. El vínculo hacia tu encuesta es: "
+"%{link}"
 
-#: index.cgi:76
+#: ../index.cgi:76
 msgid "Create New Poll"
 msgstr "Crea una encuesta"
 
-#: index.cgi:78
+#: ../index.cgi:78
 msgid "Title"
 msgstr "Título"
 
-#: index.cgi:79
+#: ../index.cgi:79
 msgid "Type"
 msgstr "Tipo"
 
-#: index.cgi:80
+#: ../index.cgi:80
 msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Encuesta de fecha (ej. planifica una reunión)"
 
-#: index.cgi:81
+#: ../index.cgi:81
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Encuesta (ej. vota por el mejor tipo de café)"
 
-#: index.cgi:82
+#: ../index.cgi:82
 msgid "Custom address (optional)"
 msgstr "Dirección personalizada (opcional)"
 
-#: index.cgi:83
+#: ../index.cgi:83
 msgid "May contain letters, numbers, and dashes."
 msgstr "Tendría que tener letras, números y barras."
 
-#: index.cgi:85
+#: ../index.cgi:85
 msgid "Create"
 msgstr "Crea"
 
-#: not_found.cgi:29
+#: ../log.rb:111
+msgid "Date"
+msgstr "Fecha"
+
+#: ../log.rb:111
+msgid "Version"
+msgstr "Versión"
+
+#: ../log.rb:111
+msgid "Comment"
+msgstr "Comentario"
+
+#: ../maintenance.cgi:25 ../maintenance.cgi:27
+msgid "Maintenance"
+msgstr ""
+
+#: ../maintenance.cgi:36
+msgid "This site is currently under maintenance!"
+msgstr ""
+
+#: ../maintenance.cgi:39
+msgid ""
+"You should not browse to this file directly. Please create a file named "
+"\"maintenance.html\" to enable the maintenance mode."
+msgstr ""
+
+#: ../not_found.cgi:29
 msgid "Poll Not Found"
 msgstr "Esta encuesta no existe"
 
-#: not_found.cgi:31
+#: ../not_found.cgi:31
 msgid "The requested Poll was not found."
 msgstr "Esta encuesta no existe"
 
-#: not_found.cgi:32
+#: ../not_found.cgi:32
 msgid "There are several reasons, why a Poll is deleted:"
 msgstr "Existen varios motivos por el que se ha borrado una encuesta:"
 
-#: not_found.cgi:33
+#: ../not_found.cgi:33
 msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
 msgstr "Alguien ha pulsado en “Borrar encuesta“ y la ha borrado manualmente."
 
-#: not_found.cgi:34
+#: ../not_found.cgi:34
 msgid ""
 "The Poll was deleted by the administrator because it was not accessed for a "
 "long time."
@@ -275,7 +554,7 @@ msgstr ""
 "El administrador la ha borrado porqué no se ha accedido desde hace mucho "
 "tiempo."
 
-#: not_found.cgi:35
+#: ../not_found.cgi:35
 msgid ""
 "If you think, the deletion was done by error, please contact the "
 "adminsistrator of the system."
@@ -283,425 +562,155 @@ msgstr ""
 "Si crees que se ha borrado por error, por favor, contacta con el "
 "administrador del sistema."
 
-#: access_control.rb:86
-msgid "Password"
-msgstr "Contraseña"
-
-#: access_control.rb:87
-msgid "repeat"
-msgstr "repítela"
-
-#: access_control.rb:113
-msgid ""
-"You have to remove the participant user before you can remove the "
-"administrator."
-msgstr ""
-"Primero tendrías que sacar a los usuarios participantes antes de que puedas "
-"borrar el administrador."
-
-#: access_control.rb:138
-msgid "Only letters and digits are allowed in the username."
-msgstr "En el nombre de usuario sólo se permiten letras y números."
-
-#: access_control.rb:140
-msgid "Passwords did not match."
-msgstr "Las contraseñas no coinciden."
-
-#: access_control.rb:173
-msgid "Change Access Control Settings"
-msgstr "Cambia las opciones de control de acceso"
-
-#: access_control.rb:177
-msgid "not activated"
-msgstr "sin activar"
-
-#: access_control.rb:179
-msgid "Activate"
-msgstr "Activa"
-
-#: access_control.rb:182
-msgid "will be activated when at least an admin user is configured"
-msgstr "se activará cuando haya al menos un administrador"
-
-#: access_control.rb:184
-msgid "Deactivate"
-msgstr "Desactiva"
-
-#: access_control.rb:186
-msgid "activated"
-msgstr "activado"
-
-#: access_control.rb:187
-msgid ""
-"You have to remove all users before you can deactivate the access control "
-"settings."
-msgstr ""
-"Primero tienes que sacar a todos los usuarios, luego podrás desactivar las "
-"opciones de control de acceso"
-
-#: access_control.rb:191
-msgid ""
-"You will be asked for the password you entered here after pressing save!"
-msgstr "Se pedirá la contraseña al pulsar guardar!"
-
-#: access_control.rb:194
-msgid ""
-"The user ‘admin’ has access to the vote as well as the configuration "
-"interface."
-msgstr "El usuario ‘admin’ puede votar y configurar el interfaz."
-
-#: access_control.rb:200
-msgid "The user ‘participant’ has only access to the vote interface."
-msgstr "El usuario ‘participante’ sólo puede votar."
-
-#: access_control.rb:206
-msgid "Access control:"
-msgstr "Control de acceso:"
-
-#: config.rb:36
-msgid "Event Schedule Poll"
-msgstr "Encuesta de fecha"
-
-#: config.rb:40
-msgid "Normal Poll"
-msgstr "Encuesta"
-
-#: delete_poll.rb:29
-msgid "Yes, I know what I am doing!"
-msgstr "Si, sé lo que estoy haciendo!"
-
-#: delete_poll.rb:30
-msgid "I hate these stupid entry fields."
-msgstr "Odio estos campos de entrada."
-
-#: delete_poll.rb:31
-msgid "I am aware of the consequences."
-msgstr "Estoy al caso de las consecuencias."
-
-#: delete_poll.rb:32
-msgid "Please delete this poll."
-msgstr "Por favor, borra esta encuesta."
-
-#: delete_poll.rb:41
-msgid "Example polls can not be deleted."
-msgstr "Las encuestas de ejemplo no se pueden borrar."
-
-#: delete_poll.rb:55
-msgid "The poll was deleted successfully!"
-msgstr "La encuesta se ha borrado correctamente!"
-
-#: delete_poll.rb:56
-msgid ""
-"If this was done by accident, please contact the administrator of the "
-"system. The poll can be recovered for an indeterministic amount of time, "
-"maybe it is already to late."
-msgstr ""
-"Si se hizo sin querer, por favor contacta con el administrador del sistema. "
-"La encuesta se puede restablecer por un periodo de tiempo razonable, quizás "
-"aún no es demasiado tarde."
-
-#: delete_poll.rb:58
-msgid "Things you can do now are"
-msgstr "Lo que puedes hacer ahora es"
-
-#: delete_poll.rb:59
-msgid "Return to dudle home and schedule a new poll"
-msgstr "Volver a la página de inicio de dudle y crear otra encuesta"
-
-#: delete_poll.rb:60
-msgid "Browse Wikipedia"
-msgstr "Buscar en la Wikipedia"
-
-#: delete_poll.rb:61
-#, fuzzy
-msgid "Search something in the Internet"
-msgstr "Buscar usando Google"
-
-#: delete_poll.rb:87
-msgid "To delete the poll, you have to type:"
-msgstr "Para borrar la encuesta tienes que escribir:"
-
-#: delete_poll.rb:95
-msgid "but you typed:"
-msgstr "pero has escrito:"
-
-#: delete_poll.rb:107
-msgid "Delete this Poll"
-msgstr "Borra esta encuesta"
-
-#: delete_poll.rb:108
-msgid "You want to delete the poll named"
-msgstr "¿Quieres borrar la encuesta"
-
-#: delete_poll.rb:109
-msgid "This is an irreversible action!"
-msgstr "Esta acción no tiene marcha atrás!"
-
-#: delete_poll.rb:110
-msgid ""
-"If you are sure in what you are doing, please type “%{question}” into the "
-"form."
-msgstr ""
-"Si estás seguro de lo que estás haciendo, por favor escribe “%{question}” en "
-"el formulario."
-
-#: dudle.rb:73
-msgid "Home"
-msgstr "Inicio"
-
-#: dudle.rb:76
-msgid "Poll"
-msgstr "Encuesta"
-
-#: dudle.rb:77 history.rb:35
-msgid "History"
-msgstr "Histórico"
-
-#: dudle.rb:80
-msgid "Edit Columns"
-msgstr "Modifica columnas"
-
-#: dudle.rb:81 invite_participants.rb:38
-msgid "Invite Participants"
-msgstr "Invita a participantes"
-
-#: dudle.rb:82
-msgid "Access Control"
-msgstr "Control de acceso"
-
-#: dudle.rb:83
-msgid "Overview"
-msgstr "Información general"
-
-#: dudle.rb:86
-msgid "Delete Poll"
-msgstr "Borra encuesta"
-
-#: dudle.rb:90
-msgid "About"
-msgstr "Sobre"
-
-#: dudle.rb:92
-msgid "Customize"
-msgstr "Personaliza"
-
-#: dudle.rb:100
-msgid "Dudle Home"
-msgstr "Inicio Dudle"
-
-#: dudle.rb:203 dudle.rb:221
-msgid "Previous"
-msgstr "Anterior"
-
-#: dudle.rb:204 dudle.rb:222
-msgid "Next"
-msgstr "Siguiente"
-
-#: dudle.rb:205 dudle.rb:223
-msgid "Finish"
-msgstr "Termina"
-
-#: dudle.rb:228
-msgid "All changes were saved sucessfully."
-msgstr "Se han guardado todos los cambios."
-
-#: dudle.rb:228
-msgid "Proceed!"
-msgstr "Adelante!"
-
-#: edit_columns.rb:44
-msgid "Add and Remove Columns"
-msgstr "Añadir o borrar columnas"
-
-#: edit_columns.rb:67 edit_columns.rb:86 timepollhead.rb:248
-msgid "Delete column"
-msgstr "Borrar columna"
-
-#: edit_columns.rb:69 edit_columns.rb:84 timepollhead.rb:247
-msgid "Add column"
-msgstr "Añadir columna"
-
-#: edit_columns.rb:71 edit_columns.rb:88
-msgid "Edit column"
-msgstr "Modifica columna"
-
-#: edit_columns.rb:99
-msgid "Undo"
-msgstr "Deshacer"
-
-#: edit_columns.rb:99
-msgid "Redo"
-msgstr "Rehacer"
-
-#: history.rb:28
-msgid "Poll of Version %{revisionnumber}"
-msgstr "Encuesta de la versión %{revisionnumber}"
-
-#: history.rb:32
-msgid "Current Poll (Version %{revisionnumber})"
-msgstr "Encuesta actual (Versió %{revisionnumber})"
-
-#: log.rb:111
-msgid "Version"
-msgstr "Versión"
-
-#: log.rb:111
-msgid "Date"
-msgstr "Fecha"
-
-#: log.rb:111
-msgid "Comment"
-msgstr "Comentario"
-
-#: overview.rb:31
+#: ../overview.rb:31
 msgid "The next steps are:"
 msgstr "Las siguientes acciones son:"
 
-#: overview.rb:33
+#: ../overview.rb:33
 msgid "Send the link to all participants:"
 msgstr "Mandar el vínculo a todos los participantes:"
 
-#: overview.rb:34
+#: ../overview.rb:34
 msgid "Send this link via email..."
 msgstr "Mandar el vínculo por correo electrónico..."
 
-#: overview.rb:35
+#: ../overview.rb:35
 msgid "Visit the poll yourself:"
 msgstr "Ver la encuesta:"
 
-#: overview.rb:36
+#: ../overview.rb:36
 msgid "Link to dudle poll about %{polltitle}"
 msgstr "Vincular la encuesta %{polltitle}"
 
-#: participate.rb:59
+#: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."
 msgstr "Se han guardado los cambios, redirigiendo a %{link}."
 
-#: poll.rb:92
+#: ../poll.rb:92
 msgid "Edit user %{user}..."
 msgstr "Modifica usuario %{user}..."
 
-#: poll.rb:96
+#: ../poll.rb:96
 msgid "Delete user %{user}..."
 msgstr "Borra usuario %{user}..."
 
-#: poll.rb:150
+#: ../poll.rb:150
 msgid "Total"
 msgstr "Total"
 
-#: poll.rb:182
+#: ../poll.rb:182
 msgid "Invite"
 msgstr "Invita"
 
-#: poll.rb:183 pollhead.rb:62 timepollhead.rb:158
+#: ../poll.rb:183 ../pollhead.rb:62 ../timepollhead.rb:158
 msgid "Name"
 msgstr "Nombre"
 
-#: poll.rb:228
+#: ../poll.rb:228
 msgid "Save Changes"
 msgstr "Guardar los cambios"
 
-#: poll.rb:232
+#: ../poll.rb:232
 msgid "Cancel"
 msgstr "Abortar"
 
-#: poll.rb:254
+#: ../poll.rb:254
 msgid "Do you really want to delete user %{user}?"
 msgstr "¿Realmente quieres borrar el usuario %{user}?"
 
-#: poll.rb:257
+#: ../poll.rb:257
 msgid "Confirm"
 msgstr "Aceptar"
 
-#: poll.rb:305
+#: ../poll.rb:305
 msgid "Comments"
 msgstr "Comentarios"
 
-#: poll.rb:308
+#: ../poll.rb:308
 msgid "Sort oldest comment first"
 msgstr "Los comentarios mas antiguos primero"
 
-#: poll.rb:311
+#: ../poll.rb:311
 msgid "Sort newest comment first"
 msgstr "Los comentarios mas nuevos primero"
 
-#: poll.rb:316
+#: ../poll.rb:316
 msgid "Go to last comment"
 msgstr "Ir al último comentario"
 
-#: poll.rb:329
+#: ../poll.rb:329
 msgid "%{user} said on %{time}"
 msgstr "%{user} ha dicho el %{time}"
 
-#: poll.rb:344
+#: ../poll.rb:344
 msgid "Go Up"
 msgstr "Arriba"
 
-#: poll.rb:350
+#: ../poll.rb:350
 msgid "says"
 msgstr "Dice"
 
-#: poll.rb:351
+#: ../poll.rb:351
 msgid "Submit Comment"
 msgstr "Manda un comentario"
 
-#: poll.rb:369
+#: ../poll.rb:369
 msgid "Show history items:"
 msgstr "Mostrar el histórico:"
 
-#: poll.rb:376
+#: ../poll.rb:376
 msgid "All"
 msgstr "Todo"
 
-#: poll.rb:377
+#: ../poll.rb:377
 msgid "Participant related"
 msgstr "Participantes relacionados"
 
-#: poll.rb:378
+#: ../poll.rb:378
 msgid "Column related"
 msgstr "Columnas relacionadas"
 
-#: poll.rb:379
+#: ../poll.rb:379
 msgid "Comment related"
 msgstr "Comentarios relacionados"
 
-#: poll.rb:380
+#: ../poll.rb:380
 msgid "Access Control related"
 msgstr "Controles de acceso relacionados"
 
-#: poll.rb:386
+#: ../poll.rb:386
 msgid "Update"
 msgstr "Actualiza"
 
-#: pollhead.rb:71
+#: ../pollhead.rb:71
 msgid "Edit Option"
 msgstr "Modifica la opción"
 
-#: pollhead.rb:72
+#: ../pollhead.rb:72
 msgid "Delete Option"
 msgstr "Borra la opción"
 
-#: pollhead.rb:87 timepollhead.rb:162
+#: ../pollhead.rb:87 ../timepollhead.rb:162
 msgid "Last Edit"
 msgstr "Última modificación"
 
-#: pollhead.rb:99
+#: ../pollhead.rb:99
 msgid "Option"
 msgstr "Opción"
 
-#: pollhead.rb:100
+#: ../pollhead.rb:100
 msgid "Description (optional)"
 msgstr "Descripción (opcional)"
 
-#: pollhead.rb:101
+#: ../pollhead.rb:101
 msgid "Add/Edit Option"
 msgstr "Añadir/Borrar Opción"
 
-#: pollhead.rb:102
+#: ../pollhead.rb:102
 msgid "Preview"
 msgstr "Previsualización"
 
-#: pollhead.rb:103
+#: ../pollhead.rb:103
 msgid ""
 "Enter all Options (columns), you want to ask the participants of the poll. "
 "The participants will state one vote for every option you give here "
@@ -711,7 +720,7 @@ msgstr ""
 "de la encuesta. Los participantes definirán un voto para cada opción "
 "definida."
 
-#: timepollhead.rb:113
+#: ../timepollhead.rb:113
 msgid ""
 "To add some time different to the default ones, please enter some string "
 "here (e.&thinsp;g., 09:30, morning, afternoon)."
@@ -719,58 +728,64 @@ msgstr ""
 "Para definir algunos de distintos de los que hay por defecto, por favor "
 "introduce el texto aquí (ej. 09:30, mañana, tarde)."
 
-#: timepollhead.rb:119
+#: ../timepollhead.rb:119
 msgid "This Time was already choosen."
 msgstr "Ya se ha marcado."
 
-#: timepollhead.rb:193
+#: ../timepollhead.rb:193
 msgid "Earlier"
 msgstr "Antes"
 
-#: timepollhead.rb:198
+#: ../timepollhead.rb:198
 msgid "Later"
 msgstr "Más tarde"
 
-#: timepollhead.rb:264
+#: ../timepollhead.rb:264
 msgid "Click on the dates to add or remove columns."
 msgstr "Pulsa en las fechas para añadir o borrar columnas."
 
-#: timepollhead.rb:312
+#: ../timepollhead.rb:312
 msgid "Optional:"
 msgstr "Opcional:"
 
-#: timepollhead.rb:313
+#: ../timepollhead.rb:313
 msgid "Enter a concrete value as start time."
 msgstr "Hora de inicio."
 
-#: timepollhead.rb:329
+#: ../timepollhead.rb:329
 msgid "Time"
 msgstr "Hora"
 
-#: timepollhead.rb:342
+#: ../timepollhead.rb:342
 msgid "Chosen"
 msgstr "Seleccionados"
 
-#: timepollhead.rb:343
+#: ../timepollhead.rb:343
 msgid "Not Chosen"
 msgstr "Sin seleccionar"
 
-#: timepollhead.rb:344
+#: ../timepollhead.rb:344
 msgid "Past"
 msgstr "Pasado"
 
-#: timepollhead.rb:378
+#: ../timepollhead.rb:378
 msgid "Select the whole row"
 msgstr "Marca toda la fila"
 
-#: timepollhead.rb:383
+#: ../timepollhead.rb:383
 msgid "Deselect the whole row"
 msgstr "Desmarca toda la fila"
 
-#: timepollhead.rb:427
+#: ../timepollhead.rb:427
 msgid "Add"
 msgstr "Añadir"
 
-#: timepollhead.rb:428
+#: ../timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "ej. 09:30, mañana, tarde"
+
+#~ msgid "Event Schedule Poll"
+#~ msgstr "Encuesta de fecha"
+
+#~ msgid "Normal Poll"
+#~ msgstr "Encuesta"
