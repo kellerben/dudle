@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-15 14:24+0200\n"
+"POT-Creation-Date: 2016-04-20 13:52+0200\n"
 "PO-Revision-Date: 2011-05-11 13:46+0100\n"
 "Last-Translator: Joeri de Ruiter <joeri@cs.ru.nl>\n"
 "Language-Team: \n"
@@ -30,18 +30,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../about.cgi:29
-msgid ""
-"If you find a bug or have something else which disturbes you, please let me "
-"know: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
-"subject=Feedback%20to%20dudle\">give feedback</a>"
+msgid "This Application is powered by %{Dudle}."
 msgstr ""
-"Als je een fout hebt gevonden of een andere opmerking hebt, laat dit dan "
-"weten:  <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
-"subject=Feedback%20to%20dudle\">geef feedback</a>"
 
 #: ../about.cgi:31
-msgid "--verbose"
-msgstr "--verbose"
+msgid "License"
+msgstr ""
 
 #: ../about.cgi:32
 msgid ""
@@ -52,13 +46,19 @@ msgstr ""
 "href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Versie 3</"
 "a>. "
 
-#: ../about.cgi:34
-msgid ""
-"You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</"
-"a>:"
+#: ../about.cgi:33
+msgid "The Sourcecode of this application can be found %{here}."
 msgstr ""
-"De broncode is verkrijgbaar met behulp van <a href='http://bazaar-vcs."
-"org/'>bazaar</a>: "
+
+#: ../about.cgi:35
+#, fuzzy
+msgid ""
+"Write me an e-mail if you found a bug, have something which disturbes you or "
+"any other feedback."
+msgstr ""
+"Als je een fout hebt gevonden of een andere opmerking hebt, laat dit dan "
+"weten:  <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
+"subject=Feedback%20to%20dudle\">geef feedback</a>"
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -203,12 +203,12 @@ msgid "Use this option if you see the characters in the parenthesis."
 msgstr "Kies deze optie als je de tekens tussen de haakjes kan zien."
 
 #: ../customize.cgi:58 ../customize.rb:58
-msgid "Use only normal strings"
-msgstr "Gebruik alleen gewone tekens"
-
-#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use this option if you have problems with some characters."
 msgstr "Kies deze optie als je problemen hebt met sommige tekens"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "Gebruik alleen gewone tekens"
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -365,12 +365,12 @@ msgid "Finish"
 msgstr "Afronden"
 
 #: ../dudle.rb:232
-msgid "All changes were saved sucessfully."
-msgstr "Alle wijzigingen zijn succesvol opgeslagen."
-
-#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Doorgaan!"
+
+#: ../dudle.rb:232
+msgid "All changes were saved sucessfully."
+msgstr "Alle wijzigingen zijn succesvol opgeslagen."
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -389,12 +389,12 @@ msgid "Edit column"
 msgstr "Wijzig kolom"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "Redo"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Undo"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Redo"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -798,6 +798,16 @@ msgstr "Voeg toe"
 #: ../timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "bijvoorbeeld 09:30, ochtend, middag"
+
+#~ msgid "--verbose"
+#~ msgstr "--verbose"
+
+#~ msgid ""
+#~ "You can get the sourcecode, using <a href='http://bazaar-vcs."
+#~ "org/'>bazaar</a>:"
+#~ msgstr ""
+#~ "De broncode is verkrijgbaar met behulp van <a href='http://bazaar-vcs."
+#~ "org/'>bazaar</a>: "
 
 #~ msgid "The link to your poll is:"
 #~ msgstr "De link naar de poll is:"

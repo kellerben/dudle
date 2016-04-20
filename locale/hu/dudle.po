@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 510\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-15 14:24+0200\n"
+"POT-Creation-Date: 2016-04-20 13:52+0200\n"
 "PO-Revision-Date: 2011-07-04 06:55+0200\n"
 "Last-Translator: Gabor Kiss <kissg@ssg.ki.iif.hu>\n"
 "Language-Team: \n"
@@ -33,17 +33,11 @@ msgstr ""
 "X-Poedit-Country: HUNGARY\n"
 
 #: ../about.cgi:29
-msgid ""
-"If you find a bug or have something else which disturbes you, please let me "
-"know: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
-"subject=Feedback%20to%20dudle\">give feedback</a>"
+msgid "This Application is powered by %{Dudle}."
 msgstr ""
-"Ha bármi hibát, hiányosságot, fennakadást tapasztalsz, jelezd a szerzőnek: "
-"<a href=\"mailto:Benjamin_pont_Kellermann@gmx_pont_németország?subject=dudle"
-"%20Feedback\">Visszajelzés</a>"
 
 #: ../about.cgi:31
-msgid "--verbose"
+msgid "License"
 msgstr ""
 
 #: ../about.cgi:32
@@ -54,13 +48,19 @@ msgstr ""
 "Ezen program forráskódja hozzáférhető az <a href='http://www.fsf.org/"
 "licensing/licenses/agpl-3.0.html'>AGPLv3</a> alapján."
 
-#: ../about.cgi:34
-msgid ""
-"You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</"
-"a>:"
+#: ../about.cgi:33
+msgid "The Sourcecode of this application can be found %{here}."
 msgstr ""
-"A forráskódot innen töltheted le a <a href='http://bazaar-vcs.org/'>bazaar</"
-"a> programmal:"
+
+#: ../about.cgi:35
+#, fuzzy
+msgid ""
+"Write me an e-mail if you found a bug, have something which disturbes you or "
+"any other feedback."
+msgstr ""
+"Ha bármi hibát, hiányosságot, fennakadást tapasztalsz, jelezd a szerzőnek: "
+"<a href=\"mailto:Benjamin_pont_Kellermann@gmx_pont_németország?subject=dudle"
+"%20Feedback\">Visszajelzés</a>"
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -203,13 +203,13 @@ msgstr ""
 "Csak akkor állítsd be, ha látod a zárójelben lévő speciális karaktereket."
 
 #: ../customize.cgi:58 ../customize.rb:58
-msgid "Use only normal strings"
-msgstr "Csak a szokványos karakterek használata."
-
-#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use this option if you have problems with some characters."
 msgstr ""
 "Ezt állítsd be, ha bizonyos karakterek megjelenítésével gondjaid vannak."
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "Csak a szokványos karakterek használata."
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -365,12 +365,12 @@ msgid "Finish"
 msgstr "Befejezés"
 
 #: ../dudle.rb:232
-msgid "All changes were saved sucessfully."
-msgstr "A változtatások elmentve."
-
-#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Végrehajtás"
+
+#: ../dudle.rb:232
+msgid "All changes were saved sucessfully."
+msgstr "A változtatások elmentve."
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -389,12 +389,12 @@ msgid "Edit column"
 msgstr "Oszlop módosítása"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "De mégis"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Mégsem"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "De mégis"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -777,6 +777,13 @@ msgstr "Hozzáadás"
 #: ../timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "pl. 09:30, reggel, délután"
+
+#~ msgid ""
+#~ "You can get the sourcecode, using <a href='http://bazaar-vcs."
+#~ "org/'>bazaar</a>:"
+#~ msgstr ""
+#~ "A forráskódot innen töltheted le a <a href='http://bazaar-vcs."
+#~ "org/'>bazaar</a> programmal:"
 
 #~ msgid "Event Schedule Poll"
 #~ msgstr "Időpontválasztás"

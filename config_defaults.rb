@@ -45,7 +45,7 @@ $conf.footer = []
 }
 
 $conf.errorlog = ""
-$conf.bugreportmail = "Benjamin.Kellermann@gmx.de"
+$conf.bugreportmail = "webmaster@#{$cgi.server_name}"
 $conf.auto_send_report = false
 $conf.known_errors = []
 
@@ -58,6 +58,8 @@ $conf.examplenotice = ""
 $conf.aboutnotice = ""
 
 $conf.default_css = "default.css"
+
+$conf.dudle_src = "https://github.com/kellerben/dudle/"
 
 
 if File.exists?("config.rb") || File.exists?("../config.rb")

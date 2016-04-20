@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-15 14:24+0200\n"
+"POT-Creation-Date: 2016-04-20 13:52+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@gmx.de>\n"
 "Language-Team: \n"
@@ -32,19 +32,12 @@ msgstr ""
 "X-Poedit-Country: CZECH REPUBLIC\n"
 
 #: ../about.cgi:29
-msgid ""
-"If you find a bug or have something else which disturbes you, please let me "
-"know: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
-"subject=Feedback%20to%20dudle\">give feedback</a>"
+msgid "This Application is powered by %{Dudle}."
 msgstr ""
-"Pokud narazíte na chybu nebo něco jiného, co vám vadí na této aplikaci, "
-"prosím kontaktujte mne: <a href=\"mailto:"
-"Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20dudle"
-"\">kontaktuj mne</a>"
 
 #: ../about.cgi:31
-msgid "--verbose"
-msgstr "--ukecaně"
+msgid "License"
+msgstr ""
 
 #: ../about.cgi:32
 msgid ""
@@ -54,13 +47,20 @@ msgstr ""
 "Zdrojový kód této aplikace je dostupný pod licencí <a href='http://www.fsf."
 "org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
 
-#: ../about.cgi:34
-msgid ""
-"You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</"
-"a>:"
+#: ../about.cgi:33
+msgid "The Sourcecode of this application can be found %{here}."
 msgstr ""
-"Zdrojový kód lze získat pomocí nástroje <a href='http://bazaar-vcs."
-"org/'>bazaar</a>:"
+
+#: ../about.cgi:35
+#, fuzzy
+msgid ""
+"Write me an e-mail if you found a bug, have something which disturbes you or "
+"any other feedback."
+msgstr ""
+"Pokud narazíte na chybu nebo něco jiného, co vám vadí na této aplikaci, "
+"prosím kontaktujte mne: <a href=\"mailto:"
+"Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20dudle"
+"\">kontaktuj mne</a>"
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -201,12 +201,12 @@ msgid "Use this option if you see the characters in the parenthesis."
 msgstr "Použij tuto volbu, pokud jsou znaky zobrazeny v závorkách."
 
 #: ../customize.cgi:58 ../customize.rb:58
-msgid "Use only normal strings"
-msgstr "Použij pouze normální řetězce"
-
-#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use this option if you have problems with some characters."
 msgstr "Použij tuto volbu, pokud některé znaky nejsou zobrazeny správně."
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "Použij pouze normální řetězce"
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -363,12 +363,12 @@ msgid "Finish"
 msgstr "Dokončit"
 
 #: ../dudle.rb:232
-msgid "All changes were saved sucessfully."
-msgstr "Všechny změny byly úspěšně uloženy."
-
-#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Vykonat!"
+
+#: ../dudle.rb:232
+msgid "All changes were saved sucessfully."
+msgstr "Všechny změny byly úspěšně uloženy."
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -387,12 +387,12 @@ msgid "Edit column"
 msgstr "Edituj sloupec"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "Odvolat zpět"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Zpět"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Odvolat zpět"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -775,6 +775,16 @@ msgstr "Přidat"
 #: ../timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "např. 09:30, ráno, odpoledne"
+
+#~ msgid "--verbose"
+#~ msgstr "--ukecaně"
+
+#~ msgid ""
+#~ "You can get the sourcecode, using <a href='http://bazaar-vcs."
+#~ "org/'>bazaar</a>:"
+#~ msgstr ""
+#~ "Zdrojový kód lze získat pomocí nástroje <a href='http://bazaar-vcs."
+#~ "org/'>bazaar</a>:"
 
 #~ msgid "Event Schedule Poll"
 #~ msgstr "Hlasování Plánu Události"

@@ -26,13 +26,15 @@ require_relative "dudle"
 $d = Dudle.new
 
 $d << "<div>" 
-$d << _('If you find a bug or have something else which disturbes you, please let me know: <a href="mailto:Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20dudle">give feedback</a>')
+$d << _('This Application is powered by %{Dudle}.') % {:Dudle => "<a href='https://dudle.inf.tu-dresden.de' />dudle</a>"}
 $d << "</div>"
-$d << "<div><h2>" + _("--verbose") + "</h2>"
+$d << "<div><h2>" + _("License") + "</h2>"
 $d << _("The sourcecode of this application is available under the terms of <a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>") 
+$d << _("The Sourcecode of this application can be found %{here}.") % { :here => "<a href=\"#{$conf.dudle_src}\">here</a>"}
+$d << '<a href="mailto:Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20dudle">'
+$d << _('Write me an e-mail if you found a bug, have something which disturbes you or any other feedback.')
+$d << '</a>'
 $d << "<br />"
-$d << _("You can get the sourcecode, using <a href='http://bazaar-vcs.org/'>bazaar</a>:")
-$d << "<pre>bzr branch #{$conf.siteurl} dudle</pre></div>"
 
 $d << $conf.aboutnotice
 

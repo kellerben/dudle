@@ -18,6 +18,11 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
+# The license terms (AGPL) demands you to publish your sourcecode if you made
+# any modifications to the server side code. The following URL will be visible
+# at the about page.
+# $conf.dudle_src = "https://github.com/kellerben/dudle/"
+
 # Choose your favorite version control system
 # bzr and git are implemented
 # Warning: bzr is slow!
@@ -55,7 +60,7 @@
 # If you do not know what to do what I am speaking about, just do not uncomment
 # the next line
 #$conf.errorlog = "/var/log/dudle_error.log"
-#$conf.bugreportmail = "Benjamin.Kellermann@gmx.de"
+#$conf.bugreportmail = "webmaster@yoursite.example.org"
 
 # Send bug reports automatically with the programm “mail”
 #$conf.auto_send_report = false
