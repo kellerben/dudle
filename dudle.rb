@@ -122,7 +122,7 @@ class Dudle
 
 		if is_poll?
 			# log last read acces manually (no need to grep server logfiles)
-			File.open("last_read_access","w").close unless @cgi.user_agent =~ /bot|Yahoo! Slurp|BaiDuSpider/i
+			File.open("last_read_access","w").close unless @cgi.user_agent =~ $conf.bots
 			@basedir = ".."
 			inittabs
 			@table = YAML::load(VCS.cat(self.revision, "data.yaml"))
