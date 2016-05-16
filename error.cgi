@@ -64,9 +64,11 @@ end
 $d.out
 
 known = false
-$conf.known_errors.each{|err|
-	known = true if errorstr.index(err)
-}
+if (errorstr)
+	$conf.known_errors.each{|err|
+		known = true if errorstr.index(err)
+	}
+end
 
 if $conf.auto_send_report && !known
 	tmpfile = "/tmp/error.#{rand(10000)}"
