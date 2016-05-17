@@ -23,7 +23,7 @@ require_relative "log"
 require "open3"
 
 def runcmd *args
-	Open3.popen3(*args) {|i,o,e,t| o.read.force_encoding('utf-8') }
+	Open3.popen3(*args) {|i,o,e,t| o.read }
 end
 
 class VCS

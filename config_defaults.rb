@@ -34,7 +34,7 @@ else
 	protocol = "http"
 	port = ":#{$cgi.server_port}"
 end
-$conf.siteurl = "#{protocol}://#{$cgi.server_name}#{port}#{$cgi.script_name.gsub(/[^\/]*$/,"")}".force_encoding("UTF-8")
+$conf.siteurl = "#{protocol}://#{$cgi.server_name}#{port}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
 
 $conf.breadcrumbs = []
 $conf.header = []

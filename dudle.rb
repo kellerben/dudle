@@ -33,7 +33,7 @@ require "locale"
 
 if File.exists?("data.yaml") && !File.stat("data.yaml").directory?
 	$is_poll = true
-	GetText.bindtextdomain("dudle", :path => Dir.pwd.force_encoding("UTF-8") + "/../locale/")
+	GetText.bindtextdomain("dudle", :path => Dir.pwd + "/../locale/")
 else
 	$is_poll = false
 	GetText.bindtextdomain("dudle", :path => Dir.pwd + "/locale/")
@@ -126,7 +126,7 @@ class Dudle
 			@basedir = ".."
 			inittabs
 			@table = YAML::load(VCS.cat(self.revision, "data.yaml"))
-			@urlsuffix = File.basename(File.expand_path(".")).force_encoding("UTF-8")
+			@urlsuffix = File.basename(File.expand_path("."))
 			@title = @table.name
 			
 			

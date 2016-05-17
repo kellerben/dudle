@@ -10,6 +10,7 @@ RewriteCond %{SCRIPT_FILENAME} !favicon.ico
 RewriteRule ^.*$ /maintenance.cgi [R=503,L]
 ErrorDocument 503 /maintenance.cgi
 
+SetEnv LC_ALL "en_US.UTF-8"
 
 <FilesMatch "^\.ht.*">
 	deny from all
