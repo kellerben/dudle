@@ -12,12 +12,12 @@ GNU AGPL v3 or higher (see file License)
  * gettext, potool, make (optional, if you want to generate localization files)
 
 # Installation
- 1. Place this application into a directory where cgi-scripts are evaluated.
- 2. If you want to change some configuration, state it in the file `config.rb`
+1.  Place this application into a directory where cgi-scripts are evaluated.
+2.  If you want to change some configuration, state it in the file `config.rb`
     (see `config_sample.rb` for help)
     to start with a default configuration.
- 3. The webserver needs the permission to write into the directory
- 4. You need `.mo` files in order to use localisation.
+3.  The webserver needs the permission to write into the directory
+4.  You need `.mo` files in order to use localisation.
     You have 2 possibilities:
     1. Run this small script to fetch the files from the main server:
 
@@ -34,26 +34,26 @@ GNU AGPL v3 or higher (see file License)
        sudo aptitude install gettext potool make
        make
        ```
- 5. In order to let access control work correctly, the webserver needs
+5.  In order to let access control work correctly, the webserver needs
     auth_digest support. It therefore may help to type:
 
     ```sh
     sudo a2enmod auth_digest
     ```
- 6. In order to get atom-feed support you need ruby-ratom to be
+6.  In order to get atom-feed support you need ruby-ratom to be
     installed. E.g.:
 
     ```sh
     sudo aptitude install ruby-dev libxml2-dev zlib1g-dev
     sudo gem install ratom
     ```
- 7. To make titles with umlauts working you need to check the encoding in
+7.  To make titles with umlauts working you need to check the encoding in
     .htaccess, e.g.
 
     ```sh
     SetEnv LC_ALL "en_US.UTF-8"
     ```
- 8. It might be the case, that you have to set some additional Variables
+8.  It might be the case, that you have to set some additional Variables
     in your .htaccess:
 
    	```sh
@@ -62,7 +62,7 @@ GNU AGPL v3 or higher (see file License)
     SetEnv GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
     SetEnv GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
     ```
- 9. If you installed dudle to a subdirectory (i.e. http://$YOUR_SERVER/$SOMEDIR/...),
+9.  If you installed dudle to a subdirectory (i.e. http://$YOUR_SERVER/$SOMEDIR/...),
     than you want to adopt the ErrorDocument directives in your .htaccess.
     (You need an absolute path here!)
 10. Try to open http://$YOUR_SERVER/check.cgi to check if your config
