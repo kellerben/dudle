@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-20 13:52+0200\n"
+"POT-Creation-Date: 2016-05-20 09:57+0200\n"
 "PO-Revision-Date: 2011-07-21 10:05+0200\n"
 "Last-Translator: Laura Mora i Aubert <blackhold@marsupi.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -162,6 +162,14 @@ msgstr "Vuelve a la página de inicio de dudle y programa una nueva Encuesta"
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Te tienes que identificar para acceder a esta página!"
+
+#: ../config.rb:94
+msgid "Event Schedule Poll"
+msgstr "Encuesta de fecha"
+
+#: ../config.rb:98
+msgid "Normal Poll"
+msgstr "Encuesta"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize Personal Settings"
@@ -324,7 +332,7 @@ msgstr "Información general"
 msgid "Delete Poll"
 msgstr "Borra encuesta"
 
-#: ../dudle.rb:89 ../example.cgi:60
+#: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
 msgstr "Ejemplos"
 
@@ -353,12 +361,12 @@ msgid "Finish"
 msgstr "Termina"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "Adelante!"
-
-#: ../dudle.rb:232
 msgid "All changes were saved sucessfully."
 msgstr "Se han guardado todos los cambios."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Adelante!"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -377,12 +385,12 @@ msgid "Edit column"
 msgstr "Modifica columna"
 
 #: ../edit_columns.rb:99
-msgid "Undo"
-msgstr "Deshacer"
-
-#: ../edit_columns.rb:99
 msgid "Redo"
 msgstr "Rehacer"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Deshacer"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -436,7 +444,11 @@ msgstr ""
 msgid "Please include the following as well:"
 msgstr "Por favor incluye también esto:"
 
-#: ../example.cgi:61
+#: ../example.cgi:60
+msgid "Example not found: %{example}"
+msgstr ""
+
+#: ../example.cgi:68
 msgid ""
 "If you want to play with the application, you may want to take a look at "
 "these example polls:"
@@ -793,9 +805,3 @@ msgstr "ej. 09:30, mañana, tarde"
 #~ msgstr ""
 #~ "Puedes descargarte el código fuente, usando <a href='http://bazaar-vcs."
 #~ "org/'>bazaar</a>:"
-
-#~ msgid "Event Schedule Poll"
-#~ msgstr "Encuesta de fecha"
-
-#~ msgid "Normal Poll"
-#~ msgstr "Encuesta"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-20 13:52+0200\n"
+"POT-Creation-Date: 2016-05-20 09:57+0200\n"
 "PO-Revision-Date: 2015–14-04 10:07+0200\n"
 "Last-Translator: Tel Amiel <tel theatsign amiel thedot info>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -156,6 +156,14 @@ msgstr "Voltar ao início do dudle e organizar uma nova enquete"
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Você deve se autorizar para poder acessar essa página!"
+
+#: ../config.rb:94
+msgid "Event Schedule Poll"
+msgstr "Enquete para eventos"
+
+#: ../config.rb:98
+msgid "Normal Poll"
+msgstr "Enquete normal"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize Personal Settings"
@@ -315,7 +323,7 @@ msgstr "Resumo"
 msgid "Delete Poll"
 msgstr "Remover enquete"
 
-#: ../dudle.rb:89 ../example.cgi:60
+#: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
 msgstr "Exemplos"
 
@@ -344,12 +352,12 @@ msgid "Finish"
 msgstr "Finalizar"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "Continuar!"
-
-#: ../dudle.rb:232
 msgid "All changes were saved sucessfully."
 msgstr "Todas as mudanças foram salvas com sucesso."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Continuar!"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -368,12 +376,12 @@ msgid "Edit column"
 msgstr "Editar coluna"
 
 #: ../edit_columns.rb:99
-msgid "Undo"
-msgstr "Desafazer"
-
-#: ../edit_columns.rb:99
 msgid "Redo"
 msgstr "Refazer"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Desafazer"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -426,7 +434,11 @@ msgstr ""
 msgid "Please include the following as well:"
 msgstr "Por favor inclua também:"
 
-#: ../example.cgi:61
+#: ../example.cgi:60
+msgid "Example not found: %{example}"
+msgstr ""
+
+#: ../example.cgi:68
 msgid ""
 "If you want to play with the application, you may want to take a look at "
 "these example polls:"
@@ -779,9 +791,3 @@ msgstr "e.&thinsp;g., 09:30, manhã, tarde"
 #~ msgstr ""
 #~ "Você pode ver o código fonte no <a href='http://bazaar-vcs.org/'>bazaar</"
 #~ "a>:"
-
-#~ msgid "Event Schedule Poll"
-#~ msgstr "Enquete para eventos"
-
-#~ msgid "Normal Poll"
-#~ msgstr "Enquete normal"

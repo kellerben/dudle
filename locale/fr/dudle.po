@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-20 13:52+0200\n"
+"POT-Creation-Date: 2016-05-20 09:57+0200\n"
 "PO-Revision-Date: 2011-06-03 16:57+0100\n"
 "Last-Translator: Gilles Seban\n"
 "Language-Team: \n"
@@ -183,6 +183,14 @@ msgstr "Retour à la page d'accueil et créer un nouveau sondage"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Vous devez vous identifier pour afficher cette page !"
 
+#: ../config.rb:94
+msgid "Event Schedule Poll"
+msgstr "Sondage de choix de date"
+
+#: ../config.rb:98
+msgid "Normal Poll"
+msgstr "Sondage normal"
+
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize Personal Settings"
 msgstr "Préférences"
@@ -343,7 +351,7 @@ msgstr "Écraser"
 msgid "Delete Poll"
 msgstr "Supprimer le sondage"
 
-#: ../dudle.rb:89 ../example.cgi:60
+#: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
 msgstr "Exemples"
 
@@ -372,12 +380,12 @@ msgid "Finish"
 msgstr "Fin"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr ""
-
-#: ../dudle.rb:232
 msgid "All changes were saved sucessfully."
 msgstr "Toutes les modifications ont été sauvegardées."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr ""
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -396,12 +404,12 @@ msgid "Edit column"
 msgstr "Éditer une colonne"
 
 #: ../edit_columns.rb:99
-msgid "Undo"
-msgstr "Annuler"
-
-#: ../edit_columns.rb:99
 msgid "Redo"
 msgstr "Répéter"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Annuler"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -444,7 +452,11 @@ msgstr ""
 msgid "Please include the following as well:"
 msgstr "Veuillez inclure ce qui suit :"
 
-#: ../example.cgi:61
+#: ../example.cgi:60
+msgid "Example not found: %{example}"
+msgstr ""
+
+#: ../example.cgi:68
 msgid ""
 "If you want to play with the application, you may want to take a look at "
 "these example polls:"
@@ -806,12 +818,6 @@ msgstr "ex : 09:30, matin, après-midi"
 #~ msgstr ""
 #~ "Vous pouvez télécharger le code source à l'aide de <a href='http://bazaar-"
 #~ "vcs.org/'>bazaar</a>:"
-
-#~ msgid "Event Schedule Poll"
-#~ msgstr "Sondage de choix de date"
-
-#~ msgid "Normal Poll"
-#~ msgstr "Sondage normal"
 
 #~ msgid "The link to your poll is:"
 #~ msgstr "Le lien de votre sondage est :"

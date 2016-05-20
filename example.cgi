@@ -32,30 +32,37 @@ if $cgi.include?("poll")
 		poll = p if $cgi["poll"] == p[:url]
 	}
 
-	raise "Example not found: '#{$cgi["poll"]}'" unless poll
+	if poll
 
-	targeturl = poll[:url]
+		targeturl = poll[:url]
 
-	if poll[:new_environment]
-		targeturl += "_#{Time.now.to_i}"
+		if poll[:new_environment]
+			targeturl += "_#{Time.now.to_i}"
 
-		while (File.exists?(targeturl))
-			targeturl += "I"
+			while (File.exists?(targeturl))
+				targeturl += "I"
+			end
+			VCS.branch(poll[:url],targeturl)
 		end
-		VCS.branch(poll[:url],targeturl)
+
+		if poll[:revno]
+			Dir.chdir(targeturl)
+			VCS.revert(poll[:revno])
+			Dir.chdir("..")
+		end
+
+		$d.html.header["status"] = "REDIRECT"
+		$d.html.header["Cache-Control"] = "no-cache"
+		$d.html.header["Location"] = $conf.siteurl + targeturl
+
+	else
+		$d << "<div class='error'>"
+		$d << _("Example not found: %{example}") % { :example => CGI.escapeHTML($cgi["poll"])}
+		$d << "</div>" 
 	end
+end
 
-	if poll[:revno]
-		Dir.chdir(targeturl)
-		VCS.revert(poll[:revno])
-		Dir.chdir("..")
-	end
-
-	$d.html.header["status"] = "REDIRECT"
-	$d.html.header["Cache-Control"] = "no-cache"
-	$d.html.header["Location"] = $conf.siteurl + targeturl
-
-else
+unless $d.html.header["status"] == "REDIRECT"
 	unless $conf.examples.empty?
 		$d << "<div class='textcolumn'><h2>" + _("Examples") + "</h2>"
 		$d << _("If you want to play with the application, you may want to take a look at these example polls:") 

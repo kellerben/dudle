@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-20 13:52+0200\n"
+"POT-Creation-Date: 2016-05-20 09:57+0200\n"
 "PO-Revision-Date: 2011-05-10 07:31+0200\n"
 "Last-Translator: Eros Pedrini\n"
 "Language-Team: \n"
@@ -177,6 +177,14 @@ msgstr "Ritorna alla pagina principale di Dudle e Programma un nuovo Sondaggio"
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Devi essere autorizzato per accedere a questa pagina!"
+
+#: ../config.rb:94
+msgid "Event Schedule Poll"
+msgstr ""
+
+#: ../config.rb:98
+msgid "Normal Poll"
+msgstr ""
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize Personal Settings"
@@ -338,7 +346,7 @@ msgstr "Panoramica"
 msgid "Delete Poll"
 msgstr "Elimina il Sondaggio"
 
-#: ../dudle.rb:89 ../example.cgi:60
+#: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
 msgstr "Esempi"
 
@@ -367,12 +375,12 @@ msgid "Finish"
 msgstr "Fine"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "Procedi!"
-
-#: ../dudle.rb:232
 msgid "All changes were saved sucessfully."
 msgstr "Tutti i cambiamenti sono stati salvati."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Procedi!"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -391,12 +399,12 @@ msgid "Edit column"
 msgstr "Modifica Colonna"
 
 #: ../edit_columns.rb:99
-msgid "Undo"
-msgstr "Annulla"
-
-#: ../edit_columns.rb:99
 msgid "Redo"
 msgstr "Rifai"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Annulla"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -449,7 +457,11 @@ msgstr ""
 msgid "Please include the following as well:"
 msgstr "Si prega di fornire anche le seguenti informazioni:"
 
-#: ../example.cgi:61
+#: ../example.cgi:60
+msgid "Example not found: %{example}"
+msgstr ""
+
+#: ../example.cgi:68
 msgid ""
 "If you want to play with the application, you may want to take a look at "
 "these example polls:"

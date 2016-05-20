@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-20 13:52+0200\n"
-"PO-Revision-Date: 2016-04-20 13:53+0100\n"
+"POT-Creation-Date: 2016-05-20 09:57+0200\n"
+"PO-Revision-Date: 2016-05-20 09:57+0100\n"
 "Last-Translator: Benjamin Kellermann\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -180,6 +180,14 @@ msgstr "Zurück zur dudle Hauptseite um eine neue Umfrage zu erstellen"
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Um auf diese Seite zugreifen zu können müssen Sie sich autorisieren!"
+
+#: ../config.rb:94
+msgid "Event Schedule Poll"
+msgstr "Nach einer Zeit fragen"
+
+#: ../config.rb:98
+msgid "Normal Poll"
+msgstr "Eine normale Umfrage"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize Personal Settings"
@@ -345,7 +353,7 @@ msgstr "Übersicht"
 msgid "Delete Poll"
 msgstr "Umfrage löschen"
 
-#: ../dudle.rb:89 ../example.cgi:60
+#: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
 msgstr "Beispiele"
 
@@ -374,12 +382,12 @@ msgid "Finish"
 msgstr "Fertig"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "Weiter"
-
-#: ../dudle.rb:232
 msgid "All changes were saved sucessfully."
 msgstr "Alle Änderungen wurden erfolgreich gespeichert."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Weiter"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -398,12 +406,12 @@ msgid "Edit column"
 msgstr "Bearbeite Spalte"
 
 #: ../edit_columns.rb:99
-msgid "Undo"
-msgstr "Rückgängig"
-
-#: ../edit_columns.rb:99
 msgid "Redo"
 msgstr "Wiederherstellen"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Rückgängig"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -456,7 +464,11 @@ msgstr ""
 msgid "Please include the following as well:"
 msgstr "Bitte schicken Sie auch die folgende Fehlermeldung:"
 
-#: ../example.cgi:61
+#: ../example.cgi:60
+msgid "Example not found: %{example}"
+msgstr "Beispiel nicht gefunden: %{example}"
+
+#: ../example.cgi:68
 msgid ""
 "If you want to play with the application, you may want to take a look at "
 "these example polls:"
@@ -819,12 +831,6 @@ msgstr "z.B., 9:30, morgens, abends"
 #~ msgstr ""
 #~ "Sie können sich den Quellcode mit <a href='http://bazaar-vcs."
 #~ "org/'>bazaar</a> herunterladen:"
-
-#~ msgid "Event Schedule Poll"
-#~ msgstr "Nach einer Zeit fragen"
-
-#~ msgid "Normal Poll"
-#~ msgstr "Eine normale Umfrage"
 
 #~ msgid "The link to your poll is:"
 #~ msgstr "Die URL zu Ihrer Umfrage ist:"
