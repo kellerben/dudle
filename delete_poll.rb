@@ -56,10 +56,10 @@ if $cgi.include?("confirmnumber")
 			deleteconfirmstr = _("The poll was deleted successfully!")
 			accidentstr = _("If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterminate amount of time, it could already be too late.")
 		end
-		nextthingsstr = _("Things you can do now are")
+		nextthingsstr = _("You can now")
 		homepagestr = _("Return to dudle home and schedule a new poll")
 		wikipediastr = _("Browse Wikipedia")
-		searchstr = _("Search something in the Internet")
+		searchstr = _("Search for something on the Internet")
 
 		$d.html << %{
 <p class='textcolumn'>
