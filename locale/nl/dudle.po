@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-20 09:57+0200\n"
+"POT-Creation-Date: 2016-08-14 21:43+0200\n"
 "PO-Revision-Date: 2011-05-11 13:46+0100\n"
 "Last-Translator: Joeri de Ruiter <joeri@cs.ru.nl>\n"
 "Language-Team: \n"
@@ -178,11 +178,11 @@ msgstr "Keer terug naar dudle home en plan een nieuwe Poll"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Je moet je authoriseren om deze pagina te kunnen bekijken!"
 
-#: ../config.rb:94
+#: ../config.rb:95
 msgid "Event Schedule Poll"
 msgstr ""
 
-#: ../config.rb:98
+#: ../config.rb:99
 msgid "Normal Poll"
 msgstr ""
 
@@ -203,20 +203,20 @@ msgid "Description"
 msgstr "Beschrijving"
 
 #: ../customize.cgi:57 ../customize.rb:57
-msgid "Use special characters"
-msgstr "Gebruik speciale tekens"
-
-#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use this option if you see the characters in the parenthesis."
 msgstr "Kies deze optie als je de tekens tussen de haakjes kan zien."
 
-#: ../customize.cgi:58 ../customize.rb:58
-msgid "Use this option if you have problems with some characters."
-msgstr "Kies deze optie als je problemen hebt met sommige tekens"
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use special characters"
+msgstr "Gebruik speciale tekens"
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
 msgstr "Gebruik alleen gewone tekens"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Kies deze optie als je problemen hebt met sommige tekens"
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -254,23 +254,28 @@ msgstr "Verwijder deze poll."
 msgid "Example polls can not be deleted."
 msgstr ""
 
+#: ../delete_poll.rb:43
+msgid "You should never see this text."
+msgstr ""
+
 #: ../delete_poll.rb:56
 msgid "The poll was deleted successfully!"
 msgstr "De Poll was succesvol verwijderd!"
 
 #: ../delete_poll.rb:57
+#, fuzzy
 msgid ""
 "If this was done by accident, please contact the administrator of the "
-"system. The poll can be recovered for an indeterministic amount of time, "
-"maybe it is already to late."
+"system. The poll can be recovered for an indeterminate amount of time, it "
+"could already be too late."
 msgstr ""
 "Als dit per ongeluk is gebeurd, neem dan contact op met de beheerder van het "
 "systeem. De poll kan voor onbepaalde tijd worden hersteld, misschien is het "
 "al te laat."
 
 #: ../delete_poll.rb:59
-msgid "Things you can do now are"
-msgstr "Je kan nu de volgende dingen doen"
+msgid "You can now"
+msgstr ""
 
 #: ../delete_poll.rb:60
 msgid "Return to dudle home and schedule a new poll"
@@ -282,7 +287,7 @@ msgstr "Browse Wikipedia"
 
 #: ../delete_poll.rb:62
 #, fuzzy
-msgid "Search something in the Internet"
+msgid "Search for something on the Internet"
 msgstr "Zoek iets met Google"
 
 #: ../delete_poll.rb:88
@@ -306,9 +311,10 @@ msgid "This is an irreversible action!"
 msgstr "Deze actie kan niet ongedaan worden gemaakt!"
 
 #: ../delete_poll.rb:111
+#, fuzzy
 msgid ""
-"If you are sure in what you are doing, please type “%{question}” into the "
-"form."
+"If you are sure that you want to permanently remove this poll, please type "
+"“%{question}” into the form."
 msgstr ""
 "Indien je zeker weet wat je doet, voer dan “%{question}” in in het formulier."
 
@@ -810,6 +816,9 @@ msgstr "Voeg toe"
 #: ../timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "bijvoorbeeld 09:30, ochtend, middag"
+
+#~ msgid "Things you can do now are"
+#~ msgstr "Je kan nu de volgende dingen doen"
 
 #~ msgid "--verbose"
 #~ msgstr "--verbose"

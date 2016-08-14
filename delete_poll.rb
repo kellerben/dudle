@@ -40,7 +40,7 @@ if $cgi.include?("confirmnumber")
 
 		if $conf.examples.collect{|e| e[:url] }.include?($d.urlsuffix)
 			deleteconfirmstr =  _("Example polls can not be deleted.")
-			accidentstr = "You should never see this text."
+			accidentstr = _("You should never see this text.")
 		else
 			FileUtils.cp_r($d.urlsuffix, "/tmp/#{$d.urlsuffix}.#{rand(9999999)}")
 			FileUtils.rm_r($d.urlsuffix)

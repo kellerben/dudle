@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-20 09:57+0200\n"
+"POT-Creation-Date: 2016-08-14 21:43+0200\n"
 "PO-Revision-Date: 2011-12-17 02:00+0100\n"
 "Last-Translator: Laura Mora i Aubert <blackhold@marsupi.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -160,11 +160,11 @@ msgstr "Torna a la pàgina d'inici de dudle i programa una nova Enquesta"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "T'has d'identificar per accedir a aquesta pàgina!"
 
-#: ../config.rb:94
+#: ../config.rb:95
 msgid "Event Schedule Poll"
 msgstr "Enquesta de data"
 
-#: ../config.rb:98
+#: ../config.rb:99
 msgid "Normal Poll"
 msgstr "Enquesta"
 
@@ -186,21 +186,21 @@ msgid "Description"
 msgstr "Descripció"
 
 #: ../customize.cgi:57 ../customize.rb:57
-msgid "Use special characters"
-msgstr "Fes servir caràcters especials"
-
-#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use this option if you see the characters in the parenthesis."
 msgstr ""
 "Fes servir aquesta opció si veus els caràcters que estan entre parèntesi"
 
-#: ../customize.cgi:58 ../customize.rb:58
-msgid "Use this option if you have problems with some characters."
-msgstr "Fes servir aquesta opció si no veus els caràcters especials."
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use special characters"
+msgstr "Fes servir caràcters especials"
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
 msgstr "No facis servir caràcters especials"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Fes servir aquesta opció si no veus els caràcters especials."
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -238,23 +238,28 @@ msgstr "Si us plau, esborra aquesta enquesta."
 msgid "Example polls can not be deleted."
 msgstr "Les enquestes d'exemple no es poden esborrar."
 
+#: ../delete_poll.rb:43
+msgid "You should never see this text."
+msgstr ""
+
 #: ../delete_poll.rb:56
 msgid "The poll was deleted successfully!"
 msgstr "L'enquesta s'ha esborrat correctament!"
 
 #: ../delete_poll.rb:57
+#, fuzzy
 msgid ""
 "If this was done by accident, please contact the administrator of the "
-"system. The poll can be recovered for an indeterministic amount of time, "
-"maybe it is already to late."
+"system. The poll can be recovered for an indeterminate amount of time, it "
+"could already be too late."
 msgstr ""
 "Si es va fer sense voler, si us plau contacta amb l'administrador del "
 "sistema. L'enquesta es pot restaurar en un període raonable de temps, potser "
 "encara no és massa tard."
 
 #: ../delete_poll.rb:59
-msgid "Things you can do now are"
-msgstr "El què pots fer ara és"
+msgid "You can now"
+msgstr ""
 
 #: ../delete_poll.rb:60
 msgid "Return to dudle home and schedule a new poll"
@@ -266,7 +271,7 @@ msgstr "Cerca a la Viquipèdia"
 
 #: ../delete_poll.rb:62
 #, fuzzy
-msgid "Search something in the Internet"
+msgid "Search for something on the Internet"
 msgstr "Cerca fent servir Google"
 
 #: ../delete_poll.rb:88
@@ -290,9 +295,10 @@ msgid "This is an irreversible action!"
 msgstr "Aquesta acció no té marxa enrere!"
 
 #: ../delete_poll.rb:111
+#, fuzzy
 msgid ""
-"If you are sure in what you are doing, please type “%{question}” into the "
-"form."
+"If you are sure that you want to permanently remove this poll, please type "
+"“%{question}” into the form."
 msgstr ""
 "Si estàs segur del què estàs fent, si us plau escriu “%{question}” al "
 "formulari."
@@ -790,6 +796,9 @@ msgstr "Afegir"
 #: ../timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "ex. 09:30, matí, tarda"
+
+#~ msgid "Things you can do now are"
+#~ msgstr "El què pots fer ara és"
 
 #~ msgid "--verbose"
 #~ msgstr "--verbose"

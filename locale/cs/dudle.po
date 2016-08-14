@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-20 09:57+0200\n"
+"POT-Creation-Date: 2016-08-14 21:43+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@gmx.de>\n"
 "Language-Team: \n"
@@ -175,11 +175,11 @@ msgstr "Návrat zpět na domovskou stránku dudle a naplánovat nové hlasován�
 msgid "You have to authorize yourself in order to access this page!"
 msgstr ""
 
-#: ../config.rb:94
+#: ../config.rb:95
 msgid "Event Schedule Poll"
 msgstr "Hlasování Plánu Události"
 
-#: ../config.rb:98
+#: ../config.rb:99
 msgid "Normal Poll"
 msgstr "Normální Hlasování"
 
@@ -201,20 +201,20 @@ msgid "Description"
 msgstr "Popis"
 
 #: ../customize.cgi:57 ../customize.rb:57
-msgid "Use special characters"
-msgstr "Použij speciální znaky"
-
-#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use this option if you see the characters in the parenthesis."
 msgstr "Použij tuto volbu, pokud jsou znaky zobrazeny v závorkách."
 
-#: ../customize.cgi:58 ../customize.rb:58
-msgid "Use this option if you have problems with some characters."
-msgstr "Použij tuto volbu, pokud některé znaky nejsou zobrazeny správně."
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use special characters"
+msgstr "Použij speciální znaky"
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
 msgstr "Použij pouze normální řetězce"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Použij tuto volbu, pokud některé znaky nejsou zobrazeny správně."
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -252,22 +252,27 @@ msgstr "Prosím smazat toto hlasování."
 msgid "Example polls can not be deleted."
 msgstr ""
 
+#: ../delete_poll.rb:43
+msgid "You should never see this text."
+msgstr ""
+
 #: ../delete_poll.rb:56
 msgid "The poll was deleted successfully!"
 msgstr "Hlasování bylo úspěšně smazáno!"
 
 #: ../delete_poll.rb:57
+#, fuzzy
 msgid ""
 "If this was done by accident, please contact the administrator of the "
-"system. The poll can be recovered for an indeterministic amount of time, "
-"maybe it is already to late."
+"system. The poll can be recovered for an indeterminate amount of time, it "
+"could already be too late."
 msgstr ""
 "Prosím informuj administrátora, pokud k této situaci došlo nešťastnou "
 "náhodou. Hlasování může být zpětně obnoveno, pokud ještě není pozdě."
 
 #: ../delete_poll.rb:59
-msgid "Things you can do now are"
-msgstr "Věci, které nyní můžeš dělat jsou"
+msgid "You can now"
+msgstr ""
 
 #: ../delete_poll.rb:60
 msgid "Return to dudle home and schedule a new poll"
@@ -279,7 +284,7 @@ msgstr "Prohlížej Wikipedii"
 
 #: ../delete_poll.rb:62
 #, fuzzy
-msgid "Search something in the Internet"
+msgid "Search for something on the Internet"
 msgstr "Hledej pomocí vyhledávače Google."
 
 #: ../delete_poll.rb:88
@@ -303,9 +308,10 @@ msgid "This is an irreversible action!"
 msgstr "Tuto akci nelze vrátit zpět!"
 
 #: ../delete_poll.rb:111
+#, fuzzy
 msgid ""
-"If you are sure in what you are doing, please type “%{question}” into the "
-"form."
+"If you are sure that you want to permanently remove this poll, please type "
+"“%{question}” into the form."
 msgstr ""
 "Pokud chceš opravdu vykonat tuto akci, prosím napiš do vstupního pole "
 "“%{question}”."
@@ -787,6 +793,9 @@ msgstr "Přidat"
 #: ../timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "např. 09:30, ráno, odpoledne"
+
+#~ msgid "Things you can do now are"
+#~ msgstr "Věci, které nyní můžeš dělat jsou"
 
 #~ msgid "--verbose"
 #~ msgstr "--ukecaně"

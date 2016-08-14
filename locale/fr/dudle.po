@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-20 09:57+0200\n"
+"POT-Creation-Date: 2016-08-14 21:43+0200\n"
 "PO-Revision-Date: 2011-06-03 16:57+0100\n"
 "Last-Translator: Gilles Seban\n"
 "Language-Team: \n"
@@ -183,11 +183,11 @@ msgstr "Retour à la page d'accueil et créer un nouveau sondage"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Vous devez vous identifier pour afficher cette page !"
 
-#: ../config.rb:94
+#: ../config.rb:95
 msgid "Event Schedule Poll"
 msgstr "Sondage de choix de date"
 
-#: ../config.rb:98
+#: ../config.rb:99
 msgid "Normal Poll"
 msgstr "Sondage normal"
 
@@ -208,21 +208,21 @@ msgid "Description"
 msgstr "Description"
 
 #: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "Utilisez cette option si vous voyez les caractères entre parenthèses."
+
+#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use special characters"
 msgstr "Utiliser des caractères spéciaux"
 
-#: ../customize.cgi:57 ../customize.rb:57
-msgid "Use this option if you see the characters in the parenthesis."
-msgstr "Utilisez cette option si vous voyez les caractères entre parenthèses."
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "Utiliser uniquement des caractères normaux"
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use this option if you have problems with some characters."
 msgstr ""
 "Utilisez cette option si vous avez des problèmes avec certains caractères."
-
-#: ../customize.cgi:58 ../customize.rb:58
-msgid "Use only normal strings"
-msgstr "Utiliser uniquement des caractères normaux"
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -260,23 +260,28 @@ msgstr "Supprimez ce sondage."
 msgid "Example polls can not be deleted."
 msgstr ""
 
+#: ../delete_poll.rb:43
+msgid "You should never see this text."
+msgstr ""
+
 #: ../delete_poll.rb:56
 msgid "The poll was deleted successfully!"
 msgstr "Ce sondage a été supprimé !"
 
 #: ../delete_poll.rb:57
+#, fuzzy
 msgid ""
 "If this was done by accident, please contact the administrator of the "
-"system. The poll can be recovered for an indeterministic amount of time, "
-"maybe it is already to late."
+"system. The poll can be recovered for an indeterminate amount of time, it "
+"could already be too late."
 msgstr ""
 "Si cela a été fait par accident, merci de prendre contact avec "
 "l'administrateur du système. Votre sondage peut-être restauré durant une "
 "durée indeterminée, peut-être est-il déjà trop tard."
 
 #: ../delete_poll.rb:59
-msgid "Things you can do now are"
-msgstr "Choses que vous pouvez faire maintenant"
+msgid "You can now"
+msgstr ""
 
 #: ../delete_poll.rb:60
 msgid "Return to dudle home and schedule a new poll"
@@ -288,7 +293,7 @@ msgstr "Naviguer sur Wikipedia"
 
 #: ../delete_poll.rb:62
 #, fuzzy
-msgid "Search something in the Internet"
+msgid "Search for something on the Internet"
 msgstr "Chercher quelque chose avec Google"
 
 #: ../delete_poll.rb:88
@@ -312,9 +317,10 @@ msgid "This is an irreversible action!"
 msgstr "C'est une action irréversible !"
 
 #: ../delete_poll.rb:111
+#, fuzzy
 msgid ""
-"If you are sure in what you are doing, please type “%{question}” into the "
-"form."
+"If you are sure that you want to permanently remove this poll, please type "
+"“%{question}” into the form."
 msgstr ""
 "Si vous êtes certains de ce que vous faites, tapez \"%{question}\" dans le "
 "formulaire."
@@ -808,6 +814,9 @@ msgstr "Ajouter"
 #: ../timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "ex : 09:30, matin, après-midi"
+
+#~ msgid "Things you can do now are"
+#~ msgstr "Choses que vous pouvez faire maintenant"
 
 #~ msgid "--verbose"
 #~ msgstr "--verbose"
