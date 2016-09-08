@@ -61,6 +61,12 @@ module Date_locale
         :daynames => %w(Sonntag Montag Dienstag Mittwoch Donnerstag Freitag Samstag),
         :abbr_daynames => %w(So Mo Di Mi Do Fr Sa),
       },     
+   :ee => {
+      :monthnames => [nil] + %w{Jaanuar Veebruar Märts Aprill Mai Juuni Juuli August September Oktober November Detsember},
+      :abbr_monthnames => [nil] + %w{Jaan. Veebr. Märts Apr. Mai Juuni Juuli. Aug. Sep. Okt. Nov. Dets.},
+      :daynames => %w{Pühapäev Esmapäev Teisipäev Kolmapäev Neljapäev Reedel Laupäev},
+      :abbr_daynames => %w{P E T K N R L},
+     },
    :en => {
       :monthnames => [nil] + %w{January February March April May June July August September October November December},
       :abbr_monthnames => [nil] + %w{Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec},
