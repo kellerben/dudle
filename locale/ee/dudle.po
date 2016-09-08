@@ -79,7 +79,7 @@ msgid ""
 "administrator."
 msgstr ""
 "Sa pead eemaldama osaleja kasutaja enne saate eemaldada"
-"Administraator".
+"administraator.
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
 #: ../delete_poll.rb:112 ../poll.rb:334
@@ -128,8 +128,7 @@ msgid ""
 "You have to remove all users before you can deactivate the access control "
 "settings."
 msgstr ""
-"
-Sa pead eemaldama kõik kasutajad, enne kui saab deaktiveerida juurdepääsu "
+"Sa pead eemaldama kõik kasutajad, enne kui saab deaktiveerida juurdepääsu "
 "kontroll."
 
 #: ../access_control.rb:193
@@ -143,7 +142,7 @@ msgid ""
 "The user ‘admin’ has access to the vote as well as the configuration "
 "interface."
 msgstr ""
-"Kasutaja "admin" on juurdepääs hääl samuti konfiguratsiooni liides."
+"Kasutaja ‘admin‘ on juurdepääs hääl samuti konfiguratsiooni liides."
 
 #: ../access_control.rb:202
 msgid "The user ‘participant’ has only access to the vote interface."
@@ -550,7 +549,7 @@ msgid ""
 "\"maintenance.html\" to enable the maintenance mode."
 msgstr ""
 "Sa ei sirvi seda faili otse. Palun loo faili nimega"
-"\" Maintenance.html \ ", et võimaldada hooldusseadistusega."
+"\"maintenance.html\", et võimaldada hooldusseadistusega."
 
 #: ../not_found.cgi:29
 msgid "Poll Not Found"
@@ -567,7 +566,7 @@ msgstr "On mitmeid põhjuseid, miks Poll kustutatakse:"
 #: ../not_found.cgi:33
 msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
 msgstr ""
-"Keegi klõpsanud "Kustuta Poll" ja kustutatakse küsitluse käsitsi."
+"Keegi klõpsanud “Kustuta Poll“ ja kustutatakse küsitluse käsitsi."
 
 #: ../not_found.cgi:34
 msgid ""
