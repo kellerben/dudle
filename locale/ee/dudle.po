@@ -79,7 +79,7 @@ msgid ""
 "administrator."
 msgstr ""
 "Sa pead eemaldama osaleja kasutaja enne saate eemaldada"
-"administraator.
+"administraator."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
 #: ../delete_poll.rb:112 ../poll.rb:334
