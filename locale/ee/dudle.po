@@ -738,107 +738,106 @@ msgid ""
 "The participants will state one vote for every option you give here "
 "separately."
 msgstr ""
-"Geben Sie alle Optionen (Spalten) ein, nach denen in der Umfrage gefragt "
-"werden soll. Die Teilnehmer der Umfrage können für jede Option einzeln ihre "
-"Stimme abgeben."
+"Sisestage kõik valikud (veerud), siis tahan küsida osalejate küsitlus. "
+"Osalejad märkida üks hääl iga võimalust annad siin eraldi."
 
 #: ../timepollhead.rb:113
 msgid ""
 "To add some time different to the default ones, please enter some string "
 "here (e.&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
-"Geben Sie eine Zeit ein, um eine andere als die vorgeschlagenen Zeiten "
-"auszuwählen (z.&thinsp;B. 9:30, morgens, abends)."
+"Lisada mõnda aega erinevates vaikimisi need, sisestage mõned string "
+"siin (näiteks 9:30 hommikul, pärastlõunal). "
 
 #: ../timepollhead.rb:119
 msgid "This Time was already choosen."
-msgstr "Diese Zeit war schon gewählt."
+msgstr "See aeg oli juba valitud."
 
 #: ../timepollhead.rb:193
 msgid "Earlier"
-msgstr "Früher"
+msgstr "Varasem"
 
 #: ../timepollhead.rb:198
 msgid "Later"
-msgstr "Später"
+msgstr "Pärast"
 
 #: ../timepollhead.rb:264
 msgid "Click on the dates to add or remove columns."
-msgstr "Klicken Sie auf ein Datum, um es der Umfrage hinzuzufügen."
+msgstr "Vajuta kuupäevad lisada või eemaldada veergu."
 
 #: ../timepollhead.rb:312
 msgid "Optional:"
-msgstr "Optional:"
+msgstr "Vabatahtlik:"
 
 #: ../timepollhead.rb:313
 msgid "Enter a concrete value as start time."
-msgstr "Geben Sie eine Zeit für ein Datum ein."
+msgstr "Sisesta konkreetne väärtus algusaeg."
 
 #: ../timepollhead.rb:329
 msgid "Time"
-msgstr "Zeit"
+msgstr "Aeg"
 
 #: ../timepollhead.rb:342
 msgid "Chosen"
-msgstr "Gewählt"
+msgstr "Valitud"
 
 #: ../timepollhead.rb:343
 msgid "Not Chosen"
-msgstr "Nicht Gewählt"
+msgstr "Ei valitud"
 
 #: ../timepollhead.rb:344
 msgid "Past"
-msgstr "Vergangen"
+msgstr "Minevik"
 
 #: ../timepollhead.rb:378
 msgid "Select the whole row"
-msgstr "Wähle die ganze Zeile aus"
+msgstr "Vali kogu rida"
 
 #: ../timepollhead.rb:383
 msgid "Deselect the whole row"
-msgstr "Die Auswahl der ganzen Zeile entfernen"
+msgstr "Tühista terve rida"
 
 #: ../timepollhead.rb:427
 msgid "Add"
-msgstr "Hinzufügen"
+msgstr "Lisama"
 
 #: ../timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
-msgstr "z.B., 9:30, morgens, abends"
+msgstr "näiteks, 9:30, hommikul, pärastlõunal"
 
 #~ msgid "Things you can do now are"
-#~ msgstr "Dinge, die Sie jetzt machen können:"
+#~ msgstr "Asjad, mida saate teha nüüd on"
 
 #~ msgid "--verbose"
-#~ msgstr "--verbose"
+#~ msgstr "--paljusõnaline"
 
 #~ msgid ""
 #~ "You can get the sourcecode, using <a href='http://bazaar-vcs."
 #~ "org/'>bazaar</a>:"
 #~ msgstr ""
-#~ "Sie können sich den Quellcode mit <a href='http://bazaar-vcs."
-#~ "org/'>bazaar</a> herunterladen:"
+#~ "Saad lähtekoodi, kasutades <a href='http://bazaar-vcs."
+#~ "org/'>bazaar</a>:"
 
 #~ msgid "The link to your poll is:"
-#~ msgstr "Die URL zu Ihrer Umfrage ist:"
+#~ msgstr "Link oma bassein on:"
 
 #~ msgid "To the Vote interface"
-#~ msgstr "Zur Abstimmung"
+#~ msgstr "Hääletusele liides"
 
 #~ msgid "Alternative"
-#~ msgstr "Alternative"
+#~ msgstr "Alternatiiv"
 
 #~ msgid "Reload"
-#~ msgstr "Neu laden"
+#~ msgstr "Koormus jälle"
 
 #~ msgid "Delete %{user}?"
-#~ msgstr "Lösche Teilnehmer %{user}?"
+#~ msgstr "Kustutama %{user}?"
 
 #~ msgid "Edit Column"
-#~ msgstr "Bearbeite Spalte"
+#~ msgstr "Muuta veerg"
 
 #~ msgid "Delete Column"
-#~ msgstr "Lösche Spalte"
+#~ msgstr "kustutada veerg"
 
 #~ msgid "Delete User"
-#~ msgstr "Lösche Teilnehmer"
+#~ msgstr "Kustutada kasutaja"
