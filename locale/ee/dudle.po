@@ -22,7 +22,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-08 21:43+0200\n"
 "PO-Revision-Date: 2016-09-08 21:45+0100\n"
-"Last-Translator: Benson Muite\n"
+"Last-Translator: Benson Muite with aid of Google translate\n"
 "Language-Team: \n"
 "Language: ee_EE\n"
 "MIME-Version: 1.0\n"
@@ -195,229 +195,222 @@ msgstr "Sa pead küpsiseid, et isikupärastada seaded."
 
 #: ../customize.cgi:39 ../customize.rb:39
 msgid "Current Setting"
-msgstr "Momentane Einstellung"
+msgstr "Praegune seade"
 
 #: ../customize.cgi:40 ../customize.rb:40
 msgid "Description"
-msgstr "Beschreibung"
+msgstr "Kirjeldus"
 
 #: ../customize.cgi:57 ../customize.rb:57
 msgid "Use this option if you see the characters in the parenthesis."
-msgstr ""
-"Benutzen Sie diese Einstellung, wenn Sie die Zeichen in den Klammern lesen "
-"können."
+msgstr "Kasutage seda valikut, kui soovid näha tähemärki sulgudes."
 
 #: ../customize.cgi:57 ../customize.rb:57
 msgid "Use special characters"
-msgstr "Benutze spezielle Zeichen"
+msgstr "Kasuta erisümboleid"
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
-msgstr "Benutze nur gewöhnliche Zeichen"
+msgstr "Kasutage ainult tavaline stringid"
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use this option if you have problems with some characters."
-msgstr ""
-"Benutzen Sie diese Einstellung, wenn Probleme mit der Darstellung einiger "
-"Zeichen auftreten."
+msgstr "Kasutage seda valikut, kui sul on probleeme mõne tähemärki."
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
-msgstr "Zeichen"
+msgstr "Märgistikuks"
 
 #: ../customize.cgi:66 ../customize.rb:66
 msgid "Stylesheet"
-msgstr "Aussehen"
+msgstr "Stiilileht"
 
 #: ../customize.cgi:81 ../customize.rb:81
 msgid "Default Username"
-msgstr "Voreingestellter Benutzername"
+msgstr "Vaikimisi kasutajanime"
 
 #: ../customize.cgi:106 ../customize.rb:106
 msgid "Edit"
-msgstr "Bearbeiten"
+msgstr "Muuta"
 
 #: ../delete_poll.rb:30
 msgid "Yes, I know what I am doing!"
-msgstr "Ja, ich weiß was ich mache!"
+msgstr "Jah, ma tean, mida ma teen!"
 
 #: ../delete_poll.rb:31
 msgid "I hate these stupid entry fields."
-msgstr "Ich hasse diese sinnlosen Eingabefelder."
+msgstr "Ma vihkan neid rumalaid sisestusvälju."
 
 #: ../delete_poll.rb:32
 msgid "I am aware of the consequences."
-msgstr "Ich bin mir über die Konsequenzen bewusst."
+msgstr "Olen teadlik tagajärgedest."
 
 #: ../delete_poll.rb:33
 msgid "Please delete this poll."
-msgstr "Bitte lösche diese Umfrage."
+msgstr "Palun kustuta see küsitlus."
 
 #: ../delete_poll.rb:42
 msgid "Example polls can not be deleted."
-msgstr "Beispielumfragen können nicht gelöscht werden."
+msgstr "Näide poolused ei saa kustutada."
 
 #: ../delete_poll.rb:43
 msgid "You should never see this text."
-msgstr "Diesen Text sollten sie niemals sehen."
+msgstr "Te ei tohiks kunagi näha seda teksti."
 
 #: ../delete_poll.rb:56
 msgid "The poll was deleted successfully!"
-msgstr "Die Umfrage wurde erfolgreich gelöscht!"
+msgstr "Küsitlus viidi kustutatud!"
 
 #: ../delete_poll.rb:57
 msgid ""
 "If this was done by accident, please contact the administrator of the "
 "system. The poll can be recovered for an indeterminate amount of time, it "
 "could already be too late."
-msgstr ""
-"Wenn das ein Versehen war, kontaktieren Sie bitte umgehend den Administrator "
-"des Systems. Die Umfrage kann für einen unvorhersehbaren Zeitraum "
-"wiederhergestellt werden, vielleicht ist jetzt schon zu spät."
+msgstr "Kui see oli tehtud juhuslikult, pöörduge administraatori süsteemi. Küsitlus "
+"on võimalik taaskasutada määramata aja jooksul, siis võib olla juba liiga hilja."
 
 #: ../delete_poll.rb:59
 msgid "You can now"
-msgstr "Sie können jetzt"
+msgstr "Nüüd saate"
 
 #: ../delete_poll.rb:60
 msgid "Return to dudle home and schedule a new poll"
-msgstr "Zurück zur dudle Hauptseite um eine neue Umfrage zu erstellen"
+msgstr "Tagasi dudle kodus ja ajakava uus küsitlus"
 
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
-msgstr "bei Wikipedia stöbern"
+msgstr "Sirvi wikipedia"
 
 #: ../delete_poll.rb:62
 msgid "Search for something on the Internet"
-msgstr "Etwas im Internet suchen"
+msgstr "Otsi internetist midagi"
 
 #: ../delete_poll.rb:88
 msgid "To delete the poll, you have to type:"
-msgstr "Um diese Umfrage zu löschen müssen Sie folgenden Satz eingeben:"
+msgstr "Kustutada küsitlus, siis tuleb kirjutada:"
 
 #: ../delete_poll.rb:96
 msgid "but you typed:"
-msgstr "Ihre Eingabe lautete aber:"
+msgstr "aga sa kirjutasid:"
 
 #: ../delete_poll.rb:108
 msgid "Delete this Poll"
-msgstr "Diese Umfrage löschen"
+msgstr "Kustuta see Poll"
 
 #: ../delete_poll.rb:109
 msgid "You want to delete the poll named"
-msgstr "Sie wollen die Umfrage mit folgendem Namen löschen:"
+msgstr "Sa tahad kustutada küsitlus nimega"
 
 #: ../delete_poll.rb:110
 msgid "This is an irreversible action!"
-msgstr "Das Löschen der gesamten Umfrage ist unwiederrufbar!"
+msgstr "See on pöördumatu action!"
 
 #: ../delete_poll.rb:111
 msgid ""
 "If you are sure that you want to permanently remove this poll, please type "
 "“%{question}” into the form."
-msgstr ""
-"Wenn Sie sich sicher sind, dann geben Sie bitte „%{question}“ in das "
-"folgende Formular ein."
+msgstr "Kui sa oled kindel, et soovid jäädavalt eemaldada selle küsitluse, siis kirjuta"
+"“%{question}“ kujule."
 
 #: ../dudle.rb:73
 msgid "Home"
-msgstr "Hauptseite"
+msgstr "Kodu"
 
 #: ../dudle.rb:76
 msgid "Poll"
-msgstr "Umfrage"
+msgstr "Küsitlus"
 
 #: ../dudle.rb:77 ../history.rb:35
 msgid "History"
-msgstr "Versionen"
+msgstr "Ajalugu"
 
 #: ../dudle.rb:80
 msgid "Edit Columns"
-msgstr "Spalten bearbeiten"
+msgstr "Edit veerud"
 
 #: ../dudle.rb:81 ../invite_participants.rb:38
 msgid "Invite Participants"
-msgstr "Teilnehmer einladen"
+msgstr "Kutsu osalejad"
 
 #: ../dudle.rb:82
 msgid "Access Control"
-msgstr "Zugriffskontrolle"
+msgstr "Juurdepääsu kontroll"
 
 #: ../dudle.rb:83
 msgid "Overview"
-msgstr "Übersicht"
+msgstr "Ülevaade"
 
 #: ../dudle.rb:86
 msgid "Delete Poll"
-msgstr "Umfrage löschen"
+msgstr "Kustuta küsitlus"
 
 #: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
-msgstr "Beispiele"
+msgstr "Näited"
 
 #: ../dudle.rb:90
 msgid "About"
-msgstr "Über dudle"
+msgstr "Umbes"
 
 #: ../dudle.rb:92
 msgid "Customize"
-msgstr "Personalisieren"
+msgstr "Kohanda"
 
 #: ../dudle.rb:100
 msgid "Dudle Home"
-msgstr "Dudle Startseite"
+msgstr "Dudle kodu"
 
 #: ../dudle.rb:207 ../dudle.rb:225
 msgid "Previous"
-msgstr "Zurück"
+msgstr "Eelmine"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Next"
-msgstr "Weiter"
+msgstr "Järgmine"
 
 #: ../dudle.rb:209 ../dudle.rb:227
 msgid "Finish"
-msgstr "Fertig"
+msgstr "Lõpetama"
 
 #: ../dudle.rb:232
 msgid "All changes were saved sucessfully."
-msgstr "Alle Änderungen wurden erfolgreich gespeichert."
+msgstr "Kõik muudatused salvestati edukalt."
 
 #: ../dudle.rb:232
 msgid "Proceed!"
-msgstr "Weiter"
+msgstr "Jätkama"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
-msgstr "Spalten hinzufügen oder entfernen"
+msgstr "Lisa ja eemalda veerud"
 
 #: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
 msgid "Delete column"
-msgstr "Lösche Spalte"
+msgstr "Kustuta veerg"
 
 #: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
 msgid "Add column"
-msgstr "Füge Spalte hinzu"
+msgstr "Lisa veerg"
 
 #: ../edit_columns.rb:71 ../edit_columns.rb:88
 msgid "Edit column"
-msgstr "Bearbeite Spalte"
+msgstr "Muuda veeru"
 
 #: ../edit_columns.rb:99
 msgid "Redo"
-msgstr "Wiederherstellen"
+msgstr "ümber tegema"
 
 #: ../edit_columns.rb:99
 msgid "Undo"
-msgstr "Rückgängig"
+msgstr "Tühistama"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
-msgstr "Fehler"
+msgstr "Viga"
 
 #: ../error.cgi:46
 msgid "The following error was printed:"
-msgstr "Der folgende Fehler wurde ausgegeben:"
+msgstr "Järgmised viga oli trükitud:"
 
 #: ../error.cgi:50
 msgid ""
@@ -433,318 +426,311 @@ msgid ""
 "%{errormessage}\n"
 "Yours,\n"
 msgstr ""
-"Hallo!\n"
+"Tere! \n"
 "\n"
-"Ich habe einen Fehler in Ihrer Anwendung auf %{urlofsite} gefunden.\n"
-"Das habe ich gemacht:\n"
+"Leidsin viga teie taotluse% {urlofsite}. \n"
+"Ma tegin järgmised: \n"
 "\n"
-"<Bitte beschreiben Sie, was Sie gemacht haben>\n"
-"<z.B.: Ich wollte ein Kommentar in einer Umfrage senden>\n"
+"<Kirjeldage, mida sa tegid> \n"
+"<Nt. Tahtsin saata kommentaari küsitlus.> \n"
 "\n"
-"Ich benutze <bitte hier ihren browser und ihr Betriebssystem einsetzen>.\n"
-"%{errormessage}\n"
-"Mit freundlichen Grüßen,\n"
+"Ma kasutan <märkige brauseri ja operatsioonisüsteemi> \n"
+"%{errormessage} \n"
+"Teil, \n"
+
 
 #: ../error.cgi:51
 msgid "Bug in dudle"
-msgstr "Fehler im dudle"
+msgstr "Viga dudle"
 
 #: ../error.cgi:53
 msgid ""
 "An error occured while executing dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Während der Ausführung von dudle gab es einen Fehler.<br/>Bitte schicken Sie "
-"einen Fehlerbericht in dem Sie den Namen Ihres Browsers, Ihres "
-"Betriebssystems und was Sie gemacht haben angeben an %{admin}."
+"Tekkis viga täidesaatva kritseldama. <br/>Palun saada veateate:"
+"Sealhulgas brauseri, operatsioonisüsteemi ja mida sa tegid %{admin}."
 
 #: ../error.cgi:56
 msgid "Please include the following as well:"
-msgstr "Bitte schicken Sie auch die folgende Fehlermeldung:"
+msgstr "Palun sisaldama järgmisi samuti:"
 
 #: ../example.cgi:60
 msgid "Example not found: %{example}"
-msgstr "Beispiel nicht gefunden: %{example}"
+msgstr "Näide ei leitud: %{example}"
 
 #: ../example.cgi:68
 msgid ""
 "If you want to play with the application, you may want to take a look at "
 "these example polls:"
 msgstr ""
-"Wenn Sie diese Applikation ausprobieren möchten, können Sie auch auf "
-"folgende Beispielumfragen schauen:"
+"Kui sa tahad mängida taotluse, võite võtta pilk nende Näiteks küsitlused:"
 
 #: ../history.rb:28
 msgid "Poll of Version %{revisionnumber}"
-msgstr "Umfrage der Version %{revisionnumber}"
+msgstr "Poll versioon %{revisionnumber}"
 
 #: ../history.rb:32
 msgid "Current Poll (Version %{revisionnumber})"
-msgstr "Aktuelle Umfrage (Version %{revisionnumber})"
+msgstr "Praegune küsitlus (versioon %{revisionnumber})"
 
 #: ../index.cgi:32
 msgid "Please enter a descriptive title."
-msgstr "Bitte geben Sie einen Titel für die Umfrage ein."
+msgstr "Palun sisesta kirjeldav pealkiri."
 
 #: ../index.cgi:48
 msgid "Custom address may only contain letters, numbers, and dashes."
-msgstr ""
-"Die spezielle eigene URL darf nur Buchstaben, Zahlen, Bindestrich und "
-"Unterstrich enthalten."
+msgstr "Custom aadress võib sisaldada ainult tähti, numbreid ja kriipsud."
 
 #: ../index.cgi:50
 msgid "A Poll with this address already exists."
-msgstr "Eine Umfrage mit dieser URL existiert bereits."
+msgstr "Küsitlus selle aadress on juba olemas."
 
 #: ../index.cgi:69
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr ""
-"Die Umfrage wurde erfolgreich erstellt. Die Adresse der Umfrage lautet: "
-"%{link}"
+"Küsitlus viidi edukalt loodud. Link endale küsitlus on: %{link}"
 
 #: ../index.cgi:76
 msgid "Create New Poll"
-msgstr "Neue Umfrage erstellen"
+msgstr "Loo uus poll"
 
 #: ../index.cgi:78
 msgid "Title"
-msgstr "Titel"
+msgstr "pealkiri"
 
 #: ../index.cgi:79
 msgid "Type"
-msgstr "Typ"
+msgstr "Tüüp"
 
 #: ../index.cgi:80
 msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
-msgstr "Nach einer Zeit fragen (z.&thinsp;B. einen Besprechungstermin finden)"
+msgstr "Etenduste ajakava Poll (näiteks koosoleku kokku)"
 
 #: ../index.cgi:81
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
-msgstr "Normale Umfrage (z.&thinsp;B. eine Umfrage über die beste Kaffeesorte)"
+msgstr "Tavaline Poll (näiteks hääletanud milline on parim kohvi)"
 
 #: ../index.cgi:82
 msgid "Custom address (optional)"
-msgstr "eigene URL (optional)"
+msgstr "Custom aadress (vabatahtlik)"
 
 #: ../index.cgi:83
 msgid "May contain letters, numbers, and dashes."
-msgstr "Kann Buchstaben, Zahlen, Bindestriche und Unterstriche enthalten."
+msgstr "Võib sisaldada tähti, numbreid ja kriipsud."
 
 #: ../index.cgi:85
 msgid "Create"
-msgstr "Erstellen"
+msgstr "Looma"
 
 #: ../log.rb:111
 msgid "Date"
-msgstr "Datum"
+msgstr "Kuupäev"
 
 #: ../log.rb:111
 msgid "Version"
-msgstr "Version"
+msgstr "Versioon"
 
 #: ../log.rb:111
 msgid "Comment"
-msgstr "Kommentar"
+msgstr "Kommentaar"
 
 #: ../maintenance.cgi:25 ../maintenance.cgi:27
 msgid "Maintenance"
-msgstr "Wartung"
+msgstr "Hooldus"
 
 #: ../maintenance.cgi:36
 msgid "This site is currently under maintenance!"
-msgstr "Diese Webseite wird gerade gewartet!"
+msgstr "See sait on praegu hooldus!"
 
 #: ../maintenance.cgi:39
 msgid ""
 "You should not browse to this file directly. Please create a file named "
 "\"maintenance.html\" to enable the maintenance mode."
 msgstr ""
-"Sie sollten diese Datei nicht direkt aufrufen. Bitte erstellen sie eine "
-"Datei namens \"maintenance.html\" um den Wartungsmodus zu aktivieren."
+"Sa ei sirvi seda faili otse. Palun loo faili nimega"
+"\" Maintenance.html \ ", et võimaldada hooldusseadistusega."
 
 #: ../not_found.cgi:29
 msgid "Poll Not Found"
-msgstr "Umfrage nicht gefunden"
+msgstr "Küsitlus ei leitud"
 
 #: ../not_found.cgi:31
 msgid "The requested Poll was not found."
-msgstr "Die angeforderte Umfrage wurde nicht gefunden."
+msgstr "Taotluse poll ei leitud."
 
 #: ../not_found.cgi:32
 msgid "There are several reasons, why a Poll is deleted:"
-msgstr "Es gibt mehrere Gründe, warum eine Umfrage gelöscht wurde:"
+msgstr "On mitmeid põhjuseid, miks Poll kustutatakse:"
 
 #: ../not_found.cgi:33
 msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
 msgstr ""
-"Jemand hat auf „Umfrage löschen“ geklickt und die Umfrage manuell gelöscht"
+"Keegi klõpsanud "Kustuta Poll" ja kustutatakse küsitluse käsitsi."
 
 #: ../not_found.cgi:34
 msgid ""
 "The Poll was deleted by the administrator because it was not accessed for a "
 "long time."
 msgstr ""
-"Die Umfrage wurde vom Administrator gelöscht, weil lange nicht auf sie "
-"zugegriffen wurde."
+"Küsitlus viidi kustutatakse administraatori poolt, sest see ei olnud "
+"kättesaadav juba pikka aega."
 
 #: ../not_found.cgi:35
 msgid ""
 "If you think, the deletion was done by error, please contact the "
 "adminsistrator of the system."
 msgstr ""
-"Bitte kontaktieren Sie den Administrator des Systems, wenn Sie denken, dass "
-"die Umfrage versehentlich gelöscht wurde."
+"Kui te arvate, kustutamist tehti viga, pöördu administraatori süsteemi."
 
 #: ../overview.rb:31
 msgid "The next steps are:"
-msgstr "Die nächsten Schritte sind:"
+msgstr "Järgmised sammud on järgmised:"
 
 #: ../overview.rb:33
 msgid "Send the link to all participants:"
-msgstr "Senden sie diesen Link zu allen Teilnehmern:"
+msgstr "Saada link kõigile osalejatele:"
 
 #: ../overview.rb:34
 msgid "Send this link via email..."
-msgstr "Diese URL per E-Mail verschicken..."
+msgstr "Saada see link e-posti teel ..."
 
 #: ../overview.rb:35
 msgid "Visit the poll yourself:"
-msgstr "Besuchen Sie selbst die Umfrage:"
+msgstr "Külasta küsitlus ise:"
 
 #: ../overview.rb:36
 msgid "Link to dudle poll about %{polltitle}"
-msgstr "Dudle Umfrage über %{polltitle}"
+msgstr "Link dudle küsitluse kohta %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."
-msgstr ""
-"Die Änderungen wurden gespeichert. Sie sollten zu %{link} weitergeleitet "
-"werden."
+msgstr "Muutused olid päästetud, siis tuleks suunata %{link}."
 
 #: ../poll.rb:92
 msgid "Edit user %{user}..."
-msgstr "Bearbeite Teilnehmer %{user}..."
+msgstr "Muuda kasutaja %{user}..."
 
 #: ../poll.rb:96
 msgid "Delete user %{user}..."
-msgstr "Lösche Teilnehmer %{user}..."
+msgstr "Kustuta kasutaja %{user}..."
 
 #: ../poll.rb:150
 msgid "Total"
-msgstr "Summe"
+msgstr "Summaarne"
 
 #: ../poll.rb:182
 msgid "Invite"
-msgstr "Einladen"
+msgstr "Kutsuma"
 
 #: ../poll.rb:183 ../pollhead.rb:62 ../timepollhead.rb:158
 msgid "Name"
-msgstr "Name"
+msgstr "Nimi"
 
 #: ../poll.rb:228
 msgid "Save Changes"
-msgstr "Speichern"
+msgstr "Salvesta muudatused"
 
 #: ../poll.rb:232
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr "Tühistama"
 
 #: ../poll.rb:254
 msgid "Do you really want to delete user %{user}?"
-msgstr "Wollen Sie den Teilnehmer %{user} wirklich löschen?"
+msgstr "Kas tõesti kustutada kasutaja %{user}?"
 
 #: ../poll.rb:257
 msgid "Confirm"
-msgstr "Bestätigen"
+msgstr "Kinnitama"
 
 #: ../poll.rb:305
 msgid "Comments"
-msgstr "Kommentare"
+msgstr "Kommentaarid"
 
 #: ../poll.rb:308
 msgid "Sort oldest comment first"
-msgstr "Sortiere das älteste Kommentar als erstes"
+msgstr "Sorteeri vanim kommentaar esimest"
 
 #: ../poll.rb:311
 msgid "Sort newest comment first"
-msgstr "Sortiere das neueste Kommentar als erstes"
+msgstr "Sorteeri uuemad kommentaar esimest"
 
 #: ../poll.rb:316
 msgid "Go to last comment"
-msgstr "Springe zum letzten Kommentar"
+msgstr "Mine viimase kommentaar"
 
 #: ../poll.rb:329
 msgid "%{user} said on %{time}"
-msgstr "%{user} sagte am %{time}"
+msgstr "%{user} ütles %{time}"
 
 #: ../poll.rb:344
 msgid "Go Up"
-msgstr "Gehe nach oben"
+msgstr "Üles minema"
 
 #: ../poll.rb:350
 msgid "says"
-msgstr "sagt"
+msgstr "ütleb"
 
 #: ../poll.rb:351
 msgid "Submit Comment"
-msgstr "Sende Kommentar"
+msgstr "Esita kommentaar"
 
 #: ../poll.rb:369
 msgid "Show history items:"
-msgstr "Zeige nur folgende Versionen:"
+msgstr "Näita ajalugu teemad:"
 
 #: ../poll.rb:376
 msgid "All"
-msgstr "Alle"
+msgstr "Kõik"
 
 #: ../poll.rb:377
 msgid "Participant related"
-msgstr "Teilnehmer betreffend"
+msgstr "Osaleja seotud"
 
 #: ../poll.rb:378
 msgid "Column related"
-msgstr "Spalten betreffend"
+msgstr "Veerg seotud"
 
 #: ../poll.rb:379
 msgid "Comment related"
-msgstr "Kommentare betreffend"
+msgstr "Kommentaar seotud"
 
 #: ../poll.rb:380
 msgid "Access Control related"
-msgstr "Zugriffskontrolle betreffend"
+msgstr "Juurdepääsu kontroll seotud"
 
 #: ../poll.rb:386
 msgid "Update"
-msgstr "Aktualisieren"
+msgstr "Ajakohastama"
 
 #: ../pollhead.rb:71
 msgid "Edit Option"
-msgstr "Option bearbeiten"
+msgstr "Muuda variant"
 
 #: ../pollhead.rb:72
 msgid "Delete Option"
-msgstr "Option löschen"
+msgstr "kustutada võimalus"
 
 #: ../pollhead.rb:87 ../timepollhead.rb:162
 msgid "Last Edit"
-msgstr "Letzte Änderung"
+msgstr "Viimati muuta"
 
 #: ../pollhead.rb:99
 msgid "Option"
-msgstr "Option"
+msgstr "Valik"
 
 #: ../pollhead.rb:100
 msgid "Description (optional)"
-msgstr "Beschreibung (optional)"
+msgstr "Kirjeldus (vabatahtlik)"
 
 #: ../pollhead.rb:101
 msgid "Add/Edit Option"
-msgstr "Option bearbeiten/hinzufügen"
+msgstr "Lisa/muuda variant"
 
 #: ../pollhead.rb:102
 msgid "Preview"
-msgstr "Vorschau"
+msgstr "eelnäitus"
 
 #: ../pollhead.rb:103
 msgid ""
