@@ -254,7 +254,7 @@ READY
 			["cs", "Česky"],
 			["ca", "Català"],
 			["sv", "Svenska"],
-			["ee", "Eesti"]
+			["ee", "Eesti"],
 			["gl", "Galego"]
 			]
 		unless @hide_lang_chooser
