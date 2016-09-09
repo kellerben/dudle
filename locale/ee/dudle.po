@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-08 16:43+0300\n"
-"PO-Revision-Date: 2016-09-08 18:42+0300\n"
+"PO-Revision-Date: 2016-09-09 11:42+0300\n"
 "Last-Translator: Benson Muite with aid of Google translate\n"
 "Language-Team: \n"
 "Language: ee_EE\n"
@@ -113,7 +113,9 @@ msgstr "Aktiveerima"
 
 #: ../access_control.rb:184
 msgid "will be activated when at least an admin user is configured"
-msgstr "aktiveeritakse, kui vähemalt admin kasutaja seadistatud"
+msgstr ""
+"aktiveeritakse, kui vähemalt administraator ( ´admin´) kasutaja" 
+"seadistatud"
 
 #: ../access_control.rb:186
 msgid "Deactivate"
@@ -136,6 +138,7 @@ msgid ""
 "You will be asked for the password you entered here after pressing save!"
 msgstr ""
 "Teil palutakse sisestada parool sisestatud siin pärast pressimist säästa!"
+""
 
 #: ../access_control.rb:196
 msgid ""
@@ -143,6 +146,7 @@ msgid ""
 "interface."
 msgstr ""
 "Kasutaja ‘admin‘ on juurdepääs hääl samuti konfiguratsiooni liides."
+""
 
 #: ../access_control.rb:202
 msgid "The user ‘participant’ has only access to the vote interface."
@@ -166,7 +170,8 @@ msgstr "See küsitlus on kaitstud parooliga!"
 
 #: ../authorization_required.cgi:43
 msgid "In order to proceed, you have to give the password for user %{user}."
-msgstr "Selleks, et minna, sa pead andma parool kasutaja %{user}."
+msgstr "" 
+"Selleks, et minna, sa pead andma parool kasutaja %{user}."
 
 #: ../authorization_required.cgi:53 ../not_found.cgi:36
 msgid "Return to dudle home and Schedule a new Poll"
@@ -190,7 +195,9 @@ msgstr "Kohanda isiklikud seaded"
 
 #: ../customize.cgi:32 ../customize.rb:32
 msgid "You need cookies enabled in order to personalize your settings."
-msgstr "Sa pead küpsiseid, et isikupärastada seaded."
+msgstr ""
+"Sa pead küpsiseid, et isikupärastada seaded."
+""
 
 #: ../customize.cgi:39 ../customize.rb:39
 msgid "Current Setting"
@@ -202,7 +209,9 @@ msgstr "Kirjeldus"
 
 #: ../customize.cgi:57 ../customize.rb:57
 msgid "Use this option if you see the characters in the parenthesis."
-msgstr "Kasutage seda valikut, kui soovid näha tähemärki sulgudes."
+msgstr ""
+"Kasutage seda valikut, kui soovid näha tähemärki sulgudes."
+""
 
 #: ../customize.cgi:57 ../customize.rb:57
 msgid "Use special characters"
@@ -214,7 +223,9 @@ msgstr "Kasutage ainult tavaline stringid"
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use this option if you have problems with some characters."
-msgstr "Kasutage seda valikut, kui sul on probleeme mõne tähemärki."
+msgstr ""
+"Kasutage seda valikut, kui sul on probleeme mõne tähemärki."
+""
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -265,8 +276,10 @@ msgid ""
 "If this was done by accident, please contact the administrator of the "
 "system. The poll can be recovered for an indeterminate amount of time, it "
 "could already be too late."
-msgstr "Kui see oli tehtud juhuslikult, pöörduge administraatori süsteemi. Küsitlus "
+msgstr ""
+"Kui see oli tehtud juhuslikult, pöörduge administraatori süsteemi. Küsitlus "
 "on võimalik taaskasutada määramata aja jooksul, siis võib olla juba liiga hilja."
+""
 
 #: ../delete_poll.rb:59
 msgid "You can now"
@@ -308,7 +321,8 @@ msgstr "See on pöördumatu action!"
 msgid ""
 "If you are sure that you want to permanently remove this poll, please type "
 "“%{question}” into the form."
-msgstr "Kui sa oled kindel, et soovid jäädavalt eemaldada selle küsitluse, siis kirjuta"
+msgstr ""
+"Kui sa oled kindel, et soovid jäädavalt eemaldada selle küsitluse, siis kirjuta"
 "“%{question}“ kujule."
 
 #: ../dudle.rb:73
@@ -437,7 +451,6 @@ msgstr ""
 "%{errormessage} \n"
 "Teil, \n"
 
-
 #: ../error.cgi:51
 msgid "Bug in dudle"
 msgstr "Viga dudle"
@@ -449,6 +462,7 @@ msgid ""
 msgstr ""
 "Tekkis viga täidesaatva kritseldama. <br/>Palun saada veateate:"
 "Sealhulgas brauseri, operatsioonisüsteemi ja mida sa tegid %{admin}."
+""
 
 #: ../error.cgi:56
 msgid "Please include the following as well:"
@@ -464,6 +478,7 @@ msgid ""
 "these example polls:"
 msgstr ""
 "Kui sa tahad mängida taotluse, võite võtta pilk nende Näiteks küsitlused:"
+""
 
 #: ../history.rb:28
 msgid "Poll of Version %{revisionnumber}"
@@ -479,7 +494,9 @@ msgstr "Palun sisesta kirjeldav pealkiri."
 
 #: ../index.cgi:48
 msgid "Custom address may only contain letters, numbers, and dashes."
-msgstr "Custom aadress võib sisaldada ainult tähti, numbreid ja kriipsud."
+msgstr ""
+"Custom aadress võib sisaldada ainult tähti, numbreid ja kriipsud."
+""
 
 #: ../index.cgi:50
 msgid "A Poll with this address already exists."
@@ -490,6 +507,7 @@ msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr ""
 "Küsitlus viidi edukalt loodud. Link endale küsitlus on: %{link}"
+""
 
 #: ../index.cgi:76
 msgid "Create New Poll"
@@ -582,6 +600,7 @@ msgid ""
 "adminsistrator of the system."
 msgstr ""
 "Kui te arvate, kustutamist tehti viga, pöördu administraatori süsteemi."
+""
 
 #: ../overview.rb:31
 msgid "The next steps are:"
@@ -605,7 +624,9 @@ msgstr "Link dudle küsitluse kohta %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."
-msgstr "Muutused olid päästetud, siis tuleks suunata %{link}."
+msgstr ""
+"Muutused olid päästetud, siis tuleks suunata %{link}."
+""
 
 #: ../poll.rb:92
 msgid "Edit user %{user}..."
@@ -739,6 +760,7 @@ msgid ""
 msgstr ""
 "Sisestage kõik valikud (veerud), siis tahan küsida osalejate küsitlus. "
 "Osalejad märkida üks hääl iga võimalust annad siin eraldi."
+""
 
 #: ../timepollhead.rb:113
 msgid ""
