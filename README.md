@@ -109,3 +109,9 @@ export DUDLE_POEDIT_AUTO=fr
 git pull
 make # will launch poedit if new french strings are to be translated
 ```
+
+* To add a new translation
+ - first add a new folder for your language under dudle/locals, 
+ - copy an dudle.po file from another language into your folder
+ - translate sentences and phrases in your dudle.po file
+ - add an entry for your language in dudle/dudle.rb at line 245
