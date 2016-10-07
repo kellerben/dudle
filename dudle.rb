@@ -254,7 +254,8 @@ READY
 			["cs", "Česky"],
 			["ca", "Català"],
 			["sv", "Svenska"],
-			["gl", "Galego"]
+			["gl", "Galego"],
+			["et", "Eesti"]
 			]
 		unless @hide_lang_chooser
 			lang.each{|short,long|
