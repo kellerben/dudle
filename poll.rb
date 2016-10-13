@@ -44,6 +44,10 @@ class String
 		return id
 	end
 end
+
+class WrongPollTypeError < StandardError
+end
+
 class Poll
 	attr_reader :head, :name
 	YESVAL   = "a_yes__"
@@ -64,7 +68,7 @@ class Poll
 		when "time"
 			@head = TimePollHead.new
 		else
-			raise("unknown poll type: #{type}")
+			raise(WrongPollTypeError, "unknown poll type: #{type}")
 		end
 		@data = {}
 		@comment = []
