@@ -21,7 +21,7 @@ if __FILE__ == $0
 require "test/unit"
 require "pp"
 unless ARGV[0]
-	puts "Usage: ruby #{$0} (git|bzr)" 
+	puts "Usage: ruby #{$0} git" 
 	exit
 end
 require "vcs_#{ARGV[0]}"

@@ -23,10 +23,7 @@
 # at the about page.
 # $conf.dudle_src = "https://github.com/kellerben/dudle/"
 
-# Choose your favorite version control system
-# bzr and git are implemented
-# Warning: bzr is slow!
-# Warning: git needs git >=1.6.5
+# Only git is supported currently
 # $conf.vcs = "git"
 
 # Change only if the url is not determined correctly (e.g. at the start page)

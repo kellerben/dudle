@@ -7,7 +7,7 @@ GNU AGPL v3 or higher (see file License)
 
 # Requirements
  * ruby >=1.9
- * git >=1.6.5 (preferred and default setting) or bzr
+ * git >=1.6.5
  * ruby-gettext (for localization)
  * gettext, potool, make (optional, if you want to generate localization files)
 
