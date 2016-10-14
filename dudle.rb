@@ -97,7 +97,7 @@ class Dudle
 	end
 	def breadcrumbs
 		crumbs = $conf.breadcrumbs
-		crumbs << "<a href='#{@basedir}'>" + _("Dudle Home + #{ENV["REDIRECT_URL"]}+ #{$cgi["poll"]}") + "</a>"
+		crumbs << "<a href='#{@basedir}'>" + _("Dudle Home") + "</a>"
 		if is_poll?
 			if @tab == "."
 				crumbs << @title
