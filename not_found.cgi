@@ -21,9 +21,9 @@
 
 require_relative "dudle"
 if File.exists?(Dir.pwd + File.dirname(ENV["REDIRECT_URL"]))
-	$d = Dudle.new(:hide_lang_chooser => true)
+	$d = Dudle.new(:hide_lang_chooser => true, :load_extensions => false)
 else
-	$d = Dudle.new(:hide_lang_chooser => true, :relative_dir => "../")
+	$d = Dudle.new(:hide_lang_chooser => true, :load_extensions => false, :relative_dir => "../")
 end
 
 title = _("Poll Not Found")

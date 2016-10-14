@@ -97,7 +97,7 @@ class Dudle
 	end
 	def breadcrumbs
 		crumbs = $conf.breadcrumbs
-		crumbs << "<a href='#{@basedir}'>" + _("Dudle Home") + "</a>"
+		crumbs << "<a href='#{@basedir}'>" + _("Dudle Home + #{ENV["REDIRECT_URL"]}+ #{$cgi["poll"]}") + "</a>"
 		if is_poll?
 			if @tab == "."
 				crumbs << @title
@@ -113,7 +113,7 @@ class Dudle
 		"<div id='breadcrumbs'><ul><li class='breadcrumb'>#{crumbs.join("</li><li class='breadcrumb'>")}</li></ul></div>"
 	end
 
-	def initialize(params = {:revision => nil, :title => nil, :hide_lang_chooser => nil, :relative_dir => ""})
+	def initialize(params = {:revision => nil, :title => nil, :hide_lang_chooser => nil, :relative_dir => "", :load_extensions => true})
 		@requested_revision = params[:revision]
 		@hide_lang_chooser = params[:hide_lang_chooser]
 		@cgi = $cgi
@@ -189,7 +189,7 @@ HEAD
 		###################
 		@extensions = []
 		$d = self # FIXME: this is dirty, but extensions need to know table elem
-		if Dir.exists?("#{@basedir}/extensions/")
+		if Dir.exists?("#{@basedir}/extensions/") && params[:load_extensions]
 			Dir.open("#{@basedir}/extensions/").sort.each{|f|
 				if File.exists?("#{@basedir}/extensions/#{f}/main.rb")
 					@extensions << f

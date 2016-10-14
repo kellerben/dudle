@@ -20,11 +20,11 @@
 ############################################################################
 
 require_relative "dudle"
-# check for trailing slash
-if ENV["REDIRECT_URL"] =~ /#{$cgi["poll"]}$/
-	$d = Dudle.new(:title => _("Error"), :hide_lang_chooser => true, :relative_dir => "#{$cgi["poll"]}/")
+
+if File.exists?("#{Dir.pwd}/#{File.dirname(ENV["REDIRECT_URL"])}/data.yaml")
+	$d = Dudle.new(:title => _("Error"), :hide_lang_chooser => true, :load_extensions => false, :relative_dir => "../")
 else
-	$d = Dudle.new(:title => _("Error"), :hide_lang_chooser => true)
+	$d = Dudle.new(:title => _("Error"), :hide_lang_chooser => true, :load_extensions => false)
 end
 
 def urlescape(str)
