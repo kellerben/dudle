@@ -79,6 +79,11 @@ class VCS
 		runcmd(GITCMD, "checkout", revhash, ".")
 		VCS.commit("Reverted Poll to version #{revno}")
 	end
+
+	def VCS.reset revno
+		revhash = runcmd(GITCMD, "log", "--format=%H").split("\n").reverse[revno-1]
+		runcmd(GITCMD, "checkout", "-B", "master", revhash)
+	end
 end
 
 

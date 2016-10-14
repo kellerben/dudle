@@ -47,7 +47,7 @@ if $cgi.include?("poll")
 
 		if poll[:revno]
 			Dir.chdir(targeturl)
-			VCS.revert(poll[:revno])
+			VCS.reset(poll[:revno])
 			Dir.chdir("..")
 		end
 
