@@ -51,7 +51,6 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 		else Dir.mkdir(POLLURL)
 			Dir.chdir(POLLURL)
 			begin
-				Poll.new(CGI.escapeHTML(POLLTITLE),$cgi["poll_type"])
 				VCS.init
 				File.symlink("../participate.rb","index.cgi")
 				VCS.add("index.cgi")
@@ -63,12 +62,16 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 					File.open(f,"w").close
 					VCS.add(f)
 				}
+				Poll.new(CGI.escapeHTML(POLLTITLE),$cgi["poll_type"])
 				Dir.chdir("..")
 				$d.html.header["status"] = "REDIRECT"
 				$d.html.header["Cache-Control"] = "no-cache"
 				$d.html.header["Location"] = $conf.siteurl + POLLURL + "/edit_columns.cgi"
 				$d << _("The poll was created successfully. The link to your new poll is: %{link}") % {:link => "<br /><a href=\"#{POLLURL}\">#{POLLURL}</a>"}
 			rescue WrongPollTypeError # should only happen in case of hacking
+				Dir.chdir("..")
+				require "fileutils"
+				FileUtils.rm_r(POLLURL)
 				$d.html.header["status"] = "REDIRECT"
 				$d.html.header["Cache-Control"] = "no-cache"
 				$d.html.header["Location"] = "http://localhost/"
