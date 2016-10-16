@@ -71,6 +71,7 @@ end
 rescue Exception => e
 	puts "Some problem occured. Please contact the developer:"
 	pp e
+	puts e.backtrace.join("\n")
 else
 	if problems.empty?
 		puts "Your environment seems to be installed correctly!"
