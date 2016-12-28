@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-14 21:43+0200\n"
+"POT-Creation-Date: 2016-12-28 14:26+0100\n"
 "PO-Revision-Date: 2016-08-14 21:45+0100\n"
 "Last-Translator: Benjamin Kellermann\n"
 "Language-Team: \n"
@@ -82,12 +82,12 @@ msgstr ""
 "entfernen können."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:334
+#: ../delete_poll.rb:112 ../poll.rb:338
 msgid "Delete"
 msgstr "Löschen"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:296
+#: ../poll.rb:300
 msgid "Save"
 msgstr "Speichern"
 
@@ -181,11 +181,11 @@ msgstr "Zurück zur dudle Hauptseite um eine neue Umfrage zu erstellen"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Um auf diese Seite zugreifen zu können müssen Sie sich autorisieren!"
 
-#: ../config.rb:95
+#: ../config.rb:92
 msgid "Event Schedule Poll"
 msgstr "Nach einer Zeit fragen"
 
-#: ../config.rb:99
+#: ../config.rb:96
 msgid "Normal Poll"
 msgstr "Eine normale Umfrage"
 
@@ -208,24 +208,24 @@ msgid "Description"
 msgstr "Beschreibung"
 
 #: ../customize.cgi:57 ../customize.rb:57
+msgid "Use special characters"
+msgstr "Benutze spezielle Zeichen"
+
+#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use this option if you see the characters in the parenthesis."
 msgstr ""
 "Benutzen Sie diese Einstellung, wenn Sie die Zeichen in den Klammern lesen "
 "können."
-
-#: ../customize.cgi:57 ../customize.rb:57
-msgid "Use special characters"
-msgstr "Benutze spezielle Zeichen"
-
-#: ../customize.cgi:58 ../customize.rb:58
-msgid "Use only normal strings"
-msgstr "Benutze nur gewöhnliche Zeichen"
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use this option if you have problems with some characters."
 msgstr ""
 "Benutzen Sie diese Einstellung, wenn Probleme mit der Darstellung einiger "
 "Zeichen auftreten."
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "Benutze nur gewöhnliche Zeichen"
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -253,7 +253,7 @@ msgstr "Ich hasse diese sinnlosen Eingabefelder."
 
 #: ../delete_poll.rb:32
 msgid "I am aware of the consequences."
-msgstr "Ich bin mir über die Konsequenzen bewusst."
+msgstr "Ich bin mir der Konsequenzen bewusst."
 
 #: ../delete_poll.rb:33
 msgid "Please delete this poll."
@@ -386,12 +386,12 @@ msgid "Finish"
 msgstr "Fertig"
 
 #: ../dudle.rb:232
-msgid "All changes were saved sucessfully."
-msgstr "Alle Änderungen wurden erfolgreich gespeichert."
-
-#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Weiter"
+
+#: ../dudle.rb:232
+msgid "All changes were saved sucessfully."
+msgstr "Alle Änderungen wurden erfolgreich gespeichert."
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -410,12 +410,12 @@ msgid "Edit column"
 msgstr "Bearbeite Spalte"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "Wiederherstellen"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Rückgängig"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Wiederherstellen"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -502,7 +502,7 @@ msgstr ""
 msgid "A Poll with this address already exists."
 msgstr "Eine Umfrage mit dieser URL existiert bereits."
 
-#: ../index.cgi:69
+#: ../index.cgi:68
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr ""
@@ -510,34 +510,38 @@ msgstr ""
 "%{link}"
 
 #: ../index.cgi:76
+msgid "Go away."
+msgstr ""
+
+#: ../index.cgi:84
 msgid "Create New Poll"
 msgstr "Neue Umfrage erstellen"
 
-#: ../index.cgi:78
+#: ../index.cgi:86
 msgid "Title"
 msgstr "Titel"
 
-#: ../index.cgi:79
+#: ../index.cgi:87
 msgid "Type"
 msgstr "Typ"
 
-#: ../index.cgi:80
+#: ../index.cgi:88
 msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Nach einer Zeit fragen (z.&thinsp;B. einen Besprechungstermin finden)"
 
-#: ../index.cgi:81
+#: ../index.cgi:89
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Normale Umfrage (z.&thinsp;B. eine Umfrage über die beste Kaffeesorte)"
 
-#: ../index.cgi:82
+#: ../index.cgi:90
 msgid "Custom address (optional)"
 msgstr "eigene URL (optional)"
 
-#: ../index.cgi:83
+#: ../index.cgi:91
 msgid "May contain letters, numbers, and dashes."
 msgstr "Kann Buchstaben, Zahlen, Bindestriche und Unterstriche enthalten."
 
-#: ../index.cgi:85
+#: ../index.cgi:93
 msgid "Create"
 msgstr "Erstellen"
 
@@ -628,99 +632,99 @@ msgstr ""
 "Die Änderungen wurden gespeichert. Sie sollten zu %{link} weitergeleitet "
 "werden."
 
-#: ../poll.rb:92
+#: ../poll.rb:96
 msgid "Edit user %{user}..."
 msgstr "Bearbeite Teilnehmer %{user}..."
 
-#: ../poll.rb:96
+#: ../poll.rb:100
 msgid "Delete user %{user}..."
 msgstr "Lösche Teilnehmer %{user}..."
 
-#: ../poll.rb:150
+#: ../poll.rb:154
 msgid "Total"
 msgstr "Summe"
 
-#: ../poll.rb:182
+#: ../poll.rb:186
 msgid "Invite"
 msgstr "Einladen"
 
-#: ../poll.rb:183 ../pollhead.rb:62 ../timepollhead.rb:158
+#: ../poll.rb:187 ../pollhead.rb:62 ../timepollhead.rb:158
 msgid "Name"
 msgstr "Name"
 
-#: ../poll.rb:228
+#: ../poll.rb:232
 msgid "Save Changes"
 msgstr "Speichern"
 
-#: ../poll.rb:232
+#: ../poll.rb:236
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: ../poll.rb:254
+#: ../poll.rb:258
 msgid "Do you really want to delete user %{user}?"
 msgstr "Wollen Sie den Teilnehmer %{user} wirklich löschen?"
 
-#: ../poll.rb:257
+#: ../poll.rb:261
 msgid "Confirm"
 msgstr "Bestätigen"
 
-#: ../poll.rb:305
+#: ../poll.rb:309
 msgid "Comments"
 msgstr "Kommentare"
 
-#: ../poll.rb:308
+#: ../poll.rb:312
 msgid "Sort oldest comment first"
 msgstr "Sortiere das älteste Kommentar als erstes"
 
-#: ../poll.rb:311
+#: ../poll.rb:315
 msgid "Sort newest comment first"
 msgstr "Sortiere das neueste Kommentar als erstes"
 
-#: ../poll.rb:316
+#: ../poll.rb:320
 msgid "Go to last comment"
 msgstr "Springe zum letzten Kommentar"
 
-#: ../poll.rb:329
+#: ../poll.rb:333
 msgid "%{user} said on %{time}"
 msgstr "%{user} sagte am %{time}"
 
-#: ../poll.rb:344
+#: ../poll.rb:348
 msgid "Go Up"
 msgstr "Gehe nach oben"
 
-#: ../poll.rb:350
+#: ../poll.rb:354
 msgid "says"
 msgstr "sagt"
 
-#: ../poll.rb:351
+#: ../poll.rb:355
 msgid "Submit Comment"
 msgstr "Sende Kommentar"
 
-#: ../poll.rb:369
+#: ../poll.rb:373
 msgid "Show history items:"
 msgstr "Zeige nur folgende Versionen:"
 
-#: ../poll.rb:376
+#: ../poll.rb:380
 msgid "All"
 msgstr "Alle"
 
-#: ../poll.rb:377
+#: ../poll.rb:381
 msgid "Participant related"
 msgstr "Teilnehmer betreffend"
 
-#: ../poll.rb:378
+#: ../poll.rb:382
 msgid "Column related"
 msgstr "Spalten betreffend"
 
-#: ../poll.rb:379
+#: ../poll.rb:383
 msgid "Comment related"
 msgstr "Kommentare betreffend"
 
-#: ../poll.rb:380
+#: ../poll.rb:384
 msgid "Access Control related"
 msgstr "Zugriffskontrolle betreffend"
 
-#: ../poll.rb:386
+#: ../poll.rb:390
 msgid "Update"
 msgstr "Aktualisieren"
 
