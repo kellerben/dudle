@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 510\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-14 21:43+0200\n"
+"POT-Creation-Date: 2016-12-28 14:26+0100\n"
 "PO-Revision-Date: 2011-07-04 06:55+0200\n"
 "Last-Translator: Gabor Kiss <kissg@ssg.ki.iif.hu>\n"
 "Language-Team: \n"
@@ -83,12 +83,12 @@ msgstr ""
 "már megszüntetted."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:334
+#: ../delete_poll.rb:112 ../poll.rb:338
 msgid "Delete"
 msgstr "Törlés"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:296
+#: ../poll.rb:300
 msgid "Save"
 msgstr "Mentés"
 
@@ -175,11 +175,11 @@ msgstr "Vissza a címlapra. Új szavazás kiírása."
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Az oldal csak azonosítás után érhető el!"
 
-#: ../config.rb:95
+#: ../config.rb:92
 msgid "Event Schedule Poll"
 msgstr "Időpontválasztás"
 
-#: ../config.rb:99
+#: ../config.rb:96
 msgid "Normal Poll"
 msgstr "Normál szavazás"
 
@@ -202,22 +202,22 @@ msgid "Description"
 msgstr "Megnevezés"
 
 #: ../customize.cgi:57 ../customize.rb:57
-msgid "Use this option if you see the characters in the parenthesis."
-msgstr ""
-"Csak akkor állítsd be, ha látod a zárójelben lévő speciális karaktereket."
-
-#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use special characters"
 msgstr "Különleges karakterek használata"
 
-#: ../customize.cgi:58 ../customize.rb:58
-msgid "Use only normal strings"
-msgstr "Csak a szokványos karakterek használata."
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr ""
+"Csak akkor állítsd be, ha látod a zárójelben lévő speciális karaktereket."
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use this option if you have problems with some characters."
 msgstr ""
 "Ezt állítsd be, ha bizonyos karakterek megjelenítésével gondjaid vannak."
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "Csak a szokványos karakterek használata."
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -379,12 +379,12 @@ msgid "Finish"
 msgstr "Befejezés"
 
 #: ../dudle.rb:232
-msgid "All changes were saved sucessfully."
-msgstr "A változtatások elmentve."
-
-#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Végrehajtás"
+
+#: ../dudle.rb:232
+msgid "All changes were saved sucessfully."
+msgstr "A változtatások elmentve."
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -403,12 +403,12 @@ msgid "Edit column"
 msgstr "Oszlop módosítása"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "De mégis"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Mégsem"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "De mégis"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -482,40 +482,44 @@ msgstr ""
 msgid "A Poll with this address already exists."
 msgstr "Ezen a neven már létezik egy szavazás."
 
-#: ../index.cgi:69
+#: ../index.cgi:68
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr "A szavazás sikeresen létrejött. Ezen a linken lehet elérni: %{link}"
 
 #: ../index.cgi:76
+msgid "Go away."
+msgstr ""
+
+#: ../index.cgi:84
 msgid "Create New Poll"
 msgstr "Új szavazás létrehozása"
 
-#: ../index.cgi:78
+#: ../index.cgi:86
 msgid "Title"
 msgstr "Cím"
 
-#: ../index.cgi:79
+#: ../index.cgi:87
 msgid "Type"
 msgstr "Típus"
 
-#: ../index.cgi:80
+#: ../index.cgi:88
 msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Időpont kiválasztása (pl. egy értekezlet beütemezése)"
 
-#: ../index.cgi:81
+#: ../index.cgi:89
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Normál szavazás (pl. melyik a legfinomabb süti)"
 
-#: ../index.cgi:82
+#: ../index.cgi:90
 msgid "Custom address (optional)"
 msgstr "Testre szabott URL (opcionális)"
 
-#: ../index.cgi:83
+#: ../index.cgi:91
 msgid "May contain letters, numbers, and dashes."
 msgstr "Betűket, számokat, kötőjelet, aláhúzást tartalmazhat."
 
-#: ../index.cgi:85
+#: ../index.cgi:93
 msgid "Create"
 msgstr "Létrehozás"
 
@@ -599,99 +603,99 @@ msgstr "A %{polltitle} tárgyú szavazásra mutató link"
 msgid "The changes were saved, you should be redirected to %{link}."
 msgstr "Sikeresen elmentve. A folytatáshoz kattints ide: %{link}."
 
-#: ../poll.rb:92
+#: ../poll.rb:96
 msgid "Edit user %{user}..."
 msgstr "%{user} felhasználó módosítása…"
 
-#: ../poll.rb:96
+#: ../poll.rb:100
 msgid "Delete user %{user}..."
 msgstr "%{user} felhasználó törlése…"
 
-#: ../poll.rb:150
+#: ../poll.rb:154
 msgid "Total"
 msgstr "Összesen"
 
-#: ../poll.rb:182
+#: ../poll.rb:186
 msgid "Invite"
 msgstr "Hozzáadás"
 
-#: ../poll.rb:183 ../pollhead.rb:62 ../timepollhead.rb:158
+#: ../poll.rb:187 ../pollhead.rb:62 ../timepollhead.rb:158
 msgid "Name"
 msgstr "Név"
 
-#: ../poll.rb:228
+#: ../poll.rb:232
 msgid "Save Changes"
 msgstr "Mentés"
 
-#: ../poll.rb:232
+#: ../poll.rb:236
 msgid "Cancel"
 msgstr "Mégsem"
 
-#: ../poll.rb:254
+#: ../poll.rb:258
 msgid "Do you really want to delete user %{user}?"
 msgstr "Valóban törölni akarod „%{user}” felhasználót?"
 
-#: ../poll.rb:257
+#: ../poll.rb:261
 msgid "Confirm"
 msgstr "Megerősítés"
 
-#: ../poll.rb:305
+#: ../poll.rb:309
 msgid "Comments"
 msgstr "Megjegyzések"
 
-#: ../poll.rb:308
+#: ../poll.rb:312
 msgid "Sort oldest comment first"
 msgstr "Időrendben"
 
-#: ../poll.rb:311
+#: ../poll.rb:315
 msgid "Sort newest comment first"
 msgstr "Fordított Időrendben"
 
-#: ../poll.rb:316
+#: ../poll.rb:320
 msgid "Go to last comment"
 msgstr "Ugrás az utolsó megjegyzéshez"
 
-#: ../poll.rb:329
+#: ../poll.rb:333
 msgid "%{user} said on %{time}"
 msgstr "„%{user}” írta %{time}-kor"
 
-#: ../poll.rb:344
+#: ../poll.rb:348
 msgid "Go Up"
 msgstr "Fel"
 
-#: ../poll.rb:350
+#: ../poll.rb:354
 msgid "says"
 msgstr "szerint"
 
-#: ../poll.rb:351
+#: ../poll.rb:355
 msgid "Submit Comment"
 msgstr "Hozzászólás elküldése"
 
-#: ../poll.rb:369
+#: ../poll.rb:373
 msgid "Show history items:"
 msgstr "Megjelenítendő változtatások:"
 
-#: ../poll.rb:376
+#: ../poll.rb:380
 msgid "All"
 msgstr "Mindegyik"
 
-#: ../poll.rb:377
+#: ../poll.rb:381
 msgid "Participant related"
 msgstr "A szavazókkal kapcsolatosak"
 
-#: ../poll.rb:378
+#: ../poll.rb:382
 msgid "Column related"
 msgstr "Az oszlopokkal kapcsolatosak"
 
-#: ../poll.rb:379
+#: ../poll.rb:383
 msgid "Comment related"
 msgstr "A megjegyzésekkel kapcsolatosak"
 
-#: ../poll.rb:380
+#: ../poll.rb:384
 msgid "Access Control related"
 msgstr "A hozzáféréssel kapcsolatosak"
 
-#: ../poll.rb:386
+#: ../poll.rb:390
 msgid "Update"
 msgstr "Frissítés"
 

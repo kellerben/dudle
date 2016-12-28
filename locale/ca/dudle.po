@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-14 21:43+0200\n"
+"POT-Creation-Date: 2016-12-28 14:26+0100\n"
 "PO-Revision-Date: 2011-12-17 02:00+0100\n"
 "Last-Translator: Laura Mora i Aubert <blackhold@marsupi.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,12 +68,12 @@ msgstr ""
 "esborrar l'administrador."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:334
+#: ../delete_poll.rb:112 ../poll.rb:338
 msgid "Delete"
 msgstr "Esborra"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:296
+#: ../poll.rb:300
 msgid "Save"
 msgstr "Desa"
 
@@ -160,11 +160,11 @@ msgstr "Torna a la pàgina d'inici de dudle i programa una nova Enquesta"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "T'has d'identificar per accedir a aquesta pàgina!"
 
-#: ../config.rb:95
+#: ../config.rb:92
 msgid "Event Schedule Poll"
 msgstr "Enquesta de data"
 
-#: ../config.rb:99
+#: ../config.rb:96
 msgid "Normal Poll"
 msgstr "Enquesta"
 
@@ -186,21 +186,21 @@ msgid "Description"
 msgstr "Descripció"
 
 #: ../customize.cgi:57 ../customize.rb:57
+msgid "Use special characters"
+msgstr "Fes servir caràcters especials"
+
+#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use this option if you see the characters in the parenthesis."
 msgstr ""
 "Fes servir aquesta opció si veus els caràcters que estan entre parèntesi"
 
-#: ../customize.cgi:57 ../customize.rb:57
-msgid "Use special characters"
-msgstr "Fes servir caràcters especials"
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Fes servir aquesta opció si no veus els caràcters especials."
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
 msgstr "No facis servir caràcters especials"
-
-#: ../customize.cgi:58 ../customize.rb:58
-msgid "Use this option if you have problems with some characters."
-msgstr "Fes servir aquesta opció si no veus els caràcters especials."
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -364,12 +364,12 @@ msgid "Finish"
 msgstr "Acaba"
 
 #: ../dudle.rb:232
-msgid "All changes were saved sucessfully."
-msgstr "S'han desat tots els canvis."
-
-#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Endavant!"
+
+#: ../dudle.rb:232
+msgid "All changes were saved sucessfully."
+msgstr "S'han desat tots els canvis."
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -388,12 +388,12 @@ msgid "Edit column"
 msgstr "Modifica columna"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "Refés"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Desfés"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Refés"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -480,41 +480,45 @@ msgstr ""
 msgid "A Poll with this address already exists."
 msgstr "Ja hi ha una altra enquesta amb aquest nom."
 
-#: ../index.cgi:69
+#: ../index.cgi:68
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr ""
 "L'enquesta s'ha creat amb èxit. El vincle cap a la teva enquesta és: %{link}"
 
 #: ../index.cgi:76
+msgid "Go away."
+msgstr ""
+
+#: ../index.cgi:84
 msgid "Create New Poll"
 msgstr "Crea una Enquesta"
 
-#: ../index.cgi:78
+#: ../index.cgi:86
 msgid "Title"
 msgstr "Títol"
 
-#: ../index.cgi:79
+#: ../index.cgi:87
 msgid "Type"
 msgstr "Tipus"
 
-#: ../index.cgi:80
+#: ../index.cgi:88
 msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Enquesta de data (ex. planifica una reunió)"
 
-#: ../index.cgi:81
+#: ../index.cgi:89
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Enquesta (ex. vota per el millor tipus de cafè)"
 
-#: ../index.cgi:82
+#: ../index.cgi:90
 msgid "Custom address (optional)"
 msgstr "Direcció personalitzada (opcional)"
 
-#: ../index.cgi:83
+#: ../index.cgi:91
 msgid "May contain letters, numbers, and dashes."
 msgstr "Hauria de tenir lletres, números i barres."
 
-#: ../index.cgi:85
+#: ../index.cgi:93
 msgid "Create"
 msgstr "Crea"
 
@@ -600,99 +604,99 @@ msgstr "Vincular l'enquesta %{polltitle}"
 msgid "The changes were saved, you should be redirected to %{link}."
 msgstr "S'han desat els canvis, redirigint a %{link}."
 
-#: ../poll.rb:92
+#: ../poll.rb:96
 msgid "Edit user %{user}..."
 msgstr "Modifica usuari %{user}..."
 
-#: ../poll.rb:96
+#: ../poll.rb:100
 msgid "Delete user %{user}..."
 msgstr "Esborra usuari %{user}..."
 
-#: ../poll.rb:150
+#: ../poll.rb:154
 msgid "Total"
 msgstr "Total"
 
-#: ../poll.rb:182
+#: ../poll.rb:186
 msgid "Invite"
 msgstr "Convida"
 
-#: ../poll.rb:183 ../pollhead.rb:62 ../timepollhead.rb:158
+#: ../poll.rb:187 ../pollhead.rb:62 ../timepollhead.rb:158
 msgid "Name"
 msgstr "Nom"
 
-#: ../poll.rb:228
+#: ../poll.rb:232
 msgid "Save Changes"
 msgstr "Desa els canvis"
 
-#: ../poll.rb:232
+#: ../poll.rb:236
 msgid "Cancel"
 msgstr "Avorta"
 
-#: ../poll.rb:254
+#: ../poll.rb:258
 msgid "Do you really want to delete user %{user}?"
 msgstr "Realment vols esborrar el usuari %{user}?"
 
-#: ../poll.rb:257
+#: ../poll.rb:261
 msgid "Confirm"
 msgstr "Accepta"
 
-#: ../poll.rb:305
+#: ../poll.rb:309
 msgid "Comments"
 msgstr "Comentaris"
 
-#: ../poll.rb:308
+#: ../poll.rb:312
 msgid "Sort oldest comment first"
 msgstr "Els comentaris més antics primer"
 
-#: ../poll.rb:311
+#: ../poll.rb:315
 msgid "Sort newest comment first"
 msgstr "Els comentaris més nous primer"
 
-#: ../poll.rb:316
+#: ../poll.rb:320
 msgid "Go to last comment"
 msgstr "Vés a l'últim comentari"
 
-#: ../poll.rb:329
+#: ../poll.rb:333
 msgid "%{user} said on %{time}"
 msgstr "%{user} ha dit al %{time}"
 
-#: ../poll.rb:344
+#: ../poll.rb:348
 msgid "Go Up"
 msgstr "Amunt"
 
-#: ../poll.rb:350
+#: ../poll.rb:354
 msgid "says"
 msgstr "Diu"
 
-#: ../poll.rb:351
+#: ../poll.rb:355
 msgid "Submit Comment"
 msgstr "Envia un comentari"
 
-#: ../poll.rb:369
+#: ../poll.rb:373
 msgid "Show history items:"
 msgstr "Mostra l'històric:"
 
-#: ../poll.rb:376
+#: ../poll.rb:380
 msgid "All"
 msgstr "Tot"
 
-#: ../poll.rb:377
+#: ../poll.rb:381
 msgid "Participant related"
 msgstr "Participants relacionats"
 
-#: ../poll.rb:378
+#: ../poll.rb:382
 msgid "Column related"
 msgstr "Columnes relacionades"
 
-#: ../poll.rb:379
+#: ../poll.rb:383
 msgid "Comment related"
 msgstr "Comentaris relacionats"
 
-#: ../poll.rb:380
+#: ../poll.rb:384
 msgid "Access Control related"
 msgstr "Controls d'accés relacionats"
 
-#: ../poll.rb:386
+#: ../poll.rb:390
 msgid "Update"
 msgstr "Actualitza"
 

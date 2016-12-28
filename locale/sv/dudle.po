@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-14 21:43+0200\n"
+"POT-Creation-Date: 2016-12-28 14:26+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@gmx.de>\n"
 "Language-Team: \n"
@@ -79,12 +79,12 @@ msgid ""
 msgstr "Du måste ta bort deltagaren innan du kan radera administratören "
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:334
+#: ../delete_poll.rb:112 ../poll.rb:338
 msgid "Delete"
 msgstr "Radera"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:296
+#: ../poll.rb:300
 msgid "Save"
 msgstr "Spara"
 
@@ -175,11 +175,11 @@ msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr ""
 
-#: ../config.rb:95
+#: ../config.rb:92
 msgid "Event Schedule Poll"
 msgstr "Händelseschema Omröstning"
 
-#: ../config.rb:99
+#: ../config.rb:96
 msgid "Normal Poll"
 msgstr "Normal omröstning"
 
@@ -201,20 +201,20 @@ msgid "Description"
 msgstr "Beskrivning"
 
 #: ../customize.cgi:57 ../customize.rb:57
-msgid "Use this option if you see the characters in the parenthesis."
-msgstr "Använd den här funktionen om du ser tecknen i parantesen."
-
-#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use special characters"
 msgstr "Använd specialtecken"
 
-#: ../customize.cgi:58 ../customize.rb:58
-msgid "Use only normal strings"
-msgstr "Använd bara normalsträngar"
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "Använd den här funktionen om du ser tecknen i parantesen."
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use this option if you have problems with some characters."
 msgstr "Använd det här alternativet om du har problem med några bokstäver."
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "Använd bara normalsträngar"
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -376,12 +376,12 @@ msgid "Finish"
 msgstr "Klar"
 
 #: ../dudle.rb:232
-msgid "All changes were saved sucessfully."
-msgstr "Alla ändringar sparades."
-
-#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Fortsätt!"
+
+#: ../dudle.rb:232
+msgid "All changes were saved sucessfully."
+msgstr "Alla ändringar sparades."
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -400,12 +400,12 @@ msgid "Edit column"
 msgstr "Redigera kolumn"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "Upprepa"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Ångra"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Upprepa"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -476,40 +476,44 @@ msgstr "Adresser bör enbart innehålla bokstäver, nummer och tankestreck."
 msgid "A Poll with this address already exists."
 msgstr "En omröstning med den här adressen finns redan."
 
-#: ../index.cgi:69
+#: ../index.cgi:68
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr "En omröstning har skapats. Länken till din omröstning är: %{link}"
 
 #: ../index.cgi:76
+msgid "Go away."
+msgstr ""
+
+#: ../index.cgi:84
 msgid "Create New Poll"
 msgstr "Skapa ny omröstning"
 
-#: ../index.cgi:78
+#: ../index.cgi:86
 msgid "Title"
 msgstr "Titel"
 
-#: ../index.cgi:79
+#: ../index.cgi:87
 msgid "Type"
 msgstr "Typ"
 
-#: ../index.cgi:80
+#: ../index.cgi:88
 msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Händelseschema Omröstning (t ex boka ett möte)"
 
-#: ../index.cgi:81
+#: ../index.cgi:89
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Normal omröstning (t ex rösta på bästa kaffet)"
 
-#: ../index.cgi:82
+#: ../index.cgi:90
 msgid "Custom address (optional)"
 msgstr "Adress (valfritt)"
 
-#: ../index.cgi:83
+#: ../index.cgi:91
 msgid "May contain letters, numbers, and dashes."
 msgstr "Bör innehålla bokstäver, nummer och tankestreck"
 
-#: ../index.cgi:85
+#: ../index.cgi:93
 msgid "Create"
 msgstr "Skapa"
 
@@ -592,100 +596,100 @@ msgstr "Länk till dudle omröstning om %{polltitle}"
 msgid "The changes were saved, you should be redirected to %{link}."
 msgstr ""
 
-#: ../poll.rb:92
+#: ../poll.rb:96
 msgid "Edit user %{user}..."
 msgstr "Redigera användare %{user}..."
 
-#: ../poll.rb:96
+#: ../poll.rb:100
 msgid "Delete user %{user}..."
 msgstr "Redigera användare %{user}..."
 
-#: ../poll.rb:150
+#: ../poll.rb:154
 msgid "Total"
 msgstr "Total"
 
-#: ../poll.rb:182
+#: ../poll.rb:186
 msgid "Invite"
 msgstr "Bjud in"
 
-#: ../poll.rb:183 ../pollhead.rb:62 ../timepollhead.rb:158
+#: ../poll.rb:187 ../pollhead.rb:62 ../timepollhead.rb:158
 msgid "Name"
 msgstr "Namn"
 
-#: ../poll.rb:228
+#: ../poll.rb:232
 msgid "Save Changes"
 msgstr "Spara ändringar"
 
-#: ../poll.rb:232
+#: ../poll.rb:236
 msgid "Cancel"
 msgstr ""
 
-#: ../poll.rb:254
+#: ../poll.rb:258
 #, fuzzy
 msgid "Do you really want to delete user %{user}?"
 msgstr "Redigera användare %{user}"
 
-#: ../poll.rb:257
+#: ../poll.rb:261
 msgid "Confirm"
 msgstr ""
 
-#: ../poll.rb:305
+#: ../poll.rb:309
 msgid "Comments"
 msgstr "Kommentarer"
 
-#: ../poll.rb:308
+#: ../poll.rb:312
 msgid "Sort oldest comment first"
 msgstr ""
 
-#: ../poll.rb:311
+#: ../poll.rb:315
 msgid "Sort newest comment first"
 msgstr ""
 
-#: ../poll.rb:316
+#: ../poll.rb:320
 msgid "Go to last comment"
 msgstr ""
 
-#: ../poll.rb:329
+#: ../poll.rb:333
 msgid "%{user} said on %{time}"
 msgstr "sa %{user} %{time}"
 
-#: ../poll.rb:344
+#: ../poll.rb:348
 msgid "Go Up"
 msgstr ""
 
-#: ../poll.rb:350
+#: ../poll.rb:354
 msgid "says"
 msgstr "säger"
 
-#: ../poll.rb:351
+#: ../poll.rb:355
 msgid "Submit Comment"
 msgstr "Skicka kommentarer"
 
-#: ../poll.rb:369
+#: ../poll.rb:373
 msgid "Show history items:"
 msgstr "Visa historik:"
 
-#: ../poll.rb:376
+#: ../poll.rb:380
 msgid "All"
 msgstr "Alla"
 
-#: ../poll.rb:377
+#: ../poll.rb:381
 msgid "Participant related"
 msgstr "Tillhörande deltagare"
 
-#: ../poll.rb:378
+#: ../poll.rb:382
 msgid "Column related"
 msgstr "Tillhörande kolumn"
 
-#: ../poll.rb:379
+#: ../poll.rb:383
 msgid "Comment related"
 msgstr "Tillhörande kommentar"
 
-#: ../poll.rb:380
+#: ../poll.rb:384
 msgid "Access Control related"
 msgstr "Tillhörande åtkomstkontroll"
 
-#: ../poll.rb:386
+#: ../poll.rb:390
 msgid "Update"
 msgstr "Uppdatera"
 
