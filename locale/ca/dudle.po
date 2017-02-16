@@ -368,7 +368,7 @@ msgid "Proceed!"
 msgstr "Endavant!"
 
 #: ../dudle.rb:232
-msgid "All changes were saved sucessfully."
+msgid "All changes were saved successfully."
 msgstr "S'han desat tots els canvis."
 
 #: ../edit_columns.rb:44
@@ -746,7 +746,7 @@ msgstr ""
 "introdueix el text aquí (ex. 09:30, matí, tarda)."
 
 #: ../timepollhead.rb:119
-msgid "This Time was already choosen."
+msgid "This Time was already chosen."
 msgstr "Ja s'ha escollit."
 
 #: ../timepollhead.rb:193

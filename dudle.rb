@@ -121,7 +121,7 @@ class Dudle
 		@tab = "." if @tab == "index.cgi"
 
 		if is_poll?
-			# log last read acces manually (no need to grep server logfiles)
+			# log last read access manually (no need to grep server logfiles)
 			File.open("last_read_access","w").close unless @cgi.user_agent =~ $conf.bots
 			@basedir = ".."
 			inittabs
@@ -229,7 +229,7 @@ READY
 				@html.header["status"] = "REDIRECT"
 				@html.header["Cache-Control"] = "no-cache"
 				@html.header["Location"] = @configtabs[linkindex][1]
-				@html << _("All changes were saved sucessfully.") + " <a href=\"#{@configtabs[linkindex][1]}\">" + _("Proceed!") + "</a>"
+				@html << _("All changes were saved successfully.") + " <a href=\"#{@configtabs[linkindex][1]}\">" + _("Proceed!") + "</a>"
 				out
 				exit
 			end

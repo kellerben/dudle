@@ -385,7 +385,7 @@ msgid "Proceed!"
 msgstr "Procedi!"
 
 #: ../dudle.rb:232
-msgid "All changes were saved sucessfully."
+msgid "All changes were saved successfully."
 msgstr "Tutti i cambiamenti sono stati salvati."
 
 #: ../edit_columns.rb:44
@@ -773,7 +773,7 @@ msgstr ""
 "&thinsp;g., 09:30, mattina, pomeriggio)."
 
 #: ../timepollhead.rb:119
-msgid "This Time was already choosen."
+msgid "This Time was already chosen."
 msgstr "Questo orario è già stato scelto"
 
 #: ../timepollhead.rb:193
