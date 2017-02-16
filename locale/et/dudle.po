@@ -377,7 +377,7 @@ msgid "Proceed!"
 msgstr "Jätkama"
 
 #: ../dudle.rb:232
-msgid "All changes were saved sucessfully."
+msgid "All changes were saved successfully."
 msgstr "Kõik muudatused salvestati edukalt."
 
 #: ../edit_columns.rb:44
@@ -751,7 +751,7 @@ msgstr ""
 "(näiteks 9:30 hommikul, pärastlõunal). "
 
 #: ../timepollhead.rb:119
-msgid "This Time was already choosen."
+msgid "This Time was already chosen."
 msgstr "See aeg oli juba valitud."
 
 #: ../timepollhead.rb:193

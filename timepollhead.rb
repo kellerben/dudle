@@ -116,7 +116,7 @@ class TimePollHead
 		delete_column(column) if column != ""
 		parsed_date = TimeString.new(newtitle, cgi["columntime"] != "" ? cgi["columntime"] : nil)
 		if @data.include?(parsed_date)
-			@edit_column_error = _("This Time was already choosen.")
+			@edit_column_error = _("This Time was already chosen.")
 			return nil
 		else
 			@data << parsed_date

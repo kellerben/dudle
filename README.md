@@ -1,6 +1,6 @@
 # Authors
  * Benjamin Kellermann <Benjamin dot Kellermann at gmx in Germany>
- * a lot of contributers of small code pieces
+ * a lot of contributors of small code pieces
 
 # License
 GNU AGPL v3 or higher (see file License)

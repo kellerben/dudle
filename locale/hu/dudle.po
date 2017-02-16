@@ -383,7 +383,7 @@ msgid "Proceed!"
 msgstr "Végrehajtás"
 
 #: ../dudle.rb:232
-msgid "All changes were saved sucessfully."
+msgid "All changes were saved successfully."
 msgstr "A változtatások elmentve."
 
 #: ../edit_columns.rb:44
@@ -745,7 +745,7 @@ msgstr ""
 "mezőbe! (Pl. 09:30, reggel, délután)"
 
 #: ../timepollhead.rb:119
-msgid "This Time was already choosen."
+msgid "This Time was already chosen."
 msgstr "Ez az idő már szerepel"
 
 #: ../timepollhead.rb:193

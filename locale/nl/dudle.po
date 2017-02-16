@@ -383,7 +383,7 @@ msgid "Proceed!"
 msgstr "Doorgaan!"
 
 #: ../dudle.rb:232
-msgid "All changes were saved sucessfully."
+msgid "All changes were saved successfully."
 msgstr "Alle wijzigingen zijn succesvol opgeslagen."
 
 #: ../edit_columns.rb:44
@@ -766,7 +766,7 @@ msgstr ""
 "(bijvoorbeeld 09:30, ochtend, middag)."
 
 #: ../timepollhead.rb:119
-msgid "This Time was already choosen."
+msgid "This Time was already chosen."
 msgstr "Deze Tijd is al gekozen."
 
 #: ../timepollhead.rb:193
