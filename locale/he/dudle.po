@@ -1,0 +1,797 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-16 20:46+0100\n"
+"PO-Revision-Date: 2017-02-16 20:46+0100\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>, 2017\n"
+"Language-Team: Hebrew (https://www.transifex.com/yaron/teams/76313/he/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../about.cgi:29
+msgid "This Application is powered by %{Dudle}."
+msgstr "יישום זה מופעל באמצעות %{Dudle}."
+
+#: ../about.cgi:31
+msgid "License"
+msgstr "רשיון"
+
+#: ../about.cgi:32
+msgid ""
+"The sourcecode of this application is available under the terms of <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version "
+"3</a>"
+msgstr ""
+"קוד המקור של היישום הזה זמין תחת התנאים של <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL גרסה 3</a>"
+
+#: ../about.cgi:33
+msgid "The Sourcecode of this application can be found %{here}."
+msgstr "ניתן למצוא את קוד המקור של היישום הזה %{כאן}."
+
+#: ../about.cgi:35
+msgid ""
+"Write me an e-mail if you found a bug, have something which disturbes you or"
+" any other feedback."
+msgstr ""
+"נא לכתוב לנו הודעת דוא״ל אם מצאת תקלה כלשהי, משהו מפריע לך או כל סוג אחר של "
+"משוב."
+
+#: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
+msgid "Username:"
+msgstr "שם משתמש:"
+
+#: ../access_control.rb:87
+msgid "Password"
+msgstr "ססמה"
+
+#: ../access_control.rb:88
+msgid "repeat"
+msgstr "פעם נוספת"
+
+#: ../access_control.rb:114
+msgid ""
+"You have to remove the participant user before you can remove the "
+"administrator."
+msgstr "עליך להסיר את כל המשתתפים לפני שניתן להסיר את המנהל."
+
+#: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
+#: ../delete_poll.rb:112 ../poll.rb:338
+msgid "Delete"
+msgstr "מחיקה"
+
+#: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
+#: ../poll.rb:300
+msgid "Save"
+msgstr "שמירה"
+
+#: ../access_control.rb:139
+msgid "Only letters and digits are allowed in the username."
+msgstr "מותר להשתמש רק בתווים ובספרות בשם המשתמש."
+
+#: ../access_control.rb:141
+msgid "Passwords did not match."
+msgstr "הססמאות אינן תואמות."
+
+#: ../access_control.rb:175
+msgid "Change Access Control Settings"
+msgstr "שינוי הגדרות בקרת גישה"
+
+#: ../access_control.rb:179
+msgid "not activated"
+msgstr "לא מופעל"
+
+#: ../access_control.rb:181
+msgid "Activate"
+msgstr "הפעלה"
+
+#: ../access_control.rb:184
+msgid "will be activated when at least an admin user is configured"
+msgstr "יופעל כאשר יוגדר לפחות מנהל אחד"
+
+#: ../access_control.rb:186
+msgid "Deactivate"
+msgstr "השבתה"
+
+#: ../access_control.rb:188
+msgid "activated"
+msgstr "מושבת"
+
+#: ../access_control.rb:189
+msgid ""
+"You have to remove all users before you can deactivate the access control "
+"settings."
+msgstr "עליך להסיר את כל המשתמשים לפני שניתן להשבית את הגדרות בקרת הגישה"
+
+#: ../access_control.rb:193
+msgid ""
+"You will be asked for the password you entered here after pressing save!"
+msgstr "תופיע בקשה לססמה שהזנת כאן לאחר לחיצה על שמירה!"
+
+#: ../access_control.rb:196
+msgid ""
+"The user ‘admin’ has access to the vote as well as the configuration "
+"interface."
+msgstr "למשתמש 'מנהל' יש גישה להצעות כמו גם למנשק התצורה."
+
+#: ../access_control.rb:202
+msgid "The user ‘participant’ has only access to the vote interface."
+msgstr "למשתמש 'משתתף' יש גישה רק למנשק ההצבעה."
+
+#: ../access_control.rb:208
+msgid "Access control:"
+msgstr "בקרת גישה:"
+
+#: ../authorization_required.cgi:36 ../authorization_required.cgi:52
+msgid "Authorization Required"
+msgstr "נדרש אימות"
+
+#: ../authorization_required.cgi:39
+msgid "The configuration of this Poll is protected by password!"
+msgstr "תצורת הסקר הזה מוגנת בססמה!"
+
+#: ../authorization_required.cgi:41
+msgid "This Poll is protected by password!"
+msgstr "סקר זה מוגן בססמה!"
+
+#: ../authorization_required.cgi:43
+msgid "In order to proceed, you have to give the password for user %{user}."
+msgstr "כדי להמשיך, עליך לספק את הססמה למשתמש %{user}."
+
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to dudle home and Schedule a new Poll"
+msgstr "יש לחזור לעמוד הבית של dudle כדי לתזמן סקר חדש"
+
+#: ../authorization_required.cgi:54
+msgid "You have to authorize yourself in order to access this page!"
+msgstr "עליך להזדהות מול המערכת כדי לגשת לעמוד זה!"
+
+#: ../config.rb:45
+msgid "Event Schedule Poll"
+msgstr "סקר תזמון אירוע"
+
+#: ../config.rb:49
+msgid "Normal Poll"
+msgstr "סקר רגיל"
+
+#: ../config.rb:53
+msgid ""
+"End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+msgstr "סקר מוצפן/מאומת מקצה לקצה (הססמה בתגובות)"
+
+#: ../config.rb:57
+msgid ""
+"End-to-End encrypted Poll, where only the administrator is able to read "
+"votes"
+msgstr "סקר מוצפן מקצה לקצה בו רק למנהלים יש אפשרות לראות הצבעות"
+
+#: ../config.rb:61
+msgid "Test for several PGP-authenticated votes"
+msgstr "בדיקה למגוון הצבעות שמוגנות ב־PGP"
+
+#: ../customize.cgi:31 ../customize.rb:31
+msgid "Customize Personal Settings"
+msgstr "התאמת הגדרות אישיות"
+
+#: ../customize.cgi:32 ../customize.rb:32
+msgid "You need cookies enabled in order to personalize your settings."
+msgstr "יש להשתמש בעוגיות כדי להתאים את ההגדרות שלך."
+
+#: ../customize.cgi:39 ../customize.rb:39
+msgid "Current Setting"
+msgstr "ההגדרה הנוכחית"
+
+#: ../customize.cgi:40 ../customize.rb:40
+msgid "Description"
+msgstr "תיאור"
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "יש להשתמש באפשרות זו אם התווים שבסוגריים מופיעים."
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use special characters"
+msgstr "שימוש בתווים מיוחדים"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "יש להשתמש באפשרות זו אם נתקלת בבעיות עם תווים כלשהם."
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "שימוש במחרוזות רגילות בלבד"
+
+#: ../customize.cgi:61 ../customize.rb:61
+msgid "Charset"
+msgstr "ערכת תווים"
+
+#: ../customize.cgi:66 ../customize.rb:66
+msgid "Stylesheet"
+msgstr "ערכת עיצוב"
+
+#: ../customize.cgi:81 ../customize.rb:81
+msgid "Default Username"
+msgstr "שם משתמש כבררת מחדל"
+
+#: ../customize.cgi:106 ../customize.rb:106
+msgid "Edit"
+msgstr "עריכה"
+
+#: ../delete_poll.rb:30
+msgid "Yes, I know what I am doing!"
+msgstr "כן, ברור לי מה אני עושה!"
+
+#: ../delete_poll.rb:31
+msgid "I hate these stupid entry fields."
+msgstr "שדות ההזנה הדביליים האלה שנואים עלי."
+
+#: ../delete_poll.rb:32
+msgid "I am aware of the consequences."
+msgstr "ההשלכות מובנות לי."
+
+#: ../delete_poll.rb:33
+msgid "Please delete this poll."
+msgstr "נא למחוק את הסקר הזה."
+
+#: ../delete_poll.rb:42
+msgid "Example polls can not be deleted."
+msgstr "אי אפשר למחוק סקרים לדוגמה."
+
+#: ../delete_poll.rb:43
+msgid "You should never see this text."
+msgstr "טקסט זה לא אמור להופיע."
+
+#: ../delete_poll.rb:56
+msgid "The poll was deleted successfully!"
+msgstr "הסקר נמחק בהצלחה!"
+
+#: ../delete_poll.rb:57
+msgid ""
+"If this was done by accident, please contact the administrator of the "
+"system. The poll can be recovered for an indeterminate amount of time, it "
+"could already be too late."
+msgstr ""
+"אם פעולה זו קרתה בטעות, נא ליצור קשר עם מנהל המערכת. ניתן לשחזר את הסקר אך "
+"ללא הערכת זמן מדויקת, יכול להיות שכבר מאוחר מדי."
+
+#: ../delete_poll.rb:59
+msgid "You can now"
+msgstr "כעת ניתן"
+
+#: ../delete_poll.rb:60
+msgid "Return to dudle home and schedule a new poll"
+msgstr "לחזור לעמוד הבית של dudle ולתזמן סקר חדש"
+
+#: ../delete_poll.rb:61
+msgid "Browse Wikipedia"
+msgstr "עיון בוויקיפדי"
+
+#: ../delete_poll.rb:62
+msgid "Search for something on the Internet"
+msgstr "חיפוש משהו באינטרנט"
+
+#: ../delete_poll.rb:88
+msgid "To delete the poll, you have to type:"
+msgstr "כדי למחוק את הסקר עליך להקליד:"
+
+#: ../delete_poll.rb:96
+msgid "but you typed:"
+msgstr "אך במקום הקלדת:"
+
+#: ../delete_poll.rb:108
+msgid "Delete this Poll"
+msgstr "מחיקת סקר זה"
+
+#: ../delete_poll.rb:109
+msgid "You want to delete the poll named"
+msgstr "ברצונך למחוק סקר בשם"
+
+#: ../delete_poll.rb:110
+msgid "This is an irreversible action!"
+msgstr "פעולה זו לא ניתנת לביטול!"
+
+#: ../delete_poll.rb:111
+msgid ""
+"If you are sure that you want to permanently remove this poll, please type "
+"“%{question}” into the form."
+msgstr "אם ברור לך שברצונך להסיר את הסקר הזה, נא להקליד „%{question}” לטופס."
+
+#: ../dudle.rb:73
+msgid "Home"
+msgstr "עמוד הבית"
+
+#: ../dudle.rb:76
+msgid "Poll"
+msgstr "סקר"
+
+#: ../dudle.rb:77 ../history.rb:35
+msgid "History"
+msgstr "היסטוריה"
+
+#: ../dudle.rb:80
+msgid "Edit Columns"
+msgstr "עריכת עמודות"
+
+#: ../dudle.rb:81 ../invite_participants.rb:38
+msgid "Invite Participants"
+msgstr "הזמנת משתתפים"
+
+#: ../dudle.rb:82
+msgid "Access Control"
+msgstr "בקרת גישה"
+
+#: ../dudle.rb:83
+msgid "Overview"
+msgstr "סקירה"
+
+#: ../dudle.rb:86
+msgid "Delete Poll"
+msgstr "מחיקת סקר"
+
+#: ../dudle.rb:89 ../example.cgi:67
+msgid "Examples"
+msgstr "דוגמאות"
+
+#: ../dudle.rb:90
+msgid "About"
+msgstr "על אודות"
+
+#: ../dudle.rb:92
+msgid "Customize"
+msgstr "התאמה אישית"
+
+#: ../dudle.rb:100
+msgid "Dudle Home"
+msgstr "עמוד הבית של Dudle"
+
+#: ../dudle.rb:207 ../dudle.rb:225
+msgid "Previous"
+msgstr "הקודם"
+
+#: ../dudle.rb:208 ../dudle.rb:226
+msgid "Next"
+msgstr "הבא"
+
+#: ../dudle.rb:209 ../dudle.rb:227
+msgid "Finish"
+msgstr "סיום"
+
+#: ../dudle.rb:232
+msgid "All changes were saved successfully."
+msgstr "כל השינויים נשמרו בהצלחה."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "להמשיך!"
+
+#: ../edit_columns.rb:44
+msgid "Add and Remove Columns"
+msgstr "הוספה והסרה של עמודות"
+
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+msgid "Delete column"
+msgstr "מחיקת עמודה"
+
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+msgid "Add column"
+msgstr "הוספת עמודה"
+
+#: ../edit_columns.rb:71 ../edit_columns.rb:88
+msgid "Edit column"
+msgstr "עריכת עמודה"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "ביטול"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "ביצוע חוזר"
+
+#: ../error.cgi:25 ../error.cgi:27
+msgid "Error"
+msgstr "שגיאה"
+
+#: ../error.cgi:46
+msgid "The following error was printed:"
+msgstr "ההודעה הבאה הופיעה:"
+
+#: ../error.cgi:50
+msgid ""
+"Hi!\n"
+"\n"
+"I found a bug in your application at %{urlofsite}.\n"
+"I did the following:\n"
+"\n"
+"<please describe what you did>\n"
+"<e.g., I wanted to sent a comment to the poll.>\n"
+"\n"
+"I am using <please state your browser and operating system>\n"
+"%{errormessage}\n"
+"Yours,\n"
+msgstr ""
+"שלום!\n"
+"\n"
+"מצאתי באג ביישום שלך בכתובת %{urlofsite}.\n"
+"ביצעתי את הפעולות הבאות:\n"
+"\n"
+"<please describe what you did>\n"
+"<למשל: ניסיתי לשלוח הערה לסקר>\n"
+"\n"
+"הגרסה שברשותי היא <please state your browser and operating system>\n"
+"%{errormessage}\n"
+"בברכה,\n"
+
+#: ../error.cgi:51
+msgid "Bug in dudle"
+msgstr "באג ב־dudle"
+
+#: ../error.cgi:53
+msgid ""
+"An error occured while executing dudle.<br/>Please send an error report, "
+"including your browser, operating system, and what you did to %{admin}."
+msgstr ""
+"אירעה שגיאה בעת הפעלת dudle.<br/>נא לשלוח דוח שגיאה, לרבות תיאור הדפדפן, "
+"מערכת ההפעלה והפעולות שבוצעו מול %{admin}."
+
+#: ../error.cgi:56
+msgid "Please include the following as well:"
+msgstr "נא לכלול גם את הפרטים האלה:"
+
+#: ../example.cgi:60
+msgid "Example not found: %{example}"
+msgstr "לא נמצאה דוגמה: %{example}"
+
+#: ../example.cgi:68
+msgid ""
+"If you want to play with the application, you may want to take a look at "
+"these example polls:"
+msgstr "אם ברצונך לשחק עם היישום, יתכן שכדאי להסתכל על הסקרים האלה לדוגמה:"
+
+#: ../history.rb:28
+msgid "Poll of Version %{revisionnumber}"
+msgstr "סקר בגרסה %{revisionnumber}"
+
+#: ../history.rb:32
+msgid "Current Poll (Version %{revisionnumber})"
+msgstr "סקר נוכחי (גרסה %{revisionnumber})"
+
+#: ../index.cgi:32
+msgid "Please enter a descriptive title."
+msgstr "נא להזין כותרת עניינית."
+
+#: ../index.cgi:48
+msgid "Custom address may only contain letters, numbers, and dashes."
+msgstr "כתובת בהתאמה אישית יכולה להכיר רק אותיות, מספרים ומקפים."
+
+#: ../index.cgi:50
+msgid "A Poll with this address already exists."
+msgstr "כבר קיים סקר בכתובת הזו."
+
+#: ../index.cgi:68
+msgid ""
+"The poll was created successfully. The link to your new poll is: %{link}"
+msgstr "הסקר נוצר בהצלחה. הקישור לסקר החדש שלך הוא: %{link}"
+
+#: ../index.cgi:76
+msgid "Go away."
+msgstr "הביתה."
+
+#: ../index.cgi:84
+msgid "Create New Poll"
+msgstr "יצירת סקר חדש"
+
+#: ../index.cgi:86
+msgid "Title"
+msgstr "כותרת"
+
+#: ../index.cgi:87
+msgid "Type"
+msgstr "סוג"
+
+#: ../index.cgi:88
+msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
+msgstr "סקר תזמון אירוע (למשל: לקבוע פגישה)"
+
+#: ../index.cgi:89
+msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
+msgstr "סקר רגיל (למשל: להצביע מה הוא הקפה הטוב ביותר)"
+
+#: ../index.cgi:90
+msgid "Custom address (optional)"
+msgstr "כתובת בהתאמה אישית (רשות)"
+
+#: ../index.cgi:91
+msgid "May contain letters, numbers, and dashes."
+msgstr "ניתן להשתמש באותיות, מספרים ומקפים."
+
+#: ../index.cgi:93
+msgid "Create"
+msgstr "יצירה"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "תאריך"
+
+#: ../log.rb:111
+msgid "Version"
+msgstr "גרסה"
+
+#: ../log.rb:111
+msgid "Comment"
+msgstr "הערה"
+
+#: ../maintenance.cgi:25 ../maintenance.cgi:27
+msgid "Maintenance"
+msgstr "תחזוקה"
+
+#: ../maintenance.cgi:36
+msgid "This site is currently under maintenance!"
+msgstr "אתר זה כרגע עובר עבודות תחזוקה!"
+
+#: ../maintenance.cgi:39
+msgid ""
+"You should not browse to this file directly. Please create a file named "
+"\"maintenance.html\" to enable the maintenance mode."
+msgstr ""
+"אין לגלוש לקובץ זה ישירות. נא ליצור קובץ בשם „maintenance.html” כדי להפעיל "
+"מצב תחזוקה."
+
+#: ../not_found.cgi:29
+msgid "Poll Not Found"
+msgstr "לא נמצא סקר"
+
+#: ../not_found.cgi:31
+msgid "The requested Poll was not found."
+msgstr "הסקר המבוקש לא נמצא."
+
+#: ../not_found.cgi:32
+msgid "There are several reasons, why a Poll is deleted:"
+msgstr "ישנן מספר סיבות למחיקת סקר:"
+
+#: ../not_found.cgi:33
+msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
+msgstr "הכפתור „מחיקת סקר” נלחץ בטעות והסקר נמחק ידנית."
+
+#: ../not_found.cgi:34
+msgid ""
+"The Poll was deleted by the administrator because it was not accessed for a "
+"long time."
+msgstr "הסקר נמחק על ידי המנהל כיוון שלא ניגשו אליו זמן רב."
+
+#: ../not_found.cgi:35
+msgid ""
+"If you think, the deletion was done by error, please contact the "
+"adminsistrator of the system."
+msgstr "אם לדעתך המחיקה שגויה, נא ליצור קשר עם מנהל המערכת."
+
+#: ../overview.rb:31
+msgid "The next steps are:"
+msgstr "הצעדים הבאים הם:"
+
+#: ../overview.rb:33
+msgid "Send the link to all participants:"
+msgstr "יש לשלוח את הקישור לכל המשתתפים:"
+
+#: ../overview.rb:34
+msgid "Send this link via email..."
+msgstr "שליחת הקישור הזה בדוא״ל…"
+
+#: ../overview.rb:35
+msgid "Visit the poll yourself:"
+msgstr "ביקור הסקר בעצמך:"
+
+#: ../overview.rb:36
+msgid "Link to dudle poll about %{polltitle}"
+msgstr "קישור לסקר dudle בנושא %{polltitle}"
+
+#: ../participate.rb:59
+msgid "The changes were saved, you should be redirected to %{link}."
+msgstr "השינויים נשמרו, מיד תועבר אל %{link}."
+
+#: ../poll.rb:96
+msgid "Edit user %{user}..."
+msgstr "עריכת המשתמש %{user}…"
+
+#: ../poll.rb:100
+msgid "Delete user %{user}..."
+msgstr "מחיקת המשתמש %{user}…"
+
+#: ../poll.rb:154
+msgid "Total"
+msgstr "סך הכול"
+
+#: ../poll.rb:186
+msgid "Invite"
+msgstr "הזמנה"
+
+#: ../poll.rb:187 ../pollhead.rb:62 ../timepollhead.rb:158
+msgid "Name"
+msgstr "שם"
+
+#: ../poll.rb:232
+msgid "Save Changes"
+msgstr "שמירת השינויים"
+
+#: ../poll.rb:236
+msgid "Cancel"
+msgstr "ביטול"
+
+#: ../poll.rb:258
+msgid "Do you really want to delete user %{user}?"
+msgstr "למחוק את המשתמש %{user}?"
+
+#: ../poll.rb:261
+msgid "Confirm"
+msgstr "אישור"
+
+#: ../poll.rb:309
+msgid "Comments"
+msgstr "הערות"
+
+#: ../poll.rb:312
+msgid "Sort oldest comment first"
+msgstr "סידור ההערות הישנות ביותר בהתחלה"
+
+#: ../poll.rb:315
+msgid "Sort newest comment first"
+msgstr "סידור ההערות החדשות ביותר בהתחלה"
+
+#: ../poll.rb:320
+msgid "Go to last comment"
+msgstr "מעבר להערה האחרונה"
+
+#: ../poll.rb:333
+msgid "%{user} said on %{time}"
+msgstr "נאמר ע״י %{user} ב־%{time}"
+
+#: ../poll.rb:348
+msgid "Go Up"
+msgstr "לעבור למעלה"
+
+#: ../poll.rb:354
+msgid "says"
+msgstr "אמר/ה"
+
+#: ../poll.rb:355
+msgid "Submit Comment"
+msgstr "שליחת הערה"
+
+#: ../poll.rb:373
+msgid "Show history items:"
+msgstr "הצגת פריטים מההיסטוריה:"
+
+#: ../poll.rb:380
+msgid "All"
+msgstr "הכול"
+
+#: ../poll.rb:381
+msgid "Participant related"
+msgstr "בהקשר למשתתף"
+
+#: ../poll.rb:382
+msgid "Column related"
+msgstr "בהקשר לעמודה"
+
+#: ../poll.rb:383
+msgid "Comment related"
+msgstr "בהקשר להערה"
+
+#: ../poll.rb:384
+msgid "Access Control related"
+msgstr "בהקשר לבקרת גישה"
+
+#: ../poll.rb:390
+msgid "Update"
+msgstr "עדכון"
+
+#: ../pollhead.rb:71
+msgid "Edit Option"
+msgstr "עריכת אפשרות"
+
+#: ../pollhead.rb:72
+msgid "Delete Option"
+msgstr "מחיקת אפשרות"
+
+#: ../pollhead.rb:87 ../timepollhead.rb:162
+msgid "Last Edit"
+msgstr "עריכה אחרונה"
+
+#: ../pollhead.rb:99
+msgid "Option"
+msgstr "אפשרות"
+
+#: ../pollhead.rb:100
+msgid "Description (optional)"
+msgstr "תיאור (רשות)"
+
+#: ../pollhead.rb:101
+msgid "Add/Edit Option"
+msgstr "הוספה/עריכה של אפשרות"
+
+#: ../pollhead.rb:102
+msgid "Preview"
+msgstr "תצוגה מקדימה"
+
+#: ../pollhead.rb:103
+msgid ""
+"Enter all Options (columns), you want to ask the participants of the poll. "
+"The participants will state one vote for every option you give here "
+"separately."
+msgstr ""
+"נא להזיר את כל האפשרויות (עמודות) שברצונך להציג למשתתפים בסקר. המשתתפים "
+"יבחרו בהצבעה בודדת עבור כל אפשרות שתצוין כאן באופן נפרד."
+
+#: ../timepollhead.rb:113
+msgid ""
+"To add some time different to the default ones, please enter some string "
+"here (e.&thinsp;g., 09:30, morning, afternoon)."
+msgstr ""
+"כדי להוסיף זמנים מעבר לבררת המחדל, נא להזין מחרוזת כלשהי להלן (למשל: 09:30, "
+"בוקר, צהריים)."
+
+#: ../timepollhead.rb:119
+msgid "This Time was already chosen."
+msgstr "מועד זה כבר נבחר."
+
+#: ../timepollhead.rb:193
+msgid "Earlier"
+msgstr "מוקדם יותר"
+
+#: ../timepollhead.rb:198
+msgid "Later"
+msgstr "מאוחר יותר"
+
+#: ../timepollhead.rb:264
+msgid "Click on the dates to add or remove columns."
+msgstr "נא ללחוץ על התאריכים כדי להוסיף או להסיר עמודות."
+
+#: ../timepollhead.rb:312
+msgid "Optional:"
+msgstr "רשות:"
+
+#: ../timepollhead.rb:313
+msgid "Enter a concrete value as start time."
+msgstr "נא להזין ערך ממשי כערך התחלתי."
+
+#: ../timepollhead.rb:329
+msgid "Time"
+msgstr "זמן"
+
+#: ../timepollhead.rb:342
+msgid "Chosen"
+msgstr "נבחר"
+
+#: ../timepollhead.rb:343
+msgid "Not Chosen"
+msgstr "לא נבחר"
+
+#: ../timepollhead.rb:344
+msgid "Past"
+msgstr "עבר"
+
+#: ../timepollhead.rb:378
+msgid "Select the whole row"
+msgstr "בחירת העמודה כולה"
+
+#: ../timepollhead.rb:383
+msgid "Deselect the whole row"
+msgstr "ביטול בחירת העמודה כולה"
+
+#: ../timepollhead.rb:427
+msgid "Add"
+msgstr "הוספה"
+
+#: ../timepollhead.rb:428
+msgid "e.&thinsp;g., 09:30, morning, afternoon"
+msgstr "למשל: 09:30, בוקר, צהריים"
