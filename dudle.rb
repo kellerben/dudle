@@ -252,6 +252,7 @@ READY
 			["nl", "Nederlands"],
 			["hu", "Magyar"],
 			["cs", "Česky"],
+			["he", "עִבְרִית"],
 			["ca", "Català"],
 			["sv", "Svenska"],
 			["gl", "Galego"],
