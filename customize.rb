@@ -42,7 +42,7 @@ HEAD
 	options.each{|description,href,title|
 		selected = href == cursetting
 		ret += "<tr><td>"
-		ret += CROSS if selected
+		ret += YES if selected
 		ret += "</td><td class='settingstable' title='#{title}'>"
 		ret += "<a href='?#{href}'>" unless selected
 		ret += description
