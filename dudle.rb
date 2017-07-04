@@ -251,10 +251,11 @@ READY
 			["it", "Italiano"],
 			["nl", "Nederlands"],
 			["hu", "Magyar"],
+			["sv", "Svenska"],
 			["cs", "Česky"],
 			["he", "עִבְרִית"],
 			["ca", "Català"],
-			["sv", "Svenska"],
+			["no", "Norsk"],
 			["gl", "Galego"],
 			["et", "Eesti"]
 			]

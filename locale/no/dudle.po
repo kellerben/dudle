@@ -35,7 +35,7 @@ msgstr ""
 
 #: ../about.cgi:33
 msgid "The Sourcecode of this application can be found %{here}."
-msgstr "Kildekoden for denne applikasjonen finnes %{her}."
+msgstr "Kildekoden for denne applikasjonen finnes %{here}."
 
 #: ../about.cgi:35
 msgid ""
