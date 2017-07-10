@@ -249,7 +249,7 @@ msgstr "Ja, ich weiß was ich mache!"
 
 #: ../delete_poll.rb:31
 msgid "I hate these stupid entry fields."
-msgstr "Ich hasse diese sinnlosen Eingabefelder."
+msgstr "Ich mag diese sinnlosen Eingabefelder nicht."
 
 #: ../delete_poll.rb:32
 msgid "I am aware of the consequences."
