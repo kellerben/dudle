@@ -1,0 +1,781 @@
+# ###########################################################################
+# Copyright                                                                #
+#                                                                          #
+# This file is part of dudle.                                              #
+#                                                                          #
+# Dudle is free software: you can redistribute it and/or modify it under   #
+# the terms of the GNU Affero General Public License as published by       #
+# the Free Software Foundation, either version 3 of the License, or        #
+# (at your option) any later version.                                      #
+#                                                                          #
+# Dudle is distributed in the hope that it will be useful, but WITHOUT ANY #
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or        #
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public     #
+# License for more details.                                                #
+#                                                                          #
+# You should have received a copy of the GNU Affero General Public License #
+# along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
+# ###########################################################################
+msgid ""
+msgstr ""
+"Project-Id-Version: 510\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-40 15:30+0300\n"
+"PO-Revision-Date: 2017-07-30 15:30+0300\n"
+"Last-Translator: Benson Muite\n"
+"Language-Team: \n"
+"Language: sw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.2\n"
+
+#: ../about.cgi:29
+msgid "This Application is powered by %{Dudle}."
+msgstr ""
+
+#: ../about.cgi:31
+msgid "License"
+msgstr ""
+
+#: ../about.cgi:32
+msgid ""
+"The sourcecode of this application is available under the terms of <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+msgstr ""
+
+#: ../about.cgi:33
+msgid "The Sourcecode of this application can be found %{here}."
+msgstr ""
+
+#: ../about.cgi:35
+msgid ""
+"Write me an e-mail if you found a bug, have something which disturbes you or "
+"any other feedback."
+msgstr ""
+
+#: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
+msgid "Username:"
+msgstr ""
+
+#: ../access_control.rb:87
+msgid "Password"
+msgstr ""
+
+#: ../access_control.rb:88
+msgid "repeat"
+msgstr ""
+
+#: ../access_control.rb:114
+msgid ""
+"You have to remove the participant user before you can remove the "
+"administrator."
+msgstr ""
+
+#: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
+#: ../delete_poll.rb:112 ../poll.rb:338
+msgid "Delete"
+msgstr ""
+
+#: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
+#: ../poll.rb:300
+msgid "Save"
+msgstr ""
+
+#: ../access_control.rb:139
+msgid "Only letters and digits are allowed in the username."
+msgstr ""
+
+#: ../access_control.rb:141
+msgid "Passwords did not match."
+msgstr ""
+
+#: ../access_control.rb:175
+msgid "Change Access Control Settings"
+msgstr ""
+
+#: ../access_control.rb:179
+msgid "not activated"
+msgstr ""
+
+#: ../access_control.rb:181
+msgid "Activate"
+msgstr ""
+
+#: ../access_control.rb:184
+msgid "will be activated when at least an admin user is configured"
+msgstr ""
+
+#: ../access_control.rb:186
+msgid "Deactivate"
+msgstr ""
+
+#: ../access_control.rb:188
+msgid "activated"
+msgstr ""
+
+#: ../access_control.rb:189
+msgid ""
+"You have to remove all users before you can deactivate the access control "
+"settings."
+msgstr ""
+
+#: ../access_control.rb:193
+msgid ""
+"You will be asked for the password you entered here after pressing save!"
+msgstr ""
+
+#: ../access_control.rb:196
+msgid ""
+"The user ‘admin’ has access to the vote as well as the configuration "
+"interface."
+msgstr ""
+
+#: ../access_control.rb:202
+msgid "The user ‘participant’ has only access to the vote interface."
+msgstr ""
+
+#: ../access_control.rb:208
+msgid "Access control:"
+msgstr ""
+
+#: ../authorization_required.cgi:36 ../authorization_required.cgi:52
+msgid "Authorization Required"
+msgstr ""
+
+#: ../authorization_required.cgi:39
+msgid "The configuration of this Poll is protected by password!"
+msgstr ""
+
+#: ../authorization_required.cgi:41
+msgid "This Poll is protected by password!"
+msgstr ""
+
+#: ../authorization_required.cgi:43
+msgid "In order to proceed, you have to give the password for user %{user}."
+msgstr ""
+
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to dudle home and Schedule a new Poll"
+msgstr ""
+
+#: ../authorization_required.cgi:54
+msgid "You have to authorize yourself in order to access this page!"
+msgstr ""
+
+#: ../config.rb:92
+msgid "Event Schedule Poll"
+msgstr ""
+
+#: ../config.rb:96
+msgid "Normal Poll"
+msgstr ""
+
+#: ../customize.cgi:31 ../customize.rb:31
+msgid "Customize Personal Settings"
+msgstr ""
+
+#: ../customize.cgi:32 ../customize.rb:32
+msgid "You need cookies enabled in order to personalize your settings."
+msgstr ""
+
+#: ../customize.cgi:39 ../customize.rb:39
+msgid "Current Setting"
+msgstr ""
+
+#: ../customize.cgi:40 ../customize.rb:40
+msgid "Description"
+msgstr ""
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use special characters"
+msgstr ""
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr ""
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr ""
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr ""
+
+#: ../customize.cgi:61 ../customize.rb:61
+msgid "Charset"
+msgstr ""
+
+#: ../customize.cgi:66 ../customize.rb:66
+msgid "Stylesheet"
+msgstr ""
+
+#: ../customize.cgi:81 ../customize.rb:81
+msgid "Default Username"
+msgstr ""
+
+#: ../customize.cgi:106 ../customize.rb:106
+msgid "Edit"
+msgstr ""
+
+#: ../delete_poll.rb:30
+msgid "Yes, I know what I am doing!"
+msgstr ""
+
+#: ../delete_poll.rb:31
+msgid "I hate these stupid entry fields."
+msgstr ""
+
+#: ../delete_poll.rb:32
+msgid "I am aware of the consequences."
+msgstr ""
+
+#: ../delete_poll.rb:33
+msgid "Please delete this poll."
+msgstr ""
+
+#: ../delete_poll.rb:42
+msgid "Example polls can not be deleted."
+msgstr ""
+
+#: ../delete_poll.rb:43
+msgid "You should never see this text."
+msgstr ""
+
+#: ../delete_poll.rb:56
+msgid "The poll was deleted successfully!"
+msgstr ""
+
+#: ../delete_poll.rb:57
+msgid ""
+"If this was done by accident, please contact the administrator of the "
+"system. The poll can be recovered for an indeterminate amount of time, it "
+"could already be too late."
+msgstr ""
+
+#: ../delete_poll.rb:59
+msgid "You can now"
+msgstr ""
+
+#: ../delete_poll.rb:60
+msgid "Return to dudle home and schedule a new poll"
+msgstr ""
+
+#: ../delete_poll.rb:61
+msgid "Browse Wikipedia"
+msgstr ""
+
+#: ../delete_poll.rb:62
+msgid "Search for something on the Internet"
+msgstr ""
+
+#: ../delete_poll.rb:88
+msgid "To delete the poll, you have to type:"
+msgstr ""
+
+#: ../delete_poll.rb:96
+msgid "but you typed:"
+msgstr ""
+
+#: ../delete_poll.rb:108
+msgid "Delete this Poll"
+msgstr ""
+
+#: ../delete_poll.rb:109
+msgid "You want to delete the poll named"
+msgstr ""
+
+#: ../delete_poll.rb:110
+msgid "This is an irreversible action!"
+msgstr ""
+
+#: ../delete_poll.rb:111
+msgid ""
+"If you are sure that you want to permanently remove this poll, please type "
+"“%{question}” into the form."
+msgstr ""
+
+#: ../dudle.rb:73
+msgid "Home"
+msgstr ""
+
+#: ../dudle.rb:76
+msgid "Poll"
+msgstr ""
+
+#: ../dudle.rb:77 ../history.rb:35
+msgid "History"
+msgstr ""
+
+#: ../dudle.rb:80
+msgid "Edit Columns"
+msgstr ""
+
+#: ../dudle.rb:81 ../invite_participants.rb:38
+msgid "Invite Participants"
+msgstr ""
+
+#: ../dudle.rb:82
+msgid "Access Control"
+msgstr ""
+
+#: ../dudle.rb:83
+msgid "Overview"
+msgstr ""
+
+#: ../dudle.rb:86
+msgid "Delete Poll"
+msgstr ""
+
+#: ../dudle.rb:89 ../example.cgi:67
+msgid "Examples"
+msgstr ""
+
+#: ../dudle.rb:90
+msgid "About"
+msgstr ""
+
+#: ../dudle.rb:92
+msgid "Customize"
+msgstr ""
+
+#: ../dudle.rb:100
+msgid "Dudle Home"
+msgstr ""
+
+#: ../dudle.rb:207 ../dudle.rb:225
+msgid "Previous"
+msgstr ""
+
+#: ../dudle.rb:208 ../dudle.rb:226
+msgid "Next"
+msgstr ""
+
+#: ../dudle.rb:209 ../dudle.rb:227
+msgid "Finish"
+msgstr ""
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr ""
+
+#: ../dudle.rb:232
+msgid "All changes were saved successfully."
+msgstr ""
+
+#: ../edit_columns.rb:44
+msgid "Add and Remove Columns"
+msgstr ""
+
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+msgid "Delete column"
+msgstr ""
+
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+msgid "Add column"
+msgstr ""
+
+#: ../edit_columns.rb:71 ../edit_columns.rb:88
+msgid "Edit column"
+msgstr ""
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr ""
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr ""
+
+#: ../error.cgi:25 ../error.cgi:27
+msgid "Error"
+msgstr ""
+
+#: ../error.cgi:46
+msgid "The following error was printed:"
+msgstr ""
+
+#: ../error.cgi:50
+msgid ""
+"Hi!\n"
+"\n"
+"I found a bug in your application at %{urlofsite}.\n"
+"I did the following:\n"
+"\n"
+"<please describe what you did>\n"
+"<e.g., I wanted to sent a comment to the poll.>\n"
+"\n"
+"I am using <please state your browser and operating system>\n"
+"%{errormessage}\n"
+"Yours,\n"
+msgstr ""
+
+#: ../error.cgi:51
+msgid "Bug in dudle"
+msgstr ""
+
+#: ../error.cgi:53
+msgid ""
+"An error occured while executing dudle.<br/>Please send an error report, "
+"including your browser, operating system, and what you did to %{admin}."
+msgstr ""
+
+#: ../error.cgi:56
+msgid "Please include the following as well:"
+msgstr ""
+
+#: ../example.cgi:60
+msgid "Example not found: %{example}"
+msgstr ""
+
+#: ../example.cgi:68
+msgid ""
+"If you want to play with the application, you may want to take a look at "
+"these example polls:"
+msgstr ""
+
+#: ../history.rb:28
+msgid "Poll of Version %{revisionnumber}"
+msgstr ""
+
+#: ../history.rb:32
+msgid "Current Poll (Version %{revisionnumber})"
+msgstr ""
+
+#: ../index.cgi:32
+msgid "Please enter a descriptive title."
+msgstr ""
+
+#: ../index.cgi:48
+msgid "Custom address may only contain letters, numbers, and dashes."
+msgstr ""
+"Az URL-be csak ékezet nélküli betűket, valamint számokat és kötőjelet "
+"írhatsz."
+
+#: ../index.cgi:50
+msgid "A Poll with this address already exists."
+msgstr "Ezen a neven már létezik egy szavazás."
+
+#: ../index.cgi:68
+msgid ""
+"The poll was created successfully. The link to your new poll is: %{link}"
+msgstr "A szavazás sikeresen létrejött. Ezen a linken lehet elérni: %{link}"
+
+#: ../index.cgi:76
+msgid "Go away."
+msgstr ""
+
+#: ../index.cgi:84
+msgid "Create New Poll"
+msgstr "Új szavazás létrehozása"
+
+#: ../index.cgi:86
+msgid "Title"
+msgstr "Cím"
+
+#: ../index.cgi:87
+msgid "Type"
+msgstr "Típus"
+
+#: ../index.cgi:88
+msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
+msgstr "Időpont kiválasztása (pl. egy értekezlet beütemezése)"
+
+#: ../index.cgi:89
+msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
+msgstr "Normál szavazás (pl. melyik a legfinomabb süti)"
+
+#: ../index.cgi:90
+msgid "Custom address (optional)"
+msgstr "Testre szabott URL (opcionális)"
+
+#: ../index.cgi:91
+msgid "May contain letters, numbers, and dashes."
+msgstr "Betűket, számokat, kötőjelet, aláhúzást tartalmazhat."
+
+#: ../index.cgi:93
+msgid "Create"
+msgstr "Létrehozás"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Dátum"
+
+#: ../log.rb:111
+msgid "Version"
+msgstr "Verzió"
+
+#: ../log.rb:111
+msgid "Comment"
+msgstr "Esemény"
+
+#: ../maintenance.cgi:25 ../maintenance.cgi:27
+msgid "Maintenance"
+msgstr ""
+
+#: ../maintenance.cgi:36
+msgid "This site is currently under maintenance!"
+msgstr ""
+
+#: ../maintenance.cgi:39
+msgid ""
+"You should not browse to this file directly. Please create a file named "
+"\"maintenance.html\" to enable the maintenance mode."
+msgstr ""
+
+#: ../not_found.cgi:29
+msgid "Poll Not Found"
+msgstr ""
+
+#: ../not_found.cgi:31
+msgid "The requested Poll was not found."
+msgstr ""
+
+#: ../not_found.cgi:32
+msgid "There are several reasons, why a Poll is deleted:"
+msgstr ""
+
+#: ../not_found.cgi:33
+msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
+msgstr ""
+
+#: ../not_found.cgi:34
+msgid ""
+"The Poll was deleted by the administrator because it was not accessed for a "
+"long time."
+msgstr ""
+
+#: ../not_found.cgi:35
+msgid ""
+"If you think, the deletion was done by error, please contact the "
+"adminsistrator of the system."
+msgstr ""
+
+#: ../overview.rb:31
+msgid "The next steps are:"
+msgstr ""
+
+#: ../overview.rb:33
+msgid "Send the link to all participants:"
+msgstr ""
+
+#: ../overview.rb:34
+msgid "Send this link via email..."
+msgstr ""
+
+#: ../overview.rb:35
+msgid "Visit the poll yourself:"
+msgstr ""
+
+#: ../overview.rb:36
+msgid "Link to dudle poll about %{polltitle}"
+msgstr ""
+
+#: ../participate.rb:59
+msgid "The changes were saved, you should be redirected to %{link}."
+msgstr ""
+
+#: ../poll.rb:96
+msgid "Edit user %{user}..."
+msgstr ""
+
+#: ../poll.rb:100
+msgid "Delete user %{user}..."
+msgstr ""
+
+#: ../poll.rb:154
+msgid "Total"
+msgstr ""
+
+#: ../poll.rb:186
+msgid "Invite"
+msgstr ""
+
+#: ../poll.rb:187 ../pollhead.rb:62 ../timepollhead.rb:158
+msgid "Name"
+msgstr ""
+
+#: ../poll.rb:232
+msgid "Save Changes"
+msgstr ""
+
+#: ../poll.rb:236
+msgid "Cancel"
+msgstr ""
+
+#: ../poll.rb:258
+msgid "Do you really want to delete user %{user}?"
+msgstr ""
+
+#: ../poll.rb:261
+msgid "Confirm"
+msgstr ""
+
+#: ../poll.rb:309
+msgid "Comments"
+msgstr ""
+
+#: ../poll.rb:312
+msgid "Sort oldest comment first"
+msgstr ""
+
+#: ../poll.rb:315
+msgid "Sort newest comment first"
+msgstr ""
+
+#: ../poll.rb:320
+msgid "Go to last comment"
+msgstr ""
+
+#: ../poll.rb:333
+msgid "%{user} said on %{time}"
+msgstr ""
+
+#: ../poll.rb:348
+msgid "Go Up"
+msgstr "Kwenda juu"
+
+#: ../poll.rb:354
+msgid "says"
+msgstr ""
+
+#: ../poll.rb:355
+msgid "Submit Comment"
+msgstr ""
+
+#: ../poll.rb:373
+msgid "Show history items:"
+msgstr ""
+
+#: ../poll.rb:380
+msgid "All"
+msgstr "Yote"
+
+#: ../poll.rb:381
+msgid "Participant related"
+msgstr ""
+
+#: ../poll.rb:382
+msgid "Column related"
+msgstr ""
+
+#: ../poll.rb:383
+msgid "Comment related"
+msgstr ""
+
+#: ../poll.rb:384
+msgid "Access Control related"
+msgstr ""
+
+#: ../poll.rb:390
+msgid "Update"
+msgstr ""
+
+#: ../pollhead.rb:71
+msgid "Edit Option"
+msgstr ""
+
+#: ../pollhead.rb:72
+msgid "Delete Option"
+msgstr ""
+
+#: ../pollhead.rb:87 ../timepollhead.rb:162
+msgid "Last Edit"
+msgstr ""
+
+#: ../pollhead.rb:99
+msgid "Option"
+msgstr ""
+
+#: ../pollhead.rb:100
+msgid "Description (optional)"
+msgstr ""
+
+#: ../pollhead.rb:101
+msgid "Add/Edit Option"
+msgstr ""
+
+#: ../pollhead.rb:102
+msgid "Preview"
+msgstr ""
+
+#: ../pollhead.rb:103
+msgid ""
+"Enter all Options (columns), you want to ask the participants of the poll. "
+"The participants will state one vote for every option you give here "
+"separately."
+msgstr ""
+
+#: ../timepollhead.rb:113
+msgid ""
+"To add some time different to the default ones, please enter some string "
+"here (e.&thinsp;g., 09:30, morning, afternoon)."
+msgstr ""
+
+#: ../timepollhead.rb:119
+msgid "This Time was already chosen."
+msgstr ""
+
+#: ../timepollhead.rb:193
+msgid "Earlier"
+msgstr ""
+
+#: ../timepollhead.rb:198
+msgid "Later"
+msgstr ""
+
+#: ../timepollhead.rb:264
+msgid "Click on the dates to add or remove columns."
+msgstr ""
+
+#: ../timepollhead.rb:312
+msgid "Optional:"
+msgstr ""
+
+#: ../timepollhead.rb:313
+msgid "Enter a concrete value as start time."
+msgstr ""
+
+#: ../timepollhead.rb:329
+msgid "Time"
+msgstr ""
+
+#: ../timepollhead.rb:342
+msgid "Chosen"
+msgstr ""
+
+#: ../timepollhead.rb:343
+msgid "Not Chosen"
+msgstr ""
+
+#: ../timepollhead.rb:344
+msgid "Past"
+msgstr ""
+
+#: ../timepollhead.rb:378
+msgid "Select the whole row"
+msgstr ""
+
+#: ../timepollhead.rb:383
+msgid "Deselect the whole row"
+msgstr ""
+
+#: ../timepollhead.rb:427
+msgid "Add"
+msgstr ""
+
+#: ../timepollhead.rb:428
+msgid "e.&thinsp;g., 09:30, morning, afternoon"
+msgstr ""
+
+#~ msgid "Things you can do now are"
+#~ msgstr "Milyen lehetőségeid vannak?"
+
+#~ msgid ""
+#~ "You can get the sourcecode, using <a href='http://bazaar-vcs."
+#~ "org/'>bazaar</a>:"
+#~ msgstr ""
+#~ "A forráskódot innen töltheted le a <a href='http://bazaar-vcs."
+#~ "org/'>bazaar</a> programmal:"
