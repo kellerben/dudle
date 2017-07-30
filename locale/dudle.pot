@@ -1,35 +1,22 @@
-# ###########################################################################
-# Copyright                                                                #
-#                                                                          #
-# This file is part of dudle.                                              #
-#                                                                          #
-# Dudle is free software: you can redistribute it and/or modify it under   #
-# the terms of the GNU Affero General Public License as published by       #
-# the Free Software Foundation, either version 3 of the License, or        #
-# (at your option) any later version.                                      #
-#                                                                          #
-# Dudle is distributed in the hope that it will be useful, but WITHOUT ANY #
-# WARRANTY; without even the implied warranty of MERCHANTABILITY or        #
-# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public     #
-# License for more details.                                                #
-#                                                                          #
-# You should have received a copy of the GNU Affero General Public License #
-# along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
-# ###########################################################################
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 510\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-40 15:30+0300\n"
-"PO-Revision-Date: 2017-07-30 22:04+0300\n"
-"Last-Translator: Benson Muite\n"
-"Language-Team: \n"
-"Language: sw\n"
+"POT-Creation-Date: 2017-07-10 22:36+0200\n"
+"PO-Revision-Date: 2017-07-10 22:36+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.2\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: ../about.cgi:29
 msgid "This Application is powered by %{Dudle}."
@@ -41,8 +28,8 @@ msgstr ""
 
 #: ../about.cgi:32
 msgid ""
-"The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+"The sourcecode of this application is available under the terms of <a href='ht"
+"tp://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
 msgstr ""
 
 #: ../about.cgi:33
@@ -51,8 +38,8 @@ msgstr ""
 
 #: ../about.cgi:35
 msgid ""
-"Write me an e-mail if you found a bug, have something which disturbes you or "
-"any other feedback."
+"Write me an e-mail if you found a bug, have something which disturbes you or a"
+"ny other feedback."
 msgstr ""
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
@@ -69,8 +56,8 @@ msgstr ""
 
 #: ../access_control.rb:114
 msgid ""
-"You have to remove the participant user before you can remove the "
-"administrator."
+"You have to remove the participant user before you can remove the administrato"
+"r."
 msgstr ""
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
@@ -117,19 +104,18 @@ msgstr ""
 
 #: ../access_control.rb:189
 msgid ""
-"You have to remove all users before you can deactivate the access control "
-"settings."
+"You have to remove all users before you can deactivate the access control sett"
+"ings."
 msgstr ""
 
 #: ../access_control.rb:193
-msgid ""
-"You will be asked for the password you entered here after pressing save!"
+msgid "You will be asked for the password you entered here after pressing save!"
 msgstr ""
 
 #: ../access_control.rb:196
 msgid ""
-"The user ‘admin’ has access to the vote as well as the configuration "
-"interface."
+"The user ‘admin’ has access to the vote as well as the configuration interface"
+"."
 msgstr ""
 
 #: ../access_control.rb:202
@@ -164,12 +150,24 @@ msgstr ""
 msgid "You have to authorize yourself in order to access this page!"
 msgstr ""
 
-#: ../config.rb:92
+#: ../config.rb:45
 msgid "Event Schedule Poll"
 msgstr ""
 
-#: ../config.rb:96
+#: ../config.rb:49
 msgid "Normal Poll"
+msgstr ""
+
+#: ../config.rb:53
+msgid "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+msgstr ""
+
+#: ../config.rb:57
+msgid "End-to-End encrypted Poll, where only the administrator is able to read votes"
+msgstr ""
+
+#: ../config.rb:61
+msgid "Test for several PGP-authenticated votes"
 msgstr ""
 
 #: ../customize.cgi:31 ../customize.rb:31
@@ -189,11 +187,11 @@ msgid "Description"
 msgstr ""
 
 #: ../customize.cgi:57 ../customize.rb:57
-msgid "Use special characters"
+msgid "Use this option if you see the characters in the parenthesis."
 msgstr ""
 
 #: ../customize.cgi:57 ../customize.rb:57
-msgid "Use this option if you see the characters in the parenthesis."
+msgid "Use special characters"
 msgstr ""
 
 #: ../customize.cgi:58 ../customize.rb:58
@@ -250,9 +248,9 @@ msgstr ""
 
 #: ../delete_poll.rb:57
 msgid ""
-"If this was done by accident, please contact the administrator of the "
-"system. The poll can be recovered for an indeterminate amount of time, it "
-"could already be too late."
+"If this was done by accident, please contact the administrator of the system. "
+"The poll can be recovered for an indeterminate amount of time, it could alread"
+"y be too late."
 msgstr ""
 
 #: ../delete_poll.rb:59
@@ -293,8 +291,8 @@ msgstr ""
 
 #: ../delete_poll.rb:111
 msgid ""
-"If you are sure that you want to permanently remove this poll, please type "
-"“%{question}” into the form."
+"If you are sure that you want to permanently remove this poll, please type “%{"
+"question}” into the form."
 msgstr ""
 
 #: ../dudle.rb:73
@@ -358,11 +356,11 @@ msgid "Finish"
 msgstr ""
 
 #: ../dudle.rb:232
-msgid "Proceed!"
+msgid "All changes were saved successfully."
 msgstr ""
 
 #: ../dudle.rb:232
-msgid "All changes were saved successfully."
+msgid "Proceed!"
 msgstr ""
 
 #: ../edit_columns.rb:44
@@ -418,8 +416,8 @@ msgstr ""
 
 #: ../error.cgi:53
 msgid ""
-"An error occured while executing dudle.<br/>Please send an error report, "
-"including your browser, operating system, and what you did to %{admin}."
+"An error occured while executing dudle.<br/>Please send an error report, inclu"
+"ding your browser, operating system, and what you did to %{admin}."
 msgstr ""
 
 #: ../error.cgi:56
@@ -432,8 +430,8 @@ msgstr ""
 
 #: ../example.cgi:68
 msgid ""
-"If you want to play with the application, you may want to take a look at "
-"these example polls:"
+"If you want to play with the application, you may want to take a look at these"
+" example polls:"
 msgstr ""
 
 #: ../history.rb:28
@@ -451,17 +449,14 @@ msgstr ""
 #: ../index.cgi:48
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr ""
-"Az URL-be csak ékezet nélküli betűket, valamint számokat és kötőjelet "
-"írhatsz."
 
 #: ../index.cgi:50
 msgid "A Poll with this address already exists."
-msgstr "Ezen a neven már létezik egy szavazás."
+msgstr ""
 
 #: ../index.cgi:68
-msgid ""
-"The poll was created successfully. The link to your new poll is: %{link}"
-msgstr "A szavazás sikeresen létrejött. Ezen a linken lehet elérni: %{link}"
+msgid "The poll was created successfully. The link to your new poll is: %{link}"
+msgstr ""
 
 #: ../index.cgi:76
 msgid "Go away."
@@ -469,47 +464,47 @@ msgstr ""
 
 #: ../index.cgi:84
 msgid "Create New Poll"
-msgstr "Új szavazás létrehozása"
+msgstr ""
 
 #: ../index.cgi:86
 msgid "Title"
-msgstr "Cím"
+msgstr ""
 
 #: ../index.cgi:87
 msgid "Type"
-msgstr "Típus"
+msgstr ""
 
 #: ../index.cgi:88
 msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
-msgstr "Időpont kiválasztása (pl. egy értekezlet beütemezése)"
+msgstr ""
 
 #: ../index.cgi:89
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
-msgstr "Normál szavazás (pl. melyik a legfinomabb süti)"
+msgstr ""
 
 #: ../index.cgi:90
 msgid "Custom address (optional)"
-msgstr "Testre szabott URL (opcionális)"
+msgstr ""
 
 #: ../index.cgi:91
 msgid "May contain letters, numbers, and dashes."
-msgstr "Betűket, számokat, kötőjelet, aláhúzást tartalmazhat."
+msgstr ""
 
 #: ../index.cgi:93
 msgid "Create"
-msgstr "Létrehozás"
+msgstr ""
 
 #: ../log.rb:111
 msgid "Date"
-msgstr "Dátum"
+msgstr ""
 
 #: ../log.rb:111
 msgid "Version"
-msgstr "Verzió"
+msgstr ""
 
 #: ../log.rb:111
 msgid "Comment"
-msgstr "Esemény"
+msgstr ""
 
 #: ../maintenance.cgi:25 ../maintenance.cgi:27
 msgid "Maintenance"
@@ -521,8 +516,8 @@ msgstr ""
 
 #: ../maintenance.cgi:39
 msgid ""
-"You should not browse to this file directly. Please create a file named "
-"\"maintenance.html\" to enable the maintenance mode."
+"You should not browse to this file directly. Please create a file named \"maint"
+"enance.html\" to enable the maintenance mode."
 msgstr ""
 
 #: ../not_found.cgi:29
@@ -543,14 +538,14 @@ msgstr ""
 
 #: ../not_found.cgi:34
 msgid ""
-"The Poll was deleted by the administrator because it was not accessed for a "
-"long time."
+"The Poll was deleted by the administrator because it was not accessed for a lo"
+"ng time."
 msgstr ""
 
 #: ../not_found.cgi:35
 msgid ""
-"If you think, the deletion was done by error, please contact the "
-"adminsistrator of the system."
+"If you think, the deletion was done by error, please contact the adminsistrato"
+"r of the system."
 msgstr ""
 
 #: ../overview.rb:31
@@ -635,7 +630,7 @@ msgstr ""
 
 #: ../poll.rb:348
 msgid "Go Up"
-msgstr "Kwenda juu"
+msgstr ""
 
 #: ../poll.rb:354
 msgid "says"
@@ -651,7 +646,7 @@ msgstr ""
 
 #: ../poll.rb:380
 msgid "All"
-msgstr "Yote"
+msgstr ""
 
 #: ../poll.rb:381
 msgid "Participant related"
@@ -703,15 +698,14 @@ msgstr ""
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all Options (columns), you want to ask the participants of the poll. "
-"The participants will state one vote for every option you give here "
-"separately."
+"Enter all Options (columns), you want to ask the participants of the poll. The"
+" participants will state one vote for every option you give here separately."
 msgstr ""
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add some time different to the default ones, please enter some string "
-"here (e.&thinsp;g., 09:30, morning, afternoon)."
+"To add some time different to the default ones, please enter some string here "
+"(e.&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 
 #: ../timepollhead.rb:119
@@ -769,13 +763,3 @@ msgstr ""
 #: ../timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr ""
-
-#~ msgid "Things you can do now are"
-#~ msgstr "Milyen lehetőségeid vannak?"
-
-#~ msgid ""
-#~ "You can get the sourcecode, using <a href='http://bazaar-vcs."
-#~ "org/'>bazaar</a>:"
-#~ msgstr ""
-#~ "A forráskódot innen töltheted le a <a href='http://bazaar-vcs."
-#~ "org/'>bazaar</a> programmal:"

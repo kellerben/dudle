@@ -257,8 +257,9 @@ READY
 			["ca", "Català"],
 			["no", "Norsk"],
 			["gl", "Galego"],
-			["et", "Eesti"]
-			]
+			["et", "Eesti"],
+                        ["sw", "Swahili"],
+		       ]
 		unless @hide_lang_chooser
 			lang.each{|short,long|
 				if short == GetText.locale.language
