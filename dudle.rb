@@ -258,8 +258,13 @@ READY
 			["no", "Norsk"],
 			["gl", "Galego"],
 			["et", "Eesti"],
+<<<<<<< HEAD
                         ["sw", "Swahili"],
 		       ]
+=======
+			["sw", "Kiswahili"]
+			]
+>>>>>>> ef765ecd10c198806b084388ea797ce1f212e3a7
 		unless @hide_lang_chooser
 			lang.each{|short,long|
 				if short == GetText.locale.language
