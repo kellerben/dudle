@@ -257,6 +257,7 @@ READY
 			["ca", "Català"],
 			["no", "Norsk"],
 			["gl", "Galego"],
+			["sw", "Kiswahili"],
 			["et", "Eesti"]
 			]
 		unless @hide_lang_chooser
