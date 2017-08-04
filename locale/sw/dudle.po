@@ -1,0 +1,788 @@
+# Benson Muite <benson_muite@emailplus.org>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: 510\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-40 15:30+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-08-02 11:07-0400\n"
+"Last-Translator: Benson Muite modifying output of Yandex Translate and Bing translator\n"
+"Language-Team: Swahili\n"
+"Language: sw\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: ../about.cgi:29
+msgid "This Application is powered by %{Dudle}."
+msgstr "Maombi hii ni inaendeshwa na %{Dudle}."
+
+#: ../about.cgi:31
+msgid "License"
+msgstr "Leseni"
+
+#: ../about.cgi:32
+msgid ""
+"The sourcecode of this application is available under the terms of <a href="
+"'http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+msgstr ""
+"Kanuni za maombi hii ni inapatikana chini ya sheria ya <a href='http://www."
+"fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Toleo 3</a>"
+
+#: ../about.cgi:33
+msgid "The Sourcecode of this application can be found %{here}."
+msgstr "Kanuni ya programu tumizi hii yanaweza kupatikana %{here}."
+
+#: ../about.cgi:35
+msgid ""
+"Write me an e-mail if you found a bug, have something which disturbes you or "
+"any other feedback."
+msgstr ""
+"Kuandika mimi barua pepe kama wewe kupatikana mdudu, una kitu ambayo "
+"linalokusumbua au nyingine yoyote ya maoni."
+
+#: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
+msgid "Username:"
+msgstr "Jina la mtumiaji"
+
+#: ../access_control.rb:87
+msgid "Password"
+msgstr "Nywila"
+
+#: ../access_control.rb:88
+msgid "repeat"
+msgstr "rudia"
+
+#: ../access_control.rb:114
+msgid ""
+"You have to remove the participant user before you can remove the "
+"administrator."
+msgstr "Una kuondoa mtumiaji mshiriki kabla unaweza kuondoa na msimamizi."
+
+#: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
+#: ../delete_poll.rb:112 ../poll.rb:338
+msgid "Delete"
+msgstr "Futa"
+
+#: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
+#: ../poll.rb:300
+msgid "Save"
+msgstr "Hifadhi"
+
+#: ../access_control.rb:139
+msgid "Only letters and digits are allowed in the username."
+msgstr "Herufi na tarakimu tu wanaruhusiwa katika jina la mtumiaji."
+
+#: ../access_control.rb:141
+msgid "Passwords did not match."
+msgstr "Nywila si fanana."
+
+#: ../access_control.rb:175
+msgid "Change Access Control Settings"
+msgstr "Badilisha mipangilio ya dhibiti ya ufikivu"
+
+#: ../access_control.rb:179
+msgid "not activated"
+msgstr "Hajilioamilishwa"
+
+#: ../access_control.rb:181
+msgid "Activate"
+msgstr "Amilisha"
+
+#: ../access_control.rb:184
+msgid "will be activated when at least an admin user is configured"
+msgstr "Itaamilishwa wakati mtumiaji msimamizi amemesanidiwa"
+
+#: ../access_control.rb:186
+msgid "Deactivate"
+msgstr "Tangua uamilifu"
+
+#: ../access_control.rb:188
+msgid "activated"
+msgstr "amillishwa"
+
+#: ../access_control.rb:189
+msgid ""
+"You have to remove all users before you can deactivate the access control "
+"settings."
+msgstr ""
+"Una kuondoa watumiaji wote kabla ya wewe kulemaza mipangilio ya dhibiti ya "
+"ufikivu."
+
+#: ../access_control.rb:193
+msgid ""
+"You will be asked for the password you entered here after pressing save!"
+msgstr "Utaulizwa kwa nywila uliyoingiza hapa baada ya kubwa ila!"
+
+#: ../access_control.rb:196
+msgid ""
+"The user ‘admin’ has access to the vote as well as the configuration "
+"interface."
+msgstr "Mtumiaji 'mtawala' kufikilia kwa kura na kiolesura cha usanidi."
+
+#: ../access_control.rb:202
+msgid "The user ‘participant’ has only access to the vote interface."
+msgstr "Mtumiaji 'mshiriki' ina tu kupata kwa maoni ya kura."
+
+#: ../access_control.rb:208
+msgid "Access control:"
+msgstr "Upatikanaji wa kudhibiti"
+
+#: ../authorization_required.cgi:36 ../authorization_required.cgi:52
+msgid "Authorization Required"
+msgstr "Idhini inayohitajika"
+
+#: ../authorization_required.cgi:39
+msgid "The configuration of this Poll is protected by password!"
+msgstr "Usakinishaji wa kura hii ya maoni imelindwa na nywila!"
+
+#: ../authorization_required.cgi:41
+msgid "This Poll is protected by password!"
+msgstr "Kura hii ya maoni imelindwa na nywila!"
+
+#: ../authorization_required.cgi:43
+msgid "In order to proceed, you have to give the password for user %{user}."
+msgstr "Ili kuendelea, una kutoa nywila kwa mtumiaji % {user}."
+
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to dudle home and Schedule a new Poll"
+msgstr "Rudi dudle nyumbani na ratiba ya kura ya maoni mpya"
+
+#: ../authorization_required.cgi:54
+msgid "You have to authorize yourself in order to access this page!"
+msgstr "Una kuidhinisha mwenyewe ili upate ukurasa huu!"
+
+#: ../config.rb:92
+msgid "Event Schedule Poll"
+msgstr "Tukio ratiba kura ya maoni"
+
+#: ../config.rb:96
+msgid "Normal Poll"
+msgstr "Uchaguzi kawaida"
+
+#: ../customize.cgi:31 ../customize.rb:31
+msgid "Customize Personal Settings"
+msgstr "Geuza kukufaa mipangilio binafsi"
+
+#: ../customize.cgi:32 ../customize.rb:32
+msgid "You need cookies enabled in order to personalize your settings."
+msgstr "Unahitaji vidakuzi kuwezeshwa ili kubinafsisha mipangilio yako."
+
+#: ../customize.cgi:39 ../customize.rb:39
+msgid "Current Setting"
+msgstr "Kipimo cha sasa"
+
+#: ../customize.cgi:40 ../customize.rb:40
+msgid "Description"
+msgstr "Maeolezo"
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use special characters"
+msgstr "Tumiza herufi mailum"
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "Tumia chaguo hili kama unaweza kuona wahusika katika ya parandesi."
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Tumia chaguo hili kama una matatizo na wahusika wengine."
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "Tumiza tu masharti ya kawaida"
+
+#: ../customize.cgi:61 ../customize.rb:61
+msgid "Charset"
+msgstr "Masharti"
+
+#: ../customize.cgi:66 ../customize.rb:66
+msgid "Stylesheet"
+msgstr "Maelekezo ya mtindo"
+
+#: ../customize.cgi:81 ../customize.rb:81
+msgid "Default Username"
+msgstr "Jina kawaida la mtumiaji"
+
+#: ../customize.cgi:106 ../customize.rb:106
+msgid "Edit"
+msgstr "Hariri"
+
+#: ../delete_poll.rb:30
+msgid "Yes, I know what I am doing!"
+msgstr "Ndiyo, ninajua vile ninayofanya!"
+
+#: ../delete_poll.rb:31
+msgid "I hate these stupid entry fields."
+msgstr "Nachukia mashamba haya ingizo la kijinga."
+
+#: ../delete_poll.rb:32
+msgid "I am aware of the consequences."
+msgstr "Nina ufahamu wa madhara."
+
+#: ../delete_poll.rb:33
+msgid "Please delete this poll."
+msgstr "Tafadhali, futa chaguzo hii."
+
+#: ../delete_poll.rb:42
+msgid "Example polls can not be deleted."
+msgstr "Vituo vya kupigia kura mfano yanaweza kufutwa."
+
+#: ../delete_poll.rb:43
+msgid "You should never see this text."
+msgstr "Unapaswa kamwe kuona andiko hili."
+
+#: ../delete_poll.rb:56
+msgid "The poll was deleted successfully!"
+msgstr "Uchaguzi ilifutwa mafanikio!"
+
+#: ../delete_poll.rb:57
+msgid ""
+"If this was done by accident, please contact the administrator of the system."
+" The poll can be recovered for an indeterminate amount of time, it could "
+"already be too late."
+msgstr ""
+"Kama hii ilifanyika kwa ajali, tafadhali wasiliana na msimamizi wa mfumo. "
+"Uchaguzi unaweza zinalipwa kwa kiasi fulani cha muda, ingawa inaweza tayari "
+"kuwa kuchelewa mno."
+
+#: ../delete_poll.rb:59
+msgid "You can now"
+msgstr "Unaweza sasa"
+
+#: ../delete_poll.rb:60
+msgid "Return to dudle home and schedule a new poll"
+msgstr "Rudi dudle nyumbani na ratiba uchaguzi mpya"
+
+#: ../delete_poll.rb:61
+msgid "Browse Wikipedia"
+msgstr "Angalia Wikipedia"
+
+#: ../delete_poll.rb:62
+msgid "Search for something on the Internet"
+msgstr "tafuta kitu kwenye mtandao"
+
+#: ../delete_poll.rb:88
+msgid "To delete the poll, you have to type:"
+msgstr "Kufuta uchaguzi, una aina:"
+
+#: ../delete_poll.rb:96
+msgid "but you typed:"
+msgstr "Ulichapa:"
+
+#: ../delete_poll.rb:108
+msgid "Delete this Poll"
+msgstr "Futa Uchaguzi huu"
+
+#: ../delete_poll.rb:109
+msgid "You want to delete the poll named"
+msgstr "Unataka kufuta uchaguzi aitwaye"
+
+#: ../delete_poll.rb:110
+msgid "This is an irreversible action!"
+msgstr "Hii ni malena hatua!"
+
+#: ../delete_poll.rb:111
+msgid ""
+"If you are sure that you want to permanently remove this poll, please type "
+"“%{question}” into the form."
+msgstr ""
+"Kama unahakikisha kwamba unataka kudumu kuondoa uchaguzi huu, tafadhali aina "
+"ya \"%{question}\" katika fomu."
+
+#: ../dudle.rb:73
+msgid "Home"
+msgstr "Nyumbani"
+
+#: ../dudle.rb:76
+msgid "Poll"
+msgstr "Uchaguzi"
+
+#: ../dudle.rb:77 ../history.rb:35
+msgid "History"
+msgstr "Uliopita matendo"
+
+#: ../dudle.rb:80
+msgid "Edit Columns"
+msgstr "Hariri nguzo"
+
+#: ../dudle.rb:81 ../invite_participants.rb:38
+msgid "Invite Participants"
+msgstr "Alika washiriki"
+
+#: ../dudle.rb:82
+msgid "Access Control"
+msgstr "Upatikanaji wa kudhibiti"
+
+#: ../dudle.rb:83
+msgid "Overview"
+msgstr "Maelezo"
+
+#: ../dudle.rb:86
+msgid "Delete Poll"
+msgstr "Futa uchaguzi"
+
+#: ../dudle.rb:89 ../example.cgi:67
+msgid "Examples"
+msgstr "Mifano"
+
+#: ../dudle.rb:90
+msgid "About"
+msgstr "Maelezo"
+
+#: ../dudle.rb:92
+msgid "Customize"
+msgstr "Geuza kukufaa"
+
+#: ../dudle.rb:100
+msgid "Dudle Home"
+msgstr "Dudle nyumbani"
+
+#: ../dudle.rb:207 ../dudle.rb:225
+msgid "Previous"
+msgstr "Awali"
+
+#: ../dudle.rb:208 ../dudle.rb:226
+msgid "Next"
+msgstr "Ijayo"
+
+#: ../dudle.rb:209 ../dudle.rb:227
+msgid "Finish"
+msgstr "Maliza"
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Endelea"
+
+#: ../dudle.rb:232
+msgid "All changes were saved successfully."
+msgstr "Mabadiliko yote walikuwa kuokolewa mafanikio"
+
+#: ../edit_columns.rb:44
+msgid "Add and Remove Columns"
+msgstr "Ongeza na ondoa nguzo"
+
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+msgid "Delete column"
+msgstr "Futa nguzo"
+
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+msgid "Add column"
+msgstr "Ongeza nguzo"
+
+#: ../edit_columns.rb:71 ../edit_columns.rb:88
+msgid "Edit column"
+msgstr "Hairiri nguzo"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Tendua"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Fanya tena"
+
+#: ../error.cgi:25 ../error.cgi:27
+msgid "Error"
+msgstr "Kosa"
+
+#: ../error.cgi:46
+msgid "The following error was printed:"
+msgstr "Makosa yafuatayo ilikuwa kuchapishwa:"
+
+#: ../error.cgi:50
+msgid ""
+"Hi!\n"
+"\n"
+"I found a bug in your application at %{urlofsite}.\n"
+"I did the following:\n"
+"\n"
+"<please describe what you did>\n"
+"<e.g., I wanted to sent a comment to the poll.>\n"
+"\n"
+"I am using <please state your browser and operating system>\n"
+"%{errormessage}\n"
+"Yours,\n"
+msgstr ""
+"Jambo!\n"
+"\n"
+"Nimepatikana mdudu katika maombi yako katika %{urlofsite}.\n"
+"Nilzifuatazo:\n"
+"\n"
+"<tafadhali elezea nini ulifanya>\n"
+"<mfano nilialitaka kutumwa maoni ya uchaguzi.>\n"
+"\n"
+"Ninatumia <tafadhali hali ya kivinjari wavuti yako na mfumo wa uendeshaji>\n"
+"%{errormessage}\n"
+"Yako,\n"
+
+#: ../error.cgi:51
+msgid "Bug in dudle"
+msgstr "Mdudu katika dudle"
+
+#: ../error.cgi:53
+msgid ""
+"An error occured while executing dudle.<br/>Please send an error report, "
+"including your browser, operating system, and what you did to %{admin}."
+msgstr ""
+"Kosa limetokea wakati wa utekelezaji dudle.<br/>Tafadhali tuma ripoti ya "
+"hitilafu, ikiwa ni pamoja na kivinjari wavuti yako, mfumo wa uendeshaji, na "
+"nini alifanya kwa %{admin}."
+
+#: ../error.cgi:56
+msgid "Please include the following as well:"
+msgstr "Tafadhali jumuisha yafuatayo pia:"
+
+#: ../example.cgi:60
+msgid "Example not found: %{example}"
+msgstr "Mfano hakupatikana: %{example}"
+
+#: ../example.cgi:68
+msgid ""
+"If you want to play with the application, you may want to take a look at "
+"these example polls:"
+msgstr "Kama unataka kujaribu maombi, angalia mfano uchaguzi hizi:"
+
+#: ../history.rb:28
+msgid "Poll of Version %{revisionnumber}"
+msgstr "Uchaguzi wa toleo %{revisionnumber}"
+
+#: ../history.rb:32
+msgid "Current Poll (Version %{revisionnumber})"
+msgstr "Uchaguzi huu (Toleo %{revisionnumber})"
+
+#: ../index.cgi:32
+msgid "Please enter a descriptive title."
+msgstr "Tafadhali, chapa kichwa"
+
+#: ../index.cgi:48
+msgid "Custom address may only contain letters, numbers, and dashes."
+msgstr "Desturi pepe inaweza tu vyenye herufi, namba, na deshi."
+
+#: ../index.cgi:50
+msgid "A Poll with this address already exists."
+msgstr "Uchaguzi na anwani hii ipo."
+
+#: ../index.cgi:68
+msgid ""
+"The poll was created successfully. The link to your new poll is: %{link}"
+msgstr "Uchaguzi ilifanikiwa kuundwa. Kiungo kwa maoni yako mpya ni: % {link}"
+
+#: ../index.cgi:76
+msgid "Go away."
+msgstr "Toka hapa"
+
+#: ../index.cgi:84
+msgid "Create New Poll"
+msgstr "Tengeneza kura mpya"
+
+#: ../index.cgi:86
+msgid "Title"
+msgstr "Kichwa"
+
+#: ../index.cgi:87
+msgid "Type"
+msgstr "Aina"
+
+#: ../index.cgi:88
+msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
+msgstr "Tukio ratiba ya uchaguzi (kwa mfano., ratiba ya mkutano)"
+
+#: ../index.cgi:89
+msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
+msgstr "Uchaguzi kawaida (kwa mfano., kupiga kura kwa kahawa bora)"
+
+#: ../index.cgi:90
+msgid "Custom address (optional)"
+msgstr "Desturi anwani (hiari)"
+
+#: ../index.cgi:91
+msgid "May contain letters, numbers, and dashes."
+msgstr "Inaweza vyenye herufi, namba, na deshi."
+
+#: ../index.cgi:93
+msgid "Create"
+msgstr "Jenga"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Tarehe"
+
+#: ../log.rb:111
+msgid "Version"
+msgstr "Toleo"
+
+#: ../log.rb:111
+msgid "Comment"
+msgstr "Maoni"
+
+#: ../maintenance.cgi:25 ../maintenance.cgi:27
+msgid "Maintenance"
+msgstr "Matengenezo"
+
+#: ../maintenance.cgi:36
+msgid "This site is currently under maintenance!"
+msgstr "Tovuti hii kwa sasa iko katika matengenezo!"
+
+#: ../maintenance.cgi:39
+msgid ""
+"You should not browse to this file directly. Please create a file named "
+"\"maintenance.html\" to enable the maintenance mode."
+msgstr ""
+"Unapaswa kuvinjari faili hii moja kwa moja. Tafadhali kujenga faili aitwaye "
+"\"maintenance.html\" ili kuwezesha matengenezo."
+
+#: ../not_found.cgi:29
+msgid "Poll Not Found"
+msgstr "Kura haikupatikana"
+
+#: ../not_found.cgi:31
+msgid "The requested Poll was not found."
+msgstr "Kura ulitaka haikupatikana"
+
+#: ../not_found.cgi:32
+msgid "There are several reasons, why a Poll is deleted:"
+msgstr "Kuna sababu kadhaa uchaguzi umefutwa:"
+
+#: ../not_found.cgi:33
+msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
+msgstr "Mtu alitaabu \"Futa uchaguzi,\" na kufutwa uchaguzi."
+
+#: ../not_found.cgi:34
+msgid ""
+"The Poll was deleted by the administrator because it was not accessed for a "
+"long time."
+msgstr ""
+"Uchaguzi huo ilifutwa na msimamizi kwa sababu ilikuwa si kupatikana kwa muda "
+"mrefu."
+
+#: ../not_found.cgi:35
+msgid ""
+"If you think, the deletion was done by error, please contact the "
+"adminsistrator of the system."
+msgstr ""
+"Uchaguzi huo ilifutwa na msimamizi kwa sababu ilikuwa si kupatikana kwa muda "
+"mrefu."
+
+#: ../overview.rb:31
+msgid "The next steps are:"
+msgstr "Hatua ya pili ni:"
+
+#: ../overview.rb:33
+msgid "Send the link to all participants:"
+msgstr "Tuma kiungo kwa washiriki wote:"
+
+#: ../overview.rb:34
+msgid "Send this link via email..."
+msgstr "Tuma kiungo kupitia barua pepe..."
+
+#: ../overview.rb:35
+msgid "Visit the poll yourself:"
+msgstr "Tembelea uchaguzi mwenyewe:"
+
+#: ../overview.rb:36
+msgid "Link to dudle poll about %{polltitle}"
+msgstr "Kiungo kwa dudle uchaguzi kuhusu %{polltitle}"
+
+#: ../participate.rb:59
+msgid "The changes were saved, you should be redirected to %{link}."
+msgstr "Mabadiliko imeokolewa, utatumwa %{link}."
+
+#: ../poll.rb:96
+msgid "Edit user %{user}..."
+msgstr "Rekebisha mtumiaji %{user}"
+
+#: ../poll.rb:100
+msgid "Delete user %{user}..."
+msgstr "Futa  mtumiaji %{user}"
+
+#: ../poll.rb:154
+msgid "Total"
+msgstr "Jumla"
+
+#: ../poll.rb:186
+msgid "Invite"
+msgstr "Alika"
+
+#: ../poll.rb:187 ../pollhead.rb:62 ../timepollhead.rb:158
+msgid "Name"
+msgstr "Jina"
+
+#: ../poll.rb:232
+msgid "Save Changes"
+msgstr "Okoa mabadiliko"
+
+#: ../poll.rb:236
+msgid "Cancel"
+msgstr "Katisha"
+
+#: ../poll.rb:258
+msgid "Do you really want to delete user %{user}?"
+msgstr "Je, kweli unataka kufuta mtumiaji %{user}?"
+
+#: ../poll.rb:261
+msgid "Confirm"
+msgstr "Tihibitisha"
+
+#: ../poll.rb:309
+msgid "Comments"
+msgstr "Maoni"
+
+#: ../poll.rb:312
+msgid "Sort oldest comment first"
+msgstr "Weka maoni kongwe kwanza"
+
+#: ../poll.rb:315
+msgid "Sort newest comment first"
+msgstr "Weka maoni mpya  kwanza"
+
+#: ../poll.rb:320
+msgid "Go to last comment"
+msgstr "Nenda maoni ya mwisho"
+
+#: ../poll.rb:333
+msgid "%{user} said on %{time}"
+msgstr "%{user} alisema %{time}"
+
+#: ../poll.rb:348
+msgid "Go Up"
+msgstr "Kwenda juu"
+
+#: ../poll.rb:354
+msgid "says"
+msgstr "inasema"
+
+#: ../poll.rb:355
+msgid "Submit Comment"
+msgstr "Wasilisha maoni"
+
+#: ../poll.rb:373
+msgid "Show history items:"
+msgstr "Onyesha vitu vya awali"
+
+#: ../poll.rb:380
+msgid "All"
+msgstr "Wote"
+
+#: ../poll.rb:381
+msgid "Participant related"
+msgstr "Mtumiaji kuhusiana"
+
+#: ../poll.rb:382
+msgid "Column related"
+msgstr "Safu kuhusiana"
+
+#: ../poll.rb:383
+msgid "Comment related"
+msgstr "Maoni kuhusiana"
+
+#: ../poll.rb:384
+msgid "Access Control related"
+msgstr "Upatikanaji wa kudhibiti kuhusiana"
+
+#: ../poll.rb:390
+msgid "Update"
+msgstr "Sasisha"
+
+#: ../pollhead.rb:71
+msgid "Edit Option"
+msgstr "Hariri chaguo"
+
+#: ../pollhead.rb:72
+msgid "Delete Option"
+msgstr "Ondoa chaguo"
+
+#: ../pollhead.rb:87 ../timepollhead.rb:162
+msgid "Last Edit"
+msgstr "Awali hariri"
+
+#: ../pollhead.rb:99
+msgid "Option"
+msgstr "Chaguo"
+
+#: ../pollhead.rb:100
+msgid "Description (optional)"
+msgstr "Maelezo (hiari)"
+
+#: ../pollhead.rb:101
+msgid "Add/Edit Option"
+msgstr "Ongeza/hariri chaguo"
+
+#: ../pollhead.rb:102
+msgid "Preview"
+msgstr "Hakikisho"
+
+#: ../pollhead.rb:103
+msgid ""
+"Enter all Options (columns), you want to ask the participants of the poll. "
+"The participants will state one vote for every option you give here "
+"separately."
+msgstr ""
+"Kuingia chaguzi zote (nguzo), unataka kuuliza washiriki wa uchaguzi. "
+"Washiriki hali kura moja kwa ajili ya kila chaguo, unaweza kutoa hapa."
+
+#: ../timepollhead.rb:113
+msgid ""
+"To add some time different to the default ones, please enter some string "
+"here (e.&thinsp;g., 09:30, morning, afternoon)."
+msgstr ""
+"Kuongeza muda tofauti na zilizopo, tafadhali kuingia baadhi ya kamba hapa "
+"(mfano., 09:30, asubuhi, mchana)."
+
+#: ../timepollhead.rb:119
+msgid "This Time was already chosen."
+msgstr "Wakati huu uliochaguliwa."
+
+#: ../timepollhead.rb:193
+msgid "Earlier"
+msgstr "Mapema"
+
+#: ../timepollhead.rb:198
+msgid "Later"
+msgstr "Baadaye"
+
+#: ../timepollhead.rb:264
+msgid "Click on the dates to add or remove columns."
+msgstr "Bonyeza juu ya tarehe kuongeza au kuondoa nguzo."
+
+#: ../timepollhead.rb:312
+msgid "Optional:"
+msgstr "Hiari"
+
+#: ../timepollhead.rb:313
+msgid "Enter a concrete value as start time."
+msgstr "Ingia saruji thamani muda wa kuanza."
+
+#: ../timepollhead.rb:329
+msgid "Time"
+msgstr "Saa"
+
+#: ../timepollhead.rb:342
+msgid "Chosen"
+msgstr "Waliochaguliwa"
+
+#: ../timepollhead.rb:343
+msgid "Not Chosen"
+msgstr "Wasiliochaguliwa"
+
+#: ../timepollhead.rb:344
+msgid "Past"
+msgstr "Zamani"
+
+#: ../timepollhead.rb:378
+msgid "Select the whole row"
+msgstr "Chagua safu nzima"
+
+#: ../timepollhead.rb:383
+msgid "Deselect the whole row"
+msgstr "Usichague safu nzima"
+
+#: ../timepollhead.rb:427
+msgid "Add"
+msgstr "Ongeza"
+
+#: ../timepollhead.rb:428
+msgid "e.&thinsp;g., 09:30, morning, afternoon"
+msgstr "mfano, 09:30, asubuhi, mchana"
+
