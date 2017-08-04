@@ -18,10 +18,10 @@
 # ######################################################################## #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: Dudle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-28 14:26+0100\n"
-"PO-Revision-Date: 2016-08-14 21:45+0100\n"
+"POT-Creation-Date: 2017-08-04 16:39+0200\n"
+"PO-Revision-Date: 2017-08-04 16:37+0100\n"
 "Last-Translator: Benjamin Kellermann\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -218,14 +218,14 @@ msgstr ""
 "können."
 
 #: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "Benutze nur gewöhnliche Zeichen"
+
+#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use this option if you have problems with some characters."
 msgstr ""
 "Benutzen Sie diese Einstellung, wenn Probleme mit der Darstellung einiger "
 "Zeichen auftreten."
-
-#: ../customize.cgi:58 ../customize.rb:58
-msgid "Use only normal strings"
-msgstr "Benutze nur gewöhnliche Zeichen"
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -410,12 +410,12 @@ msgid "Edit column"
 msgstr "Bearbeite Spalte"
 
 #: ../edit_columns.rb:99
-msgid "Undo"
-msgstr "Rückgängig"
-
-#: ../edit_columns.rb:99
 msgid "Redo"
 msgstr "Wiederherstellen"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Rückgängig"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -488,6 +488,10 @@ msgstr "Umfrage der Version %{revisionnumber}"
 msgid "Current Poll (Version %{revisionnumber})"
 msgstr "Aktuelle Umfrage (Version %{revisionnumber})"
 
+#: ../html.rb:131
+msgid "xml:lang='en' dir='ltr'"
+msgstr "xml:lang='de' dir='ltr'"
+
 #: ../index.cgi:32
 msgid "Please enter a descriptive title."
 msgstr "Bitte geben Sie einen Titel für die Umfrage ein."
@@ -511,7 +515,7 @@ msgstr ""
 
 #: ../index.cgi:76
 msgid "Go away."
-msgstr ""
+msgstr "Geh weg."
 
 #: ../index.cgi:84
 msgid "Create New Poll"

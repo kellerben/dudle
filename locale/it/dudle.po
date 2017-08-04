@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-28 14:26+0100\n"
+"POT-Creation-Date: 2017-08-04 16:39+0200\n"
 "PO-Revision-Date: 2011-05-10 07:31+0200\n"
 "Last-Translator: Eros Pedrini\n"
 "Language-Team: \n"
@@ -214,12 +214,12 @@ msgstr ""
 "Utilizza questa opzione se ci sono dei caratteri all'interno di parentesi."
 
 #: ../customize.cgi:58 ../customize.rb:58
-msgid "Use this option if you have problems with some characters."
-msgstr "Usa questa opzione solo se riscontri problemi con alcuni caratteri."
-
-#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
 msgstr "Usa solamente frasi composte da caratteri standard"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Usa questa opzione solo se riscontri problemi con alcuni caratteri."
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -405,12 +405,12 @@ msgid "Edit column"
 msgstr "Modifica Colonna"
 
 #: ../edit_columns.rb:99
-msgid "Undo"
-msgstr "Annulla"
-
-#: ../edit_columns.rb:99
 msgid "Redo"
 msgstr "Rifai"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Annulla"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -482,6 +482,10 @@ msgstr "Sondaggio della Versione %{revisionnumber}"
 #: ../history.rb:32
 msgid "Current Poll (Version %{revisionnumber})"
 msgstr "Sondaggio Attuale (Versione %{revisionnumber})"
+
+#: ../html.rb:131
+msgid "xml:lang='en' dir='ltr'"
+msgstr "xml:lang='it' dir='ltr'"
 
 #: ../index.cgi:32
 msgid "Please enter a descriptive title."

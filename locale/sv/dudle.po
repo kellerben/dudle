@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-28 14:26+0100\n"
+"POT-Creation-Date: 2017-08-04 16:39+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@gmx.de>\n"
 "Language-Team: \n"
@@ -209,12 +209,12 @@ msgid "Use this option if you see the characters in the parenthesis."
 msgstr "Använd den här funktionen om du ser tecknen i parantesen."
 
 #: ../customize.cgi:58 ../customize.rb:58
-msgid "Use this option if you have problems with some characters."
-msgstr "Använd det här alternativet om du har problem med några bokstäver."
-
-#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
 msgstr "Använd bara normalsträngar"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Använd det här alternativet om du har problem med några bokstäver."
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -400,12 +400,12 @@ msgid "Edit column"
 msgstr "Redigera kolumn"
 
 #: ../edit_columns.rb:99
-msgid "Undo"
-msgstr "Ångra"
-
-#: ../edit_columns.rb:99
 msgid "Redo"
 msgstr "Upprepa"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Ångra"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -463,6 +463,10 @@ msgstr "Omröstning av Version %{revisionnumber}"
 #: ../history.rb:32
 msgid "Current Poll (Version %{revisionnumber})"
 msgstr "Aktuell omröstning (Version %{revisionnumber})"
+
+#: ../html.rb:131
+msgid "xml:lang='en' dir='ltr'"
+msgstr "xml:lang='sv' dir='ltr'"
 
 #: ../index.cgi:32
 msgid "Please enter a descriptive title."

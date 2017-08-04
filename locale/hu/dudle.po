@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 510\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-28 14:26+0100\n"
+"POT-Creation-Date: 2017-08-04 16:39+0200\n"
 "PO-Revision-Date: 2011-07-04 06:55+0200\n"
 "Last-Translator: Gabor Kiss <kissg@ssg.ki.iif.hu>\n"
 "Language-Team: \n"
@@ -211,13 +211,13 @@ msgstr ""
 "Csak akkor állítsd be, ha látod a zárójelben lévő speciális karaktereket."
 
 #: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "Csak a szokványos karakterek használata."
+
+#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use this option if you have problems with some characters."
 msgstr ""
 "Ezt állítsd be, ha bizonyos karakterek megjelenítésével gondjaid vannak."
-
-#: ../customize.cgi:58 ../customize.rb:58
-msgid "Use only normal strings"
-msgstr "Csak a szokványos karakterek használata."
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -403,12 +403,12 @@ msgid "Edit column"
 msgstr "Oszlop módosítása"
 
 #: ../edit_columns.rb:99
-msgid "Undo"
-msgstr "Mégsem"
-
-#: ../edit_columns.rb:99
 msgid "Redo"
 msgstr "De mégis"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Mégsem"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -467,6 +467,10 @@ msgstr "A szavazás %{revisionnumber}. verziója"
 #: ../history.rb:32
 msgid "Current Poll (Version %{revisionnumber})"
 msgstr "A szavazás aktuális állása (%{revisionnumber}. verzió)"
+
+#: ../html.rb:131
+msgid "xml:lang='en' dir='ltr'"
+msgstr "xml:lang='hu' dir='ltr'"
 
 #: ../index.cgi:32
 msgid "Please enter a descriptive title."

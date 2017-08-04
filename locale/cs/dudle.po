@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-28 14:26+0100\n"
+"POT-Creation-Date: 2017-08-04 16:39+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@gmx.de>\n"
 "Language-Team: \n"
@@ -209,12 +209,12 @@ msgid "Use this option if you see the characters in the parenthesis."
 msgstr "Použij tuto volbu, pokud jsou znaky zobrazeny v závorkách."
 
 #: ../customize.cgi:58 ../customize.rb:58
-msgid "Use this option if you have problems with some characters."
-msgstr "Použij tuto volbu, pokud některé znaky nejsou zobrazeny správně."
-
-#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
 msgstr "Použij pouze normální řetězce"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Použij tuto volbu, pokud některé znaky nejsou zobrazeny správně."
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -401,12 +401,12 @@ msgid "Edit column"
 msgstr "Edituj sloupec"
 
 #: ../edit_columns.rb:99
-msgid "Undo"
-msgstr "Zpět"
-
-#: ../edit_columns.rb:99
 msgid "Redo"
 msgstr "Odvolat zpět"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Zpět"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -464,6 +464,10 @@ msgstr "Hlasování verze %{revisionnumber}"
 #: ../history.rb:32
 msgid "Current Poll (Version %{revisionnumber})"
 msgstr "Aktuální Hlasování (Verze %{revisionnumber})"
+
+#: ../html.rb:131
+msgid "xml:lang='en' dir='ltr'"
+msgstr "xml:lang='cs' dir='ltr'"
 
 #: ../index.cgi:32
 msgid "Please enter a descriptive title."

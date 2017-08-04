@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-28 14:26+0100\n"
+"POT-Creation-Date: 2017-08-04 16:39+0200\n"
 "PO-Revision-Date: 2011-07-21 10:05+0200\n"
 "Last-Translator: Laura Mora i Aubert <blackhold@marsupi.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -198,12 +198,12 @@ msgstr ""
 "Usa esta opción si puedes ver los caracteres que están entre paréntesis"
 
 #: ../customize.cgi:58 ../customize.rb:58
-msgid "Use this option if you have problems with some characters."
-msgstr "Usa esta opción si no puedes ver los caracteres especiales."
-
-#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
 msgstr "No uses caracteres especiales"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Usa esta opción si no puedes ver los caracteres especiales."
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -391,12 +391,12 @@ msgid "Edit column"
 msgstr "Modifica columna"
 
 #: ../edit_columns.rb:99
-msgid "Undo"
-msgstr "Deshacer"
-
-#: ../edit_columns.rb:99
 msgid "Redo"
 msgstr "Rehacer"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Deshacer"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -469,6 +469,10 @@ msgstr "Encuesta de la versión %{revisionnumber}"
 #: ../history.rb:32
 msgid "Current Poll (Version %{revisionnumber})"
 msgstr "Encuesta actual (Versió %{revisionnumber})"
+
+#: ../html.rb:131
+msgid "xml:lang='en' dir='ltr'"
+msgstr "xml:lang='es' dir='ltr'"
 
 #: ../index.cgi:32
 msgid "Please enter a descriptive title."

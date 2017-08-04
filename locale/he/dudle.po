@@ -2,20 +2,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-16 20:46+0100\n"
+"POT-Creation-Date: 2017-08-04 16:39+0200\n"
 "PO-Revision-Date: 2017-02-16 20:46+0100\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>, 2017\n"
 "Language-Team: Hebrew (https://www.transifex.com/yaron/teams/76313/he/)\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: he\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../about.cgi:29
@@ -29,11 +29,10 @@ msgstr "רשיון"
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version "
-"3</a>"
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
 msgstr ""
-"קוד המקור של היישום הזה זמין תחת התנאים של <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL גרסה 3</a>"
+"קוד המקור של היישום הזה זמין תחת התנאים של <a href='http://www.fsf.org/"
+"licensing/licenses/agpl-3.0.html'>AGPL גרסה 3</a>"
 
 #: ../about.cgi:33
 msgid "The Sourcecode of this application can be found %{here}."
@@ -41,8 +40,8 @@ msgstr "ניתן למצוא את קוד המקור של היישום הזה %{he
 
 #: ../about.cgi:35
 msgid ""
-"Write me an e-mail if you found a bug, have something which disturbes you or"
-" any other feedback."
+"Write me an e-mail if you found a bug, have something which disturbes you or "
+"any other feedback."
 msgstr ""
 "נא לכתוב לנו הודעת דוא״ל אם מצאת תקלה כלשהי, משהו מפריע לך או כל סוג אחר של "
 "משוב."
@@ -156,28 +155,13 @@ msgstr "יש לחזור לעמוד הבית של dudle כדי לתזמן סקר 
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "עליך להזדהות מול המערכת כדי לגשת לעמוד זה!"
 
-#: ../config.rb:45
+#: ../config.rb:92
 msgid "Event Schedule Poll"
 msgstr "סקר תזמון אירוע"
 
-#: ../config.rb:49
+#: ../config.rb:96
 msgid "Normal Poll"
 msgstr "סקר רגיל"
-
-#: ../config.rb:53
-msgid ""
-"End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
-msgstr "סקר מוצפן/מאומת מקצה לקצה (הססמה בתגובות)"
-
-#: ../config.rb:57
-msgid ""
-"End-to-End encrypted Poll, where only the administrator is able to read "
-"votes"
-msgstr "סקר מוצפן מקצה לקצה בו רק למנהלים יש אפשרות לראות הצבעות"
-
-#: ../config.rb:61
-msgid "Test for several PGP-authenticated votes"
-msgstr "בדיקה למגוון הצבעות שמוגנות ב־PGP"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize Personal Settings"
@@ -196,20 +180,20 @@ msgid "Description"
 msgstr "תיאור"
 
 #: ../customize.cgi:57 ../customize.rb:57
-msgid "Use this option if you see the characters in the parenthesis."
-msgstr "יש להשתמש באפשרות זו אם התווים שבסוגריים מופיעים."
-
-#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use special characters"
 msgstr "שימוש בתווים מיוחדים"
 
-#: ../customize.cgi:58 ../customize.rb:58
-msgid "Use this option if you have problems with some characters."
-msgstr "יש להשתמש באפשרות זו אם נתקלת בבעיות עם תווים כלשהם."
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "יש להשתמש באפשרות זו אם התווים שבסוגריים מופיעים."
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
 msgstr "שימוש במחרוזות רגילות בלבד"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "יש להשתמש באפשרות זו אם נתקלת בבעיות עם תווים כלשהם."
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -367,12 +351,12 @@ msgid "Finish"
 msgstr "סיום"
 
 #: ../dudle.rb:232
-msgid "All changes were saved successfully."
-msgstr "כל השינויים נשמרו בהצלחה."
-
-#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "להמשיך!"
+
+#: ../dudle.rb:232
+msgid "All changes were saved successfully."
+msgstr "כל השינויים נשמרו בהצלחה."
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -391,12 +375,12 @@ msgid "Edit column"
 msgstr "עריכת עמודה"
 
 #: ../edit_columns.rb:99
-msgid "Undo"
-msgstr "ביטול"
-
-#: ../edit_columns.rb:99
 msgid "Redo"
 msgstr "ביצוע חוזר"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "ביטול"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -465,6 +449,10 @@ msgstr "סקר בגרסה %{revisionnumber}"
 #: ../history.rb:32
 msgid "Current Poll (Version %{revisionnumber})"
 msgstr "סקר נוכחי (גרסה %{revisionnumber})"
+
+#: ../html.rb:131
+msgid "xml:lang='en' dir='ltr'"
+msgstr "xml:lang='he' dir='rtl'"
 
 #: ../index.cgi:32
 msgid "Please enter a descriptive title."
@@ -795,3 +783,15 @@ msgstr "הוספה"
 #: ../timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "למשל: 09:30, בוקר, צהריים"
+
+#~ msgid ""
+#~ "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+#~ msgstr "סקר מוצפן/מאומת מקצה לקצה (הססמה בתגובות)"
+
+#~ msgid ""
+#~ "End-to-End encrypted Poll, where only the administrator is able to read "
+#~ "votes"
+#~ msgstr "סקר מוצפן מקצה לקצה בו רק למנהלים יש אפשרות לראות הצבעות"
+
+#~ msgid "Test for several PGP-authenticated votes"
+#~ msgstr "בדיקה למגוון הצבעות שמוגנות ב־PGP"
