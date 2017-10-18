@@ -1,0 +1,837 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: eo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-04 18:05+0200\n"
+"PO-Revision-Date: 2017-10-06 21:31+0100\n"
+"Last-Translator: eo.001 <[]>\n"
+"Language-Team: eo <[]>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.6.10\n"
+
+#: ../about.cgi:29
+msgid "This Application is powered by %{Dudle}."
+msgstr "Tiu aplikaĵo estas funkciigita de %{Dudle}."
+
+#: ../about.cgi:31
+msgid "License"
+msgstr "Licenco"
+
+#: ../about.cgi:32
+msgid ""
+"The sourcecode of this application is available under the terms of <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+msgstr ""
+"La fontokodo de tiu ĉi aplikaĵo estas havebla laŭ la kondiĉoj de <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Versio 3 </a>"
+
+#: ../about.cgi:33
+msgid "The Sourcecode of this application can be found %{here}."
+msgstr "La fontokodo de tiu ĉi aplikaĵo estas havebla %{ĉi tie}."
+
+#: ../about.cgi:35
+msgid ""
+"Write me an e-mail if you found a bug, have something which disturbes you or "
+"any other feedback."
+msgstr ""
+"Sendu al mi retmesaĝon, se vi trovis eraron, konfuziĝis pri io aŭ okaze de "
+"iu ajn alia re-sciigo. "
+
+#: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
+msgid "Username:"
+msgstr "Uzantnomo: "
+
+#: ../access_control.rb:87
+msgid "Password"
+msgstr "Pasvorto"
+
+#: ../access_control.rb:88
+msgid "repeat"
+msgstr "ripeti"
+
+#: ../access_control.rb:114
+msgid ""
+"You have to remove the participant user before you can remove the "
+"administrator."
+msgstr ""
+"Necesas forigi la partoprenanton, antaŭ ol vi povas forigi la administranton."
+
+#: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
+#: ../delete_poll.rb:112 ../poll.rb:338
+msgid "Delete"
+msgstr "Forigi"
+
+#: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
+#: ../poll.rb:300
+msgid "Save"
+msgstr "Konservi"
+
+#: ../access_control.rb:139
+msgid "Only letters and digits are allowed in the username."
+msgstr "Nur literoj kaj ciferoj estas permesataj en la uzantnomoj. "
+
+#: ../access_control.rb:141
+msgid "Passwords did not match."
+msgstr "Pasvortoj ne kongruis. "
+
+#: ../access_control.rb:175
+msgid "Change Access Control Settings"
+msgstr "Ŝangi alir-kontrol-agordojn"
+
+#: ../access_control.rb:179
+msgid "not activated"
+msgstr "ne aktivigita"
+
+#: ../access_control.rb:181
+msgid "Activate"
+msgstr "Aktivigi"
+
+#: ../access_control.rb:184
+msgid "will be activated when at least an admin user is configured"
+msgstr "estos aktivigita, kiam minimume unu administra uzanto agordiĝis"
+
+#: ../access_control.rb:186
+msgid "Deactivate"
+msgstr "Malaktivigi"
+
+#: ../access_control.rb:188
+msgid "activated"
+msgstr "aktivigita"
+
+#: ../access_control.rb:189
+msgid ""
+"You have to remove all users before you can deactivate the access control "
+"settings."
+msgstr ""
+"Necesas forigi ĉiujn uzantojn antaŭ ol vi povos malaktivigi la alir-kontrol-"
+"agordojn. "
+
+#: ../access_control.rb:193
+#, fuzzy
+msgid ""
+"You will be asked for the password you entered here after pressing save!"
+msgstr ""
+"Vi estos demandata pri la pasvorto, kiun vi enigis ĉi tie post premo de "
+"konservu!"
+
+#: ../access_control.rb:196
+msgid ""
+"The user ‘admin’ has access to the vote as well as the configuration "
+"interface."
+msgstr ""
+"La uzanto ‘admin’ havas aliron al la voĉdonilo same kiel al la agorda "
+"interfaco."
+
+#: ../access_control.rb:202
+msgid "The user ‘participant’ has only access to the vote interface."
+msgstr ""
+"La uzanto ‘participant’ (partoprenanto) havas aliron nur al la voĉdona "
+"interfaco."
+
+#: ../access_control.rb:208
+msgid "Access control:"
+msgstr "Alir-kontrolo: "
+
+#: ../authorization_required.cgi:36 ../authorization_required.cgi:52
+msgid "Authorization Required"
+msgstr "Rajtigo bezonata"
+
+#: ../authorization_required.cgi:39
+msgid "The configuration of this Poll is protected by password!"
+msgstr "La agordo de tiu ĉi voĉdonilo estas protektata per pasvorto!"
+
+#: ../authorization_required.cgi:41
+msgid "This Poll is protected by password!"
+msgstr "Tiu ĉi voĉdonilo estas protektata per pasvorto!"
+
+#: ../authorization_required.cgi:43
+msgid "In order to proceed, you have to give the password for user %{user}."
+msgstr "Por antaŭeniĝi necesas enigi pasvorton de uzanto %{user}."
+
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to dudle home and Schedule a new Poll"
+msgstr "Reen al Dudl-ĉefpaĝo kaj estigi novan voĉdonadon"
+
+#: ../authorization_required.cgi:54
+msgid "You have to authorize yourself in order to access this page!"
+msgstr "Necesas rajtigi sin por povi atingi tiun paĝon!"
+
+#: ../config.rb:45
+msgid "Event Schedule Poll"
+msgstr "Aranĝo-organiza voĉdonilo"
+
+#: ../config.rb:49
+msgid "Normal Poll"
+msgstr "Kutima voĉdonilo"
+
+#: ../config.rb:53
+msgid ""
+"End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+msgstr ""
+"Fino-ĝis-fino ĉifrita/aŭtentigita voĉdonilo (vidu la pasvorton en la "
+"komentoj)"
+
+#: ../config.rb:57
+msgid ""
+"End-to-End encrypted Poll, where only the administrator is able to read votes"
+msgstr ""
+"Fino-ĝis-fino ĉifrita voĉdonilo, kie nur la administranto kapablas legi "
+"voĉdonojn"
+
+#: ../config.rb:61
+msgid "Test for several PGP-authenticated votes"
+msgstr "Testo por diversaj PGP-aŭtentigitaj voĉdonoj"
+
+#: ../customize.cgi:31 ../customize.rb:31
+msgid "Customize Personal Settings"
+msgstr "Elekti personajn agordojn"
+
+#: ../customize.cgi:32 ../customize.rb:32
+msgid "You need cookies enabled in order to personalize your settings."
+msgstr "Necesas permesi kuketojn por povi tajlori personajn agordojn. "
+
+#: ../customize.cgi:39 ../customize.rb:39
+msgid "Current Setting"
+msgstr "Nuntempa agordo"
+
+#: ../customize.cgi:40 ../customize.rb:40
+msgid "Description"
+msgstr "Priskribo"
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use special characters"
+msgstr "Uzi specialajn signojn"
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "Uzu tiun ĉi opcion, se vi vidas la literojn ene de la krampoj. "
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Uzu tiun ĉi opcion, se vi havas problemojn pri iuj signoj. "
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "Uzu nur kutimajn signovicojn"
+
+#: ../customize.cgi:61 ../customize.rb:61
+msgid "Charset"
+msgstr "Signaro"
+
+#: ../customize.cgi:66 ../customize.rb:66
+msgid "Stylesheet"
+msgstr "Stilfolio"
+
+#: ../customize.cgi:81 ../customize.rb:81
+msgid "Default Username"
+msgstr "Antaŭdifinita uzantnomo"
+
+#: ../customize.cgi:106 ../customize.rb:106
+msgid "Edit"
+msgstr "Redakti"
+
+#: ../delete_poll.rb:30
+msgid "Yes, I know what I am doing!"
+msgstr "Jes, mi scias, kion mi faras!"
+
+#: ../delete_poll.rb:31
+msgid "I hate these stupid entry fields."
+msgstr "Mi malamas tiujn malspritajn enig-kampojn. "
+
+#: ../delete_poll.rb:32
+msgid "I am aware of the consequences."
+msgstr "Mi konscias pri la konsekvencoj. "
+
+#: ../delete_poll.rb:33
+msgid "Please delete this poll."
+msgstr "Bonvolu forigi tiun voĉdonilon. "
+
+#: ../delete_poll.rb:42
+msgid "Example polls can not be deleted."
+msgstr "Ekzemplaj voĉdoniloj ne povas esti forigitaj."
+
+#: ../delete_poll.rb:43
+msgid "You should never see this text."
+msgstr "Vi devus neniam vidi tiun ĉi tekston. "
+
+#: ../delete_poll.rb:56
+msgid "The poll was deleted successfully!"
+msgstr "La voĉdonilo estis sukcese forigata!"
+
+#: ../delete_poll.rb:57
+msgid ""
+"If this was done by accident, please contact the administrator of the "
+"system. The poll can be recovered for an indeterminate amount of time, it "
+"could already be too late."
+msgstr ""
+"Se tio okazis akcidente, bonvolu kontakti la administranton de la sistemo. "
+"La voĉdonilo povas esti reakirata nur dum necerta tempo, povus jam esti tro "
+"malfrue. "
+
+#: ../delete_poll.rb:59
+msgid "You can now"
+msgstr "Vi povas nun"
+
+#: ../delete_poll.rb:60
+msgid "Return to dudle home and schedule a new poll"
+msgstr "Reiri al Dudl-hejmpaĝo kaj estigi novan voĉdonilon"
+
+#: ../delete_poll.rb:61
+msgid "Browse Wikipedia"
+msgstr "Foliumi Vikipedion"
+
+#: ../delete_poll.rb:62
+msgid "Search for something on the Internet"
+msgstr "Serĉi ion en la Interreto"
+
+#: ../delete_poll.rb:88
+msgid "To delete the poll, you have to type:"
+msgstr "Por forigi la voĉdonilon necesas tajpi: "
+
+#: ../delete_poll.rb:96
+msgid "but you typed:"
+msgstr "sed vi tajpis: "
+
+#: ../delete_poll.rb:108
+msgid "Delete this Poll"
+msgstr "Forigi tiun voĉdonilon"
+
+#: ../delete_poll.rb:109
+msgid "You want to delete the poll named"
+msgstr "Vi deziras forigi la voĉdonilon nomata"
+
+#: ../delete_poll.rb:110
+msgid "This is an irreversible action!"
+msgstr "Tiu ĉi estas ne-malfarebla ago!"
+
+#: ../delete_poll.rb:111
+msgid ""
+"If you are sure that you want to permanently remove this poll, please type "
+"“%{question}” into the form."
+msgstr ""
+"Se vi certas, ke vi volas daŭre forigi tiun ĉi voĉdonilon, bonvole tajpu "
+"“%{question}” en la respondo-kampon. "
+
+#: ../dudle.rb:73
+msgid "Home"
+msgstr "Ĉefpaĝo"
+
+#: ../dudle.rb:76
+msgid "Poll"
+msgstr "Voĉdonilo"
+
+#: ../dudle.rb:77 ../history.rb:35
+msgid "History"
+msgstr "Historio"
+
+#: ../dudle.rb:80
+msgid "Edit Columns"
+msgstr "Redakti kolumnojn"
+
+#: ../dudle.rb:81 ../invite_participants.rb:38
+msgid "Invite Participants"
+msgstr "Inviti partoprenantojn"
+
+#: ../dudle.rb:82
+msgid "Access Control"
+msgstr "Alir-kontrolo"
+
+#: ../dudle.rb:83
+msgid "Overview"
+msgstr "Superrigardo"
+
+#: ../dudle.rb:86
+msgid "Delete Poll"
+msgstr "Forigi voĉdonilon"
+
+#: ../dudle.rb:89 ../example.cgi:67
+msgid "Examples"
+msgstr "Ekzemploj"
+
+#: ../dudle.rb:90
+msgid "About"
+msgstr "Pri"
+
+#: ../dudle.rb:92
+msgid "Customize"
+msgstr "Agordi"
+
+#: ../dudle.rb:100
+msgid "Dudle Home"
+msgstr "Dudle ĉefpaĝo"
+
+#: ../dudle.rb:207 ../dudle.rb:225
+msgid "Previous"
+msgstr "Antaŭa"
+
+#: ../dudle.rb:208 ../dudle.rb:226
+msgid "Next"
+msgstr "Venonta"
+
+#: ../dudle.rb:209 ../dudle.rb:227
+msgid "Finish"
+msgstr "Fini"
+
+#: ../dudle.rb:232
+msgid "All changes were saved successfully."
+msgstr "Ĉiuj ŝanĝoj estis sukcese konservitaj. "
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Antaŭenigi!"
+
+#: ../edit_columns.rb:44
+msgid "Add and Remove Columns"
+msgstr "Aldoni kaj forigi kolumnojn"
+
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+msgid "Delete column"
+msgstr "Forigi kolumnon"
+
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+msgid "Add column"
+msgstr "Aldoni kolumnon"
+
+#: ../edit_columns.rb:71 ../edit_columns.rb:88
+msgid "Edit column"
+msgstr "Redakti kolumnon"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Refari"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Malfari"
+
+#: ../error.cgi:25 ../error.cgi:27
+msgid "Error"
+msgstr "Eraro"
+
+#: ../error.cgi:46
+msgid "The following error was printed:"
+msgstr "La sekvanta erarmesaĝo estis eligata: "
+
+#: ../error.cgi:50
+msgid ""
+"Hi!\n"
+"\n"
+"I found a bug in your application at %{urlofsite}.\n"
+"I did the following:\n"
+"\n"
+"<please describe what you did>\n"
+"<e.g., I wanted to sent a comment to the poll.>\n"
+"\n"
+"I am using <please state your browser and operating system>\n"
+"%{errormessage}\n"
+"Yours,\n"
+msgstr ""
+"Saluton!\n"
+"\n"
+"Mi trovis program-eraron en via aplikaĵo ĉe %{urlofsite}.\n"
+"Mi faris jenon:\n"
+"\n"
+"<bonvole priskribi kion vi faris>\n"
+"<ekzemple, mi volis sendi komenton al la voĉdonilo.>\n"
+"\n"
+"Mi uzas <bonvole mencii vian foliumilon kaj mastruman sistemon>\n"
+"%{errormessage}\n"
+"Altestime,\n"
+
+#: ../error.cgi:51
+msgid "Bug in dudle"
+msgstr "Program-eraro en Dudl"
+
+#: ../error.cgi:53
+msgid ""
+"An error occured while executing dudle.<br/>Please send an error report, "
+"including your browser, operating system, and what you did to %{admin}."
+msgstr ""
+"Okazis eraro dum plenumado de Dudle.<br/>Bonvolu sendi erarmesaĝon, "
+"inkluzive vian foliumilon, mastruman sistemon kaj kion vi faris, al %{admin}."
+
+#: ../error.cgi:56
+msgid "Please include the following as well:"
+msgstr "Bonvole inkluzivi ankaŭ jenon: "
+
+#: ../example.cgi:60
+msgid "Example not found: %{example}"
+msgstr "Ekzemplo ne trovita: %{example}"
+
+#: ../example.cgi:68
+msgid ""
+"If you want to play with the application, you may want to take a look at "
+"these example polls:"
+msgstr ""
+"Se vi deziras ludi per la aplikaĵo, eble vi volas rigardi al tiuj ekzemplaj "
+"voĉdoniloj: "
+
+#: ../history.rb:28
+msgid "Poll of Version %{revisionnumber}"
+msgstr "Voĉdonilo de versio %{revisionnumber}"
+
+#: ../history.rb:32
+msgid "Current Poll (Version %{revisionnumber})"
+msgstr "Nuna voĉdonilo (versio %{revisionnumber})"
+
+#: ../html.rb:131
+msgid "xml:lang='en' dir='ltr'"
+msgstr "xml:lang='eo' dir='ltr'"
+
+#: ../index.cgi:32
+msgid "Please enter a descriptive title."
+msgstr "Bonvolu enigi priskriban titolon."
+
+#: ../index.cgi:48
+msgid "Custom address may only contain letters, numbers, and dashes."
+msgstr ""
+"Mem-elektita adreso povas konsisti nur el literoj, ciferoj kaj streketoj."
+
+#: ../index.cgi:50
+msgid "A Poll with this address already exists."
+msgstr "Voĉdonilo kun tiu retadreso jam ekzistas. "
+
+#: ../index.cgi:68
+msgid ""
+"The poll was created successfully. The link to your new poll is: %{link}"
+msgstr ""
+"La voĉdonilo estis sukcese kreata. La ligilo al via nova voĉdonilo estas "
+"jena: %{link}"
+
+#: ../index.cgi:76
+msgid "Go away."
+msgstr "Foriru."
+
+#: ../index.cgi:84
+msgid "Create New Poll"
+msgstr "Krei novan voĉdonilon"
+
+#: ../index.cgi:86
+msgid "Title"
+msgstr "Titolo"
+
+#: ../index.cgi:87
+msgid "Type"
+msgstr "Tipo"
+
+#: ../index.cgi:88
+#, fuzzy
+msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
+msgstr "Demandi pri taŭga tempo (ekzemple por plani aranĝon)"
+
+#: ../index.cgi:89
+msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
+msgstr ""
+"Kutima opinio-esploro (ekzemple voĉdoni pri la plej bona speco da kafo)"
+
+#: ../index.cgi:90
+msgid "Custom address (optional)"
+msgstr "Mem-elektata adreso (nedeviga)"
+
+#: ../index.cgi:91
+msgid "May contain letters, numbers, and dashes."
+msgstr "Povas konsisti el literoj, ciferoj kaj streketoj."
+
+#: ../index.cgi:93
+msgid "Create"
+msgstr "Krei"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Dato"
+
+#: ../log.rb:111
+msgid "Version"
+msgstr "Versio"
+
+#: ../log.rb:111
+msgid "Comment"
+msgstr "Komento"
+
+#: ../maintenance.cgi:25 ../maintenance.cgi:27
+msgid "Maintenance"
+msgstr "Funkcitenado"
+
+#: ../maintenance.cgi:36
+msgid "This site is currently under maintenance!"
+msgstr "Tiu paĝaro nun estas en funkcitena reĝimo."
+
+#: ../maintenance.cgi:39
+msgid ""
+"You should not browse to this file directly. Please create a file named "
+"\"maintenance.html\" to enable the maintenance mode."
+msgstr ""
+"Vi ne foliumu al tiu paĝo rekte. Bonvolu krei datenon nomita \"maintenance."
+"html\" por aktivigi la funkcitenan reĝimon."
+
+#: ../not_found.cgi:29
+msgid "Poll Not Found"
+msgstr "Voĉdonilo ne trovita"
+
+#: ../not_found.cgi:31
+msgid "The requested Poll was not found."
+msgstr "La dezirata voĉdonilo ne estis trovata."
+
+#: ../not_found.cgi:32
+msgid "There are several reasons, why a Poll is deleted:"
+msgstr "Ekzistas pluraj kaŭzoj, kial voĉdonilo estas forigata: "
+
+#: ../not_found.cgi:33
+msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
+msgstr "Iu alklakis \"Forigu voĉdonilon\" kaj forigis ĝin mane. "
+
+#: ../not_found.cgi:34
+msgid ""
+"The Poll was deleted by the administrator because it was not accessed for a "
+"long time."
+msgstr ""
+"La voĉdonilo estis forigata fare de la administranto, ĉar ĝi ne estis "
+"alirata dum longa tempo. "
+
+#: ../not_found.cgi:35
+msgid ""
+"If you think, the deletion was done by error, please contact the "
+"adminsistrator of the system."
+msgstr ""
+"Se vi opinias, ke la forigo okazis erare, bonvolu kontakti la administranton "
+"de la sistemo. "
+
+#: ../overview.rb:31
+msgid "The next steps are:"
+msgstr "La venontaj paŝoj estas: "
+
+#: ../overview.rb:33
+msgid "Send the link to all participants:"
+msgstr "Sendi la ligilon al ĉiuj partoprenantoj: "
+
+#: ../overview.rb:34
+msgid "Send this link via email..."
+msgstr "Sendi tiun ligilon per retpoŝto..."
+
+#: ../overview.rb:35
+msgid "Visit the poll yourself:"
+msgstr "Mem viziti la voĉdonilon: "
+
+#: ../overview.rb:36
+msgid "Link to dudle poll about %{polltitle}"
+msgstr "Ligilo al Dudl-voĉdonilo pri %{polltitle}"
+
+#: ../participate.rb:59
+msgid "The changes were saved, you should be redirected to %{link}."
+msgstr "La ŝanĝoj estis konservataj, vi devus esti alidirektata al %{link}."
+
+#: ../poll.rb:96
+msgid "Edit user %{user}..."
+msgstr "Redakti uzanton %{user}..."
+
+#: ../poll.rb:100
+msgid "Delete user %{user}..."
+msgstr "Forigi uzanton %{user}..."
+
+#: ../poll.rb:154
+#, fuzzy
+msgid "Total"
+msgstr "Sume"
+
+#: ../poll.rb:186
+msgid "Invite"
+msgstr "Inviti"
+
+#: ../poll.rb:187 ../pollhead.rb:62 ../timepollhead.rb:158
+msgid "Name"
+msgstr "Nomo"
+
+#: ../poll.rb:232
+msgid "Save Changes"
+msgstr "Konservi ŝanĝojn"
+
+#: ../poll.rb:236
+msgid "Cancel"
+msgstr "Nuligi"
+
+#: ../poll.rb:258
+msgid "Do you really want to delete user %{user}?"
+msgstr "Ĉu vi vere volas forigi uzanton %{user}?"
+
+#: ../poll.rb:261
+msgid "Confirm"
+msgstr "Konfirmi"
+
+#: ../poll.rb:309
+msgid "Comments"
+msgstr "Komentoj"
+
+#: ../poll.rb:312
+msgid "Sort oldest comment first"
+msgstr "Aranĝi la plej malnovan komenton unue"
+
+#: ../poll.rb:315
+msgid "Sort newest comment first"
+msgstr "Aranĝi la plej novan komenton unue"
+
+#: ../poll.rb:320
+msgid "Go to last comment"
+msgstr "Al la lasta komento"
+
+#: ../poll.rb:333
+msgid "%{user} said on %{time}"
+msgstr "%{user} diris je %{time}"
+
+#: ../poll.rb:348
+#, fuzzy
+msgid "Go Up"
+msgstr "Supreniĝi"
+
+#: ../poll.rb:354
+msgid "says"
+msgstr "diras"
+
+#: ../poll.rb:355
+msgid "Submit Comment"
+msgstr "Sendi komenton"
+
+#: ../poll.rb:373
+#, fuzzy
+msgid "Show history items:"
+msgstr "Montri historierojn: "
+
+#: ../poll.rb:380
+msgid "All"
+msgstr "Ĉiuj"
+
+#: ../poll.rb:381
+msgid "Participant related"
+msgstr "Partoprenanto-rilata"
+
+#: ../poll.rb:382
+msgid "Column related"
+msgstr "Kolumno-rilata"
+
+#: ../poll.rb:383
+msgid "Comment related"
+msgstr "Komento-rilata"
+
+#: ../poll.rb:384
+msgid "Access Control related"
+msgstr "Alir-kontrolo-rilata"
+
+#: ../poll.rb:390
+#, fuzzy
+msgid "Update"
+msgstr "Ĝisdatigo"
+
+#: ../pollhead.rb:71
+msgid "Edit Option"
+msgstr "Redakta opcio"
+
+#: ../pollhead.rb:72
+msgid "Delete Option"
+msgstr "Foriga opcio"
+
+#: ../pollhead.rb:87 ../timepollhead.rb:162
+msgid "Last Edit"
+msgstr "Lasta redakto"
+
+#: ../pollhead.rb:99
+msgid "Option"
+msgstr "Opcio"
+
+#: ../pollhead.rb:100
+msgid "Description (optional)"
+msgstr "Priskribo (nedeviga)"
+
+#: ../pollhead.rb:101
+msgid "Add/Edit Option"
+msgstr "Aldona/Redakta opcio"
+
+#: ../pollhead.rb:102
+msgid "Preview"
+msgstr "Antaŭvido"
+
+#: ../pollhead.rb:103
+msgid ""
+"Enter all Options (columns), you want to ask the participants of the poll. "
+"The participants will state one vote for every option you give here "
+"separately."
+msgstr ""
+"Enigu ĉiujn opciojn (kolumnojn), pri kiuj vi volas demandi la "
+"partoprenantojn de la voĉdonado. La partoprenantoj voĉdonos aparte pri ĉiu "
+"opcio, kiun vi ofertas ĉi tie. "
+
+#: ../timepollhead.rb:113
+msgid ""
+"To add some time different to the default ones, please enter some string "
+"here (e.&thinsp;g., 09:30, morning, afternoon)."
+msgstr ""
+"Por aldoni iun tempon malsaman ol la antaŭdefinita, bonvole enigi iun "
+"signovicon ĉi tie (ekzemple: 09:30, matene, posttagmeze). "
+
+#: ../timepollhead.rb:119
+msgid "This Time was already chosen."
+msgstr "Tiu tempo jam estis elektata. "
+
+#: ../timepollhead.rb:193
+msgid "Earlier"
+msgstr "Pli frue"
+
+#: ../timepollhead.rb:198
+msgid "Later"
+msgstr "Pli malfrue"
+
+#: ../timepollhead.rb:264
+msgid "Click on the dates to add or remove columns."
+msgstr "Alklaku datojn por aldoni aŭ forigi kolumnojn. "
+
+#: ../timepollhead.rb:312
+msgid "Optional:"
+msgstr "Kiel opcio: "
+
+#: ../timepollhead.rb:313
+msgid "Enter a concrete value as start time."
+msgstr "Enigi konkretan valoron kiel komenca tempo. "
+
+#: ../timepollhead.rb:329
+msgid "Time"
+msgstr "Tempo"
+
+#: ../timepollhead.rb:342
+msgid "Chosen"
+msgstr "Elektita"
+
+#: ../timepollhead.rb:343
+msgid "Not Chosen"
+msgstr "Ne elektita"
+
+#: ../timepollhead.rb:344
+#, fuzzy
+msgid "Past"
+msgstr "Pasinta"
+
+#: ../timepollhead.rb:378
+msgid "Select the whole row"
+msgstr "Elekti la tutan vicon"
+
+#: ../timepollhead.rb:383
+msgid "Deselect the whole row"
+msgstr "Malelekti la tutan vicon"
+
+#: ../timepollhead.rb:427
+msgid "Add"
+msgstr "Aldoni"
+
+#: ../timepollhead.rb:428
+#, fuzzy
+msgid "e.&thinsp;g., 09:30, morning, afternoon"
+msgstr "ekzemple: 09:30, matene, posttagmeze"
+
+
+
