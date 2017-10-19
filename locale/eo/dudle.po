@@ -36,7 +36,7 @@ msgstr ""
 
 #: ../about.cgi:33
 msgid "The Sourcecode of this application can be found %{here}."
-msgstr "La fontokodo de tiu ĉi aplikaĵo estas havebla %{ĉi tie}."
+msgstr "La fontokodo de tiu ĉi aplikaĵo estas havebla %{here}."
 
 #: ../about.cgi:35
 msgid ""
