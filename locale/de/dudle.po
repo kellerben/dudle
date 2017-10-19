@@ -445,7 +445,7 @@ msgstr ""
 "Das habe ich gemacht:\n"
 "\n"
 "<Bitte beschreiben Sie, was Sie gemacht haben>\n"
-"<z.B.: Ich wollte ein Kommentar in einer Umfrage senden>\n"
+"<z.B.: Ich wollte einen Kommentar in einer Umfrage senden>\n"
 "\n"
 "Ich benutze <bitte hier ihren browser und ihr Betriebssystem einsetzen>.\n"
 "%{errormessage}\n"
@@ -678,11 +678,11 @@ msgstr "Kommentare"
 
 #: ../poll.rb:312
 msgid "Sort oldest comment first"
-msgstr "Sortiere das älteste Kommentar als erstes"
+msgstr "Sortiere den ältesten Kommentar als erstes"
 
 #: ../poll.rb:315
 msgid "Sort newest comment first"
-msgstr "Sortiere das neueste Kommentar als erstes"
+msgstr "Sortiere den neuesten Kommentar als erstes"
 
 #: ../poll.rb:320
 msgid "Go to last comment"
