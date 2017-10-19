@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: eo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-08-04 18:05+0200\n"
-"PO-Revision-Date: 2017-10-06 21:31+0100\n"
-"Last-Translator: eo.001 <[]>\n"
-"Language-Team: eo <[]>\n"
+"PO-Revision-Date: 2017-10-19 12:06+0100\n"
+"Last-Translator: eo.001\n"
+"Language-Team: eo <->\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +36,7 @@ msgstr ""
 
 #: ../about.cgi:33
 msgid "The Sourcecode of this application can be found %{here}."
-msgstr "La fontokodo de tiu ĉi aplikaĵo estas havebla %{here}."
+msgstr "La fontokodo de tiu ĉi aplikaĵo estas trovebla %{here}."
 
 #: ../about.cgi:35
 msgid ""
@@ -97,7 +97,9 @@ msgstr "Aktivigi"
 
 #: ../access_control.rb:184
 msgid "will be activated when at least an admin user is configured"
-msgstr "estos aktivigita, kiam minimume unu administra uzanto agordiĝis"
+msgstr ""
+"estos aktivigata, kiam minimume unu administra uzanto (uzantnomo: \"admin\") "
+"agordiĝis"
 
 #: ../access_control.rb:186
 msgid "Deactivate"
@@ -116,12 +118,11 @@ msgstr ""
 "agordojn. "
 
 #: ../access_control.rb:193
-#, fuzzy
 msgid ""
 "You will be asked for the password you entered here after pressing save!"
 msgstr ""
-"Vi estos demandata pri la pasvorto, kiun vi enigis ĉi tie post premo de "
-"konservu!"
+"Post premo de 'Konservi' vi estos demandata pri la uzantnomo kaj la "
+"pasvorto, kiujn vi enigis ĉi tie!"
 
 #: ../access_control.rb:196
 msgid ""
@@ -167,7 +168,7 @@ msgstr "Necesas rajtigi sin por povi atingi tiun paĝon!"
 
 #: ../config.rb:45
 msgid "Event Schedule Poll"
-msgstr "Aranĝo-organiza voĉdonilo"
+msgstr "Demandi pri taŭga tempo"
 
 #: ../config.rb:49
 msgid "Normal Poll"
@@ -307,7 +308,7 @@ msgstr "Forigi tiun voĉdonilon"
 
 #: ../delete_poll.rb:109
 msgid "You want to delete the poll named"
-msgstr "Vi deziras forigi la voĉdonilon nomata"
+msgstr "Vi deziras forigi la voĉdonilon nomata: "
 
 #: ../delete_poll.rb:110
 msgid "This is an irreversible action!"
@@ -331,7 +332,7 @@ msgstr "Voĉdonilo"
 
 #: ../dudle.rb:77 ../history.rb:35
 msgid "History"
-msgstr "Historio"
+msgstr "Versi-historio"
 
 #: ../dudle.rb:80
 msgid "Edit Columns"
@@ -359,7 +360,7 @@ msgstr "Ekzemploj"
 
 #: ../dudle.rb:90
 msgid "About"
-msgstr "Pri"
+msgstr "Pri Dudle"
 
 #: ../dudle.rb:92
 msgid "Customize"
@@ -477,7 +478,7 @@ msgstr ""
 
 #: ../history.rb:28
 msgid "Poll of Version %{revisionnumber}"
-msgstr "Voĉdonilo de versio %{revisionnumber}"
+msgstr "Voĉdonilo laŭ versio %{revisionnumber}"
 
 #: ../history.rb:32
 msgid "Current Poll (Version %{revisionnumber})"
@@ -524,18 +525,16 @@ msgid "Type"
 msgstr "Tipo"
 
 #: ../index.cgi:88
-#, fuzzy
 msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Demandi pri taŭga tempo (ekzemple por plani aranĝon)"
 
 #: ../index.cgi:89
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
-msgstr ""
-"Kutima opinio-esploro (ekzemple voĉdoni pri la plej bona speco da kafo)"
+msgstr "Kutima opini-esploro (ekzemple voĉdoni pri la plej bona speco da kafo)"
 
 #: ../index.cgi:90
 msgid "Custom address (optional)"
-msgstr "Mem-elektata adreso (nedeviga)"
+msgstr "Adreson mem elekti (nedeviga opcio)"
 
 #: ../index.cgi:91
 msgid "May contain letters, numbers, and dashes."
@@ -543,7 +542,7 @@ msgstr "Povas konsisti el literoj, ciferoj kaj streketoj."
 
 #: ../index.cgi:93
 msgid "Create"
-msgstr "Krei"
+msgstr "Estigi"
 
 #: ../log.rb:111
 msgid "Date"
@@ -563,15 +562,15 @@ msgstr "Funkcitenado"
 
 #: ../maintenance.cgi:36
 msgid "This site is currently under maintenance!"
-msgstr "Tiu paĝaro nun estas en funkcitena reĝimo."
+msgstr "Tiu paĝaro nun estas en programvartado!"
 
 #: ../maintenance.cgi:39
 msgid ""
 "You should not browse to this file directly. Please create a file named "
 "\"maintenance.html\" to enable the maintenance mode."
 msgstr ""
-"Vi ne foliumu al tiu paĝo rekte. Bonvolu krei datenon nomita \"maintenance."
-"html\" por aktivigi la funkcitenan reĝimon."
+"Ne foliumu al tiu paĝo rekte. Bonvolu krei datenon nomita \"maintenance.html"
+"\" por aktivigi la funkcitenan reĝimon."
 
 #: ../not_found.cgi:29
 msgid "Poll Not Found"
@@ -638,9 +637,8 @@ msgid "Delete user %{user}..."
 msgstr "Forigi uzanton %{user}..."
 
 #: ../poll.rb:154
-#, fuzzy
 msgid "Total"
-msgstr "Sume"
+msgstr "Sumo"
 
 #: ../poll.rb:186
 msgid "Invite"
@@ -687,9 +685,8 @@ msgid "%{user} said on %{time}"
 msgstr "%{user} diris je %{time}"
 
 #: ../poll.rb:348
-#, fuzzy
 msgid "Go Up"
-msgstr "Supreniĝi"
+msgstr "Supreniri"
 
 #: ../poll.rb:354
 msgid "says"
@@ -700,9 +697,8 @@ msgid "Submit Comment"
 msgstr "Sendi komenton"
 
 #: ../poll.rb:373
-#, fuzzy
 msgid "Show history items:"
-msgstr "Montri historierojn: "
+msgstr "Montri historiaĵojn: "
 
 #: ../poll.rb:380
 msgid "All"
@@ -725,9 +721,8 @@ msgid "Access Control related"
 msgstr "Alir-kontrolo-rilata"
 
 #: ../poll.rb:390
-#, fuzzy
 msgid "Update"
-msgstr "Ĝisdatigo"
+msgstr "Ĝisdatigi"
 
 #: ../pollhead.rb:71
 msgid "Edit Option"
@@ -772,8 +767,8 @@ msgid ""
 "To add some time different to the default ones, please enter some string "
 "here (e.&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
-"Por aldoni iun tempon malsaman ol la antaŭdefinita, bonvole enigi iun "
-"signovicon ĉi tie (ekzemple: 09:30, matene, posttagmeze). "
+"Por aldoni iun tempon malsaman ol la antaŭdefinitaj, bonvole enigi ĉi tie "
+"ian signovicon (ekzemple 09:30, matene, posttagmeze). "
 
 #: ../timepollhead.rb:119
 msgid "This Time was already chosen."
@@ -812,7 +807,6 @@ msgid "Not Chosen"
 msgstr "Ne elektita"
 
 #: ../timepollhead.rb:344
-#, fuzzy
 msgid "Past"
 msgstr "Pasinta"
 
@@ -829,9 +823,5 @@ msgid "Add"
 msgstr "Aldoni"
 
 #: ../timepollhead.rb:428
-#, fuzzy
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
-msgstr "ekzemple: 09:30, matene, posttagmeze"
-
-
-
+msgstr "ekzemple 09:30, matene, posttagmeze"
