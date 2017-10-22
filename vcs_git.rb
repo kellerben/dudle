@@ -21,6 +21,7 @@
 require "time"
 require_relative "log"
 require "open3"
+require 'tempfile'
 
 def runcmd *args
 	Open3.popen3(*args) {|i,o,e,t| o.read }
@@ -61,15 +62,14 @@ class VCS
 	end
 
 	def VCS.commit comment
-		tmpfile = "/tmp/commitcomment.#{rand(10000)}"
-		File.open(tmpfile,"w"){|f|
-			f<<comment
-		}
-		ret = runcmd(GITCMD, "commit", "-a", "-F", tmpfile)
-		File.delete(tmpfile)
+		tmpfile = Tempfile.new("commit")
+		tmpfile.write(comment)
+		tmpfile.close
+		ret = runcmd(GITCMD, "commit", "-a", "-F", tmpfile.path)
+		tmpfile.unlink
 		ret
 	end
-	
+
 	def VCS.branch source, target
 		runcmd(GITCMD, "clone", source, target)
 	end
