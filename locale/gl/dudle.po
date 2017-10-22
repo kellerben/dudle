@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 16:39+0200\n"
+"POT-Creation-Date: 2017-10-22 20:36+0200\n"
 "PO-Revision-Date: 2011-12-28 15:41+0100\n"
 "Last-Translator: Daniel Espinheira <daniel.espinheira@gmail.com>\n"
 "Language-Team: ngzngl <daniel.espinheira@gmail.com>\n"
@@ -37,7 +37,7 @@ msgstr ""
 "3</a>"
 
 #: ../about.cgi:33
-msgid "The Sourcecode of this application can be found %{here}."
+msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
 
 #: ../about.cgi:35
@@ -367,12 +367,12 @@ msgid "Finish"
 msgstr "Finalizar"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "Proceder!"
-
-#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Graváronse todos os cambios."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Proceder!"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -391,12 +391,12 @@ msgid "Edit column"
 msgstr "Editar columna"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "Refacer"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Desfacer"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Refacer"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -527,12 +527,12 @@ msgid "Create"
 msgstr "Crear"
 
 #: ../log.rb:111
-msgid "Date"
-msgstr "Data"
-
-#: ../log.rb:111
 msgid "Version"
 msgstr "Versión"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Data"
 
 #: ../log.rb:111
 msgid "Comment"

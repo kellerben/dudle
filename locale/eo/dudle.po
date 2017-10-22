@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 18:05+0200\n"
+"POT-Creation-Date: 2017-10-22 20:36+0200\n"
 "PO-Revision-Date: 2017-10-19 12:06+0100\n"
 "Last-Translator: eo.001\n"
 "Language-Team: eo <->\n"
@@ -35,8 +35,8 @@ msgstr ""
 "href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Versio 3 </a>"
 
 #: ../about.cgi:33
-msgid "The Sourcecode of this application can be found %{here}."
-msgstr "La fontokodo de tiu ĉi aplikaĵo estas trovebla %{here}."
+msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
+msgstr "La fontokodo de tiu ĉi aplikaĵo estas trovebla %{a_start}ĉi tie%{a_end}."
 
 #: ../about.cgi:35
 msgid ""
@@ -166,31 +166,13 @@ msgstr "Reen al Dudl-ĉefpaĝo kaj estigi novan voĉdonadon"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Necesas rajtigi sin por povi atingi tiun paĝon!"
 
-#: ../config.rb:45
+#: ../config.rb:92
 msgid "Event Schedule Poll"
 msgstr "Demandi pri taŭga tempo"
 
-#: ../config.rb:49
+#: ../config.rb:96
 msgid "Normal Poll"
 msgstr "Kutima voĉdonilo"
-
-#: ../config.rb:53
-msgid ""
-"End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
-msgstr ""
-"Fino-ĝis-fino ĉifrita/aŭtentigita voĉdonilo (vidu la pasvorton en la "
-"komentoj)"
-
-#: ../config.rb:57
-msgid ""
-"End-to-End encrypted Poll, where only the administrator is able to read votes"
-msgstr ""
-"Fino-ĝis-fino ĉifrita voĉdonilo, kie nur la administranto kapablas legi "
-"voĉdonojn"
-
-#: ../config.rb:61
-msgid "Test for several PGP-authenticated votes"
-msgstr "Testo por diversaj PGP-aŭtentigitaj voĉdonoj"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize Personal Settings"
@@ -217,12 +199,12 @@ msgid "Use this option if you see the characters in the parenthesis."
 msgstr "Uzu tiun ĉi opcion, se vi vidas la literojn ene de la krampoj. "
 
 #: ../customize.cgi:58 ../customize.rb:58
-msgid "Use this option if you have problems with some characters."
-msgstr "Uzu tiun ĉi opcion, se vi havas problemojn pri iuj signoj. "
-
-#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
 msgstr "Uzu nur kutimajn signovicojn"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Uzu tiun ĉi opcion, se vi havas problemojn pri iuj signoj. "
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -407,12 +389,12 @@ msgid "Edit column"
 msgstr "Redakti kolumnon"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "Refari"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Malfari"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Refari"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -545,12 +527,12 @@ msgid "Create"
 msgstr "Estigi"
 
 #: ../log.rb:111
-msgid "Date"
-msgstr "Dato"
-
-#: ../log.rb:111
 msgid "Version"
 msgstr "Versio"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Dato"
 
 #: ../log.rb:111
 msgid "Comment"
@@ -825,3 +807,19 @@ msgstr "Aldoni"
 #: ../timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "ekzemple 09:30, matene, posttagmeze"
+
+#~ msgid ""
+#~ "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+#~ msgstr ""
+#~ "Fino-ĝis-fino ĉifrita/aŭtentigita voĉdonilo (vidu la pasvorton en la "
+#~ "komentoj)"
+
+#~ msgid ""
+#~ "End-to-End encrypted Poll, where only the administrator is able to read "
+#~ "votes"
+#~ msgstr ""
+#~ "Fino-ĝis-fino ĉifrita voĉdonilo, kie nur la administranto kapablas legi "
+#~ "voĉdonojn"
+
+#~ msgid "Test for several PGP-authenticated votes"
+#~ msgstr "Testo por diversaj PGP-aŭtentigitaj voĉdonoj"

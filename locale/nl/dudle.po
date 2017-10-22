@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 16:39+0200\n"
+"POT-Creation-Date: 2017-10-22 20:36+0200\n"
 "PO-Revision-Date: 2011-05-11 13:46+0100\n"
 "Last-Translator: Joeri de Ruiter <joeri@cs.ru.nl>\n"
 "Language-Team: \n"
@@ -47,7 +47,7 @@ msgstr ""
 "a>. "
 
 #: ../about.cgi:33
-msgid "The Sourcecode of this application can be found %{here}."
+msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
 
 #: ../about.cgi:35
@@ -379,12 +379,12 @@ msgid "Finish"
 msgstr "Afronden"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "Doorgaan!"
-
-#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Alle wijzigingen zijn succesvol opgeslagen."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Doorgaan!"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -403,12 +403,12 @@ msgid "Edit column"
 msgstr "Wijzig kolom"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "Redo"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Undo"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Redo"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -540,12 +540,12 @@ msgid "Create"
 msgstr "Maak aan"
 
 #: ../log.rb:111
-msgid "Date"
-msgstr "Datum"
-
-#: ../log.rb:111
 msgid "Version"
 msgstr "Versie"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Datum"
 
 #: ../log.rb:111
 msgid "Comment"

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 16:39+0200\n"
+"POT-Creation-Date: 2017-10-22 20:36+0200\n"
 "PO-Revision-Date: 2016-09-09 11:42+0300\n"
 "Last-Translator: Benson Muite with aid of Google translate\n"
 "Language-Team: \n"
@@ -50,8 +50,8 @@ msgstr ""
 "fsf.org/licensing/licenses/agpl-3.0.html'>AGPLv3</a> luba."
 
 #: ../about.cgi:33
-msgid "The Sourcecode of this application can be found %{here}."
-msgstr "Lähtekoodi see rakendus võib leida %{here}."
+msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
+msgstr "Lähtekoodi see rakendus võib leida %{a_start}aici%{a_end}."
 
 #: ../about.cgi:35
 msgid ""
@@ -373,12 +373,12 @@ msgid "Finish"
 msgstr "Lõpetama"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "Jätkama"
-
-#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Kõik muudatused salvestati edukalt."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Jätkama"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -397,12 +397,12 @@ msgid "Edit column"
 msgstr "Muuda veeru"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "ümber tegema"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Tühistama"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "ümber tegema"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -531,12 +531,12 @@ msgid "Create"
 msgstr "Looma"
 
 #: ../log.rb:111
-msgid "Date"
-msgstr "Kuupäev"
-
-#: ../log.rb:111
 msgid "Version"
 msgstr "Versioon"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Kuupäev"
 
 #: ../log.rb:111
 msgid "Comment"

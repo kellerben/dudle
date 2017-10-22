@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 16:39+0200\n"
+"POT-Creation-Date: 2017-10-22 20:36+0200\n"
 "PO-Revision-Date: 2017-02-16 20:46+0100\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>, 2017\n"
 "Language-Team: Hebrew (https://www.transifex.com/yaron/teams/76313/he/)\n"
@@ -35,7 +35,8 @@ msgstr ""
 "licensing/licenses/agpl-3.0.html'>AGPL גרסה 3</a>"
 
 #: ../about.cgi:33
-msgid "The Sourcecode of this application can be found %{here}."
+#, fuzzy
+msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr "ניתן למצוא את קוד המקור של היישום הזה %{here}."
 
 #: ../about.cgi:35
@@ -351,12 +352,12 @@ msgid "Finish"
 msgstr "סיום"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "להמשיך!"
-
-#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "כל השינויים נשמרו בהצלחה."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "להמשיך!"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -375,12 +376,12 @@ msgid "Edit column"
 msgstr "עריכת עמודה"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "ביצוע חוזר"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "ביטול"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "ביצוע חוזר"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -508,12 +509,12 @@ msgid "Create"
 msgstr "יצירה"
 
 #: ../log.rb:111
-msgid "Date"
-msgstr "תאריך"
-
-#: ../log.rb:111
 msgid "Version"
 msgstr "גרסה"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "תאריך"
 
 #: ../log.rb:111
 msgid "Comment"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 510\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 17:57+0200\n"
+"POT-Creation-Date: 2017-10-22 20:36+0200\n"
 "PO-Revision-Date: 2017-08-02 11:07-0400\n"
 "Last-Translator: Benson Muite modifying output of Yandex Translate and Bing "
 "translator\n"
@@ -32,8 +32,9 @@ msgstr ""
 "fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Toleo 3</a>"
 
 #: ../about.cgi:33
-msgid "The Sourcecode of this application can be found %{here}."
-msgstr "Kanuni ya programu tumizi hii yanaweza kupatikana %{here}."
+#, fuzzy
+msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
+msgstr "Kanuni ya programu tumizi hii yanaweza kupatikana %{a_start}humu%{a_end}."
 
 #: ../about.cgi:35
 msgid ""
@@ -353,12 +354,12 @@ msgid "Finish"
 msgstr "Maliza"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "Endelea"
-
-#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Mabadiliko yote walikuwa kuokolewa mafanikio"
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Endelea"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -377,12 +378,12 @@ msgid "Edit column"
 msgstr "Hairiri nguzo"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "Fanya tena"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Tendua"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Fanya tena"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -511,12 +512,12 @@ msgid "Create"
 msgstr "Jenga"
 
 #: ../log.rb:111
-msgid "Date"
-msgstr "Tarehe"
-
-#: ../log.rb:111
 msgid "Version"
 msgstr "Toleo"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Tarehe"
 
 #: ../log.rb:111
 msgid "Comment"

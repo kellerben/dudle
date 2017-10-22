@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 16:39+0200\n"
+"POT-Creation-Date: 2017-10-22 20:36+0200\n"
 "PO-Revision-Date: 2015–14-04 10:07+0200\n"
 "Last-Translator: Tel Amiel <tel theatsign amiel thedot info>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr ""
 "href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
 
 #: ../about.cgi:33
-msgid "The Sourcecode of this application can be found %{here}."
+msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
 
 #: ../about.cgi:35
@@ -359,12 +359,12 @@ msgid "Finish"
 msgstr "Finalizar"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "Continuar!"
-
-#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Todas as mudanças foram salvas com sucesso."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Continuar!"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -383,12 +383,12 @@ msgid "Edit column"
 msgstr "Editar coluna"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "Refazer"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Desafazer"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Refazer"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -518,12 +518,12 @@ msgid "Create"
 msgstr "Criar"
 
 #: ../log.rb:111
-msgid "Date"
-msgstr "Data"
-
-#: ../log.rb:111
 msgid "Version"
 msgstr "Versão"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Data"
 
 #: ../log.rb:111
 msgid "Comment"

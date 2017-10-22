@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 510\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 16:39+0200\n"
+"POT-Creation-Date: 2017-10-22 20:36+0200\n"
 "PO-Revision-Date: 2011-07-04 06:55+0200\n"
 "Last-Translator: Gabor Kiss <kissg@ssg.ki.iif.hu>\n"
 "Language-Team: \n"
@@ -49,7 +49,7 @@ msgstr ""
 "licensing/licenses/agpl-3.0.html'>AGPLv3</a> alapján."
 
 #: ../about.cgi:33
-msgid "The Sourcecode of this application can be found %{here}."
+msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
 
 #: ../about.cgi:35
@@ -379,12 +379,12 @@ msgid "Finish"
 msgstr "Befejezés"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "Végrehajtás"
-
-#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "A változtatások elmentve."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Végrehajtás"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -403,12 +403,12 @@ msgid "Edit column"
 msgstr "Oszlop módosítása"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "De mégis"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Mégsem"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "De mégis"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -528,12 +528,12 @@ msgid "Create"
 msgstr "Létrehozás"
 
 #: ../log.rb:111
-msgid "Date"
-msgstr "Dátum"
-
-#: ../log.rb:111
 msgid "Version"
 msgstr "Verzió"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Dátum"
 
 #: ../log.rb:111
 msgid "Comment"

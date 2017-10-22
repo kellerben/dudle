@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 16:39+0200\n"
+"POT-Creation-Date: 2017-10-22 20:36+0200\n"
 "PO-Revision-Date: 2011-05-10 07:31+0200\n"
 "Last-Translator: Eros Pedrini\n"
 "Language-Team: \n"
@@ -47,7 +47,7 @@ msgstr ""
 "agpl-3.0.html'>AGPL Versione 3</a>"
 
 #: ../about.cgi:33
-msgid "The Sourcecode of this application can be found %{here}."
+msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
 
 #: ../about.cgi:35
@@ -381,12 +381,12 @@ msgid "Finish"
 msgstr "Fine"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "Procedi!"
-
-#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Tutti i cambiamenti sono stati salvati."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Procedi!"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -405,12 +405,12 @@ msgid "Edit column"
 msgstr "Modifica Colonna"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "Rifai"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Annulla"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Rifai"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -545,12 +545,12 @@ msgid "Create"
 msgstr "Crea"
 
 #: ../log.rb:111
-msgid "Date"
-msgstr "Data"
-
-#: ../log.rb:111
 msgid "Version"
 msgstr "Versione"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Data"
 
 #: ../log.rb:111
 msgid "Comment"

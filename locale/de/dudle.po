@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dudle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 16:39+0200\n"
+"POT-Creation-Date: 2017-10-22 20:36+0200\n"
 "PO-Revision-Date: 2017-08-04 16:37+0100\n"
 "Last-Translator: Benjamin Kellermann\n"
 "Language-Team: \n"
@@ -46,12 +46,13 @@ msgid ""
 "The sourcecode of this application is available under the terms of <a "
 "href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
 msgstr ""
-"Der Sourcecode zu dieser Applikation ist unter der Lizenz <a href='http://"
-"www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPLv3</a> verfügbar."
+"Der Sourcecode zu dieser Applikation ist unter der Lizenz <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPLv3</a> "
+"verfügbar."
 
 #: ../about.cgi:33
-msgid "The Sourcecode of this application can be found %{here}."
-msgstr "Der Quellcode der Applikation ist %{here} verfügbar."
+msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
+msgstr "Der Quellcode der Applikation ist %{a_start}hier%{a_end} verfügbar."
 
 #: ../about.cgi:35
 msgid ""
@@ -78,8 +79,8 @@ msgid ""
 "You have to remove the participant user before you can remove the "
 "administrator."
 msgstr ""
-"Der Benutzer „participant“ muss entfernt werden, bevor Sie den Administrator "
-"entfernen können."
+"Der Benutzer „participant“ muss entfernt werden, bevor Sie den "
+"Administrator entfernen können."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
 #: ../delete_poll.rb:112 ../poll.rb:338
@@ -114,8 +115,8 @@ msgstr "Aktivieren"
 #: ../access_control.rb:184
 msgid "will be activated when at least an admin user is configured"
 msgstr ""
-"wird aktiviert, wenn ein Administrator (Benutzername: „admin“) konfiguriert "
-"wurde"
+"wird aktiviert, wenn ein Administrator (Benutzername: „admin“) "
+"konfiguriert wurde"
 
 #: ../access_control.rb:186
 msgid "Deactivate"
@@ -150,7 +151,8 @@ msgstr ""
 
 #: ../access_control.rb:202
 msgid "The user ‘participant’ has only access to the vote interface."
-msgstr "Der Benutzer „participant“ hat nur zur Abstimmungsoberfläche Zugriff."
+msgstr ""
+"Der Benutzer „participant“ hat nur zur Abstimmungsoberfläche Zugriff."
 
 #: ../access_control.rb:208
 msgid "Access control:"
@@ -386,12 +388,12 @@ msgid "Finish"
 msgstr "Fertig"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "Weiter"
-
-#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Alle Änderungen wurden erfolgreich gespeichert."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Weiter"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -410,12 +412,12 @@ msgid "Edit column"
 msgstr "Bearbeite Spalte"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "Wiederherstellen"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Rückgängig"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Wiederherstellen"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -460,8 +462,8 @@ msgid ""
 "An error occured while executing dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Während der Ausführung von dudle gab es einen Fehler.<br/>Bitte schicken Sie "
-"einen Fehlerbericht in dem Sie den Namen Ihres Browsers, Ihres "
+"Während der Ausführung von dudle gab es einen Fehler.<br/>Bitte schicken "
+"Sie einen Fehlerbericht in dem Sie den Namen Ihres Browsers, Ihres "
 "Betriebssystems und was Sie gemacht haben angeben an %{admin}."
 
 #: ../error.cgi:56
@@ -535,7 +537,8 @@ msgstr "Nach einer Zeit fragen (z.&thinsp;B. einen Besprechungstermin finden)"
 
 #: ../index.cgi:89
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
-msgstr "Normale Umfrage (z.&thinsp;B. eine Umfrage über die beste Kaffeesorte)"
+msgstr ""
+"Normale Umfrage (z.&thinsp;B. eine Umfrage über die beste Kaffeesorte)"
 
 #: ../index.cgi:90
 msgid "Custom address (optional)"
@@ -550,12 +553,12 @@ msgid "Create"
 msgstr "Erstellen"
 
 #: ../log.rb:111
-msgid "Date"
-msgstr "Datum"
-
-#: ../log.rb:111
 msgid "Version"
 msgstr "Version"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Datum"
 
 #: ../log.rb:111
 msgid "Comment"
@@ -592,7 +595,8 @@ msgstr "Es gibt mehrere Gründe, warum eine Umfrage gelöscht wurde:"
 #: ../not_found.cgi:33
 msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
 msgstr ""
-"Jemand hat auf „Umfrage löschen“ geklickt und die Umfrage manuell gelöscht"
+"Jemand hat auf „Umfrage löschen“ geklickt und die Umfrage manuell "
+"gelöscht"
 
 #: ../not_found.cgi:34
 msgid ""
@@ -767,8 +771,8 @@ msgid ""
 "separately."
 msgstr ""
 "Geben Sie alle Optionen (Spalten) ein, nach denen in der Umfrage gefragt "
-"werden soll. Die Teilnehmer der Umfrage können für jede Option einzeln ihre "
-"Stimme abgeben."
+"werden soll. Die Teilnehmer der Umfrage können für jede Option einzeln "
+"ihre Stimme abgeben."
 
 #: ../timepollhead.rb:113
 msgid ""
@@ -841,11 +845,11 @@ msgstr "z.B., 9:30, morgens, abends"
 #~ msgstr "--verbose"
 
 #~ msgid ""
-#~ "You can get the sourcecode, using <a href='http://bazaar-vcs."
-#~ "org/'>bazaar</a>:"
+#~ "You can get the sourcecode, using <a "
+#~ "href='http://bazaar-vcs.org/'>bazaar</a>:"
 #~ msgstr ""
-#~ "Sie können sich den Quellcode mit <a href='http://bazaar-vcs."
-#~ "org/'>bazaar</a> herunterladen:"
+#~ "Sie können sich den Quellcode mit <a "
+#~ "href='http://bazaar-vcs.org/'>bazaar</a> herunterladen:"
 
 #~ msgid "The link to your poll is:"
 #~ msgstr "Die URL zu Ihrer Umfrage ist:"

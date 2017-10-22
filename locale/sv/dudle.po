@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 16:39+0200\n"
+"POT-Creation-Date: 2017-10-22 20:36+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@gmx.de>\n"
 "Language-Team: \n"
@@ -47,7 +47,7 @@ msgstr ""
 "href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
 
 #: ../about.cgi:33
-msgid "The Sourcecode of this application can be found %{here}."
+msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
 
 #: ../about.cgi:35
@@ -376,12 +376,12 @@ msgid "Finish"
 msgstr "Klar"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "Fortsätt!"
-
-#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Alla ändringar sparades."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Fortsätt!"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -400,12 +400,12 @@ msgid "Edit column"
 msgstr "Redigera kolumn"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "Upprepa"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "Ångra"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Upprepa"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -522,12 +522,12 @@ msgid "Create"
 msgstr "Skapa"
 
 #: ../log.rb:111
-msgid "Date"
-msgstr "Datum"
-
-#: ../log.rb:111
 msgid "Version"
 msgstr "Version"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Datum"
 
 #: ../log.rb:111
 msgid "Comment"
