@@ -19,6 +19,7 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
+if(ENV["REDIRECT_URL"])
 require_relative "dudle"
 if File.exists?(Dir.pwd + File.dirname(ENV["REDIRECT_URL"]))
 	$d = Dudle.new(:hide_lang_chooser => true, :load_extensions => false)
@@ -54,3 +55,7 @@ END
 
 $d.out#($cgi)
 
+else
+	puts
+	puts "Not Found"
+end
