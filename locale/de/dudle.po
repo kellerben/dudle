@@ -20,17 +20,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dudle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-22 20:36+0200\n"
-"PO-Revision-Date: 2017-08-04 16:37+0100\n"
+"POT-Creation-Date: 2017-10-23 22:24+0200\n"
+"PO-Revision-Date: 2017-10-23 22:28+0200\n"
 "Last-Translator: Benjamin Kellermann\n"
 "Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Basepath: ../../\n"
+"X-Poedit-Basepath: ../..\n"
 "X-dudle-Language: Deutsch\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: ../about.cgi:29
@@ -46,9 +46,8 @@ msgid ""
 "The sourcecode of this application is available under the terms of <a "
 "href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
 msgstr ""
-"Der Sourcecode zu dieser Applikation ist unter der Lizenz <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPLv3</a> "
-"verfügbar."
+"Der Sourcecode zu dieser Applikation ist unter der Lizenz <a href='http://"
+"www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPLv3</a> verfügbar."
 
 #: ../about.cgi:33
 msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
@@ -79,8 +78,8 @@ msgid ""
 "You have to remove the participant user before you can remove the "
 "administrator."
 msgstr ""
-"Der Benutzer „participant“ muss entfernt werden, bevor Sie den "
-"Administrator entfernen können."
+"Der Benutzer „participant“ muss entfernt werden, bevor Sie den Administrator "
+"entfernen können."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
 #: ../delete_poll.rb:112 ../poll.rb:338
@@ -115,8 +114,8 @@ msgstr "Aktivieren"
 #: ../access_control.rb:184
 msgid "will be activated when at least an admin user is configured"
 msgstr ""
-"wird aktiviert, wenn ein Administrator (Benutzername: „admin“) "
-"konfiguriert wurde"
+"wird aktiviert, wenn ein Administrator (Benutzername: „admin“) konfiguriert "
+"wurde"
 
 #: ../access_control.rb:186
 msgid "Deactivate"
@@ -151,12 +150,24 @@ msgstr ""
 
 #: ../access_control.rb:202
 msgid "The user ‘participant’ has only access to the vote interface."
-msgstr ""
-"Der Benutzer „participant“ hat nur zur Abstimmungsoberfläche Zugriff."
+msgstr "Der Benutzer „participant“ hat nur zur Abstimmungsoberfläche Zugriff."
 
 #: ../access_control.rb:208
 msgid "Access control:"
 msgstr "Zugriffskontrolle:"
+
+#: ../advanced.rb:31 ../advanced.rb:35
+msgid "Revert Poll"
+msgstr "Umfrage zurücksetzen"
+
+#: ../advanced.rb:32
+msgid "Poll was reverted to Version %{version}!"
+msgstr "Umfrage wurde zur Version %{version} zurückgesetzt!"
+
+#: ../advanced.rb:37
+msgid "Revert Poll to version (see History tab for revision numbers): "
+msgstr ""
+"Setze Umfrage zurück auf Version (siehe Versionen-Tab für Versionsnummern): "
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization Required"
@@ -175,7 +186,7 @@ msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 "Um fortzufahren müssen Sie das Passwort für den Benutzer %{user} eingeben."
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:36
+#: ../authorization_required.cgi:53 ../not_found.cgi:37
 msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Zurück zur dudle Hauptseite um eine neue Umfrage zu erstellen"
 
@@ -317,7 +328,7 @@ msgstr "Sie wollen die Umfrage mit folgendem Namen löschen:"
 
 #: ../delete_poll.rb:110
 msgid "This is an irreversible action!"
-msgstr "Das Löschen der gesamten Umfrage ist unwiederrufbar!"
+msgstr "Das Löschen der gesamten Umfrage ist unwiderrufbar!"
 
 #: ../delete_poll.rb:111
 msgid ""
@@ -356,42 +367,46 @@ msgid "Overview"
 msgstr "Übersicht"
 
 #: ../dudle.rb:86
+msgid "Advanced"
+msgstr "Erweitert"
+
+#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "Umfrage löschen"
 
-#: ../dudle.rb:89 ../example.cgi:67
+#: ../dudle.rb:90 ../example.cgi:67
 msgid "Examples"
 msgstr "Beispiele"
 
-#: ../dudle.rb:90
+#: ../dudle.rb:91
 msgid "About"
 msgstr "Über dudle"
 
-#: ../dudle.rb:92
+#: ../dudle.rb:93
 msgid "Customize"
 msgstr "Personalisieren"
 
-#: ../dudle.rb:100
+#: ../dudle.rb:101
 msgid "Dudle Home"
 msgstr "Dudle Startseite"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "Zurück"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "Weiter"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "Fertig"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "Alle Änderungen wurden erfolgreich gespeichert."
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Weiter"
 
@@ -462,8 +477,8 @@ msgid ""
 "An error occured while executing dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Während der Ausführung von dudle gab es einen Fehler.<br/>Bitte schicken "
-"Sie einen Fehlerbericht in dem Sie den Namen Ihres Browsers, Ihres "
+"Während der Ausführung von dudle gab es einen Fehler.<br/>Bitte schicken Sie "
+"einen Fehlerbericht in dem Sie den Namen Ihres Browsers, Ihres "
 "Betriebssystems und was Sie gemacht haben angeben an %{admin}."
 
 #: ../error.cgi:56
@@ -537,8 +552,7 @@ msgstr "Nach einer Zeit fragen (z.&thinsp;B. einen Besprechungstermin finden)"
 
 #: ../index.cgi:89
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
-msgstr ""
-"Normale Umfrage (z.&thinsp;B. eine Umfrage über die beste Kaffeesorte)"
+msgstr "Normale Umfrage (z.&thinsp;B. eine Umfrage über die beste Kaffeesorte)"
 
 #: ../index.cgi:90
 msgid "Custom address (optional)"
@@ -580,25 +594,24 @@ msgstr ""
 "Sie sollten diese Datei nicht direkt aufrufen. Bitte erstellen sie eine "
 "Datei namens \"maintenance.html\" um den Wartungsmodus zu aktivieren."
 
-#: ../not_found.cgi:29
+#: ../not_found.cgi:30
 msgid "Poll Not Found"
 msgstr "Umfrage nicht gefunden"
 
-#: ../not_found.cgi:31
+#: ../not_found.cgi:32
 msgid "The requested Poll was not found."
 msgstr "Die angeforderte Umfrage wurde nicht gefunden."
 
-#: ../not_found.cgi:32
+#: ../not_found.cgi:33
 msgid "There are several reasons, why a Poll is deleted:"
 msgstr "Es gibt mehrere Gründe, warum eine Umfrage gelöscht wurde:"
 
-#: ../not_found.cgi:33
+#: ../not_found.cgi:34
 msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
 msgstr ""
-"Jemand hat auf „Umfrage löschen“ geklickt und die Umfrage manuell "
-"gelöscht"
+"Jemand hat auf „Umfrage löschen“ geklickt und die Umfrage manuell gelöscht"
 
-#: ../not_found.cgi:34
+#: ../not_found.cgi:35
 msgid ""
 "The Poll was deleted by the administrator because it was not accessed for a "
 "long time."
@@ -606,7 +619,7 @@ msgstr ""
 "Die Umfrage wurde vom Administrator gelöscht, weil lange nicht auf sie "
 "zugegriffen wurde."
 
-#: ../not_found.cgi:35
+#: ../not_found.cgi:36
 msgid ""
 "If you think, the deletion was done by error, please contact the "
 "adminsistrator of the system."
@@ -771,8 +784,8 @@ msgid ""
 "separately."
 msgstr ""
 "Geben Sie alle Optionen (Spalten) ein, nach denen in der Umfrage gefragt "
-"werden soll. Die Teilnehmer der Umfrage können für jede Option einzeln "
-"ihre Stimme abgeben."
+"werden soll. Die Teilnehmer der Umfrage können für jede Option einzeln ihre "
+"Stimme abgeben."
 
 #: ../timepollhead.rb:113
 msgid ""
@@ -845,11 +858,11 @@ msgstr "z.B., 9:30, morgens, abends"
 #~ msgstr "--verbose"
 
 #~ msgid ""
-#~ "You can get the sourcecode, using <a "
-#~ "href='http://bazaar-vcs.org/'>bazaar</a>:"
+#~ "You can get the sourcecode, using <a href='http://bazaar-vcs."
+#~ "org/'>bazaar</a>:"
 #~ msgstr ""
-#~ "Sie können sich den Quellcode mit <a "
-#~ "href='http://bazaar-vcs.org/'>bazaar</a> herunterladen:"
+#~ "Sie können sich den Quellcode mit <a href='http://bazaar-vcs."
+#~ "org/'>bazaar</a> herunterladen:"
 
 #~ msgid "The link to your poll is:"
 #~ msgstr "Die URL zu Ihrer Umfrage ist:"
