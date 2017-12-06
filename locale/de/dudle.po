@@ -292,7 +292,7 @@ msgid ""
 msgstr ""
 "Wenn das ein Versehen war, kontaktieren Sie bitte umgehend den Administrator "
 "des Systems. Die Umfrage kann für einen unvorhersehbaren Zeitraum "
-"wiederhergestellt werden, vielleicht ist jetzt schon zu spät."
+"wiederhergestellt werden, vielleicht ist es jetzt schon zu spät."
 
 #: ../delete_poll.rb:59
 msgid "You can now"
