@@ -228,6 +228,7 @@ END
 		end
 
 		times = concrete_times
+		times.delete("") # do not display empty cell in edit-column-form
 		realtimes = times.collect{|t|
 			begin
 				Time.parse(t) if t =~ /^\d\d:\d\d$/
