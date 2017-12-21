@@ -17,8 +17,12 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
+.DELETE_ON_ERROR:
+.POSIX:
+
 DOMAIN=dudle
 
+.PHONY: locale
 locale: $(foreach p,$(wildcard locale/*/$(DOMAIN).po), $(addsuffix .mo,$(basename $p)))
 
 RGETTEXT=$(firstword $(shell which rgettext rxgettext))
