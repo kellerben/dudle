@@ -302,7 +302,8 @@ msgstr "هذا عمل لا رجعة فيه!"
 
 #: ../delete_poll.rb:111
 msgid ""
-"If you are sure that you want to permanently remove this poll, please type into the form."
+"If you are sure that you want to permanently remove this poll, please type “%{"
+"question}” into the form."
 msgstr "إذا كنت متأكدا من رغبتك في إزالة هذا الاستطلاع بشكل دائم، يرجى الكتابة في النموذج."
 
 #: ../dudle.rb:73
@@ -403,7 +404,7 @@ msgstr "خطأ"
 
 #: ../error.cgi:46
 msgid "The following error was printed:"
-msgstr "الخطأ التالي قد \طبع"
+msgstr "الخطأ التالي قد طبع"
 
 #: ../error.cgi:50
 msgid ""
@@ -426,7 +427,7 @@ msgstr "لقد وجدت خطأ في التطبيق الخاص بك في٪ {أو�
 "\n"
 "أستخدم <يرجى ذكر المتصفح ونظام التشغيل>\n"
 "%{رسالة خطأ}\n"
-"Yours,\n""
+"Yours,\n"
 
 #: ../error.cgi:51
 msgid "Bug in dudle"
@@ -434,7 +435,8 @@ msgstr "علة في دادل"
 
 #: ../error.cgi:53
 msgid ""
-"An error occurred while executing the dudel program. <br/> Please send an error report, enough and run it at% {addin}. 
+"An error occured while executing dudle.<br/>Please send an error report, inclu"
+"ding your browser, operating system, and what you did to %{admin}."
 msgstr "حدث خطأ أثناء تنفيذ برنامج دوديل. <br/> الرجاء إرسال تقرير عن الخطأ، بما فيه الكفاية وتشغيله في٪ {أدين}."
 
 #: ../error.cgi:56
@@ -539,8 +541,8 @@ msgstr "هذا الموقع تحت الصيانة حاليا!"
 msgid ""
 "You should not browse to this file directly. Please create a file named \"maint"
 "enance.html\" to enable the maintenance mode."
-msgstr "يجب عدم التصفح إلى هذا الملف مباشرة. الرجاء إنشاء ملف باسمه"\ "الصيانة"
-"enance.html \" لتمكين وضع الصيانة. "
+msgstr "يجب عدم التصفح إلى هذا الملف مباشرة. الرجاء إنشاء ملف باسمه \"maint"
+"enance.html\" لتمكين وضع الصيانة. "
 #: ../not_found.cgi:30
 msgid "Poll Not Found"
 msgstr "لم يتم العثور على استطلاع الرأي"
@@ -554,7 +556,7 @@ msgid "There are several reasons, why a Poll is deleted:"
 msgstr "هناك عدة أسباب، لماذا يتم حذف استطلاع:"
 
 #: ../not_found.cgi:34
-msgid "Somebody clicked on and deleted the poll manually."
+msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
 msgstr "قام شخص ما بالنقر على الاستطلاع وحذفه يدويا."
 
 #: ../not_found.cgi:35
