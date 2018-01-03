@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-06 20:09+0100\n"
+"POT-Creation-Date: 2018-01-03 18:04+0100\n"
 "PO-Revision-Date: 2017-12-06 20:09+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,8 +28,8 @@ msgstr "الرخصة"
 
 #: ../about.cgi:32
 msgid ""
-"The sourcecode of this application is available under the terms of <a href='ht"
-"tp://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+"The sourcecode of this application is available under the terms of <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
 msgstr "البرنامج المصدري لهذا التطبيق متوفر تحت شرط"
 
 #: ../about.cgi:33
@@ -38,8 +38,11 @@ msgstr "البرنامج المصدري لهذا التطبيق يمكن الع�
 
 #: ../about.cgi:35
 msgid ""
-"Write me an e-mail if you found a bug, have something which disturbes you or any other feedback."
-msgstr "أكتب لي رسالة عبر البريد الإلكتروني إذا وجدت علة,او شيء يزعجك او اي ردود افعال"
+"Write me an e-mail if you found a bug, have something which disturbes you or "
+"any other feedback."
+msgstr ""
+"أكتب لي رسالة عبر البريد الإلكتروني إذا وجدت علة,او شيء يزعجك او اي ردود "
+"افعال"
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -55,8 +58,8 @@ msgstr "نكرار"
 
 #: ../access_control.rb:114
 msgid ""
-"You have to remove the participant user before you can remove the administrato"
-"r."
+"You have to remove the participant user before you can remove the "
+"administrator."
 msgstr "يجب عليك إزالة المستخدم المشارك قبل أن تتمكن من إزالة المشرف"
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
@@ -103,22 +106,26 @@ msgstr "مفعل"
 
 #: ../access_control.rb:189
 msgid ""
-"You have to remove all users before you can deactivate the access control sett"
-"ings."
-msgstr "يجب إزالة جميع المستخدمين قبل أن تتمكن من إلغاء تنشيط إعداد التحكم بالدخول"
+"You have to remove all users before you can deactivate the access control "
+"settings."
+msgstr ""
+"يجب إزالة جميع المستخدمين قبل أن تتمكن من إلغاء تنشيط إعداد التحكم بالدخول"
 
 #: ../access_control.rb:193
-msgid "You will be asked for the password you entered here after pressing save!"
+msgid ""
+"You will be asked for the password you entered here after pressing save!"
 msgstr "ستتم مطالبتك بكلمة المرور التي أدخلتها هنا بعد الضغط على حفظ!"
 
 #: ../access_control.rb:196
+#, fuzzy
 msgid ""
-"The user  has access to the vote as well as the configuration interface"
-"."
+"The user ‘admin’ has access to the vote as well as the configuration "
+"interface."
 msgstr "ستتم مطالبتك بكلمة المرور التي أدخلتها هنا بعد الضغط على حفظ!"
 
 #: ../access_control.rb:202
-msgid "The user  has only access to the vote interface."
+#, fuzzy
+msgid "The user ‘participant’ has only access to the vote interface."
 msgstr "المستخدم لديه حق الوصول فقط إلى واجهة التصويت"
 
 #: ../access_control.rb:208
@@ -135,7 +142,8 @@ msgstr "تمت إعادة الاستطلاع إلى الإصدار"
 
 #: ../advanced.rb:37
 msgid "Revert Poll to version (see History tab for revision numbers): "
-msgstr "إعادة الاستطلاع إلى الإصدار (انظر علامة التبويب المحفوظات لأرقام المراجعة)"
+msgstr ""
+"إعادة الاستطلاع إلى الإصدار (انظر علامة التبويب المحفوظات لأرقام المراجعة)"
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization Required"
@@ -161,25 +169,13 @@ msgstr " العودة إلى دادل الاصل وجدولة استطلاع ج�
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "يجب أن تأذن نفسك من أجل الوصول إلى هذه الصفحة!"
 
-#: ../config.rb:39
+#: ../config.rb:92
 msgid "Event Schedule Poll"
 msgstr "جدول الأحداث استطلاع"
 
-#: ../config.rb:43
+#: ../config.rb:96
 msgid "Normal Poll"
 msgstr "استطلاع عادي"
-
-#: ../config.rb:47
-msgid "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
-msgstr "نهاية إلى نهاية مشفرة / مصادقة الاستطلاع (انظر كلمة المرور في التعليقات)"
-
-#: ../config.rb:51
-msgid "End-to-End encrypted Poll, where only the administrator is able to read votes"
-msgstr "نهاية إلى نهاية مشفرة الاستطلاع، حيث فقط المسؤول قادر على قراءة الأصوات"
-
-#: ../config.rb:55
-msgid "Test for several PGP-authenticated votes"
-msgstr "اختبار لعدة أصوات المصادقة بي جي بي"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize Personal Settings"
@@ -198,12 +194,12 @@ msgid "Description"
 msgstr "التفاصيل"
 
 #: ../customize.cgi:57 ../customize.rb:57
-msgid "Use this option if you see the characters in the parenthesis."
-msgstr "استخدم هذا الخيار إذا رأيت الأحرف الموجودة بين قوسين"
-
-#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use special characters"
 msgstr "استخدام الرموز الخاصة"
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "استخدم هذا الخيار إذا رأيت الأحرف الموجودة بين قوسين"
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
@@ -259,10 +255,12 @@ msgstr "تم حذف الاستطلاع بنجاح!"
 
 #: ../delete_poll.rb:57
 msgid ""
-"If this was done by accident, please contact the administrator of the system. "
-"The poll can be recovered for an indeterminate amount of time, it could alread"
-"y be too late."
-msgstr "إذا تم ذلك عن طريق الصدفة، يرجى الاتصال بمسؤول النظام. ويمكن استخلاص الاستطلاع لفترة غير محددة من الزمن، قد يكون بالفعل متأخرا جدا."
+"If this was done by accident, please contact the administrator of the "
+"system. The poll can be recovered for an indeterminate amount of time, it "
+"could already be too late."
+msgstr ""
+"إذا تم ذلك عن طريق الصدفة، يرجى الاتصال بمسؤول النظام. ويمكن استخلاص "
+"الاستطلاع لفترة غير محددة من الزمن، قد يكون بالفعل متأخرا جدا."
 
 #: ../delete_poll.rb:59
 msgid "You can now"
@@ -302,9 +300,11 @@ msgstr "هذا عمل لا رجعة فيه!"
 
 #: ../delete_poll.rb:111
 msgid ""
-"If you are sure that you want to permanently remove this poll, please type “%{"
-"question}” into the form."
-msgstr "إذا كنت متأكدا من رغبتك في إزالة هذا الاستطلاع بشكل دائم، يرجى الكتابة في النموذج."
+"If you are sure that you want to permanently remove this poll, please type "
+"“%{question}” into the form."
+msgstr ""
+"إذا كنت متأكدا من رغبتك في إزالة هذا الاستطلاع بشكل دائم، يرجى الكتابة في "
+"النموذج."
 
 #: ../dudle.rb:73
 msgid "Home"
@@ -335,54 +335,58 @@ msgid "Overview"
 msgstr "مراجعة"
 
 #: ../dudle.rb:86
+msgid "Advanced"
+msgstr ""
+
+#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "حذف التصويت"
 
-#: ../dudle.rb:89 ../example.cgi:67
+#: ../dudle.rb:90 ../example.cgi:67
 msgid "Examples"
 msgstr "أمثلة"
 
-#: ../dudle.rb:90
+#: ../dudle.rb:91
 msgid "About"
 msgstr "حول"
 
-#: ../dudle.rb:92
+#: ../dudle.rb:93
 msgid "Customize"
 msgstr "يكيف"
 
-#: ../dudle.rb:100
+#: ../dudle.rb:101
 msgid "Dudle Home"
 msgstr "دودل الرئيسية"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "السابق"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "التالي"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "النهاية"
 
-#: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "تقدم!"
-
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "تم حفظ جميع التغييرات بنجاح."
+
+#: ../dudle.rb:233
+msgid "Proceed!"
+msgstr "تقدم!"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
 msgstr "إضافة أعمدة وإزالتها"
 
-#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
 msgid "Delete column"
 msgstr "أعداد العامود"
 
-#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
 msgid "Add column"
 msgstr "اضافة عامود"
 
@@ -391,12 +395,12 @@ msgid "Edit column"
 msgstr "تحرير عامود"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr " اعادة فعل"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "تراجع عن الفعل"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr " اعادة فعل"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -419,7 +423,8 @@ msgid ""
 "I am using <please state your browser and operating system>\n"
 "%{errormessage}\n"
 "Yours,\n"
-msgstr "لقد وجدت خطأ في التطبيق الخاص بك في٪ {أورلوفسيت}.\n"
+msgstr ""
+"لقد وجدت خطأ في التطبيق الخاص بك في٪ {أورلوفسيت}.\n"
 "فعلت ما يلي:\n"
 "\n"
 "<يرجى وصف ما فعلتم>\n"
@@ -435,22 +440,25 @@ msgstr "علة في دادل"
 
 #: ../error.cgi:53
 msgid ""
-"An error occured while executing dudle.<br/>Please send an error report, inclu"
-"ding your browser, operating system, and what you did to %{admin}."
-msgstr "حدث خطأ أثناء تنفيذ برنامج دوديل. <br/> الرجاء إرسال تقرير عن الخطأ، بما فيه الكفاية وتشغيله في٪ {أدين}."
+"An error occured while executing dudle.<br/>Please send an error report, "
+"including your browser, operating system, and what you did to %{admin}."
+msgstr ""
+"حدث خطأ أثناء تنفيذ برنامج دوديل. <br/> الرجاء إرسال تقرير عن الخطأ، بما فيه "
+"الكفاية وتشغيله في٪ {أدين}."
 
 #: ../error.cgi:56
 msgid "Please include the following as well:"
 msgstr "يرجى تضمين ما يلي أيضا:"
 
 #: ../example.cgi:60
-msgid "Example not found:% {example}"
+#, fuzzy
+msgid "Example not found: %{example}"
 msgstr "لم يتم العثور على المثال:٪ {إكسامبل}"
 
 #: ../example.cgi:68
 msgid ""
-"If you want to play with the application, you may want to take a look at these"
-" example polls:"
+"If you want to play with the application, you may want to take a look at "
+"these example polls:"
 msgstr "إذا كنت تريد أن تلعب مع التطبيق، قد ترغب في إلقاء نظرة على هذه"
 
 #: ../history.rb:28
@@ -463,7 +471,7 @@ msgstr "الاستطلاع الحالي (الإصدار٪ {رقم الاصدار
 
 #: ../html.rb:131
 msgid "xml:lang='en' dir='ltr'"
-msgstr "xml: lang ='en' dir='ltr'"
+msgstr "xml:lang='ar' dir='rtl'"
 
 #: ../index.cgi:32
 msgid "Please enter a descriptive title."
@@ -478,7 +486,8 @@ msgid "A Poll with this address already exists."
 msgstr "يوجد استطلاع مع هذا العنوان من قبل."
 
 #: ../index.cgi:68
-msgid "The poll was created successfully. The link to your new poll is: %{link}"
+msgid ""
+"The poll was created successfully. The link to your new poll is: %{link}"
 msgstr "تم إنشاء الاستطلاع بنجاح. الرابط إلى استطلاع الرأي الجديد هو:٪ {لينك}"
 
 #: ../index.cgi:76
@@ -518,12 +527,12 @@ msgid "Create"
 msgstr "خلق"
 
 #: ../log.rb:111
-msgid "Date"
-msgstr "تاريخ"
-
-#: ../log.rb:111
 msgid "Version"
 msgstr "نسخة"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "تاريخ"
 
 #: ../log.rb:111
 msgid "Comment"
@@ -539,10 +548,12 @@ msgstr "هذا الموقع تحت الصيانة حاليا!"
 
 #: ../maintenance.cgi:39
 msgid ""
-"You should not browse to this file directly. Please create a file named \"maint"
-"enance.html\" to enable the maintenance mode."
-msgstr "يجب عدم التصفح إلى هذا الملف مباشرة. الرجاء إنشاء ملف باسمه \"maint"
-"enance.html\" لتمكين وضع الصيانة. "
+"You should not browse to this file directly. Please create a file named "
+"\"maintenance.html\" to enable the maintenance mode."
+msgstr ""
+"يجب عدم التصفح إلى هذا الملف مباشرة. الرجاء إنشاء ملف باسمه \"maintenance."
+"html\" لتمكين وضع الصيانة. "
+
 #: ../not_found.cgi:30
 msgid "Poll Not Found"
 msgstr "لم يتم العثور على استطلاع الرأي"
@@ -561,14 +572,14 @@ msgstr "قام شخص ما بالنقر على الاستطلاع وحذفه ي�
 
 #: ../not_found.cgi:35
 msgid ""
-"The Poll was deleted by the administrator because it was not accessed for a lo"
-"ng time."
+"The Poll was deleted by the administrator because it was not accessed for a "
+"long time."
 msgstr "تم حذف الاستطلاع من قبل المشرف لأنه لم يتم الدخول إليه لفترة طويلة."
 
 #: ../not_found.cgi:36
 msgid ""
-"If you think, the deletion was done by error, please contact the adminsistrato"
-"r of the system."
+"If you think, the deletion was done by error, please contact the "
+"adminsistrator of the system."
 msgstr "إذا كنت تعتقد، تم الحذف عن طريق الخطأ، يرجى الاتصال بمسؤول النظام."
 
 #: ../overview.rb:31
@@ -721,14 +732,17 @@ msgstr "معاينة"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all Options (columns), you want to ask the participants of the poll. The"
-" participants will state one vote for every option you give here separately."
-msgstr "أدخل جميع الخيارات (الأعمدة)، وتريد أن تسأل المشاركين من الاستطلاع. سيعلن المشاركون صوتا واحدا لكل خيار تقدمونه هنا بشكل منفصل."
+"Enter all Options (columns), you want to ask the participants of the poll. "
+"The participants will state one vote for every option you give here "
+"separately."
+msgstr ""
+"أدخل جميع الخيارات (الأعمدة)، وتريد أن تسأل المشاركين من الاستطلاع. سيعلن "
+"المشاركون صوتا واحدا لكل خيار تقدمونه هنا بشكل منفصل."
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add some time different to the default ones, please enter some string here "
-"(e.&thinsp;g., 09:30, morning, afternoon)."
+"To add some time different to the default ones, please enter some string "
+"here (e.&thinsp;g., 09:30, morning, afternoon)."
 msgstr "(e.&thinsp;g., 09:30,صباح , بعد الظهر)"
 
 #: ../timepollhead.rb:119
@@ -743,46 +757,60 @@ msgstr "سابقا"
 msgid "Later"
 msgstr "في وقت لاحق"
 
-#: ../timepollhead.rb:264
+#: ../timepollhead.rb:265
 msgid "Click on the dates to add or remove columns."
 msgstr "انقر على التواريخ لإضافة أعمدة أو إزالتها."
 
-#: ../timepollhead.rb:312
+#: ../timepollhead.rb:313
 msgid "Optional:"
 msgstr "أختياري"
 
-#: ../timepollhead.rb:313
+#: ../timepollhead.rb:314
 msgid "Enter a concrete value as start time."
 msgstr "أدخل قيمة ملموسة كوقت البدء."
 
-#: ../timepollhead.rb:329
+#: ../timepollhead.rb:330
 msgid "Time"
 msgstr "الوقت"
 
-#: ../timepollhead.rb:342
+#: ../timepollhead.rb:343
 msgid "Chosen"
 msgstr "أختيار"
 
-#: ../timepollhead.rb:343
+#: ../timepollhead.rb:344
 msgid "Not Chosen"
 msgstr "غير مختار"
 
-#: ../timepollhead.rb:344
+#: ../timepollhead.rb:345
 msgid "Past"
 msgstr "ماضي"
 
-#: ../timepollhead.rb:378
+#: ../timepollhead.rb:379
 msgid "Select the whole row"
 msgstr "حدد الصف بأكمله"
 
-#: ../timepollhead.rb:383
+#: ../timepollhead.rb:384
 msgid "Deselect the whole row"
 msgstr "قم بإلغاء تحديد الصف بالكامل"
 
-#: ../timepollhead.rb:427
+#: ../timepollhead.rb:428
 msgid "Add"
 msgstr "أضافة"
 
-#: ../timepollhead.rb:428
+#: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "صباح, بعد الظهر"
+
+#~ msgid ""
+#~ "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+#~ msgstr ""
+#~ "نهاية إلى نهاية مشفرة / مصادقة الاستطلاع (انظر كلمة المرور في التعليقات)"
+
+#~ msgid ""
+#~ "End-to-End encrypted Poll, where only the administrator is able to read "
+#~ "votes"
+#~ msgstr ""
+#~ "نهاية إلى نهاية مشفرة الاستطلاع، حيث فقط المسؤول قادر على قراءة الأصوات"
+
+#~ msgid "Test for several PGP-authenticated votes"
+#~ msgstr "اختبار لعدة أصوات المصادقة بي جي بي"
