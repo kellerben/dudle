@@ -17,8 +17,17 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-DOMAIN=dudle
+.DELETE_ON_ERROR:
+.POSIX:
 
+DOMAIN=dudle
+INSTALL=install -p
+INSTALL_DATA=$(INSTALL) -m 644
+prefix=/usr/local
+datadir=$(prefix)/share
+localstatedir=$(prefix)/var
+
+.PHONY: locale
 locale: $(foreach p,$(wildcard locale/*/$(DOMAIN).po), $(addsuffix .mo,$(basename $p)))
 
 RGETTEXT=$(firstword $(shell which rgettext rxgettext))
@@ -43,3 +52,24 @@ locale/%/$(DOMAIN).po: locale/$(DOMAIN).pot
 			poedit $@;\
 		fi;\
 	fi
+
+.PHONY: install
+install: locale
+	$(INSTALL) -d $(DESTDIR)$(localstatedir)/lib/$(DOMAIN)
+	for f in .htaccess about.cgi access_control.rb advanced.rb atom.rb \
+		authorization_required.cgi charset.rb check.cgi classic.css \
+		config_defaults.rb customize.cgi customize.rb date_locale.rb \
+		default.css delete_poll.rb dudle.rb edit_columns.rb error.cgi \
+		example.cgi favicon.ico hash.rb history.rb html.rb index.cgi \
+		invite_participants.rb log.rb maintenance.cgi not_found.cgi \
+		overview.rb participate.rb poll.rb pollhead.rb print.css \
+		timepollhead.rb timestring.rb vcs_git.rb vcs_test.rb; do \
+			$(INSTALL_DATA) -D -t $(DESTDIR)$(datadir)/$(DOMAIN) $$f; \
+			ln -s $$(realpath --relative-to=$(DESTDIR)$(localstatedir)/lib/$(DOMAIN) $(DESTDIR)$(datadir)/$(DOMAIN))/$$f $(DESTDIR)$(localstatedir)/lib/$(DOMAIN)/$$f; \
+	done
+	for mo in locale/*/$(DOMAIN).mo; do \
+		lang=$$(dirname $$mo); \
+		$(INSTALL_DATA) -D -t $(DESTDIR)$(datadir)/$(DOMAIN)/$$lang $$lang/$(DOMAIN).mo; \
+	done
+	$(INSTALL) -d $(DESTDIR)$(localstatedir)/lib/$(DOMAIN)/$$lang; \
+	ln -s $$(realpath --relative-to=$(DESTDIR)$(localstatedir)/lib/$(DOMAIN) $(DESTDIR)$(datadir)/$(DOMAIN))/locale $(DESTDIR)$(localstatedir)/lib/$(DOMAIN)/locale; \
