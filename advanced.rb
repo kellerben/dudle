@@ -29,7 +29,7 @@ if $cgi.include?("undo_revision") && $cgi["undo_revision"].to_i < VCS.revno
 	comment = $cgi.include?("redo") ? "Redo changes" : "Reverted Poll"
 	$d.table.store("#{comment} to version #{undorevision}")
 	$d << "<h2>" + _("Revert Poll") + "</h2>"
-	$d <<  _("Poll was reverted to Version %{version}!" % {:version => undorevision})
+	$d <<  _("Poll was reverted to Version %{version}!") % {:version => undorevision}
 else
 	$d = Dudle.new
 	$d << "<h2>" + _("Revert Poll") + "</h2>"
