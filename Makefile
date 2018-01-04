@@ -56,14 +56,18 @@ locale/%/$(DOMAIN).po: locale/$(DOMAIN).pot
 .PHONY: install
 install: locale
 	$(INSTALL) -d $(DESTDIR)$(localstatedir)/lib/$(DOMAIN)
-	for f in .htaccess about.cgi access_control.rb advanced.rb atom.rb \
-		authorization_required.cgi charset.rb check.cgi classic.css \
-		config_defaults.rb customize.cgi customize.rb date_locale.rb \
-		default.css delete_poll.rb dudle.rb edit_columns.rb error.cgi \
-		example.cgi favicon.ico hash.rb history.rb html.rb index.cgi \
-		invite_participants.rb log.rb maintenance.cgi not_found.cgi \
-		overview.rb participate.rb poll.rb pollhead.rb print.css \
-		timepollhead.rb timestring.rb vcs_git.rb vcs_test.rb; do \
+	for f in about.cgi access_control.rb advanced.rb atom.rb \
+		authorization_required.cgi check.cgi customize.cgi \
+		customize.rb delete_poll.rb edit_columns.rb error.cgi \
+		example.cgi history.rb index.cgi invite_participants.rb \
+		maintenance.cgi not_found.cgi overview.rb participate.rb; do \
+			$(INSTALL) -D -t $(DESTDIR)$(datadir)/$(DOMAIN) $$f; \
+			ln -s $$(realpath --relative-to=$(DESTDIR)$(localstatedir)/lib/$(DOMAIN) $(DESTDIR)$(datadir)/$(DOMAIN))/$$f $(DESTDIR)$(localstatedir)/lib/$(DOMAIN)/$$f; \
+	done
+	for f in .htaccess charset.rb classic.css config_defaults.rb \
+		date_locale.rb default.css dudle.rb favicon.ico hash.rb \
+		html.rb log.rb poll.rb pollhead.rb print.css timepollhead.rb \
+		timestring.rb vcs_git.rb vcs_test.rb; do \
 			$(INSTALL_DATA) -D -t $(DESTDIR)$(datadir)/$(DOMAIN) $$f; \
 			ln -s $$(realpath --relative-to=$(DESTDIR)$(localstatedir)/lib/$(DOMAIN) $(DESTDIR)$(datadir)/$(DOMAIN))/$$f $(DESTDIR)$(localstatedir)/lib/$(DOMAIN)/$$f; \
 	done
