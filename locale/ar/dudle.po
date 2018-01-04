@@ -434,7 +434,7 @@ msgstr ""
 "\n"
 "أستخدم <يرجى ذكر المتصفح ونظام التشغيل>\n"
 "%{errormessage}\n"
-"Yours,\n"
+"خاصة بك,\n"
 
 #: ../error.cgi:51
 msgid "Bug in dudle"
