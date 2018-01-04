@@ -1,7 +1,6 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Dudle Translation to Arabic
+# This file is distributed under the same license as the dudle package.
+# Mohammad Anagreh <mohd.anagrehn@gmail>, 2018
 #
 #, fuzzy
 msgid ""
@@ -306,7 +305,7 @@ msgid ""
 "If you are sure that you want to permanently remove this poll, please type "
 "“%{question}” into the form."
 msgstr ""
-"إذا كنت متأكدا من رغبتك في إزالة هذا الاستطلاع بشكل دائم، يرجى الكتابة
+"إذا كنت متأكدا من رغبتك في إزالة هذا الاستطلاع بشكل دائم، يرجى الكتابة"
 "“%{question}”.في النموذج"
 
 #: ../dudle.rb:73
@@ -445,7 +444,7 @@ msgstr "علة في دادل"
 msgid ""
 "An error occured while executing dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
-msgstr ""حدث خطأ أثناء تنفيذ دودل. <br/> الرجاء إرسال تقرير عن الخطأ"
+msgstr "حدث خطأ أثناء تنفيذ دودل. <br/> الرجاء إرسال تقرير عن الخطأ"
 "بما في ذلك المتصفح ونظام التشغيل وما فعلته في %{admin}"
 
 #: ../error.cgi:56
@@ -518,8 +517,8 @@ msgstr "استطلاع عادي (e & ثينسب؛ g.، التصويت لما ه�
 
 #: ../index.cgi:90
 msgid "Custom address (optional)"
-msgstr "(عنوان مخصص(أختياري
-"
+msgstr "(عنوان مخصص(أختياري"
+
 #: ../index.cgi:91
 msgid "May contain letters, numbers, and dashes."
 msgstr ".قد تحتوي على أحرف وأرقام وشرطات"
@@ -554,7 +553,7 @@ msgid ""
 "\"maintenance.html\" to enable the maintenance mode."
 msgstr ""
 "يجب عدم التصفح إلى هذا الملف مباشرة. الرجاء إنشاء ملف باسمه "
-\"maintenance.html\" .لتمكين وضع الصيانة "
+"\"maintenance.html\" .لتمكين وضع الصيانة "
 
 #: ../not_found.cgi:30
 msgid "Poll Not Found"
