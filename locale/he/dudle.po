@@ -2,20 +2,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2017.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-06 20:09+0100\n"
+"POT-Creation-Date: 2018-01-03 17:57+0100\n"
 "PO-Revision-Date: 2017-12-06 20:09+0100\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>, 2017\n"
 "Language-Team: Hebrew (https://www.transifex.com/yaron/teams/76313/he/)\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: he\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../about.cgi:29
@@ -29,21 +29,19 @@ msgstr "רשיון"
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version "
-"3</a>"
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
 msgstr ""
-"קוד המקור של היישום הזה זמין תחת התנאים של <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL גרסה 3</a>"
+"קוד המקור של היישום הזה זמין תחת התנאים של <a href='http://www.fsf.org/"
+"licensing/licenses/agpl-3.0.html'>AGPL גרסה 3</a>"
 
 #: ../about.cgi:33
-msgid ""
-"The Sourcecode of this application can be found %{a_start}here%{a_end}."
+msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr "ניתן למצוא את קוד המקור של היישום הזה %{a_start}כאן%{a_end}."
 
 #: ../about.cgi:35
 msgid ""
-"Write me an e-mail if you found a bug, have something which disturbes you or"
-" any other feedback."
+"Write me an e-mail if you found a bug, have something which disturbes you or "
+"any other feedback."
 msgstr ""
 "נא לכתוב לנו הודעת דוא״ל אם מצאת תקלה כלשהי, משהו מפריע לך או כל סוג אחר של "
 "משוב."
@@ -169,28 +167,13 @@ msgstr "יש לחזור לעמוד הבית של dudle כדי לתזמן סקר 
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "עליך להזדהות מול המערכת כדי לגשת לעמוד זה!"
 
-#: ../config.rb:39
+#: ../config.rb:92
 msgid "Event Schedule Poll"
 msgstr "סקר תזמון אירוע"
 
-#: ../config.rb:43
+#: ../config.rb:96
 msgid "Normal Poll"
 msgstr "סקר רגיל"
-
-#: ../config.rb:47
-msgid ""
-"End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
-msgstr "סקר מוצפן/מאומת מקצה לקצה (הססמה בתגובות)"
-
-#: ../config.rb:51
-msgid ""
-"End-to-End encrypted Poll, where only the administrator is able to read "
-"votes"
-msgstr "סקר מוצפן מקצה לקצה בו רק למנהלים יש אפשרות לראות הצבעות"
-
-#: ../config.rb:55
-msgid "Test for several PGP-authenticated votes"
-msgstr "בדיקה למגוון הצבעות שמוגנות ב־PGP"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize Personal Settings"
@@ -209,12 +192,12 @@ msgid "Description"
 msgstr "תיאור"
 
 #: ../customize.cgi:57 ../customize.rb:57
-msgid "Use this option if you see the characters in the parenthesis."
-msgstr "יש להשתמש באפשרות זו אם התווים שבסוגריים מופיעים."
-
-#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use special characters"
 msgstr "שימוש בתווים מיוחדים"
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "יש להשתמש באפשרות זו אם התווים שבסוגריים מופיעים."
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
@@ -348,54 +331,58 @@ msgid "Overview"
 msgstr "סקירה"
 
 #: ../dudle.rb:86
+msgid "Advanced"
+msgstr ""
+
+#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "מחיקת סקר"
 
-#: ../dudle.rb:89 ../example.cgi:67
+#: ../dudle.rb:90 ../example.cgi:67
 msgid "Examples"
 msgstr "דוגמאות"
 
-#: ../dudle.rb:90
+#: ../dudle.rb:91
 msgid "About"
 msgstr "על אודות"
 
-#: ../dudle.rb:92
+#: ../dudle.rb:93
 msgid "Customize"
 msgstr "התאמה אישית"
 
-#: ../dudle.rb:100
+#: ../dudle.rb:101
 msgid "Dudle Home"
 msgstr "עמוד הבית של Dudle"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "הקודם"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "הבא"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "סיום"
 
-#: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "להמשיך!"
-
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "כל השינויים נשמרו בהצלחה."
+
+#: ../dudle.rb:233
+msgid "Proceed!"
+msgstr "להמשיך!"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
 msgstr "הוספה והסרה של עמודות"
 
-#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
 msgid "Delete column"
 msgstr "מחיקת עמודה"
 
-#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
 msgid "Add column"
 msgstr "הוספת עמודה"
 
@@ -404,12 +391,12 @@ msgid "Edit column"
 msgstr "עריכת עמודה"
 
 #: ../edit_columns.rb:99
-msgid "Redo"
-msgstr "ביצוע חוזר"
-
-#: ../edit_columns.rb:99
 msgid "Undo"
 msgstr "ביטול"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "ביצוע חוזר"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
@@ -537,12 +524,12 @@ msgid "Create"
 msgstr "יצירה"
 
 #: ../log.rb:111
-msgid "Date"
-msgstr "תאריך"
-
-#: ../log.rb:111
 msgid "Version"
 msgstr "גרסה"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "תאריך"
 
 #: ../log.rb:111
 msgid "Comment"
@@ -769,46 +756,58 @@ msgstr "מוקדם יותר"
 msgid "Later"
 msgstr "מאוחר יותר"
 
-#: ../timepollhead.rb:264
+#: ../timepollhead.rb:265
 msgid "Click on the dates to add or remove columns."
 msgstr "נא ללחוץ על התאריכים כדי להוסיף או להסיר עמודות."
 
-#: ../timepollhead.rb:312
+#: ../timepollhead.rb:313
 msgid "Optional:"
 msgstr "רשות:"
 
-#: ../timepollhead.rb:313
+#: ../timepollhead.rb:314
 msgid "Enter a concrete value as start time."
 msgstr "נא להזין ערך ממשי כערך התחלתי."
 
-#: ../timepollhead.rb:329
+#: ../timepollhead.rb:330
 msgid "Time"
 msgstr "זמן"
 
-#: ../timepollhead.rb:342
+#: ../timepollhead.rb:343
 msgid "Chosen"
 msgstr "נבחר"
 
-#: ../timepollhead.rb:343
+#: ../timepollhead.rb:344
 msgid "Not Chosen"
 msgstr "לא נבחר"
 
-#: ../timepollhead.rb:344
+#: ../timepollhead.rb:345
 msgid "Past"
 msgstr "עבר"
 
-#: ../timepollhead.rb:378
+#: ../timepollhead.rb:379
 msgid "Select the whole row"
 msgstr "בחירת העמודה כולה"
 
-#: ../timepollhead.rb:383
+#: ../timepollhead.rb:384
 msgid "Deselect the whole row"
 msgstr "ביטול בחירת העמודה כולה"
 
-#: ../timepollhead.rb:427
+#: ../timepollhead.rb:428
 msgid "Add"
 msgstr "הוספה"
 
-#: ../timepollhead.rb:428
+#: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "למשל: 09:30, בוקר, צהריים"
+
+#~ msgid ""
+#~ "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+#~ msgstr "סקר מוצפן/מאומת מקצה לקצה (הססמה בתגובות)"
+
+#~ msgid ""
+#~ "End-to-End encrypted Poll, where only the administrator is able to read "
+#~ "votes"
+#~ msgstr "סקר מוצפן מקצה לקצה בו רק למנהלים יש אפשרות לראות הצבעות"
+
+#~ msgid "Test for several PGP-authenticated votes"
+#~ msgstr "בדיקה למגוון הצבעות שמוגנות ב־PGP"

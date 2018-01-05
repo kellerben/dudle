@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 510\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-22 20:36+0200\n"
+"POT-Creation-Date: 2017-10-23 22:24+0200\n"
 "PO-Revision-Date: 2011-07-04 06:55+0200\n"
 "Last-Translator: Gabor Kiss <kissg@ssg.ki.iif.hu>\n"
 "Language-Team: \n"
@@ -151,6 +151,20 @@ msgstr "A ’participant’ felhasználó csak szavazhat."
 msgid "Access control:"
 msgstr "Hozzáférés-szabályozás:"
 
+#: ../advanced.rb:31 ../advanced.rb:35
+#, fuzzy
+msgid "Revert Poll"
+msgstr "Szavazás törlése"
+
+#: ../advanced.rb:32
+#, fuzzy
+msgid "Poll was reverted to Version %{version}!"
+msgstr "A szavazás %{version}. verziója"
+
+#: ../advanced.rb:37
+msgid "Revert Poll to version (see History tab for revision numbers): "
+msgstr ""
+
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization Required"
 msgstr "Azonosítsd magad!"
@@ -167,7 +181,7 @@ msgstr "Jelszóval védett szavazás!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "A továbblépéshez add meg a(z) %{user} felhasználó jelszavát!"
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:36
+#: ../authorization_required.cgi:53 ../not_found.cgi:37
 msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Vissza a címlapra. Új szavazás kiírása."
 
@@ -347,42 +361,46 @@ msgid "Overview"
 msgstr "Végső teendők"
 
 #: ../dudle.rb:86
+msgid "Advanced"
+msgstr ""
+
+#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "Szavazás törlése"
 
-#: ../dudle.rb:89 ../example.cgi:67
+#: ../dudle.rb:90 ../example.cgi:67
 msgid "Examples"
 msgstr "Példák"
 
-#: ../dudle.rb:90
+#: ../dudle.rb:91
 msgid "About"
 msgstr "A programról"
 
-#: ../dudle.rb:92
+#: ../dudle.rb:93
 msgid "Customize"
 msgstr "Személyes beállítások"
 
-#: ../dudle.rb:100
+#: ../dudle.rb:101
 msgid "Dudle Home"
 msgstr "Címlap"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "Vissza"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "Tovább"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "Befejezés"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "A változtatások elmentve."
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Végrehajtás"
 
@@ -553,30 +571,30 @@ msgid ""
 "\"maintenance.html\" to enable the maintenance mode."
 msgstr ""
 
-#: ../not_found.cgi:29
+#: ../not_found.cgi:30
 msgid "Poll Not Found"
 msgstr "Nincs ilyen szavazás"
 
-#: ../not_found.cgi:31
+#: ../not_found.cgi:32
 msgid "The requested Poll was not found."
 msgstr "A megadott szavazás nem létezik."
 
-#: ../not_found.cgi:32
+#: ../not_found.cgi:33
 msgid "There are several reasons, why a Poll is deleted:"
 msgstr "Több okból is eltűnhetett a szavazás:"
 
-#: ../not_found.cgi:33
+#: ../not_found.cgi:34
 msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
 msgstr "Valaki a „Törlés” linkre kattintott, és kitörölte a szavazást."
 
-#: ../not_found.cgi:34
+#: ../not_found.cgi:35
 msgid ""
 "The Poll was deleted by the administrator because it was not accessed for a "
 "long time."
 msgstr ""
 "A szavazást az adminisztrátor törölte, mert már régóta nem nézett rá senki."
 
-#: ../not_found.cgi:35
+#: ../not_found.cgi:36
 msgid ""
 "If you think, the deletion was done by error, please contact the "
 "adminsistrator of the system."

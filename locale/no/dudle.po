@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-22 20:36+0200\n"
+"POT-Creation-Date: 2017-10-23 22:24+0200\n"
 "PO-Revision-Date: 2017-04-23 16:04+0200\n"
 "Last-Translator: Rudolf <rudolf.maurer@googlemail.com>\n"
 "Language-Team: not a native speaker...\n"
@@ -131,6 +131,20 @@ msgstr "Bruker 'deltaker' har bare adgang til selve avstemningen."
 msgid "Access control:"
 msgstr "Adgangskontroll:"
 
+#: ../advanced.rb:31 ../advanced.rb:35
+#, fuzzy
+msgid "Revert Poll"
+msgstr "Slett avstemning"
+
+#: ../advanced.rb:32
+#, fuzzy
+msgid "Poll was reverted to Version %{version}!"
+msgstr "Avstemming i versjon %{version}"
+
+#: ../advanced.rb:37
+msgid "Revert Poll to version (see History tab for revision numbers): "
+msgstr ""
+
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization Required"
 msgstr "Authorisering kreves"
@@ -147,7 +161,7 @@ msgstr "Avstemmingen er beskyttet med passord!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "For å gå videre må du angi passord for bruker %{user}."
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:36
+#: ../authorization_required.cgi:53 ../not_found.cgi:37
 msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Tilbake til dudle startside og lag et nytt avstemning"
 
@@ -322,42 +336,46 @@ msgid "Overview"
 msgstr "Oversikt"
 
 #: ../dudle.rb:86
+msgid "Advanced"
+msgstr ""
+
+#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "Slett avstemning"
 
-#: ../dudle.rb:89 ../example.cgi:67
+#: ../dudle.rb:90 ../example.cgi:67
 msgid "Examples"
 msgstr "Eksempler"
 
-#: ../dudle.rb:90
+#: ../dudle.rb:91
 msgid "About"
 msgstr "Om"
 
-#: ../dudle.rb:92
+#: ../dudle.rb:93
 msgid "Customize"
 msgstr "Tilpass"
 
-#: ../dudle.rb:100
+#: ../dudle.rb:101
 msgid "Dudle Home"
 msgstr "Dudle hjemmeside"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "Forrige"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "Neste"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "Avslutt"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "Alle endringer har blitt lagret."
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Videre!"
 
@@ -530,23 +548,23 @@ msgstr ""
 "Du skal ikke gå til dette fil direkte. Vennligst opprett et fil som heter "
 "\"maintenance.html\" for å aktivere modus for vedlikehold."
 
-#: ../not_found.cgi:29
+#: ../not_found.cgi:30
 msgid "Poll Not Found"
 msgstr "Avstemming ikke funnet"
 
-#: ../not_found.cgi:31
+#: ../not_found.cgi:32
 msgid "The requested Poll was not found."
 msgstr "Etterspurt avstemning ble ikke funnet."
 
-#: ../not_found.cgi:32
+#: ../not_found.cgi:33
 msgid "There are several reasons, why a Poll is deleted:"
 msgstr "Det kan være flere årsaker hvorfor en avstemning kan ha bli slettet:"
 
-#: ../not_found.cgi:33
+#: ../not_found.cgi:34
 msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
 msgstr "Noen trykte  på \"Slett avstemning\" og slettet avstemningen manuelt."
 
-#: ../not_found.cgi:34
+#: ../not_found.cgi:35
 msgid ""
 "The Poll was deleted by the administrator because it was not accessed for a "
 "long time."
@@ -554,7 +572,7 @@ msgstr ""
 "Avstemmingen ble slette av administrator fordi den har ikke blitt sett på i "
 "lang tid."
 
-#: ../not_found.cgi:35
+#: ../not_found.cgi:36
 msgid ""
 "If you think, the deletion was done by error, please contact the "
 "adminsistrator of the system."

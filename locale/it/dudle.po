@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-22 20:36+0200\n"
+"POT-Creation-Date: 2017-10-23 22:24+0200\n"
 "PO-Revision-Date: 2011-05-10 07:31+0200\n"
 "Last-Translator: Eros Pedrini\n"
 "Language-Team: \n"
@@ -154,6 +154,20 @@ msgstr ""
 msgid "Access control:"
 msgstr "Controllo dell'Accesso:"
 
+#: ../advanced.rb:31 ../advanced.rb:35
+#, fuzzy
+msgid "Revert Poll"
+msgstr "Elimina il Sondaggio"
+
+#: ../advanced.rb:32
+#, fuzzy
+msgid "Poll was reverted to Version %{version}!"
+msgstr "Sondaggio della Versione %{version}"
+
+#: ../advanced.rb:37
+msgid "Revert Poll to version (see History tab for revision numbers): "
+msgstr ""
+
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization Required"
 msgstr "Autorizzazione Richiesta"
@@ -170,7 +184,7 @@ msgstr "Questo Sondaggio è protetto da password!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Per procedere devi assegnare una password all'utente %{user}."
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:36
+#: ../authorization_required.cgi:53 ../not_found.cgi:37
 msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Ritorna alla pagina principale di Dudle e Programma un nuovo Sondaggio"
 
@@ -349,42 +363,46 @@ msgid "Overview"
 msgstr "Panoramica"
 
 #: ../dudle.rb:86
+msgid "Advanced"
+msgstr ""
+
+#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "Elimina il Sondaggio"
 
-#: ../dudle.rb:89 ../example.cgi:67
+#: ../dudle.rb:90 ../example.cgi:67
 msgid "Examples"
 msgstr "Esempi"
 
-#: ../dudle.rb:90
+#: ../dudle.rb:91
 msgid "About"
 msgstr "Informazioni su"
 
-#: ../dudle.rb:92
+#: ../dudle.rb:93
 msgid "Customize"
 msgstr "Personalizza"
 
-#: ../dudle.rb:100
+#: ../dudle.rb:101
 msgid "Dudle Home"
 msgstr "Pagina Principale di Dudle"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "Precedente"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "Successivo"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "Fine"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "Tutti i cambiamenti sono stati salvati."
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Procedi!"
 
@@ -570,26 +588,26 @@ msgid ""
 "\"maintenance.html\" to enable the maintenance mode."
 msgstr ""
 
-#: ../not_found.cgi:29
+#: ../not_found.cgi:30
 msgid "Poll Not Found"
 msgstr "Sondaggio Non Trovato"
 
-#: ../not_found.cgi:31
+#: ../not_found.cgi:32
 msgid "The requested Poll was not found."
 msgstr "Il Sondaggio richiesto non è stato trovato."
 
-#: ../not_found.cgi:32
+#: ../not_found.cgi:33
 msgid "There are several reasons, why a Poll is deleted:"
 msgstr ""
 "Possono esistere varie ragioni del perché un Sondaggio è stato cancellato:"
 
-#: ../not_found.cgi:33
+#: ../not_found.cgi:34
 msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
 msgstr ""
 "Qualcuno ha selezionato “Elimina Sondaggio” e ha cancellato il sondaggio "
 "manualmente."
 
-#: ../not_found.cgi:34
+#: ../not_found.cgi:35
 msgid ""
 "The Poll was deleted by the administrator because it was not accessed for a "
 "long time."
@@ -597,7 +615,7 @@ msgstr ""
 "Il Sondaggio è stato eliminato dall'amministratore poiché nessuno vi "
 "accedeva da molto tempo."
 
-#: ../not_found.cgi:35
+#: ../not_found.cgi:36
 msgid ""
 "If you think, the deletion was done by error, please contact the "
 "adminsistrator of the system."

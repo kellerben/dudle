@@ -426,7 +426,7 @@ msgid ""
 "%{errormessage}\n"
 "Yours,\n"
 msgstr ""
-"لقد وجدت خطأ في التطبيق الخاص بك في %{errormessage}.\n"
+"لقد وجدت خطأ في التطبيق الخاص بك في %{urlofsite}.\n"
 "فعلت ما يلي:\n"
 "\n"
 "<يرجى وصف ما فعلتم>\n"
@@ -468,7 +468,7 @@ msgstr "استطلاع الرأي في النسخة %{revisionnumber}"
 
 #: ../history.rb:32
 msgid "Current Poll (Version %{revisionnumber})"
-msgstr "الاستطلاع الحالي(Version %{revisionumber})"
+msgstr "الاستطلاع الحالي(Version %{revisionnumber})"
 
 #: ../html.rb:131
 msgid "xml:lang='en' dir='ltr'"
@@ -610,7 +610,7 @@ msgstr "تم حفظ التغييرات، يجب إعادة توجيهك الى %
 
 #: ../poll.rb:96
 msgid "Edit user %{user}..."
-msgstr "تعديل المستخدم٪{user} ..."
+msgstr "تعديل المستخدم %{user} ..."
 
 #: ../poll.rb:100
 msgid "Delete user %{user}..."

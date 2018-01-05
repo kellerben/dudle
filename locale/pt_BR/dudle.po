@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-22 20:36+0200\n"
+"POT-Creation-Date: 2017-10-23 22:24+0200\n"
 "PO-Revision-Date: 2015–14-04 10:07+0200\n"
 "Last-Translator: Tel Amiel <tel theatsign amiel thedot info>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,6 +133,20 @@ msgstr "O usuário ‘participante’ só tem acesso à interface de voto."
 msgid "Access control:"
 msgstr "Controle de acesso:"
 
+#: ../advanced.rb:31 ../advanced.rb:35
+#, fuzzy
+msgid "Revert Poll"
+msgstr "Remover enquete"
+
+#: ../advanced.rb:32
+#, fuzzy
+msgid "Poll was reverted to Version %{version}!"
+msgstr "Enquete versão %{version}"
+
+#: ../advanced.rb:37
+msgid "Revert Poll to version (see History tab for revision numbers): "
+msgstr ""
+
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization Required"
 msgstr "É necessário permissão"
@@ -149,7 +163,7 @@ msgstr "Essa enquete está protegida por senha!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Para continuar você deve fornecer a senha para %{user}."
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:36
+#: ../authorization_required.cgi:53 ../not_found.cgi:37
 msgid "Return to dudle home and Schedule a new Poll"
 msgstr "Voltar ao início do dudle e organizar uma nova enquete"
 
@@ -327,42 +341,46 @@ msgid "Overview"
 msgstr "Resumo"
 
 #: ../dudle.rb:86
+msgid "Advanced"
+msgstr ""
+
+#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "Remover enquete"
 
-#: ../dudle.rb:89 ../example.cgi:67
+#: ../dudle.rb:90 ../example.cgi:67
 msgid "Examples"
 msgstr "Exemplos"
 
-#: ../dudle.rb:90
+#: ../dudle.rb:91
 msgid "About"
 msgstr "Sobre"
 
-#: ../dudle.rb:92
+#: ../dudle.rb:93
 msgid "Customize"
 msgstr "Customizar"
 
-#: ../dudle.rb:100
+#: ../dudle.rb:101
 msgid "Dudle Home"
 msgstr "Dudle - Início"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "Anterior"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "Próximo"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "Finalizar"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "Todas as mudanças foram salvas com sucesso."
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Continuar!"
 
@@ -543,23 +561,23 @@ msgid ""
 "\"maintenance.html\" to enable the maintenance mode."
 msgstr ""
 
-#: ../not_found.cgi:29
+#: ../not_found.cgi:30
 msgid "Poll Not Found"
 msgstr "Enquete não encontrada."
 
-#: ../not_found.cgi:31
+#: ../not_found.cgi:32
 msgid "The requested Poll was not found."
 msgstr "A enquete não foi encontrada."
 
-#: ../not_found.cgi:32
+#: ../not_found.cgi:33
 msgid "There are several reasons, why a Poll is deleted:"
 msgstr "Existem muitas razões para a remoção de uma enquete:"
 
-#: ../not_found.cgi:33
+#: ../not_found.cgi:34
 msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
 msgstr "Alguém selecionou “Remover Enquete” e removeu a enquete manualmente."
 
-#: ../not_found.cgi:34
+#: ../not_found.cgi:35
 msgid ""
 "The Poll was deleted by the administrator because it was not accessed for a "
 "long time."
@@ -567,7 +585,7 @@ msgstr ""
 "A enquete foi removida pelo administrador já que não houve acesso por muito "
 "tempo."
 
-#: ../not_found.cgi:35
+#: ../not_found.cgi:36
 msgid ""
 "If you think, the deletion was done by error, please contact the "
 "adminsistrator of the system."
