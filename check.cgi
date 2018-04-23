@@ -29,7 +29,7 @@ problems = []
 hints = []
 
 begin
-	
+
 	hints << "You might want to config your environment within the file 'config.rb' (see 'config_sample.rb' for a starting point)" unless File.exists?("config.rb")
 
 begin
@@ -50,6 +50,10 @@ unless File.writable?(".")
 	problems << ["Your webserver needs write access to #{File.expand_path(".")}"]
 else
 	testdir = "this-is-a-test-directory-created-by-check.cgi-it-should-be-deleted"
+	if Dir.exists?(testdir) # might exist from a previous test
+		require "fileutils"
+		FileUtils.rm_r(testdir)
+	end
 	Dir.mkdir(testdir)
 	Dir.chdir(testdir)
 	VCS.init
@@ -88,7 +92,7 @@ else
 		}.join("\n - ")
 	end
 end
-#4. You have to build a .mo file from the .po file in order to use the 
+#4. You have to build a .mo file from the .po file in order to use the
    #localization. Type:
       #make
    #This requires libgettext-ruby-util, potool, and make to be installed.
