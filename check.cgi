@@ -25,6 +25,19 @@ if __FILE__ == $0
 	puts "Content-type: text/plain\n"
 	puts
 
+	def print_problems(problems)
+		puts "Some problem occured:"
+		print " - "
+		puts problems.collect{|a|
+			a.join("\n   ")
+		}.join("\n - ")
+	end
+	def system_info
+		puts "Some System Info:"
+		puts "Ruby Version: #{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
+		puts "Environment:"
+		pp ENV
+	end
 problems = []
 hints = []
 
@@ -73,9 +86,14 @@ else
 end
 
 rescue Exception => e
-	puts "Some problem occured. Please contact the developer:"
-	pp e
-	puts e.backtrace.join("\n")
+	if problems.empty?
+		puts "Some problem occured. Please contact the developer:"
+		pp e
+		puts e.backtrace.join("\n")
+	else
+		print_problems(problems)
+	end
+	system_info
 else
 	if problems.empty?
 		puts "Your environment seems to be installed correctly!"
@@ -83,15 +101,12 @@ else
 			print "Some hints are following:\n - "
 			puts hints.join("\n - ")
 		end
-
 	else
-		puts "Some problem occured:"
-		print " - "
-		puts problems.collect{|a|
-			a.join("\n   ")
-		}.join("\n - ")
+		print_problems(problems)
+		system_info
 	end
 end
+
 #4. You have to build a .mo file from the .po file in order to use the
    #localization. Type:
       #make
