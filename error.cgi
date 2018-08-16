@@ -50,7 +50,7 @@ end
 	errormessagebody = _("Hi!\n\nI found a bug in your application at %{urlofsite}.\nI did the following:\n\n<please describe what you did>\n<e.g., I wanted to sent a comment to the poll.>\n\nI am using <please state your browser and operating system>\n%{errormessage}\nYours,\n") % {:errormessage => errormessage, :urlofsite => $conf.siteurl}
 	subject = _("Bug in dudle")
 
-	$d << _("An error occured while executing dudle.<br/>Please send an error report, including your browser, operating system, and what you did to %{admin}.") % {:admin => "<a href='mailto:#{$conf.bugreportmail}?subject=#{urlescape(subject)}&amp;body=#{urlescape(errormessagebody)}'>#{$conf.bugreportmail}</a>"}
+	$d << _("An error occurred while executing dudle.<br/>Please send an error report, including your browser, operating system, and what you did to %{admin}.") % {:admin => "<a href='mailto:#{$conf.bugreportmail}?subject=#{urlescape(subject)}&amp;body=#{urlescape(errormessagebody)}'>#{$conf.bugreportmail}</a>"}
 
 if (errorstr)
 	errorheadstr = _("Please include the following as well:")

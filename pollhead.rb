@@ -33,7 +33,7 @@ class PollHead
 	end
 
 	# column is in human readable form
-	# returns true if deletion sucessfull
+	# returns true if deletion successful
 	def delete_column(column)
 		@data.delete(column) != nil
 	end
