@@ -1,29 +1,29 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# Brazilian Portuguese translation for dudle
+# Copyright (C) 2018 DUDLE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the dudle package.
+# Rafael Fontenelle <rafaelff@gnome.org>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: Dudle\n"
+"Report-Msgid-Bugs-To: https://github.com/kellerben/dudle/issues\n"
 "POT-Creation-Date: 2017-10-23 22:24+0200\n"
-"PO-Revision-Date: 2015–14-04 10:07+0200\n"
-"Last-Translator: Tel Amiel <tel theatsign amiel thedot info>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-08-16 20:33-0200\n"
+"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
+"Language-Team: Brazilian Portuguese <LL@li.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Virtaal 1.0.0-beta1\n"
 
 #: ../about.cgi:29
 msgid "This Application is powered by %{Dudle}."
-msgstr ""
+msgstr "Esse aplicativo é fornecido por %{Dudle}."
 
 #: ../about.cgi:31
 msgid "License"
-msgstr ""
+msgstr "Licença"
 
 #: ../about.cgi:32
 msgid ""
@@ -31,21 +31,20 @@ msgid ""
 "href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
 msgstr ""
 "O código fonte desse aplicativo está sob os termos da licença <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Versão 3</a>"
 
 #: ../about.cgi:33
 msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
+"O código-fonte desse aplicativo pode ser localizado %{a_start}arqui%{a_end}."
 
 #: ../about.cgi:35
-#, fuzzy
 msgid ""
 "Write me an e-mail if you found a bug, have something which disturbes you or "
 "any other feedback."
 msgstr ""
-"Se você encontrar um bug ou algo que lhe perturba, por favor nos avise: <a "
-"href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to"
-"%20dudle\">give feedback</a>"
+"Escreva-me um e-mail se você encontrou um bug, algo que incomoda ou qualquer "
+"outro feedback."
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -125,27 +124,28 @@ msgid ""
 "interface."
 msgstr "O usuário ‘admin’ tem acesso à interface de voto e de configuração."
 
+# "participant" não está disponível para tradução aqui,
+# provavelmente não deve ser traduzido
 #: ../access_control.rb:202
 msgid "The user ‘participant’ has only access to the vote interface."
-msgstr "O usuário ‘participante’ só tem acesso à interface de voto."
+msgstr "O usuário ‘participant’ só tem acesso à interface de voto."
 
 #: ../access_control.rb:208
 msgid "Access control:"
 msgstr "Controle de acesso:"
 
 #: ../advanced.rb:31 ../advanced.rb:35
-#, fuzzy
 msgid "Revert Poll"
-msgstr "Remover enquete"
+msgstr "Reverter enquete"
 
 #: ../advanced.rb:32
-#, fuzzy
 msgid "Poll was reverted to Version %{version}!"
-msgstr "Enquete versão %{version}"
+msgstr "A enquete foi revertida para a versão %{version}!"
 
 #: ../advanced.rb:37
 msgid "Revert Poll to version (see History tab for revision numbers): "
 msgstr ""
+"Reverter enquete para a versão (veja aba Histórico para números de revisão): "
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization Required"
@@ -185,7 +185,7 @@ msgstr "Personalizar opções"
 
 #: ../customize.cgi:32 ../customize.rb:32
 msgid "You need cookies enabled in order to personalize your settings."
-msgstr "Você precisa aceitar ‘cookies’ para personalizar suas opções."
+msgstr "Você ter cookies habilitados para personalizar suas opções."
 
 #: ../customize.cgi:39 ../customize.rb:39
 msgid "Current Setting"
@@ -201,7 +201,7 @@ msgstr "Usar caracteres especiais"
 
 #: ../customize.cgi:57 ../customize.rb:57
 msgid "Use this option if you see the characters in the parenthesis."
-msgstr "Use essa opção se você estiver vendo caracteres em parêntesis."
+msgstr "Use essa opção se você estiver vendo caracteres em parênteses."
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
@@ -213,7 +213,7 @@ msgstr "Use essa opção se você tiver problemas com alguns caracteres."
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
-msgstr "Charset"
+msgstr "Codificação de caracteres"
 
 #: ../customize.cgi:66 ../customize.rb:66
 msgid "Stylesheet"
@@ -249,26 +249,25 @@ msgstr "Enquetes-exemplo não podem ser removidas."
 
 #: ../delete_poll.rb:43
 msgid "You should never see this text."
-msgstr ""
+msgstr "Você não deveria ver esse texto."
 
 #: ../delete_poll.rb:56
 msgid "The poll was deleted successfully!"
 msgstr "Esta enquete foi removida com sucesso!"
 
 #: ../delete_poll.rb:57
-#, fuzzy
 msgid ""
 "If this was done by accident, please contact the administrator of the "
 "system. The poll can be recovered for an indeterminate amount of time, it "
 "could already be too late."
 msgstr ""
 "Se isso foi feito sem querer, por favor contate o administrador do sistema. "
-"A enquete pode ser reaberta por um tempo indeterminado — talvez já seja "
+"A enquete pode ser recuperada por um tempo indeterminado — talvez já seja "
 "tarde."
 
 #: ../delete_poll.rb:59
 msgid "You can now"
-msgstr ""
+msgstr "Agora você pode"
 
 #: ../delete_poll.rb:60
 msgid "Return to dudle home and schedule a new poll"
@@ -276,10 +275,9 @@ msgstr "Voltar ao início do dudle e organizar uma nova enquete"
 
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
-msgstr "Surfar a Wikipedia"
+msgstr "Surfar a Wikipédia"
 
 #: ../delete_poll.rb:62
-#, fuzzy
 msgid "Search for something on the Internet"
 msgstr "Buscar algo na Internet"
 
@@ -304,13 +302,12 @@ msgid "This is an irreversible action!"
 msgstr "Este procedimento é irreversível!"
 
 #: ../delete_poll.rb:111
-#, fuzzy
 msgid ""
 "If you are sure that you want to permanently remove this poll, please type "
 "“%{question}” into the form."
 msgstr ""
-"Se você está certo do que está fazendo, for favor digite “%{question}” no "
-"formulário."
+"Se você está certo de que deseja remover essa enquete, por favor digite "
+"“%{question}” no formulário."
 
 #: ../dudle.rb:73
 msgid "Home"
@@ -342,7 +339,7 @@ msgstr "Resumo"
 
 #: ../dudle.rb:86
 msgid "Advanced"
-msgstr ""
+msgstr "Avançado"
 
 #: ../dudle.rb:87
 msgid "Delete Poll"
@@ -358,7 +355,7 @@ msgstr "Sobre"
 
 #: ../dudle.rb:93
 msgid "Customize"
-msgstr "Customizar"
+msgstr "Personalizar"
 
 #: ../dudle.rb:101
 msgid "Dudle Home"
@@ -416,6 +413,9 @@ msgstr "Erro"
 msgid "The following error was printed:"
 msgstr "Erro de resultado:"
 
+# Se essa é um modelo de relatório de erro, melhor estar em inglês
+# (exceto os trechos substituíveis), pois o desenvolvedor
+#  provavelmente não sabe Português)
 #: ../error.cgi:50
 msgid ""
 "Hi!\n"
@@ -430,21 +430,21 @@ msgid ""
 "%{errormessage}\n"
 "Yours,\n"
 msgstr ""
-"Olá!\n"
+"Hi!\n"
 "\n"
-"Eu encontrei um bug na sua aplicação em %{urlofsite}.\n"
-"Eu estava fazendo o seguinte:\n"
+"I found a bug in your application at %{urlofsite}.\n"
+"I did the following:\n"
 "\n"
 "<descreva o que você estava fazendo>\n"
-"<e.g., Eu queria enviar um comentário na enquete.>\n"
+"<p.ex., Eu queria enviar um comentário na enquete.>\n"
 "\n"
-"Eu estou usando <diga o tipo de navegador/versão e sistema operacional>\n"
+"I am using <indique tipo/versão de seu navegador e sistema operacional>\n"
 "%{errormessage}\n"
-"Grato,\n"
+"Yours,\n"
 
 #: ../error.cgi:51
 msgid "Bug in dudle"
-msgstr ""
+msgstr "Bug no dudle"
 
 #: ../error.cgi:53
 msgid ""
@@ -461,7 +461,7 @@ msgstr "Por favor inclua também:"
 
 #: ../example.cgi:60
 msgid "Example not found: %{example}"
-msgstr ""
+msgstr "Exemplo não encontrado: %{example}"
 
 #: ../example.cgi:68
 msgid ""
@@ -488,7 +488,7 @@ msgstr "Por favor digite um título descritivo."
 
 #: ../index.cgi:48
 msgid "Custom address may only contain letters, numbers, and dashes."
-msgstr "Endereços customizados só podem conter letras, números e traços."
+msgstr "Endereços personalizados só podem conter letras, números e traços."
 
 #: ../index.cgi:50
 msgid "A Poll with this address already exists."
@@ -501,7 +501,7 @@ msgstr "A enquete foi criada com sucesso. O link é: %{link}"
 
 #: ../index.cgi:76
 msgid "Go away."
-msgstr ""
+msgstr "Sai daqui."
 
 #: ../index.cgi:84
 msgid "Create New Poll"
@@ -517,15 +517,15 @@ msgstr "Tipo"
 
 #: ../index.cgi:88
 msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
-msgstr "Enquete para eventos (e.&thinsp;g., organizar uma reunião)"
+msgstr "Enquete para eventos (p.ex., organizar uma reunião)"
 
 #: ../index.cgi:89
 msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
-msgstr "Enquete normal (e.&thinsp;g., vote no melhor café)"
+msgstr "Enquete normal (p.ex., vote no melhor café)"
 
 #: ../index.cgi:90
 msgid "Custom address (optional)"
-msgstr "Endereço customizado (opcional)."
+msgstr "Endereço personalizado (opcional)"
 
 #: ../index.cgi:91
 msgid "May contain letters, numbers, and dashes."
@@ -549,21 +549,23 @@ msgstr "Comentário"
 
 #: ../maintenance.cgi:25 ../maintenance.cgi:27
 msgid "Maintenance"
-msgstr ""
+msgstr "Manutenção"
 
 #: ../maintenance.cgi:36
 msgid "This site is currently under maintenance!"
-msgstr ""
+msgstr "Esse site está atualmente sob manutenção!"
 
 #: ../maintenance.cgi:39
 msgid ""
 "You should not browse to this file directly. Please create a file named "
 "\"maintenance.html\" to enable the maintenance mode."
 msgstr ""
+"Você não deve procurar este arquivo diretamente. Por favor, crie um arquivo "
+"chamado \"maintenance.html\" para ativar o modo de manutenção."
 
 #: ../not_found.cgi:30
 msgid "Poll Not Found"
-msgstr "Enquete não encontrada."
+msgstr "Enquete não encontrada"
 
 #: ../not_found.cgi:32
 msgid "The requested Poll was not found."
@@ -756,8 +758,8 @@ msgid ""
 "To add some time different to the default ones, please enter some string "
 "here (e.&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
-"Para adicionar um horário além do padrão, por favor insira algum texto aqui "
-"(e.&thinsp;g., 09:30, manhã, tarde)."
+"Para adicionar um horário além do padrão, por favor insira algum texto aqui ("
+"p.ex., 09:30, manhã, tarde)."
 
 #: ../timepollhead.rb:119
 msgid "This Time was already chosen."
@@ -813,7 +815,7 @@ msgstr "Adicionar"
 
 #: ../timepollhead.rb:428
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
-msgstr "e.&thinsp;g., 09:30, manhã, tarde"
+msgstr "p.ex., 09:30, manhã, tarde"
 
 #~ msgid "Things you can do now are"
 #~ msgstr "O que você pode fazer é"
