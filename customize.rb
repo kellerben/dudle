@@ -28,15 +28,15 @@ require_relative "dudle"
 $d = Dudle.new
 
 
-$d << "<h2>" + _("Customize Personal Settings") + "</h2>"
-$d << _("You need cookies enabled in order to personalize your settings.")
+$d << "<h2>" + _("Customize personal settings") + "</h2>"
+$d << _("You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> enabled in order to personalize your settings.")
 
 def choosetable(options, cursetting)
 	ret = <<HEAD 
 <table>
 	<tr>
 HEAD
-	ret += "<th>" + _("Current Setting") + "</th>"
+	ret += "<th>" + _("Current setting") + "</th>"
 	ret += "<th>" + _("Description") + "</th>"
 	ret += "</tr>"
 	options.each{|description,href,title|

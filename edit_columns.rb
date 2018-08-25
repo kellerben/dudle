@@ -41,7 +41,7 @@ $d.wizzard_redirect
 
 revno = VCS.revno
 
-$d << "<h2>" + _("Add and Remove Columns") + "</h2>"
+$d << "<h2>" + _("Add and remove columns") + "</h2>"
 $d << $d.table.edit_column_htmlform($cgi["editcolumn"],revno)
 
 h = VCS.history

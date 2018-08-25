@@ -34,7 +34,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: ../about.cgi:29
-msgid "This Application is powered by %{Dudle}."
+msgid "This application is powered by %{Dudle}."
 msgstr "Diese Applikation wird mit %{Dudle} betrieben."
 
 #: ../about.cgi:31
@@ -44,19 +44,19 @@ msgstr "Lizenz"
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
 msgstr ""
 "Der Sourcecode zu dieser Applikation ist unter der Lizenz <a href='http://"
 "www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPLv3</a> verfügbar."
 
 #: ../about.cgi:33
-msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
+msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr "Der Quellcode der Applikation ist %{a_start}hier%{a_end} verfügbar."
 
 #: ../about.cgi:35
 msgid ""
-"Write me an e-mail if you found a bug, have something which disturbes you or "
-"any other feedback."
+"Please write me an e-mail if you have found a bug, have found something which "
+"disturbs you, or have any other feedback."
 msgstr ""
 "Schreiben Sie mir bitte eine E-Mail, wenn Sie einen Bug finden oder etwas "
 "anderes haben was Sie stört."
@@ -100,7 +100,7 @@ msgid "Passwords did not match."
 msgstr "Die Passwörter stimmen nicht überein."
 
 #: ../access_control.rb:175
-msgid "Change Access Control Settings"
+msgid "Change access control settings"
 msgstr "Einstellungen der Zugriffskontrolle"
 
 #: ../access_control.rb:179
@@ -112,7 +112,7 @@ msgid "Activate"
 msgstr "Aktivieren"
 
 #: ../access_control.rb:184
-msgid "will be activated when at least an admin user is configured"
+msgid "controls will be activated when at least the admin user is configured"
 msgstr ""
 "wird aktiviert, wenn ein Administrator (Benutzername: „admin“) konfiguriert "
 "wurde"
@@ -135,7 +135,7 @@ msgstr ""
 
 #: ../access_control.rb:193
 msgid ""
-"You will be asked for the password you entered here after pressing save!"
+"You will be asked for the password you have entered here after you press save!"
 msgstr ""
 "Nach dem Speichern werden Sie nach dem Benutzernamen und diesem Passwort "
 "gefragt!"
@@ -149,7 +149,7 @@ msgstr ""
 "Konfigurationsoberfläche Zugriff."
 
 #: ../access_control.rb:202
-msgid "The user ‘participant’ has only access to the vote interface."
+msgid "The user ‘participant’ only has access to the vote interface."
 msgstr "Der Benutzer „participant“ hat nur zur Abstimmungsoberfläche Zugriff."
 
 #: ../access_control.rb:208
@@ -157,7 +157,7 @@ msgid "Access control:"
 msgstr "Zugriffskontrolle:"
 
 #: ../advanced.rb:31 ../advanced.rb:35
-msgid "Revert Poll"
+msgid "Revert poll"
 msgstr "Umfrage zurücksetzen"
 
 #: ../advanced.rb:32
@@ -165,20 +165,20 @@ msgid "Poll was reverted to Version %{version}!"
 msgstr "Umfrage wurde zur Version %{version} zurückgesetzt!"
 
 #: ../advanced.rb:37
-msgid "Revert Poll to version (see History tab for revision numbers): "
+msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr ""
 "Setze Umfrage zurück auf Version (siehe Versionen-Tab für Versionsnummern): "
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
-msgid "Authorization Required"
+msgid "Authorization required"
 msgstr "Anmeldung Erforderlich"
 
 #: ../authorization_required.cgi:39
-msgid "The configuration of this Poll is protected by password!"
+msgid "The configuration of this poll is password-protected!"
 msgstr "Die Konfiguration dieser Umfrage ist passwortgeschützt!"
 
 #: ../authorization_required.cgi:41
-msgid "This Poll is protected by password!"
+msgid "This poll is password-protected!"
 msgstr "Diese Umfrage ist passwortgeschützt!"
 
 #: ../authorization_required.cgi:43
@@ -187,7 +187,7 @@ msgstr ""
 "Um fortzufahren müssen Sie das Passwort für den Benutzer %{user} eingeben."
 
 #: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to dudle home and Schedule a new Poll"
+msgid "Return to Dudle home and schedule a new poll"
 msgstr "Zurück zur dudle Hauptseite um eine neue Umfrage zu erstellen"
 
 #: ../authorization_required.cgi:54
@@ -195,15 +195,15 @@ msgid "You have to authorize yourself in order to access this page!"
 msgstr "Um auf diese Seite zugreifen zu können müssen Sie sich autorisieren!"
 
 #: ../config.rb:92
-msgid "Event Schedule Poll"
+msgid "Event-scheduling poll"
 msgstr "Nach einer Zeit fragen"
 
 #: ../config.rb:96
-msgid "Normal Poll"
+msgid "Normal poll"
 msgstr "Eine normale Umfrage"
 
 #: ../customize.cgi:31 ../customize.rb:31
-msgid "Customize Personal Settings"
+msgid "Customize personal settings"
 msgstr "Persönliche Einstellungen anpassen"
 
 #: ../customize.cgi:32 ../customize.rb:32
@@ -213,7 +213,7 @@ msgstr ""
 "vorzunehmen."
 
 #: ../customize.cgi:39 ../customize.rb:39
-msgid "Current Setting"
+msgid "Current setting"
 msgstr "Momentane Einstellung"
 
 #: ../customize.cgi:40 ../customize.rb:40
@@ -273,7 +273,7 @@ msgid "Please delete this poll."
 msgstr "Bitte lösche diese Umfrage."
 
 #: ../delete_poll.rb:42
-msgid "Example polls can not be deleted."
+msgid "Example polls cannot be deleted."
 msgstr "Beispielumfragen können nicht gelöscht werden."
 
 #: ../delete_poll.rb:43
@@ -287,7 +287,7 @@ msgstr "Die Umfrage wurde erfolgreich gelöscht!"
 #: ../delete_poll.rb:57
 msgid ""
 "If this was done by accident, please contact the administrator of the "
-"system. The poll can be recovered for an indeterminate amount of time, it "
+"system. The poll can be recovered for an indeterminate amount of time; it "
 "could already be too late."
 msgstr ""
 "Wenn das ein Versehen war, kontaktieren Sie bitte umgehend den Administrator "
@@ -299,7 +299,7 @@ msgid "You can now"
 msgstr "Sie können jetzt"
 
 #: ../delete_poll.rb:60
-msgid "Return to dudle home and schedule a new poll"
+msgid "Return to Dudle home and schedule a new poll"
 msgstr "Zurück zur dudle Hauptseite um eine neue Umfrage zu erstellen"
 
 #: ../delete_poll.rb:61
@@ -319,7 +319,7 @@ msgid "but you typed:"
 msgstr "Ihre Eingabe lautete aber:"
 
 #: ../delete_poll.rb:108
-msgid "Delete this Poll"
+msgid "Delete this poll"
 msgstr "Diese Umfrage löschen"
 
 #: ../delete_poll.rb:109
@@ -411,7 +411,7 @@ msgid "Proceed!"
 msgstr "Weiter"
 
 #: ../edit_columns.rb:44
-msgid "Add and Remove Columns"
+msgid "Add and remove columns"
 msgstr "Spalten hinzufügen oder entfernen"
 
 #: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
@@ -450,11 +450,11 @@ msgid ""
 "I did the following:\n"
 "\n"
 "<please describe what you did>\n"
-"<e.g., I wanted to sent a comment to the poll.>\n"
+"<e.g., I wanted to post a comment to the poll.>\n"
 "\n"
 "I am using <please state your browser and operating system>\n"
 "%{errormessage}\n"
-"Yours,\n"
+"Sincerely,\n"
 msgstr ""
 "Hallo!\n"
 "\n"
@@ -469,12 +469,12 @@ msgstr ""
 "Mit freundlichen Grüßen,\n"
 
 #: ../error.cgi:51
-msgid "Bug in dudle"
+msgid "Bug in Dudle"
 msgstr "Fehler im dudle"
 
 #: ../error.cgi:53
 msgid ""
-"An error occurred while executing dudle.<br/>Please send an error report, "
+"An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
 "Während der Ausführung von dudle gab es einen Fehler.<br/>Bitte schicken Sie "
@@ -498,11 +498,11 @@ msgstr ""
 "folgende Beispielumfragen schauen:"
 
 #: ../history.rb:28
-msgid "Poll of Version %{revisionnumber}"
+msgid "Poll of version %{revisionnumber}"
 msgstr "Umfrage der Version %{revisionnumber}"
 
 #: ../history.rb:32
-msgid "Current Poll (Version %{revisionnumber})"
+msgid "Current poll (version %{revisionnumber})"
 msgstr "Aktuelle Umfrage (Version %{revisionnumber})"
 
 #: ../html.rb:131
@@ -520,7 +520,7 @@ msgstr ""
 "Unterstrich enthalten."
 
 #: ../index.cgi:50
-msgid "A Poll with this address already exists."
+msgid "A poll with this address already exists."
 msgstr "Eine Umfrage mit dieser URL existiert bereits."
 
 #: ../index.cgi:68
@@ -535,7 +535,7 @@ msgid "Go away."
 msgstr "Geh weg."
 
 #: ../index.cgi:84
-msgid "Create New Poll"
+msgid "Create new poll"
 msgstr "Neue Umfrage erstellen"
 
 #: ../index.cgi:86
@@ -547,11 +547,11 @@ msgid "Type"
 msgstr "Typ"
 
 #: ../index.cgi:88
-msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
+msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Nach einer Zeit fragen (z.&thinsp;B. einen Besprechungstermin finden)"
 
 #: ../index.cgi:89
-msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
+msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Normale Umfrage (z.&thinsp;B. eine Umfrage über die beste Kaffeesorte)"
 
 #: ../index.cgi:90
@@ -583,7 +583,7 @@ msgid "Maintenance"
 msgstr "Wartung"
 
 #: ../maintenance.cgi:36
-msgid "This site is currently under maintenance!"
+msgid "This site is currently undergoing maintenance!"
 msgstr "Diese Webseite wird gerade gewartet!"
 
 #: ../maintenance.cgi:39
@@ -595,19 +595,19 @@ msgstr ""
 "Datei namens \"maintenance.html\" um den Wartungsmodus zu aktivieren."
 
 #: ../not_found.cgi:30
-msgid "Poll Not Found"
+msgid "Poll not found"
 msgstr "Umfrage nicht gefunden"
 
 #: ../not_found.cgi:32
-msgid "The requested Poll was not found."
+msgid "The requested poll was not found."
 msgstr "Die angeforderte Umfrage wurde nicht gefunden."
 
 #: ../not_found.cgi:33
-msgid "There are several reasons, why a Poll is deleted:"
+msgid "There are several reasons why a poll may have been deleted:"
 msgstr "Es gibt mehrere Gründe, warum eine Umfrage gelöscht wurde:"
 
 #: ../not_found.cgi:34
-msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
+msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
 msgstr ""
 "Jemand hat auf „Umfrage löschen“ geklickt und die Umfrage manuell gelöscht"
 
@@ -644,7 +644,7 @@ msgid "Visit the poll yourself:"
 msgstr "Besuchen Sie selbst die Umfrage:"
 
 #: ../overview.rb:36
-msgid "Link to dudle poll about %{polltitle}"
+msgid "Link to Dudle poll about %{polltitle}"
 msgstr "Dudle Umfrage über %{polltitle}"
 
 #: ../participate.rb:59
@@ -674,7 +674,7 @@ msgid "Name"
 msgstr "Name"
 
 #: ../poll.rb:232
-msgid "Save Changes"
+msgid "Save changes"
 msgstr "Speichern"
 
 #: ../poll.rb:236
@@ -710,7 +710,7 @@ msgid "%{user} said on %{time}"
 msgstr "%{user} sagte am %{time}"
 
 #: ../poll.rb:348
-msgid "Go Up"
+msgid "Go up"
 msgstr "Gehe nach oben"
 
 #: ../poll.rb:354
@@ -718,7 +718,7 @@ msgid "says"
 msgstr "sagt"
 
 #: ../poll.rb:355
-msgid "Submit Comment"
+msgid "Submit comment"
 msgstr "Sende Kommentar"
 
 #: ../poll.rb:373
@@ -742,7 +742,7 @@ msgid "Comment related"
 msgstr "Kommentare betreffend"
 
 #: ../poll.rb:384
-msgid "Access Control related"
+msgid "Access control related"
 msgstr "Zugriffskontrolle betreffend"
 
 #: ../poll.rb:390
@@ -750,15 +750,15 @@ msgid "Update"
 msgstr "Aktualisieren"
 
 #: ../pollhead.rb:71
-msgid "Edit Option"
+msgid "Edit option"
 msgstr "Option bearbeiten"
 
 #: ../pollhead.rb:72
-msgid "Delete Option"
+msgid "Delete option"
 msgstr "Option löschen"
 
 #: ../pollhead.rb:87 ../timepollhead.rb:162
-msgid "Last Edit"
+msgid "Last edit"
 msgstr "Letzte Änderung"
 
 #: ../pollhead.rb:99
@@ -770,7 +770,7 @@ msgid "Description (optional)"
 msgstr "Beschreibung (optional)"
 
 #: ../pollhead.rb:101
-msgid "Add/Edit Option"
+msgid "Add/Edit option"
 msgstr "Option bearbeiten/hinzufügen"
 
 #: ../pollhead.rb:102
@@ -779,9 +779,9 @@ msgstr "Vorschau"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all Options (columns), you want to ask the participants of the poll. "
-"The participants will state one vote for every option you give here "
-"separately."
+"Enter all the options (columns) which you want the participants of the poll to choose among. "
+"For each option you give here, the participants will choose a "
+"vote."
 msgstr ""
 "Geben Sie alle Optionen (Spalten) ein, nach denen in der Umfrage gefragt "
 "werden soll. Die Teilnehmer der Umfrage können für jede Option einzeln ihre "
@@ -789,14 +789,14 @@ msgstr ""
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add some time different to the default ones, please enter some string "
+"To add a time other than the default times, please enter some string "
 "here (e.&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "Geben Sie eine Zeit ein, um eine andere als die vorgeschlagenen Zeiten "
 "auszuwählen (z.&thinsp;B. 9:30, morgens, abends)."
 
 #: ../timepollhead.rb:119
-msgid "This Time was already chosen."
+msgid "This time has already been selected."
 msgstr "Diese Zeit war schon gewählt."
 
 #: ../timepollhead.rb:193
@@ -816,7 +816,7 @@ msgid "Optional:"
 msgstr "Optional:"
 
 #: ../timepollhead.rb:313
-msgid "Enter a concrete value as start time."
+msgid "Select specific start times."
 msgstr "Geben Sie eine Zeit für ein Datum ein."
 
 #: ../timepollhead.rb:329
@@ -824,11 +824,11 @@ msgid "Time"
 msgstr "Zeit"
 
 #: ../timepollhead.rb:342
-msgid "Chosen"
+msgid "Selected"
 msgstr "Gewählt"
 
 #: ../timepollhead.rb:343
-msgid "Not Chosen"
+msgid "Not selected"
 msgstr "Nicht Gewählt"
 
 #: ../timepollhead.rb:344

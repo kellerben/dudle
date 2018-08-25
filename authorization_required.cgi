@@ -33,12 +33,12 @@ if $cgi.include?("poll")
 			$d = Dudle.new(:hide_lang_chooser => true)
 		end
 
-		$d << "<h2>" + _("Authorization Required") + "</h2>"
+		$d << "<h2>" + _("Authorization required") + "</h2>"
 		case $cgi["user"]
 		when "admin"
-			$d << _("The configuration of this Poll is protected by password!")
+			$d << _("The configuration of this poll is password-protected!")
 		when "participant"
-			$d << _("This Poll is protected by password!")
+			$d << _("This poll is password-protected!")
 		end
 		$d << _("In order to proceed, you have to give the password for user %{user}.") % {:user => "<code>#{$cgi["user"]}</code>"}
 
@@ -49,8 +49,8 @@ if $cgi.include?("poll")
 	end
 
 else
-	$d = Dudle.new(:title => _("Authorization Required"), :hide_lang_chooser => true)
-	returnstr = _("Return to dudle home and Schedule a new Poll")
+	$d = Dudle.new(:title => _("Authorization required"), :hide_lang_chooser => true)
+	returnstr = _("Return to Dudle home and schedule a new poll")
 	authstr = _("You have to authorize yourself in order to access this page!")
 	$d << <<END
 	<p>#{authstr}</p>

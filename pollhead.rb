@@ -68,8 +68,8 @@ SORTSYMBOL
 			ret += "#{CGI.escapeHTML(columntitle)}"
 			ret += "#{sortsymb(scols,columntitle)}</a>" unless showeditbuttons
 			if showeditbuttons
-				editstr = _("Edit Option")
-				deletestr = _("Delete Option")
+				editstr = _("Edit option")
+				deletestr = _("Delete option")
 				ret += <<EDITDELETE
 <form method='post' action=''>
 	<div class='editdelete'>
@@ -84,7 +84,7 @@ EDITDELETE
 			end
 			ret += "</th>"
 		}
-		ret += "<th><a href='?'>" + _("Last Edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n" unless showeditbuttons
+		ret += "<th><a href='?'>" + _("Last edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n" unless showeditbuttons
 		ret += "</tr>\n"
 		ret
 	end
@@ -98,9 +98,9 @@ EDITDELETE
 		end
 		columntitlestr = _("Option")
 		descriptionstr = _("Description (optional)")
-		addeditstr = _("Add/Edit Option")
+		addeditstr = _("Add/Edit option")
 		previewstr = _("Preview")
-		hint = _("Enter all Options (columns), you want to ask the participants of the poll. The participants will state one vote for every option you give here separately.")
+		hint = _("Enter all the options (columns) which you want the participants of the poll to choose among. For each option you give here, the participants will choose a vote.")
 		ret = <<END
 <form method='post' action='' accept-charset='utf-8'>
 	<div class='textcolumn'>#{hint}</div>

@@ -33,7 +33,7 @@ msgstr ""
 "X-Poedit-Country: HUNGARY\n"
 
 #: ../about.cgi:29
-msgid "This Application is powered by %{Dudle}."
+msgid "This application is powered by %{Dudle}."
 msgstr ""
 
 #: ../about.cgi:31
@@ -43,20 +43,20 @@ msgstr ""
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
 msgstr ""
 "Ezen program forráskódja hozzáférhető az <a href='http://www.fsf.org/"
 "licensing/licenses/agpl-3.0.html'>AGPLv3</a> alapján."
 
 #: ../about.cgi:33
-msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
+msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
 
 #: ../about.cgi:35
 #, fuzzy
 msgid ""
-"Write me an e-mail if you found a bug, have something which disturbes you or "
-"any other feedback."
+"Please write me an e-mail if you have found a bug, have found something which "
+"disturbs you, or have any other feedback."
 msgstr ""
 "Ha bármi hibát, hiányosságot, fennakadást tapasztalsz, jelezd a szerzőnek: "
 "<a href=\"mailto:Benjamin_pont_Kellermann@gmx_pont_németország?subject=dudle"
@@ -101,7 +101,7 @@ msgid "Passwords did not match."
 msgstr "A két jelszó nem egyezik."
 
 #: ../access_control.rb:175
-msgid "Change Access Control Settings"
+msgid "Change access control settings"
 msgstr "A hozzáférési jelszavak beállása"
 
 #: ../access_control.rb:179
@@ -113,7 +113,7 @@ msgid "Activate"
 msgstr "Bekapcsolás"
 
 #: ../access_control.rb:184
-msgid "will be activated when at least an admin user is configured"
+msgid "controls will be activated when at least the admin user is configured"
 msgstr "akkor lesz aktív, ha legalább az adminisztrátort bekonfigurálod"
 
 #: ../access_control.rb:186
@@ -133,7 +133,7 @@ msgstr ""
 
 #: ../access_control.rb:193
 msgid ""
-"You will be asked for the password you entered here after pressing save!"
+"You will be asked for the password you have entered here after you press save!"
 msgstr "A „Mentés” megnyomása után meg kell adnod a jelszót."
 
 #: ../access_control.rb:196
@@ -144,7 +144,7 @@ msgstr ""
 "Az ’admin’ felhasználó a szavazáshoz és a konfiguráló felülethez is hozzáfér."
 
 #: ../access_control.rb:202
-msgid "The user ‘participant’ has only access to the vote interface."
+msgid "The user ‘participant’ only has access to the vote interface."
 msgstr "A ’participant’ felhasználó csak szavazhat."
 
 #: ../access_control.rb:208
@@ -153,7 +153,7 @@ msgstr "Hozzáférés-szabályozás:"
 
 #: ../advanced.rb:31 ../advanced.rb:35
 #, fuzzy
-msgid "Revert Poll"
+msgid "Revert poll"
 msgstr "Szavazás törlése"
 
 #: ../advanced.rb:32
@@ -162,19 +162,19 @@ msgid "Poll was reverted to Version %{version}!"
 msgstr "A szavazás %{version}. verziója"
 
 #: ../advanced.rb:37
-msgid "Revert Poll to version (see History tab for revision numbers): "
+msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr ""
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
-msgid "Authorization Required"
+msgid "Authorization required"
 msgstr "Azonosítsd magad!"
 
 #: ../authorization_required.cgi:39
-msgid "The configuration of this Poll is protected by password!"
+msgid "The configuration of this poll is password-protected!"
 msgstr "A szavazás konfigurációját jelszó védi!"
 
 #: ../authorization_required.cgi:41
-msgid "This Poll is protected by password!"
+msgid "This poll is password-protected!"
 msgstr "Jelszóval védett szavazás!"
 
 #: ../authorization_required.cgi:43
@@ -182,7 +182,7 @@ msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "A továbblépéshez add meg a(z) %{user} felhasználó jelszavát!"
 
 #: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to dudle home and Schedule a new Poll"
+msgid "Return to Dudle home and schedule a new poll"
 msgstr "Vissza a címlapra. Új szavazás kiírása."
 
 #: ../authorization_required.cgi:54
@@ -190,15 +190,15 @@ msgid "You have to authorize yourself in order to access this page!"
 msgstr "Az oldal csak azonosítás után érhető el!"
 
 #: ../config.rb:92
-msgid "Event Schedule Poll"
+msgid "Event-scheduling poll"
 msgstr "Időpontválasztás"
 
 #: ../config.rb:96
-msgid "Normal Poll"
+msgid "Normal poll"
 msgstr "Normál szavazás"
 
 #: ../customize.cgi:31 ../customize.rb:31
-msgid "Customize Personal Settings"
+msgid "Customize personal settings"
 msgstr "Személyre szabás"
 
 #: ../customize.cgi:32 ../customize.rb:32
@@ -208,7 +208,7 @@ msgstr ""
 "beállításaid!"
 
 #: ../customize.cgi:39 ../customize.rb:39
-msgid "Current Setting"
+msgid "Current setting"
 msgstr "Aktuális állapot"
 
 #: ../customize.cgi:40 ../customize.rb:40
@@ -266,7 +266,7 @@ msgid "Please delete this poll."
 msgstr "Töröld ezt a szavazást!"
 
 #: ../delete_poll.rb:42
-msgid "Example polls can not be deleted."
+msgid "Example polls cannot be deleted."
 msgstr ""
 
 #: ../delete_poll.rb:43
@@ -281,7 +281,7 @@ msgstr "A szavazás törölve."
 #, fuzzy
 msgid ""
 "If this was done by accident, please contact the administrator of the "
-"system. The poll can be recovered for an indeterminate amount of time, it "
+"system. The poll can be recovered for an indeterminate amount of time; it "
 "could already be too late."
 msgstr ""
 "Ha véletlenül törölted, hamar lépj kapcsolatba az adminisztrátorral! Talán "
@@ -292,7 +292,7 @@ msgid "You can now"
 msgstr ""
 
 #: ../delete_poll.rb:60
-msgid "Return to dudle home and schedule a new poll"
+msgid "Return to Dudle home and schedule a new poll"
 msgstr "Térj vissza a címlapra, hozz létre új szavazást"
 
 #: ../delete_poll.rb:61
@@ -313,7 +313,7 @@ msgid "but you typed:"
 msgstr "de ezt írtad:"
 
 #: ../delete_poll.rb:108
-msgid "Delete this Poll"
+msgid "Delete this poll"
 msgstr "Szavazás törlése"
 
 #: ../delete_poll.rb:109
@@ -405,7 +405,7 @@ msgid "Proceed!"
 msgstr "Végrehajtás"
 
 #: ../edit_columns.rb:44
-msgid "Add and Remove Columns"
+msgid "Add and remove columns"
 msgstr "Oszlopok hozzáadása és törlése"
 
 #: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
@@ -444,20 +444,20 @@ msgid ""
 "I did the following:\n"
 "\n"
 "<please describe what you did>\n"
-"<e.g., I wanted to sent a comment to the poll.>\n"
+"<e.g., I wanted to post a comment to the poll.>\n"
 "\n"
 "I am using <please state your browser and operating system>\n"
 "%{errormessage}\n"
-"Yours,\n"
+"Sincerely,\n"
 msgstr ""
 
 #: ../error.cgi:51
-msgid "Bug in dudle"
+msgid "Bug in Dudle"
 msgstr "Dudle hiba"
 
 #: ../error.cgi:53
 msgid ""
-"An error occurred while executing dudle.<br/>Please send an error report, "
+"An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
 "Hiba történt a dudle futása közben.<br/>Küldj kérlek egy hibajelentést a(z) "
@@ -479,11 +479,11 @@ msgid ""
 msgstr "Bátran próbálgasd a programot! Van itt néhány próbaszavazás:"
 
 #: ../history.rb:28
-msgid "Poll of Version %{revisionnumber}"
+msgid "Poll of version %{revisionnumber}"
 msgstr "A szavazás %{revisionnumber}. verziója"
 
 #: ../history.rb:32
-msgid "Current Poll (Version %{revisionnumber})"
+msgid "Current poll (version %{revisionnumber})"
 msgstr "A szavazás aktuális állása (%{revisionnumber}. verzió)"
 
 #: ../html.rb:131
@@ -501,7 +501,7 @@ msgstr ""
 "írhatsz."
 
 #: ../index.cgi:50
-msgid "A Poll with this address already exists."
+msgid "A poll with this address already exists."
 msgstr "Ezen a neven már létezik egy szavazás."
 
 #: ../index.cgi:68
@@ -514,7 +514,7 @@ msgid "Go away."
 msgstr ""
 
 #: ../index.cgi:84
-msgid "Create New Poll"
+msgid "Create new poll"
 msgstr "Új szavazás létrehozása"
 
 #: ../index.cgi:86
@@ -526,11 +526,11 @@ msgid "Type"
 msgstr "Típus"
 
 #: ../index.cgi:88
-msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
+msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Időpont kiválasztása (pl. egy értekezlet beütemezése)"
 
 #: ../index.cgi:89
-msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
+msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Normál szavazás (pl. melyik a legfinomabb süti)"
 
 #: ../index.cgi:90
@@ -562,7 +562,7 @@ msgid "Maintenance"
 msgstr ""
 
 #: ../maintenance.cgi:36
-msgid "This site is currently under maintenance!"
+msgid "This site is currently undergoing maintenance!"
 msgstr ""
 
 #: ../maintenance.cgi:39
@@ -572,19 +572,19 @@ msgid ""
 msgstr ""
 
 #: ../not_found.cgi:30
-msgid "Poll Not Found"
+msgid "Poll not found"
 msgstr "Nincs ilyen szavazás"
 
 #: ../not_found.cgi:32
-msgid "The requested Poll was not found."
+msgid "The requested poll was not found."
 msgstr "A megadott szavazás nem létezik."
 
 #: ../not_found.cgi:33
-msgid "There are several reasons, why a Poll is deleted:"
+msgid "There are several reasons why a poll may have been deleted:"
 msgstr "Több okból is eltűnhetett a szavazás:"
 
 #: ../not_found.cgi:34
-msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
+msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
 msgstr "Valaki a „Törlés” linkre kattintott, és kitörölte a szavazást."
 
 #: ../not_found.cgi:35
@@ -618,7 +618,7 @@ msgid "Visit the poll yourself:"
 msgstr "Kövesd a linket és menj a szavazáshoz:"
 
 #: ../overview.rb:36
-msgid "Link to dudle poll about %{polltitle}"
+msgid "Link to Dudle poll about %{polltitle}"
 msgstr "A %{polltitle} tárgyú szavazásra mutató link"
 
 #: ../participate.rb:59
@@ -646,7 +646,7 @@ msgid "Name"
 msgstr "Név"
 
 #: ../poll.rb:232
-msgid "Save Changes"
+msgid "Save changes"
 msgstr "Mentés"
 
 #: ../poll.rb:236
@@ -682,7 +682,7 @@ msgid "%{user} said on %{time}"
 msgstr "„%{user}” írta %{time}-kor"
 
 #: ../poll.rb:348
-msgid "Go Up"
+msgid "Go up"
 msgstr "Fel"
 
 #: ../poll.rb:354
@@ -690,7 +690,7 @@ msgid "says"
 msgstr "szerint"
 
 #: ../poll.rb:355
-msgid "Submit Comment"
+msgid "Submit comment"
 msgstr "Hozzászólás elküldése"
 
 #: ../poll.rb:373
@@ -714,7 +714,7 @@ msgid "Comment related"
 msgstr "A megjegyzésekkel kapcsolatosak"
 
 #: ../poll.rb:384
-msgid "Access Control related"
+msgid "Access control related"
 msgstr "A hozzáféréssel kapcsolatosak"
 
 #: ../poll.rb:390
@@ -722,15 +722,15 @@ msgid "Update"
 msgstr "Frissítés"
 
 #: ../pollhead.rb:71
-msgid "Edit Option"
+msgid "Edit option"
 msgstr "Lehetőség szerkesztése"
 
 #: ../pollhead.rb:72
-msgid "Delete Option"
+msgid "Delete option"
 msgstr "Lehetőség törlése"
 
 #: ../pollhead.rb:87 ../timepollhead.rb:162
-msgid "Last Edit"
+msgid "Last edit"
 msgstr "Módosítva"
 
 #: ../pollhead.rb:99
@@ -742,7 +742,7 @@ msgid "Description (optional)"
 msgstr "Leírás (opcionális)"
 
 #: ../pollhead.rb:101
-msgid "Add/Edit Option"
+msgid "Add/Edit option"
 msgstr "Létrehozás/Módosítás"
 
 #: ../pollhead.rb:102
@@ -751,23 +751,23 @@ msgstr "Előnézet"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all Options (columns), you want to ask the participants of the poll. "
-"The participants will state one vote for every option you give here "
-"separately."
+"Enter all the options (columns) which you want the participants of the poll to choose among. "
+"For each option you give here, the participants will choose a "
+"vote."
 msgstr ""
 "Add meg az összes lehetőséget (oszlopot), melyre a résztvevők szavazhatnak! "
 "(Mindegyikre a többitől függetlenül lehet szavazni.)"
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add some time different to the default ones, please enter some string "
+"To add a time other than the default times, please enter some string "
 "here (e.&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "A szokásostól eltérő sorok hozzáadásához írj be valamilyen szöveget a fenti "
 "mezőbe! (Pl. 09:30, reggel, délután)"
 
 #: ../timepollhead.rb:119
-msgid "This Time was already chosen."
+msgid "This time has already been selected."
 msgstr "Ez az idő már szerepel"
 
 #: ../timepollhead.rb:193
@@ -787,7 +787,7 @@ msgid "Optional:"
 msgstr "Esetlegesen:"
 
 #: ../timepollhead.rb:313
-msgid "Enter a concrete value as start time."
+msgid "Select specific start times."
 msgstr "Adj meg egy konkrét kezdőidőt!"
 
 #: ../timepollhead.rb:329
@@ -795,11 +795,11 @@ msgid "Time"
 msgstr "Idő"
 
 #: ../timepollhead.rb:342
-msgid "Chosen"
+msgid "Selected"
 msgstr "Kiválasztva"
 
 #: ../timepollhead.rb:343
-msgid "Not Chosen"
+msgid "Not selected"
 msgstr "Elvetve"
 
 #: ../timepollhead.rb:344

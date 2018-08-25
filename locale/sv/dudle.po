@@ -31,7 +31,7 @@ msgstr ""
 "X-dudle-Language: Svenska\n"
 
 #: ../about.cgi:29
-msgid "This Application is powered by %{Dudle}."
+msgid "This application is powered by %{Dudle}."
 msgstr ""
 
 #: ../about.cgi:31
@@ -41,20 +41,20 @@ msgstr ""
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
 msgstr ""
 "Källkoden för denna applikation finns tillgänglig under perioden <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
 
 #: ../about.cgi:33
-msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
+msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
 
 #: ../about.cgi:35
 #, fuzzy
 msgid ""
-"Write me an e-mail if you found a bug, have something which disturbes you or "
-"any other feedback."
+"Please write me an e-mail if you have found a bug, have found something which "
+"disturbs you, or have any other feedback."
 msgstr ""
 "Om du hittar en bugg eller något annat störande, vänligen underrätta mig: <a "
 "href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to"
@@ -97,7 +97,7 @@ msgid "Passwords did not match."
 msgstr "Lösenorden matchar inte."
 
 #: ../access_control.rb:175
-msgid "Change Access Control Settings"
+msgid "Change access control settings"
 msgstr "Ändra inställningarna för åtkomstkontroll"
 
 #: ../access_control.rb:179
@@ -109,7 +109,7 @@ msgid "Activate"
 msgstr "Aktivera"
 
 #: ../access_control.rb:184
-msgid "will be activated when at least an admin user is configured"
+msgid "controls will be activated when at least the admin user is configured"
 msgstr "aktiveras när minst en administratör är konfigurerad"
 
 #: ../access_control.rb:186
@@ -130,7 +130,7 @@ msgstr ""
 
 #: ../access_control.rb:193
 msgid ""
-"You will be asked for the password you entered here after pressing save!"
+"You will be asked for the password you have entered here after you press save!"
 msgstr ""
 "Efter att du har klickat på spara kommer du kommer att frågas efter "
 "lösenordet du nu skrev in! "
@@ -144,7 +144,7 @@ msgstr ""
 "konfigurering."
 
 #: ../access_control.rb:202
-msgid "The user ‘participant’ has only access to the vote interface."
+msgid "The user ‘participant’ only has access to the vote interface."
 msgstr "’Deltagare’ har bara access till gränssnittet för omröstning"
 
 #: ../access_control.rb:208
@@ -153,7 +153,7 @@ msgstr "Åtkomstkontroll:"
 
 #: ../advanced.rb:31 ../advanced.rb:35
 #, fuzzy
-msgid "Revert Poll"
+msgid "Revert poll"
 msgstr "Radera omröstning"
 
 #: ../advanced.rb:32
@@ -162,19 +162,19 @@ msgid "Poll was reverted to Version %{version}!"
 msgstr "Omröstning av Version %{version}"
 
 #: ../advanced.rb:37
-msgid "Revert Poll to version (see History tab for revision numbers): "
+msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr ""
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
-msgid "Authorization Required"
+msgid "Authorization required"
 msgstr ""
 
 #: ../authorization_required.cgi:39
-msgid "The configuration of this Poll is protected by password!"
+msgid "The configuration of this poll is password-protected!"
 msgstr ""
 
 #: ../authorization_required.cgi:41
-msgid "This Poll is protected by password!"
+msgid "This poll is password-protected!"
 msgstr ""
 
 #: ../authorization_required.cgi:43
@@ -182,7 +182,7 @@ msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 
 #: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to dudle home and Schedule a new Poll"
+msgid "Return to Dudle home and schedule a new poll"
 msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
 
 #: ../authorization_required.cgi:54
@@ -190,15 +190,15 @@ msgid "You have to authorize yourself in order to access this page!"
 msgstr ""
 
 #: ../config.rb:92
-msgid "Event Schedule Poll"
+msgid "Event-scheduling poll"
 msgstr "Händelseschema Omröstning"
 
 #: ../config.rb:96
-msgid "Normal Poll"
+msgid "Normal poll"
 msgstr "Normal omröstning"
 
 #: ../customize.cgi:31 ../customize.rb:31
-msgid "Customize Personal Settings"
+msgid "Customize personal settings"
 msgstr "Administrera Personliga Inställningar"
 
 #: ../customize.cgi:32 ../customize.rb:32
@@ -207,7 +207,7 @@ msgstr ""
 "Du behöver aktivera cookies för att kunna personifiera dina inställningar"
 
 #: ../customize.cgi:39 ../customize.rb:39
-msgid "Current Setting"
+msgid "Current setting"
 msgstr "Inställning"
 
 #: ../customize.cgi:40 ../customize.rb:40
@@ -263,7 +263,7 @@ msgid "Please delete this poll."
 msgstr "Vänligen radera denna omröstning."
 
 #: ../delete_poll.rb:42
-msgid "Example polls can not be deleted."
+msgid "Example polls cannot be deleted."
 msgstr ""
 
 #: ../delete_poll.rb:43
@@ -278,7 +278,7 @@ msgstr "Omröstningen raderad!"
 #, fuzzy
 msgid ""
 "If this was done by accident, please contact the administrator of the "
-"system. The poll can be recovered for an indeterminate amount of time, it "
+"system. The poll can be recovered for an indeterminate amount of time; it "
 "could already be too late."
 msgstr ""
 "Om detta skedde av misstag, vänligen kontakta administratören av systemet. "
@@ -290,7 +290,7 @@ msgid "You can now"
 msgstr ""
 
 #: ../delete_poll.rb:60
-msgid "Return to dudle home and schedule a new poll"
+msgid "Return to Dudle home and schedule a new poll"
 msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
 
 #: ../delete_poll.rb:61
@@ -311,7 +311,7 @@ msgid "but you typed:"
 msgstr "men du skrev:"
 
 #: ../delete_poll.rb:108
-msgid "Delete this Poll"
+msgid "Delete this poll"
 msgstr "Ta bort den här omröstningen"
 
 #: ../delete_poll.rb:109
@@ -402,7 +402,7 @@ msgid "Proceed!"
 msgstr "Fortsätt!"
 
 #: ../edit_columns.rb:44
-msgid "Add and Remove Columns"
+msgid "Add and remove columns"
 msgstr "Lägg till eller ta bort kolumner"
 
 #: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
@@ -441,20 +441,20 @@ msgid ""
 "I did the following:\n"
 "\n"
 "<please describe what you did>\n"
-"<e.g., I wanted to sent a comment to the poll.>\n"
+"<e.g., I wanted to post a comment to the poll.>\n"
 "\n"
 "I am using <please state your browser and operating system>\n"
 "%{errormessage}\n"
-"Yours,\n"
+"Sincerely,\n"
 msgstr ""
 
 #: ../error.cgi:51
-msgid "Bug in dudle"
+msgid "Bug in Dudle"
 msgstr ""
 
 #: ../error.cgi:53
 msgid ""
-"An error occurred while executing dudle.<br/>Please send an error report, "
+"An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
 
@@ -475,11 +475,11 @@ msgstr ""
 "Omröstningar:"
 
 #: ../history.rb:28
-msgid "Poll of Version %{revisionnumber}"
+msgid "Poll of version %{revisionnumber}"
 msgstr "Omröstning av Version %{revisionnumber}"
 
 #: ../history.rb:32
-msgid "Current Poll (Version %{revisionnumber})"
+msgid "Current poll (version %{revisionnumber})"
 msgstr "Aktuell omröstning (Version %{revisionnumber})"
 
 #: ../html.rb:131
@@ -495,7 +495,7 @@ msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr "Adresser bör enbart innehålla bokstäver, nummer och tankestreck."
 
 #: ../index.cgi:50
-msgid "A Poll with this address already exists."
+msgid "A poll with this address already exists."
 msgstr "En omröstning med den här adressen finns redan."
 
 #: ../index.cgi:68
@@ -508,7 +508,7 @@ msgid "Go away."
 msgstr ""
 
 #: ../index.cgi:84
-msgid "Create New Poll"
+msgid "Create new poll"
 msgstr "Skapa ny omröstning"
 
 #: ../index.cgi:86
@@ -520,11 +520,11 @@ msgid "Type"
 msgstr "Typ"
 
 #: ../index.cgi:88
-msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
+msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Händelseschema Omröstning (t ex boka ett möte)"
 
 #: ../index.cgi:89
-msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
+msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Normal omröstning (t ex rösta på bästa kaffet)"
 
 #: ../index.cgi:90
@@ -556,7 +556,7 @@ msgid "Maintenance"
 msgstr ""
 
 #: ../maintenance.cgi:36
-msgid "This site is currently under maintenance!"
+msgid "This site is currently undergoing maintenance!"
 msgstr ""
 
 #: ../maintenance.cgi:39
@@ -567,19 +567,19 @@ msgstr ""
 
 #: ../not_found.cgi:30
 #, fuzzy
-msgid "Poll Not Found"
+msgid "Poll not found"
 msgstr "Inte vald"
 
 #: ../not_found.cgi:32
-msgid "The requested Poll was not found."
+msgid "The requested poll was not found."
 msgstr ""
 
 #: ../not_found.cgi:33
-msgid "There are several reasons, why a Poll is deleted:"
+msgid "There are several reasons why a poll may have been deleted:"
 msgstr ""
 
 #: ../not_found.cgi:34
-msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
+msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
 msgstr ""
 
 #: ../not_found.cgi:35
@@ -611,7 +611,7 @@ msgid "Visit the poll yourself:"
 msgstr ""
 
 #: ../overview.rb:36
-msgid "Link to dudle poll about %{polltitle}"
+msgid "Link to Dudle poll about %{polltitle}"
 msgstr "Länk till dudle omröstning om %{polltitle}"
 
 #: ../participate.rb:59
@@ -639,7 +639,7 @@ msgid "Name"
 msgstr "Namn"
 
 #: ../poll.rb:232
-msgid "Save Changes"
+msgid "Save changes"
 msgstr "Spara ändringar"
 
 #: ../poll.rb:236
@@ -676,7 +676,7 @@ msgid "%{user} said on %{time}"
 msgstr "sa %{user} %{time}"
 
 #: ../poll.rb:348
-msgid "Go Up"
+msgid "Go up"
 msgstr ""
 
 #: ../poll.rb:354
@@ -684,7 +684,7 @@ msgid "says"
 msgstr "säger"
 
 #: ../poll.rb:355
-msgid "Submit Comment"
+msgid "Submit comment"
 msgstr "Skicka kommentarer"
 
 #: ../poll.rb:373
@@ -708,7 +708,7 @@ msgid "Comment related"
 msgstr "Tillhörande kommentar"
 
 #: ../poll.rb:384
-msgid "Access Control related"
+msgid "Access control related"
 msgstr "Tillhörande åtkomstkontroll"
 
 #: ../poll.rb:390
@@ -717,16 +717,16 @@ msgstr "Uppdatera"
 
 #: ../pollhead.rb:71
 #, fuzzy
-msgid "Edit Option"
+msgid "Edit option"
 msgstr "Redigera kolumn"
 
 #: ../pollhead.rb:72
 #, fuzzy
-msgid "Delete Option"
+msgid "Delete option"
 msgstr "Ta bort kolumn"
 
 #: ../pollhead.rb:87 ../timepollhead.rb:162
-msgid "Last Edit"
+msgid "Last edit"
 msgstr "Senast ändrat"
 
 #: ../pollhead.rb:99
@@ -741,7 +741,7 @@ msgstr "Beskrivning"
 
 #: ../pollhead.rb:101
 #, fuzzy
-msgid "Add/Edit Option"
+msgid "Add/Edit option"
 msgstr "Lägg till/redigera kolumn"
 
 #: ../pollhead.rb:102
@@ -750,20 +750,20 @@ msgstr "Förhandsgranska"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all Options (columns), you want to ask the participants of the poll. "
-"The participants will state one vote for every option you give here "
-"separately."
+"Enter all the options (columns) which you want the participants of the poll to choose among. "
+"For each option you give here, the participants will choose a "
+"vote."
 msgstr ""
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add some time different to the default ones, please enter some string "
+"To add a time other than the default times, please enter some string "
 "here (e.&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "Lägg till fler tider än standardtiderna (t ex 09:30, morgon, eftermiddag)"
 
 #: ../timepollhead.rb:119
-msgid "This Time was already chosen."
+msgid "This time has already been selected."
 msgstr "Tidpunkten är redan vald."
 
 #: ../timepollhead.rb:193
@@ -783,7 +783,7 @@ msgid "Optional:"
 msgstr "Valfri:"
 
 #: ../timepollhead.rb:313
-msgid "Enter a concrete value as start time."
+msgid "Select specific start times."
 msgstr "Ange en giltig starttid."
 
 #: ../timepollhead.rb:329
@@ -791,11 +791,11 @@ msgid "Time"
 msgstr "Tid"
 
 #: ../timepollhead.rb:342
-msgid "Chosen"
+msgid "Selected"
 msgstr "Vald"
 
 #: ../timepollhead.rb:343
-msgid "Not Chosen"
+msgid "Not selected"
 msgstr "Inte vald"
 
 #: ../timepollhead.rb:344

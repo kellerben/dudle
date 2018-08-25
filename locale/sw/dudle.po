@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: ../about.cgi:29
-msgid "This Application is powered by %{Dudle}."
+msgid "This application is powered by %{Dudle}."
 msgstr "Maombi hii ni inaendeshwa na %{Dudle}."
 
 #: ../about.cgi:31
@@ -26,21 +26,21 @@ msgstr "Leseni"
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>"
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
 msgstr ""
 "Kanuni za maombi hii ni inapatikana chini ya sheria ya <a href='http://www."
 "fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Toleo 3</a>"
 
 #: ../about.cgi:33
 #, fuzzy
-msgid "The Sourcecode of this application can be found %{a_start}here%{a_end}."
+msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
 "Kanuni ya programu tumizi hii yanaweza kupatikana %{a_start}humu%{a_end}."
 
 #: ../about.cgi:35
 msgid ""
-"Write me an e-mail if you found a bug, have something which disturbes you or "
-"any other feedback."
+"Please write me an e-mail if you have found a bug, have found something which "
+"disturbs you, or have any other feedback."
 msgstr ""
 "Kuandika mimi barua pepe kama wewe kupatikana mdudu, una kitu ambayo "
 "linalokusumbua au nyingine yoyote ya maoni."
@@ -82,7 +82,7 @@ msgid "Passwords did not match."
 msgstr "Nywila si fanana."
 
 #: ../access_control.rb:175
-msgid "Change Access Control Settings"
+msgid "Change access control settings"
 msgstr "Badilisha mipangilio ya dhibiti ya ufikivu"
 
 #: ../access_control.rb:179
@@ -94,7 +94,7 @@ msgid "Activate"
 msgstr "Amilisha"
 
 #: ../access_control.rb:184
-msgid "will be activated when at least an admin user is configured"
+msgid "controls will be activated when at least the admin user is configured"
 msgstr "Itaamilishwa wakati mtumiaji msimamizi amemesanidiwa"
 
 #: ../access_control.rb:186
@@ -115,7 +115,7 @@ msgstr ""
 
 #: ../access_control.rb:193
 msgid ""
-"You will be asked for the password you entered here after pressing save!"
+"You will be asked for the password you have entered here after you press save!"
 msgstr "Utaulizwa kwa nywila uliyoingiza hapa baada ya kubwa ila!"
 
 #: ../access_control.rb:196
@@ -125,7 +125,7 @@ msgid ""
 msgstr "Mtumiaji 'mtawala' kufikilia kwa kura na kiolesura cha usanidi."
 
 #: ../access_control.rb:202
-msgid "The user ‘participant’ has only access to the vote interface."
+msgid "The user ‘participant’ only has access to the vote interface."
 msgstr "Mtumiaji 'mshiriki' ina tu kupata kwa maoni ya kura."
 
 #: ../access_control.rb:208
@@ -134,7 +134,7 @@ msgstr "Upatikanaji wa kudhibiti"
 
 #: ../advanced.rb:31 ../advanced.rb:35
 #, fuzzy
-msgid "Revert Poll"
+msgid "Revert poll"
 msgstr "Futa uchaguzi"
 
 #: ../advanced.rb:32
@@ -143,19 +143,19 @@ msgid "Poll was reverted to Version %{version}!"
 msgstr "Uchaguzi wa toleo %{version}"
 
 #: ../advanced.rb:37
-msgid "Revert Poll to version (see History tab for revision numbers): "
+msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr ""
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
-msgid "Authorization Required"
+msgid "Authorization required"
 msgstr "Idhini inayohitajika"
 
 #: ../authorization_required.cgi:39
-msgid "The configuration of this Poll is protected by password!"
+msgid "The configuration of this poll is password-protected!"
 msgstr "Usakinishaji wa kura hii ya maoni imelindwa na nywila!"
 
 #: ../authorization_required.cgi:41
-msgid "This Poll is protected by password!"
+msgid "This poll is password-protected!"
 msgstr "Kura hii ya maoni imelindwa na nywila!"
 
 #: ../authorization_required.cgi:43
@@ -163,7 +163,7 @@ msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Ili kuendelea, una kutoa nywila kwa mtumiaji %{user}."
 
 #: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to dudle home and Schedule a new Poll"
+msgid "Return to Dudle home and schedule a new poll"
 msgstr "Rudi dudle nyumbani na ratiba ya kura ya maoni mpya"
 
 #: ../authorization_required.cgi:54
@@ -171,15 +171,15 @@ msgid "You have to authorize yourself in order to access this page!"
 msgstr "Una kuidhinisha mwenyewe ili upate ukurasa huu!"
 
 #: ../config.rb:92
-msgid "Event Schedule Poll"
+msgid "Event-scheduling poll"
 msgstr "Tukio ratiba kura ya maoni"
 
 #: ../config.rb:96
-msgid "Normal Poll"
+msgid "Normal poll"
 msgstr "Uchaguzi kawaida"
 
 #: ../customize.cgi:31 ../customize.rb:31
-msgid "Customize Personal Settings"
+msgid "Customize personal settings"
 msgstr "Geuza kukufaa mipangilio binafsi"
 
 #: ../customize.cgi:32 ../customize.rb:32
@@ -187,7 +187,7 @@ msgid "You need cookies enabled in order to personalize your settings."
 msgstr "Unahitaji vidakuzi kuwezeshwa ili kubinafsisha mipangilio yako."
 
 #: ../customize.cgi:39 ../customize.rb:39
-msgid "Current Setting"
+msgid "Current setting"
 msgstr "Kipimo cha sasa"
 
 #: ../customize.cgi:40 ../customize.rb:40
@@ -243,7 +243,7 @@ msgid "Please delete this poll."
 msgstr "Tafadhali, futa chaguzo hii."
 
 #: ../delete_poll.rb:42
-msgid "Example polls can not be deleted."
+msgid "Example polls cannot be deleted."
 msgstr "Vituo vya kupigia kura mfano yanaweza kufutwa."
 
 #: ../delete_poll.rb:43
@@ -257,7 +257,7 @@ msgstr "Uchaguzi ilifutwa mafanikio!"
 #: ../delete_poll.rb:57
 msgid ""
 "If this was done by accident, please contact the administrator of the "
-"system. The poll can be recovered for an indeterminate amount of time, it "
+"system. The poll can be recovered for an indeterminate amount of time; it "
 "could already be too late."
 msgstr ""
 "Kama hii ilifanyika kwa ajali, tafadhali wasiliana na msimamizi wa mfumo. "
@@ -269,7 +269,7 @@ msgid "You can now"
 msgstr "Unaweza sasa"
 
 #: ../delete_poll.rb:60
-msgid "Return to dudle home and schedule a new poll"
+msgid "Return to Dudle home and schedule a new poll"
 msgstr "Rudi dudle nyumbani na ratiba uchaguzi mpya"
 
 #: ../delete_poll.rb:61
@@ -289,7 +289,7 @@ msgid "but you typed:"
 msgstr "Ulichapa:"
 
 #: ../delete_poll.rb:108
-msgid "Delete this Poll"
+msgid "Delete this poll"
 msgstr "Futa Uchaguzi huu"
 
 #: ../delete_poll.rb:109
@@ -381,7 +381,7 @@ msgid "Proceed!"
 msgstr "Endelea"
 
 #: ../edit_columns.rb:44
-msgid "Add and Remove Columns"
+msgid "Add and remove columns"
 msgstr "Ongeza na ondoa nguzo"
 
 #: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
@@ -420,11 +420,11 @@ msgid ""
 "I did the following:\n"
 "\n"
 "<please describe what you did>\n"
-"<e.g., I wanted to sent a comment to the poll.>\n"
+"<e.g., I wanted to post a comment to the poll.>\n"
 "\n"
 "I am using <please state your browser and operating system>\n"
 "%{errormessage}\n"
-"Yours,\n"
+"Sincerely,\n"
 msgstr ""
 "Jambo!\n"
 "\n"
@@ -439,12 +439,12 @@ msgstr ""
 "Yako,\n"
 
 #: ../error.cgi:51
-msgid "Bug in dudle"
+msgid "Bug in Dudle"
 msgstr "Mdudu katika dudle"
 
 #: ../error.cgi:53
 msgid ""
-"An error occurred while executing dudle.<br/>Please send an error report, "
+"An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
 "Kosa limetokea wakati wa utekelezaji dudle.<br/>Tafadhali tuma ripoti ya "
@@ -466,11 +466,11 @@ msgid ""
 msgstr "Kama unataka kujaribu maombi, angalia mfano uchaguzi hizi:"
 
 #: ../history.rb:28
-msgid "Poll of Version %{revisionnumber}"
+msgid "Poll of version %{revisionnumber}"
 msgstr "Uchaguzi wa toleo %{revisionnumber}"
 
 #: ../history.rb:32
-msgid "Current Poll (Version %{revisionnumber})"
+msgid "Current poll (version %{revisionnumber})"
 msgstr "Uchaguzi huu (Toleo %{revisionnumber})"
 
 #: ../html.rb:131
@@ -486,7 +486,7 @@ msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr "Desturi pepe inaweza tu vyenye herufi, namba, na deshi."
 
 #: ../index.cgi:50
-msgid "A Poll with this address already exists."
+msgid "A poll with this address already exists."
 msgstr "Uchaguzi na anwani hii ipo."
 
 #: ../index.cgi:68
@@ -499,7 +499,7 @@ msgid "Go away."
 msgstr "Toka hapa"
 
 #: ../index.cgi:84
-msgid "Create New Poll"
+msgid "Create new poll"
 msgstr "Tengeneza kura mpya"
 
 #: ../index.cgi:86
@@ -511,11 +511,11 @@ msgid "Type"
 msgstr "Aina"
 
 #: ../index.cgi:88
-msgid "Event Schedule Poll (e.&thinsp;g., schedule a meeting)"
+msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Tukio ratiba ya uchaguzi (kwa mfano., ratiba ya mkutano)"
 
 #: ../index.cgi:89
-msgid "Normal Poll (e.&thinsp;g., vote for what is the best coffee)"
+msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Uchaguzi kawaida (kwa mfano., kupiga kura kwa kahawa bora)"
 
 #: ../index.cgi:90
@@ -547,7 +547,7 @@ msgid "Maintenance"
 msgstr "Matengenezo"
 
 #: ../maintenance.cgi:36
-msgid "This site is currently under maintenance!"
+msgid "This site is currently undergoing maintenance!"
 msgstr "Tovuti hii kwa sasa iko katika matengenezo!"
 
 #: ../maintenance.cgi:39
@@ -559,19 +559,19 @@ msgstr ""
 "\"maintenance.html\" ili kuwezesha matengenezo."
 
 #: ../not_found.cgi:30
-msgid "Poll Not Found"
+msgid "Poll not found"
 msgstr "Kura haikupatikana"
 
 #: ../not_found.cgi:32
-msgid "The requested Poll was not found."
+msgid "The requested poll was not found."
 msgstr "Kura ulitaka haikupatikana"
 
 #: ../not_found.cgi:33
-msgid "There are several reasons, why a Poll is deleted:"
+msgid "There are several reasons why a poll may have been deleted:"
 msgstr "Kuna sababu kadhaa uchaguzi umefutwa:"
 
 #: ../not_found.cgi:34
-msgid "Somebody clicked on “Delete Poll” and deleted the poll manually."
+msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
 msgstr "Mtu alitaabu \"Futa uchaguzi,\" na kufutwa uchaguzi."
 
 #: ../not_found.cgi:35
@@ -607,7 +607,7 @@ msgid "Visit the poll yourself:"
 msgstr "Tembelea uchaguzi mwenyewe:"
 
 #: ../overview.rb:36
-msgid "Link to dudle poll about %{polltitle}"
+msgid "Link to Dudle poll about %{polltitle}"
 msgstr "Kiungo kwa dudle uchaguzi kuhusu %{polltitle}"
 
 #: ../participate.rb:59
@@ -635,7 +635,7 @@ msgid "Name"
 msgstr "Jina"
 
 #: ../poll.rb:232
-msgid "Save Changes"
+msgid "Save changes"
 msgstr "Okoa mabadiliko"
 
 #: ../poll.rb:236
@@ -671,7 +671,7 @@ msgid "%{user} said on %{time}"
 msgstr "%{user} alisema %{time}"
 
 #: ../poll.rb:348
-msgid "Go Up"
+msgid "Go up"
 msgstr "Kwenda juu"
 
 #: ../poll.rb:354
@@ -679,7 +679,7 @@ msgid "says"
 msgstr "inasema"
 
 #: ../poll.rb:355
-msgid "Submit Comment"
+msgid "Submit comment"
 msgstr "Wasilisha maoni"
 
 #: ../poll.rb:373
@@ -703,7 +703,7 @@ msgid "Comment related"
 msgstr "Maoni kuhusiana"
 
 #: ../poll.rb:384
-msgid "Access Control related"
+msgid "Access control related"
 msgstr "Upatikanaji wa kudhibiti kuhusiana"
 
 #: ../poll.rb:390
@@ -711,15 +711,15 @@ msgid "Update"
 msgstr "Sasisha"
 
 #: ../pollhead.rb:71
-msgid "Edit Option"
+msgid "Edit option"
 msgstr "Hariri chaguo"
 
 #: ../pollhead.rb:72
-msgid "Delete Option"
+msgid "Delete option"
 msgstr "Ondoa chaguo"
 
 #: ../pollhead.rb:87 ../timepollhead.rb:162
-msgid "Last Edit"
+msgid "Last edit"
 msgstr "Awali hariri"
 
 #: ../pollhead.rb:99
@@ -731,7 +731,7 @@ msgid "Description (optional)"
 msgstr "Maelezo (hiari)"
 
 #: ../pollhead.rb:101
-msgid "Add/Edit Option"
+msgid "Add/Edit option"
 msgstr "Ongeza/hariri chaguo"
 
 #: ../pollhead.rb:102
@@ -740,23 +740,23 @@ msgstr "Hakikisho"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all Options (columns), you want to ask the participants of the poll. "
-"The participants will state one vote for every option you give here "
-"separately."
+"Enter all the options (columns) which you want the participants of the poll to choose among. "
+"For each option you give here, the participants will choose a "
+"vote."
 msgstr ""
 "Kuingia chaguzi zote (nguzo), unataka kuuliza washiriki wa uchaguzi. "
 "Washiriki hali kura moja kwa ajili ya kila chaguo, unaweza kutoa hapa."
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add some time different to the default ones, please enter some string "
+"To add a time other than the default times, please enter some string "
 "here (e.&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "Kuongeza muda tofauti na zilizopo, tafadhali kuingia baadhi ya kamba hapa "
 "(mfano., 09:30, asubuhi, mchana)."
 
 #: ../timepollhead.rb:119
-msgid "This Time was already chosen."
+msgid "This time has already been selected."
 msgstr "Wakati huu uliochaguliwa."
 
 #: ../timepollhead.rb:193
@@ -776,7 +776,7 @@ msgid "Optional:"
 msgstr "Hiari"
 
 #: ../timepollhead.rb:313
-msgid "Enter a concrete value as start time."
+msgid "Select specific start times."
 msgstr "Ingia saruji thamani muda wa kuanza."
 
 #: ../timepollhead.rb:329
@@ -784,11 +784,11 @@ msgid "Time"
 msgstr "Saa"
 
 #: ../timepollhead.rb:342
-msgid "Chosen"
+msgid "Selected"
 msgstr "Waliochaguliwa"
 
 #: ../timepollhead.rb:343
-msgid "Not Chosen"
+msgid "Not selected"
 msgstr "Wasiliochaguliwa"
 
 #: ../timepollhead.rb:344

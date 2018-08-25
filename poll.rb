@@ -229,7 +229,7 @@ HEAD
 </td>
 END
 	end
-	def save_input(edituser, savestring, changestr = _("Save Changes"))
+	def save_input(edituser, savestring, changestr = _("Save changes"))
 		ret = "<td>"
 		if @data.include?(edituser)
 			ret += "<input id='savebutton' type='submit' value=\"#{changestr}\" />"
@@ -345,14 +345,14 @@ TR
 
 		if @comment.size > 5
 			ret += "<a class='top_bottom_ref' href='#top' title='"
-			ret += _("Go Up") + "'>#{GOUP}</a>"
+			ret += _("Go up") + "'>#{GOUP}</a>"
 		end
 
 		
 		if editable
 			# ADD COMMENT
 			saysstr = _("says")
-			submitstr = _("Submit Comment")
+			submitstr = _("Submit comment")
 			ret += <<ADDCOMMENT
 <form method='post' action='.' accept-charset='utf-8' id='newcomment'>
 	<div class='comment' id='add_comment'>
@@ -381,7 +381,7 @@ FORM
 		 ["participants",_("Participant related")],
 		 ["columns",_("Column related")],
 		 ["comments",_("Comment related")],
-		 ["ac",_("Access Control related")]
+		 ["ac",_("Access control related")]
 			].each{|value,opt|
 			ret += "<option value='#{value}' #{selected == value ? "selected='selected'" : ""} >#{opt}</option>"
 		}
@@ -504,7 +504,7 @@ end
 #├───────────────────┼────────┬────────────────────────┼────────────┤
 #│                   │Tue, 05 │        Sat, 23         │            │
 #├───────────────────┼────────┼────────┬────────┬──────┼────────────┤
-#│      Name ▾▴      │   ▾▴   │10:00 ▾▴│11:00 ▾▴│foo ▾▴│Last Edit ▾▴│
+#│      Name ▾▴      │   ▾▴   │10:00 ▾▴│11:00 ▾▴│foo ▾▴│Last edit ▾▴│
 #├───────────────────┼────────┼────────┼────────┼──────┼────────────┤
 #│Alice ^✍           │✔       │✘       │✔       │✘     │24.11, 18:15│
 #├───────────────────┼────────┼────────┼────────┼──────┼────────────┤

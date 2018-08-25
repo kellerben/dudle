@@ -33,7 +33,7 @@ end
 
 
 if File.exists?("maintenance.html")
-	$d << _("This site is currently under maintenance!")
+	$d << _("This site is currently undergoing maintenance!")
 	$d << File.open("maintenance.html","r").read
 else
 	$d << _('You should not browse to this file directly. Please create a file named "maintenance.html" to enable the maintenance mode.')

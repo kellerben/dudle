@@ -26,13 +26,13 @@ require_relative "dudle"
 $d = Dudle.new
 
 $d << "<div>"
-$d << _('This Application is powered by %{Dudle}.') % {:Dudle => "<a href='https://dudle.inf.tu-dresden.de' />dudle</a>"}
+$d << _('This application is powered by %{Dudle}.') % {:Dudle => "<a href='https://dudle.inf.tu-dresden.de' />dudle</a>"}
 $d << "</div>"
 $d << "<div><h2>" + _("License") + "</h2>"
-$d << _("The sourcecode of this application is available under the terms of <a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>")
-$d << _("The Sourcecode of this application can be found %{a_start}here%{a_end}.") % { :a_start => "<a href=\"#{$conf.dudle_src}\">", :a_end => "</a>"}
+$d << _("The sourcecode of this application is available under the terms of <a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>.")
+$d << _("The sourcecode of this application can be found %{a_start}here%{a_end}.") % { :a_start => "<a href=\"#{$conf.dudle_src}\">", :a_end => "</a>"}
 $d << '<a href="mailto:Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20dudle">'
-$d << _('Write me an e-mail if you found a bug, have something which disturbes you or any other feedback.')
+$d << _('Please write me an e-mail if you have found a bug, have found something which disturbs you, or have any other feedback.')
 $d << '</a>'
 $d << "<br />"
 $d << "</div>"

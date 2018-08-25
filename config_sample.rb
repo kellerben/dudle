@@ -93,11 +93,11 @@
 #$conf.examples = [
 #	{
 #		:url => "coffeebreak",
-#		:description => _("Event Schedule Poll"),
+#		:description => _("Event-scheduling poll"),
 #		:new_environment => true,
 #	},{
 #		:url => "coffee",
-#		:description => _("Normal Poll"),
+#		:description => _("Normal poll"),
 #		:revno => 34
 #	},{
 #		:url => "Cheater",

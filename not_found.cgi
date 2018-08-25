@@ -27,14 +27,14 @@ else
 	$d = Dudle.new(:hide_lang_chooser => true, :load_extensions => false, :relative_dir => "../")
 end
 
-title = _("Poll Not Found")
+title = _("Poll not found")
 
-str = [_("The requested Poll was not found."),
-       _("There are several reasons, why a Poll is deleted:"),
-       _("Somebody clicked on “Delete Poll” and deleted the poll manually."),
-       _("The Poll was deleted by the administrator because it was not accessed for a long time."),
-       _("If you think, the deletion was done by error, please contact the adminsistrator of the system."),
-       _("Return to dudle home and Schedule a new Poll")]
+str = [_("The requested poll was not found."),
+       _("There are several reasons why a poll may have been deleted:"),
+       _("Somebody clicked on “Delete poll” and deleted the poll manually."),
+       _("The poll was deleted by the administrator because it was not accessed for a long time."),
+       _("If you think that the deletion was done in error, please contact the administrator of the system."),
+       _("Return to Dudle home and schedule a new poll")]
 
 $d << <<END
 		<p>

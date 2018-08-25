@@ -47,7 +47,7 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 		if !(POLLURL =~ /\A[\w\-_]*\Z/)
 			createnotice = _("Custom address may only contain letters, numbers, and dashes.")
 		elsif File.exist?(POLLURL)
-			createnotice = _("A Poll with this address already exists.")
+			createnotice = _("A poll with this address already exists.")
 		else Dir.mkdir(POLLURL)
 			Dir.chdir(POLLURL)
 			begin
@@ -81,12 +81,12 @@ end
 
 unless $d.html.header["status"] == "REDIRECT"
 
-	$d << "<h2>"+ _("Create New Poll") + "</h2>"
+	$d << "<h2>"+ _("Create new poll") + "</h2>"
 
 	titlestr = _("Title")
 	typestr = _("Type")
-	timepollstr = _("Event Schedule Poll (e.&thinsp;g., schedule a meeting)")
-	normalpollstr = _("Normal Poll (e.&thinsp;g., vote for what is the best coffee)")
+	timepollstr = _("Event-scheduling poll (e.&thinsp;g., schedule a meeting)")
+	normalpollstr = _("Normal poll (e.&thinsp;g., vote for what is the best coffee)")
 	customaddrstr = _("Custom address (optional)")
 	customaddrhintstr = _("May contain letters, numbers, and dashes.")
 

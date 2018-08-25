@@ -172,7 +172,7 @@ $d.wizzard_redirect
 
 if $d.html.header["status"] != "REDIRECT"
 
-$d.html << "<h2>" + _("Change Access Control Settings") + "</h2>"
+$d.html << "<h2>" + _("Change access control settings") + "</h2>"
 
 if acusers.empty? && $cgi["ac_activate"] != "Activate"
 
@@ -181,7 +181,7 @@ if acusers.empty? && $cgi["ac_activate"] != "Activate"
 	acswitchbutton += "<input type='submit' value='" + _("Activate") + "' />"
 else
 	if acusers.empty?
-		acstatus = ["blue",_("will be activated when at least an admin user is configured")]
+		acstatus = ["blue",_("controls will be activated when at least the admin user is configured")]
 		acswitchbutton = "<input type='hidden' name='ac_activate' value='Deactivate' />"
 		acswitchbutton += "<input type='submit' value='" + _("Deactivate") + "' />"
 	else
@@ -190,16 +190,16 @@ else
 	end
 
 
-	admincreatenotice = usercreatenotice || _("You will be asked for the password you entered here after pressing save!")
+	admincreatenotice = usercreatenotice || _("You will be asked for the password you have entered here after you press save!")
 
 	user = ["admin",
-	        _("The user ‘admin’ has access to the vote as well as the configuration interface.")]
+	        _("The user ‘admin’ has access to both the vote and the configuration interface.")]
 
 	createform = createform(user,admincreatenotice,acusers)
 	if acusers.include?("admin")
 		participantcreatenotice = usercreatenotice || ""
 		user = ["participant",
-	          _("The user ‘participant’ has only access to the vote interface.")]
+	          _("The user ‘participant’ only has access to the vote interface.")]
 	  createform += createform(user,participantcreatenotice,acusers)
 	end
 

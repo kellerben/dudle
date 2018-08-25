@@ -110,13 +110,13 @@ class TimePollHead
 			return newtitle
 		end
 		if cgi.include?("columntime") && cgi["columntime"] == ""
-			@edit_column_error = _("To add some time different to the default ones, please enter some string here (e.&thinsp;g., 09:30, morning, afternoon).")
+			@edit_column_error = _("To add a time other than the default times, please enter some string here (e.&thinsp;g., 09:30, morning, afternoon).")
 			return nil
 		end
 		delete_column(column) if column != ""
 		parsed_date = TimeString.new(newtitle, cgi["columntime"] != "" ? cgi["columntime"] : nil)
 		if @data.include?(parsed_date)
-			@edit_column_error = _("This Time was already chosen.")
+			@edit_column_error = _("This time has already been selected.")
 			return nil
 		else
 			@data << parsed_date
@@ -159,7 +159,7 @@ SORTSYMBOL
 		@data.sort.each{|date|
 			ret += "<th><a title=\"#{CGI.escapeHTML(date.to_s)}\" href=\"?sort=#{CGI.escape(date.to_s)}\">#{CGI.escapeHTML(date.time_to_s)} #{sortsymb(scols,date.to_s)}</a></th>\n"
 		}
-		ret += "<th><a href='?'>" + _("Last Edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
+		ret += "<th><a href='?'>" + _("Last edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
 		ret
 	end
 
@@ -311,7 +311,7 @@ END
 		ret += "<td style='vertical-align:top'>"
 		if col_size > 0
 			optstr = _("Optional:")
-			hintstr = _("Enter a concrete value as start time.")
+			hintstr = _("Select specific start times.")
 			ret += <<END
 <div id='ConcreteColumndaysDescription' class='shorttextcolumn'>
 #{optstr}<br/>
@@ -340,8 +340,8 @@ END
 		days = @data.sort.collect{|date| date.date }.uniq
 
 		chosenstr = {
-			"chosen" => _("Chosen"),
-			"notchosen" => _("Not Chosen"),
+			"chosen" => _("Selected"),
+			"notchosen" => _("Not selected"),
 			"disabled" => _("Past")
 		}
 
