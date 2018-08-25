@@ -99,7 +99,7 @@ class TimePollHead
 		parsed_date
 	end
 
-	# returns parsed title or nil in case of colum not changed
+	# returns parsed title or nil in case of column not changed
 	def edit_column(column, newtitle, cgi)
 		if cgi.include?("toggleallon")
 				head_count("%Y-%m-%d",false).each{|day,num|
@@ -125,7 +125,7 @@ class TimePollHead
 	end
 
 	# returns a sorted array, containing the big units and how often each small is in the big one
-	# small and big must be formated for strftime
+	# small and big must be formatted for strftime
 	# ex: head_count("%Y-%m") returns an array like [["2009-03",2],["2009-04",3]]
 	# if notime = true, the time field is stripped out before counting
 	def head_count(elem, notime)

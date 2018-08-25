@@ -51,7 +51,7 @@
 # You have 2 Options: 
 #   1. change logrotate to allow /var/log/apache2/* to be read by apache
 #      (=> change the line »create 640 root adm«)
-#   2. change $conf.errorlog to another file and creat a new rule for logrotate.
+#   2. change $conf.errorlog to another file and create a new rule for logrotate.
 #      DO NOT FORGET TO ADD THE ERROR LOG TO LOGROTATE IF YOU CHANGE THE PATH
 #      TO OTHER THAN /var/log/apache2/* !
 # If you do not know what to do what I am speaking about, just do not uncomment
@@ -59,7 +59,7 @@
 #$conf.errorlog = "/var/log/dudle_error.log"
 #$conf.bugreportmail = "webmaster@yoursite.example.org"
 
-# Send bug reports automatically with the programm “mail”
+# Send bug reports automatically with the program “mail”
 #$conf.auto_send_report = false
 
 # Add the following htmlcode to the startpage.

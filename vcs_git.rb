@@ -42,7 +42,7 @@ class VCS
 	end
 
 	def VCS.revno
-		# there is a bug in git log --format, which supresses the \n on the last line
+		# there is a bug in git log --format, which suppresses the \n on the last line
 		runcmd(GITCMD, "log", "--format=format:x").scan("\n").size + 1
 	end
 

@@ -26,7 +26,7 @@ if __FILE__ == $0
 	puts
 
 	def print_problems(problems)
-		puts "Some problem occured:"
+		puts "Some problem occurred:"
 		print " - "
 		puts problems.collect{|a|
 			a.join("\n   ")
@@ -56,7 +56,7 @@ end
 
 
 unless File.exists?("locale/de/dudle.mo")
-	problems << ["If you want a language other than English, you will need a localization and therefore need ot build the .mo files. Refer the README for details."]
+	problems << ["If you want a language other than English, you will need a localization and therefore need to build the .mo files. Refer the README for details."]
 end
 
 unless File.writable?(".")
@@ -87,7 +87,7 @@ end
 
 rescue Exception => e
 	if problems.empty?
-		puts "Some problem occured. Please contact the developer:"
+		puts "Some problem occurred. Please contact the developer:"
 		pp e
 		puts e.backtrace.join("\n")
 	else
