@@ -1,7 +1,7 @@
 # ######################################################################## #
 # Copyright 2010 Jaromir Dobias                                            #
 #                                                                          #
-# This file is part of dudle.                                              #
+# This file is part of Dudle.                                              #
 #                                                                          #
 # Dudle is free software: you can redistribute it and/or modify it under   #
 # the terms of the GNU Affero General Public License as published by       #
@@ -14,7 +14,7 @@
 # License for more details.                                                #
 #                                                                          #
 # You should have received a copy of the GNU Affero General Public License #
-# along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
+# along with Dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 # ######################################################################## #
 msgid ""
 msgstr ""
@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Pokud narazíte na chybu nebo něco jiného, co vám vadí na této aplikaci, "
 "prosím kontaktujte mne: <a href=\"mailto:"
-"Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20dudle"
+"Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20Dudle"
 "\">kontaktuj mne</a>"
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
@@ -181,10 +181,6 @@ msgstr ""
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Návrat zpět na domovskou stránku dudle a naplánovat nové hlasování"
-
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr ""
@@ -287,10 +283,6 @@ msgstr ""
 #: ../delete_poll.rb:59
 msgid "You can now"
 msgstr ""
-
-#: ../delete_poll.rb:60
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Návrat zpět na domovskou stránku dudle a naplánovat nové hlasování"
 
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
@@ -613,7 +605,7 @@ msgstr ""
 
 #: ../overview.rb:36
 msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Odkaz k dudle hlasování o %{polltitle}"
+msgstr "Odkaz k Dudle hlasování o %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

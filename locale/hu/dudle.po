@@ -1,7 +1,7 @@
 # ###########################################################################
 # Copyright 2011 Gabor Kiss                                                #
 #                                                                          #
-# This file is part of dudle.                                              #
+# This file is part of Dudle.                                              #
 #                                                                          #
 # Dudle is free software: you can redistribute it and/or modify it under   #
 # the terms of the GNU Affero General Public License as published by       #
@@ -59,7 +59,7 @@ msgid ""
 "disturbs you, or have any other feedback."
 msgstr ""
 "Ha bármi hibát, hiányosságot, fennakadást tapasztalsz, jelezd a szerzőnek: "
-"<a href=\"mailto:Benjamin_pont_Kellermann@gmx_pont_németország?subject=dudle"
+"<a href=\"mailto:Benjamin_pont_Kellermann@gmx_pont_németország?subject=Dudle"
 "%20Feedback\">Visszajelzés</a>"
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
@@ -180,10 +180,6 @@ msgstr "Jelszóval védett szavazás!"
 #: ../authorization_required.cgi:43
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "A továbblépéshez add meg a(z) %{user} felhasználó jelszavát!"
-
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Vissza a címlapra. Új szavazás kiírása."
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -460,7 +456,7 @@ msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Hiba történt a dudle futása közben.<br/>Küldj kérlek egy hibajelentést a(z) "
+"Hiba történt a Dudle futása közben.<br/>Küldj kérlek egy hibajelentést a(z) "
 "%{admin} címre, mely tartalmazza a böngésződ és az operációs rendszered "
 "adatait, valamint hogy mit csináltál!"
 

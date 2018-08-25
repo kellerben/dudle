@@ -1,7 +1,7 @@
 # ######################################################################## #
 # Copyright 2009,2010 Benjamin Kellermann                                  #
 #                                                                          #
-# This file is part of dudle.                                              #
+# This file is part of Dudle.                                              #
 #                                                                          #
 # Dudle is free software: you can redistribute it and/or modify it under   #
 # the terms of the GNU Affero General Public License as published by       #
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: ../../\n"
-"X-dudle-Language: Eesti\n"
+"X-Dudle-Language: Eesti\n"
 "X-Generator: Poedit 1.6.10\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -180,10 +180,6 @@ msgstr "See küsitlus on kaitstud parooliga!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Selleks, et minna, sa pead andma parool kasutaja %{user}."
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Tagasi kritseldama kodus ja ajakava uus küsitlus"
-
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Sa pead lubama ise, et pääseda sellele lehele!"
@@ -288,7 +284,7 @@ msgstr "Nüüd saate"
 
 #: ../delete_poll.rb:60
 msgid "Return to Dudle home and schedule a new poll"
-msgstr "Tagasi dudle kodus ja ajakava uus küsitlus"
+msgstr "Tagasi Dudle kodus ja ajakava uus küsitlus"
 
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
@@ -458,7 +454,7 @@ msgstr ""
 
 #: ../error.cgi:51
 msgid "Bug in Dudle"
-msgstr "Viga dudle"
+msgstr "Viga Dudle"
 
 #: ../error.cgi:53
 msgid ""
@@ -625,7 +621,7 @@ msgstr "Külasta küsitlus ise:"
 
 #: ../overview.rb:36
 msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Link dudle küsitluse kohta %{polltitle}"
+msgstr "Link Dudle küsitluse kohta %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

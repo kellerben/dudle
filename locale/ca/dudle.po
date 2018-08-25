@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Si trobes algun error o vols fer una proposta de millora, siusplau fes-m'ho "
 "saber: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
-"subject=Feedback%20to%20dudle\">envia el teu feedback</a>"
+"subject=Feedback%20to%20Dudle\">envia el teu feedback</a>"
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -168,7 +168,7 @@ msgstr "Per continuar, has de definir la contrasenya per al usuari %{user}."
 
 #: ../authorization_required.cgi:53 ../not_found.cgi:37
 msgid "Return to Dudle home and schedule a new poll"
-msgstr "Torna a la pàgina d'inici de dudle i programa una nova Enquesta"
+msgstr "Torna a la pàgina d'inici de Dudle i programa una nova Enquesta"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -274,10 +274,6 @@ msgstr ""
 #: ../delete_poll.rb:59
 msgid "You can now"
 msgstr ""
-
-#: ../delete_poll.rb:60
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Tornar a la pàgina d'inici de dudle i crear una altra enquesta"
 
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
@@ -450,14 +446,14 @@ msgstr ""
 
 #: ../error.cgi:51
 msgid "Bug in Dudle"
-msgstr "Error al dudle"
+msgstr "Error al Dudle"
 
 #: ../error.cgi:53
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Hi ha hagut un error al executar dudle.<br/>Si us plau, envia un informe "
+"Hi ha hagut un error al executar Dudle.<br/>Si us plau, envia un informe "
 "d'error, especificant el teu navegador, sistema operatiu, i el què has fet a "
 "%{admin}."
 

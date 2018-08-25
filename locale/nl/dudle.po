@@ -1,7 +1,7 @@
 # ###########################################################################
 # Copyright 2011 Joeri de Ruiter                                           #
 #                                                                          #
-# This file is part of dudle.                                              #
+# This file is part of Dudle.                                              #
 #                                                                          #
 # Dudle is free software: you can redistribute it and/or modify it under   #
 # the terms of the GNU Affero General Public License as published by       #
@@ -58,7 +58,7 @@ msgid ""
 msgstr ""
 "Als je een fout hebt gevonden of een andere opmerking hebt, laat dit dan "
 "weten:  <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
-"subject=Feedback%20to%20dudle\">geef feedback</a>"
+"subject=Feedback%20to%20Dudle\">geef feedback</a>"
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -184,10 +184,6 @@ msgstr ""
 "Om door te kunnen gaan moet het wachtwoord voor gebruiker %{user} worden "
 "ingevoerd."
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Keer terug naar dudle home en plan een nieuwe Poll"
-
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Je moet je authoriseren om deze pagina te kunnen bekijken!"
@@ -293,7 +289,7 @@ msgstr ""
 
 #: ../delete_poll.rb:60
 msgid "Return to Dudle home and schedule a new poll"
-msgstr "Keer terug naar dudle home en plan een nieuwe poll"
+msgstr "Keer terug naar Dudle home en plan een nieuwe poll"
 
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
@@ -464,14 +460,14 @@ msgstr ""
 
 #: ../error.cgi:51
 msgid "Bug in Dudle"
-msgstr "Fout in dudle"
+msgstr "Fout in Dudle"
 
 #: ../error.cgi:53
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Er is een fout opgetreden tijdens het uitvoeren van dudle.<br/>Stuur "
+"Er is een fout opgetreden tijdens het uitvoeren van Dudle.<br/>Stuur "
 "alsjeblieft een melding hiervan, inclusief je browser, besturingssysteem, en "
 "wat je probeerde naar %{admin}"
 
@@ -635,7 +631,7 @@ msgstr ""
 
 #: ../overview.rb:36
 msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Link naar dudle poll over %{polltitle}"
+msgstr "Link naar Dudle poll over %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

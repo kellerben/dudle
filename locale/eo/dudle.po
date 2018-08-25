@@ -173,10 +173,6 @@ msgstr "Tiu ĉi voĉdonilo estas protektata per pasvorto!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Por antaŭeniĝi necesas enigi pasvorton de uzanto %{user}."
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Reen al Dudl-ĉefpaĝo kaj estigi novan voĉdonadon"
-
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Necesas rajtigi sin por povi atingi tiun paĝon!"

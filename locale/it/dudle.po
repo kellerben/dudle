@@ -1,7 +1,7 @@
 # ###########################################################################
 # Copyright 2011 Eros Pedrini                                              #
 #                                                                          #
-# This file is part of dudle.                                              #
+# This file is part of Dudle.                                              #
 #                                                                          #
 # Dudle is free software: you can redistribute it and/or modify it under   #
 # the terms of the GNU Affero General Public License as published by       #
@@ -58,7 +58,7 @@ msgid ""
 msgstr ""
 "Se trovi degli errori o qualsiasi altra cosa che ti infastidisce, fammelo "
 "sapere: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
-"subject=Feedback%20to%20dudle\">scrivimi</a>"
+"subject=Feedback%20to%20Dudle\">scrivimi</a>"
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -183,10 +183,6 @@ msgstr "Questo Sondaggio è protetto da password!"
 #: ../authorization_required.cgi:43
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Per procedere devi assegnare una password all'utente %{user}."
-
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Ritorna alla pagina principale di Dudle e Programma un nuovo Sondaggio"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"

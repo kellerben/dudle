@@ -268,10 +268,6 @@ msgstr ""
 msgid "You can now"
 msgstr "تستطيع الآن"
 
-#: ../delete_poll.rb:60
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "العودة إلى دادل الاصل وجدولة استطلاع جديد"
-
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
 msgstr "تصفح ويكبيديا"

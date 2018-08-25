@@ -162,10 +162,6 @@ msgstr "Kura hii ya maoni imelindwa na nywila!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Ili kuendelea, una kutoa nywila kwa mtumiaji %{user}."
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Rudi dudle nyumbani na ratiba ya kura ya maoni mpya"
-
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Una kuidhinisha mwenyewe ili upate ukurasa huu!"
@@ -268,9 +264,9 @@ msgstr ""
 msgid "You can now"
 msgstr "Unaweza sasa"
 
-#: ../delete_poll.rb:60
+#: ../authorization_required.cgi:53 ../not_found.cgi:37
 msgid "Return to Dudle home and schedule a new poll"
-msgstr "Rudi dudle nyumbani na ratiba uchaguzi mpya"
+msgstr "Rudi Dudle nyumbani na ratiba ya kura ya maoni mpya"
 
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
@@ -440,14 +436,14 @@ msgstr ""
 
 #: ../error.cgi:51
 msgid "Bug in Dudle"
-msgstr "Mdudu katika dudle"
+msgstr "Mdudu katika Dudle"
 
 #: ../error.cgi:53
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Kosa limetokea wakati wa utekelezaji dudle.<br/>Tafadhali tuma ripoti ya "
+"Kosa limetokea wakati wa utekelezaji Dudle.<br/>Tafadhali tuma ripoti ya "
 "hitilafu, ikiwa ni pamoja na kivinjari wavuti yako, mfumo wa uendeshaji, na "
 "nini alifanya kwa %{admin}."
 
@@ -608,7 +604,7 @@ msgstr "Tembelea uchaguzi mwenyewe:"
 
 #: ../overview.rb:36
 msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Kiungo kwa dudle uchaguzi kuhusu %{polltitle}"
+msgstr "Kiungo kwa Dudle uchaguzi kuhusu %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

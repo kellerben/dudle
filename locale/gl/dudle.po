@@ -47,7 +47,7 @@ msgid ""
 "disturbs you, or have any other feedback."
 msgstr ""
 "Se atopas algún erro ponte en contacto : <a href=\"mailto:"
-"Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20dudle"
+"Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20Dudle"
 "\">enviar correo</a>"
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
@@ -172,10 +172,6 @@ msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 "Para continuar debes proporcionar o contrasinal para a usuaria  %{user}."
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Volver ao inicio de dudle e crear unha nova Enquisa"
-
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Debes autorizarte para acceder a esta páxina!"
@@ -281,7 +277,7 @@ msgstr ""
 
 #: ../delete_poll.rb:60
 msgid "Return to Dudle home and schedule a new poll"
-msgstr "Volver ao inicio de dudle e programar unha nova enquisa"
+msgstr "Volver ao inicio de Dudle e programar unha nova enquisa"
 
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
@@ -452,14 +448,14 @@ msgstr ""
 
 #: ../error.cgi:51
 msgid "Bug in Dudle"
-msgstr "Erro en dudle"
+msgstr "Erro en Dudle"
 
 #: ../error.cgi:53
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Houbo un erro mentres se executaba dudle.<br/>Envía un informe do erro, "
+"Houbo un erro mentres se executaba Dudle.<br/>Envía un informe do erro, "
 "incluíndo o teu navegador, sistema operativo e o que fixeches a %{admin}."
 
 #: ../error.cgi:56
@@ -621,7 +617,7 @@ msgstr "Visitar a enquisa por ti mesmo:"
 
 #: ../overview.rb:36
 msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Enlazar a enquisa dudle  %{polltitle}"
+msgstr "Enlazar a enquisa Dudle %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

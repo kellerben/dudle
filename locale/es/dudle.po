@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Si encuentras algun error o quieres hacer una propuesta de mejora, por favor "
 "contacta conmigo: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
-"subject=Feedback%20to%20dudle\">manda tu feedback</a>"
+"subject=Feedback%20to%20Dudle\">manda tu feedback</a>"
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -169,10 +169,6 @@ msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 "Para continuar, tienes que definir la contraseña para el usuario %{user}."
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Vuelve a la página de inicio de dudle y programa una nueva Encuesta"
-
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Te tienes que identificar para acceder a esta página!"
@@ -280,7 +276,7 @@ msgstr ""
 
 #: ../delete_poll.rb:60
 msgid "Return to Dudle home and schedule a new poll"
-msgstr "Volver a la página de inicio de dudle y crear otra encuesta"
+msgstr "Volver a la página de inicio de Dudle y crear otra encuesta"
 
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
@@ -453,14 +449,14 @@ msgstr ""
 
 #: ../error.cgi:51
 msgid "Bug in Dudle"
-msgstr "Error en dudle"
+msgstr "Error en Dudle"
 
 #: ../error.cgi:53
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Ha ocurrido un error al ejecutar dudle.<br/>Por favor, manda un informe de "
+"Ha ocurrido un error al ejecutar Dudle.<br/>Por favor, manda un informe de "
 "error, indicando tu navegador, sistemas operativo y acción realizada a "
 "%{admin}."
 

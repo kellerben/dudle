@@ -1,7 +1,7 @@
 # ######################################################################## #
 # Copyright 2009,2010 Benjamin Kellermann                                  #
 #                                                                          #
-# This file is part of dudle.                                              #
+# This file is part of Dudle.                                              #
 #                                                                          #
 # Dudle is free software: you can redistribute it and/or modify it under   #
 # the terms of the GNU Affero General Public License as published by       #
@@ -14,7 +14,7 @@
 # License for more details.                                                #
 #                                                                          #
 # You should have received a copy of the GNU Affero General Public License #
-# along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
+# along with Dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 # ######################################################################## #
 msgid ""
 msgstr ""
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: ../..\n"
-"X-dudle-Language: Deutsch\n"
+"X-Dudle-Language: Deutsch\n"
 "X-Generator: Poedit 1.8.11\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -186,10 +186,6 @@ msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 "Um fortzufahren müssen Sie das Passwort für den Benutzer %{user} eingeben."
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Zurück zur dudle Hauptseite um eine neue Umfrage zu erstellen"
-
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Um auf diese Seite zugreifen zu können müssen Sie sich autorisieren!"
@@ -300,7 +296,7 @@ msgstr "Sie können jetzt"
 
 #: ../delete_poll.rb:60
 msgid "Return to Dudle home and schedule a new poll"
-msgstr "Zurück zur dudle Hauptseite um eine neue Umfrage zu erstellen"
+msgstr "Zurück zur Dudle Hauptseite um eine neue Umfrage zu erstellen"
 
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
@@ -380,7 +376,7 @@ msgstr "Beispiele"
 
 #: ../dudle.rb:91
 msgid "About"
-msgstr "Über dudle"
+msgstr "Über Dudle"
 
 #: ../dudle.rb:93
 msgid "Customize"
@@ -470,14 +466,14 @@ msgstr ""
 
 #: ../error.cgi:51
 msgid "Bug in Dudle"
-msgstr "Fehler im dudle"
+msgstr "Fehler im Dudle"
 
 #: ../error.cgi:53
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Während der Ausführung von dudle gab es einen Fehler.<br/>Bitte schicken Sie "
+"Während der Ausführung von Dudle gab es einen Fehler.<br/>Bitte schicken Sie "
 "einen Fehlerbericht in dem Sie den Namen Ihres Browsers, Ihres "
 "Betriebssystems und was Sie gemacht haben angeben an %{admin}."
 

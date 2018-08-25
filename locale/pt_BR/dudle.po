@@ -1,6 +1,6 @@
 # Brazilian Portuguese translation for dudle
 # Copyright (C) 2018 DUDLE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the dudle package.
+# This file is distributed under the same license as the Dudle package.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2018.
 msgid ""
 msgstr ""
@@ -163,10 +163,6 @@ msgstr "Essa enquete está protegida por senha!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Para continuar você deve fornecer a senha para %{user}."
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Voltar ao início do dudle e organizar uma nova enquete"
-
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Você deve se autorizar para poder acessar essa página!"
@@ -271,7 +267,7 @@ msgstr "Agora você pode"
 
 #: ../delete_poll.rb:60
 msgid "Return to Dudle home and schedule a new poll"
-msgstr "Voltar ao início do dudle e organizar uma nova enquete"
+msgstr "Voltar ao início do Dudle e organizar uma nova enquete"
 
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
@@ -444,14 +440,14 @@ msgstr ""
 
 #: ../error.cgi:51
 msgid "Bug in Dudle"
-msgstr "Bug no dudle"
+msgstr "Bug no Dudle"
 
 #: ../error.cgi:53
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Um erro ocorreu ao executar o dudle.<br/>Por favor envie um relatório do "
+"Um erro ocorreu ao executar o Dudle.<br/>Por favor envie um relatório do "
 "erro, incluindo seu navegador, sistema operacional, e o que você estava "
 "fazendo para %{admin}."
 
@@ -613,7 +609,7 @@ msgstr "Visitar a enquete:"
 
 #: ../overview.rb:36
 msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Link à enquete dudle sobre %{polltitle}"
+msgstr "Link à enquete Dudle sobre %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

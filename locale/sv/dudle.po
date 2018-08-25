@@ -1,7 +1,7 @@
 # ######################################################################## #
 # Copyright 2010 Erica Resare <erica.resare@kau.se>                        #
 #                                                                          #
-# This file is part of dudle.                                              #
+# This file is part of Dudle.                                              #
 #                                                                          #
 # Dudle is free software: you can redistribute it and/or modify it under   #
 # the terms of the GNU Affero General Public License as published by       #
@@ -28,7 +28,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-dudle-Language: Svenska\n"
+"X-Dudle-Language: Svenska\n"
 
 #: ../about.cgi:29
 msgid "This application is powered by %{Dudle}."
@@ -58,7 +58,7 @@ msgid ""
 msgstr ""
 "Om du hittar en bugg eller något annat störande, vänligen underrätta mig: <a "
 "href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to"
-"%20dudle\">ge återkoppling</a>"
+"%20Dudle\">ge återkoppling</a>"
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -183,7 +183,7 @@ msgstr ""
 
 #: ../authorization_required.cgi:53 ../not_found.cgi:37
 msgid "Return to Dudle home and schedule a new poll"
-msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
+msgstr "Tillbaka till Dudle hem och skapa en ny omröstning"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -288,10 +288,6 @@ msgstr ""
 #: ../delete_poll.rb:59
 msgid "You can now"
 msgstr ""
-
-#: ../delete_poll.rb:60
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Tillbaka till dudle hem och skapa en ny omröstning"
 
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
@@ -612,7 +608,7 @@ msgstr ""
 
 #: ../overview.rb:36
 msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Länk till dudle omröstning om %{polltitle}"
+msgstr "Länk till Dudle omröstning om %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

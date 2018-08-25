@@ -1,7 +1,7 @@
 # ######################################################################## #
 # Copyright 2011 Eric Seigne, Florent Fourcot, Gilles Seban                #
 #                                                                          #
-# This file is part of dudle.                                              #
+# This file is part of Dudle.                                              #
 #                                                                          #
 # Dudle is free software: you can redistribute it and/or modify it under   #
 # the terms of the GNU Affero General Public License as published by       #
@@ -31,7 +31,7 @@ msgstr ""
 "X-Poedit-Basepath: ../../\n"
 "X-Poedit-Language: French\n"
 "X-Poedit-Country: FRANCE\n"
-"X-dudle-Language: French\n"
+"X-Dudle-Language: French\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: ../about.cgi:29
@@ -63,7 +63,7 @@ msgid ""
 msgstr ""
 "Si vous trouvez un bug ou qu'un truc vous dérange, indiquez-le moi (de "
 "préférence en anglais ou allemand) : <a href=\"mailto:"
-"Benjamin_dot_Kellermann@gmx_in_deutschland?subject=dudle%20Feedback"
+"Benjamin_dot_Kellermann@gmx_in_deutschland?subject=Dudle%20Feedback"
 "\">Feedback</a>"
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
@@ -188,10 +188,6 @@ msgstr "Ce sondage est protégé par un mot de passe !"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 "Vous devez vous identifier avec l'identifiant %{user} avant de continuer."
-
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Retour à la page d'accueil et créer un nouveau sondage"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -460,14 +456,14 @@ msgstr ""
 
 #: ../error.cgi:51
 msgid "Bug in Dudle"
-msgstr "Bug dans dudle"
+msgstr "Bug dans Dudle"
 
 #: ../error.cgi:53
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Une erreur s'est produite durant l'exécution de dudle.<br/>Merci d'envoyer "
+"Une erreur s'est produite durant l'exécution de Dudle.<br/>Merci d'envoyer "
 "une description de l'erreur, contenant votre navigateur, votre système "
 "d'exploitation, et ce que vous avez fait à %{admin} (de préférence en "
 "anglais ou en allemand)."
@@ -636,7 +632,7 @@ msgstr "Aller sur le sondage : "
 
 #: ../overview.rb:36
 msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Lien vers le sondage dudle \"%{polltitle}\""
+msgstr "Lien vers le sondage Dudle \"%{polltitle}\""
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

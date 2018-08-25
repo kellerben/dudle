@@ -159,10 +159,6 @@ msgstr "סקר זה מוגן בססמה!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "כדי להמשיך, עליך לספק את הססמה למשתמש %{user}."
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "יש לחזור לעמוד הבית של dudle כדי לתזמן סקר חדש"
-
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "עליך להזדהות מול המערכת כדי לגשת לעמוד זה!"
@@ -266,7 +262,7 @@ msgstr "כעת ניתן"
 
 #: ../delete_poll.rb:60
 msgid "Return to Dudle home and schedule a new poll"
-msgstr "לחזור לעמוד הבית של dudle ולתזמן סקר חדש"
+msgstr "לחזור לעמוד הבית של Dudle ולתזמן סקר חדש"
 
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
@@ -434,14 +430,14 @@ msgstr ""
 
 #: ../error.cgi:51
 msgid "Bug in Dudle"
-msgstr "באג ב־dudle"
+msgstr "באג ב־Dudle"
 
 #: ../error.cgi:53
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"אירעה שגיאה בעת הפעלת dudle.<br/>נא לשלוח דוח שגיאה, לרבות תיאור הדפדפן, "
+"אירעה שגיאה בעת הפעלת Dudle.<br/>נא לשלוח דוח שגיאה, לרבות תיאור הדפדפן, "
 "מערכת ההפעלה והפעולות שבוצעו מול %{admin}."
 
 #: ../error.cgi:56
@@ -597,7 +593,7 @@ msgstr "ביקור הסקר בעצמך:"
 
 #: ../overview.rb:36
 msgid "Link to Dudle poll about %{polltitle}"
-msgstr "קישור לסקר dudle בנושא %{polltitle}"
+msgstr "קישור לסקר Dudle בנושא %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."
