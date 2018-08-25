@@ -456,7 +456,7 @@ msgstr "Erro en dudle"
 
 #: ../error.cgi:53
 msgid ""
-"An error occured while executing dudle.<br/>Please send an error report, "
+"An error occurred while executing dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
 "Houbo un erro mentres se executaba dudle.<br/>Envía un informe do erro, "

@@ -442,7 +442,7 @@ msgstr "علة في دادل"
 
 #: ../error.cgi:53
 msgid ""
-"An error occured while executing dudle.<br/>Please send an error report, "
+"An error occurred while executing dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr "حدث خطأ أثناء تنفيذ دودل. <br/> الرجاء إرسال تقرير عن الخطأ"
 "بما في ذلك المتصفح ونظام التشغيل وما فعلته في %{admin}"

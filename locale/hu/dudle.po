@@ -457,7 +457,7 @@ msgstr "Dudle hiba"
 
 #: ../error.cgi:53
 msgid ""
-"An error occured while executing dudle.<br/>Please send an error report, "
+"An error occurred while executing dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
 "Hiba történt a dudle futása közben.<br/>Küldj kérlek egy hibajelentést a(z) "

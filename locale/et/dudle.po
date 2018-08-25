@@ -462,7 +462,7 @@ msgstr "Viga dudle"
 
 #: ../error.cgi:53
 msgid ""
-"An error occured while executing dudle.<br/>Please send an error report, "
+"An error occurred while executing dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
 "Tekkis viga täidesaatva kritseldama. <br/>Palun saada veateate:Sealhulgas "
