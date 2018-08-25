@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-23 22:24+0200\n"
+"POT-Creation-Date: 2018-08-25 23:14+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@gmx.de>\n"
 "Language-Team: \n"
@@ -41,10 +41,12 @@ msgstr ""
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
 msgstr ""
 "Källkoden för denna applikation finns tillgänglig under perioden <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
 
 #: ../about.cgi:33
 msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
@@ -53,8 +55,8 @@ msgstr ""
 #: ../about.cgi:35
 #, fuzzy
 msgid ""
-"Please write me an e-mail if you have found a bug, have found something which "
-"disturbs you, or have any other feedback."
+"Please write me an e-mail if you have found a bug, have found something "
+"which disturbs you, or have any other feedback."
 msgstr ""
 "Om du hittar en bugg eller något annat störande, vänligen underrätta mig: <a "
 "href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to"
@@ -130,15 +132,16 @@ msgstr ""
 
 #: ../access_control.rb:193
 msgid ""
-"You will be asked for the password you have entered here after you press save!"
+"You will be asked for the password you have entered here after you press "
+"save!"
 msgstr ""
 "Efter att du har klickat på spara kommer du kommer att frågas efter "
 "lösenordet du nu skrev in! "
 
 #: ../access_control.rb:196
+#, fuzzy
 msgid ""
-"The user ‘admin’ has access to the vote as well as the configuration "
-"interface."
+"The user ‘admin’ has access to both the vote and the configuration interface."
 msgstr ""
 "’Admin’ har access till omröstningen såväl som till gränssnittet för "
 "konfigurering."
@@ -181,7 +184,7 @@ msgstr ""
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
 msgid "Return to Dudle home and schedule a new poll"
 msgstr "Tillbaka till Dudle hem och skapa en ny omröstning"
 
@@ -189,20 +192,15 @@ msgstr "Tillbaka till Dudle hem och skapa en ny omröstning"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr ""
 
-#: ../config.rb:92
-msgid "Event-scheduling poll"
-msgstr "Händelseschema Omröstning"
-
-#: ../config.rb:96
-msgid "Normal poll"
-msgstr "Normal omröstning"
-
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
 msgstr "Administrera Personliga Inställningar"
 
 #: ../customize.cgi:32 ../customize.rb:32
-msgid "You need cookies enabled in order to personalize your settings."
+#, fuzzy
+msgid ""
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"enabled in order to personalize your settings."
 msgstr ""
 "Du behöver aktivera cookies för att kunna personifiera dina inställningar"
 
@@ -354,46 +352,42 @@ msgid "Overview"
 msgstr "Översikt"
 
 #: ../dudle.rb:86
-msgid "Advanced"
-msgstr ""
-
-#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "Radera omröstning"
 
-#: ../dudle.rb:90 ../example.cgi:67
+#: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
 msgstr "Exempel"
 
-#: ../dudle.rb:91
+#: ../dudle.rb:90
 msgid "About"
 msgstr "Om"
 
-#: ../dudle.rb:93
+#: ../dudle.rb:92
 msgid "Customize"
 msgstr "Egna inställningar"
 
-#: ../dudle.rb:101
+#: ../dudle.rb:100
 msgid "Dudle Home"
 msgstr ""
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:207 ../dudle.rb:225
 msgid "Previous"
 msgstr "Föregående"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Next"
 msgstr "Nästa"
 
-#: ../dudle.rb:210 ../dudle.rb:228
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Finish"
 msgstr "Klar"
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Alla ändringar sparades."
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Fortsätt!"
 
@@ -401,11 +395,11 @@ msgstr "Fortsätt!"
 msgid "Add and remove columns"
 msgstr "Lägg till eller ta bort kolumner"
 
-#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
 msgid "Delete column"
 msgstr "Ta bort kolumn"
 
-#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
 msgid "Add column"
 msgstr "Lägg till kolumn"
 
@@ -580,14 +574,14 @@ msgstr ""
 
 #: ../not_found.cgi:35
 msgid ""
-"The Poll was deleted by the administrator because it was not accessed for a "
+"The poll was deleted by the administrator because it was not accessed for a "
 "long time."
 msgstr ""
 
 #: ../not_found.cgi:36
 msgid ""
-"If you think, the deletion was done by error, please contact the "
-"adminsistrator of the system."
+"If you think that the deletion was done in error, please contact the "
+"administrator of the system."
 msgstr ""
 
 #: ../overview.rb:31
@@ -746,15 +740,15 @@ msgstr "Förhandsgranska"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all the options (columns) which you want the participants of the poll to choose among. "
-"For each option you give here, the participants will choose a "
-"vote."
+"Enter all the options (columns) which you want the participants of the poll "
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
 msgstr ""
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string "
-"here (e.&thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "Lägg till fler tider än standardtiderna (t ex 09:30, morgon, eftermiddag)"
 
@@ -770,49 +764,55 @@ msgstr "Tidigare"
 msgid "Later"
 msgstr "Senare"
 
-#: ../timepollhead.rb:264
+#: ../timepollhead.rb:265
 msgid "Click on the dates to add or remove columns."
 msgstr "Klicka på datumen för att lägga till eller ta bort kolumner."
 
-#: ../timepollhead.rb:312
+#: ../timepollhead.rb:313
 msgid "Optional:"
 msgstr "Valfri:"
 
-#: ../timepollhead.rb:313
+#: ../timepollhead.rb:314
 msgid "Select specific start times."
 msgstr "Ange en giltig starttid."
 
-#: ../timepollhead.rb:329
+#: ../timepollhead.rb:330
 msgid "Time"
 msgstr "Tid"
 
-#: ../timepollhead.rb:342
+#: ../timepollhead.rb:343
 msgid "Selected"
 msgstr "Vald"
 
-#: ../timepollhead.rb:343
+#: ../timepollhead.rb:344
 msgid "Not selected"
 msgstr "Inte vald"
 
-#: ../timepollhead.rb:344
+#: ../timepollhead.rb:345
 msgid "Past"
 msgstr "Efter"
 
-#: ../timepollhead.rb:378
+#: ../timepollhead.rb:379
 msgid "Select the whole row"
 msgstr ""
 
-#: ../timepollhead.rb:383
+#: ../timepollhead.rb:384
 msgid "Deselect the whole row"
 msgstr ""
 
-#: ../timepollhead.rb:427
+#: ../timepollhead.rb:428
 msgid "Add"
 msgstr "Lägg till"
 
-#: ../timepollhead.rb:428
+#: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "t ex 09:30, morgon, eftermiddag"
+
+#~ msgid "Event-scheduling poll"
+#~ msgstr "Händelseschema Omröstning"
+
+#~ msgid "Normal poll"
+#~ msgstr "Normal omröstning"
 
 #~ msgid "Things you can do now are"
 #~ msgstr "Vad du kan göra nu är"

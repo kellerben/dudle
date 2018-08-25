@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-23 22:24+0200\n"
+"POT-Creation-Date: 2018-08-25 23:14+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@gmx.de>\n"
 "Language-Team: \n"
@@ -42,7 +42,8 @@ msgstr ""
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
 msgstr ""
 "Zdrojový kód této aplikace je dostupný pod licencí <a href='http://www.fsf."
 "org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
@@ -54,8 +55,8 @@ msgstr ""
 #: ../about.cgi:35
 #, fuzzy
 msgid ""
-"Please write me an e-mail if you have found a bug, have found something which "
-"disturbs you, or have any other feedback."
+"Please write me an e-mail if you have found a bug, have found something "
+"which disturbs you, or have any other feedback."
 msgstr ""
 "Pokud narazíte na chybu nebo něco jiného, co vám vadí na této aplikaci, "
 "prosím kontaktujte mne: <a href=\"mailto:"
@@ -134,13 +135,14 @@ msgstr ""
 
 #: ../access_control.rb:193
 msgid ""
-"You will be asked for the password you have entered here after you press save!"
+"You will be asked for the password you have entered here after you press "
+"save!"
 msgstr "Bude očekáváno vložení hesla po stisknutí tlačítka ulož!"
 
 #: ../access_control.rb:196
+#, fuzzy
 msgid ""
-"The user ‘admin’ has access to the vote as well as the configuration "
-"interface."
+"The user ‘admin’ has access to both the vote and the configuration interface."
 msgstr "Uživatel ‘admin’ má přístup k hlasu a také ke konfiguračnímu rozhraní."
 
 #: ../access_control.rb:202
@@ -181,24 +183,23 @@ msgstr ""
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+msgid "Return to Dudle home and schedule a new poll"
+msgstr ""
+
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr ""
-
-#: ../config.rb:92
-msgid "Event-scheduling poll"
-msgstr "Hlasování Plánu Události"
-
-#: ../config.rb:96
-msgid "Normal poll"
-msgstr "Normální Hlasování"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
 msgstr "Upravte své osobní nastavení"
 
 #: ../customize.cgi:32 ../customize.rb:32
-msgid "You need cookies enabled in order to personalize your settings."
+#, fuzzy
+msgid ""
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"enabled in order to personalize your settings."
 msgstr ""
 "Pro použití osobního nastavení je nutno povolit v prohlížeči použití cookies."
 
@@ -351,46 +352,42 @@ msgid "Overview"
 msgstr "Přehled"
 
 #: ../dudle.rb:86
-msgid "Advanced"
-msgstr ""
-
-#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "Smazat hlasování"
 
-#: ../dudle.rb:90 ../example.cgi:67
+#: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
 msgstr "Příklady"
 
-#: ../dudle.rb:91
+#: ../dudle.rb:90
 msgid "About"
 msgstr "O aplikaci"
 
-#: ../dudle.rb:93
+#: ../dudle.rb:92
 msgid "Customize"
 msgstr "Přizpůsobit"
 
-#: ../dudle.rb:101
+#: ../dudle.rb:100
 msgid "Dudle Home"
 msgstr ""
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:207 ../dudle.rb:225
 msgid "Previous"
 msgstr "Předchozí"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Next"
 msgstr "Následující"
 
-#: ../dudle.rb:210 ../dudle.rb:228
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Finish"
 msgstr "Dokončit"
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Všechny změny byly úspěšně uloženy."
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Vykonat!"
 
@@ -398,11 +395,11 @@ msgstr "Vykonat!"
 msgid "Add and remove columns"
 msgstr "Přidat a Odebrat Sloupce"
 
-#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
 msgid "Delete column"
 msgstr "Vymaž sloupec"
 
-#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
 msgid "Add column"
 msgstr "Přidej sloupec"
 
@@ -577,14 +574,14 @@ msgstr ""
 
 #: ../not_found.cgi:35
 msgid ""
-"The Poll was deleted by the administrator because it was not accessed for a "
+"The poll was deleted by the administrator because it was not accessed for a "
 "long time."
 msgstr ""
 
 #: ../not_found.cgi:36
 msgid ""
-"If you think, the deletion was done by error, please contact the "
-"adminsistrator of the system."
+"If you think that the deletion was done in error, please contact the "
+"administrator of the system."
 msgstr ""
 
 #: ../overview.rb:31
@@ -743,15 +740,15 @@ msgstr "Náhled"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all the options (columns) which you want the participants of the poll to choose among. "
-"For each option you give here, the participants will choose a "
-"vote."
+"Enter all the options (columns) which you want the participants of the poll "
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
 msgstr ""
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string "
-"here (e.&thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "Pro přidání jiné než implicitní hodnoty času zde prosím zadejte patřičný "
 "časový údaj (např., 09:30, ráno, odpoledne)."
@@ -768,49 +765,55 @@ msgstr "Dříve"
 msgid "Later"
 msgstr "Později"
 
-#: ../timepollhead.rb:264
+#: ../timepollhead.rb:265
 msgid "Click on the dates to add or remove columns."
 msgstr "Pro přidání nebo odebrání sloupce klikněte na datum."
 
-#: ../timepollhead.rb:312
+#: ../timepollhead.rb:313
 msgid "Optional:"
 msgstr "Volitelné:"
 
-#: ../timepollhead.rb:313
+#: ../timepollhead.rb:314
 msgid "Select specific start times."
 msgstr "Vložte"
 
-#: ../timepollhead.rb:329
+#: ../timepollhead.rb:330
 msgid "Time"
 msgstr "Čas"
 
-#: ../timepollhead.rb:342
+#: ../timepollhead.rb:343
 msgid "Selected"
 msgstr "Vybráno"
 
-#: ../timepollhead.rb:343
+#: ../timepollhead.rb:344
 msgid "Not selected"
 msgstr "Nevybráno"
 
-#: ../timepollhead.rb:344
+#: ../timepollhead.rb:345
 msgid "Past"
 msgstr "Předchozí"
 
-#: ../timepollhead.rb:378
+#: ../timepollhead.rb:379
 msgid "Select the whole row"
 msgstr ""
 
-#: ../timepollhead.rb:383
+#: ../timepollhead.rb:384
 msgid "Deselect the whole row"
 msgstr ""
 
-#: ../timepollhead.rb:427
+#: ../timepollhead.rb:428
 msgid "Add"
 msgstr "Přidat"
 
-#: ../timepollhead.rb:428
+#: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "např. 09:30, ráno, odpoledne"
+
+#~ msgid "Event-scheduling poll"
+#~ msgstr "Hlasování Plánu Události"
+
+#~ msgid "Normal poll"
+#~ msgstr "Normální Hlasování"
 
 #~ msgid "Things you can do now are"
 #~ msgstr "Věci, které nyní můžeš dělat jsou"

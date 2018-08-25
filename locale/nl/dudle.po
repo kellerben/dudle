@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-23 22:24+0200\n"
+"POT-Creation-Date: 2018-08-25 23:14+0200\n"
 "PO-Revision-Date: 2011-05-11 13:46+0100\n"
 "Last-Translator: Joeri de Ruiter <joeri@cs.ru.nl>\n"
 "Language-Team: \n"
@@ -40,7 +40,8 @@ msgstr ""
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
 msgstr ""
 "De broncode van deze applicatie is verkrijgbaar onder de voorwaarden van <a "
 "href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Versie 3</"
@@ -53,8 +54,8 @@ msgstr ""
 #: ../about.cgi:35
 #, fuzzy
 msgid ""
-"Please write me an e-mail if you have found a bug, have found something which "
-"disturbs you, or have any other feedback."
+"Please write me an e-mail if you have found a bug, have found something "
+"which disturbs you, or have any other feedback."
 msgstr ""
 "Als je een fout hebt gevonden of een andere opmerking hebt, laat dit dan "
 "weten:  <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
@@ -133,14 +134,15 @@ msgstr ""
 
 #: ../access_control.rb:193
 msgid ""
-"You will be asked for the password you have entered here after you press save!"
+"You will be asked for the password you have entered here after you press "
+"save!"
 msgstr ""
 "Na het klikken op 'Opslaan' zal om het ingevoerde wachtwoord worden gevraagd."
 
 #: ../access_control.rb:196
+#, fuzzy
 msgid ""
-"The user ‘admin’ has access to the vote as well as the configuration "
-"interface."
+"The user ‘admin’ has access to both the vote and the configuration interface."
 msgstr ""
 "De gebruiker 'admin' heeft toegang tot de stem en configuratie interfaces."
 
@@ -184,24 +186,23 @@ msgstr ""
 "Om door te kunnen gaan moet het wachtwoord voor gebruiker %{user} worden "
 "ingevoerd."
 
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+msgid "Return to Dudle home and schedule a new poll"
+msgstr "Keer terug naar Dudle home en plan een nieuwe poll"
+
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Je moet je authoriseren om deze pagina te kunnen bekijken!"
-
-#: ../config.rb:92
-msgid "Event-scheduling poll"
-msgstr ""
-
-#: ../config.rb:96
-msgid "Normal poll"
-msgstr ""
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
 msgstr "Wijzig Persoonlijke Instellingen"
 
 #: ../customize.cgi:32 ../customize.rb:32
-msgid "You need cookies enabled in order to personalize your settings."
+#, fuzzy
+msgid ""
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"enabled in order to personalize your settings."
 msgstr "Cookies moeten aanstaan om je instellingen aan te passen."
 
 #: ../customize.cgi:39 ../customize.rb:39
@@ -287,10 +288,6 @@ msgstr ""
 msgid "You can now"
 msgstr ""
 
-#: ../delete_poll.rb:60
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Keer terug naar Dudle home en plan een nieuwe poll"
-
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
 msgstr "Browse Wikipedia"
@@ -357,46 +354,42 @@ msgid "Overview"
 msgstr "Overzicht"
 
 #: ../dudle.rb:86
-msgid "Advanced"
-msgstr ""
-
-#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "Verwijder Poll"
 
-#: ../dudle.rb:90 ../example.cgi:67
+#: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
 msgstr "Voorbeelden"
 
-#: ../dudle.rb:91
+#: ../dudle.rb:90
 msgid "About"
 msgstr "Over"
 
-#: ../dudle.rb:93
+#: ../dudle.rb:92
 msgid "Customize"
 msgstr "Aanpassen"
 
-#: ../dudle.rb:101
+#: ../dudle.rb:100
 msgid "Dudle Home"
 msgstr "Dudle Home"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:207 ../dudle.rb:225
 msgid "Previous"
 msgstr "Vorige"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Next"
 msgstr "Volgende"
 
-#: ../dudle.rb:210 ../dudle.rb:228
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Finish"
 msgstr "Afronden"
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Alle wijzigingen zijn succesvol opgeslagen."
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Doorgaan!"
 
@@ -404,11 +397,11 @@ msgstr "Doorgaan!"
 msgid "Add and remove columns"
 msgstr "Voeg toe / Verwijder Kolommen"
 
-#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
 msgid "Delete column"
 msgstr "Verwijder kolom"
 
-#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
 msgid "Add column"
 msgstr "Voeg kolom toe"
 
@@ -598,17 +591,19 @@ msgstr ""
 "Iemand heeft op “Verwijder Poll” geklikt en de poll handmatig verwijderd."
 
 #: ../not_found.cgi:35
+#, fuzzy
 msgid ""
-"The Poll was deleted by the administrator because it was not accessed for a "
+"The poll was deleted by the administrator because it was not accessed for a "
 "long time."
 msgstr ""
 "De Poll was verwijderd door een beheerder omdat de Poll lange tijd niet meer "
 "was bezocht."
 
 #: ../not_found.cgi:36
+#, fuzzy
 msgid ""
-"If you think, the deletion was done by error, please contact the "
-"adminsistrator of the system."
+"If you think that the deletion was done in error, please contact the "
+"administrator of the system."
 msgstr ""
 "Als u denkt dat deze verwijdering per ongeluk is gedaan, neem dan contact op "
 "met de beheerder van het systeem."
@@ -768,17 +763,17 @@ msgstr "Voorbeeld"
 #: ../pollhead.rb:103
 #, fuzzy
 msgid ""
-"Enter all the options (columns) which you want the participants of the poll to choose among. "
-"For each option you give here, the participants will choose a "
-"vote."
+"Enter all the options (columns) which you want the participants of the poll "
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
 msgstr ""
 "Voer alle alternatieven (kolommen) in die je de deelnemers van de poll wilt "
 "vragen. De deelnemers geven een aparte stem voor elk van deze alternatieven."
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string "
-"here (e.&thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "Om een andere tijd toe te voegen dan de standaard tijden, voer hier tekst in "
 "(bijvoorbeeld 09:30, ochtend, middag)."
@@ -795,47 +790,47 @@ msgstr "Vroeger"
 msgid "Later"
 msgstr "Later"
 
-#: ../timepollhead.rb:264
+#: ../timepollhead.rb:265
 msgid "Click on the dates to add or remove columns."
 msgstr "Klik op de data om kolommen toe te voegen of te verwijderen."
 
-#: ../timepollhead.rb:312
+#: ../timepollhead.rb:313
 msgid "Optional:"
 msgstr "Optioneel:"
 
-#: ../timepollhead.rb:313
+#: ../timepollhead.rb:314
 msgid "Select specific start times."
 msgstr "Voer een concrete waarde in als start tijd."
 
-#: ../timepollhead.rb:329
+#: ../timepollhead.rb:330
 msgid "Time"
 msgstr "Tijd"
 
-#: ../timepollhead.rb:342
+#: ../timepollhead.rb:343
 msgid "Selected"
 msgstr "Gekozen"
 
-#: ../timepollhead.rb:343
+#: ../timepollhead.rb:344
 msgid "Not selected"
 msgstr "Niet Gekozen"
 
-#: ../timepollhead.rb:344
+#: ../timepollhead.rb:345
 msgid "Past"
 msgstr "Voorbij"
 
-#: ../timepollhead.rb:378
+#: ../timepollhead.rb:379
 msgid "Select the whole row"
 msgstr "Selecteer de volledige rij"
 
-#: ../timepollhead.rb:383
+#: ../timepollhead.rb:384
 msgid "Deselect the whole row"
 msgstr "Deselecteer de volledige rij"
 
-#: ../timepollhead.rb:427
+#: ../timepollhead.rb:428
 msgid "Add"
 msgstr "Voeg toe"
 
-#: ../timepollhead.rb:428
+#: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "bijvoorbeeld 09:30, ochtend, middag"
 

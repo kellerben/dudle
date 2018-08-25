@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-23 22:24+0200\n"
+"POT-Creation-Date: 2018-08-25 23:14+0200\n"
 "PO-Revision-Date: 2011-05-10 07:31+0200\n"
 "Last-Translator: Eros Pedrini\n"
 "Language-Team: \n"
@@ -40,7 +40,8 @@ msgstr ""
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
 msgstr ""
 "Il codice sorgente di questa applicazione è reso disponibile secondo i "
 "termini della licenza <a href='http://www.fsf.org/licensing/licenses/"
@@ -53,8 +54,8 @@ msgstr ""
 #: ../about.cgi:35
 #, fuzzy
 msgid ""
-"Please write me an e-mail if you have found a bug, have found something which "
-"disturbs you, or have any other feedback."
+"Please write me an e-mail if you have found a bug, have found something "
+"which disturbs you, or have any other feedback."
 msgstr ""
 "Se trovi degli errori o qualsiasi altra cosa che ti infastidisce, fammelo "
 "sapere: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
@@ -132,15 +133,16 @@ msgstr ""
 
 #: ../access_control.rb:193
 msgid ""
-"You will be asked for the password you have entered here after you press save!"
+"You will be asked for the password you have entered here after you press "
+"save!"
 msgstr ""
 "La password che hai inserito qui, ti verrà richiesta dopo che hai premuto "
 "Salva!"
 
 #: ../access_control.rb:196
+#, fuzzy
 msgid ""
-"The user ‘admin’ has access to the vote as well as the configuration "
-"interface."
+"The user ‘admin’ has access to both the vote and the configuration interface."
 msgstr ""
 "L'utente ‘amministratore’ ha accesso all'interfaccia di votazione e "
 "all'interfaccia di configurazione."
@@ -184,24 +186,23 @@ msgstr "Questo Sondaggio è protetto da password!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Per procedere devi assegnare una password all'utente %{user}."
 
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+msgid "Return to Dudle home and schedule a new poll"
+msgstr "Ritorna alla pagina principale di Dudle e Programma un nuovo Sondaggio"
+
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Devi essere autorizzato per accedere a questa pagina!"
-
-#: ../config.rb:92
-msgid "Event-scheduling poll"
-msgstr ""
-
-#: ../config.rb:96
-msgid "Normal poll"
-msgstr ""
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
 msgstr "Modifica le Impostazione Personali"
 
 #: ../customize.cgi:32 ../customize.rb:32
-msgid "You need cookies enabled in order to personalize your settings."
+#, fuzzy
+msgid ""
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"enabled in order to personalize your settings."
 msgstr ""
 "Devi avere il supporto ai cookie abilitato nel tuo browser per "
 "personalizzare le tue impostazioni."
@@ -289,10 +290,6 @@ msgstr ""
 msgid "You can now"
 msgstr ""
 
-#: ../delete_poll.rb:60
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Ritorna alla pagina principale di Dudle e Programma un nuovo Sondaggio"
-
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
 msgstr "Vai su Wikipedia"
@@ -359,46 +356,42 @@ msgid "Overview"
 msgstr "Panoramica"
 
 #: ../dudle.rb:86
-msgid "Advanced"
-msgstr ""
-
-#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "Elimina il Sondaggio"
 
-#: ../dudle.rb:90 ../example.cgi:67
+#: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
 msgstr "Esempi"
 
-#: ../dudle.rb:91
+#: ../dudle.rb:90
 msgid "About"
 msgstr "Informazioni su"
 
-#: ../dudle.rb:93
+#: ../dudle.rb:92
 msgid "Customize"
 msgstr "Personalizza"
 
-#: ../dudle.rb:101
+#: ../dudle.rb:100
 msgid "Dudle Home"
 msgstr "Pagina Principale di Dudle"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:207 ../dudle.rb:225
 msgid "Previous"
 msgstr "Precedente"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Next"
 msgstr "Successivo"
 
-#: ../dudle.rb:210 ../dudle.rb:228
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Finish"
 msgstr "Fine"
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Tutti i cambiamenti sono stati salvati."
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Procedi!"
 
@@ -406,11 +399,11 @@ msgstr "Procedi!"
 msgid "Add and remove columns"
 msgstr "Aggiungi e Rimuovi Colonne"
 
-#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
 msgid "Delete column"
 msgstr "Elimina Colonna"
 
-#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
 msgid "Add column"
 msgstr "Aggiungi Colonna"
 
@@ -604,17 +597,19 @@ msgstr ""
 "manualmente."
 
 #: ../not_found.cgi:35
+#, fuzzy
 msgid ""
-"The Poll was deleted by the administrator because it was not accessed for a "
+"The poll was deleted by the administrator because it was not accessed for a "
 "long time."
 msgstr ""
 "Il Sondaggio è stato eliminato dall'amministratore poiché nessuno vi "
 "accedeva da molto tempo."
 
 #: ../not_found.cgi:36
+#, fuzzy
 msgid ""
-"If you think, the deletion was done by error, please contact the "
-"adminsistrator of the system."
+"If you think that the deletion was done in error, please contact the "
+"administrator of the system."
 msgstr ""
 "Se credi che l'eliminazione sia stata accidentale, puoi contattare "
 "l'amministratore del servizio."
@@ -774,9 +769,9 @@ msgstr "Anteprima"
 #: ../pollhead.rb:103
 #, fuzzy
 msgid ""
-"Enter all the options (columns) which you want the participants of the poll to choose among. "
-"For each option you give here, the participants will choose a "
-"vote."
+"Enter all the options (columns) which you want the participants of the poll "
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
 msgstr ""
 "Inserisci tutte le possibilità (colonne) che vuoi chiedere ai partecipanti "
 "al sondaggio. I partecipanti potranno dare un voto per ogni possibilità che "
@@ -784,8 +779,8 @@ msgstr ""
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string "
-"here (e.&thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "Per aggiungere altri orari diversi da quello predefinito, inseriscili qui (e."
 "&thinsp;g., 09:30, mattina, pomeriggio)."
@@ -802,48 +797,48 @@ msgstr "Prima"
 msgid "Later"
 msgstr "Più Tardi"
 
-#: ../timepollhead.rb:264
+#: ../timepollhead.rb:265
 msgid "Click on the dates to add or remove columns."
 msgstr "Seleziona le date per aggiungere o rimuovere le colonne."
 
-#: ../timepollhead.rb:312
+#: ../timepollhead.rb:313
 #, fuzzy
 msgid "Optional:"
 msgstr "Modifica Colonna"
 
-#: ../timepollhead.rb:313
+#: ../timepollhead.rb:314
 msgid "Select specific start times."
 msgstr "Inserisci una valore corretto come orario iniziale."
 
-#: ../timepollhead.rb:329
+#: ../timepollhead.rb:330
 msgid "Time"
 msgstr "Ora"
 
-#: ../timepollhead.rb:342
+#: ../timepollhead.rb:343
 msgid "Selected"
 msgstr "Scelto"
 
-#: ../timepollhead.rb:343
+#: ../timepollhead.rb:344
 msgid "Not selected"
 msgstr "Non Scelto"
 
-#: ../timepollhead.rb:344
+#: ../timepollhead.rb:345
 msgid "Past"
 msgstr "Passato"
 
-#: ../timepollhead.rb:378
+#: ../timepollhead.rb:379
 msgid "Select the whole row"
 msgstr "Seleziona l'intera riga"
 
-#: ../timepollhead.rb:383
+#: ../timepollhead.rb:384
 msgid "Deselect the whole row"
 msgstr "Deseleziona l'intera riga"
 
-#: ../timepollhead.rb:427
+#: ../timepollhead.rb:428
 msgid "Add"
 msgstr "Aggiungi"
 
-#: ../timepollhead.rb:428
+#: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "e.&thinsp;g., 09:30, mattina, pomeriggio"
 

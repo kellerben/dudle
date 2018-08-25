@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 510\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-23 22:24+0200\n"
+"POT-Creation-Date: 2018-08-25 23:14+0200\n"
 "PO-Revision-Date: 2011-07-04 06:55+0200\n"
 "Last-Translator: Gabor Kiss <kissg@ssg.ki.iif.hu>\n"
 "Language-Team: \n"
@@ -43,7 +43,8 @@ msgstr ""
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
 msgstr ""
 "Ezen program forráskódja hozzáférhető az <a href='http://www.fsf.org/"
 "licensing/licenses/agpl-3.0.html'>AGPLv3</a> alapján."
@@ -55,8 +56,8 @@ msgstr ""
 #: ../about.cgi:35
 #, fuzzy
 msgid ""
-"Please write me an e-mail if you have found a bug, have found something which "
-"disturbs you, or have any other feedback."
+"Please write me an e-mail if you have found a bug, have found something "
+"which disturbs you, or have any other feedback."
 msgstr ""
 "Ha bármi hibát, hiányosságot, fennakadást tapasztalsz, jelezd a szerzőnek: "
 "<a href=\"mailto:Benjamin_pont_Kellermann@gmx_pont_németország?subject=Dudle"
@@ -133,13 +134,14 @@ msgstr ""
 
 #: ../access_control.rb:193
 msgid ""
-"You will be asked for the password you have entered here after you press save!"
+"You will be asked for the password you have entered here after you press "
+"save!"
 msgstr "A „Mentés” megnyomása után meg kell adnod a jelszót."
 
 #: ../access_control.rb:196
+#, fuzzy
 msgid ""
-"The user ‘admin’ has access to the vote as well as the configuration "
-"interface."
+"The user ‘admin’ has access to both the vote and the configuration interface."
 msgstr ""
 "Az ’admin’ felhasználó a szavazáshoz és a konfiguráló felülethez is hozzáfér."
 
@@ -181,24 +183,23 @@ msgstr "Jelszóval védett szavazás!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "A továbblépéshez add meg a(z) %{user} felhasználó jelszavát!"
 
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+msgid "Return to Dudle home and schedule a new poll"
+msgstr "Térj vissza a címlapra, hozz létre új szavazást"
+
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Az oldal csak azonosítás után érhető el!"
-
-#: ../config.rb:92
-msgid "Event-scheduling poll"
-msgstr "Időpontválasztás"
-
-#: ../config.rb:96
-msgid "Normal poll"
-msgstr "Normál szavazás"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
 msgstr "Személyre szabás"
 
 #: ../customize.cgi:32 ../customize.rb:32
-msgid "You need cookies enabled in order to personalize your settings."
+#, fuzzy
+msgid ""
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"enabled in order to personalize your settings."
 msgstr ""
 "Engedélyezd a sütiket a böngésződben, hogy megmaradjanak a személyes "
 "beállításaid!"
@@ -287,10 +288,6 @@ msgstr ""
 msgid "You can now"
 msgstr ""
 
-#: ../delete_poll.rb:60
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Térj vissza a címlapra, hozz létre új szavazást"
-
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
 msgstr "Nézelődj a Wikipédiában"
@@ -357,46 +354,42 @@ msgid "Overview"
 msgstr "Végső teendők"
 
 #: ../dudle.rb:86
-msgid "Advanced"
-msgstr ""
-
-#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "Szavazás törlése"
 
-#: ../dudle.rb:90 ../example.cgi:67
+#: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
 msgstr "Példák"
 
-#: ../dudle.rb:91
+#: ../dudle.rb:90
 msgid "About"
 msgstr "A programról"
 
-#: ../dudle.rb:93
+#: ../dudle.rb:92
 msgid "Customize"
 msgstr "Személyes beállítások"
 
-#: ../dudle.rb:101
+#: ../dudle.rb:100
 msgid "Dudle Home"
 msgstr "Címlap"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:207 ../dudle.rb:225
 msgid "Previous"
 msgstr "Vissza"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Next"
 msgstr "Tovább"
 
-#: ../dudle.rb:210 ../dudle.rb:228
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Finish"
 msgstr "Befejezés"
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "A változtatások elmentve."
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Végrehajtás"
 
@@ -404,11 +397,11 @@ msgstr "Végrehajtás"
 msgid "Add and remove columns"
 msgstr "Oszlopok hozzáadása és törlése"
 
-#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
 msgid "Delete column"
 msgstr "Oszlop törlése"
 
-#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
 msgid "Add column"
 msgstr "Új oszlop"
 
@@ -584,16 +577,18 @@ msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
 msgstr "Valaki a „Törlés” linkre kattintott, és kitörölte a szavazást."
 
 #: ../not_found.cgi:35
+#, fuzzy
 msgid ""
-"The Poll was deleted by the administrator because it was not accessed for a "
+"The poll was deleted by the administrator because it was not accessed for a "
 "long time."
 msgstr ""
 "A szavazást az adminisztrátor törölte, mert már régóta nem nézett rá senki."
 
 #: ../not_found.cgi:36
+#, fuzzy
 msgid ""
-"If you think, the deletion was done by error, please contact the "
-"adminsistrator of the system."
+"If you think that the deletion was done in error, please contact the "
+"administrator of the system."
 msgstr ""
 "Ha szerinted valami hiba történt, lépj kapcsolatba az adminisztrátorral!"
 
@@ -747,17 +742,17 @@ msgstr "Előnézet"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all the options (columns) which you want the participants of the poll to choose among. "
-"For each option you give here, the participants will choose a "
-"vote."
+"Enter all the options (columns) which you want the participants of the poll "
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
 msgstr ""
 "Add meg az összes lehetőséget (oszlopot), melyre a résztvevők szavazhatnak! "
 "(Mindegyikre a többitől függetlenül lehet szavazni.)"
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string "
-"here (e.&thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "A szokásostól eltérő sorok hozzáadásához írj be valamilyen szöveget a fenti "
 "mezőbe! (Pl. 09:30, reggel, délután)"
@@ -774,49 +769,55 @@ msgstr "Korábbi"
 msgid "Later"
 msgstr "Későbbi"
 
-#: ../timepollhead.rb:264
+#: ../timepollhead.rb:265
 msgid "Click on the dates to add or remove columns."
 msgstr "Kattints a dátumokra oszlopok hozzáadása vagy törlése céljából!"
 
-#: ../timepollhead.rb:312
+#: ../timepollhead.rb:313
 msgid "Optional:"
 msgstr "Esetlegesen:"
 
-#: ../timepollhead.rb:313
+#: ../timepollhead.rb:314
 msgid "Select specific start times."
 msgstr "Adj meg egy konkrét kezdőidőt!"
 
-#: ../timepollhead.rb:329
+#: ../timepollhead.rb:330
 msgid "Time"
 msgstr "Idő"
 
-#: ../timepollhead.rb:342
+#: ../timepollhead.rb:343
 msgid "Selected"
 msgstr "Kiválasztva"
 
-#: ../timepollhead.rb:343
+#: ../timepollhead.rb:344
 msgid "Not selected"
 msgstr "Elvetve"
 
-#: ../timepollhead.rb:344
+#: ../timepollhead.rb:345
 msgid "Past"
 msgstr "Elmúlt"
 
-#: ../timepollhead.rb:378
+#: ../timepollhead.rb:379
 msgid "Select the whole row"
 msgstr "Sor kijelölése"
 
-#: ../timepollhead.rb:383
+#: ../timepollhead.rb:384
 msgid "Deselect the whole row"
 msgstr "Kijelölés törlése (sor)"
 
-#: ../timepollhead.rb:427
+#: ../timepollhead.rb:428
 msgid "Add"
 msgstr "Hozzáadás"
 
-#: ../timepollhead.rb:428
+#: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "pl. 09:30, reggel, délután"
+
+#~ msgid "Event-scheduling poll"
+#~ msgstr "Időpontválasztás"
+
+#~ msgid "Normal poll"
+#~ msgstr "Normál szavazás"
 
 #~ msgid "Things you can do now are"
 #~ msgstr "Milyen lehetőségeid vannak?"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-23 22:24+0200\n"
+"POT-Creation-Date: 2018-08-25 23:14+0200\n"
 "PO-Revision-Date: 2017-04-23 16:04+0200\n"
 "Last-Translator: Rudolf <rudolf.maurer@googlemail.com>\n"
 "Language-Team: not a native speaker...\n"
@@ -28,7 +28,8 @@ msgstr "Lisens"
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
 msgstr ""
 "Kildekoden til denne applikasjonen er tilgjengelig under betingelsene til <a "
 "href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Versjon 3</a>"
@@ -39,8 +40,8 @@ msgstr "Kildekoden for denne applikasjonen finnes %{a_start}her%{a_end}."
 
 #: ../about.cgi:35
 msgid ""
-"Please write me an e-mail if you have found a bug, have found something which "
-"disturbs you, or have any other feedback."
+"Please write me an e-mail if you have found a bug, have found something "
+"which disturbs you, or have any other feedback."
 msgstr ""
 "Send meg en epost i tilfelle du har funnet feil, noe plager deg eller for en "
 "generell tilbakemelding."
@@ -114,13 +115,14 @@ msgstr "Alle brukere må fjernes før adgangsinstillinger kan slås av."
 
 #: ../access_control.rb:193
 msgid ""
-"You will be asked for the password you have entered here after you press save!"
+"You will be asked for the password you have entered here after you press "
+"save!"
 msgstr "Du blir spurt om passordet du har angitt her når du trykker på lagre!"
 
 #: ../access_control.rb:196
+#, fuzzy
 msgid ""
-"The user ‘admin’ has access to the vote as well as the configuration "
-"interface."
+"The user ‘admin’ has access to both the vote and the configuration interface."
 msgstr "Bruker 'admin' har adgang til avstemningen og instillinger."
 
 #: ../access_control.rb:202
@@ -161,24 +163,23 @@ msgstr "Avstemmingen er beskyttet med passord!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "For å gå videre må du angi passord for bruker %{user}."
 
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+msgid "Return to Dudle home and schedule a new poll"
+msgstr "Tilbake til Dudle startside og lag et nytt avstemning"
+
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "For å se denne siden må du logge på!"
-
-#: ../config.rb:92
-msgid "Event-scheduling poll"
-msgstr "Planlegg en begivenhet"
-
-#: ../config.rb:96
-msgid "Normal poll"
-msgstr "Vanlig avstemning"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
 msgstr "Tilpass personlige innstillinger"
 
 #: ../customize.cgi:32 ../customize.rb:32
-msgid "You need cookies enabled in order to personalize your settings."
+#, fuzzy
+msgid ""
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"enabled in order to personalize your settings."
 msgstr "Du trenger cookies aktivert il å kunne lagre dine egne innstillinger."
 
 #: ../customize.cgi:39 ../customize.rb:39
@@ -263,10 +264,6 @@ msgstr ""
 msgid "You can now"
 msgstr "Du kan nå"
 
-#: ../delete_poll.rb:60
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Tilbake til Dudle startside og lag et nytt avstemning"
-
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
 msgstr "Se i Wikipedia"
@@ -332,46 +329,42 @@ msgid "Overview"
 msgstr "Oversikt"
 
 #: ../dudle.rb:86
-msgid "Advanced"
-msgstr ""
-
-#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "Slett avstemning"
 
-#: ../dudle.rb:90 ../example.cgi:67
+#: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
 msgstr "Eksempler"
 
-#: ../dudle.rb:91
+#: ../dudle.rb:90
 msgid "About"
 msgstr "Om"
 
-#: ../dudle.rb:93
+#: ../dudle.rb:92
 msgid "Customize"
 msgstr "Tilpass"
 
-#: ../dudle.rb:101
+#: ../dudle.rb:100
 msgid "Dudle Home"
 msgstr "Dudle hjemmeside"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:207 ../dudle.rb:225
 msgid "Previous"
 msgstr "Forrige"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Next"
 msgstr "Neste"
 
-#: ../dudle.rb:210 ../dudle.rb:228
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Finish"
 msgstr "Avslutt"
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Alle endringer har blitt lagret."
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Videre!"
 
@@ -379,11 +372,11 @@ msgstr "Videre!"
 msgid "Add and remove columns"
 msgstr "Leg til og fjern kolonner"
 
-#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
 msgid "Delete column"
 msgstr "Slett kolonne"
 
-#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
 msgid "Add column"
 msgstr "Leg til kolonne"
 
@@ -561,17 +554,19 @@ msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
 msgstr "Noen trykte  på \"Slett avstemning\" og slettet avstemningen manuelt."
 
 #: ../not_found.cgi:35
+#, fuzzy
 msgid ""
-"The Poll was deleted by the administrator because it was not accessed for a "
+"The poll was deleted by the administrator because it was not accessed for a "
 "long time."
 msgstr ""
 "Avstemmingen ble slette av administrator fordi den har ikke blitt sett på i "
 "lang tid."
 
 #: ../not_found.cgi:36
+#, fuzzy
 msgid ""
-"If you think, the deletion was done by error, please contact the "
-"adminsistrator of the system."
+"If you think that the deletion was done in error, please contact the "
+"administrator of the system."
 msgstr ""
 "Hvis du tror sletting skjedde var feilaktig, vennligst ta kontakt med "
 "administrator for denne tjenere."
@@ -726,17 +721,17 @@ msgstr "Forhåndsvisning"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all the options (columns) which you want the participants of the poll to choose among. "
-"For each option you give here, the participants will choose a "
-"vote."
+"Enter all the options (columns) which you want the participants of the poll "
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
 msgstr ""
 "Legg til alle valg (kolonner) du vil spørre deltakerne om. Deltakerne vil gi "
 "et separat svar for en hver valg du har lagt til her."
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string "
-"here (e.&thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "For å legge til et klokkeslett som er annerledes en standard, vennligst tast "
 "tekst her (f.eks. 09:30, morgen, ettermiddag)."
@@ -753,52 +748,59 @@ msgstr "Tidligere"
 msgid "Later"
 msgstr "Seinere"
 
-#: ../timepollhead.rb:264
+#: ../timepollhead.rb:265
 msgid "Click on the dates to add or remove columns."
 msgstr "Trykk på dato til å legge til eller fjerne kolonner."
 
-#: ../timepollhead.rb:312
+#: ../timepollhead.rb:313
 msgid "Optional:"
 msgstr "Valgfritt:"
 
-#: ../timepollhead.rb:313
+#: ../timepollhead.rb:314
 msgid "Select specific start times."
 msgstr "Tast et spesifikt klokkeslett for oppstart."
 
-#: ../timepollhead.rb:329
+#: ../timepollhead.rb:330
 msgid "Time"
 msgstr "Klokkeslett"
 
-#: ../timepollhead.rb:342
+#: ../timepollhead.rb:343
 msgid "Selected"
 msgstr "Valgt"
 
-#: ../timepollhead.rb:343
+#: ../timepollhead.rb:344
 msgid "Not selected"
 msgstr "Ikke valgt"
 
-#: ../timepollhead.rb:344
+#: ../timepollhead.rb:345
 msgid "Past"
 msgstr "Forrige"
 
-#: ../timepollhead.rb:378
+#: ../timepollhead.rb:379
 msgid "Select the whole row"
 msgstr "Velg hele rad"
 
-#: ../timepollhead.rb:383
+#: ../timepollhead.rb:384
 msgid "Deselect the whole row"
 msgstr "Velge bort hele rad"
 
-#: ../timepollhead.rb:427
+#: ../timepollhead.rb:428
 msgid "Add"
 msgstr "Legg til"
 
-#: ../timepollhead.rb:428
+#: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "f.eks. 09:30, morgen, ettermiddag"
 
+#~ msgid "Event-scheduling poll"
+#~ msgstr "Planlegg en begivenhet"
+
+#~ msgid "Normal poll"
+#~ msgstr "Vanlig avstemning"
+
 #~ msgid ""
-#~ "End-to-end encrypted/authenticated poll (use the password given in the comment at the end of the log-in request)"
+#~ "End-to-end encrypted/authenticated poll (use the password given in the "
+#~ "comment at the end of the log-in request)"
 #~ msgstr ""
 #~ "Ende-til-ende kryptert/authentifisert avstemning (see passord under "
 #~ "kommentarene)"

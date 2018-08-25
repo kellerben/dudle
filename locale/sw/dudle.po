@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 510\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-23 22:24+0200\n"
+"POT-Creation-Date: 2018-08-25 23:14+0200\n"
 "PO-Revision-Date: 2017-08-02 11:07-0400\n"
 "Last-Translator: Benson Muite modifying output of Yandex Translate and Bing "
 "translator\n"
@@ -26,7 +26,8 @@ msgstr "Leseni"
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
 msgstr ""
 "Kanuni za maombi hii ni inapatikana chini ya sheria ya <a href='http://www."
 "fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Toleo 3</a>"
@@ -39,8 +40,8 @@ msgstr ""
 
 #: ../about.cgi:35
 msgid ""
-"Please write me an e-mail if you have found a bug, have found something which "
-"disturbs you, or have any other feedback."
+"Please write me an e-mail if you have found a bug, have found something "
+"which disturbs you, or have any other feedback."
 msgstr ""
 "Kuandika mimi barua pepe kama wewe kupatikana mdudu, una kitu ambayo "
 "linalokusumbua au nyingine yoyote ya maoni."
@@ -115,13 +116,14 @@ msgstr ""
 
 #: ../access_control.rb:193
 msgid ""
-"You will be asked for the password you have entered here after you press save!"
+"You will be asked for the password you have entered here after you press "
+"save!"
 msgstr "Utaulizwa kwa nywila uliyoingiza hapa baada ya kubwa ila!"
 
 #: ../access_control.rb:196
+#, fuzzy
 msgid ""
-"The user ‘admin’ has access to the vote as well as the configuration "
-"interface."
+"The user ‘admin’ has access to both the vote and the configuration interface."
 msgstr "Mtumiaji 'mtawala' kufikilia kwa kura na kiolesura cha usanidi."
 
 #: ../access_control.rb:202
@@ -162,24 +164,23 @@ msgstr "Kura hii ya maoni imelindwa na nywila!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Ili kuendelea, una kutoa nywila kwa mtumiaji %{user}."
 
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+msgid "Return to Dudle home and schedule a new poll"
+msgstr "Rudi Dudle nyumbani na ratiba ya kura ya maoni mpya"
+
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Una kuidhinisha mwenyewe ili upate ukurasa huu!"
-
-#: ../config.rb:92
-msgid "Event-scheduling poll"
-msgstr "Tukio ratiba kura ya maoni"
-
-#: ../config.rb:96
-msgid "Normal poll"
-msgstr "Uchaguzi kawaida"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
 msgstr "Geuza kukufaa mipangilio binafsi"
 
 #: ../customize.cgi:32 ../customize.rb:32
-msgid "You need cookies enabled in order to personalize your settings."
+#, fuzzy
+msgid ""
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"enabled in order to personalize your settings."
 msgstr "Unahitaji vidakuzi kuwezeshwa ili kubinafsisha mipangilio yako."
 
 #: ../customize.cgi:39 ../customize.rb:39
@@ -264,10 +265,6 @@ msgstr ""
 msgid "You can now"
 msgstr "Unaweza sasa"
 
-#: ../authorization_required.cgi:53 ../not_found.cgi:37
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Rudi Dudle nyumbani na ratiba ya kura ya maoni mpya"
-
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
 msgstr "Angalia Wikipedia"
@@ -333,46 +330,42 @@ msgid "Overview"
 msgstr "Maelezo"
 
 #: ../dudle.rb:86
-msgid "Advanced"
-msgstr ""
-
-#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "Futa uchaguzi"
 
-#: ../dudle.rb:90 ../example.cgi:67
+#: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
 msgstr "Mifano"
 
-#: ../dudle.rb:91
+#: ../dudle.rb:90
 msgid "About"
 msgstr "Maelezo"
 
-#: ../dudle.rb:93
+#: ../dudle.rb:92
 msgid "Customize"
 msgstr "Geuza kukufaa"
 
-#: ../dudle.rb:101
+#: ../dudle.rb:100
 msgid "Dudle Home"
 msgstr "Dudle nyumbani"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:207 ../dudle.rb:225
 msgid "Previous"
 msgstr "Awali"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Next"
 msgstr "Ijayo"
 
-#: ../dudle.rb:210 ../dudle.rb:228
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Finish"
 msgstr "Maliza"
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Mabadiliko yote walikuwa kuokolewa mafanikio"
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Endelea"
 
@@ -380,11 +373,11 @@ msgstr "Endelea"
 msgid "Add and remove columns"
 msgstr "Ongeza na ondoa nguzo"
 
-#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
 msgid "Delete column"
 msgstr "Futa nguzo"
 
-#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
 msgid "Add column"
 msgstr "Ongeza nguzo"
 
@@ -571,17 +564,19 @@ msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
 msgstr "Mtu alitaabu \"Futa uchaguzi,\" na kufutwa uchaguzi."
 
 #: ../not_found.cgi:35
+#, fuzzy
 msgid ""
-"The Poll was deleted by the administrator because it was not accessed for a "
+"The poll was deleted by the administrator because it was not accessed for a "
 "long time."
 msgstr ""
 "Uchaguzi huo ilifutwa na msimamizi kwa sababu ilikuwa si kupatikana kwa muda "
 "mrefu."
 
 #: ../not_found.cgi:36
+#, fuzzy
 msgid ""
-"If you think, the deletion was done by error, please contact the "
-"adminsistrator of the system."
+"If you think that the deletion was done in error, please contact the "
+"administrator of the system."
 msgstr ""
 "Uchaguzi huo ilifutwa na msimamizi kwa sababu ilikuwa si kupatikana kwa muda "
 "mrefu."
@@ -736,17 +731,17 @@ msgstr "Hakikisho"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all the options (columns) which you want the participants of the poll to choose among. "
-"For each option you give here, the participants will choose a "
-"vote."
+"Enter all the options (columns) which you want the participants of the poll "
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
 msgstr ""
 "Kuingia chaguzi zote (nguzo), unataka kuuliza washiriki wa uchaguzi. "
 "Washiriki hali kura moja kwa ajili ya kila chaguo, unaweza kutoa hapa."
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string "
-"here (e.&thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "Kuongeza muda tofauti na zilizopo, tafadhali kuingia baadhi ya kamba hapa "
 "(mfano., 09:30, asubuhi, mchana)."
@@ -763,46 +758,52 @@ msgstr "Mapema"
 msgid "Later"
 msgstr "Baadaye"
 
-#: ../timepollhead.rb:264
+#: ../timepollhead.rb:265
 msgid "Click on the dates to add or remove columns."
 msgstr "Bonyeza juu ya tarehe kuongeza au kuondoa nguzo."
 
-#: ../timepollhead.rb:312
+#: ../timepollhead.rb:313
 msgid "Optional:"
 msgstr "Hiari"
 
-#: ../timepollhead.rb:313
+#: ../timepollhead.rb:314
 msgid "Select specific start times."
 msgstr "Ingia saruji thamani muda wa kuanza."
 
-#: ../timepollhead.rb:329
+#: ../timepollhead.rb:330
 msgid "Time"
 msgstr "Saa"
 
-#: ../timepollhead.rb:342
+#: ../timepollhead.rb:343
 msgid "Selected"
 msgstr "Waliochaguliwa"
 
-#: ../timepollhead.rb:343
+#: ../timepollhead.rb:344
 msgid "Not selected"
 msgstr "Wasiliochaguliwa"
 
-#: ../timepollhead.rb:344
+#: ../timepollhead.rb:345
 msgid "Past"
 msgstr "Zamani"
 
-#: ../timepollhead.rb:378
+#: ../timepollhead.rb:379
 msgid "Select the whole row"
 msgstr "Chagua safu nzima"
 
-#: ../timepollhead.rb:383
+#: ../timepollhead.rb:384
 msgid "Deselect the whole row"
 msgstr "Usichague safu nzima"
 
-#: ../timepollhead.rb:427
+#: ../timepollhead.rb:428
 msgid "Add"
 msgstr "Ongeza"
 
-#: ../timepollhead.rb:428
+#: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "mfano, 09:30, asubuhi, mchana"
+
+#~ msgid "Event-scheduling poll"
+#~ msgstr "Tukio ratiba kura ya maoni"
+
+#~ msgid "Normal poll"
+#~ msgstr "Uchaguzi kawaida"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-23 22:24+0200\n"
+"POT-Creation-Date: 2018-08-25 23:14+0200\n"
 "PO-Revision-Date: 2011-12-28 15:41+0100\n"
 "Last-Translator: Daniel Espinheira <daniel.espinheira@gmail.com>\n"
 "Language-Team: ngzngl <daniel.espinheira@gmail.com>\n"
@@ -30,7 +30,8 @@ msgstr ""
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
 msgstr ""
 "O código fonte deste aplicativo está dispoñible baixo os termos da licenza  "
 "<a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version "
@@ -43,8 +44,8 @@ msgstr ""
 #: ../about.cgi:35
 #, fuzzy
 msgid ""
-"Please write me an e-mail if you have found a bug, have found something which "
-"disturbs you, or have any other feedback."
+"Please write me an e-mail if you have found a bug, have found something "
+"which disturbs you, or have any other feedback."
 msgstr ""
 "Se atopas algún erro ponte en contacto : <a href=\"mailto:"
 "Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20Dudle"
@@ -122,14 +123,15 @@ msgstr ""
 
 #: ../access_control.rb:193
 msgid ""
-"You will be asked for the password you have entered here after you press save!"
+"You will be asked for the password you have entered here after you press "
+"save!"
 msgstr ""
 "Pediráseche o contrasinal que inseriches aquí despois de darlle a gardar!"
 
 #: ../access_control.rb:196
+#, fuzzy
 msgid ""
-"The user ‘admin’ has access to the vote as well as the configuration "
-"interface."
+"The user ‘admin’ has access to both the vote and the configuration interface."
 msgstr ""
 "A usuaria 'admin' ten acceso ao voto e tamén á interface de configuración."
 
@@ -172,24 +174,23 @@ msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 "Para continuar debes proporcionar o contrasinal para a usuaria  %{user}."
 
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+msgid "Return to Dudle home and schedule a new poll"
+msgstr "Volver ao inicio de Dudle e programar unha nova enquisa"
+
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Debes autorizarte para acceder a esta páxina!"
-
-#: ../config.rb:92
-msgid "Event-scheduling poll"
-msgstr "Enquisa de Programación de Evento"
-
-#: ../config.rb:96
-msgid "Normal poll"
-msgstr "Enquisa Normal"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
 msgstr "Definir configuración persoal"
 
 #: ../customize.cgi:32 ../customize.rb:32
-msgid "You need cookies enabled in order to personalize your settings."
+#, fuzzy
+msgid ""
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"enabled in order to personalize your settings."
 msgstr "Precisas activar as cookies para poder mudar a túa configuración"
 
 #: ../customize.cgi:39 ../customize.rb:39
@@ -275,10 +276,6 @@ msgstr ""
 msgid "You can now"
 msgstr ""
 
-#: ../delete_poll.rb:60
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Volver ao inicio de Dudle e programar unha nova enquisa"
-
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
 msgstr "Navegar a Wikipedia"
@@ -345,46 +342,42 @@ msgid "Overview"
 msgstr "Vista xeral"
 
 #: ../dudle.rb:86
-msgid "Advanced"
-msgstr ""
-
-#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "Eliminar Enquisa"
 
-#: ../dudle.rb:90 ../example.cgi:67
+#: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
 msgstr "Exemplos"
 
-#: ../dudle.rb:91
+#: ../dudle.rb:90
 msgid "About"
 msgstr "Acerca de"
 
-#: ../dudle.rb:93
+#: ../dudle.rb:92
 msgid "Customize"
 msgstr "Configurar"
 
-#: ../dudle.rb:101
+#: ../dudle.rb:100
 msgid "Dudle Home"
 msgstr "Inicio de Dudle"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:207 ../dudle.rb:225
 msgid "Previous"
 msgstr "Anterior"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Next"
 msgstr "Seguinte"
 
-#: ../dudle.rb:210 ../dudle.rb:228
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Finish"
 msgstr "Finalizar"
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Graváronse todos os cambios."
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Proceder!"
 
@@ -392,11 +385,11 @@ msgstr "Proceder!"
 msgid "Add and remove columns"
 msgstr "Engadir e Eliminar Columnas"
 
-#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
 msgid "Delete column"
 msgstr "Eliminar columna"
 
-#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
 msgid "Add column"
 msgstr "Engadir columna"
 
@@ -584,17 +577,19 @@ msgstr ""
 "Alguén premeu sobre \"Eliminar Enquisa\" e eliminou a enquisa manualmente."
 
 #: ../not_found.cgi:35
+#, fuzzy
 msgid ""
-"The Poll was deleted by the administrator because it was not accessed for a "
+"The poll was deleted by the administrator because it was not accessed for a "
 "long time."
 msgstr ""
 "A administradora eliminou a enquisa porque ninguén accedeu durante un longo "
 "período de tempo."
 
 #: ../not_found.cgi:36
+#, fuzzy
 msgid ""
-"If you think, the deletion was done by error, please contact the "
-"adminsistrator of the system."
+"If you think that the deletion was done in error, please contact the "
+"administrator of the system."
 msgstr ""
 "Se che parece que a eliminación desta enquisa foi un erro, contacta coa "
 "administradora do sistema."
@@ -749,17 +744,17 @@ msgstr "Previsualizar"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all the options (columns) which you want the participants of the poll to choose among. "
-"For each option you give here, the participants will choose a "
-"vote."
+"Enter all the options (columns) which you want the participants of the poll "
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
 msgstr ""
 "Inserir todas as Opcións (columnas) que queres que as participantes da "
 "enquisa contesten. As participantes un voto por cada opción por separado."
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string "
-"here (e.&thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "Para engadir unha hora diferente ás predeterminadas, escribe o texto aquí (p."
 "ex: 09:30, mañá, tarde)."
@@ -776,49 +771,55 @@ msgstr "Máis cedo"
 msgid "Later"
 msgstr "Máis tarde"
 
-#: ../timepollhead.rb:264
+#: ../timepollhead.rb:265
 msgid "Click on the dates to add or remove columns."
 msgstr "Preme nas datas para engadir ou eliminar columnas."
 
-#: ../timepollhead.rb:312
+#: ../timepollhead.rb:313
 msgid "Optional:"
 msgstr "Opcional:"
 
-#: ../timepollhead.rb:313
+#: ../timepollhead.rb:314
 msgid "Select specific start times."
 msgstr "Engadir un valor concreto como hora de comezo."
 
-#: ../timepollhead.rb:329
+#: ../timepollhead.rb:330
 msgid "Time"
 msgstr "Hora"
 
-#: ../timepollhead.rb:342
+#: ../timepollhead.rb:343
 msgid "Selected"
 msgstr "Escollido"
 
-#: ../timepollhead.rb:343
+#: ../timepollhead.rb:344
 msgid "Not selected"
 msgstr "Sen escoller"
 
-#: ../timepollhead.rb:344
+#: ../timepollhead.rb:345
 msgid "Past"
 msgstr "Pasado"
 
-#: ../timepollhead.rb:378
+#: ../timepollhead.rb:379
 msgid "Select the whole row"
 msgstr "Seleccionar a fila enteira"
 
-#: ../timepollhead.rb:383
+#: ../timepollhead.rb:384
 msgid "Deselect the whole row"
 msgstr "Eliminar a selección de toda a columna"
 
-#: ../timepollhead.rb:427
+#: ../timepollhead.rb:428
 msgid "Add"
 msgstr "Engadir"
 
-#: ../timepollhead.rb:428
+#: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "p.ex: 09:30, mañá, tarde"
+
+#~ msgid "Event-scheduling poll"
+#~ msgstr "Enquisa de Programación de Evento"
+
+#~ msgid "Normal poll"
+#~ msgstr "Enquisa Normal"
 
 #~ msgid "Things you can do now are"
 #~ msgstr "As cousas que podes facer agora son"

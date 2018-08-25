@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-23 22:24+0200\n"
+"POT-Creation-Date: 2018-08-25 23:14+0200\n"
 "PO-Revision-Date: 2017-10-19 12:06+0100\n"
 "Last-Translator: eo.001\n"
 "Language-Team: eo <->\n"
@@ -29,7 +29,8 @@ msgstr "Licenco"
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
 msgstr ""
 "La fontokodo de tiu ĉi aplikaĵo estas havebla laŭ la kondiĉoj de <a "
 "href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Versio 3 </a>"
@@ -41,8 +42,8 @@ msgstr ""
 
 #: ../about.cgi:35
 msgid ""
-"Please write me an e-mail if you have found a bug, have found something which "
-"disturbs you, or have any other feedback."
+"Please write me an e-mail if you have found a bug, have found something "
+"which disturbs you, or have any other feedback."
 msgstr ""
 "Sendu al mi retmesaĝon, se vi trovis eraron, konfuziĝis pri io aŭ okaze de "
 "iu ajn alia re-sciigo. "
@@ -120,15 +121,16 @@ msgstr ""
 
 #: ../access_control.rb:193
 msgid ""
-"You will be asked for the password you have entered here after you press save!"
+"You will be asked for the password you have entered here after you press "
+"save!"
 msgstr ""
 "Post premo de 'Konservi' vi estos demandata pri la uzantnomo kaj la "
 "pasvorto, kiujn vi enigis ĉi tie!"
 
 #: ../access_control.rb:196
+#, fuzzy
 msgid ""
-"The user ‘admin’ has access to the vote as well as the configuration "
-"interface."
+"The user ‘admin’ has access to both the vote and the configuration interface."
 msgstr ""
 "La uzanto ‘admin’ havas aliron al la voĉdonilo same kiel al la agorda "
 "interfaco."
@@ -173,24 +175,23 @@ msgstr "Tiu ĉi voĉdonilo estas protektata per pasvorto!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Por antaŭeniĝi necesas enigi pasvorton de uzanto %{user}."
 
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+msgid "Return to Dudle home and schedule a new poll"
+msgstr "Reiri al Dudl-hejmpaĝo kaj estigi novan voĉdonilon"
+
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Necesas rajtigi sin por povi atingi tiun paĝon!"
-
-#: ../config.rb:92
-msgid "Event-scheduling poll"
-msgstr "Demandi pri taŭga tempo"
-
-#: ../config.rb:96
-msgid "Normal poll"
-msgstr "Kutima voĉdonilo"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
 msgstr "Elekti personajn agordojn"
 
 #: ../customize.cgi:32 ../customize.rb:32
-msgid "You need cookies enabled in order to personalize your settings."
+#, fuzzy
+msgid ""
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"enabled in order to personalize your settings."
 msgstr "Necesas permesi kuketojn por povi tajlori personajn agordojn. "
 
 #: ../customize.cgi:39 ../customize.rb:39
@@ -275,10 +276,6 @@ msgstr ""
 msgid "You can now"
 msgstr "Vi povas nun"
 
-#: ../delete_poll.rb:60
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Reiri al Dudl-hejmpaĝo kaj estigi novan voĉdonilon"
-
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
 msgstr "Foliumi Vikipedion"
@@ -344,46 +341,42 @@ msgid "Overview"
 msgstr "Superrigardo"
 
 #: ../dudle.rb:86
-msgid "Advanced"
-msgstr ""
-
-#: ../dudle.rb:87
 msgid "Delete Poll"
 msgstr "Forigi voĉdonilon"
 
-#: ../dudle.rb:90 ../example.cgi:67
+#: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
 msgstr "Ekzemploj"
 
-#: ../dudle.rb:91
+#: ../dudle.rb:90
 msgid "About"
 msgstr "Pri Dudle"
 
-#: ../dudle.rb:93
+#: ../dudle.rb:92
 msgid "Customize"
 msgstr "Agordi"
 
-#: ../dudle.rb:101
+#: ../dudle.rb:100
 msgid "Dudle Home"
 msgstr "Dudle ĉefpaĝo"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:207 ../dudle.rb:225
 msgid "Previous"
 msgstr "Antaŭa"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Next"
 msgstr "Venonta"
 
-#: ../dudle.rb:210 ../dudle.rb:228
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Finish"
 msgstr "Fini"
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Ĉiuj ŝanĝoj estis sukcese konservitaj. "
 
-#: ../dudle.rb:233
+#: ../dudle.rb:232
 msgid "Proceed!"
 msgstr "Antaŭenigi!"
 
@@ -391,11 +384,11 @@ msgstr "Antaŭenigi!"
 msgid "Add and remove columns"
 msgstr "Aldoni kaj forigi kolumnojn"
 
-#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:248
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
 msgid "Delete column"
 msgstr "Forigi kolumnon"
 
-#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:247
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
 msgid "Add column"
 msgstr "Aldoni kolumnon"
 
@@ -586,17 +579,19 @@ msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
 msgstr "Iu alklakis \"Forigu voĉdonilon\" kaj forigis ĝin mane. "
 
 #: ../not_found.cgi:35
+#, fuzzy
 msgid ""
-"The Poll was deleted by the administrator because it was not accessed for a "
+"The poll was deleted by the administrator because it was not accessed for a "
 "long time."
 msgstr ""
 "La voĉdonilo estis forigata fare de la administranto, ĉar ĝi ne estis "
 "alirata dum longa tempo. "
 
 #: ../not_found.cgi:36
+#, fuzzy
 msgid ""
-"If you think, the deletion was done by error, please contact the "
-"adminsistrator of the system."
+"If you think that the deletion was done in error, please contact the "
+"administrator of the system."
 msgstr ""
 "Se vi opinias, ke la forigo okazis erare, bonvolu kontakti la administranton "
 "de la sistemo. "
@@ -751,9 +746,9 @@ msgstr "Antaŭvido"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all the options (columns) which you want the participants of the poll to choose among. "
-"For each option you give here, the participants will choose a "
-"vote."
+"Enter all the options (columns) which you want the participants of the poll "
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
 msgstr ""
 "Enigu ĉiujn opciojn (kolumnojn), pri kiuj vi volas demandi la "
 "partoprenantojn de la voĉdonado. La partoprenantoj voĉdonos aparte pri ĉiu "
@@ -761,8 +756,8 @@ msgstr ""
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string "
-"here (e.&thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "Por aldoni iun tempon malsaman ol la antaŭdefinitaj, bonvole enigi ĉi tie "
 "ian signovicon (ekzemple 09:30, matene, posttagmeze). "
@@ -779,52 +774,59 @@ msgstr "Pli frue"
 msgid "Later"
 msgstr "Pli malfrue"
 
-#: ../timepollhead.rb:264
+#: ../timepollhead.rb:265
 msgid "Click on the dates to add or remove columns."
 msgstr "Alklaku datojn por aldoni aŭ forigi kolumnojn. "
 
-#: ../timepollhead.rb:312
+#: ../timepollhead.rb:313
 msgid "Optional:"
 msgstr "Kiel opcio: "
 
-#: ../timepollhead.rb:313
+#: ../timepollhead.rb:314
 msgid "Select specific start times."
 msgstr "Enigi konkretan valoron kiel komenca tempo. "
 
-#: ../timepollhead.rb:329
+#: ../timepollhead.rb:330
 msgid "Time"
 msgstr "Tempo"
 
-#: ../timepollhead.rb:342
+#: ../timepollhead.rb:343
 msgid "Selected"
 msgstr "Elektita"
 
-#: ../timepollhead.rb:343
+#: ../timepollhead.rb:344
 msgid "Not selected"
 msgstr "Ne elektita"
 
-#: ../timepollhead.rb:344
+#: ../timepollhead.rb:345
 msgid "Past"
 msgstr "Pasinta"
 
-#: ../timepollhead.rb:378
+#: ../timepollhead.rb:379
 msgid "Select the whole row"
 msgstr "Elekti la tutan vicon"
 
-#: ../timepollhead.rb:383
+#: ../timepollhead.rb:384
 msgid "Deselect the whole row"
 msgstr "Malelekti la tutan vicon"
 
-#: ../timepollhead.rb:427
+#: ../timepollhead.rb:428
 msgid "Add"
 msgstr "Aldoni"
 
-#: ../timepollhead.rb:428
+#: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "ekzemple 09:30, matene, posttagmeze"
 
+#~ msgid "Event-scheduling poll"
+#~ msgstr "Demandi pri taŭga tempo"
+
+#~ msgid "Normal poll"
+#~ msgstr "Kutima voĉdonilo"
+
 #~ msgid ""
-#~ "End-to-end encrypted/authenticated poll (use the password given in the comment at the end of the log-in request)"
+#~ "End-to-end encrypted/authenticated poll (use the password given in the "
+#~ "comment at the end of the log-in request)"
 #~ msgstr ""
 #~ "Fino-ĝis-fino ĉifrita/aŭtentigita voĉdonilo (vidu la pasvorton en la "
 #~ "komentoj)"
