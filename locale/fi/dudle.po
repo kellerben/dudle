@@ -1,0 +1,803 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018 enikkari
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR enikkari, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-25 23:26+0200\n"
+"PO-Revision-Date: 2018-08-25 23:26+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ../about.cgi:29
+msgid "This application is powered by %{Dudle}."
+msgstr "This application is powered by %{Dudle}."
+
+#: ../about.cgi:31
+msgid "License"
+msgstr "Lisenssi"
+
+#: ../about.cgi:32
+msgid ""
+"The sourcecode of this application is available under the terms of <a href='ht"
+"tp://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+msgstr "Tämän aplikaation lähdekoodi on seuraavien ehtojen alainen <a href='ht"
+"tp://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+
+#: ../about.cgi:33
+msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
+msgstr "Tämän aplikaation lähdekoodi lötyy %{a_start}täältä%{a_end}."
+
+#: ../about.cgi:35
+msgid ""
+"Please write me an e-mail if you have found a bug, have found something which "
+"disturbs you, or have any other feedback."
+msgstr "Please write me an e-mail if you have found a bug, have found something which "
+"disturbs you, or have any other feedback."
+
+#: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
+msgid "Username:"
+msgstr "Nimi"
+
+#: ../access_control.rb:87
+msgid "Password"
+msgstr "Salasana"
+
+#: ../access_control.rb:88
+msgid "repeat"
+msgstr "toista"
+
+#: ../access_control.rb:114
+msgid ""
+"You have to remove the participant user before you can remove the administrato"
+"r."
+msgstr "Sinun täytyy poistaa osallistuja ennen kuin voit poistaa pääkäyttäjän"
+
+#: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
+#: ../delete_poll.rb:112 ../poll.rb:338
+msgid "Delete"
+msgstr "Poista"
+
+#: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
+#: ../poll.rb:300
+msgid "Save"
+msgstr "Tallenna"
+
+#: ../access_control.rb:139
+msgid "Only letters and digits are allowed in the username."
+msgstr "Vain kirjaimet ja numerot ovat sallittuja käyttäjänimessä"
+
+#: ../access_control.rb:141
+msgid "Passwords did not match."
+msgstr "Salasanat eivät vastaa toisiaan"
+
+#: ../access_control.rb:175
+msgid "Change access control settings"
+msgstr "Vaihda access control asetuksia"
+
+#: ../access_control.rb:179
+msgid "not activated"
+msgstr "Ei aktivoitu"
+
+#: ../access_control.rb:181
+msgid "Activate"
+msgstr "Aktivoi"
+
+#: ../access_control.rb:184
+msgid "controls will be activated when at least the admin user is configured"
+msgstr controls will be activated when at least the admin user is configured"
+
+#: ../access_control.rb:186
+msgid "Deactivate"
+msgstr "Deactivate"
+
+#: ../access_control.rb:188
+msgid "activated"
+msgstr "Aktivoitu"
+
+#: ../access_control.rb:189
+msgid ""
+"You have to remove all users before you can deactivate the access control sett"
+"ings."
+msgstr "Sinun täytyy poistaa kaikki käyttäjät ennenkuin voit poistaa kulunvalvonta"
+" asetukset"
+
+#: ../access_control.rb:193
+msgid "You will be asked for the password you have entered here after you press save!"
+msgstr "Sinulta kysytään salasanaa, jonka laitoit tähän, tallentamisen jälkeen"
+
+#: ../access_control.rb:196
+msgid "The user â€˜adminâ€™ has access to both the vote and the configuration interface."
+msgstr "Käyttäjällä â€˜adminâ€™ on pääsy sekä äänestys- että asetusrajapintaan"
+
+#: ../access_control.rb:202
+msgid "The user â€˜participantâ€™ only has access to the vote interface."
+msgstr "Käyttäjällä â€˜participantâ€™ on pääsy vain äänestysrajapintaan."
+
+#: ../access_control.rb:208
+msgid "Access control:"
+msgstr "Pääsyn valvonta"
+
+#: ../advanced.rb:31 ../advanced.rb:35
+msgid "Revert poll"
+msgstr "Palauta aikaisempaan muotoon"
+
+#: ../advanced.rb:32
+msgid "Poll was reverted to Version %{version}!"
+msgstr "Kysely palautettu versioon %{version}!"
+
+#: ../advanced.rb:37
+msgid "Revert poll to version (see â€˜Historyâ€™ tab for revision numbers): "
+msgstr "Palauta kysely versioon (see â€˜Historyâ€™ tab for revision numbers):"
+
+#: ../authorization_required.cgi:36 ../authorization_required.cgi:52
+msgid "Authorization required"
+msgstr "Vaatii oikeudet"
+
+#: ../authorization_required.cgi:39
+msgid "The configuration of this poll is password-protected!"
+msgstr "Tämän kyselyn asetukset ovat suojattu salasanalla!"
+
+#: ../authorization_required.cgi:41
+msgid "This poll is password-protected!"
+msgstr "Tämä kysely on suojattu salasanalla!"
+
+#: ../authorization_required.cgi:43
+msgid "In order to proceed, you have to give the password for user %{user}."
+msgstr "Päästäksesi eteenpäin sinun tulee antaa salasana kättäjälle %{user}."
+
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+msgid "Return to Dudle home and schedule a new poll"
+msgstr "Palaa Dulden kotivalikkoon ja ajasta uusi kysely"
+
+#: ../authorization_required.cgi:54
+msgid "You have to authorize yourself in order to access this page!"
+msgstr "Sinun täytyy authorisoida itsesi että voit päästä tälle sivulle"
+
+#: ../config.rb:43
+msgid "Event Schedule Poll"
+msgstr "Tapahtuman ajoittaminen kysely"
+
+#: ../config.rb:47
+msgid "Normal Poll"
+msgstr "Tavallinen kysely"
+
+#: ../config.rb:51
+msgid "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+msgstr "End-to-End salattu/varmistettu kysely (Näe salasana kommenteissa)"
+
+#: ../config.rb:55
+msgid "End-to-End encrypted Poll, where only the administrator is able to read votes"
+msgstr "End-to-End salattu/varmistettu kysely, missä vain pääkäyttäjä voi nähdä äänet"
+
+#: ../config.rb:59
+msgid "Test for several PGP-authenticated votes"
+msgstr "Test for several PGP-authenticated votes"
+
+#: ../customize.cgi:31 ../customize.rb:31
+msgid "Customize personal settings"
+msgstr "Kustomoi omat asetukset"
+
+#: ../customize.cgi:32 ../customize.rb:32
+msgid ""
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> enabl"
+"ed in order to personalize your settings."
+msgstr "Sinun täytyy hyväksyä <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> että"
+"voit luoda omat asetuksesi"
+
+#: ../customize.cgi:39 ../customize.rb:39
+msgid "Current setting"
+msgstr "Nykyiset asetukset"
+
+#: ../customize.cgi:40 ../customize.rb:40
+msgid "Description"
+msgstr "Kuvaus"
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use special characters"
+msgstr "Käytä erikoismerkkejä"
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "Use this option if you see the characters in the parenthesis."
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "Use only normal strings"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Use this option if you have problems with some characters."
+
+#: ../customize.cgi:61 ../customize.rb:61
+msgid "Charset"
+msgstr "Charset"
+
+#: ../customize.cgi:66 ../customize.rb:66
+msgid "Stylesheet"
+msgstr "Stylesheet"
+
+#: ../customize.cgi:81 ../customize.rb:81
+msgid "Default Username"
+msgstr "oletus käyttäjänimi"
+
+#: ../customize.cgi:106 ../customize.rb:106
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: ../delete_poll.rb:30
+msgid "Yes, I know what I am doing!"
+msgstr "Tiedän mitä teen!"
+
+#: ../delete_poll.rb:31
+msgid "I hate these stupid entry fields."
+msgstr "I hate these stupid entry fields."
+
+#: ../delete_poll.rb:32
+msgid "I am aware of the consequences."
+msgstr "Ymmärrän seuraamukset"
+
+#: ../delete_poll.rb:33
+msgid "Please delete this poll."
+msgstr "Olkaa hyvä ja poistakaa tämä kysely"
+
+#: ../delete_poll.rb:42
+msgid "Example polls cannot be deleted."
+msgstr "Esimerkki kyselyitä ei voi poistaa"
+
+#: ../delete_poll.rb:43
+msgid "You should never see this text."
+msgstr "Tämän tekstin ei pitäisi näkyä ikinä"
+
+#: ../delete_poll.rb:56
+msgid "The poll was deleted successfully!"
+msgstr "Kysely poistettu onnistuneesti"
+
+#: ../delete_poll.rb:57
+msgid ""
+"If this was done by accident, please contact the administrator of the system. "
+"The poll can be recovered for an indeterminate amount of time; it could alread"
+"y be too late."
+msgstr "Jos teit tämän vahingossa, ota yhteyttä ylläpitäjään. Kysely voidaan" 
+"palauttaa vielä jonkin aikaa poistamisen jälkeen. Voi jo olla myöhäistä"
+
+#: ../delete_poll.rb:59
+msgid "You can now"
+msgstr "Voit nyt"
+
+#: ../delete_poll.rb:61
+msgid "Browse Wikipedia"
+msgstr "Selaa Wikipediaa"
+
+#: ../delete_poll.rb:62
+msgid "Search for something on the Internet"
+msgstr "Etsi jotain Internetistä"
+
+#: ../delete_poll.rb:88
+msgid "To delete the poll, you have to type:"
+msgstr "Poistaaksesi kyselyn sinun tulee kirjoittaa:"
+
+#: ../delete_poll.rb:96
+msgid "but you typed:"
+msgstr "mutta kirjoitit:"
+
+#: ../delete_poll.rb:108
+msgid "Delete this poll"
+msgstr "Poista kysely"
+
+#: ../delete_poll.rb:109
+msgid "You want to delete the poll named"
+msgstr "Haluatko poistaa kyselyn nimeltä"
+
+#: ../delete_poll.rb:110
+msgid "This is an irreversible action!"
+msgstr "Tätä toimintoa ei voi perua!"
+
+#: ../delete_poll.rb:111
+msgid ""
+"If you are sure that you want to permanently remove this poll, please type â€œ%{"
+"question}â€ into the form."
+msgstr ""
+"Jos olet varma että haluat poistaa kyselyn, kirjoita â€œ%{"
+"question}â€ lomakkeeseen."
+
+#: ../dudle.rb:73
+msgid "Home"
+msgstr "Pääsivu"
+
+#: ../dudle.rb:76
+msgid "Poll"
+msgstr "Kysely"
+
+#: ../dudle.rb:77 ../history.rb:35
+msgid "History"
+msgstr "Historia"
+
+#: ../dudle.rb:80
+msgid "Edit Columns"
+msgstr "Muokkaa sarakkeita"
+
+#: ../dudle.rb:81 ../invite_participants.rb:38
+msgid "Invite Participants"
+msgstr "Kutsu osallistujia"
+
+#: ../dudle.rb:82
+msgid "Access Control"
+msgstr ""
+
+#: ../dudle.rb:83
+msgid "Overview"
+msgstr "Yleiskatsaus"
+
+#: ../dudle.rb:86
+msgid "Delete Poll"
+msgstr "Poista kysely"
+
+#: ../dudle.rb:89 ../example.cgi:67
+msgid "Examples"
+msgstr "Esimerkkejä"
+
+#: ../dudle.rb:90
+msgid "About"
+msgstr "Lisää tietoa"
+
+#: ../dudle.rb:92
+msgid "Customize"
+msgstr "Kustomoi"
+
+#: ../dudle.rb:100
+msgid "Dudle Home"
+msgstr "Dudle pääsivu"
+
+#: ../dudle.rb:207 ../dudle.rb:225
+msgid "Previous"
+msgstr "Edellinen"
+
+#: ../dudle.rb:208 ../dudle.rb:226
+msgid "Next"
+msgstr "Seuraava"
+
+#: ../dudle.rb:209 ../dudle.rb:227
+msgid "Finish"
+msgstr "Valmis"
+
+#: ../dudle.rb:232
+msgid "All changes were saved successfully."
+msgstr "Kaikki muutokset tallennettu onnistuneesti"
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Jatka!"
+
+#: ../edit_columns.rb:44
+msgid "Add and remove columns"
+msgstr "Lisää tai poista sarakkeita"
+
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
+msgid "Delete column"
+msgstr "Poista sarake"
+
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
+msgid "Add column"
+msgstr "Lisää sarake"
+
+#: ../edit_columns.rb:71 ../edit_columns.rb:88
+msgid "Edit column"
+msgstr "Muokkaa saraketta"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Peru"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Tee uudelleen"
+
+#: ../error.cgi:25 ../error.cgi:27
+msgid "Error"
+msgstr "Virhe"
+
+#: ../error.cgi:46
+msgid "The following error was printed:"
+msgstr "The following error was printed:"
+
+#: ../error.cgi:50
+msgid ""
+"Hi!\n"
+"\n"
+"I found a bug in your application at %{urlofsite}.\n"
+"I did the following:\n"
+"\n"
+"<please describe what you did>\n"
+"<e.g., I wanted to post a comment to the poll.>\n"
+"\n"
+"I am using <please state your browser and operating system>\n"
+"%{errormessage}\n"
+"Sincerely,\n"
+msgstr ""
+"Hi!\n"
+"\n"
+"I found a bug in your application at %{urlofsite}.\n"
+"I did the following:\n"
+"\n"
+"<please describe what you did>\n"
+"<e.g., I wanted to post a comment to the poll.>\n"
+"\n"
+"I am using <please state your browser and operating system>\n"
+"%{errormessage}\n"
+"Sincerely,\n"
+
+#: ../error.cgi:51
+msgid "Bug in Dudle"
+msgstr "Bugi dudlessa"
+
+#: ../error.cgi:53
+msgid ""
+"An error occurred while executing Dudle.<br/>Please send an error report, incl"
+"uding your browser, operating system, and what you did to %{admin}."
+msgstr ""
+"An error occurred while executing Dudle.<br/>Please send an error report, incl"
+"uding your browser, operating system, and what you did to %{admin}."
+
+#: ../error.cgi:56
+msgid "Please include the following as well:"
+msgstr "Please include the following as well:"
+
+#: ../example.cgi:60
+msgid "Example not found: %{example}"
+msgstr "Esimerkkiä ei löydetty"
+
+#: ../example.cgi:68
+msgid ""
+"If you want to play with the application, you may want to take a look at these"
+" example polls:"
+msgstr "Testataksesi aplikaatiota, katso näitä esimerkki kyselyitä:"
+
+#: ../history.rb:28
+msgid "Poll of version %{revisionnumber}"
+msgstr "Kysely versiota %{revisionnumber}"
+
+#: ../history.rb:32
+msgid "Current poll (version %{revisionnumber})"
+msgstr "Nykyinen kysely"
+
+#: ../html.rb:131
+msgid "xml:lang='en' dir='ltr'"
+msgstr "xml:lang='fi' dir='ltr'"
+
+#: ../index.cgi:32
+msgid "Please enter a descriptive title."
+msgstr "Lisää kuvaava otsikko"
+
+#: ../index.cgi:48
+msgid "Custom address may only contain letters, numbers, and dashes."
+msgstr "Kustomoitu osite voi sisältää vain kirjaimia, numeroita ja väliviivoja"
+
+#: ../index.cgi:50
+msgid "A poll with this address already exists."
+msgstr "Kysely tällä osoitteella on jo olemassa"
+
+#: ../index.cgi:68
+msgid "The poll was created successfully. The link to your new poll is: %{link}"
+msgstr ""
+
+#: ../index.cgi:76
+msgid "Go away."
+msgstr "Mee pois."
+
+#: ../index.cgi:84
+msgid "Create new poll"
+msgstr "Luo uusi kysely"
+
+#: ../index.cgi:86
+msgid "Title"
+msgstr "Otsikko"
+
+#: ../index.cgi:87
+msgid "Type"
+msgstr "Tyypi"
+
+#: ../index.cgi:88
+msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
+msgstr "Tapahtuma-ajan päättäminen kysely (Päätä aika tapahtuma ajalle)"
+
+#: ../index.cgi:89
+msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
+msgstr "Tavallinen kysely (esim. Mikä on paras kahvi)"
+
+#: ../index.cgi:90
+msgid "Custom address (optional)"
+msgstr "Kustomoitu osoite (optional)"
+
+#: ../index.cgi:91
+msgid "May contain letters, numbers, and dashes."
+msgstr "Voi sisältää kirjaimia, numeroita ja väliviivoja"
+
+#: ../index.cgi:93
+msgid "Create"
+msgstr "Luo"
+
+#: ../log.rb:111
+msgid "Version"
+msgstr "Versio"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Päivämäärä"
+
+#: ../log.rb:111
+msgid "Comment"
+msgstr "Kommentti"
+
+#: ../maintenance.cgi:25 ../maintenance.cgi:27
+msgid "Maintenance"
+msgstr "Ylläpito"
+
+#: ../maintenance.cgi:36
+msgid "This site is currently undergoing maintenance!"
+msgstr "Tätä sivua muokataan tällä hetkellä"
+
+#: ../maintenance.cgi:39
+msgid ""
+"You should not browse to this file directly. Please create a file named \"maint"
+"enance.html\" to enable the maintenance mode."
+msgstr ""
+"You should not browse to this file directly. Please create a file named \"maint"
+"enance.html\" to enable the maintenance mode."
+
+#: ../not_found.cgi:30
+msgid "Poll not found"
+msgstr "Kyselyä ei löydetty"
+
+#: ../not_found.cgi:32
+msgid "The requested poll was not found."
+msgstr "Haluamaasi kyselyä ei löytynyt"
+
+#: ../not_found.cgi:33
+msgid "There are several reasons why a poll may have been deleted:"
+msgstr "On monia syitä miksi kysely ollaan saatettu poistaa"
+
+#: ../not_found.cgi:34
+msgid "Somebody clicked on â€œDelete pollâ€ and deleted the poll manually."
+msgstr "Joku valitsi â€œDelete pollâ€ja poisti kyselyn manuaalisesti"
+
+#: ../not_found.cgi:35
+msgid ""
+"The poll was deleted by the administrator because it was not accessed for a lo"
+"ng time."
+msgstr "Ylläpitäjä on poistanut tämän kyselyn, koska sitä ei olla käytetty "
+"pitkään aikaan"
+
+#: ../not_found.cgi:36
+msgid ""
+"If you think that the deletion was done in error, please contact the administr"
+"ator of the system."
+msgstr "Jos uskot että kysely ollaan poistettu vahingossa, ota yhteyttä ylläpitäjään"
+
+#: ../overview.rb:31
+msgid "The next steps are:"
+msgstr "Seuraavat askeleet ovat:"
+
+#: ../overview.rb:33
+msgid "Send the link to all participants:"
+msgstr "Lähetä linkki kaikille osallistujille"
+
+#: ../overview.rb:34
+msgid "Send this link via email..."
+msgstr "Lähetä tämä linkki sähköpostilla"
+
+#: ../overview.rb:35
+msgid "Visit the poll yourself:"
+msgstr "Vieraile kyselyssä"
+
+#: ../overview.rb:36
+msgid "Link to Dudle poll about %{polltitle}"
+msgstr "Linkki Dudle kyselyyn aiheella %{polltitle}"
+
+#: ../participate.rb:59
+msgid "The changes were saved, you should be redirected to %{link}."
+msgstr "Muutokset tallennettu, sinut ohjataan %{link}."
+
+#: ../poll.rb:96
+msgid "Edit user %{user}..."
+msgstr "Muokkaa käyttäjää %{user}..."
+
+#: ../poll.rb:100
+msgid "Delete user %{user}..."
+msgstr "Poista käyttäjä %{user}..."
+
+#: ../poll.rb:154
+msgid "Total"
+msgstr "Yhteensä"
+
+#: ../poll.rb:186
+msgid "Invite"
+msgstr "Kutsu"
+
+#: ../poll.rb:187 ../pollhead.rb:62 ../timepollhead.rb:158
+msgid "Name"
+msgstr "Nimi"
+
+#: ../poll.rb:232
+msgid "Save changes"
+msgstr "Tallenna muutokset"
+
+#: ../poll.rb:236
+msgid "Cancel"
+msgstr "Peru"
+
+#: ../poll.rb:258
+msgid "Do you really want to delete user %{user}?"
+msgstr "Haluatko varmasti poistaa %{user}"
+
+#: ../poll.rb:261
+msgid "Confirm"
+msgstr "Varmista"
+
+#: ../poll.rb:309
+msgid "Comments"
+msgstr "Kommentit"
+
+#: ../poll.rb:312
+msgid "Sort oldest comment first"
+msgstr "Järjestä vanhimmat kommentit ensimmäiseksi"
+
+#: ../poll.rb:315
+msgid "Sort newest comment first"
+msgstr "Järjestä uusimmat kommentit ensimmäiseksi"
+
+#: ../poll.rb:320
+msgid "Go to last comment"
+msgstr "Näytä viimeisin kommentti"
+
+#: ../poll.rb:333
+msgid "%{user} said on %{time}"
+msgstr "%{user} sanoi %{time}"
+
+#: ../poll.rb:348
+msgid "Go up"
+msgstr "Ylös"
+
+#: ../poll.rb:354
+msgid "says"
+msgstr "sanoo"
+
+#: ../poll.rb:355
+msgid "Submit comment"
+msgstr "Lähetä kommentti"
+
+#: ../poll.rb:373
+msgid "Show history items:"
+msgstr "Näytä historia:"
+
+#: ../poll.rb:380
+msgid "All"
+msgstr "Kaikki"
+
+#: ../poll.rb:381
+msgid "Participant related"
+msgstr "Osallistujaan liittyvä"
+
+#: ../poll.rb:382
+msgid "Column related"
+msgstr "Sarakkeeseen liittyvä"
+
+#: ../poll.rb:383
+msgid "Comment related"
+msgstr "Kommenttiin liittyvä"
+
+#: ../poll.rb:384
+msgid "Access control related"
+msgstr "Kulunvalvontaan liittyvä"
+
+#: ../poll.rb:390
+msgid "Update"
+msgstr "Päivitys"
+
+#: ../pollhead.rb:71
+msgid "Edit option"
+msgstr "Muokkaa valinta"
+
+#: ../pollhead.rb:72
+msgid "Delete option"
+msgstr "Poista vaihtoehto"
+
+#: ../pollhead.rb:87 ../timepollhead.rb:162
+msgid "Last edit"
+msgstr "Viimeisin muokkaus"
+
+#: ../pollhead.rb:99
+msgid "Option"
+msgstr "Vaihtoehto"
+
+#: ../pollhead.rb:100
+msgid "Description (optional)"
+msgstr "Kuvaus (valinnainen)"
+
+#: ../pollhead.rb:101
+msgid "Add/Edit option"
+msgstr "Lisää/Muokkaa valinta"
+
+#: ../pollhead.rb:102
+msgid "Preview"
+msgstr "Esikatselu"
+
+#: ../pollhead.rb:103
+msgid ""
+"Enter all the options (columns) which you want the participants of the poll to"
+" choose among. For each option you give here, the participants will choose a v"
+"ote."
+msgstr "Lisää kaikki haluamasi vaihtoehdot (sarakkeet) joista haluat osallistujien"
+"valitsevan. Osallisujat äänestävät jokaisesta vaihtoehdosta"
+
+#: ../timepollhead.rb:113
+msgid ""
+"To add a time other than the default times, please enter some string here (e.&"
+"thinsp;g., 09:30, morning, afternoon)."
+msgstr "Lisätäksesi muun kuin oletusajan, lisää merkkijono tähän (e.&"
+"thinsp;g., 09:30, morning, afternoon)."
+
+#: ../timepollhead.rb:119
+msgid "This time has already been selected."
+msgstr "Tämä aika on jo valittu"
+
+#: ../timepollhead.rb:193
+msgid "Earlier"
+msgstr "Aikaisemmin"
+
+#: ../timepollhead.rb:198
+msgid "Later"
+msgstr "Myöhemmin"
+
+#: ../timepollhead.rb:265
+msgid "Click on the dates to add or remove columns."
+msgstr "Klikkaa päivämääriä lisätäksesi tai poistaaksesi sarakkeita."
+
+#: ../timepollhead.rb:313
+msgid "Optional:"
+msgstr "Valinnainen:"
+
+#: ../timepollhead.rb:314
+msgid "Select specific start times."
+msgstr "Valitse erikseen alkamisajat"
+
+#: ../timepollhead.rb:330
+msgid "Time"
+msgstr "Aika"
+
+#: ../timepollhead.rb:343
+msgid "Selected"
+msgstr ""
+
+#: ../timepollhead.rb:344
+msgid "Not selected"
+msgstr "Ei valittu"
+
+#: ../timepollhead.rb:345
+msgid "Past"
+msgstr "Yli"
+
+#: ../timepollhead.rb:379
+msgid "Select the whole row"
+msgstr "Valitse rivi"
+
+#: ../timepollhead.rb:384
+msgid "Deselect the whole row"
+msgstr "Vapauta rivi"
+
+#: ../timepollhead.rb:428
+msgid "Add"
+msgstr "Lisää"
+
+#: ../timepollhead.rb:429
+msgid "e.&thinsp;g., 09:30, morning, afternoon"
+msgstr ""

@@ -260,7 +260,8 @@ READY
 			["gl", "Galego"],
 			["sw", "Kiswahili"],
 			["et", "Eesti"],
-			["eo", "Esperanto"]
+			["eo", "Esperanto"],
+			["fi", "Finnish"]
 			]
 		unless @hide_lang_chooser
 			lang.each{|short,long|
