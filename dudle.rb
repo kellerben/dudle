@@ -257,12 +257,12 @@ READY
 			["he", "עִבְרִית"],
 			["ca", "Català"],
 			["no", "Norsk"],
+			["fi", "Finnish"],
 			["gl", "Galego"],
 			["sw", "Kiswahili"],
 			["et", "Eesti"],
-			["eo", "Esperanto"],
-			["fi", "Finnish"]
-			]
+			["eo", "Esperanto"]
+		]
 		unless @hide_lang_chooser
 			lang.each{|short,long|
 				if short == GetText.locale.language
