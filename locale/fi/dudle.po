@@ -94,7 +94,7 @@ msgstr "Aktivoi"
 
 #: ../access_control.rb:184
 msgid "controls will be activated when at least the admin user is configured"
-msgstr controls will be activated when at least the admin user is configured"
+msgstr "controls will be activated when at least the admin user is configured"
 
 #: ../access_control.rb:186
 msgid "Deactivate"
