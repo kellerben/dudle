@@ -32,10 +32,10 @@ QUESTIONS = [ "phahqu3Uib4neiRi",
              _("I am aware of the consequences."),
              _("Please delete this poll.")]
 
-USERCONFIRM = CGI.escapeHTML($cgi["confirm"].strip)
+userconfirm = CGI.escapeHTML($cgi["confirm"].strip)
 if $cgi.include?("confirmnumber")
- CONFIRM = $cgi["confirmnumber"].to_i
-	if USERCONFIRM == QUESTIONS[CONFIRM]
+ confirm = $cgi["confirmnumber"].to_i
+	if userconfirm == QUESTIONS[confirm]
 		Dir.chdir("..")
 
 		if $conf.examples.collect{|e| e[:url] }.include?($d.urlsuffix)
@@ -88,7 +88,7 @@ if $cgi.include?("confirmnumber")
 		hint += _("To delete the poll, you have to type:")
 		hint += %{
 		</td>
-		<td class='warning' style='text-align:left'>#{QUESTIONS[CONFIRM]}</td>
+		<td class='warning' style='text-align:left'>#{QUESTIONS[confirm]}</td>
 	</tr>
 	<tr>
 		<td style='text-align:right'>
@@ -96,26 +96,26 @@ if $cgi.include?("confirmnumber")
 		hint += _("but you typed:")
 		hint += %{
 		</td>
-		<td class='warning' style='text-align:left'>#{USERCONFIRM}</td>
+		<td class='warning' style='text-align:left'>#{userconfirm}</td>
 	</tr>
 </table>
 }
 	end
 else
-	CONFIRM = rand(QUESTIONS.size()-1) +1
+	confirm = rand(QUESTIONS.size()-1) +1
 end
 
 $d.html << "<h2>" + _("Delete this poll") + "</h2>"
 $d.html << _("You want to delete the poll named") + " <b>#{$d.table.name}</b>.<br />"
 $d.html << _("This is an irreversible action!") + "<br />"
-$d.html << _("If you are sure that you want to permanently remove this poll, please type “%{question}” into the form.") % {:question => QUESTIONS[CONFIRM]}
+$d.html << _("If you are sure that you want to permanently remove this poll, please type “%{question}” into the form.") % {:question => QUESTIONS[confirm]}
 deletestr = _("Delete")
 $d.html << %{
 	#{hint}
 	<form method='post' action='' accept-charset='utf-8'>
 		<div>
-			<input type='hidden' name='confirmnumber' value="#{CONFIRM}" />
-			<input size='30' type='text' name='confirm' value="#{USERCONFIRM}" />
+			<input type='hidden' name='confirmnumber' value="#{confirm}" />
+			<input size='30' type='text' name='confirm' value="#{userconfirm}" />
 			<input type='submit' value="#{deletestr}" />
 		</div>
 	</form>
