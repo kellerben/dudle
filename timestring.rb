@@ -72,7 +72,7 @@ class TimeString
 	end
 	def to_s
 		if @time
-			"#{@date} #{time_to_s}"
+			"#{CGI.escapeHTML(@date.to_s)} #{time_to_s}"
 		else
 			CGI.escapeHTML(@date.to_s)
 		end

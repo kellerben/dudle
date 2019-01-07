@@ -27,11 +27,6 @@ else
 	$d = Dudle.new(:title => _("Maintenance"), :hide_lang_chooser => true)
 end
 
-def urlescape(str)
-	CGI.escapeHTML(CGI.escape(str).gsub("+","%20"))
-end
-
-
 if File.exists?("maintenance.html")
 	$d << _("This site is currently undergoing maintenance!")
 	$d << File.open("maintenance.html","r").read

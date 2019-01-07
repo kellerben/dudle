@@ -76,7 +76,7 @@
 #}.reverse.collect{|f| f.gsub(/\/data\.yaml$/,'') }.each{|site|
 #	$conf.indexnotice += <<INDEXNOTICE
 #<tr class='participantrow'>
-#	<td class='polls'><a href='./#{CGI.escapeHTML(site).gsub("'","%27")}/'>#{CGI.escapeHTML(site)}</a></td>
+#	<td class='polls'><a href='./#{CGI.escape(site)}/'>#{CGI.escapeHTML(site)}</a></td>
 #	<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>
 #</tr>
 #INDEXNOTICE

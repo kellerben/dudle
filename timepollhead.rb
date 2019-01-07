@@ -403,7 +403,7 @@ END
 						hiddenvars += "<input type='hidden' name='columnid' value=\"#{TimeString.new(day,nil)}\" />"
 					end
 				end
-				ret += "<td>" + add_remove_button(klasse, chosenstr[klasse], "columntime", CGI.escapeHTML(timestamp.time_to_s.to_s), revision, hiddenvars) + "</td>"
+				ret += "<td>" + add_remove_button(klasse, chosenstr[klasse], "columntime", CGI.escapeHTML(timestamp.time_to_s), revision, hiddenvars) + "</td>"
 
 			}
 			ret += "</tr>\n"
@@ -423,7 +423,7 @@ END
 				<input type='hidden' name='undo_revision' value='#{revision}' />
 END
 			if @data.include?(TimeString.new(d,nil))
-				ret += "<input type='hidden' name='columnid' value='#{TimeString.new(d,nil).to_s}' />"
+				ret += "<input type='hidden' name='columnid' value='#{TimeString.new(d,nil)}' />"
 			end
 			addstr = _("Add")
 			hintstr = _("e.&thinsp;g., 09:30, morning, afternoon")
