@@ -40,7 +40,7 @@ $d << <<END
 		#{sendlink}
 		<ul>
 			<li><input id="humanReadableURL" value="#{$conf.siteurl}" type="text" size="80" readonly="readonly"></li>
-			<li><a id="mailtoURL" href='mailto:?subject=#{CGI.escapeHTML(CGI.escape(subjectstr).gsub("+","%20"))}&amp;body=#{$conf.siteurl}'>#{mailstr}</a></li>
+			<li><a id="mailtoURL" href='mailto:?subject=#{CGI.escape(subjectstr).gsub("+","%20")}&amp;body=#{$conf.siteurl}'>#{mailstr}</a></li>
 		</ul>
 	</li>
 	<li>

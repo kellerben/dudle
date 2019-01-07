@@ -180,7 +180,7 @@ HEAD
 <div id='main'>
 #{tabs_to_html(@tab)}
 <div id='content'>
-	<h1 id='polltitle'>#{@title}</h1>
+	<h1 id='polltitle'>#{CGI.escapeHTML(@title)}</h1>
 HEAD
 
 
