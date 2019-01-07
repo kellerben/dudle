@@ -80,7 +80,7 @@ class Poll
 			until fields.pop == "name"
 			end
 			@data.sort{|x,y|
-				cmp = x[1].compare_by_values(y[1],fields) 
+				cmp = x[1].compare_by_values(y[1],fields)
 				cmp == 0 ? x[0].downcase <=> y[0].downcase : cmp
 			}
 		else
@@ -92,12 +92,12 @@ class Poll
 		ret = ""
 		if link
 			ret += "<td><span class='edituser'>"
-			ret += "<a title=\"" 
-			ret += _("Edit user %{user}...") % {:user => CGI.escapeHTML(participant)} 
+			ret += "<a title=\""
+			ret += _("Edit user %{user}...") % {:user => CGI.escapeHTML(participant)}
 			ret += "\" href=\"?edituser=#{CGI.escape(participant)}\">"
 			ret += EDIT
-			ret += "</a> | <a title=\"" 
-			ret += _("Delete user %{user}...") % {:user => CGI.escapeHTML(participant)} 
+			ret += "</a> | <a title=\""
+			ret += _("Delete user %{user}...") % {:user => CGI.escapeHTML(participant)}
 			ret += "\" href=\"?deleteuser&amp;edituser=#{CGI.escape(participant)}\">"
 			ret += "#{DELETE}</a>"
 			ret += "</span></td>"
@@ -112,7 +112,7 @@ class Poll
 	def to_html(showparticipation = true)
 		# border=1 for textbrowsers ;--)
 		ret = "<table id='participanttable' class='polltable' border='1'>\n"
-		
+
 		sortcolumns = $cgi.include?("sort") ? $cgi.params["sort"] : ["timestamp"]
 		ret += "<thead>#{@head.to_html(sortcolumns)}</thead>"
 		ret += "<tbody id='participants'>"
@@ -221,8 +221,8 @@ HEAD
 		return <<END
 <td colspan='2' id='add_participant_input_td'>
 	<input type='hidden' name='olduser' value="#{CGI.escapeHTML(edituser.to_s)}" />
-	<input size='16' 
-		type='text' 
+	<input size='16'
+		type='text'
 		name='add_participant'
 		id='add_participant_input'
 		value="#{CGI.escapeHTML(edituser.to_s)}"/>
@@ -283,10 +283,10 @@ END
 				ret += <<TR
 				<tr class='input-#{valbinary}'>
 					<td class='input-radio'>
-						<input type='radio' 
-							value='#{valbinary}' 
-							id=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\" 
-							name=\"add_participant_checked_#{CGI.escapeHTML(column.to_s)}\" 
+						<input type='radio'
+							value='#{valbinary}'
+							id=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\"
+							name=\"add_participant_checked_#{CGI.escapeHTML(column.to_s)}\"
 							title=\"#{CGI.escapeHTML(column.to_s)}\" #{checked[column] == valbinary ? "checked='checked'":""}/>
 					</td>
 					<td class='input-label'>
@@ -309,7 +309,7 @@ TR
 		ret	+= "<h2>" + _("Comments") if !@comment.empty? || editable
 			if $cgi.include?("comments_reverse")
 				ret	+= " <a class='comment_sort' href='?' title='"
-				ret += _("Sort oldest comment first") + "'>#{REVERSESORT}</a>" 
+				ret += _("Sort oldest comment first") + "'>#{REVERSESORT}</a>"
 			else
 				ret	+= " <a class='comment_sort' href='?comments_reverse' title='"
 				ret += _("Sort newest comment first") + "'>#{SORT}</a>"
@@ -317,7 +317,7 @@ TR
 
 		if @comment.size > 5
 			ret += " <a class='top_bottom_ref' href='#comment#{@comment.size - 1}' title='"
-			ret += _("Go to last comment") + "'>#{GODOWN}</a>" 
+			ret += _("Go to last comment") + "'>#{GODOWN}</a>"
 		end
 
 		ret	+= "</h2>" if !@comment.empty? || editable
@@ -348,7 +348,7 @@ TR
 			ret += _("Go up") + "'>#{GOUP}</a>"
 		end
 
-		
+
 		if editable
 			# ADD COMMENT
 			saysstr = _("says")
@@ -374,7 +374,7 @@ ADDCOMMENT
 		ret = <<FORM
 <form method='get' action=''>
 	<div>
-		#{showhiststr} 
+		#{showhiststr}
 		<select name='history'>
 FORM
 		[["",_("All")],
@@ -451,7 +451,7 @@ FORM
 	end
 
 	###############################
-	# comment related functions 
+	# comment related functions
 	###############################
 	def add_comment name, comment
 		@comment << [Time.now, CGI.escapeHTML(name.strip), CGI.escapeHTML(comment.strip).gsub("\r\n","<br />")]

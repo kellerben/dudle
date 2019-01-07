@@ -77,7 +77,7 @@ class Log
 			return @log[i]
 		end
 	end
-	
+
 	def size
 		@log.size
 	end
@@ -135,7 +135,7 @@ class Log
 			elem = self[rev]
 			prevrev = elem.comment.scan(/^.* to version (\d*)$/).flatten[0]
 			if prevrev
-				rev = prevrev.to_i	
+				rev = prevrev.to_i
 			else
 				h << elem
 				rev -= 1
@@ -143,10 +143,10 @@ class Log
 		end
 		h.sort!
 		a = []
-		begin 
+		begin
 			a << h.pop
 		end while a.last && a.last.comment =~ /^Column .*$/
-		a.pop	
+		a.pop
 		a.sort!
 		Log.new(a)
 	end
@@ -162,7 +162,7 @@ class Log
 				break unless revertrevs.empty?
 				redone << r.to_i() -1
 			else
-				revertrevs << r.to_i 
+				revertrevs << r.to_i
 			end
 		}
 		revertrevs = revertrevs - redone
@@ -213,7 +213,7 @@ require "pp"
     	#   | | | |
     	# 0-1-2-3-4-5
     	#   p
-    	
+
     	def dummy_add(log,comment)
 				log.add(log.max.rev+1,Time.now,comment)
 			end
@@ -242,7 +242,7 @@ require "pp"
 
 			assert_equal([2,3,8,9],l.undorevisions.revisions)
 			assert_equal([],l.redorevisions.revisions)
-			
+
 			dummy_add(l,"Reverted Poll to version 8")
 			dummy_add(l,"Reverted Poll to version 7")
 			dummy_add(l,"Reverted Poll to version 2")
@@ -254,7 +254,7 @@ require "pp"
 			dummy_add(l,"Redo changes to version 3")
 			assert_equal([2,3],l.undorevisions.revisions)
 			assert_equal([8,9],l.redorevisions.revisions)
-			
+
 			dummy_add(l,"Redo changes to version 8")
 			dummy_add(l,"Redo changes to version 9")
 			assert_equal([2,3,8,9],l.undorevisions.revisions)
@@ -278,11 +278,11 @@ require "pp"
 			dummy_add(l,"Redo changes to version 3")
 			assert_equal([2,3],l.undorevisions.revisions)
 			assert_equal([8,9],l.redorevisions.revisions)
-			
+
 			dummy_add(l,"Redo changes to version 8")
 			dummy_add(l,"Redo changes to version 9")
 			assert_equal([2,3,8,9],l.undorevisions.revisions)
 			assert_equal([],l.redorevisions.revisions)
 		end
-  end 
+  end
 end

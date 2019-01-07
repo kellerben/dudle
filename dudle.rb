@@ -128,8 +128,8 @@ class Dudle
 			@table = YAML::load(VCS.cat(self.revision, "data.yaml"))
 			@urlsuffix = File.basename(File.expand_path("."))
 			@title = @table.name
-			
-			
+
+
 			configfiles = @configtabs.collect{|name,file| file}
 			@is_config = configfiles.include?(@tab)
 			@wizzardindex = configfiles.index(@tab) if @is_config
@@ -144,7 +144,7 @@ class Dudle
 		end
 
 
-		
+
 		@css = ["default", "classic", "print"].collect{|f| f + ".css"}
 		if Dir.exists?("#{@basedir}/css/")
 			Dir.open("#{@basedir}/css/").each{|f|

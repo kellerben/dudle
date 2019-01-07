@@ -12,7 +12,7 @@ require 'date'
 #
 #Adaption for a localized Date-class
 #
-#Solution based on discussion at ruby-forum.de 
+#Solution based on discussion at ruby-forum.de
 #-http://forum.ruby-portal.de/viewtopic.php?f=1&t=10527&start=0
 #
 module Date_locale
@@ -60,7 +60,7 @@ module Date_locale
         :abbr_monthnames => [nil] + %w(Jan Feb Mrz Apr Mai Jun Jul Aug Sep Okt Nov Dez),
         :daynames => %w(Sonntag Montag Dienstag Mittwoch Donnerstag Freitag Samstag),
         :abbr_daynames => %w(So Mo Di Mi Do Fr Sa),
-      },     
+      },
    :et => {
       :monthnames => [nil] + %w{Jaanuar Veebruar Märts Aprill Mai Juuni Juuli August September Oktober November Detsember},
       :abbr_monthnames => [nil] + %w{Jaan. Veebr. Märts Apr. Mai Juuni Juuli. Aug. Sep. Okt. Nov. Dets.},
@@ -159,24 +159,24 @@ module Date_locale
      },
   }
   #~ puts DATE_TEXTS.to_yaml
-    
+
   #Not really necessary.
   #But I want to avoid later changes.
   DATE_TEXTS.freeze
-    
+
   #
   #Test if the seleted language is available in Date_locale.
   def self.locale?( lang )
     return DATE_TEXTS[lang]
   end
-  
+
 
   #
   #Get the key for the wanted language.
   #
   #Allows the usage (or not to use) locale.
   def self.get_language_key( lang = nil )
-    
+
     #
     #What's the better solution? Check for locale, or check for the method :language?
     #
@@ -187,7 +187,7 @@ module Date_locale
 			end
       return lang.language.to_sym
     end
-    
+
     case lang
       when nil  #Undefined default, take actual locale or en
         return defined?( Locale ) ? Locale.current.language.to_sym : :en
@@ -204,9 +204,9 @@ module Date_locale
   #
   #Lang can be a language symbol or a locale.
   def strftime_locale(format = '%F', lang = nil )
-    
+
     lang = Date_locale.get_language_key(lang)
-    
+
     #Get the texts
     if DATE_TEXTS[lang]
       daynames = DATE_TEXTS[lang][:daynames]
@@ -221,9 +221,9 @@ module Date_locale
 			monthnames  = DATE_TEXTS[:en][:monthnames]
 			abbr_monthnames = DATE_TEXTS[:en][:abbr_monthnames]
     end
-    
+
     #Make the original replacements, after....
-    result = self.strftime_orig( 
+    result = self.strftime_orig(
       #...you replaced the language dependent parts.
       format.gsub(/%([aAbB])/){|m|
             case $1
@@ -260,7 +260,7 @@ end #class Date
 class DateTime
   #No alias! It is done already in class Date.
   #alias :strftime_orig_date :strftime
-  
+
   #Redefine strftime.
   #strftime_orig is already defined in Date.
   def strftime( format='%F', lang = nil )
@@ -270,13 +270,13 @@ end
 
 
 class Time
-  include Date_locale  
+  include Date_locale
   alias :strftime_orig :strftime
   #Redefine strftime for locale versions.
   def strftime(format='%F', lang = nil )
     return strftime_locale(format, lang )
   end #strftime
-  
+
 end
 
 #
@@ -284,11 +284,11 @@ end
 #
 if __FILE__ == $0
   #~ require 'date_locale'
-  
+
   d = Date.new(2009,10,21)
   puts d.strftime("de: %A {%a} {%A} {%W}  %w ", :de ) #=> de: Mittwoch {Mi} {Mittwoch} {42}  3 (loc: en)
   puts d.strftime("en: %A {%a} {%A} {%W}  %w ", :en ) #=> en: Wednesday {Wed} {Wednesday} {42}  3 (loc: en)
-  
+
   puts "=======Load locale"
   require 'locale'
   Locale.current = 'de'

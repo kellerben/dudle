@@ -58,14 +58,14 @@ if $cgi.include?("poll")
 	else
 		$d << "<div class='error'>"
 		$d << _("Example not found: %{example}") % { :example => CGI.escapeHTML($cgi["poll"])}
-		$d << "</div>" 
+		$d << "</div>"
 	end
 end
 
 unless $d.html.header["status"] == "REDIRECT"
 	unless $conf.examples.empty?
 		$d << "<div class='textcolumn'><h2>" + _("Examples") + "</h2>"
-		$d << _("If you want to play with the application, you may want to take a look at these example polls:") 
+		$d << _("If you want to play with the application, you may want to take a look at these example polls:")
 		$d << "<ul>"
 		$conf.examples.each{|poll|
 			$d << "<li><a href='example.cgi?poll=#{poll[:url]}'>#{poll[:description]}</a></li>" unless poll[:hidden]

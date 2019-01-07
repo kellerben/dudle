@@ -48,14 +48,14 @@ if $cgi["comment"] != ""
 end
 
 if $cgi.include?("delete_comment")
-	$d.table.delete_comment($cgi["delete_comment"]) 
+	$d.table.delete_comment($cgi["delete_comment"])
 	edit = true
 end
 
 if edit
 	$d.html.header["status"] = "REDIRECT"
 	$d.html.header["Cache-Control"] = "no-cache"
-	$d.html.header["Location"] = $conf.siteurl 
+	$d.html.header["Location"] = $conf.siteurl
 	$d << _("The changes were saved, you should be redirected to %{link}.") % {:link => "<a href=\"#{$conf.siteurl}\">#{$conf.siteurl}</a>"}
 
 else

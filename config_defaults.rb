@@ -39,7 +39,7 @@ $conf.siteurl = "#{protocol}://#{$cgi.server_name}#{port}#{$cgi.script_name.gsub
 $conf.breadcrumbs = []
 $conf.header = []
 $conf.footer = []
-6.times{|i| 
+6.times{|i|
 	$conf.header << "<div id='header#{i}'></div>"
 	$conf.footer << "<div id='footer#{i}'></div>"
 }

@@ -72,7 +72,7 @@ th.weekday{
 }
 
 input.navigation, input.disabled, input.chosen, input.notchosen {
-	border-width: 1px; 
+	border-width: 1px;
 	border-style: solid;
 	border-color: black;
 	padding: 0px;
@@ -81,19 +81,19 @@ input.navigation, input.disabled, input.chosen, input.notchosen {
 }
 
 input.navigation {
-	color: white; 
+	color: white;
 	background-color: black;
 }
 
 input.disabled { background-color:#DDD;color:#BBB}
 td.calendarday{
-	border: 1px; 
+	border: 1px;
 	padding: 0px;
 	margin: 0px;
 }
 
-table { 
-	border: none; 
+table {
+	border: none;
 	border-spacing: 0;
 	border-collapse: collapse;
 }
@@ -118,7 +118,7 @@ div#add_comment,div#edit_column, div#history, div#backlink, input.delete_comment
 	display: none;
 }
 
-th { 
+th {
 	padding: 1px 3px;
 	font-weight: normal;
 	border-width: 1px;
@@ -130,7 +130,7 @@ th a{
 	color: black;
 }
 
-td.date { 
+td.date {
 	text-align: left;
 }
 

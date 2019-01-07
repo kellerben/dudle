@@ -20,7 +20,7 @@
 ############################################################################
 
 if __FILE__ == $0
-	
+
 load "../dudle.rb"
 
 revbeforeedit = VCS.revno
@@ -28,7 +28,7 @@ revbeforeedit = VCS.revno
 if $cgi.include?("undo_revision") && $cgi["undo_revision"].to_i < revbeforeedit
 	undorevision = $cgi["undo_revision"].to_i
 	$d = Dudle.new(:revision => undorevision)
-	comment = $cgi.include?("redo") ? "Redo changes" : "Reverted Poll" 
+	comment = $cgi.include?("redo") ? "Redo changes" : "Reverted Poll"
 	$d.table.store("#{comment} to version #{undorevision}")
 else
 	$d = Dudle.new
@@ -82,9 +82,9 @@ if rrevs.min
 	case action
 	when "added"
 		title["Redo"] = _("Add column") + " #{coltitle}"
-	when "deleted"      
+	when "deleted"
 		title["Redo"] = _("Delete column") + " #{coltitle}"
-	when "edited"       
+	when "edited"
 		title["Redo"] = _("Edit column") + " #{coltitle}"
 	end
 

@@ -36,7 +36,7 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 			if guessurl =~ /^[a-zA-Z0-9_-]+$/ && !File.exist?(guessurl)
 				POLLURL = guessurl
 			else
-				chars = ("a".."z").to_a + ("1".."9").to_a 
+				chars = ("a".."z").to_a + ("1".."9").to_a
 				POLLURL = Array.new(8){chars[rand(chars.size)]}.join
 			end
 		else

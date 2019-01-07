@@ -72,7 +72,7 @@ end
 
 if $conf.auto_send_report && !known
 	tmpfile = "/tmp/error.#{rand(10000)}"
-	File.open(tmpfile,"w"){|f| 
+	File.open(tmpfile,"w"){|f|
 		f << errorstr
 	}
 

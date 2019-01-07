@@ -29,7 +29,7 @@ $d = Dudle.new
 
 acusers = {}
 
-File.open(".htdigest","r").each_line{|l| 
+File.open(".htdigest","r").each_line{|l|
 	user,realm = l.scan(/^(.*):(.*):.*$/).flatten
 	acusers[user] = realm
 }
@@ -142,7 +142,7 @@ if $cgi.include?("ac_user")
 	else
 		if $cgi.include?("ac_create")
 			add_to_htdigest(user,$cgi["ac_password0"])
-			acusers[user] = true 
+			acusers[user] = true
 			write_htaccess(acusers)
 		end
 
@@ -220,7 +220,7 @@ $d.html << <<AC
 	<tr>
 		<td></td>
 		<td>
-			#{acswitchbutton}	
+			#{acswitchbutton}
 		</td>
 	</tr>
 </table>

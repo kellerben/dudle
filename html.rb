@@ -37,7 +37,7 @@ class HTML
 	def head
 		ret = <<HEAD
 <head>
-	<meta http-equiv="Content-Type" content="#{@header["type"]}; charset=#{@header["charset"]}" /> 
+	<meta http-equiv="Content-Type" content="#{@header["type"]}; charset=#{@header["charset"]}" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<title>#{@title}</title>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
@@ -100,7 +100,7 @@ SCRIPT
 
 	def out(cgi)
 		#FIXME: quick and dirty fix for encoding problem
-		{ 
+		{
 			"ö" => "&ouml;",
 			"ü" => "&uuml;",
 			"ä" => "&auml;",

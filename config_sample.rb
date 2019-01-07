@@ -44,11 +44,11 @@
 # In addition, you can change the email address to yours, if you want to
 # receive the mails instead of me (the developer).
 # You would do me a favor, if you configure this with my address, however,
-# if you do not want people to read parts of your error log, leave the 
+# if you do not want people to read parts of your error log, leave the
 # $conf.errorlog unset!
-# Make sure, that your apache can read this file 
+# Make sure, that your apache can read this file
 # (which usually is not the case for /var/log/apache2/*)
-# You have 2 Options: 
+# You have 2 Options:
 #   1. change logrotate to allow /var/log/apache2/* to be read by apache
 #      (=> change the line »create 640 root adm«)
 #   2. change $conf.errorlog to another file and create a new rule for logrotate.
@@ -87,8 +87,8 @@
 # Add some Example Polls to the example page.
 # You may create those using the normal interface
 # and make them password protected afterwards
-# .htaccess and .htdigest are deleted after 
-# example creation (defining password protected 
+# .htaccess and .htdigest are deleted after
+# example creation (defining password protected
 # examples is not possible therefore)
 #$conf.examples = [
 #	{

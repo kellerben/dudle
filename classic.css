@@ -57,7 +57,7 @@ td.name {
 }
 
 input.delete, input.toggle{
-	border: none; 
+	border: none;
 	padding: 0px;
 	cursor: pointer;
 	background-color: #000;
@@ -75,7 +75,7 @@ th.weekday{
 
 input.chosen { background-color:#0F0; }
 input.navigation, input.disabled, input.chosen, input.notchosen {
-	border-width: 1px; 
+	border-width: 1px;
 	border-style: solid;
 	border-color: black;
 	padding: 0px;
@@ -84,7 +84,7 @@ input.navigation, input.disabled, input.chosen, input.notchosen {
 }
 
 input.navigation {
-	color: white; 
+	color: white;
 	background-color: black;
 }
 .navigation, .delete, .toggle{
@@ -94,8 +94,8 @@ input.navigation {
 
 input.disabled { background-color:#DDD;color:#BBB}
 
-table { 
-	border: none; 
+table {
+	border: none;
 }
 
 table.calendarday {
@@ -143,7 +143,7 @@ td {
 	overflow: auto;
 }
 
-tr.participantrow, tr#add_participant, tr#summary { 
+tr.participantrow, tr#add_participant, tr#summary {
 	background-color:Silver;
 }
 
@@ -155,7 +155,7 @@ tr.participantrow:hover {
 	background: #AAA;
 }
 
-th { 
+th {
 	padding-left: 3px;
 	padding-right: 3px;
 	color: white;
@@ -168,7 +168,7 @@ th a{
 	text-decoration: none;
 }
 
-td.date { 
+td.date {
 	color: Gray;
 }
 
@@ -178,7 +178,7 @@ html {
 }
 #main{
 	margin-left: auto;
-	margin-right:auto; 
+	margin-right:auto;
 }
 #content {
 	background: white;
@@ -236,15 +236,15 @@ div#tabs a{
 }
 
 li.active_tab{
-	border-style: solid solid none; 
+	border-style: solid solid none;
 	padding-bottom: 1px;
 }
 
-li.nonactive_tab{ 
+li.nonactive_tab{
 	border-style: solid;
 }
 
-li.nonactive_tab a:hover { 
+li.nonactive_tab a:hover {
 	background: #CCC;
 }
 
@@ -267,8 +267,8 @@ h1 {
 	text-align: center;
 }
 
-div.comment { 
-	margin-top: 1ex; 
+div.comment {
+	margin-top: 1ex;
 	line-height: 1.4em;
 }
 

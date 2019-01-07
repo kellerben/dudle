@@ -28,7 +28,7 @@ require "time"
 $cgi = CGI.new
 
 
-feed = Atom::Feed.new 
+feed = Atom::Feed.new
 olddir = File.expand_path(".")
 Dir.chdir("..")
 def _(string)
@@ -47,8 +47,8 @@ feed.authors << Atom::Person.new(:name => 'dudle automatic notificator')
 feed.links << Atom::Link.new(:href => $conf.siteurl + "atom.cgi", :rel => "self")
 
 log = VCS.history
-log.reverse_each {|l|	
-	feed.entries << Atom::Entry.new do |e|	
+log.reverse_each {|l|
+	feed.entries << Atom::Entry.new do |e|
 		e.title = l.comment
 #		e.content = Atom::Content::Xhtml.new("<p><a href=\"#{$conf.siteurl}history.cgi?revision=#{l.rev}\">permalink</a>, <a href='#{$conf.siteurl}' >current version</a></p>")
 		e.links << Atom::Link.new(:href => "#{$conf.siteurl}history.cgi?revision=#{l.rev}")

@@ -27,7 +27,7 @@ a, a:visited {
 color:#36c;
 text-decoration:none;
 }
-	
+
 a:hover, a:active {
 	color:#36c;
 	text-decoration:underline;
@@ -66,12 +66,12 @@ td.name {
 }
 
 input.delete, input.toggle{
-	border: none; 
+	border: none;
 	cursor: pointer;
 }
 
 input.navigation, input.disabled, input.chosen, input.notchosen {
-	border-width: 1px; 
+	border-width: 1px;
 	border-style: solid;
 	border-color: black;
 	padding: 0px;
@@ -100,8 +100,8 @@ input.disabled {
 	color:#AAA
 }
 
-table { 
-	border: none; 
+table {
+	border: none;
 }
 
 table.calendarday {
@@ -109,7 +109,7 @@ table.calendarday {
 }
 
 div#AddRemoveColumndaysDescription{
-	max-width: 15em; 
+	max-width: 15em;
 }
 
 table.calendarday th, table.calendarday td{
@@ -193,14 +193,14 @@ tr.participantrow:hover {
 	background: #EEE;
 }
 
-tr.participantrow{ 
+tr.participantrow{
 	background-color:#fff;
 }
-	
-tr#summary { 
+
+tr#summary {
 	background-color:#eee;
 }
-td.sum, tr#summary { 
+td.sum, tr#summary {
 	margin-top:5ex;
 }
 td.sum{ color: #FFF}
@@ -216,12 +216,12 @@ td.match_20{ background-color: #888888; }
 td.match_10{ background-color: #999999; }
 td.match_0{  background-color: #AAAAAA; }
 
-	
+
 td.polls {
 	text-align:left;
 }
 
-th { 
+th {
 	font-weight: normal;
 	padding-left: 3px;
 	padding-right: 3px;
@@ -229,7 +229,7 @@ th {
 	border:none;
 }
 
-td.date { 
+td.date {
 	color:#ccc;
 	text-align: left;
 }
@@ -240,7 +240,7 @@ html {
 }
 #main{
 	margin-left: auto;
-	margin-right:auto; 
+	margin-right:auto;
 }
 #content {
 	background: #fff;
@@ -310,17 +310,17 @@ div#tabs a{
 }
 
 li.active_tab{
-	border-style: solid solid none; 
+	border-style: solid solid none;
 	padding-bottom: 1px;
 }
 
-li.nonactive_tab{ 
+li.nonactive_tab{
 	border-style: solid;
 	border-color:#CCC;
 	border-bottom:none;
 }
 
-li.nonactive_tab a:hover { 
+li.nonactive_tab a:hover {
 	background: #EEE;
 }
 

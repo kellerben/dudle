@@ -22,7 +22,7 @@ $USEUTF = true
 $USEUTF = false if $cgi.user_agent =~ /.*MSIE [56]\..*/
 $USEUTF = false if $cgi.cookies["ascii"][0]
 $USEUTF = true  if $cgi.include?("utf")
-$USEUTF = false if $cgi.include?("ascii") 
+$USEUTF = false if $cgi.include?("ascii")
 
 if $USEUTF
 	NOSORT      = CGI.escapeHTML('▾▴')

@@ -32,7 +32,7 @@ $d << "<h2>" + _("Customize personal settings") + "</h2>"
 $d << _("You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> enabled in order to personalize your settings.")
 
 def choosetable(options, cursetting)
-	ret = <<HEAD 
+	ret = <<HEAD
 <table>
 	<tr>
 HEAD

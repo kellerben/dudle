@@ -21,7 +21,7 @@ if __FILE__ == $0
 require "test/unit"
 require "pp"
 unless ARGV[0]
-	puts "Usage: ruby #{$0} git" 
+	puts "Usage: ruby #{$0} git"
 	exit
 end
 require "vcs_#{ARGV[0]}"
@@ -82,5 +82,5 @@ class VCS_test < Test::Unit::TestCase
 
 		@t = "history"
 	end
-end 
+end
 end
