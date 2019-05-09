@@ -52,7 +52,7 @@ class VCS
 	end
 
 	def VCS.history
-		log = runcmd(GITCMD, "log", "--format=format:%s\t%ai").split("\n").reverse
+		log = runcmd(GITCMD, "log", "--format=format:%s\t%ai").force_encoding('utf-8').split("\n").reverse
 		ret = Log.new
 		log.each_with_index{|s,i|
 			a = s.scan(/^([^\t]*)(.*)$/).flatten
