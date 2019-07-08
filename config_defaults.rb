@@ -36,6 +36,8 @@ else
 end
 $conf.siteurl = "#{protocol}://#{$cgi.server_name}#{port}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
 
+$conf.random_chars = 7
+
 $conf.breadcrumbs = []
 $conf.header = []
 $conf.footer = []

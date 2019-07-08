@@ -32,13 +32,8 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 		createnotice = _("Please enter a descriptive title.")
 	else
 		if $cgi["poll_url"] == ""
-			guessurl = polltitle.gsub(" ","_").gsub(/[\?\!\.]/,"")
-			if guessurl =~ /^[a-zA-Z0-9_-]+$/ && !File.exist?(guessurl)
-				pollurl = guessurl
-			else
-				chars = ("a".."z").to_a + ("1".."9").to_a
-				pollurl = Array.new(8){chars[rand(chars.size)]}.join
-			end
+			require "securerandom"
+			true while(File.exists?(pollurl = SecureRandom.urlsafe_base64($conf.random_chars)))
 		else
 			pollurl=$cgi["poll_url"]
 		end
