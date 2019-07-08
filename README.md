@@ -99,6 +99,9 @@ There are two docker image available
     - https://github.com/kellerben/dudle-extensions-asymcrypt
     - https://github.com/kellerben/dudle-extensions-gpgauth
     - https://github.com/kellerben/dudle-extensions-anonymous
+   Note, that extensions are loaded in alphabetic order! The symcrypt
+   extension e.g. needs the participate extension and therefore you need
+   to name it “10-participate” in order to get executed first.
 
 # Translators
 If you set `$DUDLE_POEDIT_AUTO` to your lang, poedit will launch
