@@ -27,6 +27,11 @@
 # $conf.vcs = "git"
 
 # Change only if the url is not determined correctly (e.g. at the start page)
+# the default is:
+# $conf.siteurl = "#{protocol}://#{$cgi.server_name}#{port}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
+# you may adjust it and replace the magic guessing with something like:
+# $conf.siteurl = "https://dudle.example.org#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
+# or even
 # $conf.siteurl = "http://example.org:9999/exampledir"
 
 # You may insert some sites, which are under your site
