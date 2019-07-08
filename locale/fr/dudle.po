@@ -21,8 +21,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-25 23:14+0200\n"
-"PO-Revision-Date: 2011-06-03 16:57+0100\n"
-"Last-Translator: Gilles Seban\n"
+"PO-Revision-Date: 2019-02-25 16:57+0100\n"
+"Last-Translator: Séb. M.\n"
 "Language-Team: \n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -36,11 +36,11 @@ msgstr ""
 
 #: ../about.cgi:29
 msgid "This application is powered by %{Dudle}."
-msgstr ""
+msgstr "Application soutenue par %{Dudle}."
 
 #: ../about.cgi:31
 msgid "License"
-msgstr ""
+msgstr "License"
 
 #: ../about.cgi:32
 msgid ""
@@ -54,7 +54,7 @@ msgstr ""
 
 #: ../about.cgi:33
 msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
-msgstr ""
+msgstr "Le code source de l'application est disponible %{a_start}ici%{a_end}."
 
 #: ../about.cgi:35
 #, fuzzy
@@ -62,7 +62,7 @@ msgid ""
 "Please write me an e-mail if you have found a bug, have found something "
 "which disturbs you, or have any other feedback."
 msgstr ""
-"Si vous trouvez un bug ou qu'un truc vous dérange, indiquez-le moi (de "
+"Si vous trouvez un bug ou un truc qui vous dérange, indiquez-le moi (de "
 "préférence en anglais ou allemand) : <a href=\"mailto:"
 "Benjamin_dot_Kellermann@gmx_in_deutschland?subject=Dudle%20Feedback"
 "\">Feedback</a>"
@@ -84,7 +84,7 @@ msgid ""
 "You have to remove the participant user before you can remove the "
 "administrator."
 msgstr ""
-"Vous devez supprimer les utilisateurs participants avec de pouvoir supprimer "
+"Vous devez supprimer les utilisateurs participants avant de pouvoir supprimer "
 "l'administrateur."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
@@ -172,7 +172,7 @@ msgstr "Sondage courant (Version %{revisionnumber})"
 
 #: ../advanced.rb:37
 msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
-msgstr ""
+msgstr "Retourner à la version de sondage (voir l'onglet « Historique » pour les numéros de révision) :"
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
@@ -269,11 +269,11 @@ msgstr "Supprimez ce sondage."
 
 #: ../delete_poll.rb:42
 msgid "Example polls cannot be deleted."
-msgstr ""
+msgstr "Les sondages en exemple ne peuvent pas être supprimé."
 
 #: ../delete_poll.rb:43
 msgid "You should never see this text."
-msgstr ""
+msgstr "Vous ne devriez jamais voir ce text."
 
 #: ../delete_poll.rb:56
 msgid "The poll was deleted successfully!"
@@ -292,11 +292,11 @@ msgstr ""
 
 #: ../delete_poll.rb:59
 msgid "You can now"
-msgstr ""
+msgstr "Vous pouvez maintenant"
 
 #: ../delete_poll.rb:61
 msgid "Browse Wikipedia"
-msgstr "Naviguer sur Wikipedia"
+msgstr "Naviguer sur Wikipédia"
 
 #: ../delete_poll.rb:62
 #, fuzzy
@@ -398,7 +398,7 @@ msgstr "Toutes les modifications ont été sauvegardées."
 
 #: ../dudle.rb:232
 msgid "Proceed!"
-msgstr ""
+msgstr "Effectuer !"
 
 #: ../edit_columns.rb:44
 msgid "Add and remove columns"
@@ -474,7 +474,7 @@ msgid ""
 "If you want to play with the application, you may want to take a look at "
 "these example polls:"
 msgstr ""
-"Si vous voulez utiliser l'application, vous pouvez souhaiter regarder ces "
+"Si vous voulez utiliser l'application, vous pouvez être intéressé par ces "
 "exemples de sondages :"
 
 #: ../history.rb:28
@@ -513,7 +513,7 @@ msgstr ""
 
 #: ../index.cgi:76
 msgid "Go away."
-msgstr ""
+msgstr "Fuyez."
 
 #: ../index.cgi:84
 msgid "Create new poll"
@@ -565,13 +565,15 @@ msgstr ""
 
 #: ../maintenance.cgi:36
 msgid "This site is currently undergoing maintenance!"
-msgstr ""
+msgstr "Ce site est en maintenance en ce moment !"
 
 #: ../maintenance.cgi:39
 msgid ""
 "You should not browse to this file directly. Please create a file named "
 "\"maintenance.html\" to enable the maintenance mode."
 msgstr ""
+"Vous ne devez pas parcourir les dossiers directement. Veuillez créer un "
+"fichier \"maintenance.html\" pour activer le mode maintenance."
 
 #: ../not_found.cgi:30
 msgid "Poll not found"
@@ -769,12 +771,16 @@ msgid ""
 "to choose among. For each option you give here, the participants will choose "
 "a vote."
 msgstr ""
+"Entrer toutes les options (colonnes) que pourront choisir les participants du "
+"sondage. Les participant pourront voter pour chaque option proposée ici. "
 
 #: ../timepollhead.rb:113
 msgid ""
 "To add a time other than the default times, please enter some string here (e."
 "&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
+"Pour ajouter une heure différente de celles par défaut, veuiller ajouter une "
+"chaine de caractère ici (e.&thinsp;g., 09h30, matin, aprèm')."
 
 #: ../timepollhead.rb:119
 msgid "This time has already been selected."
@@ -830,7 +836,7 @@ msgstr "Ajouter"
 
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
-msgstr "ex : 09:30, matin, après-midi"
+msgstr "ex : 09h30, matin, après-midi"
 
 #~ msgid "Event-scheduling poll"
 #~ msgstr "Sondage de choix de date"
