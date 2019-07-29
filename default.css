@@ -374,3 +374,8 @@ div#languageChooser li {
 	display: inline;
 }
 
+input#add_participant_input {
+	width: 100%;
+	border: solid 1px;
+
+}
