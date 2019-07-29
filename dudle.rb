@@ -135,6 +135,7 @@ class Dudle
 			@wizzardindex = configfiles.index(@tab) if @is_config
 
 			@html = HTML.new("dudle - #{@title} - #{@tabtitle}",params[:relative_dir])
+			@html.add_html_head('<meta name="robots" content="noindex, nofollow" />')
 			@html.header["Cache-Control"] = "no-cache"
 		else
 			@basedir = "."
