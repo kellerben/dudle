@@ -267,7 +267,7 @@ READY
 		]
 		unless @hide_lang_chooser
 			lang.each{|short,long|
-				if short == GetText.locale.language
+				if short == GetText.locale.to_s
 					@html << "<li class='lang'>#{long}</li>"
 				else
 					@html << "<li class='lang'><a href='?lang=#{short}'>#{long}</a></li>"
