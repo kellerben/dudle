@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 ############################################################################
-# Copyright 2010 Benjamin Kellermann                                       #
+# Copyright 2010-2019 Benjamin Kellermann                                  #
 #                                                                          #
 # This file is part of Dudle.                                              #
 #                                                                          #

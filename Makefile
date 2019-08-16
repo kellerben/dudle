@@ -1,5 +1,5 @@
 ############################################################################
-# Copyright 2009 Benjamin Kellermann                                       #
+# Copyright 2009-2019 Benjamin Kellermann                                  #
 #                                                                          #
 # This file is part of Dudle.                                              #
 #                                                                          #
