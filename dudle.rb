@@ -256,6 +256,7 @@ READY
 			["hu", "Magyar"],# 13 million (2002–2012)
 			["sv", "Svenska"],# 10 million (2018)
 			["cs", "Česky"],# 10.7 million (2015)
+			["da", "Dansk"],# 5.5 million (2012)
 			["fi", "Finnish"],# 5.4 million (2009–2012)
 			["he", "עִבְרִית"],# 5 million (2017)
 			["no", "Norsk"],# 4.32 million (2012)
