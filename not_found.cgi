@@ -33,7 +33,6 @@ str = [_("The requested poll was not found."),
        _("There are several reasons why a poll may have been deleted:"),
        _("Somebody clicked on “Delete poll” and deleted the poll manually."),
        _("The poll was deleted by the administrator because it was not accessed for a long time."),
-       _("If you think that the deletion was done in error, please contact the administrator of the system."),
        _("Return to Dudle home and schedule a new poll")]
 
 $d << <<END
@@ -46,10 +45,7 @@ $d << <<END
 			<li>#{str[2]}</li>
 			<li>#{str[3]}</li>
 		</ul>
-		#{str[4]}
-		<ul>
-			<li><a href='#{$conf.siteurl}'>#{str[5]}</a></li>
-		</ul>
+		<a href='#{$conf.siteurl}'>#{str[4]}</a>
 		</p>
 END
 
