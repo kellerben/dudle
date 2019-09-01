@@ -28,10 +28,11 @@ GNU AGPL v3 or higher (see file License)
        done
        ```
     2. Build them on your own. This requires gettext,
-       ruby-gettext, potool, and make to be installed.
+       [ruby-gettext](https://rubygems.org/gems/gettext), [potool](http://marcin.owsiany.pl/potool-page), and make to be installed.
 
        ```sh
        sudo aptitude install gettext potool make
+       gem install gettext
        make
        ```
 5.  In order to let access control work correctly, the webserver needs

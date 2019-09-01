@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-28 14:26+0100\n"
+"POT-Creation-Date: 2019-09-01 20:36+0300\n"
 "PO-Revision-Date: 2011-05-10 07:31+0200\n"
 "Last-Translator: Eros Pedrini\n"
 "Language-Team: \n"
@@ -178,14 +178,6 @@ msgstr "Ritorna alla pagina principale di Dudle e Programma un nuovo Sondaggio"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Devi essere autorizzato per accedere a questa pagina!"
 
-#: ../config.rb:92
-msgid "Event Schedule Poll"
-msgstr ""
-
-#: ../config.rb:96
-msgid "Normal Poll"
-msgstr ""
-
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize Personal Settings"
 msgstr "Modifica le Impostazione Personali"
@@ -214,12 +206,12 @@ msgstr ""
 "Utilizza questa opzione se ci sono dei caratteri all'interno di parentesi."
 
 #: ../customize.cgi:58 ../customize.rb:58
-msgid "Use this option if you have problems with some characters."
-msgstr "Usa questa opzione solo se riscontri problemi con alcuni caratteri."
-
-#: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
 msgstr "Usa solamente frasi composte da caratteri standard"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr "Usa questa opzione solo se riscontri problemi con alcuni caratteri."
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
@@ -381,12 +373,12 @@ msgid "Finish"
 msgstr "Fine"
 
 #: ../dudle.rb:232
-msgid "Proceed!"
-msgstr "Procedi!"
-
-#: ../dudle.rb:232
 msgid "All changes were saved successfully."
 msgstr "Tutti i cambiamenti sono stati salvati."
+
+#: ../dudle.rb:232
+msgid "Proceed!"
+msgstr "Procedi!"
 
 #: ../edit_columns.rb:44
 msgid "Add and Remove Columns"
@@ -541,12 +533,12 @@ msgid "Create"
 msgstr "Crea"
 
 #: ../log.rb:111
-msgid "Date"
-msgstr "Data"
-
-#: ../log.rb:111
 msgid "Version"
 msgstr "Versione"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Data"
 
 #: ../log.rb:111
 msgid "Comment"

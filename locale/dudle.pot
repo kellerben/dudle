@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-10 22:36+0200\n"
-"PO-Revision-Date: 2017-07-10 22:36+0200\n"
+"POT-Creation-Date: 2019-09-01 20:36+0300\n"
+"PO-Revision-Date: 2019-09-01 20:36+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -150,26 +150,6 @@ msgstr ""
 msgid "You have to authorize yourself in order to access this page!"
 msgstr ""
 
-#: ../config.rb:45
-msgid "Event Schedule Poll"
-msgstr ""
-
-#: ../config.rb:49
-msgid "Normal Poll"
-msgstr ""
-
-#: ../config.rb:53
-msgid "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
-msgstr ""
-
-#: ../config.rb:57
-msgid "End-to-End encrypted Poll, where only the administrator is able to read votes"
-msgstr ""
-
-#: ../config.rb:61
-msgid "Test for several PGP-authenticated votes"
-msgstr ""
-
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize Personal Settings"
 msgstr ""
@@ -187,19 +167,19 @@ msgid "Description"
 msgstr ""
 
 #: ../customize.cgi:57 ../customize.rb:57
-msgid "Use this option if you see the characters in the parenthesis."
-msgstr ""
-
-#: ../customize.cgi:57 ../customize.rb:57
 msgid "Use special characters"
 msgstr ""
 
-#: ../customize.cgi:58 ../customize.rb:58
-msgid "Use this option if you have problems with some characters."
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
 msgstr ""
 
 #: ../customize.cgi:58 ../customize.rb:58
 msgid "Use only normal strings"
+msgstr ""
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
 msgstr ""
 
 #: ../customize.cgi:61 ../customize.rb:61
@@ -495,11 +475,11 @@ msgid "Create"
 msgstr ""
 
 #: ../log.rb:111
-msgid "Date"
+msgid "Version"
 msgstr ""
 
 #: ../log.rb:111
-msgid "Version"
+msgid "Date"
 msgstr ""
 
 #: ../log.rb:111

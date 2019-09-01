@@ -1,8 +1,8 @@
 # coding: utf-8
 ############################################################################
-# Copyright 2009,2010 Benjamin Kellermann                                  #
+# Copyright 2009-2019 Benjamin Kellermann                                  #
 #                                                                          #
-# This file is part of dudle.                                              #
+# This file is part of Dudle.                                              #
 #                                                                          #
 # Dudle is free software: you can redistribute it and/or modify it under   #
 # the terms of the GNU Affero General Public License as published by       #
@@ -128,13 +128,14 @@ class Dudle
 			@table = YAML::load(VCS.cat(self.revision, "data.yaml"))
 			@urlsuffix = File.basename(File.expand_path("."))
 			@title = @table.name
-			
-			
+
+
 			configfiles = @configtabs.collect{|name,file| file}
 			@is_config = configfiles.include?(@tab)
 			@wizzardindex = configfiles.index(@tab) if @is_config
 
 			@html = HTML.new("dudle - #{@title} - #{@tabtitle}",params[:relative_dir])
+			@html.add_html_head('<meta name="robots" content="noindex, nofollow" />')
 			@html.header["Cache-Control"] = "no-cache"
 		else
 			@basedir = "."
@@ -144,7 +145,7 @@ class Dudle
 		end
 
 
-		
+
 		@css = ["default", "classic", "print"].collect{|f| f + ".css"}
 		if Dir.exists?("#{@basedir}/css/")
 			Dir.open("#{@basedir}/css/").each{|f|
@@ -180,7 +181,7 @@ HEAD
 <div id='main'>
 #{tabs_to_html(@tab)}
 <div id='content'>
-	<h1 id='polltitle'>#{@title}</h1>
+	<h1 id='polltitle'>#{CGI.escapeHTML(@title)}</h1>
 HEAD
 
 
@@ -242,28 +243,31 @@ READY
 		@html.add_cookie("lang",@cgi["lang"],"/",Time.now + (1*60*60*24*365)) if @cgi.include?("lang")
 		@html << "</div>" # content
 		@html << "<div id='languageChooser'><ul>"
-		lang = [
-			["en", "English"],
-			["es", "Español"],
-			["pt_BR", "Português brasileiro"],
-			["fr", "Français"],
-			["de", "Deutsch"],
-			["it", "Italiano"],
-			["nl", "Nederlands"],
-			["hu", "Magyar"],
-			["sv", "Svenska"],
-			["cs", "Česky"],
-			["he", "עִבְרִית"],
-			["ca", "Català"],
-			["no", "Norsk"],
-			["gl", "Galego"],
-			["et", "Eesti"],
-			["sw", "Kiswahili"]
-			]
-
+		lang = [# sorted by native speakers according to English Wikipedia
+			["es", "Español"],# 480 million native speakers (2018)
+			["en", "English"],# 360–400 million (2006)
+			["ar", "اَلْعَرَبِيَّة"],# 310 million, all varieties (2011–2016)
+			["pt_BR", "Português brasileiro"],# 205 million (2011)
+			["de", "Deutsch"],# 95 million (2014)
+			["it", "Italiano"],# 90 million (2012)
+			["fr", "Français"],# 76.8 million (2014)
+			["nl", "Nederlands"],# 24 million (2016)
+			["sw", "Kiswahili"],# 15 million (2012)
+			["hu", "Magyar"],# 13 million (2002–2012)
+			["sv", "Svenska"],# 10 million (2018)
+			["cs", "Česky"],# 10.7 million (2015)
+			["da", "Dansk"],# 5.5 million (2012)
+			["fi", "Finnish"],# 5.4 million (2009–2012)
+			["he", "עִבְרִית"],# 5 million (2017)
+			["no", "Norsk"],# 4.32 million (2012)
+			["ca", "Català"],# 4.1 million (2012)
+			["gl", "Galego"],# 2.4 million (2012)
+			["et", "Eesti"],# 1.1 million (2012)
+			["eo", "Esperanto"]# estimated 1000 to several thousand (2016)
+		]
 		unless @hide_lang_chooser
 			lang.each{|short,long|
-				if short == GetText.locale.language
+				if short == GetText.locale.to_s
 					@html << "<li class='lang'>#{long}</li>"
 				else
 					@html << "<li class='lang'><a href='?lang=#{short}'>#{long}</a></li>"
