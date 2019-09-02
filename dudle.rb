@@ -271,9 +271,9 @@ READY
 		unless @hide_lang_chooser
 			lang.each{|short,long|
 				if short == GetText.locale.to_s
-                                        @html << "<img src='icons/icon20x24px-exported.jpg' alt='Language icon' style='width:20px;height:24px;'><option value='?lang=#{short}'>#{short}</option>"
+                                        @html << "<option value='?lang=#{short}'>#{short}</option>"
 				else
-					@html << "<img src='icons/icon20x24px-exported.jpg' alt='Language icon' style='width:20px;height:24px;'><option value='?lang=#{short}'>#{long}</option>"
+					@html << "<option value='?lang=#{short}'>#{long}</option>"
 				end
 			}
 		end
