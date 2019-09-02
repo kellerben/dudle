@@ -242,7 +242,10 @@ READY
 
 		@html.add_cookie("lang",@cgi["lang"],"/",Time.now + (1*60*60*24*365)) if @cgi.include?("lang")
 		@html << "</div>" # content
-		@html << "<div id='languageChooser'><ul>"
+		@html << "<div id='languageChooser'>"
+                @html << "<img src='icons/icon20x24px-exported.jpg' alt='Language icon' style='width:20px;height:24px;'>" 
+                @html <<  "<select onchange='location = this.value;'>"
+                @html <<  "<option value='' ></option>"
 		lang = [# sorted by native speakers according to English Wikipedia
 			["es", "Español"],# 480 million native speakers (2018)
 			["en", "English"],# 360–400 million (2006)
@@ -268,14 +271,14 @@ READY
 		unless @hide_lang_chooser
 			lang.each{|short,long|
 				if short == GetText.locale.to_s
-					@html << "<li class='lang'>#{long}</li>"
+                                        @html << "<img src='icons/icon20x24px-exported.jpg' alt='Language icon' style='width:20px;height:24px;'><option value='?lang=#{short}'>#{short}</option>"
 				else
-					@html << "<li class='lang'><a href='?lang=#{short}'>#{long}</a></li>"
+					@html << "<img src='icons/icon20x24px-exported.jpg' alt='Language icon' style='width:20px;height:24px;'><option value='?lang=#{short}'>#{long}</option>"
 				end
 			}
 		end
-		@html << "</ul></div>" # languageChooser
-
+		@html << "</select></div>" # languageChooser
+ 		
 		@html << "</div>" # main
 		$conf.footer.each{|f| @html << f }
 		@extensions.each{|e|
