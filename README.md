@@ -80,8 +80,7 @@ GNU AGPL v3 or higher (see file License)
     ```
 
 # image
-There are two docker image available
- *  https://github.com/fonk/docker-dudle
+There is a docker image available
  *  https://github.com/jpkorva/dudle-docker
 
 # Pimp your Installation
