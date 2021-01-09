@@ -100,9 +100,9 @@ class Dudle
 		crumbs << "<a href='#{@basedir}'>" + _("Dudle Home") + "</a>"
 		if is_poll?
 			if @tab == "."
-				crumbs << @title
+				crumbs << CGI.escapeHTML(@title)
 			else
-				crumbs << "<a href='.'>#{@title}</a>"
+				crumbs << "<a href='.'>#{CGI.escapeHTML(@title)}</a>"
 				crumbs << @tabtitle
 			end
 		else
