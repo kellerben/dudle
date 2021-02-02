@@ -79,9 +79,8 @@ GNU AGPL v3 or higher (see file License)
     echo "<div>We are updating the servers and expect to be online on 0 am, January 1st, 1970 (UTC).</div>" > $DUDLE_INSTALLATION_PATH/maintenance.html
     ```
 
-# Docker image
-There are two docker image available
- *  https://hub.docker.com/r/fonk/dudle/ with the code from here https://github.com/fonk/docker-dudle
+# image
+There is a docker image available
  *  https://github.com/jpkorva/dudle-docker
 
 # Pimp your Installation
