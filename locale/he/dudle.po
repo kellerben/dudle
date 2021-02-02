@@ -1,22 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2017.
-#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2017, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-25 23:14+0200\n"
-"PO-Revision-Date: 2017-12-06 20:09+0100\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>, 2017\n"
+"POT-Creation-Date: 2019-08-23 15:57+0200\n"
+"PO-Revision-Date: 2017-07-01 06:12+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>, 2019\n"
 "Language-Team: Hebrew (https://www.transifex.com/yaron/teams/76313/he/)\n"
-"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: he\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
 #: ../about.cgi:29
 msgid "This application is powered by %{Dudle}."
@@ -29,23 +32,16 @@ msgstr "רשיון"
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
-"a>."
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version "
+"3</a>."
 msgstr ""
-"קוד המקור של היישום הזה זמין תחת התנאים של <a href='http://www.fsf.org/"
-"licensing/licenses/agpl-3.0.html'>AGPL גרסה 3</a>"
+"קוד המקור של היישום הזה זמין תחת התנאים של <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL גרסה 3</a>."
 
 #: ../about.cgi:33
-msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
-msgstr "ניתן למצוא את קוד המקור של היישום הזה %{a_start}כאן%{a_end}."
-
-#: ../about.cgi:35
 msgid ""
-"Please write me an e-mail if you have found a bug, have found something "
-"which disturbs you, or have any other feedback."
-msgstr ""
-"נא לכתוב לנו הודעת דוא״ל אם מצאת תקלה כלשהי, משהו מפריע לך או כל סוג אחר של "
-"משוב."
+"The sourcecode of this application can be found %{a_start}here%{a_end}."
+msgstr "ניתן למצוא את קוד המקור של היישום הזה %{a_start}כאן%{a_end}."
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -97,7 +93,7 @@ msgstr "הפעלה"
 
 #: ../access_control.rb:184
 msgid "controls will be activated when at least the admin user is configured"
-msgstr "יופעל כאשר יוגדר לפחות מנהל אחד"
+msgstr "הפקדים יופעלו כאשר מוגדר מנהל אחד לפחות"
 
 #: ../access_control.rb:186
 msgid "Deactivate"
@@ -120,14 +116,14 @@ msgid ""
 msgstr "תופיע בקשה לססמה שהזנת כאן לאחר לחיצה על שמירה!"
 
 #: ../access_control.rb:196
-#, fuzzy
 msgid ""
-"The user ‘admin’ has access to both the vote and the configuration interface."
-msgstr "למשתמש 'מנהל' יש גישה להצעות כמו גם למנשק התצורה."
+"The user ‘admin’ has access to both the vote and the configuration "
+"interface."
+msgstr "למשתמש ‚admin’ יש גישה להצעות כמו גם למנשק התצורה."
 
 #: ../access_control.rb:202
 msgid "The user ‘participant’ only has access to the vote interface."
-msgstr "למשתמש 'משתתף' יש גישה רק למנשק ההצבעה."
+msgstr "למשתמש ‚participant’ יש גישה רק למנשק ההצבעה."
 
 #: ../access_control.rb:208
 msgid "Access control:"
@@ -161,7 +157,7 @@ msgstr "סקר זה מוגן בססמה!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "כדי להמשיך, עליך לספק את הססמה למשתמש %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
 msgid "Return to Dudle home and schedule a new poll"
 msgstr "לחזור לעמוד הבית של Dudle ולתזמן סקר חדש"
 
@@ -169,16 +165,40 @@ msgstr "לחזור לעמוד הבית של Dudle ולתזמן סקר חדש"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "עליך להזדהות מול המערכת כדי לגשת לעמוד זה!"
 
+#: ../config.rb:45
+msgid "Event Schedule Poll"
+msgstr "סקר תזמון אירוע"
+
+#: ../config.rb:49
+msgid "Normal Poll"
+msgstr "סקר רגיל"
+
+#: ../config.rb:53
+msgid ""
+"End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+msgstr "סקר מוצפן/מאומת מקצה לקצה (הססמה בתגובות)"
+
+#: ../config.rb:57
+msgid ""
+"End-to-End encrypted Poll, where only the administrator is able to read "
+"votes"
+msgstr "סקר מוצפן מקצה לקצה בו רק למנהלים יש אפשרות לראות הצבעות"
+
+#: ../config.rb:61
+msgid "Test for several PGP-authenticated votes"
+msgstr "בדיקה למגוון הצבעות שמוגנות ב־PGP"
+
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
 msgstr "התאמת הגדרות אישיות"
 
 #: ../customize.cgi:32 ../customize.rb:32
-#, fuzzy
 msgid ""
 "You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
 "enabled in order to personalize your settings."
-msgstr "יש להשתמש בעוגיות כדי להתאים את ההגדרות שלך."
+msgstr ""
+"יש להשתמש ב<a href='https://en.wikipedia.org/wiki/HTTP_cookie'>עוגיות</a> "
+"כדי להתאים את ההגדרות שלך."
 
 #: ../customize.cgi:39 ../customize.rb:39
 msgid "Current setting"
@@ -343,23 +363,23 @@ msgstr "התאמה אישית"
 msgid "Dudle Home"
 msgstr "עמוד הבית של Dudle"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "הקודם"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "הבא"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "סיום"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "כל השינויים נשמרו בהצלחה."
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "להמשיך!"
 
@@ -391,11 +411,11 @@ msgstr "ביצוע חוזר"
 msgid "Error"
 msgstr "שגיאה"
 
-#: ../error.cgi:46
+#: ../error.cgi:41
 msgid "The following error was printed:"
 msgstr "ההודעה הבאה הופיעה:"
 
-#: ../error.cgi:50
+#: ../error.cgi:45
 msgid ""
 "Hi!\n"
 "\n"
@@ -421,11 +441,11 @@ msgstr ""
 "%{errormessage}\n"
 "בברכה,\n"
 
-#: ../error.cgi:51
+#: ../error.cgi:46
 msgid "Bug in Dudle"
 msgstr "באג ב־Dudle"
 
-#: ../error.cgi:53
+#: ../error.cgi:48
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
@@ -433,7 +453,7 @@ msgstr ""
 "אירעה שגיאה בעת הפעלת Dudle.<br/>נא לשלוח דוח שגיאה, לרבות תיאור הדפדפן, "
 "מערכת ההפעלה והפעולות שבוצעו מול %{admin}."
 
-#: ../error.cgi:56
+#: ../error.cgi:51
 msgid "Please include the following as well:"
 msgstr "נא לכלול גם את הפרטים האלה:"
 
@@ -463,52 +483,52 @@ msgstr "xml:lang='he' dir='rtl'"
 msgid "Please enter a descriptive title."
 msgstr "נא להזין כותרת עניינית."
 
-#: ../index.cgi:48
+#: ../index.cgi:43
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr "כתובת בהתאמה אישית יכולה להכיר רק אותיות, מספרים ומקפים."
 
-#: ../index.cgi:50
+#: ../index.cgi:45
 msgid "A poll with this address already exists."
 msgstr "כבר קיים סקר בכתובת הזו."
 
-#: ../index.cgi:68
+#: ../index.cgi:63
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr "הסקר נוצר בהצלחה. הקישור לסקר החדש שלך הוא: %{link}"
 
-#: ../index.cgi:76
+#: ../index.cgi:71
 msgid "Go away."
 msgstr "הביתה."
 
-#: ../index.cgi:84
+#: ../index.cgi:79
 msgid "Create new poll"
 msgstr "יצירת סקר חדש"
 
-#: ../index.cgi:86
+#: ../index.cgi:81
 msgid "Title"
 msgstr "כותרת"
 
-#: ../index.cgi:87
+#: ../index.cgi:82
 msgid "Type"
 msgstr "סוג"
 
-#: ../index.cgi:88
+#: ../index.cgi:83
 msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
 msgstr "סקר תזמון אירוע (למשל: לקבוע פגישה)"
 
-#: ../index.cgi:89
+#: ../index.cgi:84
 msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "סקר רגיל (למשל: להצביע מה הוא הקפה הטוב ביותר)"
 
-#: ../index.cgi:90
+#: ../index.cgi:85
 msgid "Custom address (optional)"
 msgstr "כתובת בהתאמה אישית (רשות)"
 
-#: ../index.cgi:91
+#: ../index.cgi:86
 msgid "May contain letters, numbers, and dashes."
 msgstr "ניתן להשתמש באותיות, מספרים ומקפים."
 
-#: ../index.cgi:93
+#: ../index.cgi:88
 msgid "Create"
 msgstr "יצירה"
 
@@ -528,11 +548,11 @@ msgstr "הערה"
 msgid "Maintenance"
 msgstr "תחזוקה"
 
-#: ../maintenance.cgi:36
+#: ../maintenance.cgi:31
 msgid "This site is currently undergoing maintenance!"
 msgstr "אתר זה כרגע עובר עבודות תחזוקה!"
 
-#: ../maintenance.cgi:39
+#: ../maintenance.cgi:34
 msgid ""
 "You should not browse to this file directly. Please create a file named "
 "\"maintenance.html\" to enable the maintenance mode."
@@ -550,25 +570,17 @@ msgstr "הסקר המבוקש לא נמצא."
 
 #: ../not_found.cgi:33
 msgid "There are several reasons why a poll may have been deleted:"
-msgstr "ישנן מספר סיבות למחיקת סקר:"
+msgstr "ישנן מספר סיבות אפשריות למחיקת סקר:"
 
 #: ../not_found.cgi:34
 msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
 msgstr "הכפתור „מחיקת סקר” נלחץ בטעות והסקר נמחק ידנית."
 
 #: ../not_found.cgi:35
-#, fuzzy
 msgid ""
 "The poll was deleted by the administrator because it was not accessed for a "
 "long time."
-msgstr "הסקר נמחק על ידי המנהל כיוון שלא ניגשו אליו זמן רב."
-
-#: ../not_found.cgi:36
-#, fuzzy
-msgid ""
-"If you think that the deletion was done in error, please contact the "
-"administrator of the system."
-msgstr "אם לדעתך המחיקה שגויה, נא ליצור קשר עם מנהל המערכת."
+msgstr "הסקר נמחק על ידי מנהל כיוון שלא ניגשו אליו זמן רב."
 
 #: ../overview.rb:31
 msgid "The next steps are:"
@@ -652,7 +664,7 @@ msgstr "נאמר ע״י %{user} ב־%{time}"
 
 #: ../poll.rb:348
 msgid "Go up"
-msgstr "לעבור למעלה"
+msgstr "לעלות מעלה"
 
 #: ../poll.rb:354
 msgid "says"
@@ -721,19 +733,19 @@ msgstr "תצוגה מקדימה"
 #: ../pollhead.rb:103
 msgid ""
 "Enter all the options (columns) which you want the participants of the poll "
-"to choose among. For each option you give here, the participants will choose "
-"a vote."
+"to choose among. For each option you give here, the participants will choose"
+" a vote."
 msgstr ""
-"נא להזיר את כל האפשרויות (עמודות) שברצונך להציג למשתתפים בסקר. המשתתפים "
-"יבחרו בהצבעה בודדת עבור כל אפשרות שתצוין כאן באופן נפרד."
+"נא להקליד את כל האפשרויות (עמודות) מהן ברצונך שיבחרו משתתפי הסקר. לכל אפשרות"
+" שתסופק כאן יהיה על המשתפים להצביע."
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string here (e."
-"&thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here "
+"(e.&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
-"כדי להוסיף זמנים מעבר לבררת המחדל, נא להזין מחרוזת כלשהי להלן (למשל: 09:30, "
-"בוקר, צהריים)."
+"כדי להוסיף מועד שונה ממועדי בררת המחדל, נא להקליד איזו מחרוזת להלן (למשל: "
+"09:30, בוקר, צהריים)."
 
 #: ../timepollhead.rb:119
 msgid "This time has already been selected."
@@ -757,7 +769,7 @@ msgstr "רשות:"
 
 #: ../timepollhead.rb:314
 msgid "Select specific start times."
-msgstr "נא להזין ערך ממשי כערך התחלתי."
+msgstr "בחירת מועדי התחלה מסוימים."
 
 #: ../timepollhead.rb:330
 msgid "Time"
@@ -790,22 +802,3 @@ msgstr "הוספה"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "למשל: 09:30, בוקר, צהריים"
-
-#~ msgid "Event-scheduling poll"
-#~ msgstr "סקר תזמון אירוע"
-
-#~ msgid "Normal poll"
-#~ msgstr "סקר רגיל"
-
-#~ msgid ""
-#~ "End-to-end encrypted/authenticated poll (use the password given in the "
-#~ "comment at the end of the log-in request)"
-#~ msgstr "סקר מוצפן/מאומת מקצה לקצה (הססמה בתגובות)"
-
-#~ msgid ""
-#~ "End-to-End encrypted Poll, where only the administrator is able to read "
-#~ "votes"
-#~ msgstr "סקר מוצפן מקצה לקצה בו רק למנהלים יש אפשרות לראות הצבעות"
-
-#~ msgid "Test for several PGP-authenticated votes"
-#~ msgstr "בדיקה למגוון הצבעות שמוגנות ב־PGP"
