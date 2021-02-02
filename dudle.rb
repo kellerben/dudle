@@ -251,6 +251,7 @@ READY
 			["de", "Deutsch"],# 95 million (2014)
 			["it", "Italiano"],# 90 million (2012)
 			["fr", "Français"],# 76.8 million (2014)
+			["es_AR", "Español Argentino"],# 25–30 million
 			["nl", "Nederlands"],# 24 million (2016)
 			["sw", "Kiswahili"],# 15 million (2012)
 			["hu", "Magyar"],# 13 million (2002–2012)
