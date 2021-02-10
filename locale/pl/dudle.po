@@ -56,7 +56,7 @@ msgid ""
 "r."
 msgstr ""
 "Musisz usunąć użytkownika uczestniczącego, zanim będziesz mógł usunąć "
-"administratora".
+"administratora."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
 #: ../delete_poll.rb:112 ../poll.rb:338
@@ -158,7 +158,7 @@ msgstr "Aby kontynuować, musisz podać hasło dla użytkownika %{user}."
 
 #: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
 msgid "Return to Dudle home and schedule a new poll"
-msgstr "Wróć do strony głównej Dudle i ustaw nową ankietę".
+msgstr "Wróć do strony głównej Dudle i ustaw nową ankietę"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -174,7 +174,7 @@ msgstr "Zwykła ankieta"
 
 #: ../config.rb:53
 msgid "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
-msgstr "Ankieta szyfrowana/uwierzytelniona End-to-End (patrz: Hasło w Komentarzach)".
+msgstr "Ankieta szyfrowana/uwierzytelniona End-to-End (patrz: Hasło w Komentarzach)"
 
 #: ../config.rb:57
 msgid "End-to-End encrypted Poll, where only the administrator is able to read votes"
@@ -186,7 +186,7 @@ msgstr "Test dla kilku głosów poświadczonych przez PGP"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
-msgstr "Dostosuj ustawienia osobiste".
+msgstr "Dostosuj ustawienia osobiste"
 
 #: ../customize.cgi:32 ../customize.rb:32
 msgid ""
@@ -194,7 +194,7 @@ msgid ""
 "ed in order to personalize your settings."
 msgstr ""
 "Aby spersonalizować swoje ustawienia, musisz zaakceprować "
-"<a href='https://en.wikipedia.org/wiki/HTTP_cookie'>ciasteczka</a>".
+"<a href='https://en.wikipedia.org/wiki/HTTP_cookie'>ciasteczka</a>."
 
 
 #: ../customize.cgi:39 ../customize.rb:39
@@ -272,7 +272,7 @@ msgid ""
 "y be too late."
 msgstr ""
 "Jeśli zrobiono to przypadkowo, prosimy o kontakt z administratorem systemu. "
-"Ankieta może zostać odzyskana za czas nieokreślony; może być już za późno".
+"Ankieta może zostać odzyskana za czas nieokreślony; może być już za późno."
 
 #: ../delete_poll.rb:59
 msgid "You can now"
@@ -487,7 +487,7 @@ msgstr "Prosimy wprowadzić tytuł opisowy"
 
 #: ../index.cgi:43
 msgid "Custom address may only contain letters, numbers, and dashes."
-msgstr "Niestandardowy adres może zawierać tylko litery, cyfry i myślniki".
+msgstr "Niestandardowy adres może zawierać tylko litery, cyfry i myślniki."
 
 #: ../index.cgi:45
 msgid "A poll with this address already exists."
@@ -559,7 +559,7 @@ msgid ""
 "enance.html\" to enable the maintenance mode."
 msgstr ""
 "Nie należy przeglądać tego pliku bezpośrednio. Aby włączyć tryb konserwacji,"
-" prosimy utworzyć plik o nazwie \"maintenance.html\".
+" prosimy utworzyć plik o nazwie \"maintenance.html\"."
 
 #: ../not_found.cgi:30
 msgid "Poll not found"
@@ -740,7 +740,7 @@ msgid ""
 "ote."
 msgstr ""
 "Wprowadź wszystkie opcje (kolumny), spośród których uczestnicy ankiety mają"
-" wybierać. Na każdą opcję, którą tutaj podasz, uczestnicy będą mogli głosować".
+" wybierać. Na każdą opcję, którą tutaj podasz, uczestnicy będą mogli głosować."
 
 #: ../timepollhead.rb:113
 msgid ""
