@@ -607,7 +607,7 @@ msgstr "Link do ankiety Dudle o nazwie %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."
-msgstr "Zmiany zostały zapisane, powinieneś zostać przekierowany na %{link}"."
+msgstr "Zmiany zostały zapisane, powinieneś zostać przekierowany na %{link}."
 
 #: ../poll.rb:96
 msgid "Edit user %{user}..."
