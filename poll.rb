@@ -281,7 +281,7 @@ END
 			ret += "<td class='checkboxes'><table class='checkboxes'>"
 			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
 				ret += <<TR
-				<tr class='input-#{valbinary}'>
+				<tr class='input-#{valbinary}' onclick=\"trClick(this);\">
 					<td class='input-radio'>
 						<input type='radio'
 							value='#{valbinary}'
