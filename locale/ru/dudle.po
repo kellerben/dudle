@@ -1,0 +1,819 @@
+# ######################################################################## #
+# Copyright 2021 Nikolaj                                                   #
+#                                                                          #
+# This file is part of Dudle.                                              #
+#                                                                          #
+# Dudle is free software: you can redistribute it and/or modify it under   #
+# the terms of the GNU Affero General Public License as published by       #
+# the Free Software Foundation, either version 3 of the License, or        #
+# (at your option) any later version.                                      #
+#                                                                          #
+# Dudle is distributed in the hope that it will be useful, but WITHOUT ANY #
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or        #
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public     #
+# License for more details.                                                #
+#                                                                          #
+# You should have received a copy of the GNU Affero General Public License #
+# along with Dudle.  If not, see <http://www.gnu.org/licenses/>.           #
+# ######################################################################## #
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-14 17:38+0200\n"
+"PO-Revision-Date: 2021-02-10 23:08+0100\n"
+"Last-Translator: Nikolaj D. <abtogen@posteo.ru>\n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ../about.cgi:29
+msgid "This application is powered by %{Dudle}."
+msgstr "Это приложение предназначено для %{Dudle}"
+
+#: ../about.cgi:31
+msgid "License"
+msgstr "Лицензия"
+
+#: ../about.cgi:32
+msgid ""
+"The sourcecode of this application is available under the terms of <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
+msgstr ""
+"Исходный код этого приложения доступен в соответствии с условиями <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
+
+#: ../about.cgi:33
+msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
+msgstr "Исходный код этого приложения можно найти %{a_start}здесь%{a_end}. "
+
+#: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
+msgid "Username:"
+msgstr "Имя пользователя:"
+
+#: ../access_control.rb:87
+msgid "Password"
+msgstr "Пароль"
+
+#: ../access_control.rb:88
+msgid "repeat"
+msgstr "повторить"
+
+#: ../access_control.rb:114
+msgid ""
+"You have to remove the participant user before you can remove the "
+"administrator."
+msgstr ""
+"Вы должны удалить \"participant\", прежде чем сможете удалить \"administrator"
+"\"."
+
+#: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
+#: ../delete_poll.rb:112 ../poll.rb:338
+msgid "Delete"
+msgstr "Удалить"
+
+#: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
+#: ../poll.rb:300
+msgid "Save"
+msgstr "Сохранить"
+
+#: ../access_control.rb:139
+msgid "Only letters and digits are allowed in the username."
+msgstr "В имени пользователя допускаются только буквы и цифры."
+
+#: ../access_control.rb:141
+msgid "Passwords did not match."
+msgstr "Пароли не совпадают."
+
+#: ../access_control.rb:175
+msgid "Change access control settings"
+msgstr "Изменение параметров контроля доступа"
+
+#: ../access_control.rb:179
+msgid "not activated"
+msgstr "Изменение параметров контроля доступа"
+
+#: ../access_control.rb:181
+msgid "Activate"
+msgstr "Активировать"
+
+#: ../access_control.rb:184
+msgid "controls will be activated when at least the admin user is configured"
+msgstr ""
+"элементы управления будут активированы, когда по крайней мере администратор "
+"настроен"
+
+#: ../access_control.rb:186
+msgid "Deactivate"
+msgstr "Деактивировать"
+
+#: ../access_control.rb:188
+msgid "activated"
+msgstr "активированный"
+
+#: ../access_control.rb:189
+msgid ""
+"You have to remove all users before you can deactivate the access control "
+"settings."
+msgstr ""
+"Вам необходимо удалить всех пользователей, прежде чем вы сможете отключить "
+"настройки контроля доступа."
+
+#: ../access_control.rb:193
+msgid ""
+"You will be asked for the password you have entered here after you press "
+"save!"
+msgstr ""
+"После нажатия кнопки сохранить вам будет предложено ввести пароль, который "
+"вы ввели здесь!"
+
+#: ../access_control.rb:196
+msgid ""
+"The user ‘admin’ has access to both the vote and the configuration interface."
+msgstr ""
+"Пользователь \"админ\" имеет доступ как к голосованию, так и к интерфейсу "
+"конфигурации."
+
+#: ../access_control.rb:202
+msgid "The user ‘participant’ only has access to the vote interface."
+msgstr ""
+"Пользователь 'participant' имеет доступ только к интерфейсу голосования."
+
+#: ../access_control.rb:208
+msgid "Access control:"
+msgstr "Контроль доступа:"
+
+#: ../advanced.rb:31 ../advanced.rb:35
+msgid "Revert poll"
+msgstr "Отменить опрос"
+
+#: ../advanced.rb:32
+msgid "Poll was reverted to Version %{version}!"
+msgstr "Опрос был возвращен к версии %{version}!"
+
+#: ../advanced.rb:37
+msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
+msgstr ""
+"Восстановление опроса до версии (номера версий см. на вкладке \"История\"):"
+
+#: ../advanced.rb:39
+#, fuzzy
+msgid "Revert"
+msgstr "Отменить опрос"
+
+#: ../authorization_required.cgi:36 ../authorization_required.cgi:52
+msgid "Authorization required"
+msgstr "Требуется авторизация"
+
+#: ../authorization_required.cgi:39
+msgid "The configuration of this poll is password-protected!"
+msgstr "Конфигурация этого опроса защищена паролем!"
+
+#: ../authorization_required.cgi:41
+msgid "This poll is password-protected!"
+msgstr "Этот опрос защищен паролем!"
+
+#: ../authorization_required.cgi:43
+msgid "In order to proceed, you have to give the password for user %{user}."
+msgstr ""
+"Для того, чтобы продолжить, вы должны ввести пароль для пользователя %{user}."
+
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
+msgid "Return to Dudle home and schedule a new poll"
+msgstr "Вернитесь на главную страницу Dudle и запланируйте новый опрос"
+
+#: ../authorization_required.cgi:54
+msgid "You have to authorize yourself in order to access this page!"
+msgstr "Вам необходимо авторизоваться, чтобы получить доступ к этой странице!"
+
+#: ../customize.cgi:31 ../customize.rb:31
+msgid "Customize personal settings"
+msgstr "Настройка личных настроек"
+
+#: ../customize.cgi:32 ../customize.rb:32
+msgid ""
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"enabled in order to personalize your settings."
+msgstr ""
+"Вам нужно <a href='https://ru.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"включены для персонализации ваших настроек."
+
+#: ../customize.cgi:39 ../customize.rb:39
+msgid "Current setting"
+msgstr "Текущая настройка"
+
+#: ../customize.cgi:40 ../customize.rb:40
+msgid "Description"
+msgstr "Описание"
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use special characters"
+msgstr "Используйте специальные символы"
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "Используйте эту возможность, если вы видите символы в круглых скобках."
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "Используйте только обычные строки"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr ""
+"Используйте эту опцию, если у вас возникли проблемы с некоторыми "
+"отображениями."
+
+#: ../customize.cgi:61 ../customize.rb:61
+msgid "Charset"
+msgstr "Кодировка"
+
+#: ../customize.cgi:66 ../customize.rb:66
+msgid "Stylesheet"
+msgstr "Таблица стилей"
+
+#: ../customize.cgi:81 ../customize.rb:81
+msgid "Default Username"
+msgstr "Имя пользователя по умолчанию"
+
+#: ../customize.cgi:106 ../customize.rb:106
+msgid "Edit"
+msgstr "Редактировать"
+
+#: ../delete_poll.rb:30
+msgid "Yes, I know what I am doing!"
+msgstr "Да, я знаю, что делаю!"
+
+#: ../delete_poll.rb:31
+msgid "I hate these stupid entry fields."
+msgstr "Я ненавижу эти дурацкие поля ввода."
+
+#: ../delete_poll.rb:32
+msgid "I am aware of the consequences."
+msgstr "Я отдаю себе отчет в последствиях."
+
+#: ../delete_poll.rb:33
+msgid "Please delete this poll."
+msgstr "Пожалуйста, удалите этот опрос."
+
+#: ../delete_poll.rb:42
+msgid "Example polls cannot be deleted."
+msgstr "Примерные опросы не могут быть удалены."
+
+#: ../delete_poll.rb:43
+msgid "You should never see this text."
+msgstr ""
+
+#: ../delete_poll.rb:56
+msgid "The poll was deleted successfully!"
+msgstr ""
+
+#: ../delete_poll.rb:57
+msgid ""
+"If this was done by accident, please contact the administrator of the "
+"system. The poll can be recovered for an indeterminate amount of time; it "
+"could already be too late."
+msgstr ""
+
+#: ../delete_poll.rb:59
+msgid "You can now"
+msgstr ""
+
+#: ../delete_poll.rb:61
+msgid "Browse Wikipedia"
+msgstr "Пролистайте Википедию"
+
+#: ../delete_poll.rb:62
+msgid "Search for something on the Internet"
+msgstr "Поищите что-нибудь в Интернете"
+
+#: ../delete_poll.rb:88
+msgid "To delete the poll, you have to type:"
+msgstr "Чтобы удалить опрос, вам необходимо ввести:"
+
+#: ../delete_poll.rb:96
+msgid "but you typed:"
+msgstr "но вы напечатали:"
+
+#: ../delete_poll.rb:108
+msgid "Delete this poll"
+msgstr "Удалите этот опрос"
+
+#: ../delete_poll.rb:109
+msgid "You want to delete the poll named"
+msgstr "Вы хотите удалить опрос с названием"
+
+#: ../delete_poll.rb:110
+msgid "This is an irreversible action!"
+msgstr "Это необратимое действие!"
+
+#: ../delete_poll.rb:111
+msgid ""
+"If you are sure that you want to permanently remove this poll, please type "
+"“%{question}” into the form."
+msgstr ""
+
+#: ../dudle.rb:73
+msgid "Home"
+msgstr "Главная"
+
+#: ../dudle.rb:76
+msgid "Poll"
+msgstr "Опрос"
+
+#: ../dudle.rb:77 ../history.rb:35
+msgid "History"
+msgstr "Журнал"
+
+#: ../dudle.rb:80
+msgid "Edit Columns"
+msgstr "Редактирование колонок"
+
+#: ../dudle.rb:81 ../invite_participants.rb:38
+msgid "Invite Participants"
+msgstr "Пригласить участников"
+
+#: ../dudle.rb:82
+msgid "Access Control"
+msgstr "Контроль Доступа"
+
+#: ../dudle.rb:83
+msgid "Overview"
+msgstr "Обзор"
+
+#: ../dudle.rb:86
+msgid "Delete Poll"
+msgstr "Удалить Опрос"
+
+#: ../dudle.rb:89 ../example.cgi:67
+msgid "Examples"
+msgstr "Примеры"
+
+#: ../dudle.rb:90
+msgid "About"
+msgstr "About"
+
+#: ../dudle.rb:92
+msgid "Customize"
+msgstr "Настроить"
+
+#: ../dudle.rb:100
+msgid "Dudle Home"
+msgstr "Dudle Home"
+
+#: ../dudle.rb:208 ../dudle.rb:226
+msgid "Previous"
+msgstr "Предыдущий"
+
+#: ../dudle.rb:209 ../dudle.rb:227
+msgid "Next"
+msgstr "Следующий"
+
+#: ../dudle.rb:210 ../dudle.rb:228
+msgid "Finish"
+msgstr "Завершить"
+
+#: ../dudle.rb:233
+msgid "All changes were saved successfully."
+msgstr "Все изменения были успешно сохранены."
+
+#: ../dudle.rb:233
+msgid "Proceed!"
+msgstr "Продолжить!"
+
+#: ../edit_columns.rb:44
+msgid "Add and remove columns"
+msgstr "Добавление и удаление колонок"
+
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
+msgid "Delete column"
+msgstr "Удалить колонку"
+
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
+msgid "Add column"
+msgstr "Добавить колонку"
+
+#: ../edit_columns.rb:71 ../edit_columns.rb:88
+msgid "Edit column"
+msgstr "Изменить колонку"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Отменить"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Переписать"
+
+#: ../error.cgi:25 ../error.cgi:27
+msgid "Error"
+msgstr "Ошибка"
+
+#: ../error.cgi:41
+msgid "The following error was printed:"
+msgstr "Была выдана следующая ошибка:"
+
+#: ../error.cgi:45
+msgid ""
+"Hi!\n"
+"\n"
+"I found a bug in your application at %{urlofsite}.\n"
+"I did the following:\n"
+"\n"
+"<please describe what you did>\n"
+"<e.g., I wanted to post a comment to the poll.>\n"
+"\n"
+"I am using <please state your browser and operating system>\n"
+"%{errormessage}\n"
+"Sincerely,\n"
+msgstr ""
+
+#: ../error.cgi:46
+msgid "Bug in Dudle"
+msgstr "Ошибка в Dudle"
+
+#: ../error.cgi:48
+msgid ""
+"An error occurred while executing Dudle.<br/>Please send an error report, "
+"including your browser, operating system, and what you did to %{admin}."
+msgstr ""
+
+#: ../error.cgi:51
+msgid "Please include the following as well:"
+msgstr "Пожалуйста, вставьте также следующее:"
+
+#: ../example.cgi:60
+msgid "Example not found: %{example}"
+msgstr "Пример не найден: %{example}"
+
+#: ../example.cgi:68
+msgid ""
+"If you want to play with the application, you may want to take a look at "
+"these example polls:"
+msgstr ""
+
+#: ../history.rb:28
+msgid "Poll of version %{revisionnumber}"
+msgstr "Опрос версии %{revisionnumber}"
+
+#: ../history.rb:32
+msgid "Current poll (version %{revisionnumber})"
+msgstr "Текущий опрос (version %{revisionnumber})"
+
+#: ../html.rb:131
+msgid "xml:lang='en' dir='ltr'"
+msgstr ""
+
+#: ../index.cgi:32
+msgid "Please enter a descriptive title."
+msgstr "Пожалуйста, введите объяснительное название."
+
+#: ../index.cgi:43
+msgid "Custom address may only contain letters, numbers, and dashes."
+msgstr "Пользовательский адрес может содержать только буквы, цифры и тире."
+
+#: ../index.cgi:45
+msgid "A poll with this address already exists."
+msgstr "Опрос с этим адресом уже существует."
+
+#: ../index.cgi:63
+msgid ""
+"The poll was created successfully. The link to your new poll is: %{link}"
+msgstr "Опрос был успешно создан. Ссылка на ваш новый опрос: %{link}"
+
+#: ../index.cgi:71
+msgid "Go away."
+msgstr "Уходи."
+
+#: ../index.cgi:79
+msgid "Create new poll"
+msgstr "Создайте новый опрос"
+
+#: ../index.cgi:81
+msgid "Title"
+msgstr "Заглавие"
+
+#: ../index.cgi:82
+msgid "Type"
+msgstr "Тип"
+
+#: ../index.cgi:83
+msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
+msgstr "Опрос по планированию событий (e.&thinsp;g., schedule a meeting)"
+
+#: ../index.cgi:84
+msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
+msgstr "Обычный опрос"
+
+#: ../index.cgi:85
+msgid "Custom address (optional)"
+msgstr "Личный адрес (необязательно)"
+
+#: ../index.cgi:86
+msgid "May contain letters, numbers, and dashes."
+msgstr "Может содержать буквы, цифры и тире."
+
+#: ../index.cgi:88
+msgid "Create"
+msgstr "Создать"
+
+#: ../log.rb:111
+msgid "Version"
+msgstr "Версия"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Дата"
+
+#: ../log.rb:111
+msgid "Comment"
+msgstr "Комментарий"
+
+#: ../maintenance.cgi:25 ../maintenance.cgi:27
+msgid "Maintenance"
+msgstr "Поддержка"
+
+#: ../maintenance.cgi:31
+msgid "This site is currently undergoing maintenance!"
+msgstr "В настоящее время этот сайт проходит техническое обслуживание!"
+
+#: ../maintenance.cgi:34
+msgid ""
+"You should not browse to this file directly. Please create a file named "
+"\"maintenance.html\" to enable the maintenance mode."
+msgstr ""
+"Вам не следует напрямую переходить к этому файлу. Пожалуйста, создайте файл "
+"с именем \"maintenance.html\" для включения режима обслуживания."
+
+#: ../not_found.cgi:30
+msgid "Poll not found"
+msgstr "Опрос не найден"
+
+#: ../not_found.cgi:32
+msgid "The requested poll was not found."
+msgstr "Запрашиваемый опрос не был найден."
+
+#: ../not_found.cgi:33
+msgid "There are several reasons why a poll may have been deleted:"
+msgstr "Возможно, опрос был удален по нескольким причинам:"
+
+#: ../not_found.cgi:34
+msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
+msgstr "Кто-то нажал “Удалить опрос” и удалил опрос вручную."
+
+#: ../not_found.cgi:35
+msgid ""
+"The poll was deleted by the administrator because it was not accessed for a "
+"long time."
+msgstr ""
+"Опрос был удален администратором, так как к нему долгое время не было "
+"обращений."
+
+#: ../overview.rb:31
+msgid "The next steps are:"
+msgstr "Следующие шаги:"
+
+#: ../overview.rb:33
+msgid "Send the link to all participants:"
+msgstr "Отправьте ссылку всем участникам:"
+
+#: ../overview.rb:34
+msgid "Send this link via email..."
+msgstr "Отправьте эту ссылку по электронной почте..."
+
+#: ../overview.rb:35
+msgid "Visit the poll yourself:"
+msgstr "Зайдите на опрос сами:"
+
+#: ../overview.rb:36
+msgid "Link to Dudle poll about %{polltitle}"
+msgstr "Ссылка на опрос Dudle о %{polltitle}"
+
+#: ../participate.rb:59
+msgid "The changes were saved, you should be redirected to %{link}."
+msgstr "Изменения были сохранены, вы должны быть переведены на %{link}."
+
+#: ../poll.rb:96
+msgid "Edit user %{user}..."
+msgstr "Изменить пользователя %{user}..."
+
+#: ../poll.rb:100
+msgid "Delete user %{user}..."
+msgstr "Удалить пользователя %{user}..."
+
+#: ../poll.rb:154
+msgid "Total"
+msgstr "Всего"
+
+#: ../poll.rb:186
+msgid "Invite"
+msgstr "Приглашать"
+
+#: ../poll.rb:187 ../pollhead.rb:62 ../timepollhead.rb:158
+msgid "Name"
+msgstr "Имя"
+
+#: ../poll.rb:232
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: ../poll.rb:236
+msgid "Cancel"
+msgstr "Отменить"
+
+#: ../poll.rb:258
+msgid "Do you really want to delete user %{user}?"
+msgstr "Вы действительно хотите удалить пользователя %{user}?"
+
+#: ../poll.rb:261
+msgid "Confirm"
+msgstr "Подтвердите"
+
+#: ../poll.rb:309
+msgid "Comments"
+msgstr "Комментарии"
+
+#: ../poll.rb:312
+msgid "Sort oldest comment first"
+msgstr "Первым самый давний комментарий "
+
+#: ../poll.rb:315
+msgid "Sort newest comment first"
+msgstr "Сперва самый новый комментарий"
+
+#: ../poll.rb:320
+msgid "Go to last comment"
+msgstr "Перейти к последнему комментарию"
+
+#: ../poll.rb:333
+msgid "%{user} said on %{time}"
+msgstr "%{user} сказал в %{time}"
+
+#: ../poll.rb:348
+msgid "Go up"
+msgstr "Подняться"
+
+#: ../poll.rb:354
+msgid "says"
+msgstr "говорит"
+
+#: ../poll.rb:355
+msgid "Submit comment"
+msgstr "Отправить комментарий"
+
+#: ../poll.rb:373
+msgid "Show history items:"
+msgstr "Показать элементы журнала:"
+
+#: ../poll.rb:380
+msgid "All"
+msgstr "Все"
+
+#: ../poll.rb:381
+msgid "Participant related"
+msgstr "Участник взаимосвязан"
+
+#: ../poll.rb:382
+msgid "Column related"
+msgstr "Колонка, связанная"
+
+#: ../poll.rb:383
+msgid "Comment related"
+msgstr "Комментарий, связанный"
+
+#: ../poll.rb:384
+msgid "Access control related"
+msgstr "Управление доступом, связанное"
+
+#: ../poll.rb:390
+msgid "Update"
+msgstr "Обновить"
+
+#: ../pollhead.rb:71
+msgid "Edit option"
+msgstr "Изменить опцию"
+
+#: ../pollhead.rb:72
+msgid "Delete option"
+msgstr "Удалить вариант"
+
+#: ../pollhead.rb:87 ../timepollhead.rb:162
+msgid "Last edit"
+msgstr "Последнее изменение"
+
+#: ../pollhead.rb:99
+msgid "Option"
+msgstr "Опция"
+
+#: ../pollhead.rb:100
+msgid "Description (optional)"
+msgstr "Описание (добровольно)"
+
+#: ../pollhead.rb:101
+msgid "Add/Edit option"
+msgstr "Добавить/Отредактировать опцию"
+
+#: ../pollhead.rb:102
+msgid "Preview"
+msgstr "Предварительный просмотр"
+
+#: ../pollhead.rb:103
+msgid ""
+"Enter all the options (columns) which you want the participants of the poll "
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
+msgstr ""
+"Введите все параметры \"колонок\", из которых вы хотите, чтобы участники "
+"опроса выбирали. Для каждого варианта, который вы укажете здесь, участники "
+"выберут голосование."
+
+#: ../timepollhead.rb:113
+msgid ""
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
+msgstr ""
+"Чтобы добавить время, отличающееся от времени по умолчанию, пожалуйста, "
+"введите здесь какую-либо строку"
+
+#: ../timepollhead.rb:119
+msgid "This time has already been selected."
+msgstr "Это время уже выбрано."
+
+#: ../timepollhead.rb:193
+msgid "Earlier"
+msgstr "Ранее"
+
+#: ../timepollhead.rb:198
+msgid "Later"
+msgstr "Позже"
+
+#: ../timepollhead.rb:265
+msgid "Click on the dates to add or remove columns."
+msgstr "Нажмите на даты, чтобы добавить или удалить колонки."
+
+#: ../timepollhead.rb:313
+msgid "Optional:"
+msgstr "Дополнительно:"
+
+#: ../timepollhead.rb:314
+msgid "Select specific start times."
+msgstr "Выберите определенное время запуска."
+
+#: ../timepollhead.rb:330
+msgid "Time"
+msgstr "Время"
+
+#: ../timepollhead.rb:343
+msgid "Selected"
+msgstr "Выбранный"
+
+#: ../timepollhead.rb:344
+msgid "Not selected"
+msgstr "Не выбрано"
+
+#: ../timepollhead.rb:345
+msgid "Past"
+msgstr "Прошедшее"
+
+#: ../timepollhead.rb:379
+msgid "Select the whole row"
+msgstr "Выделите всю строку целиком"
+
+#: ../timepollhead.rb:384
+msgid "Deselect the whole row"
+msgstr "Отмените выбор всей строки"
+
+#: ../timepollhead.rb:428
+msgid "Add"
+msgstr "Добавить"
+
+#: ../timepollhead.rb:429
+msgid "e.&thinsp;g., 09:30, morning, afternoon"
+msgstr "e.&thinsp;g., 09:30, утро, вторая половина дня"
+
+#~ msgid "Event Schedule Poll"
+#~ msgstr "Опрос расписания мероприятий"
+
+#~ msgid "Normal Poll"
+#~ msgstr "Обычный Опрос"
+
+#~ msgid ""
+#~ "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+#~ msgstr ""
+#~ "Сквозной зашифрованный/аутентифицированный опрос (см. Пароль в "
+#~ "комментариях)"
+
+#~ msgid ""
+#~ "End-to-End encrypted Poll, where only the administrator is able to read "
+#~ "votes"
+#~ msgstr ""
+#~ "Сквозной зашифрованный опрос, где только администратор может "
+#~ "просматривать голоса"
+
+#~ msgid "Test for several PGP-authenticated votes"
+#~ msgstr "Проверка несколько голосов, прошедших проверку подлинности PGP"

@@ -248,6 +248,7 @@ READY
 			["en", "English"],# 360–400 million (2006)
 			["ar", "اَلْعَرَبِيَّة"],# 310 million, all varieties (2011–2016)
 			["pt_BR", "Português brasileiro"],# 205 million (2011)
+			["ru", "русский"],# 150 million (2012)
 			["de", "Deutsch"],# 95 million (2014)
 			["it", "Italiano"],# 90 million (2012)
 			["fr", "Français"],# 76.8 million (2014)
