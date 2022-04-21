@@ -251,6 +251,7 @@ READY
 			["ru", "русский"],# 150 million (2012)
 			["de", "Deutsch"],# 95 million (2014)
 			["it", "Italiano"],# 90 million (2012)
+			["tr", "Türkçe"],# 80 million (2021)
 			["fr", "Français"],# 76.8 million (2014)
 			["pl", "Polski"],# 45 million
 			["es_AR", "Español Argentino"],# 25–30 million

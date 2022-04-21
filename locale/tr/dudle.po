@@ -1,0 +1,795 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-19 21:11+0100\n"
+"PO-Revision-Date: 2022-04-03 14:12+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: ../about.cgi:29
+msgid "This application is powered by %{Dudle}."
+msgstr "Bu uygulama %{Dudle} tarafından desteklenmektedir."
+
+#: ../about.cgi:31
+msgid "License"
+msgstr "Lisans"
+
+#: ../about.cgi:32
+msgid ""
+"The sourcecode of this application is available under the terms of <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
+msgstr ""
+"Bu uygulamanın kaynak kodu <a href='http://www.fsf.org/licensing/licenses/"
+"agpl-3.0.html'>AGPL Versiyon 3</a> lisansı ile korunmaktadır."
+
+#: ../about.cgi:33
+msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
+msgstr ""
+"Bu uygulamanın kaynak koduna %{a_start}bu linkten%{a_end} ulaşabilirsiniz."
+
+#: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
+msgid "Username:"
+msgstr "Kullanıcı adı:"
+
+#: ../access_control.rb:87
+msgid "Password"
+msgstr "Şifre"
+
+#: ../access_control.rb:88
+msgid "repeat"
+msgstr "tekrarla"
+
+#: ../access_control.rb:114
+msgid ""
+"You have to remove the participant user before you can remove the "
+"administrator."
+msgstr "Yöneticiyi silmeden önce tüm kullanıcıları kaldırmalısınız."
+
+#: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
+#: ../delete_poll.rb:112 ../poll.rb:338
+msgid "Delete"
+msgstr "Sil"
+
+#: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
+#: ../poll.rb:300
+msgid "Save"
+msgstr "Kaydet"
+
+#: ../access_control.rb:139
+msgid "Only letters and digits are allowed in the username."
+msgstr "Kullanıcı adı sadece harf ve rakamlardan oluşabilir."
+
+#: ../access_control.rb:141
+msgid "Passwords did not match."
+msgstr "Şifreler uyuşmuyor."
+
+#: ../access_control.rb:175
+msgid "Change access control settings"
+msgstr "Erişim kontrol ayarlarını değiştir"
+
+#: ../access_control.rb:179
+msgid "not activated"
+msgstr "aktive edilmemiş"
+
+#: ../access_control.rb:181
+msgid "Activate"
+msgstr "Aktive et"
+
+#: ../access_control.rb:184
+msgid "controls will be activated when at least the admin user is configured"
+msgstr ""
+"kontroller bir kullanıcının yönetici olarak ayarlanmasının ardından aktive "
+"edilir"
+
+#: ../access_control.rb:186
+msgid "Deactivate"
+msgstr "Devre dışı bırak"
+
+#: ../access_control.rb:188
+msgid "activated"
+msgstr "aktif"
+
+#: ../access_control.rb:189
+msgid ""
+"You have to remove all users before you can deactivate the access control "
+"settings."
+msgstr ""
+"Erişim kontrolü ayarlarını devre dışı bırakmadan önce tüm kullanıcıları "
+"kaldırmanız gerekir."
+
+#: ../access_control.rb:193
+msgid ""
+"You will be asked for the password you have entered here after you press "
+"save!"
+msgstr "Kaydet'e bastıktan sonra şifre tekrar sorulacaktır!"
+
+#: ../access_control.rb:196
+msgid ""
+"The user ‘admin’ has access to both the vote and the configuration interface."
+msgstr ""
+"\"Yönetici\"nin hem oylamaya hem de yapılandırma arayüzüne erişimi vardır."
+
+#: ../access_control.rb:202
+msgid "The user ‘participant’ only has access to the vote interface."
+msgstr "\"Katılımcı\"ların yalnızca oylama arayüzüne erişimi vardır."
+
+#: ../access_control.rb:208
+msgid "Access control:"
+msgstr "Erişim kontrolü:"
+
+#: ../advanced.rb:31 ../advanced.rb:35
+msgid "Revert poll"
+msgstr "Anketi geri al"
+
+#: ../advanced.rb:32
+msgid "Poll was reverted to Version %{version}!"
+msgstr "Anket %{version} sürümüne döndürüldü!"
+
+#: ../advanced.rb:37
+msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
+msgstr ""
+"Anketi şu sürüme geri döndür (revizyon numaraları için \"Geçmiş\" sekmesine "
+"bakın):"
+
+#: ../advanced.rb:39
+msgid "Revert"
+msgstr "Geri al"
+
+#: ../authorization_required.cgi:36 ../authorization_required.cgi:52
+msgid "Authorization required"
+msgstr "Yetkilendirme gerekli"
+
+#: ../authorization_required.cgi:39
+msgid "The configuration of this poll is password-protected!"
+msgstr "Bu anketin yapılandırması parola korumalıdır!"
+
+#: ../authorization_required.cgi:41
+msgid "This poll is password-protected!"
+msgstr "Bu anket parola korumalıdır!"
+
+#: ../authorization_required.cgi:43
+msgid "In order to proceed, you have to give the password for user %{user}."
+msgstr "Devam etmek için %{user} kullanıcısının şifresini giriniz."
+
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
+msgid "Return to Dudle home and schedule a new poll"
+msgstr "Anasayfaya dönün ve yeni bir anket planlayın"
+
+#: ../authorization_required.cgi:54
+msgid "You have to authorize yourself in order to access this page!"
+msgstr "Bu sayfaya erişebilmek için oturum açmanız gerekiyor!"
+
+#: ../customize.cgi:31 ../customize.rb:31
+msgid "Customize personal settings"
+msgstr "Kişisel ayarları özelleştirin"
+
+#: ../customize.cgi:32 ../customize.rb:32
+msgid ""
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"enabled in order to personalize your settings."
+msgstr ""
+"Ayarlarınızı kişiselleştirmek için <a href='https://tr.wikipedia.org/wiki/"
+"%C3%87erez_(%C4%B0nternet)'>çerezleri</a> etkinleştirmeniz gerekir."
+
+#: ../customize.cgi:39 ../customize.rb:39
+msgid "Current setting"
+msgstr "Geçerli ayar"
+
+#: ../customize.cgi:40 ../customize.rb:40
+msgid "Description"
+msgstr "Açıklama"
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use special characters"
+msgstr "Özel karakterler kullan"
+
+#: ../customize.cgi:57 ../customize.rb:57
+msgid "Use this option if you see the characters in the parenthesis."
+msgstr "Parantez içindeki karakterleri görüyorsanız bu seçeneği kullanın."
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use only normal strings"
+msgstr "Yalnızca normal metin kullanın"
+
+#: ../customize.cgi:58 ../customize.rb:58
+msgid "Use this option if you have problems with some characters."
+msgstr ""
+"Bazı karakterleri görüntülemede sorun yaşıyorsanız bu seçeneği kullanın."
+
+#: ../customize.cgi:61 ../customize.rb:61
+msgid "Charset"
+msgstr "Karakter seti"
+
+#: ../customize.cgi:66 ../customize.rb:66
+msgid "Stylesheet"
+msgstr "Stil sayfası"
+
+#: ../customize.cgi:81 ../customize.rb:81
+msgid "Default Username"
+msgstr "Varsayılan kullanıcı adı"
+
+#: ../customize.cgi:106 ../customize.rb:106
+msgid "Edit"
+msgstr "Düzenle"
+
+#: ../delete_poll.rb:30
+msgid "Yes, I know what I am doing!"
+msgstr "Evet, ne yaptığımı biliyorum!"
+
+#: ../delete_poll.rb:31
+msgid "I hate these stupid entry fields."
+msgstr "Bu formdan nefret ediyorum."
+
+#: ../delete_poll.rb:32
+msgid "I am aware of the consequences."
+msgstr "Bu işlemin sonuçlarının farkındayım."
+
+#: ../delete_poll.rb:33
+msgid "Please delete this poll."
+msgstr "Lütfen bu anketi silin."
+
+#: ../delete_poll.rb:42
+msgid "Example polls cannot be deleted."
+msgstr "Örnek anketler silinemez."
+
+#: ../delete_poll.rb:43
+msgid "You should never see this text."
+msgstr "Bu metni asla görmemelisiniz."
+
+#: ../delete_poll.rb:56
+msgid "The poll was deleted successfully!"
+msgstr "Anket başarıyla silindi!"
+
+#: ../delete_poll.rb:57
+msgid ""
+"If this was done by accident, please contact the administrator of the "
+"system. The poll can be recovered for an indeterminate amount of time; it "
+"could already be too late."
+msgstr ""
+"Bu işlem yanlışlıkla yapıldıysa, lütfen sistem yöneticisiyle iletişime "
+"geçin. Anket bir süre için kurtarılabilir; ama her şey için çok geç de "
+"olabilir."
+
+#: ../delete_poll.rb:59
+msgid "You can now"
+msgstr "Şimdi yapabilirsiniz"
+
+#: ../delete_poll.rb:61
+msgid "Browse Wikipedia"
+msgstr "Wikipedia'ya göz atın"
+
+#: ../delete_poll.rb:62
+msgid "Search for something on the Internet"
+msgstr "İnternette bir şey arayın"
+
+#: ../delete_poll.rb:88
+msgid "To delete the poll, you have to type:"
+msgstr "Anketi silmek için şunu yazın:"
+
+#: ../delete_poll.rb:96
+msgid "but you typed:"
+msgstr "ama şunu yazdın:"
+
+#: ../delete_poll.rb:108
+msgid "Delete this poll"
+msgstr "Bu anketi sil"
+
+#: ../delete_poll.rb:109
+msgid "You want to delete the poll named"
+msgstr "Adlı anketi silmek istiyorsunuz"
+
+#: ../delete_poll.rb:110
+msgid "This is an irreversible action!"
+msgstr "Bu geri dönüşü olmayan bir eylemdir!"
+
+#: ../delete_poll.rb:111
+msgid ""
+"If you are sure that you want to permanently remove this poll, please type "
+"“%{question}” into the form."
+msgstr ""
+"Bu anketi kalıcı olarak kaldırmak istediğinizden eminseniz, lütfen forma "
+"“%{question}” yazın."
+
+#: ../dudle.rb:73
+msgid "Home"
+msgstr "Anasayfa"
+
+#: ../dudle.rb:76
+msgid "Poll"
+msgstr "Anket"
+
+#: ../dudle.rb:77 ../history.rb:35
+msgid "History"
+msgstr "Geçmiş"
+
+#: ../dudle.rb:80
+msgid "Edit Columns"
+msgstr "Sütunları düzenle"
+
+#: ../dudle.rb:81 ../invite_participants.rb:38
+msgid "Invite Participants"
+msgstr "Katılımcıları Davet Et"
+
+#: ../dudle.rb:82
+msgid "Access Control"
+msgstr "Erişim Kontrolü"
+
+#: ../dudle.rb:83
+msgid "Overview"
+msgstr "Genel bakış"
+
+#: ../dudle.rb:86
+msgid "Delete Poll"
+msgstr "Anketi sil"
+
+#: ../dudle.rb:89 ../example.cgi:67
+msgid "Examples"
+msgstr "Örnekler"
+
+#: ../dudle.rb:90
+msgid "About"
+msgstr "Hakkında"
+
+#: ../dudle.rb:92
+msgid "Customize"
+msgstr "Özelleştirme"
+
+#: ../dudle.rb:100
+msgid "Dudle Home"
+msgstr "Dudle Anasayfası"
+
+#: ../dudle.rb:208 ../dudle.rb:226
+msgid "Previous"
+msgstr "Önceki"
+
+#: ../dudle.rb:209 ../dudle.rb:227
+msgid "Next"
+msgstr "Sonraki"
+
+#: ../dudle.rb:210 ../dudle.rb:228
+msgid "Finish"
+msgstr "Bitir"
+
+#: ../dudle.rb:233
+msgid "All changes were saved successfully."
+msgstr "Tüm değişiklikler başarıyla kaydedildi."
+
+#: ../dudle.rb:233
+msgid "Proceed!"
+msgstr "İlerle!"
+
+#: ../edit_columns.rb:44
+msgid "Add and remove columns"
+msgstr "Sütun ekleme ve kaldırma"
+
+#: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
+msgid "Delete column"
+msgstr "Sütunu sil"
+
+#: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
+msgid "Add column"
+msgstr "Sütun ekle"
+
+#: ../edit_columns.rb:71 ../edit_columns.rb:88
+msgid "Edit column"
+msgstr "Sütunu düzenle"
+
+#: ../edit_columns.rb:99
+msgid "Undo"
+msgstr "Geri al"
+
+#: ../edit_columns.rb:99
+msgid "Redo"
+msgstr "Tekrar yap"
+
+#: ../error.cgi:25 ../error.cgi:27
+msgid "Error"
+msgstr "Hata"
+
+#: ../error.cgi:41
+msgid "The following error was printed:"
+msgstr "Aşağıdaki hata yazdırıldı:"
+
+#: ../error.cgi:45
+msgid ""
+"Hi!\n"
+"\n"
+"I found a bug in your application at %{urlofsite}.\n"
+"I did the following:\n"
+"\n"
+"<please describe what you did>\n"
+"<e.g., I wanted to post a comment to the poll.>\n"
+"\n"
+"I am using <please state your browser and operating system>\n"
+"%{errormessage}\n"
+"Sincerely,\n"
+msgstr ""
+"Selam!\n"
+"\n"
+"%{urlofsite} adresindeki uygulamanızda bir hata buldum.\n"
+"Aşağıdakileri yaptım:\n"
+"\n"
+"<lütfen ne yaptığınızı açıklayın>\n"
+"<örneğin, ankete bir yorum göndermek istedim.>\n"
+"\n"
+"<lütfen tarayıcınızı ve işletim sisteminizi belirtin> kullanıyorum\n"
+"%{hata mesajı}\n"
+"Saygılarımla\n"
+
+#: ../error.cgi:46
+msgid "Bug in Dudle"
+msgstr "Dudle'da Hata"
+
+#: ../error.cgi:48
+msgid ""
+"An error occurred while executing Dudle.<br/>Please send an error report, "
+"including your browser, operating system, and what you did to %{admin}."
+msgstr ""
+"Dudle yürütülürken bir hata oluştu.<br/>Lütfen tarayıcınız, işletim "
+"sisteminiz ve yaptıklarınızı içeren bir hata raporu gönderin: %{admin}"
+
+#: ../error.cgi:51
+msgid "Please include the following as well:"
+msgstr "Lütfen aşağıdakileri de ekleyin:"
+
+#: ../example.cgi:60
+msgid "Example not found: %{example}"
+msgstr "Örnek bulunamadı: %{example}"
+
+#: ../example.cgi:68
+msgid ""
+"If you want to play with the application, you may want to take a look at "
+"these example polls:"
+msgstr ""
+"Uygulamayı denemek istiyorsanız, şu örnek anketlere bir göz atmak "
+"isteyebilirsiniz:"
+
+#: ../history.rb:28
+msgid "Poll of version %{revisionnumber}"
+msgstr "Anket sürümü %{revisionnumber}"
+
+#: ../history.rb:32
+msgid "Current poll (version %{revisionnumber})"
+msgstr "Şu anki anket (sürüm %{revisionnumber})"
+
+#: ../html.rb:131
+msgid "xml:lang='en' dir='ltr'"
+msgstr "xml:lang='en' dir='ltr'"
+
+#: ../index.cgi:32
+msgid "Please enter a descriptive title."
+msgstr "Lütfen açıklayıcı bir başlık girin."
+
+#: ../index.cgi:43
+msgid "Custom address may only contain letters, numbers, and dashes."
+msgstr "Özel adres yalnızca harf, sayı ve tire içerebilir."
+
+#: ../index.cgi:45
+msgid "A poll with this address already exists."
+msgstr "Bu adrese sahip bir anket zaten var."
+
+#: ../index.cgi:63
+msgid ""
+"The poll was created successfully. The link to your new poll is: %{link}"
+msgstr "Anket başarıyla oluşturuldu. Yeni anketinizin bağlantısı: %{link}"
+
+#: ../index.cgi:71
+msgid "Go away."
+msgstr "Git burdan."
+
+#: ../index.cgi:79
+msgid "Create new poll"
+msgstr "Yeni anket oluştur"
+
+#: ../index.cgi:81
+msgid "Title"
+msgstr "Başlık"
+
+#: ../index.cgi:82
+msgid "Type"
+msgstr "Tip"
+
+#: ../index.cgi:83
+msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
+msgstr "Etkinlik planlama anketi (ör. bir toplantı planlayın)"
+
+#: ../index.cgi:84
+msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
+msgstr "Normal anket (ör. en iyi kahvenin hangisi olduğuna oy verin)"
+
+#: ../index.cgi:85
+msgid "Custom address (optional)"
+msgstr "Özel adres (isteğe bağlı)"
+
+#: ../index.cgi:86
+msgid "May contain letters, numbers, and dashes."
+msgstr "Harf, rakam ve tire içerebilir."
+
+#: ../index.cgi:88
+msgid "Create"
+msgstr "Oluştur"
+
+#: ../log.rb:111
+msgid "Version"
+msgstr "Versiyon"
+
+#: ../log.rb:111
+msgid "Date"
+msgstr "Tarih"
+
+#: ../log.rb:111
+msgid "Comment"
+msgstr "Yorum"
+
+#: ../maintenance.cgi:25 ../maintenance.cgi:27
+msgid "Maintenance"
+msgstr "Bakım"
+
+#: ../maintenance.cgi:31
+msgid "This site is currently undergoing maintenance!"
+msgstr "Bu site şu anda bakımda!"
+
+#: ../maintenance.cgi:34
+msgid ""
+"You should not browse to this file directly. Please create a file named "
+"\"maintenance.html\" to enable the maintenance mode."
+msgstr ""
+"Bu dosyayı doğrudan görüntülememelisiniz. Bakım modunu etkinleştirmek için "
+"lütfen \"maintenance.html\" adlı bir dosya oluşturun."
+
+#: ../not_found.cgi:30
+msgid "Poll not found"
+msgstr "Anket bulunamadı"
+
+#: ../not_found.cgi:32
+msgid "The requested poll was not found."
+msgstr "İstenen anket bulunamadı."
+
+#: ../not_found.cgi:33
+msgid "There are several reasons why a poll may have been deleted:"
+msgstr "Bir anketin silinmiş olmasının birkaç nedeni olabilir:"
+
+#: ../not_found.cgi:34
+msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
+msgstr "Birisi “Anketi sil”e tıkladı ve anketi manuel olarak sildi."
+
+#: ../not_found.cgi:35
+msgid ""
+"The poll was deleted by the administrator because it was not accessed for a "
+"long time."
+msgstr "Anket, uzun süredir erişilmediği için yönetici tarafından silindi."
+
+#: ../overview.rb:31
+msgid "The next steps are:"
+msgstr "Sonraki adımlar şunlardır:"
+
+#: ../overview.rb:33
+msgid "Send the link to all participants:"
+msgstr "Bağlantıyı tüm katılımcılara gönderin:"
+
+#: ../overview.rb:34
+msgid "Send this link via email..."
+msgstr "Bu bağlantıyı e-posta ile gönder..."
+
+#: ../overview.rb:35
+msgid "Visit the poll yourself:"
+msgstr "Anketi kendiniz ziyaret edin:"
+
+#: ../overview.rb:36
+msgid "Link to Dudle poll about %{polltitle}"
+msgstr "%{polltitle} hakkında Doodle anketine bağlantı"
+
+#: ../participate.rb:59
+msgid "The changes were saved, you should be redirected to %{link}."
+msgstr "Değişiklikler kaydedildi, %{link} adresine yönlendiriliyorsunuz."
+
+#: ../poll.rb:96
+msgid "Edit user %{user}..."
+msgstr "%{user} kullanıcısını düzenle..."
+
+#: ../poll.rb:100
+msgid "Delete user %{user}..."
+msgstr "%{user} kullanıcısını sil..."
+
+#: ../poll.rb:154
+msgid "Total"
+msgstr "Toplam"
+
+#: ../poll.rb:186
+msgid "Invite"
+msgstr "Davet et"
+
+#: ../poll.rb:187 ../pollhead.rb:62 ../timepollhead.rb:158
+msgid "Name"
+msgstr "İsim"
+
+#: ../poll.rb:232
+msgid "Save changes"
+msgstr "Değişiklikleri kaydet"
+
+#: ../poll.rb:236
+msgid "Cancel"
+msgstr "İptal"
+
+#: ../poll.rb:258
+msgid "Do you really want to delete user %{user}?"
+msgstr "%{user} kullanıcısını gerçekten silmek istiyor musunuz?"
+
+#: ../poll.rb:261
+msgid "Confirm"
+msgstr "Onayla"
+
+#: ../poll.rb:309
+msgid "Comments"
+msgstr "Yorumlar"
+
+#: ../poll.rb:312
+msgid "Sort oldest comment first"
+msgstr "Önce en eski yorumu sırala"
+
+#: ../poll.rb:315
+msgid "Sort newest comment first"
+msgstr "Önce en yeni yorumu sırala"
+
+#: ../poll.rb:320
+msgid "Go to last comment"
+msgstr "Son yoruma git"
+
+#: ../poll.rb:333
+msgid "%{user} said on %{time}"
+msgstr "%{user}, %{time} tarihinde şu yorumu yazdı"
+
+#: ../poll.rb:348
+msgid "Go up"
+msgstr "Yukarıya git"
+
+#: ../poll.rb:354
+msgid "says"
+msgstr "der ki"
+
+#: ../poll.rb:355
+msgid "Submit comment"
+msgstr "Yorumu gönder"
+
+#: ../poll.rb:373
+msgid "Show history items:"
+msgstr "Geçmişi görüntüle:"
+
+#: ../poll.rb:380
+msgid "All"
+msgstr "Hepsi"
+
+#: ../poll.rb:381
+msgid "Participant related"
+msgstr "Katılımcı ile ilgili"
+
+#: ../poll.rb:382
+msgid "Column related"
+msgstr "Anket sütunlarıyla ilgili"
+
+#: ../poll.rb:383
+msgid "Comment related"
+msgstr "Yorumlarla ilgili"
+
+#: ../poll.rb:384
+msgid "Access control related"
+msgstr "Erişim kontrolü ile ilgili"
+
+#: ../poll.rb:390
+msgid "Update"
+msgstr "Güncelle"
+
+#: ../pollhead.rb:71
+msgid "Edit option"
+msgstr "Seçeneği düzenle"
+
+#: ../pollhead.rb:72
+msgid "Delete option"
+msgstr "Seçeneği sil"
+
+#: ../pollhead.rb:87 ../timepollhead.rb:162
+msgid "Last edit"
+msgstr "Son düzenleme"
+
+#: ../pollhead.rb:99
+msgid "Option"
+msgstr "Seçenek"
+
+#: ../pollhead.rb:100
+msgid "Description (optional)"
+msgstr "Açıklama (isteğe bağlı)"
+
+#: ../pollhead.rb:101
+msgid "Add/Edit option"
+msgstr "Seçenek ekle/düzenle"
+
+#: ../pollhead.rb:102
+msgid "Preview"
+msgstr "Önizleme"
+
+#: ../pollhead.rb:103
+msgid ""
+"Enter all the options (columns) which you want the participants of the poll "
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
+msgstr ""
+"Anket katılımcılarının arasından seçim yapmasını istediğiniz tüm seçenekleri "
+"(sütunları) girin. Burada listelediğiniz her seçenek için katılımcılar bir "
+"oy verecektir."
+
+#: ../timepollhead.rb:113
+msgid ""
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
+msgstr ""
+"Varsayılan saatler dışında bir saat eklemek için lütfen buraya bir metin "
+"girin (ör., 09:30, sabah ve öğleden sonra)."
+
+#: ../timepollhead.rb:119
+msgid "This time has already been selected."
+msgstr "Bu zaman zaten seçildi."
+
+#: ../timepollhead.rb:193
+msgid "Earlier"
+msgstr "Daha erken"
+
+#: ../timepollhead.rb:198
+msgid "Later"
+msgstr "Daha geç"
+
+#: ../timepollhead.rb:265
+msgid "Click on the dates to add or remove columns."
+msgstr "Sütun eklemek veya kaldırmak için tarihlere tıklayın."
+
+#: ../timepollhead.rb:313
+msgid "Optional:"
+msgstr "İsteğe bağlı:"
+
+#: ../timepollhead.rb:314
+msgid "Select specific start times."
+msgstr "Belirli başlangıç zamanlarını seçin."
+
+#: ../timepollhead.rb:330
+msgid "Time"
+msgstr "Zaman"
+
+#: ../timepollhead.rb:343
+msgid "Selected"
+msgstr "Seçildi"
+
+#: ../timepollhead.rb:344
+msgid "Not selected"
+msgstr "Seçili değil"
+
+#: ../timepollhead.rb:345
+msgid "Past"
+msgstr "Geçmiş"
+
+#: ../timepollhead.rb:379
+msgid "Select the whole row"
+msgstr "Tüm satırı seç"
+
+#: ../timepollhead.rb:384
+msgid "Deselect the whole row"
+msgstr "Satırın seçimini kaldır"
+
+#: ../timepollhead.rb:428
+msgid "Add"
+msgstr "Ekle"
+
+#: ../timepollhead.rb:429
+msgid "e.&thinsp;g., 09:30, morning, afternoon"
+msgstr "ör., 09:30, sabah, öğleden sonra"
