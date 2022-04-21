@@ -1,5 +1,6 @@
 # ######################################################################## #
 # Copyright 2009,2010 Benjamin Kellermann                                  #
+# Copyright 2022      Benedikt Wildenhain                                  #
 #                                                                          #
 # This file is part of Dudle.                                              #
 #                                                                          #
@@ -21,8 +22,8 @@ msgstr ""
 "Project-Id-Version: Dudle\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-25 23:14+0200\n"
-"PO-Revision-Date: 2017-10-23 22:28+0200\n"
-"Last-Translator: Benjamin Kellermann\n"
+"PO-Revision-Date: 2022-04-04 18:54+0200\n"
+"Last-Translator: Benedikt Wildenhain\n"
 "Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
@@ -54,14 +55,6 @@ msgstr ""
 #: ../about.cgi:33
 msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr "Der Quellcode der Applikation ist %{a_start}hier%{a_end} verfügbar."
-
-#: ../about.cgi:35
-msgid ""
-"Please write me an e-mail if you have found a bug, have found something "
-"which disturbs you, or have any other feedback."
-msgstr ""
-"Schreiben Sie mir bitte eine E-Mail, wenn Sie einen Bug finden oder etwas "
-"anderes haben was Sie stört."
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -259,7 +252,7 @@ msgstr "Bearbeiten"
 
 #: ../delete_poll.rb:30
 msgid "Yes, I know what I am doing!"
-msgstr "Ja, ich weiß was ich mache!"
+msgstr "Ja, ich weiß, was ich mache!"
 
 #: ../delete_poll.rb:31
 msgid "I hate these stupid entry fields."
@@ -279,7 +272,7 @@ msgstr "Beispielumfragen können nicht gelöscht werden."
 
 #: ../delete_poll.rb:43
 msgid "You should never see this text."
-msgstr "Diesen Text sollten sie niemals sehen."
+msgstr "Diesen Text sollten Sie niemals sehen."
 
 #: ../delete_poll.rb:56
 msgid "The poll was deleted successfully!"
@@ -309,7 +302,7 @@ msgstr "Etwas im Internet suchen"
 
 #: ../delete_poll.rb:88
 msgid "To delete the poll, you have to type:"
-msgstr "Um diese Umfrage zu löschen müssen Sie folgenden Satz eingeben:"
+msgstr "Um diese Umfrage zu löschen, müssen Sie den folgenden Satz eingeben:"
 
 #: ../delete_poll.rb:96
 msgid "but you typed:"
@@ -455,9 +448,9 @@ msgstr ""
 "Das habe ich gemacht:\n"
 "\n"
 "<Bitte beschreiben Sie, was Sie gemacht haben>\n"
-"<z.B.: Ich wollte einen Kommentar in einer Umfrage senden>\n"
+"<z.B.: Ich wollte eine Umfrage kommentieren>\n"
 "\n"
-"Ich benutze <bitte hier ihren browser und ihr Betriebssystem einsetzen>.\n"
+"Ich benutze <bitte hier Ihren Browser und Ihr Betriebssystem einsetzen>.\n"
 "%{errormessage}\n"
 "Mit freundlichen Grüßen,\n"
 
@@ -471,8 +464,8 @@ msgid ""
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
 "Während der Ausführung von Dudle gab es einen Fehler.<br/>Bitte schicken "
-"Sie einen Fehlerbericht in dem Sie den Namen Ihres Browsers, Ihres "
-"Betriebssystems und was Sie gemacht haben angeben an %{admin}."
+"Sie einen Fehlerbericht, in dem Sie den Namen Ihres Browsers, Ihres "
+"Betriebssystems und, was Sie gemacht haben, angeben, an %{admin}."
 
 #: ../error.cgi:56
 msgid "Please include the following as well:"
@@ -550,7 +543,7 @@ msgstr ""
 
 #: ../index.cgi:90
 msgid "Custom address (optional)"
-msgstr "eigene URL (optional)"
+msgstr "Eigene URL (optional)"
 
 #: ../index.cgi:91
 msgid "May contain letters, numbers, and dashes."
@@ -585,8 +578,8 @@ msgid ""
 "You should not browse to this file directly. Please create a file named "
 "\"maintenance.html\" to enable the maintenance mode."
 msgstr ""
-"Sie sollten diese Datei nicht direkt aufrufen. Bitte erstellen sie eine "
-"Datei namens \"maintenance.html\" um den Wartungsmodus zu aktivieren."
+"Sie sollten diese Datei nicht direkt aufrufen. Bitte erstellen Sie eine "
+"Datei namens \"maintenance.html\", um den Wartungsmodus zu aktivieren."
 
 #: ../not_found.cgi:30
 msgid "Poll not found"
@@ -630,7 +623,7 @@ msgstr "Die nächsten Schritte sind:"
 
 #: ../overview.rb:33
 msgid "Send the link to all participants:"
-msgstr "Senden sie diesen Link zu allen Teilnehmern:"
+msgstr "Senden Sie diesen Link an alle Teilnehmer:"
 
 #: ../overview.rb:34
 msgid "Send this link via email..."
@@ -692,11 +685,12 @@ msgstr "Kommentare"
 
 #: ../poll.rb:312
 msgid "Sort oldest comment first"
-msgstr "Sortiere den ältesten Kommentar als erstes"
+msgstr "Zeige den ältesten Kommentar zuerst an"
 
 #: ../poll.rb:315
 msgid "Sort newest comment first"
-msgstr "Sortiere den neuesten Kommentar als erstes"
+msgstr "Zeige den neusten Kommentar zuerst an"
+
 
 #: ../poll.rb:320
 msgid "Go to last comment"
@@ -847,6 +841,14 @@ msgstr "Hinzufügen"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "z.B., 9:30, morgens, abends"
+
+
+#~msgid ""
+#~"Please write me an e-mail if you have found a bug, have found something "
+#~"which disturbs you, or have any other feedback."
+#~msgstr ""
+#~"Schreiben Sie mir bitte eine E-Mail, wenn Sie einen Bug finden oder etwas "
+#~"anderes haben was Sie stört."
 
 #~ msgid "Event-scheduling poll"
 #~ msgstr "Nach einer Zeit fragen"
