@@ -31,7 +31,7 @@ GNU AGPL v3 or higher (see file License)
        ruby-gettext, potool, and make to be installed.
 
        ```sh
-       sudo aptitude install gettext potool make
+       sudo aptitude install ruby-gettext potool make
        make
        ```
 5.  In order to let access control work correctly, the webserver needs
