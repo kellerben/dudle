@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-25 23:14+0200\n"
+"POT-Creation-Date: 2022-04-22 11:03+0200\n"
 "PO-Revision-Date: 2017-10-19 12:06+0100\n"
 "Last-Translator: eo.001\n"
 "Language-Team: eo <->\n"
@@ -40,14 +40,6 @@ msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
 "La fontokodo de tiu ĉi aplikaĵo estas trovebla %{a_start}ĉi tie%{a_end}."
 
-#: ../about.cgi:35
-msgid ""
-"Please write me an e-mail if you have found a bug, have found something "
-"which disturbs you, or have any other feedback."
-msgstr ""
-"Sendu al mi retmesaĝon, se vi trovis eraron, konfuziĝis pri io aŭ okaze de "
-"iu ajn alia re-sciigo. "
-
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
 msgstr "Uzantnomo: "
@@ -68,12 +60,12 @@ msgstr ""
 "Necesas forigi la partoprenanton, antaŭ ol vi povas forigi la administranton."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:338
+#: ../delete_poll.rb:112 ../poll.rb:339
 msgid "Delete"
 msgstr "Forigi"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:300
+#: ../poll.rb:301
 msgid "Save"
 msgstr "Konservi"
 
@@ -159,6 +151,11 @@ msgstr "Voĉdonilo laŭ versio %{revisionnumber}"
 msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr ""
 
+#: ../advanced.rb:39
+#, fuzzy
+msgid "Revert"
+msgstr "Forigi voĉdonilon"
+
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
 msgstr "Rajtigo bezonata"
@@ -175,7 +172,7 @@ msgstr "Tiu ĉi voĉdonilo estas protektata per pasvorto!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Por antaŭeniĝi necesas enigi pasvorton de uzanto %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
 msgid "Return to Dudle home and schedule a new poll"
 msgstr "Reiri al Dudl-hejmpaĝo kaj estigi novan voĉdonilon"
 
@@ -360,23 +357,23 @@ msgstr "Agordi"
 msgid "Dudle Home"
 msgstr "Dudle ĉefpaĝo"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "Antaŭa"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "Venonta"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "Fini"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "Ĉiuj ŝanĝoj estis sukcese konservitaj. "
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Antaŭenigi!"
 
@@ -408,11 +405,11 @@ msgstr "Refari"
 msgid "Error"
 msgstr "Eraro"
 
-#: ../error.cgi:46
+#: ../error.cgi:41
 msgid "The following error was printed:"
 msgstr "La sekvanta erarmesaĝo estis eligata: "
 
-#: ../error.cgi:50
+#: ../error.cgi:45
 msgid ""
 "Hi!\n"
 "\n"
@@ -438,11 +435,11 @@ msgstr ""
 "%{errormessage}\n"
 "Altestime,\n"
 
-#: ../error.cgi:51
+#: ../error.cgi:46
 msgid "Bug in Dudle"
 msgstr "Program-eraro en Dudl"
 
-#: ../error.cgi:53
+#: ../error.cgi:48
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
@@ -450,7 +447,7 @@ msgstr ""
 "Okazis eraro dum plenumado de Dudle.<br/>Bonvolu sendi erarmesaĝon, "
 "inkluzive vian foliumilon, mastruman sistemon kaj kion vi faris, al %{admin}."
 
-#: ../error.cgi:56
+#: ../error.cgi:51
 msgid "Please include the following as well:"
 msgstr "Bonvole inkluzivi ankaŭ jenon: "
 
@@ -482,55 +479,55 @@ msgstr "xml:lang='eo' dir='ltr'"
 msgid "Please enter a descriptive title."
 msgstr "Bonvolu enigi priskriban titolon."
 
-#: ../index.cgi:48
+#: ../index.cgi:43
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr ""
 "Mem-elektita adreso povas konsisti nur el literoj, ciferoj kaj streketoj."
 
-#: ../index.cgi:50
+#: ../index.cgi:45
 msgid "A poll with this address already exists."
 msgstr "Voĉdonilo kun tiu retadreso jam ekzistas. "
 
-#: ../index.cgi:68
+#: ../index.cgi:63
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr ""
 "La voĉdonilo estis sukcese kreata. La ligilo al via nova voĉdonilo estas "
 "jena: %{link}"
 
-#: ../index.cgi:76
+#: ../index.cgi:71
 msgid "Go away."
 msgstr "Foriru."
 
-#: ../index.cgi:84
+#: ../index.cgi:79
 msgid "Create new poll"
 msgstr "Krei novan voĉdonilon"
 
-#: ../index.cgi:86
+#: ../index.cgi:81
 msgid "Title"
 msgstr "Titolo"
 
-#: ../index.cgi:87
+#: ../index.cgi:82
 msgid "Type"
 msgstr "Tipo"
 
-#: ../index.cgi:88
+#: ../index.cgi:83
 msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Demandi pri taŭga tempo (ekzemple por plani aranĝon)"
 
-#: ../index.cgi:89
+#: ../index.cgi:84
 msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Kutima opini-esploro (ekzemple voĉdoni pri la plej bona speco da kafo)"
 
-#: ../index.cgi:90
+#: ../index.cgi:85
 msgid "Custom address (optional)"
 msgstr "Adreson mem elekti (nedeviga opcio)"
 
-#: ../index.cgi:91
+#: ../index.cgi:86
 msgid "May contain letters, numbers, and dashes."
 msgstr "Povas konsisti el literoj, ciferoj kaj streketoj."
 
-#: ../index.cgi:93
+#: ../index.cgi:88
 msgid "Create"
 msgstr "Estigi"
 
@@ -550,11 +547,11 @@ msgstr "Komento"
 msgid "Maintenance"
 msgstr "Funkcitenado"
 
-#: ../maintenance.cgi:36
+#: ../maintenance.cgi:31
 msgid "This site is currently undergoing maintenance!"
 msgstr "Tiu paĝaro nun estas en programvartado!"
 
-#: ../maintenance.cgi:39
+#: ../maintenance.cgi:34
 msgid ""
 "You should not browse to this file directly. Please create a file named "
 "\"maintenance.html\" to enable the maintenance mode."
@@ -586,15 +583,6 @@ msgid ""
 msgstr ""
 "La voĉdonilo estis forigata fare de la administranto, ĉar ĝi ne estis "
 "alirata dum longa tempo. "
-
-#: ../not_found.cgi:36
-#, fuzzy
-msgid ""
-"If you think that the deletion was done in error, please contact the "
-"administrator of the system."
-msgstr ""
-"Se vi opinias, ke la forigo okazis erare, bonvolu kontakti la administranton "
-"de la sistemo. "
 
 #: ../overview.rb:31
 msgid "The next steps are:"
@@ -656,63 +644,75 @@ msgstr "Ĉu vi vere volas forigi uzanton %{user}?"
 msgid "Confirm"
 msgstr "Konfirmi"
 
-#: ../poll.rb:309
+#: ../poll.rb:282
+msgid "Yes"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "No"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "Maybe"
+msgstr ""
+
+#: ../poll.rb:310
 msgid "Comments"
 msgstr "Komentoj"
 
-#: ../poll.rb:312
+#: ../poll.rb:313
 msgid "Sort oldest comment first"
 msgstr "Aranĝi la plej malnovan komenton unue"
 
-#: ../poll.rb:315
+#: ../poll.rb:316
 msgid "Sort newest comment first"
 msgstr "Aranĝi la plej novan komenton unue"
 
-#: ../poll.rb:320
+#: ../poll.rb:321
 msgid "Go to last comment"
 msgstr "Al la lasta komento"
 
-#: ../poll.rb:333
+#: ../poll.rb:334
 msgid "%{user} said on %{time}"
 msgstr "%{user} diris je %{time}"
 
-#: ../poll.rb:348
+#: ../poll.rb:349
 msgid "Go up"
 msgstr "Supreniri"
 
-#: ../poll.rb:354
+#: ../poll.rb:355
 msgid "says"
 msgstr "diras"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "Submit comment"
 msgstr "Sendi komenton"
 
-#: ../poll.rb:373
+#: ../poll.rb:374
 msgid "Show history items:"
 msgstr "Montri historiaĵojn: "
 
-#: ../poll.rb:380
+#: ../poll.rb:381
 msgid "All"
 msgstr "Ĉiuj"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "Participant related"
 msgstr "Partoprenanto-rilata"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Column related"
 msgstr "Kolumno-rilata"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Comment related"
 msgstr "Komento-rilata"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Access control related"
 msgstr "Alir-kontrolo-rilata"
 
-#: ../poll.rb:390
+#: ../poll.rb:391
 msgid "Update"
 msgstr "Ĝisdatigi"
 
@@ -817,6 +817,21 @@ msgstr "Aldoni"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "ekzemple 09:30, matene, posttagmeze"
+
+#~ msgid ""
+#~ "Please write me an e-mail if you have found a bug, have found something "
+#~ "which disturbs you, or have any other feedback."
+#~ msgstr ""
+#~ "Sendu al mi retmesaĝon, se vi trovis eraron, konfuziĝis pri io aŭ okaze "
+#~ "de iu ajn alia re-sciigo. "
+
+#, fuzzy
+#~ msgid ""
+#~ "If you think that the deletion was done in error, please contact the "
+#~ "administrator of the system."
+#~ msgstr ""
+#~ "Se vi opinias, ke la forigo okazis erare, bonvolu kontakti la "
+#~ "administranton de la sistemo. "
 
 #~ msgid "Event-scheduling poll"
 #~ msgstr "Demandi pri taŭga tempo"

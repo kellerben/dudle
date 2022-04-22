@@ -2,24 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2017, 2019
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-23 15:57+0200\n"
+"POT-Creation-Date: 2022-04-22 11:03+0200\n"
 "PO-Revision-Date: 2017-07-01 06:12+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>, 2019\n"
 "Language-Team: Hebrew (https://www.transifex.com/yaron/teams/76313/he/)\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: he\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
+"1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
 #: ../about.cgi:29
 msgid "This application is powered by %{Dudle}."
@@ -32,15 +33,14 @@ msgstr "רשיון"
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version "
-"3</a>."
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
 msgstr ""
-"קוד המקור של היישום הזה זמין תחת התנאים של <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL גרסה 3</a>."
+"קוד המקור של היישום הזה זמין תחת התנאים של <a href='http://www.fsf.org/"
+"licensing/licenses/agpl-3.0.html'>AGPL גרסה 3</a>."
 
 #: ../about.cgi:33
-msgid ""
-"The sourcecode of this application can be found %{a_start}here%{a_end}."
+msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr "ניתן למצוא את קוד המקור של היישום הזה %{a_start}כאן%{a_end}."
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
@@ -62,12 +62,12 @@ msgid ""
 msgstr "עליך להסיר את כל המשתתפים לפני שניתן להסיר את המנהל."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:338
+#: ../delete_poll.rb:112 ../poll.rb:339
 msgid "Delete"
 msgstr "מחיקה"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:300
+#: ../poll.rb:301
 msgid "Save"
 msgstr "שמירה"
 
@@ -117,8 +117,7 @@ msgstr "תופיע בקשה לססמה שהזנת כאן לאחר לחיצה ע�
 
 #: ../access_control.rb:196
 msgid ""
-"The user ‘admin’ has access to both the vote and the configuration "
-"interface."
+"The user ‘admin’ has access to both the vote and the configuration interface."
 msgstr "למשתמש ‚admin’ יש גישה להצעות כמו גם למנשק התצורה."
 
 #: ../access_control.rb:202
@@ -140,6 +139,11 @@ msgstr "הסקר הוחזר לגרסה %{version}!"
 #: ../advanced.rb:37
 msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr "החזרת סקר לגרסה (יש לעיין בלשונית ההיסטוריה לצפייה במספרי המהדורות):"
+
+#: ../advanced.rb:39
+#, fuzzy
+msgid "Revert"
+msgstr "החזרת סקר"
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
@@ -164,29 +168,6 @@ msgstr "לחזור לעמוד הבית של Dudle ולתזמן סקר חדש"
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "עליך להזדהות מול המערכת כדי לגשת לעמוד זה!"
-
-#: ../config.rb:45
-msgid "Event Schedule Poll"
-msgstr "סקר תזמון אירוע"
-
-#: ../config.rb:49
-msgid "Normal Poll"
-msgstr "סקר רגיל"
-
-#: ../config.rb:53
-msgid ""
-"End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
-msgstr "סקר מוצפן/מאומת מקצה לקצה (הססמה בתגובות)"
-
-#: ../config.rb:57
-msgid ""
-"End-to-End encrypted Poll, where only the administrator is able to read "
-"votes"
-msgstr "סקר מוצפן מקצה לקצה בו רק למנהלים יש אפשרות לראות הצבעות"
-
-#: ../config.rb:61
-msgid "Test for several PGP-authenticated votes"
-msgstr "בדיקה למגוון הצבעות שמוגנות ב־PGP"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
@@ -642,63 +623,75 @@ msgstr "למחוק את המשתמש %{user}?"
 msgid "Confirm"
 msgstr "אישור"
 
-#: ../poll.rb:309
+#: ../poll.rb:282
+msgid "Yes"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "No"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "Maybe"
+msgstr ""
+
+#: ../poll.rb:310
 msgid "Comments"
 msgstr "הערות"
 
-#: ../poll.rb:312
+#: ../poll.rb:313
 msgid "Sort oldest comment first"
 msgstr "סידור ההערות הישנות ביותר בהתחלה"
 
-#: ../poll.rb:315
+#: ../poll.rb:316
 msgid "Sort newest comment first"
 msgstr "סידור ההערות החדשות ביותר בהתחלה"
 
-#: ../poll.rb:320
+#: ../poll.rb:321
 msgid "Go to last comment"
 msgstr "מעבר להערה האחרונה"
 
-#: ../poll.rb:333
+#: ../poll.rb:334
 msgid "%{user} said on %{time}"
 msgstr "נאמר ע״י %{user} ב־%{time}"
 
-#: ../poll.rb:348
+#: ../poll.rb:349
 msgid "Go up"
 msgstr "לעלות מעלה"
 
-#: ../poll.rb:354
+#: ../poll.rb:355
 msgid "says"
 msgstr "אמר/ה"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "Submit comment"
 msgstr "שליחת הערה"
 
-#: ../poll.rb:373
+#: ../poll.rb:374
 msgid "Show history items:"
 msgstr "הצגת פריטים מההיסטוריה:"
 
-#: ../poll.rb:380
+#: ../poll.rb:381
 msgid "All"
 msgstr "הכול"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "Participant related"
 msgstr "בהקשר למשתתף"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Column related"
 msgstr "בהקשר לעמודה"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Comment related"
 msgstr "בהקשר להערה"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Access control related"
 msgstr "בהקשר לבקרת גישה"
 
-#: ../poll.rb:390
+#: ../poll.rb:391
 msgid "Update"
 msgstr "עדכון"
 
@@ -733,16 +726,16 @@ msgstr "תצוגה מקדימה"
 #: ../pollhead.rb:103
 msgid ""
 "Enter all the options (columns) which you want the participants of the poll "
-"to choose among. For each option you give here, the participants will choose"
-" a vote."
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
 msgstr ""
-"נא להקליד את כל האפשרויות (עמודות) מהן ברצונך שיבחרו משתתפי הסקר. לכל אפשרות"
-" שתסופק כאן יהיה על המשתפים להצביע."
+"נא להקליד את כל האפשרויות (עמודות) מהן ברצונך שיבחרו משתתפי הסקר. לכל אפשרות "
+"שתסופק כאן יהיה על המשתפים להצביע."
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string here "
-"(e.&thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "כדי להוסיף מועד שונה ממועדי בררת המחדל, נא להקליד איזו מחרוזת להלן (למשל: "
 "09:30, בוקר, צהריים)."
@@ -802,3 +795,21 @@ msgstr "הוספה"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "למשל: 09:30, בוקר, צהריים"
+
+#~ msgid "Event Schedule Poll"
+#~ msgstr "סקר תזמון אירוע"
+
+#~ msgid "Normal Poll"
+#~ msgstr "סקר רגיל"
+
+#~ msgid ""
+#~ "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+#~ msgstr "סקר מוצפן/מאומת מקצה לקצה (הססמה בתגובות)"
+
+#~ msgid ""
+#~ "End-to-End encrypted Poll, where only the administrator is able to read "
+#~ "votes"
+#~ msgstr "סקר מוצפן מקצה לקצה בו רק למנהלים יש אפשרות לראות הצבעות"
+
+#~ msgid "Test for several PGP-authenticated votes"
+#~ msgstr "בדיקה למגוון הצבעות שמוגנות ב־PGP"

@@ -2,23 +2,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Rocio Medina <ro.medina@outlook.es>, 2019
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-23 15:57+0200\n"
+"POT-Creation-Date: 2022-04-22 11:03+0200\n"
 "PO-Revision-Date: 2017-07-01 06:12+0000\n"
 "Last-Translator: Rocio Medina <ro.medina@outlook.es>, 2019\n"
-"Language-Team: Spanish (Argentina) (https://www.transifex.com/yaron/teams/76313/es_AR/)\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/yaron/"
+"teams/76313/es_AR/)\n"
+"Language: es_AR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_AR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../about.cgi:29
@@ -32,19 +33,17 @@ msgstr "Licencia"
 #: ../about.cgi:32
 msgid ""
 "The sourcecode of this application is available under the terms of <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version "
-"3</a>."
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
 msgstr ""
 "El código fuente de esta aplicación está disponible bajo los términos de <a "
-"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version "
-"3</a>."
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
 
 #: ../about.cgi:33
-msgid ""
-"The sourcecode of this application can be found %{a_start}here%{a_end}."
+msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
-"El código fuente de ésta aplicación puede hallarse en "
-"%{a_start}here%{a_end}."
+"El código fuente de ésta aplicación puede hallarse en %{a_start}here%{a_end}."
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -66,12 +65,12 @@ msgstr ""
 "Debe eliminar al usuario participante para poder eliminar al administrador."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:338
+#: ../delete_poll.rb:112 ../poll.rb:339
 msgid "Delete"
 msgstr "Eliminar"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:300
+#: ../poll.rb:301
 msgid "Save"
 msgstr "Guardar"
 
@@ -126,16 +125,14 @@ msgstr ""
 
 #: ../access_control.rb:196
 msgid ""
-"The user ‘admin’ has access to both the vote and the configuration "
-"interface."
+"The user ‘admin’ has access to both the vote and the configuration interface."
 msgstr ""
 "El usuario 'administrador' tiene acceso a las interfaces de votación y "
 "configuración."
 
 #: ../access_control.rb:202
 msgid "The user ‘participant’ only has access to the vote interface."
-msgstr ""
-"El usuario 'participante' sólo tiene acceso a la interfaz de votación."
+msgstr "El usuario 'participante' sólo tiene acceso a la interfaz de votación."
 
 #: ../access_control.rb:208
 msgid "Access control:"
@@ -154,6 +151,11 @@ msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr ""
 "Revertir encuesta a versión (véase la pestaña 'Historial' para números de "
 "revisión):"
+
+#: ../advanced.rb:39
+#, fuzzy
+msgid "Revert"
+msgstr "Revertir encuesta"
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
@@ -179,32 +181,6 @@ msgstr "Regresa al inicio y programa una nueva encuesta"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "¡Debes autorizarte para acceder a esta página!"
 
-#: ../config.rb:45
-msgid "Event Schedule Poll"
-msgstr "Encuesta de Horario de Eventos"
-
-#: ../config.rb:49
-msgid "Normal Poll"
-msgstr "Encuesta Normal"
-
-#: ../config.rb:53
-msgid ""
-"End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
-msgstr ""
-"Cifrado integral/Encuesta autenticada (vea la contraseña en los comentarios)"
-
-#: ../config.rb:57
-msgid ""
-"End-to-End encrypted Poll, where only the administrator is able to read "
-"votes"
-msgstr ""
-"Encuesta con cifrado integral donde sólo el administrador es capaz de ver "
-"los votos"
-
-#: ../config.rb:61
-msgid "Test for several PGP-authenticated votes"
-msgstr "Prueba para votos autenticados por PGP"
-
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
 msgstr "Cambia tu configuración personal"
@@ -214,9 +190,8 @@ msgid ""
 "You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
 "enabled in order to personalize your settings."
 msgstr ""
-"Debes tener las <a "
-"href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a>habilitadas para"
-" poder cambiar tu configuración."
+"Debes tener las <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</"
+"a>habilitadas para poder cambiar tu configuración."
 
 #: ../customize.cgi:39 ../customize.rb:39
 msgid "Current setting"
@@ -471,8 +446,8 @@ msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Ocurrió un error mientras se ejecutaba Dudle.<br/>Por favor envíe un reporte"
-" del error, incluyendo su navegador, sistema operativo y lo que hizo a "
+"Ocurrió un error mientras se ejecutaba Dudle.<br/>Por favor envíe un reporte "
+"del error, incluyendo su navegador, sistema operativo y lo que hizo a "
 "%{admin}."
 
 #: ../error.cgi:51
@@ -602,7 +577,8 @@ msgstr ""
 
 #: ../not_found.cgi:34
 msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
-msgstr "Alguien pulsó en \"Eliminar encuesta\" y eliminó la encuesta manualmente."
+msgstr ""
+"Alguien pulsó en \"Eliminar encuesta\" y eliminó la encuesta manualmente."
 
 #: ../not_found.cgi:35
 msgid ""
@@ -672,63 +648,75 @@ msgstr "¿Estás seguro de querer eliminar el usuario %{user}?"
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: ../poll.rb:309
+#: ../poll.rb:282
+msgid "Yes"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "No"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "Maybe"
+msgstr ""
+
+#: ../poll.rb:310
 msgid "Comments"
 msgstr "Comentarios"
 
-#: ../poll.rb:312
+#: ../poll.rb:313
 msgid "Sort oldest comment first"
 msgstr "Mostrar comentarios más antiguos primero"
 
-#: ../poll.rb:315
+#: ../poll.rb:316
 msgid "Sort newest comment first"
 msgstr "Mostrar comentarios más recientes primero"
 
-#: ../poll.rb:320
+#: ../poll.rb:321
 msgid "Go to last comment"
 msgstr "Ir al último comentario"
 
-#: ../poll.rb:333
+#: ../poll.rb:334
 msgid "%{user} said on %{time}"
 msgstr "%{user} lo dijo a las %{time}"
 
-#: ../poll.rb:348
+#: ../poll.rb:349
 msgid "Go up"
 msgstr "Subir"
 
-#: ../poll.rb:354
+#: ../poll.rb:355
 msgid "says"
 msgstr "dice"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "Submit comment"
 msgstr "Enviar comentario"
 
-#: ../poll.rb:373
+#: ../poll.rb:374
 msgid "Show history items:"
 msgstr "Mostrar historial de ítems:"
 
-#: ../poll.rb:380
+#: ../poll.rb:381
 msgid "All"
 msgstr "Todo"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "Participant related"
 msgstr "Participante relacionado"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Column related"
 msgstr "Columna relacionada"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Comment related"
 msgstr "Comentario relacionado"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Access control related"
 msgstr "Control de acceso relacionado"
 
-#: ../poll.rb:390
+#: ../poll.rb:391
 msgid "Update"
 msgstr "Actualizar"
 
@@ -763,8 +751,8 @@ msgstr "Vista previa"
 #: ../pollhead.rb:103
 msgid ""
 "Enter all the options (columns) which you want the participants of the poll "
-"to choose among. For each option you give here, the participants will choose"
-" a vote."
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
 msgstr ""
 "Ingrese todas las opciones (columnas) que desea que los participantes de la "
 "encuesta elijan. Por cada opción que ingrese, los participantes elegirán un "
@@ -772,8 +760,8 @@ msgstr ""
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string here "
-"(e.&thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "Para añadir un tiempo diferente al preestablecido, por favor ingrese una "
 "cadena aquí (e.&thinsp;g., 09:30, mañana, tarde)."
@@ -833,3 +821,25 @@ msgstr "Añadir"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "e.&thinsp;g., 09:30, mañana, tarde"
+
+#~ msgid "Event Schedule Poll"
+#~ msgstr "Encuesta de Horario de Eventos"
+
+#~ msgid "Normal Poll"
+#~ msgstr "Encuesta Normal"
+
+#~ msgid ""
+#~ "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+#~ msgstr ""
+#~ "Cifrado integral/Encuesta autenticada (vea la contraseña en los "
+#~ "comentarios)"
+
+#~ msgid ""
+#~ "End-to-End encrypted Poll, where only the administrator is able to read "
+#~ "votes"
+#~ msgstr ""
+#~ "Encuesta con cifrado integral donde sólo el administrador es capaz de ver "
+#~ "los votos"
+
+#~ msgid "Test for several PGP-authenticated votes"
+#~ msgstr "Prueba para votos autenticados por PGP"

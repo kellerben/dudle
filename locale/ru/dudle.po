@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-14 17:38+0200\n"
+"POT-Creation-Date: 2022-04-22 11:03+0200\n"
 "PO-Revision-Date: 2021-02-10 23:08+0100\n"
 "Last-Translator: Nikolaj D. <abtogen@posteo.ru>\n"
 "Language-Team: \n"
@@ -73,12 +73,12 @@ msgstr ""
 "\"."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:338
+#: ../delete_poll.rb:112 ../poll.rb:339
 msgid "Delete"
 msgstr "Удалить"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:300
+#: ../poll.rb:301
 msgid "Save"
 msgstr "Сохранить"
 
@@ -634,63 +634,75 @@ msgstr "Вы действительно хотите удалить пользо
 msgid "Confirm"
 msgstr "Подтвердите"
 
-#: ../poll.rb:309
+#: ../poll.rb:282
+msgid "Yes"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "No"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "Maybe"
+msgstr ""
+
+#: ../poll.rb:310
 msgid "Comments"
 msgstr "Комментарии"
 
-#: ../poll.rb:312
+#: ../poll.rb:313
 msgid "Sort oldest comment first"
 msgstr "Первым самый давний комментарий "
 
-#: ../poll.rb:315
+#: ../poll.rb:316
 msgid "Sort newest comment first"
 msgstr "Сперва самый новый комментарий"
 
-#: ../poll.rb:320
+#: ../poll.rb:321
 msgid "Go to last comment"
 msgstr "Перейти к последнему комментарию"
 
-#: ../poll.rb:333
+#: ../poll.rb:334
 msgid "%{user} said on %{time}"
 msgstr "%{user} сказал в %{time}"
 
-#: ../poll.rb:348
+#: ../poll.rb:349
 msgid "Go up"
 msgstr "Подняться"
 
-#: ../poll.rb:354
+#: ../poll.rb:355
 msgid "says"
 msgstr "говорит"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "Submit comment"
 msgstr "Отправить комментарий"
 
-#: ../poll.rb:373
+#: ../poll.rb:374
 msgid "Show history items:"
 msgstr "Показать элементы журнала:"
 
-#: ../poll.rb:380
+#: ../poll.rb:381
 msgid "All"
 msgstr "Все"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "Participant related"
 msgstr "Участник взаимосвязан"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Column related"
 msgstr "Колонка, связанная"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Comment related"
 msgstr "Комментарий, связанный"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Access control related"
 msgstr "Управление доступом, связанное"
 
-#: ../poll.rb:390
+#: ../poll.rb:391
 msgid "Update"
 msgstr "Обновить"
 

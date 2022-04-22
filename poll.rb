@@ -279,7 +279,7 @@ END
 
 		@head.columns.each{|column|
 			ret += "<td class='checkboxes'><table class='checkboxes'>"
-			[[YES, YESVAL],[NO, NOVAL],[MAYBE, MAYBEVAL]].each{|valhuman, valbinary|
+			[[YES, YESVAL, _("Yes")],[NO, NOVAL, _("No")],[MAYBE, MAYBEVAL, _("Maybe")]].each{|valhuman, valbinary, valtext|
 				ret += <<TR
 				<tr class='input-#{valbinary}'>
 					<td class='input-radio'>
@@ -287,7 +287,8 @@ END
 							value='#{valbinary}'
 							id=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\"
 							name=\"add_participant_checked_#{CGI.escapeHTML(column.to_s)}\"
-							title=\"#{CGI.escapeHTML(column.to_s)}\" #{checked[column] == valbinary ? "checked='checked'":""}/>
+							aria-label=\"#{CGI.escapeHTML(column.to_s)}: #{valtext}\"
+							title=\"#{CGI.escapeHTML(column.to_s)}: #{valhuman}\" #{checked[column] == valbinary ? "checked='checked'":""}/>
 					</td>
 					<td class='input-label'>
 						<label for=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\">#{valhuman}</label>

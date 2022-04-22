@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-25 23:14+0200\n"
+"POT-Creation-Date: 2022-04-22 11:03+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@gmx.de>\n"
 "Language-Team: \n"
@@ -52,17 +52,6 @@ msgstr ""
 msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
 
-#: ../about.cgi:35
-#, fuzzy
-msgid ""
-"Please write me an e-mail if you have found a bug, have found something "
-"which disturbs you, or have any other feedback."
-msgstr ""
-"Pokud narazíte na chybu nebo něco jiného, co vám vadí na této aplikaci, "
-"prosím kontaktujte mne: <a href=\"mailto:"
-"Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20Dudle"
-"\">kontaktuj mne</a>"
-
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
 msgstr "Uživatelské jméno:"
@@ -83,12 +72,12 @@ msgstr ""
 "Je potřeba smazat uživatele před tím, než je možné smazat administrátora."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:338
+#: ../delete_poll.rb:112 ../poll.rb:339
 msgid "Delete"
 msgstr "Smazat"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:300
+#: ../poll.rb:301
 msgid "Save"
 msgstr "Uložit"
 
@@ -167,6 +156,11 @@ msgstr "Hlasování verze %{revisionnumber}"
 msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr ""
 
+#: ../advanced.rb:39
+#, fuzzy
+msgid "Revert"
+msgstr "Smazat hlasování"
+
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
 msgstr ""
@@ -183,7 +177,7 @@ msgstr ""
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
 msgid "Return to Dudle home and schedule a new poll"
 msgstr ""
 
@@ -371,23 +365,23 @@ msgstr "Přizpůsobit"
 msgid "Dudle Home"
 msgstr ""
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "Předchozí"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "Následující"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "Dokončit"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "Všechny změny byly úspěšně uloženy."
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Vykonat!"
 
@@ -419,11 +413,11 @@ msgstr "Odvolat zpět"
 msgid "Error"
 msgstr ""
 
-#: ../error.cgi:46
+#: ../error.cgi:41
 msgid "The following error was printed:"
 msgstr ""
 
-#: ../error.cgi:50
+#: ../error.cgi:45
 msgid ""
 "Hi!\n"
 "\n"
@@ -438,17 +432,17 @@ msgid ""
 "Sincerely,\n"
 msgstr ""
 
-#: ../error.cgi:51
+#: ../error.cgi:46
 msgid "Bug in Dudle"
 msgstr ""
 
-#: ../error.cgi:53
+#: ../error.cgi:48
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
 
-#: ../error.cgi:56
+#: ../error.cgi:51
 msgid "Please include the following as well:"
 msgstr ""
 
@@ -480,52 +474,52 @@ msgstr "xml:lang='cs' dir='ltr'"
 msgid "Please enter a descriptive title."
 msgstr "Prosím vložit popisný nadpis."
 
-#: ../index.cgi:48
+#: ../index.cgi:43
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr "Volitelná adresa může obsahovat pouze písmena, čísla a pomlčky."
 
-#: ../index.cgi:50
+#: ../index.cgi:45
 msgid "A poll with this address already exists."
 msgstr "Hlasování s touto adresou již existuje."
 
-#: ../index.cgi:68
+#: ../index.cgi:63
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr "Hlasování bylo úspěšně vytvořeno. Odkaz k novému hlasování je: %{link}"
 
-#: ../index.cgi:76
+#: ../index.cgi:71
 msgid "Go away."
 msgstr ""
 
-#: ../index.cgi:84
+#: ../index.cgi:79
 msgid "Create new poll"
 msgstr "Vytvořit nové hlasování"
 
-#: ../index.cgi:86
+#: ../index.cgi:81
 msgid "Title"
 msgstr "Název"
 
-#: ../index.cgi:87
+#: ../index.cgi:82
 msgid "Type"
 msgstr "Typ"
 
-#: ../index.cgi:88
+#: ../index.cgi:83
 msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Hlasování plánované události"
 
-#: ../index.cgi:89
+#: ../index.cgi:84
 msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Normální hlasování (např. hlasování, která káva je nejlepší)"
 
-#: ../index.cgi:90
+#: ../index.cgi:85
 msgid "Custom address (optional)"
 msgstr "Volitelná adresa (nepovinné)"
 
-#: ../index.cgi:91
+#: ../index.cgi:86
 msgid "May contain letters, numbers, and dashes."
 msgstr "Muže obsahovat písmena, čísla a pomlčky."
 
-#: ../index.cgi:93
+#: ../index.cgi:88
 msgid "Create"
 msgstr "Vytvořit"
 
@@ -545,11 +539,11 @@ msgstr "Komentář"
 msgid "Maintenance"
 msgstr ""
 
-#: ../maintenance.cgi:36
+#: ../maintenance.cgi:31
 msgid "This site is currently undergoing maintenance!"
 msgstr ""
 
-#: ../maintenance.cgi:39
+#: ../maintenance.cgi:34
 msgid ""
 "You should not browse to this file directly. Please create a file named "
 "\"maintenance.html\" to enable the maintenance mode."
@@ -576,12 +570,6 @@ msgstr ""
 msgid ""
 "The poll was deleted by the administrator because it was not accessed for a "
 "long time."
-msgstr ""
-
-#: ../not_found.cgi:36
-msgid ""
-"If you think that the deletion was done in error, please contact the "
-"administrator of the system."
 msgstr ""
 
 #: ../overview.rb:31
@@ -645,63 +633,75 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: ../poll.rb:309
+#: ../poll.rb:282
+msgid "Yes"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "No"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "Maybe"
+msgstr ""
+
+#: ../poll.rb:310
 msgid "Comments"
 msgstr "Komentáře"
 
-#: ../poll.rb:312
+#: ../poll.rb:313
 msgid "Sort oldest comment first"
 msgstr ""
 
-#: ../poll.rb:315
+#: ../poll.rb:316
 msgid "Sort newest comment first"
 msgstr ""
 
-#: ../poll.rb:320
+#: ../poll.rb:321
 msgid "Go to last comment"
 msgstr ""
 
-#: ../poll.rb:333
+#: ../poll.rb:334
 msgid "%{user} said on %{time}"
 msgstr "%{user} řekl v %{time}"
 
-#: ../poll.rb:348
+#: ../poll.rb:349
 msgid "Go up"
 msgstr ""
 
-#: ../poll.rb:354
+#: ../poll.rb:355
 msgid "says"
 msgstr "říká"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "Submit comment"
 msgstr "Odešli Komentář"
 
-#: ../poll.rb:373
+#: ../poll.rb:374
 msgid "Show history items:"
 msgstr "Zobraz položky historie"
 
-#: ../poll.rb:380
+#: ../poll.rb:381
 msgid "All"
 msgstr "Vše"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "Participant related"
 msgstr "Související s účastníkem"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Column related"
 msgstr "Související se sloupcem"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Comment related"
 msgstr "Související s komentářem"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Access control related"
 msgstr "Související s řízením přistupu"
 
-#: ../poll.rb:390
+#: ../poll.rb:391
 msgid "Update"
 msgstr "Aktualizace"
 
@@ -808,6 +808,16 @@ msgstr "Přidat"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "např. 09:30, ráno, odpoledne"
+
+#, fuzzy
+#~ msgid ""
+#~ "Please write me an e-mail if you have found a bug, have found something "
+#~ "which disturbs you, or have any other feedback."
+#~ msgstr ""
+#~ "Pokud narazíte na chybu nebo něco jiného, co vám vadí na této aplikaci, "
+#~ "prosím kontaktujte mne: <a href=\"mailto:"
+#~ "Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20Dudle"
+#~ "\">kontaktuj mne</a>"
 
 #~ msgid "Event-scheduling poll"
 #~ msgstr "Hlasování Plánu Události"

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-25 23:14+0200\n"
+"POT-Creation-Date: 2022-04-22 11:03+0200\n"
 "PO-Revision-Date: 2016-09-09 11:42+0300\n"
 "Last-Translator: Benson Muite with aid of Google translate\n"
 "Language-Team: \n"
@@ -54,14 +54,6 @@ msgstr ""
 msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr "Lähtekoodi see rakendus võib leida %{a_start}aici%{a_end}."
 
-#: ../about.cgi:35
-msgid ""
-"Please write me an e-mail if you have found a bug, have found something "
-"which disturbs you, or have any other feedback."
-msgstr ""
-"Kirjutage mulle e-mail, kui olete leidnud vea, on midagi, mis häirib teid "
-"võiMis tahes muud tagasisidet."
-
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
 msgstr "Kasutajanimi:"
@@ -81,12 +73,12 @@ msgid ""
 msgstr "Sa pead eemaldama osaleja kasutaja enne saate eemaldadaadministraator."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:338
+#: ../delete_poll.rb:112 ../poll.rb:339
 msgid "Delete"
 msgstr "Kustutama"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:300
+#: ../poll.rb:301
 msgid "Save"
 msgstr "Salvesta"
 
@@ -166,6 +158,11 @@ msgstr "Poll versioon %{revisionnumber}"
 msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr ""
 
+#: ../advanced.rb:39
+#, fuzzy
+msgid "Revert"
+msgstr "Kustuta küsitlus"
+
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
 msgstr "Nõutava loa"
@@ -182,7 +179,7 @@ msgstr "See küsitlus on kaitstud parooliga!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Selleks, et minna, sa pead andma parool kasutaja %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
 msgid "Return to Dudle home and schedule a new poll"
 msgstr "Tagasi Dudle kodus ja ajakava uus küsitlus"
 
@@ -367,23 +364,23 @@ msgstr "Kohanda"
 msgid "Dudle Home"
 msgstr "Dudle kodu"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "Eelmine"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "Järgmine"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "Lõpetama"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "Kõik muudatused salvestati edukalt."
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Jätkama"
 
@@ -415,11 +412,11 @@ msgstr "ümber tegema"
 msgid "Error"
 msgstr "Viga"
 
-#: ../error.cgi:46
+#: ../error.cgi:41
 msgid "The following error was printed:"
 msgstr "Järgmised viga oli trükitud:"
 
-#: ../error.cgi:50
+#: ../error.cgi:45
 msgid ""
 "Hi!\n"
 "\n"
@@ -445,11 +442,11 @@ msgstr ""
 "%{errormessage} \n"
 "Teil, \n"
 
-#: ../error.cgi:51
+#: ../error.cgi:46
 msgid "Bug in Dudle"
 msgstr "Viga Dudle"
 
-#: ../error.cgi:53
+#: ../error.cgi:48
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
@@ -457,7 +454,7 @@ msgstr ""
 "Tekkis viga täidesaatva kritseldama. <br/>Palun saada veateate:Sealhulgas "
 "brauseri, operatsioonisüsteemi ja mida sa tegid %{admin}."
 
-#: ../error.cgi:56
+#: ../error.cgi:51
 msgid "Please include the following as well:"
 msgstr "Palun sisaldama järgmisi samuti:"
 
@@ -488,52 +485,52 @@ msgstr "xml:lang='et' dir='ltr'"
 msgid "Please enter a descriptive title."
 msgstr "Palun sisesta kirjeldav pealkiri."
 
-#: ../index.cgi:48
+#: ../index.cgi:43
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr "Custom aadress võib sisaldada ainult tähti, numbreid ja kriipsud."
 
-#: ../index.cgi:50
+#: ../index.cgi:45
 msgid "A poll with this address already exists."
 msgstr "Küsitlus selle aadress on juba olemas."
 
-#: ../index.cgi:68
+#: ../index.cgi:63
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr "Küsitlus viidi edukalt loodud. Link endale küsitlus on: %{link}"
 
-#: ../index.cgi:76
+#: ../index.cgi:71
 msgid "Go away."
 msgstr ""
 
-#: ../index.cgi:84
+#: ../index.cgi:79
 msgid "Create new poll"
 msgstr "Loo uus poll"
 
-#: ../index.cgi:86
+#: ../index.cgi:81
 msgid "Title"
 msgstr "pealkiri"
 
-#: ../index.cgi:87
+#: ../index.cgi:82
 msgid "Type"
 msgstr "Tüüp"
 
-#: ../index.cgi:88
+#: ../index.cgi:83
 msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Etenduste ajakava Poll (näiteks koosoleku kokku)"
 
-#: ../index.cgi:89
+#: ../index.cgi:84
 msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Tavaline Poll (näiteks hääletanud milline on parim kohvi)"
 
-#: ../index.cgi:90
+#: ../index.cgi:85
 msgid "Custom address (optional)"
 msgstr "Custom aadress (vabatahtlik)"
 
-#: ../index.cgi:91
+#: ../index.cgi:86
 msgid "May contain letters, numbers, and dashes."
 msgstr "Võib sisaldada tähti, numbreid ja kriipsud."
 
-#: ../index.cgi:93
+#: ../index.cgi:88
 msgid "Create"
 msgstr "Looma"
 
@@ -553,11 +550,11 @@ msgstr "Kommentaar"
 msgid "Maintenance"
 msgstr "Hooldus"
 
-#: ../maintenance.cgi:36
+#: ../maintenance.cgi:31
 msgid "This site is currently undergoing maintenance!"
 msgstr "See sait on praegu hooldus!"
 
-#: ../maintenance.cgi:39
+#: ../maintenance.cgi:34
 msgid ""
 "You should not browse to this file directly. Please create a file named "
 "\"maintenance.html\" to enable the maintenance mode."
@@ -589,14 +586,6 @@ msgid ""
 msgstr ""
 "Küsitlus viidi kustutatakse administraatori poolt, sest see ei olnud "
 "kättesaadav juba pikka aega."
-
-#: ../not_found.cgi:36
-#, fuzzy
-msgid ""
-"If you think that the deletion was done in error, please contact the "
-"administrator of the system."
-msgstr ""
-"Kui te arvate, kustutamist tehti viga, pöördu administraatori süsteemi."
 
 #: ../overview.rb:31
 msgid "The next steps are:"
@@ -658,63 +647,75 @@ msgstr "Kas tõesti kustutada kasutaja %{user}?"
 msgid "Confirm"
 msgstr "Kinnitama"
 
-#: ../poll.rb:309
+#: ../poll.rb:282
+msgid "Yes"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "No"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "Maybe"
+msgstr ""
+
+#: ../poll.rb:310
 msgid "Comments"
 msgstr "Kommentaarid"
 
-#: ../poll.rb:312
+#: ../poll.rb:313
 msgid "Sort oldest comment first"
 msgstr "Sorteeri vanim kommentaar esimest"
 
-#: ../poll.rb:315
+#: ../poll.rb:316
 msgid "Sort newest comment first"
 msgstr "Sorteeri uuemad kommentaar esimest"
 
-#: ../poll.rb:320
+#: ../poll.rb:321
 msgid "Go to last comment"
 msgstr "Mine viimase kommentaar"
 
-#: ../poll.rb:333
+#: ../poll.rb:334
 msgid "%{user} said on %{time}"
 msgstr "%{user} ütles %{time}"
 
-#: ../poll.rb:348
+#: ../poll.rb:349
 msgid "Go up"
 msgstr "Üles minema"
 
-#: ../poll.rb:354
+#: ../poll.rb:355
 msgid "says"
 msgstr "ütleb"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "Submit comment"
 msgstr "Esita kommentaar"
 
-#: ../poll.rb:373
+#: ../poll.rb:374
 msgid "Show history items:"
 msgstr "Näita ajalugu teemad:"
 
-#: ../poll.rb:380
+#: ../poll.rb:381
 msgid "All"
 msgstr "Kõik"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "Participant related"
 msgstr "Osaleja seotud"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Column related"
 msgstr "Veerg seotud"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Comment related"
 msgstr "Kommentaar seotud"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Access control related"
 msgstr "Juurdepääsu kontroll seotud"
 
-#: ../poll.rb:390
+#: ../poll.rb:391
 msgid "Update"
 msgstr "Ajakohastama"
 
@@ -818,6 +819,20 @@ msgstr "Lisama"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "näiteks, 9:30, hommikul, pärastlõunal"
+
+#~ msgid ""
+#~ "Please write me an e-mail if you have found a bug, have found something "
+#~ "which disturbs you, or have any other feedback."
+#~ msgstr ""
+#~ "Kirjutage mulle e-mail, kui olete leidnud vea, on midagi, mis häirib teid "
+#~ "võiMis tahes muud tagasisidet."
+
+#, fuzzy
+#~ msgid ""
+#~ "If you think that the deletion was done in error, please contact the "
+#~ "administrator of the system."
+#~ msgstr ""
+#~ "Kui te arvate, kustutamist tehti viga, pöördu administraatori süsteemi."
 
 #~ msgid "Event-scheduling poll"
 #~ msgstr "Etenduste ajakava Poll"

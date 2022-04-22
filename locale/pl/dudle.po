@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-23 15:57+0200\n"
+"POT-Creation-Date: 2022-04-22 11:03+0200\n"
 "PO-Revision-Date: 2019-08-23 15:57+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,11 +28,12 @@ msgstr "Licencja"
 
 #: ../about.cgi:32
 msgid ""
-"The sourcecode of this application is available under the terms of <a href='ht"
-"tp://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
-msgstr""
-"Kod źródłowy tej aplikacji jest dostępny zgodnie z warunkami <a href='ht"
-"tp://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+"The sourcecode of this application is available under the terms of <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
+msgstr ""
+"Kod źródłowy tej aplikacji jest dostępny zgodnie z warunkami <a href='http://"
+"www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
 
 #: ../about.cgi:33
 msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
@@ -52,19 +53,19 @@ msgstr "powtórz"
 
 #: ../access_control.rb:114
 msgid ""
-"You have to remove the participant user before you can remove the administrato"
-"r."
+"You have to remove the participant user before you can remove the "
+"administrator."
 msgstr ""
 "Musisz usunąć użytkownika uczestniczącego, zanim będziesz mógł usunąć "
 "administratora."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:338
+#: ../delete_poll.rb:112 ../poll.rb:339
 msgid "Delete"
 msgstr "Usuń"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:300
+#: ../poll.rb:301
 msgid "Save"
 msgstr "Zachowaj"
 
@@ -90,7 +91,9 @@ msgstr "Aktywuj"
 
 #: ../access_control.rb:184
 msgid "controls will be activated when at least the admin user is configured"
-msgstr "---controls--- będą aktywowane, gdy skonfigurowany będzie przynajmniej użytkownik admin"
+msgstr ""
+"---controls--- będą aktywowane, gdy skonfigurowany będzie przynajmniej "
+"użytkownik admin"
 
 #: ../access_control.rb:186
 msgid "Deactivate"
@@ -102,26 +105,31 @@ msgstr "aktywowany"
 
 #: ../access_control.rb:189
 msgid ""
-"You have to remove all users before you can deactivate the access control sett"
-"ings."
+"You have to remove all users before you can deactivate the access control "
+"settings."
 msgstr ""
 "Zanim będzie można wyłączyć ustawienia kontroli dostępu, należy usunąć "
 "wszystkich użytkowników."
 
 #: ../access_control.rb:193
-msgid "You will be asked for the password you have entered here after you press save!"
+msgid ""
+"You will be asked for the password you have entered here after you press "
+"save!"
 msgstr ""
-"Po naciśnięciu przycisku Zapisz, zostaniesz poproszony o podanie hasła, które tutaj"
-" wprowadziłeś!"
+"Po naciśnięciu przycisku Zapisz, zostaniesz poproszony o podanie hasła, "
+"które tutaj wprowadziłeś!"
 
 #: ../access_control.rb:196
-msgid "The user â€˜adminâ€™ has access to both the vote and the configuration interface."
+#, fuzzy
+msgid ""
+"The user ‘admin’ has access to both the vote and the configuration interface."
 msgstr ""
 "Użytkownik â€˜adminâ€™ ma dostęp zarówno do interfejsu głosowania, jak i "
 "konfiguracji."
 
 #: ../access_control.rb:202
-msgid "The user â€˜participantâ€™ only has access to the vote interface."
+#, fuzzy
+msgid "The user ‘participant’ only has access to the vote interface."
 msgstr "Użytkownik â€˜uczestnikâ€™ ma dostęp tylko do interfejsu głosowania"
 
 #: ../access_control.rb:208
@@ -137,8 +145,16 @@ msgid "Poll was reverted to Version %{version}!"
 msgstr "Ankieta została przywrócona do wersji %{wersja}!"
 
 #: ../advanced.rb:37
-msgid "Revert poll to version (see â€˜Historyâ€™ tab for revision numbers): "
-msgstr "Przywróć ankietę do wersji (zobacz zakładkę â€˜Historiaâ€™, aby zobaczyć numery rewizji):"
+#, fuzzy
+msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
+msgstr ""
+"Przywróć ankietę do wersji (zobacz zakładkę â€˜Historiaâ€™, aby zobaczyć "
+"numery rewizji):"
+
+#: ../advanced.rb:39
+#, fuzzy
+msgid "Revert"
+msgstr "Przywróć ankietę"
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
@@ -164,38 +180,17 @@ msgstr "Wróć do strony głównej Dudle i ustaw nową ankietę"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Musisz się autoryzować, aby uzyskać dostęp do tej strony!"
 
-#: ../config.rb:45
-msgid "Event Schedule Poll"
-msgstr "Ankieta kalendarza spotkań"
-
-#: ../config.rb:49
-msgid "Normal Poll"
-msgstr "Zwykła ankieta"
-
-#: ../config.rb:53
-msgid "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
-msgstr "Ankieta szyfrowana/uwierzytelniona End-to-End (patrz: Hasło w Komentarzach)"
-
-#: ../config.rb:57
-msgid "End-to-End encrypted Poll, where only the administrator is able to read votes"
-msgstr "Ankieta szyfrowana End-to-End, w której tylko administrator może czytać głosy"
-
-#: ../config.rb:61
-msgid "Test for several PGP-authenticated votes"
-msgstr "Test dla kilku głosów poświadczonych przez PGP"
-
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
 msgstr "Dostosuj ustawienia osobiste"
 
 #: ../customize.cgi:32 ../customize.rb:32
 msgid ""
-"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> enabl"
-"ed in order to personalize your settings."
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"enabled in order to personalize your settings."
 msgstr ""
-"Aby spersonalizować swoje ustawienia, musisz zaakceprować "
-"<a href='https://en.wikipedia.org/wiki/HTTP_cookie'>ciasteczka</a>."
-
+"Aby spersonalizować swoje ustawienia, musisz zaakceprować <a href='https://"
+"en.wikipedia.org/wiki/HTTP_cookie'>ciasteczka</a>."
 
 #: ../customize.cgi:39 ../customize.rb:39
 msgid "Current setting"
@@ -267,9 +262,9 @@ msgstr "Ankieta została pomyślnie usunięta!"
 
 #: ../delete_poll.rb:57
 msgid ""
-"If this was done by accident, please contact the administrator of the system. "
-"The poll can be recovered for an indeterminate amount of time; it could alread"
-"y be too late."
+"If this was done by accident, please contact the administrator of the "
+"system. The poll can be recovered for an indeterminate amount of time; it "
+"could already be too late."
 msgstr ""
 "Jeśli zrobiono to przypadkowo, prosimy o kontakt z administratorem systemu. "
 "Ankieta może zostać odzyskana za czas nieokreślony; może być już za późno."
@@ -307,12 +302,13 @@ msgid "This is an irreversible action!"
 msgstr "To działanie jest nieodwracalne"
 
 #: ../delete_poll.rb:111
+#, fuzzy
 msgid ""
-"If you are sure that you want to permanently remove this poll, please type â€œ%{"
-"question}â€ into the form."
+"If you are sure that you want to permanently remove this poll, please type "
+"“%{question}” into the form."
 msgstr ""
-"Jeśli jesteś pewien, że chcesz na stałe usunąć tę ankietę, wpisz "
-"â€œ%{question}â€ w formularzu." 
+"Jeśli jesteś pewien, że chcesz na stałe usunąć tę ankietę, wpisz â€œ"
+"%{question}â€ w formularzu."
 
 #: ../dudle.rb:73
 msgid "Home"
@@ -427,7 +423,6 @@ msgid ""
 "I am using <please state your browser and operating system>\n"
 "%{errormessage}\n"
 "Sincerely,\n"
-
 msgstr ""
 "Hej!\n"
 "\n"
@@ -447,11 +442,12 @@ msgstr "Błąd w Dudle"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, incl"
-"uding your browser, operating system, and what you did to %{admin}."
+"An error occurred while executing Dudle.<br/>Please send an error report, "
+"including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Podczas wykonywania Dudle'a wystąpił błąd.<br/>Proszę wysłać raport o błędzie,"
-"zawierający twoją przeglądarkę, system operacyjny, i to, co zrobiłeś do %{admin}."
+"Podczas wykonywania Dudle'a wystąpił błąd.<br/>Proszę wysłać raport o "
+"błędzie,zawierający twoją przeglądarkę, system operacyjny, i to, co zrobiłeś "
+"do %{admin}."
 
 #: ../error.cgi:51
 msgid "Please include the following as well:"
@@ -463,11 +459,11 @@ msgstr "Przykładu nie znaleziono: %{example}"
 
 #: ../example.cgi:68
 msgid ""
-"If you want to play with the application, you may want to take a look at these"
-" example polls:"
+"If you want to play with the application, you may want to take a look at "
+"these example polls:"
 msgstr ""
-"Jeśli chcesz wypróbować aplikację, może zechcesz zapoznać się z "
-"tymi przykładowymi ankietami:"
+"Jeśli chcesz wypróbować aplikację, może zechcesz zapoznać się z tymi "
+"przykładowymi ankietami:"
 
 #: ../history.rb:28
 msgid "Poll of version %{revisionnumber}"
@@ -494,8 +490,10 @@ msgid "A poll with this address already exists."
 msgstr "Ankieta o tym adresie już istnieje."
 
 #: ../index.cgi:63
-msgid "The poll was created successfully. The link to your new poll is: %{link}"
-msgstr "Ankieta została stworzona pomyślnie. Link do twojej nowej ankiety to: %{link}"
+msgid ""
+"The poll was created successfully. The link to your new poll is: %{link}"
+msgstr ""
+"Ankieta została stworzona pomyślnie. Link do twojej nowej ankiety to: %{link}"
 
 #: ../index.cgi:71
 msgid "Go away."
@@ -555,11 +553,11 @@ msgstr "Ta strona jest obecnie w trakcie konserwacji!"
 
 #: ../maintenance.cgi:34
 msgid ""
-"You should not browse to this file directly. Please create a file named \"maint"
-"enance.html\" to enable the maintenance mode."
+"You should not browse to this file directly. Please create a file named "
+"\"maintenance.html\" to enable the maintenance mode."
 msgstr ""
-"Nie należy przeglądać tego pliku bezpośrednio. Aby włączyć tryb konserwacji,"
-" prosimy utworzyć plik o nazwie \"maintenance.html\"."
+"Nie należy przeglądać tego pliku bezpośrednio. Aby włączyć tryb konserwacji, "
+"prosimy utworzyć plik o nazwie \"maintenance.html\"."
 
 #: ../not_found.cgi:30
 msgid "Poll not found"
@@ -574,16 +572,17 @@ msgid "There are several reasons why a poll may have been deleted:"
 msgstr "Istnieje kilka powodów, dla których ankieta mogła zostać usunięta:"
 
 #: ../not_found.cgi:34
-msgid "Somebody clicked on â€œDelete pollâ€ and deleted the poll manually."
+#, fuzzy
+msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
 msgstr "Ktoś kliknął na â€œDelete pollâ€ i usunął ją ręcznie."
 
 #: ../not_found.cgi:35
 msgid ""
-"The poll was deleted by the administrator because it was not accessed for a lo"
-"ng time."
+"The poll was deleted by the administrator because it was not accessed for a "
+"long time."
 msgstr ""
-"Ankieta została usunięta przez administratora, ponieważ przez długi czas"
-" nie była odwiedzana."
+"Ankieta została usunięta przez administratora, ponieważ przez długi czas nie "
+"była odwiedzana."
 
 #: ../overview.rb:31
 msgid "The next steps are:"
@@ -645,63 +644,75 @@ msgstr "Czy naprawdę chcesz usunąć użytkownika %{user}?"
 msgid "Confirm"
 msgstr "Potwierdź"
 
-#: ../poll.rb:309
+#: ../poll.rb:282
+msgid "Yes"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "No"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "Maybe"
+msgstr ""
+
+#: ../poll.rb:310
 msgid "Comments"
 msgstr "Komentarze"
 
-#: ../poll.rb:312
+#: ../poll.rb:313
 msgid "Sort oldest comment first"
 msgstr "Sortuj - najpierw komentarz najstarszy"
 
-#: ../poll.rb:315
+#: ../poll.rb:316
 msgid "Sort newest comment first"
 msgstr "Sortuj - najpierw komentarz najnowszy"
 
-#: ../poll.rb:320
+#: ../poll.rb:321
 msgid "Go to last comment"
 msgstr "Przejdź do ostatniego komentarza"
 
-#: ../poll.rb:333
+#: ../poll.rb:334
 msgid "%{user} said on %{time}"
 msgstr "%{user} powiedział o %{time}"
 
-#: ../poll.rb:348
+#: ../poll.rb:349
 msgid "Go up"
 msgstr "Idź w górę"
 
-#: ../poll.rb:354
+#: ../poll.rb:355
 msgid "says"
 msgstr "pisze"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "Submit comment"
 msgstr "Wyślij komentarz"
 
-#: ../poll.rb:373
+#: ../poll.rb:374
 msgid "Show history items:"
 msgstr "Pokaż pozycje historyczne:"
 
-#: ../poll.rb:380
+#: ../poll.rb:381
 msgid "All"
 msgstr "Wszystko"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "Participant related"
 msgstr "Związane z uczestnikiem"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Column related"
 msgstr "Związane z kolumną"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Comment related"
 msgstr "Związane z komentarzem"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Access control related"
 msgstr "Związane z kontrolą dostępu"
 
-#: ../poll.rb:390
+#: ../poll.rb:391
 msgid "Update"
 msgstr "Aktualizuj"
 
@@ -735,19 +746,20 @@ msgstr "Podgląd"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all the options (columns) which you want the participants of the poll to"
-" choose among. For each option you give here, the participants will choose a v"
-"ote."
+"Enter all the options (columns) which you want the participants of the poll "
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
 msgstr ""
-"Wprowadź wszystkie opcje (kolumny), spośród których uczestnicy ankiety mają"
-" wybierać. Na każdą opcję, którą tutaj podasz, uczestnicy będą mogli głosować."
+"Wprowadź wszystkie opcje (kolumny), spośród których uczestnicy ankiety mają "
+"wybierać. Na każdą opcję, którą tutaj podasz, uczestnicy będą mogli głosować."
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string here (e.&"
-"thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
-"Aby dodać czas inny niż domyślny, proszę wpisać tutaj jakiś ciąg znaków (np. 09.30, rano, popołudnie)."
+"Aby dodać czas inny niż domyślny, proszę wpisać tutaj jakiś ciąg znaków (np. "
+"09.30, rano, popołudnie)."
 
 #: ../timepollhead.rb:119
 msgid "This time has already been selected."
@@ -804,3 +816,25 @@ msgstr "Dodaj"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "np. 9.30, rano, po południu"
+
+#~ msgid "Event Schedule Poll"
+#~ msgstr "Ankieta kalendarza spotkań"
+
+#~ msgid "Normal Poll"
+#~ msgstr "Zwykła ankieta"
+
+#~ msgid ""
+#~ "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+#~ msgstr ""
+#~ "Ankieta szyfrowana/uwierzytelniona End-to-End (patrz: Hasło w "
+#~ "Komentarzach)"
+
+#~ msgid ""
+#~ "End-to-End encrypted Poll, where only the administrator is able to read "
+#~ "votes"
+#~ msgstr ""
+#~ "Ankieta szyfrowana End-to-End, w której tylko administrator może czytać "
+#~ "głosy"
+
+#~ msgid "Test for several PGP-authenticated votes"
+#~ msgstr "Test dla kilku głosów poświadczonych przez PGP"

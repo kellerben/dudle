@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-25 23:26+0200\n"
+"POT-Creation-Date: 2022-04-22 11:03+0200\n"
 "PO-Revision-Date: 2018-08-25 23:26+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,21 +28,16 @@ msgstr "Lisenssi"
 
 #: ../about.cgi:32
 msgid ""
-"The sourcecode of this application is available under the terms of <a href='ht"
-"tp://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
-msgstr "Tämän aplikaation lähdekoodi on seuraavien ehtojen alainen <a href='ht"
-"tp://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+"The sourcecode of this application is available under the terms of <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
+msgstr ""
+"Tämän aplikaation lähdekoodi on seuraavien ehtojen alainen <a href='http://"
+"www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
 
 #: ../about.cgi:33
 msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr "Tämän aplikaation lähdekoodi lötyy %{a_start}täältä%{a_end}."
-
-#: ../about.cgi:35
-msgid ""
-"Please write me an e-mail if you have found a bug, have found something which "
-"disturbs you, or have any other feedback."
-msgstr "Please write me an e-mail if you have found a bug, have found something which "
-"disturbs you, or have any other feedback."
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -58,17 +53,17 @@ msgstr "toista"
 
 #: ../access_control.rb:114
 msgid ""
-"You have to remove the participant user before you can remove the administrato"
-"r."
+"You have to remove the participant user before you can remove the "
+"administrator."
 msgstr "Sinun täytyy poistaa osallistuja ennen kuin voit poistaa pääkäyttäjän"
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:338
+#: ../delete_poll.rb:112 ../poll.rb:339
 msgid "Delete"
 msgstr "Poista"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:300
+#: ../poll.rb:301
 msgid "Save"
 msgstr "Tallenna"
 
@@ -106,21 +101,27 @@ msgstr "Aktivoitu"
 
 #: ../access_control.rb:189
 msgid ""
-"You have to remove all users before you can deactivate the access control sett"
-"ings."
-msgstr "Sinun täytyy poistaa kaikki käyttäjät ennenkuin voit poistaa kulunvalvonta"
-" asetukset"
+"You have to remove all users before you can deactivate the access control "
+"settings."
+msgstr ""
+"Sinun täytyy poistaa kaikki käyttäjät ennenkuin voit poistaa kulunvalvonta "
+"asetukset"
 
 #: ../access_control.rb:193
-msgid "You will be asked for the password you have entered here after you press save!"
+msgid ""
+"You will be asked for the password you have entered here after you press "
+"save!"
 msgstr "Sinulta kysytään salasanaa, jonka laitoit tähän, tallentamisen jälkeen"
 
 #: ../access_control.rb:196
-msgid "The user â€˜adminâ€™ has access to both the vote and the configuration interface."
+#, fuzzy
+msgid ""
+"The user ‘admin’ has access to both the vote and the configuration interface."
 msgstr "Käyttäjällä â€˜adminâ€™ on pääsy sekä äänestys- että asetusrajapintaan"
 
 #: ../access_control.rb:202
-msgid "The user â€˜participantâ€™ only has access to the vote interface."
+#, fuzzy
+msgid "The user ‘participant’ only has access to the vote interface."
 msgstr "Käyttäjällä â€˜participantâ€™ on pääsy vain äänestysrajapintaan."
 
 #: ../access_control.rb:208
@@ -136,8 +137,14 @@ msgid "Poll was reverted to Version %{version}!"
 msgstr "Kysely palautettu versioon %{version}!"
 
 #: ../advanced.rb:37
-msgid "Revert poll to version (see â€˜Historyâ€™ tab for revision numbers): "
+#, fuzzy
+msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr "Palauta kysely versioon (see â€˜Historyâ€™ tab for revision numbers):"
+
+#: ../advanced.rb:39
+#, fuzzy
+msgid "Revert"
+msgstr "Palauta aikaisempaan muotoon"
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
@@ -155,7 +162,7 @@ msgstr "Tämä kysely on suojattu salasanalla!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Päästäksesi eteenpäin sinun tulee antaa salasana kättäjälle %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
 msgid "Return to Dudle home and schedule a new poll"
 msgstr "Palaa Dulden kotivalikkoon ja ajasta uusi kysely"
 
@@ -163,36 +170,17 @@ msgstr "Palaa Dulden kotivalikkoon ja ajasta uusi kysely"
 msgid "You have to authorize yourself in order to access this page!"
 msgstr "Sinun täytyy authorisoida itsesi että voit päästä tälle sivulle"
 
-#: ../config.rb:43
-msgid "Event Schedule Poll"
-msgstr "Tapahtuman ajoittaminen kysely"
-
-#: ../config.rb:47
-msgid "Normal Poll"
-msgstr "Tavallinen kysely"
-
-#: ../config.rb:51
-msgid "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
-msgstr "End-to-End salattu/varmistettu kysely (Näe salasana kommenteissa)"
-
-#: ../config.rb:55
-msgid "End-to-End encrypted Poll, where only the administrator is able to read votes"
-msgstr "End-to-End salattu/varmistettu kysely, missä vain pääkäyttäjä voi nähdä äänet"
-
-#: ../config.rb:59
-msgid "Test for several PGP-authenticated votes"
-msgstr "Test for several PGP-authenticated votes"
-
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
 msgstr "Kustomoi omat asetukset"
 
 #: ../customize.cgi:32 ../customize.rb:32
 msgid ""
-"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> enabl"
-"ed in order to personalize your settings."
-msgstr "Sinun täytyy hyväksyä <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> että"
-"voit luoda omat asetuksesi"
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"enabled in order to personalize your settings."
+msgstr ""
+"Sinun täytyy hyväksyä <a href='https://en.wikipedia.org/wiki/"
+"HTTP_cookie'>cookies</a> ettävoit luoda omat asetuksesi"
 
 #: ../customize.cgi:39 ../customize.rb:39
 msgid "Current setting"
@@ -264,11 +252,13 @@ msgstr "Kysely poistettu onnistuneesti"
 
 #: ../delete_poll.rb:57
 msgid ""
-"If this was done by accident, please contact the administrator of the system. "
-"The poll can be recovered for an indeterminate amount of time; it could alread"
-"y be too late."
-msgstr "Jos teit tämän vahingossa, ota yhteyttä ylläpitäjään. Kysely voidaan" 
-"palauttaa vielä jonkin aikaa poistamisen jälkeen. Voi jo olla myöhäistä"
+"If this was done by accident, please contact the administrator of the "
+"system. The poll can be recovered for an indeterminate amount of time; it "
+"could already be too late."
+msgstr ""
+"Jos teit tämän vahingossa, ota yhteyttä ylläpitäjään. Kysely "
+"voidaanpalauttaa vielä jonkin aikaa poistamisen jälkeen. Voi jo olla "
+"myöhäistä"
 
 #: ../delete_poll.rb:59
 msgid "You can now"
@@ -303,12 +293,13 @@ msgid "This is an irreversible action!"
 msgstr "Tätä toimintoa ei voi perua!"
 
 #: ../delete_poll.rb:111
+#, fuzzy
 msgid ""
-"If you are sure that you want to permanently remove this poll, please type â€œ%{"
-"question}â€ into the form."
+"If you are sure that you want to permanently remove this poll, please type "
+"“%{question}” into the form."
 msgstr ""
-"Jos olet varma että haluat poistaa kyselyn, kirjoita â€œ%{"
-"question}â€ lomakkeeseen."
+"Jos olet varma että haluat poistaa kyselyn, kirjoita â€œ%{question}â€ "
+"lomakkeeseen."
 
 #: ../dudle.rb:73
 msgid "Home"
@@ -358,23 +349,23 @@ msgstr "Kustomoi"
 msgid "Dudle Home"
 msgstr "Dudle pääsivu"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "Edellinen"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "Seuraava"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "Valmis"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "Kaikki muutokset tallennettu onnistuneesti"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Jatka!"
 
@@ -406,11 +397,11 @@ msgstr "Tee uudelleen"
 msgid "Error"
 msgstr "Virhe"
 
-#: ../error.cgi:46
+#: ../error.cgi:41
 msgid "The following error was printed:"
 msgstr "The following error was printed:"
 
-#: ../error.cgi:50
+#: ../error.cgi:45
 msgid ""
 "Hi!\n"
 "\n"
@@ -436,19 +427,19 @@ msgstr ""
 "%{errormessage}\n"
 "Sincerely,\n"
 
-#: ../error.cgi:51
+#: ../error.cgi:46
 msgid "Bug in Dudle"
 msgstr "Bugi dudlessa"
 
-#: ../error.cgi:53
+#: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, incl"
-"uding your browser, operating system, and what you did to %{admin}."
+"An error occurred while executing Dudle.<br/>Please send an error report, "
+"including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"An error occurred while executing Dudle.<br/>Please send an error report, incl"
-"uding your browser, operating system, and what you did to %{admin}."
+"An error occurred while executing Dudle.<br/>Please send an error report, "
+"including your browser, operating system, and what you did to %{admin}."
 
-#: ../error.cgi:56
+#: ../error.cgi:51
 msgid "Please include the following as well:"
 msgstr "Please include the following as well:"
 
@@ -458,8 +449,8 @@ msgstr "Esimerkkiä ei löydetty"
 
 #: ../example.cgi:68
 msgid ""
-"If you want to play with the application, you may want to take a look at these"
-" example polls:"
+"If you want to play with the application, you may want to take a look at "
+"these example polls:"
 msgstr "Testataksesi aplikaatiota, katso näitä esimerkki kyselyitä:"
 
 #: ../history.rb:28
@@ -478,51 +469,52 @@ msgstr "xml:lang='fi' dir='ltr'"
 msgid "Please enter a descriptive title."
 msgstr "Lisää kuvaava otsikko"
 
-#: ../index.cgi:48
+#: ../index.cgi:43
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr "Kustomoitu osite voi sisältää vain kirjaimia, numeroita ja väliviivoja"
 
-#: ../index.cgi:50
+#: ../index.cgi:45
 msgid "A poll with this address already exists."
 msgstr "Kysely tällä osoitteella on jo olemassa"
 
-#: ../index.cgi:68
-msgid "The poll was created successfully. The link to your new poll is: %{link}"
+#: ../index.cgi:63
+msgid ""
+"The poll was created successfully. The link to your new poll is: %{link}"
 msgstr ""
 
-#: ../index.cgi:76
+#: ../index.cgi:71
 msgid "Go away."
 msgstr "Mee pois."
 
-#: ../index.cgi:84
+#: ../index.cgi:79
 msgid "Create new poll"
 msgstr "Luo uusi kysely"
 
-#: ../index.cgi:86
+#: ../index.cgi:81
 msgid "Title"
 msgstr "Otsikko"
 
-#: ../index.cgi:87
+#: ../index.cgi:82
 msgid "Type"
 msgstr "Tyypi"
 
-#: ../index.cgi:88
+#: ../index.cgi:83
 msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Tapahtuma-ajan päättäminen kysely (Päätä aika tapahtuma ajalle)"
 
-#: ../index.cgi:89
+#: ../index.cgi:84
 msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Tavallinen kysely (esim. Mikä on paras kahvi)"
 
-#: ../index.cgi:90
+#: ../index.cgi:85
 msgid "Custom address (optional)"
 msgstr "Kustomoitu osoite (optional)"
 
-#: ../index.cgi:91
+#: ../index.cgi:86
 msgid "May contain letters, numbers, and dashes."
 msgstr "Voi sisältää kirjaimia, numeroita ja väliviivoja"
 
-#: ../index.cgi:93
+#: ../index.cgi:88
 msgid "Create"
 msgstr "Luo"
 
@@ -542,17 +534,17 @@ msgstr "Kommentti"
 msgid "Maintenance"
 msgstr "Ylläpito"
 
-#: ../maintenance.cgi:36
+#: ../maintenance.cgi:31
 msgid "This site is currently undergoing maintenance!"
 msgstr "Tätä sivua muokataan tällä hetkellä"
 
-#: ../maintenance.cgi:39
+#: ../maintenance.cgi:34
 msgid ""
-"You should not browse to this file directly. Please create a file named \"maint"
-"enance.html\" to enable the maintenance mode."
+"You should not browse to this file directly. Please create a file named "
+"\"maintenance.html\" to enable the maintenance mode."
 msgstr ""
-"You should not browse to this file directly. Please create a file named \"maint"
-"enance.html\" to enable the maintenance mode."
+"You should not browse to this file directly. Please create a file named "
+"\"maintenance.html\" to enable the maintenance mode."
 
 #: ../not_found.cgi:30
 msgid "Poll not found"
@@ -567,21 +559,17 @@ msgid "There are several reasons why a poll may have been deleted:"
 msgstr "On monia syitä miksi kysely ollaan saatettu poistaa"
 
 #: ../not_found.cgi:34
-msgid "Somebody clicked on â€œDelete pollâ€ and deleted the poll manually."
+#, fuzzy
+msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
 msgstr "Joku valitsi â€œDelete pollâ€ja poisti kyselyn manuaalisesti"
 
 #: ../not_found.cgi:35
 msgid ""
-"The poll was deleted by the administrator because it was not accessed for a lo"
-"ng time."
-msgstr "Ylläpitäjä on poistanut tämän kyselyn, koska sitä ei olla käytetty "
-"pitkään aikaan"
-
-#: ../not_found.cgi:36
-msgid ""
-"If you think that the deletion was done in error, please contact the administr"
-"ator of the system."
-msgstr "Jos uskot että kysely ollaan poistettu vahingossa, ota yhteyttä ylläpitäjään"
+"The poll was deleted by the administrator because it was not accessed for a "
+"long time."
+msgstr ""
+"Ylläpitäjä on poistanut tämän kyselyn, koska sitä ei olla käytetty pitkään "
+"aikaan"
 
 #: ../overview.rb:31
 msgid "The next steps are:"
@@ -643,63 +631,75 @@ msgstr "Haluatko varmasti poistaa %{user}"
 msgid "Confirm"
 msgstr "Varmista"
 
-#: ../poll.rb:309
+#: ../poll.rb:282
+msgid "Yes"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "No"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "Maybe"
+msgstr ""
+
+#: ../poll.rb:310
 msgid "Comments"
 msgstr "Kommentit"
 
-#: ../poll.rb:312
+#: ../poll.rb:313
 msgid "Sort oldest comment first"
 msgstr "Järjestä vanhimmat kommentit ensimmäiseksi"
 
-#: ../poll.rb:315
+#: ../poll.rb:316
 msgid "Sort newest comment first"
 msgstr "Järjestä uusimmat kommentit ensimmäiseksi"
 
-#: ../poll.rb:320
+#: ../poll.rb:321
 msgid "Go to last comment"
 msgstr "Näytä viimeisin kommentti"
 
-#: ../poll.rb:333
+#: ../poll.rb:334
 msgid "%{user} said on %{time}"
 msgstr "%{user} sanoi %{time}"
 
-#: ../poll.rb:348
+#: ../poll.rb:349
 msgid "Go up"
 msgstr "Ylös"
 
-#: ../poll.rb:354
+#: ../poll.rb:355
 msgid "says"
 msgstr "sanoo"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "Submit comment"
 msgstr "Lähetä kommentti"
 
-#: ../poll.rb:373
+#: ../poll.rb:374
 msgid "Show history items:"
 msgstr "Näytä historia:"
 
-#: ../poll.rb:380
+#: ../poll.rb:381
 msgid "All"
 msgstr "Kaikki"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "Participant related"
 msgstr "Osallistujaan liittyvä"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Column related"
 msgstr "Sarakkeeseen liittyvä"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Comment related"
 msgstr "Kommenttiin liittyvä"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Access control related"
 msgstr "Kulunvalvontaan liittyvä"
 
-#: ../poll.rb:390
+#: ../poll.rb:391
 msgid "Update"
 msgstr "Päivitys"
 
@@ -733,18 +733,20 @@ msgstr "Esikatselu"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all the options (columns) which you want the participants of the poll to"
-" choose among. For each option you give here, the participants will choose a v"
-"ote."
-msgstr "Lisää kaikki haluamasi vaihtoehdot (sarakkeet) joista haluat osallistujien"
-"valitsevan. Osallisujat äänestävät jokaisesta vaihtoehdosta"
+"Enter all the options (columns) which you want the participants of the poll "
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
+msgstr ""
+"Lisää kaikki haluamasi vaihtoehdot (sarakkeet) joista haluat "
+"osallistujienvalitsevan. Osallisujat äänestävät jokaisesta vaihtoehdosta"
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string here (e.&"
-"thinsp;g., 09:30, morning, afternoon)."
-msgstr "Lisätäksesi muun kuin oletusajan, lisää merkkijono tähän (e.&"
-"thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
+msgstr ""
+"Lisätäksesi muun kuin oletusajan, lisää merkkijono tähän (e.&thinsp;g., "
+"09:30, morning, afternoon)."
 
 #: ../timepollhead.rb:119
 msgid "This time has already been selected."
@@ -801,3 +803,37 @@ msgstr "Lisää"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr ""
+
+#~ msgid ""
+#~ "Please write me an e-mail if you have found a bug, have found something "
+#~ "which disturbs you, or have any other feedback."
+#~ msgstr ""
+#~ "Please write me an e-mail if you have found a bug, have found something "
+#~ "which disturbs you, or have any other feedback."
+
+#~ msgid "Event Schedule Poll"
+#~ msgstr "Tapahtuman ajoittaminen kysely"
+
+#~ msgid "Normal Poll"
+#~ msgstr "Tavallinen kysely"
+
+#~ msgid ""
+#~ "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+#~ msgstr "End-to-End salattu/varmistettu kysely (Näe salasana kommenteissa)"
+
+#~ msgid ""
+#~ "End-to-End encrypted Poll, where only the administrator is able to read "
+#~ "votes"
+#~ msgstr ""
+#~ "End-to-End salattu/varmistettu kysely, missä vain pääkäyttäjä voi nähdä "
+#~ "äänet"
+
+#~ msgid "Test for several PGP-authenticated votes"
+#~ msgstr "Test for several PGP-authenticated votes"
+
+#~ msgid ""
+#~ "If you think that the deletion was done in error, please contact the "
+#~ "administrator of the system."
+#~ msgstr ""
+#~ "Jos uskot että kysely ollaan poistettu vahingossa, ota yhteyttä "
+#~ "ylläpitäjään"

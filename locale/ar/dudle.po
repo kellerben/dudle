@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-25 23:14+0200\n"
+"POT-Creation-Date: 2022-04-22 11:03+0200\n"
 "PO-Revision-Date: 2018-01-04 20:09+0100\n"
 "Last-Translator: Mohammad Anagreh <mohd.anagrehn@gmail>\n"
 "Language-Team: LANGUAGE \n"
@@ -38,13 +38,6 @@ msgstr ""
 msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr "البرنامج المصدري لهذا التطبيق يمكن العثور عليها%{a_start}هنا%{a_end}"
 
-#: ../about.cgi:35
-msgid ""
-"Please write me an e-mail if you have found a bug, have found something "
-"which disturbs you, or have any other feedback."
-msgstr ""
-"أكتب لي رسالة عبر البريد الإلكتروني إذا وجدت علة,او شيء يزعجك اواي ردود أفعال"
-
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
 msgstr ":أسم المستخدم"
@@ -64,12 +57,12 @@ msgid ""
 msgstr ".يجب عليك إزالة المستخدم المشارك قبل أن تتمكن من إزالة المشرف"
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:338
+#: ../delete_poll.rb:112 ../poll.rb:339
 msgid "Delete"
 msgstr "حذف"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:300
+#: ../poll.rb:301
 msgid "Save"
 msgstr "حفظ"
 
@@ -147,6 +140,11 @@ msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr ""
 "(إعادة الاستطلاع إلى الإصدار (انظر علامة التبويب المحفوظات لأرقام المراجعة"
 
+#: ../advanced.rb:39
+#, fuzzy
+msgid "Revert"
+msgstr "عودة الاستطلاع"
+
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
 msgstr "إذن المطلوب"
@@ -163,7 +161,7 @@ msgstr "!هذا الاستطلاع محمي بكلمة مرور"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "من أجل المضي قدما، يجب عليك إعطاء كلمة مرور للمستخدم %{user}"
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
 msgid "Return to Dudle home and schedule a new poll"
 msgstr " العودة إلى دادل الاصل وجدولة استطلاع جديد"
 
@@ -347,23 +345,23 @@ msgstr "يكيف"
 msgid "Dudle Home"
 msgstr "دودل الرئيسية"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "السابق"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "التالي"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "النهاية"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr ".تم حفظ جميع التغييرات بنجاح"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "!تقدم"
 
@@ -395,12 +393,12 @@ msgstr " إعادة فعل"
 msgid "Error"
 msgstr "خطأ"
 
-#: ../error.cgi:46
+#: ../error.cgi:41
 #, fuzzy
 msgid "The following error was printed:"
 msgstr ":الخطأ التالي قد طبع"
 
-#: ../error.cgi:50
+#: ../error.cgi:45
 msgid ""
 "Hi!\n"
 "\n"
@@ -424,11 +422,11 @@ msgstr ""
 "%{errormessage}\n"
 "خاصة بك,\n"
 
-#: ../error.cgi:51
+#: ../error.cgi:46
 msgid "Bug in Dudle"
 msgstr "علة في دادل"
 
-#: ../error.cgi:53
+#: ../error.cgi:48
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
@@ -436,7 +434,7 @@ msgstr ""
 "حدث خطأ أثناء تنفيذ دودل. <br/> الرجاء إرسال تقرير عن الخطأبما في ذلك "
 "المتصفح ونظام التشغيل وما فعلته في %{admin}"
 
-#: ../error.cgi:56
+#: ../error.cgi:51
 msgid "Please include the following as well:"
 msgstr ":يرجى تضمين ما يلي أيضا"
 
@@ -467,52 +465,52 @@ msgstr "xml:lang='ar' dir='rtl'"
 msgid "Please enter a descriptive title."
 msgstr ".الرجاء إدخال عنوان وصفي"
 
-#: ../index.cgi:48
+#: ../index.cgi:43
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr ".قد يحتوي العنوان المخصص فقط على أحرف وأرقام وشرطات"
 
-#: ../index.cgi:50
+#: ../index.cgi:45
 msgid "A poll with this address already exists."
 msgstr ".يوجد استطلاع مع هذا العنوان من قبل"
 
-#: ../index.cgi:68
+#: ../index.cgi:63
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr ":تم إنشاء الاستطلاع بنجاح. الرابط إلى استطلاع الرأي الجديد هو %{link}"
 
-#: ../index.cgi:76
+#: ../index.cgi:71
 msgid "Go away."
 msgstr "أذهب بعيدا"
 
-#: ../index.cgi:84
+#: ../index.cgi:79
 msgid "Create new poll"
 msgstr "إنشاء استطلاع جديد"
 
-#: ../index.cgi:86
+#: ../index.cgi:81
 msgid "Title"
 msgstr "عنوان"
 
-#: ../index.cgi:87
+#: ../index.cgi:82
 msgid "Type"
 msgstr "نوع"
 
-#: ../index.cgi:88
+#: ../index.cgi:83
 msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
 msgstr "الجدول الزمني لاجتماعات الحدث (e & ثينسب؛ g.، جدولة اجتماع)"
 
-#: ../index.cgi:89
+#: ../index.cgi:84
 msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "استطلاع عادي (e & ثينسب؛ g.، التصويت لما هو أفضل القهوة)"
 
-#: ../index.cgi:90
+#: ../index.cgi:85
 msgid "Custom address (optional)"
 msgstr "(عنوان مخصص(أختياري"
 
-#: ../index.cgi:91
+#: ../index.cgi:86
 msgid "May contain letters, numbers, and dashes."
 msgstr ".قد تحتوي على أحرف وأرقام وشرطات"
 
-#: ../index.cgi:93
+#: ../index.cgi:88
 msgid "Create"
 msgstr "خلق"
 
@@ -532,11 +530,11 @@ msgstr "تعليق"
 msgid "Maintenance"
 msgstr "صيانة"
 
-#: ../maintenance.cgi:36
+#: ../maintenance.cgi:31
 msgid "This site is currently undergoing maintenance!"
 msgstr "!هذا الموقع تحت الصيانة حاليا"
 
-#: ../maintenance.cgi:39
+#: ../maintenance.cgi:34
 msgid ""
 "You should not browse to this file directly. Please create a file named "
 "\"maintenance.html\" to enable the maintenance mode."
@@ -566,13 +564,6 @@ msgid ""
 "The poll was deleted by the administrator because it was not accessed for a "
 "long time."
 msgstr ".تم حذف الاستطلاع من قبل المشرف لأنه لم يتم الدخول إليه لفترة طويلة"
-
-#: ../not_found.cgi:36
-#, fuzzy
-msgid ""
-"If you think that the deletion was done in error, please contact the "
-"administrator of the system."
-msgstr "إذا كنت تعتقد، تم الحذف عن طريق الخطأ، يرجى الاتصال بمسؤول النظام"
 
 #: ../overview.rb:31
 msgid "The next steps are:"
@@ -634,63 +625,75 @@ msgstr "هل تريد حقا حذف المستخدم؟%{user}"
 msgid "Confirm"
 msgstr "تأكيد"
 
-#: ../poll.rb:309
+#: ../poll.rb:282
+msgid "Yes"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "No"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "Maybe"
+msgstr ""
+
+#: ../poll.rb:310
 msgid "Comments"
 msgstr "تعليقات"
 
-#: ../poll.rb:312
+#: ../poll.rb:313
 msgid "Sort oldest comment first"
 msgstr "فرز أقدم تعليق أولا"
 
-#: ../poll.rb:315
+#: ../poll.rb:316
 msgid "Sort newest comment first"
 msgstr "ترتيب أحدث تعليق أولا"
 
-#: ../poll.rb:320
+#: ../poll.rb:321
 msgid "Go to last comment"
 msgstr "انتقل إلى التعليق الأخير"
 
-#: ../poll.rb:333
+#: ../poll.rb:334
 msgid "%{user} said on %{time}"
 msgstr "%{user} وقال على %{time}"
 
-#: ../poll.rb:348
+#: ../poll.rb:349
 msgid "Go up"
 msgstr "أذهب اعلى"
 
-#: ../poll.rb:354
+#: ../poll.rb:355
 msgid "says"
 msgstr "يقول"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "Submit comment"
 msgstr "إرسال تعليق"
 
-#: ../poll.rb:373
+#: ../poll.rb:374
 msgid "Show history items:"
 msgstr ":عرض عناصر السجل"
 
-#: ../poll.rb:380
+#: ../poll.rb:381
 msgid "All"
 msgstr "كل"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "Participant related"
 msgstr "المشارك ذات الصلة"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Column related"
 msgstr "العمود المرتبط"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Comment related"
 msgstr "التعليق مرتبط"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Access control related"
 msgstr "التحكم في الوصول ذات الصلة"
 
-#: ../poll.rb:390
+#: ../poll.rb:391
 msgid "Update"
 msgstr "تحديث"
 
@@ -792,6 +795,19 @@ msgstr "أضافة"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "صباح, بعد الظهر"
+
+#~ msgid ""
+#~ "Please write me an e-mail if you have found a bug, have found something "
+#~ "which disturbs you, or have any other feedback."
+#~ msgstr ""
+#~ "أكتب لي رسالة عبر البريد الإلكتروني إذا وجدت علة,او شيء يزعجك اواي ردود "
+#~ "أفعال"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you think that the deletion was done in error, please contact the "
+#~ "administrator of the system."
+#~ msgstr "إذا كنت تعتقد، تم الحذف عن طريق الخطأ، يرجى الاتصال بمسؤول النظام"
 
 #~ msgid "Event-scheduling poll"
 #~ msgstr "حدث جدول الاستطلاع"

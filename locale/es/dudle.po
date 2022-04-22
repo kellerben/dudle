@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-25 23:14+0200\n"
+"POT-Creation-Date: 2022-04-22 11:03+0200\n"
 "PO-Revision-Date: 2011-07-21 10:05+0200\n"
 "Last-Translator: Laura Mora i Aubert <blackhold@marsupi.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,16 +40,6 @@ msgstr ""
 msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
 
-#: ../about.cgi:35
-#, fuzzy
-msgid ""
-"Please write me an e-mail if you have found a bug, have found something "
-"which disturbs you, or have any other feedback."
-msgstr ""
-"Si encuentras algun error o quieres hacer una propuesta de mejora, por favor "
-"contacta conmigo: <a href=\"mailto:Benjamin_dot_Kellermann@gmx_in_germany?"
-"subject=Feedback%20to%20Dudle\">manda tu feedback</a>"
-
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
 msgstr "Usuario:"
@@ -71,12 +61,12 @@ msgstr ""
 "borrar el administrador."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:338
+#: ../delete_poll.rb:112 ../poll.rb:339
 msgid "Delete"
 msgstr "Borra"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:300
+#: ../poll.rb:301
 msgid "Save"
 msgstr "Guarda"
 
@@ -154,6 +144,11 @@ msgstr "Encuesta de la versión %{revisionnumber}"
 msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr ""
 
+#: ../advanced.rb:39
+#, fuzzy
+msgid "Revert"
+msgstr "Borra encuesta"
+
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
 msgstr "Se requiere identificación"
@@ -171,7 +166,7 @@ msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 "Para continuar, tienes que definir la contraseña para el usuario %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
 msgid "Return to Dudle home and schedule a new poll"
 msgstr "Volver a la página de inicio de Dudle y crear otra encuesta"
 
@@ -361,23 +356,23 @@ msgstr "Personaliza"
 msgid "Dudle Home"
 msgstr "Inicio Dudle"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "Anterior"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "Siguiente"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "Termina"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "Se han guardado todos los cambios."
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Adelante!"
 
@@ -409,11 +404,11 @@ msgstr "Rehacer"
 msgid "Error"
 msgstr "Error"
 
-#: ../error.cgi:46
+#: ../error.cgi:41
 msgid "The following error was printed:"
 msgstr "Ha ocurrido este error:"
 
-#: ../error.cgi:50
+#: ../error.cgi:45
 msgid ""
 "Hi!\n"
 "\n"
@@ -440,11 +435,11 @@ msgstr ""
 "%{errormessage}\n"
 "Atentamente,\n"
 
-#: ../error.cgi:51
+#: ../error.cgi:46
 msgid "Bug in Dudle"
 msgstr "Error en Dudle"
 
-#: ../error.cgi:53
+#: ../error.cgi:48
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
@@ -453,7 +448,7 @@ msgstr ""
 "error, indicando tu navegador, sistemas operativo y acción realizada a "
 "%{admin}."
 
-#: ../error.cgi:56
+#: ../error.cgi:51
 msgid "Please include the following as well:"
 msgstr "Por favor incluye también esto:"
 
@@ -485,55 +480,55 @@ msgstr "xml:lang='es' dir='ltr'"
 msgid "Please enter a descriptive title."
 msgstr "Por favor, introduce un título descriptivo."
 
-#: ../index.cgi:48
+#: ../index.cgi:43
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr ""
 "Las direcciones personalizadas sólo pueden tener letras, números y barras."
 
-#: ../index.cgi:50
+#: ../index.cgi:45
 msgid "A poll with this address already exists."
 msgstr "Ya existe otra encuesta con este nombre."
 
-#: ../index.cgi:68
+#: ../index.cgi:63
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr ""
 "La encuesta se ha creado correctamente. El vínculo hacia tu encuesta es: "
 "%{link}"
 
-#: ../index.cgi:76
+#: ../index.cgi:71
 msgid "Go away."
 msgstr ""
 
-#: ../index.cgi:84
+#: ../index.cgi:79
 msgid "Create new poll"
 msgstr "Crea una encuesta"
 
-#: ../index.cgi:86
+#: ../index.cgi:81
 msgid "Title"
 msgstr "Título"
 
-#: ../index.cgi:87
+#: ../index.cgi:82
 msgid "Type"
 msgstr "Tipo"
 
-#: ../index.cgi:88
+#: ../index.cgi:83
 msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Encuesta de fecha (ej. planifica una reunión)"
 
-#: ../index.cgi:89
+#: ../index.cgi:84
 msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Encuesta (ej. vota por el mejor tipo de café)"
 
-#: ../index.cgi:90
+#: ../index.cgi:85
 msgid "Custom address (optional)"
 msgstr "Dirección personalizada (opcional)"
 
-#: ../index.cgi:91
+#: ../index.cgi:86
 msgid "May contain letters, numbers, and dashes."
 msgstr "Tendría que tener letras, números y barras."
 
-#: ../index.cgi:93
+#: ../index.cgi:88
 msgid "Create"
 msgstr "Crea"
 
@@ -553,11 +548,11 @@ msgstr "Comentario"
 msgid "Maintenance"
 msgstr ""
 
-#: ../maintenance.cgi:36
+#: ../maintenance.cgi:31
 msgid "This site is currently undergoing maintenance!"
 msgstr ""
 
-#: ../maintenance.cgi:39
+#: ../maintenance.cgi:34
 msgid ""
 "You should not browse to this file directly. Please create a file named "
 "\"maintenance.html\" to enable the maintenance mode."
@@ -587,15 +582,6 @@ msgid ""
 msgstr ""
 "El administrador la ha borrado porqué no se ha accedido desde hace mucho "
 "tiempo."
-
-#: ../not_found.cgi:36
-#, fuzzy
-msgid ""
-"If you think that the deletion was done in error, please contact the "
-"administrator of the system."
-msgstr ""
-"Si crees que se ha borrado por error, por favor, contacta con el "
-"administrador del sistema."
 
 #: ../overview.rb:31
 msgid "The next steps are:"
@@ -657,63 +643,75 @@ msgstr "¿Realmente quieres borrar el usuario %{user}?"
 msgid "Confirm"
 msgstr "Aceptar"
 
-#: ../poll.rb:309
+#: ../poll.rb:282
+msgid "Yes"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "No"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "Maybe"
+msgstr ""
+
+#: ../poll.rb:310
 msgid "Comments"
 msgstr "Comentarios"
 
-#: ../poll.rb:312
+#: ../poll.rb:313
 msgid "Sort oldest comment first"
 msgstr "Los comentarios mas antiguos primero"
 
-#: ../poll.rb:315
+#: ../poll.rb:316
 msgid "Sort newest comment first"
 msgstr "Los comentarios mas nuevos primero"
 
-#: ../poll.rb:320
+#: ../poll.rb:321
 msgid "Go to last comment"
 msgstr "Ir al último comentario"
 
-#: ../poll.rb:333
+#: ../poll.rb:334
 msgid "%{user} said on %{time}"
 msgstr "%{user} ha dicho el %{time}"
 
-#: ../poll.rb:348
+#: ../poll.rb:349
 msgid "Go up"
 msgstr "Arriba"
 
-#: ../poll.rb:354
+#: ../poll.rb:355
 msgid "says"
 msgstr "Dice"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "Submit comment"
 msgstr "Manda un comentario"
 
-#: ../poll.rb:373
+#: ../poll.rb:374
 msgid "Show history items:"
 msgstr "Mostrar el histórico:"
 
-#: ../poll.rb:380
+#: ../poll.rb:381
 msgid "All"
 msgstr "Todo"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "Participant related"
 msgstr "Participantes relacionados"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Column related"
 msgstr "Columnas relacionadas"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Comment related"
 msgstr "Comentarios relacionados"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Access control related"
 msgstr "Controles de acceso relacionados"
 
-#: ../poll.rb:390
+#: ../poll.rb:391
 msgid "Update"
 msgstr "Actualiza"
 
@@ -818,6 +816,24 @@ msgstr "Añadir"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "ej. 09:30, mañana, tarde"
+
+#, fuzzy
+#~ msgid ""
+#~ "Please write me an e-mail if you have found a bug, have found something "
+#~ "which disturbs you, or have any other feedback."
+#~ msgstr ""
+#~ "Si encuentras algun error o quieres hacer una propuesta de mejora, por "
+#~ "favor contacta conmigo: <a href=\"mailto:"
+#~ "Benjamin_dot_Kellermann@gmx_in_germany?subject=Feedback%20to%20Dudle"
+#~ "\">manda tu feedback</a>"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you think that the deletion was done in error, please contact the "
+#~ "administrator of the system."
+#~ msgstr ""
+#~ "Si crees que se ha borrado por error, por favor, contacta con el "
+#~ "administrador del sistema."
 
 #~ msgid "Event-scheduling poll"
 #~ msgstr "Encuesta de fecha"

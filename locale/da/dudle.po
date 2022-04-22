@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-25 23:14+0200\n"
+"POT-Creation-Date: 2022-04-22 11:03+0200\n"
 "PO-Revision-Date: 2019-08-03 22:11+0200\n"
 "Last-Translator: Martin Schmiele <martin.schmiele@nbi.ku.dk>\n"
 "Language: da\n"
@@ -37,14 +37,6 @@ msgstr ""
 msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr "Kildekoden til denne applikation findes %{a_start}her%{a_end}."
 
-#: ../about.cgi:35
-msgid ""
-"Please write me an e-mail if you have found a bug, have found something "
-"which disturbs you, or have any other feedback."
-msgstr ""
-"Skriv mig venligst en e-mail, hvis du har fundet en fejl, har fundet noget, "
-"der plager dig eller for en generel tilbagemelding."
-
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
 msgstr "Brugernavn"
@@ -65,12 +57,12 @@ msgid ""
 msgstr "Du skal fjerne deltagerbrugeren, før du kan fjerne administratoren."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:338
+#: ../delete_poll.rb:112 ../poll.rb:339
 msgid "Delete"
 msgstr "Slet"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:300
+#: ../poll.rb:301
 msgid "Save"
 msgstr "Gem"
 
@@ -146,6 +138,11 @@ msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr ""
 "Vend afstemning tilbage til version (se tab 'Historik' for revisionsnumre):"
 
+#: ../advanced.rb:39
+#, fuzzy
+msgid "Revert"
+msgstr "Nulstil afstemning"
+
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
 msgstr "Autorisering kraves"
@@ -162,7 +159,7 @@ msgstr "Afstemningen er adgangskodebeskyttet!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "For at gå videre må du angive adgangskode for bruger %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
 msgid "Return to Dudle home and schedule a new poll"
 msgstr "Vend tilbage til Dudle Hjem og planlæg en ny afstemning"
 
@@ -348,23 +345,23 @@ msgstr "Tilpass"
 msgid "Dudle Home"
 msgstr "Dudle Hjem"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "Forrige"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "Næste"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "Afslut"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "Alle ændringer blev gemt med succes."
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Videre!"
 
@@ -396,11 +393,11 @@ msgstr "Gentag"
 msgid "Error"
 msgstr "Fejl"
 
-#: ../error.cgi:46
+#: ../error.cgi:41
 msgid "The following error was printed:"
 msgstr "Følgende fejl blev rapporteret:"
 
-#: ../error.cgi:50
+#: ../error.cgi:45
 msgid ""
 "Hi!\n"
 "\n"
@@ -415,11 +412,11 @@ msgid ""
 "Sincerely,\n"
 msgstr ""
 
-#: ../error.cgi:51
+#: ../error.cgi:46
 msgid "Bug in Dudle"
 msgstr "Fejl i Dudle"
 
-#: ../error.cgi:53
+#: ../error.cgi:48
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
@@ -428,7 +425,7 @@ msgstr ""
 "inklusive din browser og operativsystem sammen med en beskrivelse af hvad du "
 "gjorde, til % {admin}."
 
-#: ../error.cgi:56
+#: ../error.cgi:51
 msgid "Please include the following as well:"
 msgstr "Medtag venligst også følgende:"
 
@@ -460,52 +457,52 @@ msgstr "xml:lang='da' dir='ltr'"
 msgid "Please enter a descriptive title."
 msgstr "Tast ind et beskrivende titel."
 
-#: ../index.cgi:48
+#: ../index.cgi:43
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr "Tilpasset adresse kan bare indeholde tegn, tal og bindestreg."
 
-#: ../index.cgi:50
+#: ../index.cgi:45
 msgid "A poll with this address already exists."
 msgstr "En anden afstemning med denne adressen findes allerede."
 
-#: ../index.cgi:68
+#: ../index.cgi:63
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr "Afstemningen blev oprettet. Linket er: %{link}"
 
-#: ../index.cgi:76
+#: ../index.cgi:71
 msgid "Go away."
 msgstr "Gå væk."
 
-#: ../index.cgi:84
+#: ../index.cgi:79
 msgid "Create new poll"
 msgstr "Opret ny afstemning"
 
-#: ../index.cgi:86
+#: ../index.cgi:81
 msgid "Title"
 msgstr "Titel"
 
-#: ../index.cgi:87
+#: ../index.cgi:82
 msgid "Type"
 msgstr "Type"
 
-#: ../index.cgi:88
+#: ../index.cgi:83
 msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Planlæg en afstemning af en hændelse (f.eks. planlæg et møde)"
 
-#: ../index.cgi:89
+#: ../index.cgi:84
 msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Normal afstemning (f.eks. stem på, hvilken kaffe er den bedste)"
 
-#: ../index.cgi:90
+#: ../index.cgi:85
 msgid "Custom address (optional)"
 msgstr "Tilpasset adresse (valgfrit)"
 
-#: ../index.cgi:91
+#: ../index.cgi:86
 msgid "May contain letters, numbers, and dashes."
 msgstr "Kan indeholde tegn, tal og bindestreg."
 
-#: ../index.cgi:93
+#: ../index.cgi:88
 msgid "Create"
 msgstr "Opret"
 
@@ -525,11 +522,11 @@ msgstr "Kommentar"
 msgid "Maintenance"
 msgstr "Vedligeholdelse"
 
-#: ../maintenance.cgi:36
+#: ../maintenance.cgi:31
 msgid "This site is currently undergoing maintenance!"
 msgstr "Denne side er i øjeblikket under vedligeholdelse!"
 
-#: ../maintenance.cgi:39
+#: ../maintenance.cgi:34
 msgid ""
 "You should not browse to this file directly. Please create a file named "
 "\"maintenance.html\" to enable the maintenance mode."
@@ -562,14 +559,6 @@ msgid ""
 msgstr ""
 "Afstemningen blev slettet af administratoren, fordi den ikke blev set på i "
 "lang tid."
-
-#: ../not_found.cgi:36
-msgid ""
-"If you think that the deletion was done in error, please contact the "
-"administrator of the system."
-msgstr ""
-"Hvis du tror, at sletningen blev foretaget ved en fejl, skal du kontakte "
-"administrator for denne tjeneste."
 
 #: ../overview.rb:31
 msgid "The next steps are:"
@@ -631,63 +620,75 @@ msgstr "Vil du virkelig slette brugeren %{user}?"
 msgid "Confirm"
 msgstr "Bekræft"
 
-#: ../poll.rb:309
+#: ../poll.rb:282
+msgid "Yes"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "No"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "Maybe"
+msgstr ""
+
+#: ../poll.rb:310
 msgid "Comments"
 msgstr "Kommentar"
 
-#: ../poll.rb:312
+#: ../poll.rb:313
 msgid "Sort oldest comment first"
 msgstr "Sorter den ældste kommentar øverst"
 
-#: ../poll.rb:315
+#: ../poll.rb:316
 msgid "Sort newest comment first"
 msgstr "Sorter den nyeste kommentar øverst"
 
-#: ../poll.rb:320
+#: ../poll.rb:321
 msgid "Go to last comment"
 msgstr "Gå til den sidste kommentar"
 
-#: ../poll.rb:333
+#: ../poll.rb:334
 msgid "%{user} said on %{time}"
 msgstr "%{user} sagde om %{time}"
 
-#: ../poll.rb:348
+#: ../poll.rb:349
 msgid "Go up"
 msgstr "Gå op"
 
-#: ../poll.rb:354
+#: ../poll.rb:355
 msgid "says"
 msgstr "sier"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "Submit comment"
 msgstr "Tilføj kommentar"
 
-#: ../poll.rb:373
+#: ../poll.rb:374
 msgid "Show history items:"
 msgstr "Vis indhold i historien:"
 
-#: ../poll.rb:380
+#: ../poll.rb:381
 msgid "All"
 msgstr "Alt"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "Participant related"
 msgstr "Deltager relateret"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Column related"
 msgstr "Kolonne relateret"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Comment related"
 msgstr "Kommentar relateret"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Access control related"
 msgstr "Adgangskontrol relateret"
 
-#: ../poll.rb:390
+#: ../poll.rb:391
 msgid "Update"
 msgstr "Opdatering"
 
@@ -791,3 +792,17 @@ msgstr "Tilføj"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "f.eks. 09:30, morgen, eftermiddag"
+
+#~ msgid ""
+#~ "Please write me an e-mail if you have found a bug, have found something "
+#~ "which disturbs you, or have any other feedback."
+#~ msgstr ""
+#~ "Skriv mig venligst en e-mail, hvis du har fundet en fejl, har fundet "
+#~ "noget, der plager dig eller for en generel tilbagemelding."
+
+#~ msgid ""
+#~ "If you think that the deletion was done in error, please contact the "
+#~ "administrator of the system."
+#~ msgstr ""
+#~ "Hvis du tror, at sletningen blev foretaget ved en fejl, skal du kontakte "
+#~ "administrator for denne tjeneste."

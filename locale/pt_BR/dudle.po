@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dudle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-25 23:14+0200\n"
+"POT-Creation-Date: 2022-04-22 11:03+0200\n"
 "PO-Revision-Date: 2018-08-16 20:33-0200\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <LL@li.org>\n"
@@ -39,14 +39,6 @@ msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
 "O código-fonte desse aplicativo pode ser localizado %{a_start}arqui%{a_end}."
 
-#: ../about.cgi:35
-msgid ""
-"Please write me an e-mail if you have found a bug, have found something "
-"which disturbs you, or have any other feedback."
-msgstr ""
-"Escreva-me um e-mail se você encontrou um bug, algo que incomoda ou qualquer "
-"outro feedback."
-
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
 msgstr "Usuário:"
@@ -66,12 +58,12 @@ msgid ""
 msgstr "Você deve remover o participante antes de remover o administrador."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:338
+#: ../delete_poll.rb:112 ../poll.rb:339
 msgid "Delete"
 msgstr "Remover"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:300
+#: ../poll.rb:301
 msgid "Save"
 msgstr "Salvar"
 
@@ -149,6 +141,11 @@ msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr ""
 "Reverter enquete para a versão (veja aba Histórico para números de revisão): "
 
+#: ../advanced.rb:39
+#, fuzzy
+msgid "Revert"
+msgstr "Reverter enquete"
+
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
 msgstr "É necessário permissão"
@@ -165,7 +162,7 @@ msgstr "Essa enquete está protegida por senha!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Para continuar você deve fornecer a senha para %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
 msgid "Return to Dudle home and schedule a new poll"
 msgstr "Voltar ao início do Dudle e organizar uma nova enquete"
 
@@ -350,23 +347,23 @@ msgstr "Personalizar"
 msgid "Dudle Home"
 msgstr "Dudle - Início"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "Anterior"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "Próximo"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "Finalizar"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "Todas as mudanças foram salvas com sucesso."
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Continuar!"
 
@@ -398,14 +395,14 @@ msgstr "Refazer"
 msgid "Error"
 msgstr "Erro"
 
-#: ../error.cgi:46
+#: ../error.cgi:41
 msgid "The following error was printed:"
 msgstr "Erro de resultado:"
 
 # Se essa é um modelo de relatório de erro, melhor estar em inglês
 # (exceto os trechos substituíveis), pois o desenvolvedor
 #  provavelmente não sabe Português)
-#: ../error.cgi:50
+#: ../error.cgi:45
 msgid ""
 "Hi!\n"
 "\n"
@@ -431,11 +428,11 @@ msgstr ""
 "%{errormessage}\n"
 "Sincerely,\n"
 
-#: ../error.cgi:51
+#: ../error.cgi:46
 msgid "Bug in Dudle"
 msgstr "Bug no Dudle"
 
-#: ../error.cgi:53
+#: ../error.cgi:48
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
@@ -444,7 +441,7 @@ msgstr ""
 "erro, incluindo seu navegador, sistema operacional, e o que você estava "
 "fazendo para %{admin}."
 
-#: ../error.cgi:56
+#: ../error.cgi:51
 msgid "Please include the following as well:"
 msgstr "Por favor inclua também:"
 
@@ -475,52 +472,52 @@ msgstr "xml:lang='pt_BR' dir='ltr'"
 msgid "Please enter a descriptive title."
 msgstr "Por favor digite um título descritivo."
 
-#: ../index.cgi:48
+#: ../index.cgi:43
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr "Endereços personalizados só podem conter letras, números e traços."
 
-#: ../index.cgi:50
+#: ../index.cgi:45
 msgid "A poll with this address already exists."
 msgstr "Uma enquete com esse endereço já existe."
 
-#: ../index.cgi:68
+#: ../index.cgi:63
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr "A enquete foi criada com sucesso. O link é: %{link}"
 
-#: ../index.cgi:76
+#: ../index.cgi:71
 msgid "Go away."
 msgstr "Sai daqui."
 
-#: ../index.cgi:84
+#: ../index.cgi:79
 msgid "Create new poll"
 msgstr "Criar nova enquete"
 
-#: ../index.cgi:86
+#: ../index.cgi:81
 msgid "Title"
 msgstr "Título"
 
-#: ../index.cgi:87
+#: ../index.cgi:82
 msgid "Type"
 msgstr "Tipo"
 
-#: ../index.cgi:88
+#: ../index.cgi:83
 msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Enquete para eventos (p.ex., organizar uma reunião)"
 
-#: ../index.cgi:89
+#: ../index.cgi:84
 msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Enquete normal (p.ex., vote no melhor café)"
 
-#: ../index.cgi:90
+#: ../index.cgi:85
 msgid "Custom address (optional)"
 msgstr "Endereço personalizado (opcional)"
 
-#: ../index.cgi:91
+#: ../index.cgi:86
 msgid "May contain letters, numbers, and dashes."
 msgstr "Pode conter letras, números e traços."
 
-#: ../index.cgi:93
+#: ../index.cgi:88
 msgid "Create"
 msgstr "Criar"
 
@@ -540,11 +537,11 @@ msgstr "Comentário"
 msgid "Maintenance"
 msgstr "Manutenção"
 
-#: ../maintenance.cgi:36
+#: ../maintenance.cgi:31
 msgid "This site is currently undergoing maintenance!"
 msgstr "Esse site está atualmente sob manutenção!"
 
-#: ../maintenance.cgi:39
+#: ../maintenance.cgi:34
 msgid ""
 "You should not browse to this file directly. Please create a file named "
 "\"maintenance.html\" to enable the maintenance mode."
@@ -576,15 +573,6 @@ msgid ""
 msgstr ""
 "A enquete foi removida pelo administrador já que não houve acesso por muito "
 "tempo."
-
-#: ../not_found.cgi:36
-#, fuzzy
-msgid ""
-"If you think that the deletion was done in error, please contact the "
-"administrator of the system."
-msgstr ""
-"Se você crê que a remoção foi feita em erro, por favor contacte o "
-"administrador do sistema."
 
 #: ../overview.rb:31
 msgid "The next steps are:"
@@ -646,63 +634,75 @@ msgstr "Você realmente quer remover o usuário %{user}?"
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: ../poll.rb:309
+#: ../poll.rb:282
+msgid "Yes"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "No"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "Maybe"
+msgstr ""
+
+#: ../poll.rb:310
 msgid "Comments"
 msgstr "Comentário"
 
-#: ../poll.rb:312
+#: ../poll.rb:313
 msgid "Sort oldest comment first"
 msgstr "Ordenar pelo comentário mais antigo"
 
-#: ../poll.rb:315
+#: ../poll.rb:316
 msgid "Sort newest comment first"
 msgstr "Ordenar pelo comentário mais recente"
 
-#: ../poll.rb:320
+#: ../poll.rb:321
 msgid "Go to last comment"
 msgstr "Vá ao último comentário"
 
-#: ../poll.rb:333
+#: ../poll.rb:334
 msgid "%{user} said on %{time}"
 msgstr "%{user} disse as %{time}"
 
-#: ../poll.rb:348
+#: ../poll.rb:349
 msgid "Go up"
 msgstr "Para cima"
 
-#: ../poll.rb:354
+#: ../poll.rb:355
 msgid "says"
 msgstr "diz"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "Submit comment"
 msgstr "Enviar comentário"
 
-#: ../poll.rb:373
+#: ../poll.rb:374
 msgid "Show history items:"
 msgstr "Mostrar histórico dos itens:"
 
-#: ../poll.rb:380
+#: ../poll.rb:381
 msgid "All"
 msgstr "Todos"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "Participant related"
 msgstr "Relacionado aos participantes"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Column related"
 msgstr "Relacionado às colunas"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Comment related"
 msgstr "Relacionado aos comentários"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Access control related"
 msgstr "Relacionado ao controle de acesso"
 
-#: ../poll.rb:390
+#: ../poll.rb:391
 msgid "Update"
 msgstr "Atualizar"
 
@@ -807,6 +807,21 @@ msgstr "Adicionar"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "p.ex., 09:30, manhã, tarde"
+
+#~ msgid ""
+#~ "Please write me an e-mail if you have found a bug, have found something "
+#~ "which disturbs you, or have any other feedback."
+#~ msgstr ""
+#~ "Escreva-me um e-mail se você encontrou um bug, algo que incomoda ou "
+#~ "qualquer outro feedback."
+
+#, fuzzy
+#~ msgid ""
+#~ "If you think that the deletion was done in error, please contact the "
+#~ "administrator of the system."
+#~ msgstr ""
+#~ "Se você crê que a remoção foi feita em erro, por favor contacte o "
+#~ "administrador do sistema."
 
 #~ msgid "Event-scheduling poll"
 #~ msgstr "Enquete para eventos"

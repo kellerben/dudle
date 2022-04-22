@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 510\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-25 23:14+0200\n"
+"POT-Creation-Date: 2022-04-22 11:03+0200\n"
 "PO-Revision-Date: 2011-07-04 06:55+0200\n"
 "Last-Translator: Gabor Kiss <kissg@ssg.ki.iif.hu>\n"
 "Language-Team: \n"
@@ -53,16 +53,6 @@ msgstr ""
 msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
 msgstr ""
 
-#: ../about.cgi:35
-#, fuzzy
-msgid ""
-"Please write me an e-mail if you have found a bug, have found something "
-"which disturbs you, or have any other feedback."
-msgstr ""
-"Ha bármi hibát, hiányosságot, fennakadást tapasztalsz, jelezd a szerzőnek: "
-"<a href=\"mailto:Benjamin_pont_Kellermann@gmx_pont_németország?subject=Dudle"
-"%20Feedback\">Visszajelzés</a>"
-
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
 msgstr "Név:"
@@ -84,12 +74,12 @@ msgstr ""
 "már megszüntetted."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:338
+#: ../delete_poll.rb:112 ../poll.rb:339
 msgid "Delete"
 msgstr "Törlés"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:300
+#: ../poll.rb:301
 msgid "Save"
 msgstr "Mentés"
 
@@ -167,6 +157,11 @@ msgstr "A szavazás %{version}. verziója"
 msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr ""
 
+#: ../advanced.rb:39
+#, fuzzy
+msgid "Revert"
+msgstr "Szavazás törlése"
+
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
 msgstr "Azonosítsd magad!"
@@ -183,7 +178,7 @@ msgstr "Jelszóval védett szavazás!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "A továbblépéshez add meg a(z) %{user} felhasználó jelszavát!"
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:37
+#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
 msgid "Return to Dudle home and schedule a new poll"
 msgstr "Térj vissza a címlapra, hozz létre új szavazást"
 
@@ -373,23 +368,23 @@ msgstr "Személyes beállítások"
 msgid "Dudle Home"
 msgstr "Címlap"
 
-#: ../dudle.rb:207 ../dudle.rb:225
+#: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
 msgstr "Vissza"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
 msgstr "Tovább"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
 msgstr "Befejezés"
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "All changes were saved successfully."
 msgstr "A változtatások elmentve."
 
-#: ../dudle.rb:232
+#: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Végrehajtás"
 
@@ -421,11 +416,11 @@ msgstr "De mégis"
 msgid "Error"
 msgstr "Hiba"
 
-#: ../error.cgi:46
+#: ../error.cgi:41
 msgid "The following error was printed:"
 msgstr "Az alábbi hibaüzenet jelent meg:"
 
-#: ../error.cgi:50
+#: ../error.cgi:45
 msgid ""
 "Hi!\n"
 "\n"
@@ -440,11 +435,11 @@ msgid ""
 "Sincerely,\n"
 msgstr ""
 
-#: ../error.cgi:51
+#: ../error.cgi:46
 msgid "Bug in Dudle"
 msgstr "Dudle hiba"
 
-#: ../error.cgi:53
+#: ../error.cgi:48
 msgid ""
 "An error occurred while executing Dudle.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
@@ -453,7 +448,7 @@ msgstr ""
 "%{admin} címre, mely tartalmazza a böngésződ és az operációs rendszered "
 "adatait, valamint hogy mit csináltál!"
 
-#: ../error.cgi:56
+#: ../error.cgi:51
 msgid "Please include the following as well:"
 msgstr "Vedd bele a következőket is:"
 
@@ -483,54 +478,54 @@ msgstr "xml:lang='hu' dir='ltr'"
 msgid "Please enter a descriptive title."
 msgstr "Adj valamilyen címet a szavazásnak!"
 
-#: ../index.cgi:48
+#: ../index.cgi:43
 msgid "Custom address may only contain letters, numbers, and dashes."
 msgstr ""
 "Az URL-be csak ékezet nélküli betűket, valamint számokat és kötőjelet "
 "írhatsz."
 
-#: ../index.cgi:50
+#: ../index.cgi:45
 msgid "A poll with this address already exists."
 msgstr "Ezen a neven már létezik egy szavazás."
 
-#: ../index.cgi:68
+#: ../index.cgi:63
 msgid ""
 "The poll was created successfully. The link to your new poll is: %{link}"
 msgstr "A szavazás sikeresen létrejött. Ezen a linken lehet elérni: %{link}"
 
-#: ../index.cgi:76
+#: ../index.cgi:71
 msgid "Go away."
 msgstr ""
 
-#: ../index.cgi:84
+#: ../index.cgi:79
 msgid "Create new poll"
 msgstr "Új szavazás létrehozása"
 
-#: ../index.cgi:86
+#: ../index.cgi:81
 msgid "Title"
 msgstr "Cím"
 
-#: ../index.cgi:87
+#: ../index.cgi:82
 msgid "Type"
 msgstr "Típus"
 
-#: ../index.cgi:88
+#: ../index.cgi:83
 msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
 msgstr "Időpont kiválasztása (pl. egy értekezlet beütemezése)"
 
-#: ../index.cgi:89
+#: ../index.cgi:84
 msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
 msgstr "Normál szavazás (pl. melyik a legfinomabb süti)"
 
-#: ../index.cgi:90
+#: ../index.cgi:85
 msgid "Custom address (optional)"
 msgstr "Testre szabott URL (opcionális)"
 
-#: ../index.cgi:91
+#: ../index.cgi:86
 msgid "May contain letters, numbers, and dashes."
 msgstr "Betűket, számokat, kötőjelet, aláhúzást tartalmazhat."
 
-#: ../index.cgi:93
+#: ../index.cgi:88
 msgid "Create"
 msgstr "Létrehozás"
 
@@ -550,11 +545,11 @@ msgstr "Esemény"
 msgid "Maintenance"
 msgstr ""
 
-#: ../maintenance.cgi:36
+#: ../maintenance.cgi:31
 msgid "This site is currently undergoing maintenance!"
 msgstr ""
 
-#: ../maintenance.cgi:39
+#: ../maintenance.cgi:34
 msgid ""
 "You should not browse to this file directly. Please create a file named "
 "\"maintenance.html\" to enable the maintenance mode."
@@ -583,14 +578,6 @@ msgid ""
 "long time."
 msgstr ""
 "A szavazást az adminisztrátor törölte, mert már régóta nem nézett rá senki."
-
-#: ../not_found.cgi:36
-#, fuzzy
-msgid ""
-"If you think that the deletion was done in error, please contact the "
-"administrator of the system."
-msgstr ""
-"Ha szerinted valami hiba történt, lépj kapcsolatba az adminisztrátorral!"
 
 #: ../overview.rb:31
 msgid "The next steps are:"
@@ -652,63 +639,75 @@ msgstr "Valóban törölni akarod „%{user}” felhasználót?"
 msgid "Confirm"
 msgstr "Megerősítés"
 
-#: ../poll.rb:309
+#: ../poll.rb:282
+msgid "Yes"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "No"
+msgstr ""
+
+#: ../poll.rb:282
+msgid "Maybe"
+msgstr ""
+
+#: ../poll.rb:310
 msgid "Comments"
 msgstr "Megjegyzések"
 
-#: ../poll.rb:312
+#: ../poll.rb:313
 msgid "Sort oldest comment first"
 msgstr "Időrendben"
 
-#: ../poll.rb:315
+#: ../poll.rb:316
 msgid "Sort newest comment first"
 msgstr "Fordított Időrendben"
 
-#: ../poll.rb:320
+#: ../poll.rb:321
 msgid "Go to last comment"
 msgstr "Ugrás az utolsó megjegyzéshez"
 
-#: ../poll.rb:333
+#: ../poll.rb:334
 msgid "%{user} said on %{time}"
 msgstr "„%{user}” írta %{time}-kor"
 
-#: ../poll.rb:348
+#: ../poll.rb:349
 msgid "Go up"
 msgstr "Fel"
 
-#: ../poll.rb:354
+#: ../poll.rb:355
 msgid "says"
 msgstr "szerint"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "Submit comment"
 msgstr "Hozzászólás elküldése"
 
-#: ../poll.rb:373
+#: ../poll.rb:374
 msgid "Show history items:"
 msgstr "Megjelenítendő változtatások:"
 
-#: ../poll.rb:380
+#: ../poll.rb:381
 msgid "All"
 msgstr "Mindegyik"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "Participant related"
 msgstr "A szavazókkal kapcsolatosak"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Column related"
 msgstr "Az oszlopokkal kapcsolatosak"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Comment related"
 msgstr "A megjegyzésekkel kapcsolatosak"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Access control related"
 msgstr "A hozzáféréssel kapcsolatosak"
 
-#: ../poll.rb:390
+#: ../poll.rb:391
 msgid "Update"
 msgstr "Frissítés"
 
@@ -812,6 +811,22 @@ msgstr "Hozzáadás"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "pl. 09:30, reggel, délután"
+
+#, fuzzy
+#~ msgid ""
+#~ "Please write me an e-mail if you have found a bug, have found something "
+#~ "which disturbs you, or have any other feedback."
+#~ msgstr ""
+#~ "Ha bármi hibát, hiányosságot, fennakadást tapasztalsz, jelezd a "
+#~ "szerzőnek: <a href=\"mailto:Benjamin_pont_Kellermann@gmx_pont_németország?"
+#~ "subject=Dudle%20Feedback\">Visszajelzés</a>"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you think that the deletion was done in error, please contact the "
+#~ "administrator of the system."
+#~ msgstr ""
+#~ "Ha szerinted valami hiba történt, lépj kapcsolatba az adminisztrátorral!"
 
 #~ msgid "Event-scheduling poll"
 #~ msgstr "Időpontválasztás"
