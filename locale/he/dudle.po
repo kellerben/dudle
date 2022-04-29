@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-22 11:03+0200\n"
+"POT-Creation-Date: 2022-04-29 08:15+0200\n"
 "PO-Revision-Date: 2017-07-01 06:12+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>, 2019\n"
 "Language-Team: Hebrew (https://www.transifex.com/yaron/teams/76313/he/)\n"
@@ -62,12 +62,12 @@ msgid ""
 msgstr "עליך להסיר את כל המשתתפים לפני שניתן להסיר את המנהל."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:339
+#: ../delete_poll.rb:112 ../poll.rb:340
 msgid "Delete"
 msgstr "מחיקה"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:301
+#: ../poll.rb:302
 msgid "Save"
 msgstr "שמירה"
 
@@ -607,91 +607,105 @@ msgstr "הזמנה"
 msgid "Name"
 msgstr "שם"
 
-#: ../poll.rb:232
+#: ../poll.rb:229
+#, fuzzy
+msgid "Add a participant"
+msgstr "הזמנת משתתפים"
+
+#: ../poll.rb:233
 msgid "Save changes"
 msgstr "שמירת השינויים"
 
-#: ../poll.rb:236
+#: ../poll.rb:237
 msgid "Cancel"
 msgstr "ביטול"
 
-#: ../poll.rb:258
+#: ../poll.rb:259
 msgid "Do you really want to delete user %{user}?"
 msgstr "למחוק את המשתמש %{user}?"
 
-#: ../poll.rb:261
+#: ../poll.rb:262
 msgid "Confirm"
 msgstr "אישור"
 
-#: ../poll.rb:282
+#: ../poll.rb:283
 msgid "Yes"
 msgstr ""
 
-#: ../poll.rb:282
+#: ../poll.rb:283
 msgid "No"
 msgstr ""
 
-#: ../poll.rb:282
+#: ../poll.rb:283
 msgid "Maybe"
 msgstr ""
 
-#: ../poll.rb:310
+#: ../poll.rb:311
 msgid "Comments"
 msgstr "הערות"
 
-#: ../poll.rb:313
+#: ../poll.rb:314
 msgid "Sort oldest comment first"
 msgstr "סידור ההערות הישנות ביותר בהתחלה"
 
-#: ../poll.rb:316
+#: ../poll.rb:317
 msgid "Sort newest comment first"
 msgstr "סידור ההערות החדשות ביותר בהתחלה"
 
-#: ../poll.rb:321
+#: ../poll.rb:322
 msgid "Go to last comment"
 msgstr "מעבר להערה האחרונה"
 
-#: ../poll.rb:334
+#: ../poll.rb:335
 msgid "%{user} said on %{time}"
 msgstr "נאמר ע״י %{user} ב־%{time}"
 
-#: ../poll.rb:349
+#: ../poll.rb:350
 msgid "Go up"
 msgstr "לעלות מעלה"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "says"
 msgstr "אמר/ה"
 
-#: ../poll.rb:356
+#: ../poll.rb:357
 msgid "Submit comment"
 msgstr "שליחת הערה"
 
-#: ../poll.rb:374
+#: ../poll.rb:361
+msgid "Enter your name"
+msgstr ""
+
+#: ../poll.rb:363
+#, fuzzy
+msgid "Enter a comment"
+msgstr "מעבר להערה האחרונה"
+
+#: ../poll.rb:375
 msgid "Show history items:"
 msgstr "הצגת פריטים מההיסטוריה:"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "All"
 msgstr "הכול"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Participant related"
 msgstr "בהקשר למשתתף"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Column related"
 msgstr "בהקשר לעמודה"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Comment related"
 msgstr "בהקשר להערה"
 
-#: ../poll.rb:385
+#: ../poll.rb:386
 msgid "Access control related"
 msgstr "בהקשר לבקרת גישה"
 
-#: ../poll.rb:391
+#: ../poll.rb:392
 msgid "Update"
 msgstr "עדכון"
 

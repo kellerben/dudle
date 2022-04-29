@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dudle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-22 11:03+0200\n"
+"POT-Creation-Date: 2022-04-29 08:15+0200\n"
 "PO-Revision-Date: 2018-08-16 20:33-0200\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <LL@li.org>\n"
@@ -58,12 +58,12 @@ msgid ""
 msgstr "Você deve remover o participante antes de remover o administrador."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:339
+#: ../delete_poll.rb:112 ../poll.rb:340
 msgid "Delete"
 msgstr "Remover"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:301
+#: ../poll.rb:302
 msgid "Save"
 msgstr "Salvar"
 
@@ -618,91 +618,105 @@ msgstr "Convidar"
 msgid "Name"
 msgstr "Nome"
 
-#: ../poll.rb:232
+#: ../poll.rb:229
+#, fuzzy
+msgid "Add a participant"
+msgstr "Convidar participantes"
+
+#: ../poll.rb:233
 msgid "Save changes"
 msgstr "Salvar alterações"
 
-#: ../poll.rb:236
+#: ../poll.rb:237
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../poll.rb:258
+#: ../poll.rb:259
 msgid "Do you really want to delete user %{user}?"
 msgstr "Você realmente quer remover o usuário %{user}?"
 
-#: ../poll.rb:261
+#: ../poll.rb:262
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: ../poll.rb:282
+#: ../poll.rb:283
 msgid "Yes"
 msgstr ""
 
-#: ../poll.rb:282
+#: ../poll.rb:283
 msgid "No"
 msgstr ""
 
-#: ../poll.rb:282
+#: ../poll.rb:283
 msgid "Maybe"
 msgstr ""
 
-#: ../poll.rb:310
+#: ../poll.rb:311
 msgid "Comments"
 msgstr "Comentário"
 
-#: ../poll.rb:313
+#: ../poll.rb:314
 msgid "Sort oldest comment first"
 msgstr "Ordenar pelo comentário mais antigo"
 
-#: ../poll.rb:316
+#: ../poll.rb:317
 msgid "Sort newest comment first"
 msgstr "Ordenar pelo comentário mais recente"
 
-#: ../poll.rb:321
+#: ../poll.rb:322
 msgid "Go to last comment"
 msgstr "Vá ao último comentário"
 
-#: ../poll.rb:334
+#: ../poll.rb:335
 msgid "%{user} said on %{time}"
 msgstr "%{user} disse as %{time}"
 
-#: ../poll.rb:349
+#: ../poll.rb:350
 msgid "Go up"
 msgstr "Para cima"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "says"
 msgstr "diz"
 
-#: ../poll.rb:356
+#: ../poll.rb:357
 msgid "Submit comment"
 msgstr "Enviar comentário"
 
-#: ../poll.rb:374
+#: ../poll.rb:361
+msgid "Enter your name"
+msgstr ""
+
+#: ../poll.rb:363
+#, fuzzy
+msgid "Enter a comment"
+msgstr "Vá ao último comentário"
+
+#: ../poll.rb:375
 msgid "Show history items:"
 msgstr "Mostrar histórico dos itens:"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "All"
 msgstr "Todos"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Participant related"
 msgstr "Relacionado aos participantes"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Column related"
 msgstr "Relacionado às colunas"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Comment related"
 msgstr "Relacionado aos comentários"
 
-#: ../poll.rb:385
+#: ../poll.rb:386
 msgid "Access control related"
 msgstr "Relacionado ao controle de acesso"
 
-#: ../poll.rb:391
+#: ../poll.rb:392
 msgid "Update"
 msgstr "Atualizar"
 

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dudle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-14 17:44+0200\n"
+"POT-Creation-Date: 2022-04-29 08:15+0200\n"
 "PO-Revision-Date: 2021-11-08 09:15+0200\n"
 "Last-Translator: vbachvarov\n"
 "Language-Team: \n"
@@ -40,15 +40,17 @@ msgstr "Лиценз"
 
 #: ../about.cgi:32
 msgid ""
-"The sourcecode of this application is available under the terms of <a href='ht"
-"tp://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>."
+"The sourcecode of this application is available under the terms of <a "
+"href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</"
+"a>."
 msgstr ""
-"Изходният код на тази програма е достъпен под условията на <a href='ht"
-"tp://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL версия 3</a>."
+"Изходният код на тази програма е достъпен под условията на <a href='http://"
+"www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL версия 3</a>."
 
 #: ../about.cgi:33
 msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
-msgstr "Изходният код на тази програма може да бъде намерен %{a_start}тук%{a_end}."
+msgstr ""
+"Изходният код на тази програма може да бъде намерен %{a_start}тук%{a_end}."
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
@@ -64,18 +66,19 @@ msgstr "повтори"
 
 #: ../access_control.rb:114
 msgid ""
-"You have to remove the participant user before you can remove the administrato"
-"r."
+"You have to remove the participant user before you can remove the "
+"administrator."
 msgstr ""
-"Трябва да премахнете участващия потребител преди да премахнете администратора."
+"Трябва да премахнете участващия потребител преди да премахнете "
+"администратора."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:338
+#: ../delete_poll.rb:112 ../poll.rb:340
 msgid "Delete"
 msgstr "Изтрий"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:300
+#: ../poll.rb:302
 msgid "Save"
 msgstr "Запиши"
 
@@ -101,7 +104,9 @@ msgstr "Активирай"
 
 #: ../access_control.rb:184
 msgid "controls will be activated when at least the admin user is configured"
-msgstr "контролите ще бъдат активирани когато е конфигуриран поне един административен потребител"
+msgstr ""
+"контролите ще бъдат активирани когато е конфигуриран поне един "
+"административен потребител"
 
 #: ../access_control.rb:186
 msgid "Deactivate"
@@ -113,19 +118,25 @@ msgstr "активен"
 
 #: ../access_control.rb:189
 msgid ""
-"You have to remove all users before you can deactivate the access control sett"
-"ings."
+"You have to remove all users before you can deactivate the access control "
+"settings."
 msgstr ""
 "Трябва да премахнете всички потребители преди да можете да деактивирате "
 "настройките за контрол на достъпа."
 
 #: ../access_control.rb:193
-msgid "You will be asked for the password you have entered here after you press save!"
-msgstr "Ще бъде зададен въпрос за въведената тук парола след като натиснете запиши!"
+msgid ""
+"You will be asked for the password you have entered here after you press "
+"save!"
+msgstr ""
+"Ще бъде зададен въпрос за въведената тук парола след като натиснете запиши!"
 
 #: ../access_control.rb:196
-msgid "The user ‘admin’ has access to both the vote and the configuration interface."
-msgstr "Потребителят ‘admin’ има достъп както до интерфейса за гласуване, така и до конфигурационния интерфейс."
+msgid ""
+"The user ‘admin’ has access to both the vote and the configuration interface."
+msgstr ""
+"Потребителят ‘admin’ има достъп както до интерфейса за гласуване, така и до "
+"конфигурационния интерфейс."
 
 #: ../access_control.rb:202
 msgid "The user ‘participant’ only has access to the vote interface."
@@ -145,7 +156,14 @@ msgstr "Запитването бе възстановено до версия %
 
 #: ../advanced.rb:37
 msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
-msgstr "Възстановяване на запитването до версия (виж отметката ‘История’ за версиите на ревизиите):"
+msgstr ""
+"Възстановяване на запитването до версия (виж отметката ‘История’ за версиите "
+"на ревизиите):"
+
+#: ../advanced.rb:39
+#, fuzzy
+msgid "Revert"
+msgstr "Възстановяване на запитването"
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
@@ -169,27 +187,8 @@ msgstr "Върнете се към началото на Dudle и създайт
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
-msgstr "Трябва да удостоверите себе си, за да получите достъп до тази страница!"
-
-#: ../config.rb:45
-msgid "Event Schedule Poll"
-msgstr "Запитване с планирано събитие"
-
-#: ../config.rb:49
-msgid "Normal Poll"
-msgstr "Нормално запитване"
-
-#: ../config.rb:53
-msgid "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
-msgstr "Шифровано/удостоверено от-край-до-край запитване (вижте паролата в коментарите)"
-
-#: ../config.rb:57
-msgid "End-to-End encrypted Poll, where only the administrator is able to read votes"
-msgstr "Шифровано от-край-до-край запитване, при което само администраторът може да чете гласовете"
-
-#: ../config.rb:61
-msgid "Test for several PGP-authenticated votes"
-msgstr "Тест за няколко PGP-удостоверени гласове"
+msgstr ""
+"Трябва да удостоверите себе си, за да получите достъп до тази страница!"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
@@ -197,11 +196,11 @@ msgstr "Лични настройки"
 
 #: ../customize.cgi:32 ../customize.rb:32
 msgid ""
-"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> enabl"
-"ed in order to personalize your settings."
+"You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
+"enabled in order to personalize your settings."
 msgstr ""
-"Нужни са разрешени <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>бисквити</a>, "
-"за да персонализирате настройките."
+"Нужни са разрешени <a href='https://en.wikipedia.org/wiki/"
+"HTTP_cookie'>бисквити</a>, за да персонализирате настройките."
 
 #: ../customize.cgi:39 ../customize.rb:39
 msgid "Current setting"
@@ -273,13 +272,13 @@ msgstr "Това запитване бе изтрито успешно!"
 
 #: ../delete_poll.rb:57
 msgid ""
-"If this was done by accident, please contact the administrator of the system. "
-"The poll can be recovered for an indeterminate amount of time; it could alread"
-"y be too late."
+"If this was done by accident, please contact the administrator of the "
+"system. The poll can be recovered for an indeterminate amount of time; it "
+"could already be too late."
 msgstr ""
-"Ако това бе направено по невнимание, моля свържете се със системен администратор. "
-"Това запитване може да бъде възстановено за неопределено време; може би вече е "
-"прекалено късно."
+"Ако това бе направено по невнимание, моля свържете се със системен "
+"администратор. Това запитване може да бъде възстановено за неопределено "
+"време; може би вече е прекалено късно."
 
 #: ../delete_poll.rb:59
 msgid "You can now"
@@ -315,11 +314,11 @@ msgstr "Това действие не може да бъде върнато н�
 
 #: ../delete_poll.rb:111
 msgid ""
-"If you are sure that you want to permanently remove this poll, please type “%{"
-"question}” into the form."
+"If you are sure that you want to permanently remove this poll, please type "
+"“%{question}” into the form."
 msgstr ""
-"Ако сте сигурни, че искате окончателно да изтриете това проучване, моля напишете “%{"
-"question}” във формуляра."
+"Ако сте сигурни, че искате окончателно да изтриете това проучване, моля "
+"напишете “%{question}” във формуляра."
 
 #: ../dudle.rb:73
 msgid "Home"
@@ -453,11 +452,12 @@ msgstr "Грешка в Dudle"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, incl"
-"uding your browser, operating system, and what you did to %{admin}."
+"An error occurred while executing Dudle.<br/>Please send an error report, "
+"including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Случи се грешка при изпълнението на Dudle.<br/>Моля, изпратете доклад за грешката, включително "
-"браузъра си, операционната си система и какво направихте, адресиран до %{admin}."
+"Случи се грешка при изпълнението на Dudle.<br/>Моля, изпратете доклад за "
+"грешката, включително браузъра си, операционната си система и какво "
+"направихте, адресиран до %{admin}."
 
 #: ../error.cgi:51
 msgid "Please include the following as well:"
@@ -469,11 +469,11 @@ msgstr "Примерът не е открит: %{example}"
 
 #: ../example.cgi:68
 msgid ""
-"If you want to play with the application, you may want to take a look at these"
-" example polls:"
+"If you want to play with the application, you may want to take a look at "
+"these example polls:"
 msgstr ""
-"Ако искате да си поиграете с програмата, може би искате да прегледате тези"
-" примерни запитвания:"
+"Ако искате да си поиграете с програмата, може би искате да прегледате тези "
+"примерни запитвания:"
 
 #: ../history.rb:28
 msgid "Poll of version %{revisionnumber}"
@@ -500,8 +500,10 @@ msgid "A poll with this address already exists."
 msgstr "Вече съществува запитване с този адрес."
 
 #: ../index.cgi:63
-msgid "The poll was created successfully. The link to your new poll is: %{link}"
-msgstr "Запитването бе създадено успешно. Връзката към новото Ви запитване е: %{link}"
+msgid ""
+"The poll was created successfully. The link to your new poll is: %{link}"
+msgstr ""
+"Запитването бе създадено успешно. Връзката към новото Ви запитване е: %{link}"
 
 #: ../index.cgi:71
 msgid "Go away."
@@ -561,11 +563,11 @@ msgstr "Този сайт в момента е спрян заради ремо�
 
 #: ../maintenance.cgi:34
 msgid ""
-"You should not browse to this file directly. Please create a file named \"maint"
-"enance.html\" to enable the maintenance mode."
+"You should not browse to this file directly. Please create a file named "
+"\"maintenance.html\" to enable the maintenance mode."
 msgstr ""
-"Не трябва да прелиствате този файл директно. Моля, създайте файл с име \"maint"
-"enance.html\", за да включите режима за ремонт."
+"Не трябва да прелиствате този файл директно. Моля, създайте файл с име "
+"\"maintenance.html\", за да включите режима за ремонт."
 
 #: ../not_found.cgi:30
 msgid "Poll not found"
@@ -585,8 +587,8 @@ msgstr "Някой е щракнал върху “Изтрий запитван
 
 #: ../not_found.cgi:35
 msgid ""
-"The poll was deleted by the administrator because it was not accessed for a lo"
-"ng time."
+"The poll was deleted by the administrator because it was not accessed for a "
+"long time."
 msgstr ""
 "Запитването е било изтрито от администратор, защото не е било ползвано дълго "
 "време."
@@ -635,79 +637,105 @@ msgstr "Покани"
 msgid "Name"
 msgstr "Име"
 
-#: ../poll.rb:232
+#: ../poll.rb:229
+#, fuzzy
+msgid "Add a participant"
+msgstr "Покани участници"
+
+#: ../poll.rb:233
 msgid "Save changes"
 msgstr "Запази промени"
 
-#: ../poll.rb:236
+#: ../poll.rb:237
 msgid "Cancel"
 msgstr "Откажи"
 
-#: ../poll.rb:258
+#: ../poll.rb:259
 msgid "Do you really want to delete user %{user}?"
 msgstr "Наистина ли искате да изтриете потребител %{user}?"
 
-#: ../poll.rb:261
+#: ../poll.rb:262
 msgid "Confirm"
 msgstr "Потвърди"
 
-#: ../poll.rb:309
+#: ../poll.rb:283
+msgid "Yes"
+msgstr ""
+
+#: ../poll.rb:283
+msgid "No"
+msgstr ""
+
+#: ../poll.rb:283
+msgid "Maybe"
+msgstr ""
+
+#: ../poll.rb:311
 msgid "Comments"
 msgstr "Коментари"
 
-#: ../poll.rb:312
+#: ../poll.rb:314
 msgid "Sort oldest comment first"
 msgstr "Сортирай първо най-старите коментари"
 
-#: ../poll.rb:315
+#: ../poll.rb:317
 msgid "Sort newest comment first"
 msgstr "Сортирай първо най-новите коментари"
 
-#: ../poll.rb:320
+#: ../poll.rb:322
 msgid "Go to last comment"
 msgstr "Отиди до последния коментар-"
 
-#: ../poll.rb:333
+#: ../poll.rb:335
 msgid "%{user} said on %{time}"
 msgstr "%{user} каза на %{time}"
 
-#: ../poll.rb:348
+#: ../poll.rb:350
 msgid "Go up"
 msgstr "Отиди нагоре"
 
-#: ../poll.rb:354
+#: ../poll.rb:356
 msgid "says"
 msgstr "казва"
 
-#: ../poll.rb:355
+#: ../poll.rb:357
 msgid "Submit comment"
 msgstr "Изпрати коментар"
 
-#: ../poll.rb:373
+#: ../poll.rb:361
+msgid "Enter your name"
+msgstr ""
+
+#: ../poll.rb:363
+#, fuzzy
+msgid "Enter a comment"
+msgstr "Отиди до последния коментар-"
+
+#: ../poll.rb:375
 msgid "Show history items:"
 msgstr "Покажи данните за историята:"
 
-#: ../poll.rb:380
+#: ../poll.rb:382
 msgid "All"
 msgstr "Всички"
 
-#: ../poll.rb:381
+#: ../poll.rb:383
 msgid "Participant related"
 msgstr "Отнесени към участниците"
 
-#: ../poll.rb:382
+#: ../poll.rb:384
 msgid "Column related"
 msgstr "Отнесени към колоните"
 
-#: ../poll.rb:383
+#: ../poll.rb:385
 msgid "Comment related"
 msgstr "Отнесени към коментарите"
 
-#: ../poll.rb:384
+#: ../poll.rb:386
 msgid "Access control related"
 msgstr "Отнесени към контрола на достъпа"
 
-#: ../poll.rb:390
+#: ../poll.rb:392
 msgid "Update"
 msgstr "Актуализирай"
 
@@ -741,17 +769,17 @@ msgstr "Преглед"
 
 #: ../pollhead.rb:103
 msgid ""
-"Enter all the options (columns) which you want the participants of the poll to"
-" choose among. For each option you give here, the participants will choose a v"
-"ote."
+"Enter all the options (columns) which you want the participants of the poll "
+"to choose among. For each option you give here, the participants will choose "
+"a vote."
 msgstr ""
-"Въведете всичките опции (колони), от които може да се избира в запитването."
-" Участниците в него могат да дадат гласа си за всяка опция поотделно."
+"Въведете всичките опции (колони), от които може да се избира в запитването. "
+"Участниците в него могат да дадат гласа си за всяка опция поотделно."
 
 #: ../timepollhead.rb:113
 msgid ""
-"To add a time other than the default times, please enter some string here (e.&"
-"thinsp;g., 09:30, morning, afternoon)."
+"To add a time other than the default times, please enter some string here (e."
+"&thinsp;g., 09:30, morning, afternoon)."
 msgstr ""
 "За да изберете време, различно от подразбиращите се, моля въведете го тук "
 "(напр. 9:30, сутрин, вечер)."
@@ -811,3 +839,25 @@ msgstr "Добави"
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "напр. 09:30, сутрин, вечер"
+
+#~ msgid "Event Schedule Poll"
+#~ msgstr "Запитване с планирано събитие"
+
+#~ msgid "Normal Poll"
+#~ msgstr "Нормално запитване"
+
+#~ msgid ""
+#~ "End-to-End encrypted/authenticated Poll (see the Password in the Comments)"
+#~ msgstr ""
+#~ "Шифровано/удостоверено от-край-до-край запитване (вижте паролата в "
+#~ "коментарите)"
+
+#~ msgid ""
+#~ "End-to-End encrypted Poll, where only the administrator is able to read "
+#~ "votes"
+#~ msgstr ""
+#~ "Шифровано от-край-до-край запитване, при което само администраторът може "
+#~ "да чете гласовете"
+
+#~ msgid "Test for several PGP-authenticated votes"
+#~ msgstr "Тест за няколко PGP-удостоверени гласове"

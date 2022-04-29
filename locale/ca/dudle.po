@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-22 11:03+0200\n"
+"POT-Creation-Date: 2022-04-29 08:15+0200\n"
 "PO-Revision-Date: 2011-12-17 02:00+0100\n"
 "Last-Translator: Laura Mora i Aubert <blackhold@marsupi.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,12 +59,12 @@ msgstr ""
 "esborrar l'administrador."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:339
+#: ../delete_poll.rb:112 ../poll.rb:340
 msgid "Delete"
 msgstr "Esborra"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:301
+#: ../poll.rb:302
 msgid "Save"
 msgstr "Desa"
 
@@ -623,91 +623,105 @@ msgstr "Convida"
 msgid "Name"
 msgstr "Nom"
 
-#: ../poll.rb:232
+#: ../poll.rb:229
+#, fuzzy
+msgid "Add a participant"
+msgstr "Convida a participants"
+
+#: ../poll.rb:233
 msgid "Save changes"
 msgstr "Desa els canvis"
 
-#: ../poll.rb:236
+#: ../poll.rb:237
 msgid "Cancel"
 msgstr "Avorta"
 
-#: ../poll.rb:258
+#: ../poll.rb:259
 msgid "Do you really want to delete user %{user}?"
 msgstr "Realment vols esborrar el usuari %{user}?"
 
-#: ../poll.rb:261
+#: ../poll.rb:262
 msgid "Confirm"
 msgstr "Accepta"
 
-#: ../poll.rb:282
+#: ../poll.rb:283
 msgid "Yes"
 msgstr ""
 
-#: ../poll.rb:282
+#: ../poll.rb:283
 msgid "No"
 msgstr ""
 
-#: ../poll.rb:282
+#: ../poll.rb:283
 msgid "Maybe"
 msgstr ""
 
-#: ../poll.rb:310
+#: ../poll.rb:311
 msgid "Comments"
 msgstr "Comentaris"
 
-#: ../poll.rb:313
+#: ../poll.rb:314
 msgid "Sort oldest comment first"
 msgstr "Els comentaris més antics primer"
 
-#: ../poll.rb:316
+#: ../poll.rb:317
 msgid "Sort newest comment first"
 msgstr "Els comentaris més nous primer"
 
-#: ../poll.rb:321
+#: ../poll.rb:322
 msgid "Go to last comment"
 msgstr "Vés a l'últim comentari"
 
-#: ../poll.rb:334
+#: ../poll.rb:335
 msgid "%{user} said on %{time}"
 msgstr "%{user} ha dit al %{time}"
 
-#: ../poll.rb:349
+#: ../poll.rb:350
 msgid "Go up"
 msgstr "Amunt"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "says"
 msgstr "Diu"
 
-#: ../poll.rb:356
+#: ../poll.rb:357
 msgid "Submit comment"
 msgstr "Envia un comentari"
 
-#: ../poll.rb:374
+#: ../poll.rb:361
+msgid "Enter your name"
+msgstr ""
+
+#: ../poll.rb:363
+#, fuzzy
+msgid "Enter a comment"
+msgstr "Vés a l'últim comentari"
+
+#: ../poll.rb:375
 msgid "Show history items:"
 msgstr "Mostra l'històric:"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "All"
 msgstr "Tot"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Participant related"
 msgstr "Participants relacionats"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Column related"
 msgstr "Columnes relacionades"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Comment related"
 msgstr "Comentaris relacionats"
 
-#: ../poll.rb:385
+#: ../poll.rb:386
 msgid "Access control related"
 msgstr "Controls d'accés relacionats"
 
-#: ../poll.rb:391
+#: ../poll.rb:392
 msgid "Update"
 msgstr "Actualitza"
 

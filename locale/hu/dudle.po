@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 510\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-22 11:03+0200\n"
+"POT-Creation-Date: 2022-04-29 08:15+0200\n"
 "PO-Revision-Date: 2011-07-04 06:55+0200\n"
 "Last-Translator: Gabor Kiss <kissg@ssg.ki.iif.hu>\n"
 "Language-Team: \n"
@@ -74,12 +74,12 @@ msgstr ""
 "már megszüntetted."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:339
+#: ../delete_poll.rb:112 ../poll.rb:340
 msgid "Delete"
 msgstr "Törlés"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:301
+#: ../poll.rb:302
 msgid "Save"
 msgstr "Mentés"
 
@@ -623,91 +623,105 @@ msgstr "Hozzáadás"
 msgid "Name"
 msgstr "Név"
 
-#: ../poll.rb:232
+#: ../poll.rb:229
+#, fuzzy
+msgid "Add a participant"
+msgstr "Végy fel résztvevőket"
+
+#: ../poll.rb:233
 msgid "Save changes"
 msgstr "Mentés"
 
-#: ../poll.rb:236
+#: ../poll.rb:237
 msgid "Cancel"
 msgstr "Mégsem"
 
-#: ../poll.rb:258
+#: ../poll.rb:259
 msgid "Do you really want to delete user %{user}?"
 msgstr "Valóban törölni akarod „%{user}” felhasználót?"
 
-#: ../poll.rb:261
+#: ../poll.rb:262
 msgid "Confirm"
 msgstr "Megerősítés"
 
-#: ../poll.rb:282
+#: ../poll.rb:283
 msgid "Yes"
 msgstr ""
 
-#: ../poll.rb:282
+#: ../poll.rb:283
 msgid "No"
 msgstr ""
 
-#: ../poll.rb:282
+#: ../poll.rb:283
 msgid "Maybe"
 msgstr ""
 
-#: ../poll.rb:310
+#: ../poll.rb:311
 msgid "Comments"
 msgstr "Megjegyzések"
 
-#: ../poll.rb:313
+#: ../poll.rb:314
 msgid "Sort oldest comment first"
 msgstr "Időrendben"
 
-#: ../poll.rb:316
+#: ../poll.rb:317
 msgid "Sort newest comment first"
 msgstr "Fordított Időrendben"
 
-#: ../poll.rb:321
+#: ../poll.rb:322
 msgid "Go to last comment"
 msgstr "Ugrás az utolsó megjegyzéshez"
 
-#: ../poll.rb:334
+#: ../poll.rb:335
 msgid "%{user} said on %{time}"
 msgstr "„%{user}” írta %{time}-kor"
 
-#: ../poll.rb:349
+#: ../poll.rb:350
 msgid "Go up"
 msgstr "Fel"
 
-#: ../poll.rb:355
+#: ../poll.rb:356
 msgid "says"
 msgstr "szerint"
 
-#: ../poll.rb:356
+#: ../poll.rb:357
 msgid "Submit comment"
 msgstr "Hozzászólás elküldése"
 
-#: ../poll.rb:374
+#: ../poll.rb:361
+msgid "Enter your name"
+msgstr ""
+
+#: ../poll.rb:363
+#, fuzzy
+msgid "Enter a comment"
+msgstr "Ugrás az utolsó megjegyzéshez"
+
+#: ../poll.rb:375
 msgid "Show history items:"
 msgstr "Megjelenítendő változtatások:"
 
-#: ../poll.rb:381
+#: ../poll.rb:382
 msgid "All"
 msgstr "Mindegyik"
 
-#: ../poll.rb:382
+#: ../poll.rb:383
 msgid "Participant related"
 msgstr "A szavazókkal kapcsolatosak"
 
-#: ../poll.rb:383
+#: ../poll.rb:384
 msgid "Column related"
 msgstr "Az oszlopokkal kapcsolatosak"
 
-#: ../poll.rb:384
+#: ../poll.rb:385
 msgid "Comment related"
 msgstr "A megjegyzésekkel kapcsolatosak"
 
-#: ../poll.rb:385
+#: ../poll.rb:386
 msgid "Access control related"
 msgstr "A hozzáféréssel kapcsolatosak"
 
-#: ../poll.rb:391
+#: ../poll.rb:392
 msgid "Update"
 msgstr "Frissítés"
 
