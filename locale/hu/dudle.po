@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 510\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:15+0200\n"
+"POT-Creation-Date: 2022-04-29 08:42+0200\n"
 "PO-Revision-Date: 2011-07-04 06:55+0200\n"
 "Last-Translator: Gabor Kiss <kissg@ssg.ki.iif.hu>\n"
 "Language-Team: \n"
@@ -387,6 +387,11 @@ msgstr "A változtatások elmentve."
 #: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Végrehajtás"
+
+#: ../dudle.rb:282
+#, fuzzy
+msgid "Select Language"
+msgstr "Kiválasztva"
 
 #: ../edit_columns.rb:44
 msgid "Add and remove columns"

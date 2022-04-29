@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:15+0200\n"
+"POT-Creation-Date: 2022-04-29 08:42+0200\n"
 "PO-Revision-Date: 2011-07-21 10:05+0200\n"
 "Last-Translator: Laura Mora i Aubert <blackhold@marsupi.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -375,6 +375,11 @@ msgstr "Se han guardado todos los cambios."
 #: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Adelante!"
+
+#: ../dudle.rb:282
+#, fuzzy
+msgid "Select Language"
+msgstr "Seleccionados"
 
 #: ../edit_columns.rb:44
 msgid "Add and remove columns"

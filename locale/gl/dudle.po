@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:15+0200\n"
+"POT-Creation-Date: 2022-04-29 08:42+0200\n"
 "PO-Revision-Date: 2011-12-28 15:41+0100\n"
 "Last-Translator: Daniel Espinheira <daniel.espinheira@gmail.com>\n"
 "Language-Team: ngzngl <daniel.espinheira@gmail.com>\n"
@@ -375,6 +375,11 @@ msgstr "Graváronse todos os cambios."
 #: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Proceder!"
+
+#: ../dudle.rb:282
+#, fuzzy
+msgid "Select Language"
+msgstr "Escollido"
 
 #: ../edit_columns.rb:44
 msgid "Add and remove columns"

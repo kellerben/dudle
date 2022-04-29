@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 510\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:15+0200\n"
+"POT-Creation-Date: 2022-04-29 08:42+0200\n"
 "PO-Revision-Date: 2017-08-02 11:07-0400\n"
 "Last-Translator: Benson Muite modifying output of Yandex Translate and Bing "
 "translator\n"
@@ -365,6 +365,11 @@ msgstr "Mabadiliko yote walikuwa kuokolewa mafanikio"
 #: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Endelea"
+
+#: ../dudle.rb:282
+#, fuzzy
+msgid "Select Language"
+msgstr "Waliochaguliwa"
 
 #: ../edit_columns.rb:44
 msgid "Add and remove columns"

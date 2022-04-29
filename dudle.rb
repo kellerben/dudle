@@ -242,7 +242,7 @@ READY
 
 		@html.add_cookie("lang",@cgi["lang"],"/",Time.now + (1*60*60*24*365)) if @cgi.include?("lang")
 		@html << "</div>" # content
-		@html << "<div id='languageChooser'><ul>"
+		@html << "<div id='languageChooser'><form><select name='lang'>"
 		lang = [# sorted by native speakers according to English Wikipedia
 			["es", "Español"],# 480 million native speakers (2018)
 			["en", "English"],# 360–400 million (2006)
@@ -273,13 +273,13 @@ READY
 		unless @hide_lang_chooser
 			lang.each{|short,long|
 				if short == GetText.locale.to_s
-					@html << "<li class='lang'>#{long}</li>"
+					@html << "<option class='lang' value='#{short}' selected='selected'>#{long}</option>"
 				else
-					@html << "<li class='lang'><a href='?lang=#{short}'>#{long}</a></li>"
+					@html << "<option class='lang' value='#{short}'>#{long}</option>"
 				end
 			}
 		end
-		@html << "</ul></div>" # languageChooser
+		@html << "</select><input type='submit' value='#{CGI.escapeHTML(_('Select Language'))}' /></form></div>" # languageChooser
 
 		@html << "</div>" # main
 		$conf.footer.each{|f| @html << f }

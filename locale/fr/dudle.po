@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:15+0200\n"
+"POT-Creation-Date: 2022-04-29 08:42+0200\n"
 "PO-Revision-Date: 2019-02-25 16:57+0100\n"
 "Last-Translator: Séb. M.\n"
 "Language-Team: \n"
@@ -395,6 +395,11 @@ msgstr "Toutes les modifications ont été sauvegardées."
 #: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Effectuer !"
+
+#: ../dudle.rb:282
+#, fuzzy
+msgid "Select Language"
+msgstr "Choisi"
 
 #: ../edit_columns.rb:44
 msgid "Add and remove columns"

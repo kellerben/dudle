@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dudle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:15+0200\n"
+"POT-Creation-Date: 2022-04-29 08:42+0200\n"
 "PO-Revision-Date: 2018-08-16 20:33-0200\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <LL@li.org>\n"
@@ -366,6 +366,11 @@ msgstr "Todas as mudanças foram salvas com sucesso."
 #: ../dudle.rb:233
 msgid "Proceed!"
 msgstr "Continuar!"
+
+#: ../dudle.rb:282
+#, fuzzy
+msgid "Select Language"
+msgstr "Escolhido"
 
 #: ../edit_columns.rb:44
 msgid "Add and remove columns"
