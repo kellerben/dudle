@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2019-02-25 16:57+0100\n"
 "Last-Translator: Séb. M.\n"
 "Language-Team: \n"
@@ -35,8 +35,8 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
-msgstr "Application soutenue par %{Dudle}."
+msgid "This application is powered by %{DuDPoll}."
+msgstr "Application soutenue par %{DuDPoll}."
 
 #: ../about.cgi:31
 msgid "License"
@@ -187,8 +187,8 @@ msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 "Vous devez vous identifier avec l'identifiant %{user} avant de continuer."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to DuD-Poll home and schedule a new poll"
 msgstr "Retourner à la page d'acceuil et créer un nouveau sondage"
 
 #: ../authorization_required.cgi:54
@@ -373,8 +373,8 @@ msgid "Customize"
 msgstr "Personnaliser"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
-msgstr "Accueil de Dudle"
+msgid "DuD-Poll Home"
+msgstr "Accueil de DuD-Poll"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
@@ -449,15 +449,15 @@ msgid ""
 msgstr ""
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
-msgstr "Bug dans Dudle"
+msgid "Bug in DuD-Poll"
+msgstr "Bug dans DuD-Poll"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Une erreur s'est produite durant l'exécution de Dudle.<br/>Merci d'envoyer "
+"Une erreur s'est produite durant l'exécution de DuD-Poll.<br/>Merci d'envoyer "
 "une description de l'erreur, contenant votre navigateur, votre système "
 "d'exploitation, et ce que vous avez fait à %{admin} (de préférence en "
 "anglais ou en allemand)."
@@ -620,8 +620,8 @@ msgid "Visit the poll yourself:"
 msgstr "Aller sur le sondage : "
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Lien vers le sondage Dudle \"%{polltitle}\""
+msgid "Link to DuD-Poll about %{polltitle}"
+msgstr "Lien vers le sondage DuD-Poll \"%{polltitle}\""
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

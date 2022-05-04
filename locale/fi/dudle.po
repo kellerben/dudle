@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2018-08-25 23:26+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,8 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
-msgstr "This application is powered by %{Dudle}."
+msgid "This application is powered by %{DuDPoll}."
+msgstr "This application is powered by %{DuDPoll}."
 
 #: ../about.cgi:31
 msgid "License"
@@ -162,8 +162,9 @@ msgstr "Tämä kysely on suojattu salasanalla!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Päästäksesi eteenpäin sinun tulee antaa salasana kättäjälle %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+#, fuzzy
+msgid "Return to DuD-Poll home and schedule a new poll"
 msgstr "Palaa Dulden kotivalikkoon ja ajasta uusi kysely"
 
 #: ../authorization_required.cgi:54
@@ -346,8 +347,8 @@ msgid "Customize"
 msgstr "Kustomoi"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
-msgstr "Dudle pääsivu"
+msgid "DuD-Poll Home"
+msgstr "DuD-Poll pääsivu"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
@@ -432,15 +433,16 @@ msgstr ""
 "Sincerely,\n"
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
+#, fuzzy
+msgid "Bug in DuD-Poll"
 msgstr "Bugi dudlessa"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 
 #: ../error.cgi:51
@@ -592,8 +594,8 @@ msgid "Visit the poll yourself:"
 msgstr "Vieraile kyselyssä"
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Linkki Dudle kyselyyn aiheella %{polltitle}"
+msgid "Link to DuD-Poll about %{polltitle}"
+msgstr "Linkki DuD-Poll kyselyyn aiheella %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

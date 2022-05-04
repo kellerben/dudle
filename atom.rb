@@ -43,7 +43,7 @@ poll = YAML::load_file("data.yaml")
 feed.title = poll.name
 feed.id = "urn:dudle:#{poll.class}:#{poll.name}"
 feed.updated = File.new("data.yaml").mtime
-feed.authors << Atom::Person.new(:name => 'dudle automatic notificator')
+feed.authors << Atom::Person.new(:name => 'DuD-Poll automatic notificator')
 feed.links << Atom::Link.new(:href => $conf.siteurl + "atom.cgi", :rel => "self")
 
 log = VCS.history

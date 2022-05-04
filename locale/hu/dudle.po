@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 510\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2011-07-04 06:55+0200\n"
 "Last-Translator: Gabor Kiss <kissg@ssg.ki.iif.hu>\n"
 "Language-Team: \n"
@@ -33,7 +33,7 @@ msgstr ""
 "X-Poedit-Country: HUNGARY\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
+msgid "This application is powered by %{DuDPoll}."
 msgstr ""
 
 #: ../about.cgi:31
@@ -178,8 +178,8 @@ msgstr "Jelszóval védett szavazás!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "A továbblépéshez add meg a(z) %{user} felhasználó jelszavát!"
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to DuD-Poll home and schedule a new poll"
 msgstr "Térj vissza a címlapra, hozz létre új szavazást"
 
 #: ../authorization_required.cgi:54
@@ -365,7 +365,7 @@ msgid "Customize"
 msgstr "Személyes beállítások"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
+msgid "DuD-Poll Home"
 msgstr "Címlap"
 
 #: ../dudle.rb:208 ../dudle.rb:226
@@ -441,15 +441,15 @@ msgid ""
 msgstr ""
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
-msgstr "Dudle hiba"
+msgid "Bug in DuD-Poll"
+msgstr "DuD-Poll hiba"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Hiba történt a Dudle futása közben.<br/>Küldj kérlek egy hibajelentést a(z) "
+"Hiba történt a DuD-Poll futása közben.<br/>Küldj kérlek egy hibajelentést a(z) "
 "%{admin} címre, mely tartalmazza a böngésződ és az operációs rendszered "
 "adatait, valamint hogy mit csináltál!"
 
@@ -601,7 +601,7 @@ msgid "Visit the poll yourself:"
 msgstr "Kövesd a linket és menj a szavazáshoz:"
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
+msgid "Link to DuD-Poll about %{polltitle}"
 msgstr "A %{polltitle} tárgyú szavazásra mutató link"
 
 #: ../participate.rb:59

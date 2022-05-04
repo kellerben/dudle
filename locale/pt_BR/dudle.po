@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dudle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2018-08-16 20:33-0200\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <LL@li.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "X-Generator: Virtaal 1.0.0-beta1\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
-msgstr "Esse aplicativo é fornecido por %{Dudle}."
+msgid "This application is powered by %{DuDPoll}."
+msgstr "Esse aplicativo é fornecido por %{DuDPoll}."
 
 #: ../about.cgi:31
 msgid "License"
@@ -162,9 +162,9 @@ msgstr "Essa enquete está protegida por senha!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Para continuar você deve fornecer a senha para %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Voltar ao início do Dudle e organizar uma nova enquete"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to DuD-Poll home and schedule a new poll"
+msgstr "Voltar ao início do DuD-Poll e organizar uma nova enquete"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -344,8 +344,8 @@ msgid "Customize"
 msgstr "Personalizar"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
-msgstr "Dudle - Início"
+msgid "DuD-Poll Home"
+msgstr "DuD-Poll - Início"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
@@ -434,15 +434,15 @@ msgstr ""
 "Sincerely,\n"
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
-msgstr "Bug no Dudle"
+msgid "Bug in DuD-Poll"
+msgstr "Bug no DuD-Poll"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Um erro ocorreu ao executar o Dudle.<br/>Por favor envie um relatório do "
+"Um erro ocorreu ao executar o DuD-Poll.<br/>Por favor envie um relatório do "
 "erro, incluindo seu navegador, sistema operacional, e o que você estava "
 "fazendo para %{admin}."
 
@@ -596,8 +596,8 @@ msgid "Visit the poll yourself:"
 msgstr "Visitar a enquete:"
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Link à enquete Dudle sobre %{polltitle}"
+msgid "Link to DuD-Poll about %{polltitle}"
+msgstr "Link à enquete DuD-Poll sobre %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2022-04-03 14:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,8 +19,8 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
-msgstr "Bu uygulama %{Dudle} tarafından desteklenmektedir."
+msgid "This application is powered by %{DuDPoll}."
+msgstr "Bu uygulama %{DuDPoll} tarafından desteklenmektedir."
 
 #: ../about.cgi:31
 msgid "License"
@@ -164,8 +164,8 @@ msgstr "Bu anket parola korumalıdır!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Devam etmek için %{user} kullanıcısının şifresini giriniz."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to DuD-Poll home and schedule a new poll"
 msgstr "Anasayfaya dönün ve yeni bir anket planlayın"
 
 #: ../authorization_required.cgi:54
@@ -348,8 +348,8 @@ msgid "Customize"
 msgstr "Özelleştirme"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
-msgstr "Dudle Anasayfası"
+msgid "DuD-Poll Home"
+msgstr "DuD-Poll Anasayfası"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
@@ -435,15 +435,15 @@ msgstr ""
 "Saygılarımla\n"
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
-msgstr "Dudle'da Hata"
+msgid "Bug in DuD-Poll"
+msgstr "DuD-Poll'da Hata"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Dudle yürütülürken bir hata oluştu.<br/>Lütfen tarayıcınız, işletim "
+"DuD-Poll yürütülürken bir hata oluştu.<br/>Lütfen tarayıcınız, işletim "
 "sisteminiz ve yaptıklarınızı içeren bir hata raporu gönderin: %{admin}"
 
 #: ../error.cgi:51
@@ -594,8 +594,8 @@ msgid "Visit the poll yourself:"
 msgstr "Anketi kendiniz ziyaret edin:"
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
-msgstr "%{polltitle} hakkında Doodle anketine bağlantı"
+msgid "Link to DuD-Poll about %{polltitle}"
+msgstr "%{polltitle} hakkında DuD-Poll anketine bağlantı"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

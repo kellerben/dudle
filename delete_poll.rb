@@ -57,7 +57,7 @@ if $cgi.include?("confirmnumber")
 			accidentstr = _("If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterminate amount of time; it could already be too late.")
 		end
 		nextthingsstr = _("You can now")
-		homepagestr = _("Return to Dudle home and schedule a new poll")
+		homepagestr = _("Return to DuD-Poll home and schedule a new poll")
 		wikipediastr = _("Browse Wikipedia")
 		searchstr = _("Search for something on the Internet")
 

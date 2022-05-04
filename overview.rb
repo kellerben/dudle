@@ -33,7 +33,7 @@ $d << _("The next steps are:")
 sendlink = _("Send the link to all participants:")
 mailstr = _("Send this link via email...")
 nextstr = _("Visit the poll yourself:")
-subjectstr = _("Link to Dudle poll about %{polltitle}") % {:polltitle => $d.title}
+subjectstr = _("Link to DuD-Poll about %{polltitle}") % {:polltitle => $d.title}
 $d << <<END
 <ol>
 	<li>

@@ -33,7 +33,7 @@ str = [_("The requested poll was not found."),
        _("There are several reasons why a poll may have been deleted:"),
        _("Somebody clicked on “Delete poll” and deleted the poll manually."),
        _("The poll was deleted by the administrator because it was not accessed for a long time."),
-       _("Return to Dudle home and schedule a new poll")]
+       _("Return to DuD-Poll home and schedule a new poll")]
 
 $d << <<END
 		<p>

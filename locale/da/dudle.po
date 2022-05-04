@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2019-08-03 22:11+0200\n"
 "Last-Translator: Martin Schmiele <martin.schmiele@nbi.ku.dk>\n"
 "Language: da\n"
@@ -17,8 +17,8 @@ msgstr ""
 "X-Generator: Poedit 1.8.7.1\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
-msgstr "Denne applikation er baseret på  %{Dudle}."
+msgid "This application is powered by %{DuDPoll}."
+msgstr "Denne applikation er baseret på  %{DuDPoll}."
 
 #: ../about.cgi:31
 msgid "License"
@@ -159,9 +159,9 @@ msgstr "Afstemningen er adgangskodebeskyttet!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "For at gå videre må du angive adgangskode for bruger %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Vend tilbage til Dudle Hjem og planlæg en ny afstemning"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to DuD-Poll home and schedule a new poll"
+msgstr "Vend tilbage til DuD-Poll Hjem og planlæg en ny afstemning"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -342,8 +342,8 @@ msgid "Customize"
 msgstr "Tilpass"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
-msgstr "Dudle Hjem"
+msgid "DuD-Poll Home"
+msgstr "DuD-Poll Hjem"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
@@ -418,15 +418,15 @@ msgid ""
 msgstr ""
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
-msgstr "Fejl i Dudle"
+msgid "Bug in DuD-Poll"
+msgstr "Fejl i DuD-Poll"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Der opstod en fejl under udførelsen af Dudle. Rapport venligst fejlen, "
+"Der opstod en fejl under udførelsen af DuD-Poll. Rapport venligst fejlen, "
 "inklusive din browser og operativsystem sammen med en beskrivelse af hvad du "
 "gjorde, til % {admin}."
 
@@ -582,8 +582,8 @@ msgid "Visit the poll yourself:"
 msgstr "Gå selv til afstemningen:"
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Link til Dudle afstemning om %{polltitle}"
+msgid "Link to DuD-Poll about %{polltitle}"
+msgstr "Link til DuD-Poll afstemning om %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2011-05-11 13:46+0100\n"
 "Last-Translator: Joeri de Ruiter <joeri@cs.ru.nl>\n"
 "Language-Team: \n"
@@ -30,7 +30,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
+msgid "This application is powered by %{DuDPoll}."
 msgstr ""
 
 #: ../about.cgi:31
@@ -181,9 +181,9 @@ msgstr ""
 "Om door te kunnen gaan moet het wachtwoord voor gebruiker %{user} worden "
 "ingevoerd."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Keer terug naar Dudle home en plan een nieuwe poll"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to DuD-Poll home and schedule a new poll"
+msgstr "Keer terug naar DuD-Poll home en plan een nieuwe poll"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -365,8 +365,8 @@ msgid "Customize"
 msgstr "Aanpassen"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
-msgstr "Dudle Home"
+msgid "DuD-Poll Home"
+msgstr "DuD-Poll Home"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
@@ -452,15 +452,15 @@ msgstr ""
 "Groeten,\n"
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
-msgstr "Fout in Dudle"
+msgid "Bug in DuD-Poll"
+msgstr "Fout in DuD-Poll"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Er is een fout opgetreden tijdens het uitvoeren van Dudle.<br/>Stuur "
+"Er is een fout opgetreden tijdens het uitvoeren van DuD-Poll.<br/>Stuur "
 "alsjeblieft een melding hiervan, inclusief je browser, besturingssysteem, en "
 "wat je probeerde naar %{admin}"
 
@@ -616,8 +616,8 @@ msgid "Visit the poll yourself:"
 msgstr ""
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Link naar Dudle poll over %{polltitle}"
+msgid "Link to DuD-Poll about %{polltitle}"
+msgstr "Link naar DuD-Poll poll over %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

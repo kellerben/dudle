@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dudle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2022-04-04 18:54+0200\n"
 "Last-Translator: Benedikt Wildenhain\n"
 "Language-Team: \n"
@@ -35,8 +35,8 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
-msgstr "Diese Applikation wird mit %{Dudle} betrieben."
+msgid "This application is powered by %{DuDPoll}."
+msgstr "Diese Applikation wird mit %{DuDPoll} betrieben."
 
 #: ../about.cgi:31
 msgid "License"
@@ -136,7 +136,6 @@ msgstr ""
 "gefragt!"
 
 #: ../access_control.rb:196
-#, fuzzy
 msgid ""
 "The user ‘admin’ has access to both the vote and the configuration interface."
 msgstr ""
@@ -165,7 +164,6 @@ msgstr ""
 "Setze Umfrage zurück auf Version (siehe Versionen-Tab für Versionsnummern): "
 
 #: ../advanced.rb:39
-#, fuzzy
 msgid "Revert"
 msgstr "Umfrage zurücksetzen"
 
@@ -186,9 +184,9 @@ msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 "Um fortzufahren müssen Sie das Passwort für den Benutzer %{user} eingeben."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Zurück zur Dudle Hauptseite um eine neue Umfrage zu erstellen"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to DuD-Poll home and schedule a new poll"
+msgstr "Zurück zur DuD-Poll Hauptseite um eine neue Umfrage zu erstellen"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -199,7 +197,6 @@ msgid "Customize personal settings"
 msgstr "Persönliche Einstellungen anpassen"
 
 #: ../customize.cgi:32 ../customize.rb:32
-#, fuzzy
 msgid ""
 "You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> "
 "enabled in order to personalize your settings."
@@ -367,15 +364,15 @@ msgstr "Beispiele"
 
 #: ../dudle.rb:90
 msgid "About"
-msgstr "Über Dudle"
+msgstr "Über"
 
 #: ../dudle.rb:92
 msgid "Customize"
 msgstr "Personalisieren"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
-msgstr "Dudle Startseite"
+msgid "DuD-Poll Home"
+msgstr "DuD-Poll Startseite"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
@@ -398,9 +395,8 @@ msgid "Proceed!"
 msgstr "Weiter"
 
 #: ../dudle.rb:282
-#, fuzzy
 msgid "Select Language"
-msgstr "Gewählt"
+msgstr "Sprache wählen"
 
 #: ../edit_columns.rb:44
 msgid "Add and remove columns"
@@ -461,15 +457,15 @@ msgstr ""
 "Mit freundlichen Grüßen,\n"
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
-msgstr "Fehler im Dudle"
+msgid "Bug in DuD-Poll"
+msgstr "Fehler im DuD-Poll"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Während der Ausführung von Dudle gab es einen Fehler.<br/>Bitte schicken Sie "
+"Während der Ausführung von DuD-Poll gab es einen Fehler.<br/>Bitte schicken Sie "
 "einen Fehlerbericht, in dem Sie den Namen Ihres Browsers, Ihres "
 "Betriebssystems und, was Sie gemacht haben, angeben, an %{admin}."
 
@@ -604,7 +600,6 @@ msgstr ""
 "Jemand hat auf „Umfrage löschen“ geklickt und die Umfrage manuell gelöscht"
 
 #: ../not_found.cgi:35
-#, fuzzy
 msgid ""
 "The poll was deleted by the administrator because it was not accessed for a "
 "long time."
@@ -629,8 +624,8 @@ msgid "Visit the poll yourself:"
 msgstr "Besuchen Sie selbst die Umfrage:"
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Dudle Umfrage über %{polltitle}"
+msgid "Link to DuD-Poll about %{polltitle}"
+msgstr "DuD-Poll Umfrage über %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."
@@ -659,7 +654,6 @@ msgid "Name"
 msgstr "Name"
 
 #: ../poll.rb:229
-#, fuzzy
 msgid "Add a participant"
 msgstr "Teilnehmer einladen"
 
@@ -728,7 +722,6 @@ msgid "Enter your name"
 msgstr ""
 
 #: ../poll.rb:363
-#, fuzzy
 msgid "Enter a comment"
 msgstr "Springe zum letzten Kommentar"
 
@@ -862,7 +855,6 @@ msgstr "Hinzufügen"
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "z.B., 9:30, morgens, abends"
 
-#, fuzzy
 #~ msgid ""
 #~ "If you think that the deletion was done in error, please contact the "
 #~ "administrator of the system."

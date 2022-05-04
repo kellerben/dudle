@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Benjamin Kellermann <Benjamin.Kellermann@gmx.de>\n"
 "Language-Team: \n"
@@ -31,7 +31,7 @@ msgstr ""
 "X-Dudle-Language: Svenska\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
+msgid "This application is powered by %{DuDPoll}."
 msgstr ""
 
 #: ../about.cgi:31
@@ -179,9 +179,9 @@ msgstr ""
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Tillbaka till Dudle hem och skapa en ny omröstning"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to DuD-Poll home and schedule a new poll"
+msgstr "Tillbaka till DuD-Poll hem och skapa en ny omröstning"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -363,7 +363,7 @@ msgid "Customize"
 msgstr "Egna inställningar"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
+msgid "DuD-Poll Home"
 msgstr ""
 
 #: ../dudle.rb:208 ../dudle.rb:226
@@ -439,12 +439,12 @@ msgid ""
 msgstr ""
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
+msgid "Bug in DuD-Poll"
 msgstr ""
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
 
@@ -595,8 +595,8 @@ msgid "Visit the poll yourself:"
 msgstr ""
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Länk till Dudle omröstning om %{polltitle}"
+msgid "Link to DuD-Poll about %{polltitle}"
+msgstr "Länk till DuD-Poll omröstning om %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

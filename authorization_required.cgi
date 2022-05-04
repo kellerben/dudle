@@ -50,7 +50,7 @@ if $cgi.include?("poll")
 
 else
 	$d = Dudle.new(:title => _("Authorization required"), :hide_lang_chooser => true)
-	returnstr = _("Return to Dudle home and schedule a new poll")
+	returnstr = _("Return to DuD-Poll home and schedule a new poll")
 	authstr = _("You have to authorize yourself in order to access this page!")
 	$d << <<END
 	<p>#{authstr}</p>

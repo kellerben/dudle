@@ -26,7 +26,7 @@ require_relative "dudle"
 $d = Dudle.new
 
 $d << "<div>"
-$d << _('This application is powered by %{Dudle}.') % {:Dudle => "<a href='https://dudle.inf.tu-dresden.de'>dudle</a>"}
+$d << _('This application is powered by %{DuDPoll}.') % {:DuDPoll => "<a href='https://dud-poll.inf.tu-dresden.de'>DuD-Poll</a>"}
 $d << "</div>"
 $d << "<div><h2>" + _("License") + "</h2>"
 $d << _("The sourcecode of this application is available under the terms of <a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>.")

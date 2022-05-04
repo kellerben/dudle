@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2019-08-23 15:57+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,8 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
-msgstr "Ta aplikacja jest obsługiwana przez %{Dudle}."
+msgid "This application is powered by %{DuDPoll}."
+msgstr "Ta aplikacja jest obsługiwana przez %{DuDPoll}."
 
 #: ../about.cgi:31
 msgid "License"
@@ -172,9 +172,9 @@ msgstr "Ta ankieta jest chroniona hasłem!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Aby kontynuować, musisz podać hasło dla użytkownika %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Wróć do strony głównej Dudle i ustaw nową ankietę"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to DuD-Poll home and schedule a new poll"
+msgstr "Wróć do strony głównej DuD-Poll i ustaw nową ankietę"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -355,8 +355,8 @@ msgid "Customize"
 msgstr "Dostosuj"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
-msgstr "Strona główna Dudle"
+msgid "DuD-Poll Home"
+msgstr "Strona główna DuD-Poll"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
@@ -442,15 +442,15 @@ msgstr ""
 "Z poważaniem,\n"
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
-msgstr "Błąd w Dudle"
+msgid "Bug in DuD-Poll"
+msgstr "Błąd w DuD-Poll"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Podczas wykonywania Dudle'a wystąpił błąd.<br/>Proszę wysłać raport o "
+"Podczas wykonywania DuD-Poll'a wystąpił błąd.<br/>Proszę wysłać raport o "
 "błędzie,zawierający twoją przeglądarkę, system operacyjny, i to, co zrobiłeś "
 "do %{admin}."
 
@@ -606,8 +606,8 @@ msgid "Visit the poll yourself:"
 msgstr "Odwiedź sam ankietę:"
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Link do ankiety Dudle o nazwie %{polltitle}"
+msgid "Link to DuD-Poll about %{polltitle}"
+msgstr "Link do ankiety DuD-Poll o nazwie %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

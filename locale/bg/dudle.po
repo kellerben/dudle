@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dudle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2021-11-08 09:15+0200\n"
 "Last-Translator: vbachvarov\n"
 "Language-Team: \n"
@@ -31,8 +31,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
-msgstr "Тази програма е предоставена от %{Dudle}."
+msgid "This application is powered by %{DuDPoll}."
+msgstr "Тази програма е предоставена от %{DuDPoll}."
 
 #: ../about.cgi:31
 msgid "License"
@@ -181,9 +181,9 @@ msgstr "Това запитване е защитено с парола!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "За да продължите трябва да въведете паролата за потребител %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Върнете се към началото на Dudle и създайте ново запитване"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to DuD-Poll home and schedule a new poll"
+msgstr "Върнете се към началото на DuD-Poll и създайте ново запитване"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -358,15 +358,15 @@ msgstr "Примери"
 
 #: ../dudle.rb:90
 msgid "About"
-msgstr "Относно Dudle"
+msgstr "Относно"
 
 #: ../dudle.rb:92
 msgid "Customize"
 msgstr "Нагласи"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
-msgstr "Начало на Dudle"
+msgid "DuD-Poll Home"
+msgstr "Начало на DuD-Poll"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
@@ -452,15 +452,15 @@ msgstr ""
 "С уважение,\n"
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
-msgstr "Грешка в Dudle"
+msgid "Bug in DuD-Poll"
+msgstr "Грешка в DuD-Poll"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Случи се грешка при изпълнението на Dudle.<br/>Моля, изпратете доклад за "
+"Случи се грешка при изпълнението на DuD-Poll.<br/>Моля, изпратете доклад за "
 "грешката, включително браузъра си, операционната си система и какво "
 "направихте, адресиран до %{admin}."
 
@@ -615,8 +615,8 @@ msgid "Visit the poll yourself:"
 msgstr "Посетете запитването лично:"
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Връзка до Dudle запитване относно %{polltitle}"
+msgid "Link to DuD-Poll about %{polltitle}"
+msgstr "Връзка до DuD-Poll запитване относно %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

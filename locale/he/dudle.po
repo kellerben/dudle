@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2017-07-01 06:12+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>, 2019\n"
 "Language-Team: Hebrew (https://www.transifex.com/yaron/teams/76313/he/)\n"
@@ -23,8 +23,8 @@ msgstr ""
 "1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
-msgstr "יישום זה מופעל באמצעות %{Dudle}."
+msgid "This application is powered by %{DuDPoll}."
+msgstr "יישום זה מופעל באמצעות %{DuDPoll}."
 
 #: ../about.cgi:31
 msgid "License"
@@ -161,9 +161,9 @@ msgstr "סקר זה מוגן בססמה!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "כדי להמשיך, עליך לספק את הססמה למשתמש %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "לחזור לעמוד הבית של Dudle ולתזמן סקר חדש"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to DuD-Poll home and schedule a new poll"
+msgstr "לחזור לעמוד הבית של DuD-Poll ולתזמן סקר חדש"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -341,8 +341,8 @@ msgid "Customize"
 msgstr "התאמה אישית"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
-msgstr "עמוד הבית של Dudle"
+msgid "DuD-Poll Home"
+msgstr "עמוד הבית של DuD-Poll"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
@@ -428,15 +428,15 @@ msgstr ""
 "בברכה,\n"
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
-msgstr "באג ב־Dudle"
+msgid "Bug in DuD-Poll"
+msgstr "באג ב־DuD-Poll"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"אירעה שגיאה בעת הפעלת Dudle.<br/>נא לשלוח דוח שגיאה, לרבות תיאור הדפדפן, "
+"אירעה שגיאה בעת הפעלת DuD-Poll.<br/>נא לשלוח דוח שגיאה, לרבות תיאור הדפדפן, "
 "מערכת ההפעלה והפעולות שבוצעו מול %{admin}."
 
 #: ../error.cgi:51
@@ -585,8 +585,8 @@ msgid "Visit the poll yourself:"
 msgstr "ביקור הסקר בעצמך:"
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
-msgstr "קישור לסקר Dudle בנושא %{polltitle}"
+msgid "Link to DuD-Poll about %{polltitle}"
+msgstr "קישור לסקר DuD-Poll בנושא %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2011-12-17 02:00+0100\n"
 "Last-Translator: Laura Mora i Aubert <blackhold@marsupi.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
+msgid "This application is powered by %{DuDPoll}."
 msgstr ""
 
 #: ../about.cgi:31
@@ -163,9 +163,9 @@ msgstr "Aquesta enquesta està protegida amb contrasenya!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Per continuar, has de definir la contrasenya per al usuari %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Torna a la pàgina d'inici de Dudle i programa una nova Enquesta"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to DuD-Poll home and schedule a new poll"
+msgstr "Torna a la pàgina d'inici de DuD-Poll i programa una nova Enquesta"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -350,8 +350,8 @@ msgid "Customize"
 msgstr "Personalitza"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
-msgstr "Inici Dudle"
+msgid "DuD-Poll Home"
+msgstr "Inici DuD-Poll"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
@@ -438,15 +438,15 @@ msgstr ""
 "Atentament,\n"
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
-msgstr "Error al Dudle"
+msgid "Bug in DuD-Poll"
+msgstr "Error al DuD-Poll"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Hi ha hagut un error al executar Dudle.<br/>Si us plau, envia un informe "
+"Hi ha hagut un error al executar DuD-Poll.<br/>Si us plau, envia un informe "
 "d'error, especificant el teu navegador, sistema operatiu, i el què has fet a "
 "%{admin}."
 
@@ -601,7 +601,7 @@ msgid "Visit the poll yourself:"
 msgstr "Veure l'enquesta:"
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
+msgid "Link to DuD-Poll about %{polltitle}"
 msgstr "Vincular l'enquesta %{polltitle}"
 
 #: ../participate.rb:59

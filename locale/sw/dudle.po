@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 510\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2017-08-02 11:07-0400\n"
 "Last-Translator: Benson Muite modifying output of Yandex Translate and Bing "
 "translator\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
-msgstr "Maombi hii ni inaendeshwa na %{Dudle}."
+msgid "This application is powered by %{DuDPoll}."
+msgstr "Maombi hii ni inaendeshwa na %{DuDPoll}."
 
 #: ../about.cgi:31
 msgid "License"
@@ -161,9 +161,9 @@ msgstr "Kura hii ya maoni imelindwa na nywila!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Ili kuendelea, una kutoa nywila kwa mtumiaji %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Rudi Dudle nyumbani na ratiba ya kura ya maoni mpya"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to DuD-Poll home and schedule a new poll"
+msgstr "Rudi DuD-Poll nyumbani na ratiba ya kura ya maoni mpya"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -343,8 +343,8 @@ msgid "Customize"
 msgstr "Geuza kukufaa"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
-msgstr "Dudle nyumbani"
+msgid "DuD-Poll Home"
+msgstr "DuD-Poll nyumbani"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
@@ -430,15 +430,15 @@ msgstr ""
 "Yako,\n"
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
-msgstr "Mdudu katika Dudle"
+msgid "Bug in DuD-Poll"
+msgstr "Mdudu katika DuD-Poll"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Kosa limetokea wakati wa utekelezaji Dudle.<br/>Tafadhali tuma ripoti ya "
+"Kosa limetokea wakati wa utekelezaji DuD-Poll.<br/>Tafadhali tuma ripoti ya "
 "hitilafu, ikiwa ni pamoja na kivinjari wavuti yako, mfumo wa uendeshaji, na "
 "nini alifanya kwa %{admin}."
 
@@ -591,8 +591,8 @@ msgid "Visit the poll yourself:"
 msgstr "Tembelea uchaguzi mwenyewe:"
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Kiungo kwa Dudle uchaguzi kuhusu %{polltitle}"
+msgid "Link to DuD-Poll about %{polltitle}"
+msgstr "Kiungo kwa DuD-Poll uchaguzi kuhusu %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 08:42+0200\n"
+"POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2011-05-10 07:31+0200\n"
 "Last-Translator: Eros Pedrini\n"
 "Language-Team: \n"
@@ -30,7 +30,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../about.cgi:29
-msgid "This application is powered by %{Dudle}."
+msgid "This application is powered by %{DuDPoll}."
 msgstr ""
 
 #: ../about.cgi:31
@@ -181,9 +181,9 @@ msgstr "Questo Sondaggio è protetto da password!"
 msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr "Per procedere devi assegnare una password all'utente %{user}."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
-msgid "Return to Dudle home and schedule a new poll"
-msgstr "Ritorna alla pagina principale di Dudle e Programma un nuovo Sondaggio"
+#: ../authorization_required.cgi:53 ../not_found.cgi:36
+msgid "Return to DuD-Poll home and schedule a new poll"
+msgstr "Ritorna alla pagina principale di DuD-Poll e Programma un nuovo Sondaggio"
 
 #: ../authorization_required.cgi:54
 msgid "You have to authorize yourself in order to access this page!"
@@ -367,8 +367,8 @@ msgid "Customize"
 msgstr "Personalizza"
 
 #: ../dudle.rb:100
-msgid "Dudle Home"
-msgstr "Pagina Principale di Dudle"
+msgid "DuD-Poll Home"
+msgstr "Pagina Principale di DuD-Poll"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
@@ -454,15 +454,15 @@ msgstr ""
 "Cordiali Saluti,\n"
 
 #: ../error.cgi:46
-msgid "Bug in Dudle"
-msgstr "Errore in Dudle"
+msgid "Bug in DuD-Poll"
+msgstr "Errore in DuD-Poll"
 
 #: ../error.cgi:48
 msgid ""
-"An error occurred while executing Dudle.<br/>Please send an error report, "
+"An error occurred while executing DuD-Poll.<br/>Please send an error report, "
 "including your browser, operating system, and what you did to %{admin}."
 msgstr ""
-"Si è verificato un errore durante l'esecuzione di Dudle.<br/>Si prega di "
+"Si è verificato un errore durante l'esecuzione di DuD-Poll.<br/>Si prega di "
 "inviare una segnalazione errori a %{admin}., fornedo il browser, il sistema "
 "operativo che stavi usando e cosa stavi facendo."
 
@@ -622,8 +622,8 @@ msgid "Visit the poll yourself:"
 msgstr ""
 
 #: ../overview.rb:36
-msgid "Link to Dudle poll about %{polltitle}"
-msgstr "Link al sondaggio di Dudle su %{polltitle}"
+msgid "Link to DuD-Poll about %{polltitle}"
+msgstr "Link al sondaggio di DuD-Poll su %{polltitle}"
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."
@@ -650,7 +650,6 @@ msgid "Name"
 msgstr "Nome"
 
 #: ../poll.rb:229
-#, fuzzy
 msgid "Add a participant"
 msgstr "Invita i Partecipanti"
 
