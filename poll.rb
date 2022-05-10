@@ -221,12 +221,12 @@ HEAD
 		return <<END
 <td colspan='2' id='add_participant_input_td'>
 	<input type='hidden' name='olduser' value="#{CGI.escapeHTML(edituser.to_s)}" />
+	<label for"add_participant_input">CGI.escapeHTML(_('Name'))</label>
 	<input size='16'
 		type='text'
 		name='add_participant'
 		id='add_participant_input'
-		value="#{CGI.escapeHTML(edituser.to_s)}"
-		label='#{CGI.escapeHTML(_('Add a participant'))}'/>
+		value="#{CGI.escapeHTML(edituser.to_s)}"/>
 </td>
 END
 	end
@@ -358,10 +358,15 @@ TR
 			ret += <<ADDCOMMENT
 <form method='post' action='.' accept-charset='utf-8' id='newcomment'>
 	<div class='comment' id='add_comment'>
-		<input value="#{CGI.escapeHTML($cgi.cookies["username"][0] || "Anonymous")}" type='text' name='commentname' size='9' label='#{CGI.escapeHTML(_('Enter your name'))}'/> #{saysstr}&nbsp;
-		<br />
-		<textarea cols='50' rows='7' name='comment' label='#{CGI.escapeHTML(_('Enter a comment'))}'></textarea>
-		<br /><input type='submit' value='#{submitstr}' />
+		<label for"add_comment_name">CGI.escapeHTML(_('Enter your name'))</label>
+		<br>
+		<input id="add_comment_name" value="#{CGI.escapeHTML($cgi.cookies["username"][0] || "Anonymous")}" type='text' name='commentname' size='9'/> 
+		<br>
+		<label for"add_comment_area">CGI.escapeHTML(_('Enter a comment'))</label>
+		<br>
+		<textarea id="add_comment_area" cols='50' rows='7' name='comment'></textarea>
+		<br>
+		<input type='submit' value='#{submitstr}' />
 	</div>
 </form>
 ADDCOMMENT
