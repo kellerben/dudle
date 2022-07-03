@@ -225,6 +225,7 @@ HEAD
 		type='text'
 		name='add_participant'
 		id='add_participant_input'
+		aria-label='#{CGI.escapeHTML(_('Name'))}'
 		value="#{CGI.escapeHTML(edituser.to_s)}"
 		label='#{CGI.escapeHTML(_('Add a participant'))}'/>
 </td>
@@ -358,9 +359,20 @@ TR
 			ret += <<ADDCOMMENT
 <form method='post' action='.' accept-charset='utf-8' id='newcomment'>
 	<div class='comment' id='add_comment'>
-		<input value="#{CGI.escapeHTML($cgi.cookies["username"][0] || "Anonymous")}" type='text' name='commentname' size='9' label='#{CGI.escapeHTML(_('Enter your name'))}'/> #{saysstr}&nbsp;
+		<input
+			value="#{CGI.escapeHTML($cgi.cookies["username"][0] || "Anonymous")}"
+			type='text'
+			name='commentname'
+			size='9'
+			aria-label='#{CGI.escapeHTML(_('Enter your name'))}'
+			label='#{CGI.escapeHTML(_('Enter your name'))}'/> #{saysstr}&nbsp;
 		<br />
-		<textarea cols='50' rows='7' name='comment' label='#{CGI.escapeHTML(_('Enter a comment'))}'></textarea>
+		<textarea
+			cols='50'
+			rows='7'
+			name='comment'
+			aria-label='#{CGI.escapeHTML(_('Enter a comment'))}'
+			label='#{CGI.escapeHTML(_('Enter a comment'))}'></textarea>
 		<br /><input type='submit' value='#{submitstr}' />
 	</div>
 </form>

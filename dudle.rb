@@ -242,7 +242,7 @@ READY
 
 		@html.add_cookie("lang",@cgi["lang"],"/",Time.now + (1*60*60*24*365)) if @cgi.include?("lang")
 		@html << "</div>" # content
-		@html << "<div id='languageChooser'><form><select name='lang'>"
+		@html << "<div id='languageChooser'><form><select aria-label='#{CGI.escapeHTML(_('Select Language'))}' name='lang'>"
 		lang = [# sorted by native speakers according to English Wikipedia
 			["es", "Español"],# 480 million native speakers (2018)
 			["en", "English"],# 360–400 million (2006)
