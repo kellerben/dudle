@@ -167,8 +167,10 @@ SORTSYMBOL
 		case val
 		when MONTHBACK
 			navimonth = Date.parse("#{@startdate.strftime('%Y-%m')}-1")-1
+			navimonthDescription = _("Navigate one month back")
 		when MONTHFORWARD
 			navimonth = Date.parse("#{@startdate.strftime('%Y-%m')}-1")+31
+			navimonthDescription = _("Navigate one month forward")
 		else
 			raise "Unknown navi value #{val}"
 		end
@@ -176,7 +178,7 @@ SORTSYMBOL
 		<th colspan='2' style='padding:0px'>
 			<form method='post' action=''>
 				<div>
-					<input class='navigation' type='submit' value='#{val}' />
+					<input class='navigation' type='submit' title='#{navimonthDescription}' value='#{val}' />
 					<input type='hidden' name='add_remove_column_month' value='#{navimonth.strftime("%Y-%m")}' />
 					<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
 					<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
@@ -244,9 +246,12 @@ END
 		@firsttime = realtimes.min.strftime("%H").to_i
 		@lasttime  = realtimes.max.strftime("%H").to_i
 
-		def add_remove_button(klasse, buttonlabel, action, columnstring, revision, pretext = "")
-			titlestr = _("Add column")
-			titlestr = _("Delete column") if klasse == "chosen" || klasse == "delete"
+		def add_remove_button(klasse, buttonlabel, action, columnstring, revision, pretext = "", arialabel = columnstring)
+			if klasse == "chosen" || klasse == "delete"
+				titlestr = _("Delete the column %{DATE}") % {:DATE => CGI.escapeHTML(arialabel)}
+			else
+				titlestr = _("Add the column %{DATE}") % {:DATE => CGI.escapeHTML(arialabel)}
+			end
 			return <<FORM
 <form method='post' action=''>
 	<div>
@@ -403,7 +408,7 @@ END
 						hiddenvars += "<input type='hidden' name='columnid' value=\"#{TimeString.new(day,nil)}\" />"
 					end
 				end
-				ret += "<td>" + add_remove_button(klasse, chosenstr[klasse], "columntime", CGI.escapeHTML(timestamp.time_to_s), revision, hiddenvars) + "</td>"
+				ret += "<td>" + add_remove_button(klasse, chosenstr[klasse], "columntime", CGI.escapeHTML(timestamp.time_to_s), revision, hiddenvars, timestamp.to_s) + "</td>"
 
 			}
 			ret += "</tr>\n"
