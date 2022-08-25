@@ -86,8 +86,7 @@ There is a docker image available
 # Pimp your Installation
  * If you want to create your own Stylesheet, you just have to put it in
    the folder `$DUDLE_HOME_FOLDER/css/`. Afterwards you may config this
-   one to be the default Stylesheet. Examples can be found here:
-    - https://dudle.inf.tu-dresden.de/css/
+   one to be the default Stylesheet.
    You can fetch the whole repo from https://github.com/kellerben/dudle-css
  * If you want to extend the functionality you might want to place a file
    `main.rb` in `$DUDLE_HOME_FOLDER/extension/$YOUR_EXTENSION/main.rb`
