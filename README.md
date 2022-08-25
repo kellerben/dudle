@@ -91,7 +91,6 @@ There is a docker image available
    You can fetch the whole repo from https://github.com/kellerben/dudle-css
  * If you want to extend the functionality you might want to place a file
    `main.rb` in `$DUDLE_HOME_FOLDER/extension/$YOUR_EXTENSION/main.rb`
-   Examples can be found here: https://dudle.inf.tu-dresden.de/extensions/
    You can clone the whole sourcecode here:
     - https://github.com/kellerben/dudle-extensions-participate
     - https://github.com/kellerben/dudle-extensions-symcrypt
