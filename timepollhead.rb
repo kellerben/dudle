@@ -178,7 +178,7 @@ SORTSYMBOL
 		<th colspan='2' style='padding:0px'>
 			<form method='post' action=''>
 				<div>
-					<input class='navigation' type='submit' title='#{navimonthDescription}' value='#{val}' />
+					<input class='navigation' type='submit' title='#{navimonthDescription}' aria-label='#{navimonthDescription}' value='#{val}' />
 					<input type='hidden' name='add_remove_column_month' value='#{navimonth.strftime("%Y-%m")}' />
 					<input type='hidden' name='firsttime' value='#{@firsttime.to_s.rjust(2,"0")}:00' />
 					<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
@@ -193,11 +193,13 @@ END
 		when EARLIER
 			return "" if @firsttime == 0
 			str = EARLIER + " " + _("Earlier")
+			strAria = _("Add previous two hours")
 			firsttime = [@firsttime-2,0].max
 			lasttime = @lasttime
 		when LATER
 			return "" if @lasttime == 23
 			str = LATER + " " + _("Later")
+			strAria = _("Add following two hours")
 			firsttime = @firsttime
 			lasttime = [@lasttime+2,23].min
 		else
@@ -208,7 +210,7 @@ END
 	<td class='navigation' colspan='2'>
 		<form method='post' action=''>
 			<div>
-				<input class='navigation' type='submit' value='#{str}' />
+				<input class='navigation' type='submit' title='#{strAria}' aria-label='#{strAria}' value='#{str}' />
 				<input type='hidden' name='firsttime' value='#{firsttime.to_s.rjust(2,"0")}:00' />
 				<input type='hidden' name='lasttime' value='#{lasttime.to_s.rjust(2,"0")}:00' />
 				<input type='hidden' name='add_remove_column_month' value='#{@startdate.strftime("%Y-%m")}' />
@@ -255,7 +257,7 @@ END
 			return <<FORM
 <form method='post' action=''>
 	<div>
-		#{pretext}<input title='#{titlestr}' class='#{klasse}' type='submit' value="#{buttonlabel}" />
+		#{pretext}<input title='#{titlestr}' aria-label='#{titlestr}' class='#{klasse}' type='submit' value="#{buttonlabel}" />
 		<input type='hidden' name='#{action}' value="#{CGI.escapeHTML(columnstring)}" />
 		<input type='hidden' name='firsttime' value="#{@firsttime.to_s.rjust(2,"0")}:00" />
 		<input type='hidden' name='lasttime' value="#{@lasttime.to_s.rjust(2,"0")}:00" />
@@ -388,7 +390,7 @@ END
 				ret += "<input type='hidden' name='deletecolumn' value=\"#{CGI.escapeHTML(time)}\" />"
 				titlestr = _("Deselect the whole row")
 			end
-			ret += "<input type='submit' class='toggle' title='#{titlestr}' value='#{MONTHFORWARD}' />"
+			ret += "<input type='submit' class='toggle' title='#{titlestr}' aria-label='#{titlestr}' value='#{MONTHFORWARD}' />"
 			ret += <<END
 					</div>
 				</form>

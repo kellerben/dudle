@@ -127,17 +127,29 @@ class Poll
 					when nil
 						value = UNKNOWN
 						klasse = "undecided"
+						str = _("Unknown")
 					when /yes/ # allow anything containing yes (backward compatibility)
 						value = YES
 						klasse = YESVAL
+						str = _("%{user} selected Yes")  % {:user => CGI.escapeHTML(participant)}
 					when /no/
 						value = NO
 						klasse = NOVAL
+						str = _("%{user} selected No")  % {:user => CGI.escapeHTML(participant)}
 					when /maybe/
 						value = MAYBE
 						klasse = MAYBEVAL
+						str = _("%{user} selected Maybe")  % {:user => CGI.escapeHTML(participant)}
 					end
-					ret += "<td class=\"vote #{klasse}\" title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(column.to_s)}\">#{value}</td>\n"
+					ret += "<td class=\"vote #{klasse}\" title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(column.to_s)}\"><span style='position: absolute !important;
+					width: 1px !important;
+					height: 1px !important;
+					padding: 0 !important;
+					margin: -1px !important;
+					overflow: hidden !important;
+					clip: rect(0,0,0,0) !important;
+					white-space: nowrap !important;
+					border: 0 !important;'>#{str}</span><span aria-hidden='true'>#{value}</span></td>\n"
 				}
 				ret += "<td class='date'>#{poll['timestamp'].strftime('%c')}</td>"
 				ret += "</tr>\n"
