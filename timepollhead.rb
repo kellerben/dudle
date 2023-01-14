@@ -257,7 +257,7 @@ END
 			return <<FORM
 <form method='post' action=''>
 	<div>
-		#{pretext}<input title='#{titlestr}' aria-label='#{titlestr}' class='#{klasse}' type='submit' value="#{buttonlabel}" />
+		#{pretext}<input date="#{CGI.escapeHTML(arialabel)}" title='#{titlestr}' aria-label='#{titlestr}' class='#{klasse}' type='submit' value="#{buttonlabel}" />
 		<input type='hidden' name='#{action}' value="#{CGI.escapeHTML(columnstring)}" />
 		<input type='hidden' name='firsttime' value="#{@firsttime.to_s.rjust(2,"0")}:00" />
 		<input type='hidden' name='lasttime' value="#{@lasttime.to_s.rjust(2,"0")}:00" />
@@ -306,9 +306,38 @@ END
 			break if d.month != @startdate.month
 			ret += "</tr><tr>\n" if d.wday == 1
 		end
+		added = _("added")
+        removed = _("removed")
 		ret += <<END
 </tr></table>
+<div id="liveCalenderDayInfo" class="shorttextcolumn" aria-live="assertive" style="position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;"></div>
 </td>
+<script>
+    window.onload = function() {
+        var anchors = document.querySelectorAll(".notchosen,.disabled");
+        var anchors2 = document.querySelectorAll(".chosen");
+        for(var i = 0; i < anchors.length; i++) {
+            var anchor = anchors[i];
+            anchor.onclick = function() {
+                var text = "#{added}".replace("&uuml;", "ü");
+                var date = event.srcElement.getAttribute("date");
+                $("#liveCalenderDayInfo").text(date + " " + text);
+            }
+        }
+        for(var i = 0; i < anchors2.length; i++) {
+            var anchor2 = anchors2[i];
+            anchor2.onclick = function() {
+                var date = event.srcElement.getAttribute("date");
+                $("#liveCalenderDayInfo").text(date + " #{removed}");
+            }
+        }
+    }
+</script>
 END
 
 
