@@ -176,7 +176,7 @@ $d.html << "<h2>" + _("Change access control settings") + "</h2>"
 
 if acusers.empty? && $cgi["ac_activate"] != "Activate"
 
-	acstatus = ["red",_("not activated")]
+	acstatus = ["rgb(179, 0, 0)",_("not activated")]
 	acswitchbutton = "<input type='hidden' name='ac_activate' value='Activate' />"
 	acswitchbutton += "<input type='submit' value='" + _("Activate") + "' />"
 else
@@ -185,7 +185,7 @@ else
 		acswitchbutton = "<input type='hidden' name='ac_activate' value='Deactivate' />"
 		acswitchbutton += "<input type='submit' value='" + _("Deactivate") + "' />"
 	else
-		acstatus = ["green", _("activated")]
+		acstatus = ["rgb(0, 120, 0)", _("activated")]
 		acswitchbutton = "<div class='shorttextcolumn'>" + _("You have to remove all users before you can deactivate the access control settings.") + "</div>"
 	end
 
