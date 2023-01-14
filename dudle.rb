@@ -167,6 +167,7 @@ class Dudle
 		else
 			css = @css
 		end
+		@html.add_css("#{@basedir}/accessibility.css")
 		css.each{|href|
 			@html.add_css("#{@basedir}/#{href}",href.scan(/([^\/]*)\.css/).flatten[0] ,href == @user_css)
 		}
