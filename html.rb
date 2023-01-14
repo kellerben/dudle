@@ -128,7 +128,7 @@ SCRIPT
 #			 code = char[0]
 #			 code > 127 ? "&##{code};" : char
 #		}
-		xmllang = _("xml:lang='en' dir='ltr'")
+		xmllang = _("xml:lang='en' lang='en' dir='ltr'")
 		cgi.out(@header){
 			<<HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"

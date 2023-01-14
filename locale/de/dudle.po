@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dudle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-03 13:43+0100\n"
+"POT-Creation-Date: 2023-01-14 14:41+0100\n"
 "PO-Revision-Date: 2022-04-04 18:54+0200\n"
 "Last-Translator: Benedikt Wildenhain\n"
 "Language-Team: \n"
@@ -76,12 +76,12 @@ msgstr ""
 "entfernen können."
 
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
-#: ../delete_poll.rb:112 ../poll.rb:354
+#: ../delete_poll.rb:113 ../poll.rb:353
 msgid "Delete"
 msgstr "Löschen"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
-#: ../poll.rb:316
+#: ../poll.rb:315
 msgid "Save"
 msgstr "Speichern"
 
@@ -184,7 +184,7 @@ msgid "In order to proceed, you have to give the password for user %{user}."
 msgstr ""
 "Um fortzufahren müssen Sie das Passwort für den Benutzer %{user} eingeben."
 
-#: ../authorization_required.cgi:53 ../delete_poll.rb:60 ../not_found.cgi:36
+#: ../authorization_required.cgi:53 ../delete_poll.rb:61 ../not_found.cgi:36
 msgid "Return to DuD-Poll home and schedule a new poll"
 msgstr "Zurück zur DuD-Poll Hauptseite um eine neue Umfrage zu erstellen"
 
@@ -264,19 +264,23 @@ msgstr "Ich bin mir der Konsequenzen bewusst."
 msgid "Please delete this poll."
 msgstr "Bitte lösche diese Umfrage."
 
-#: ../delete_poll.rb:42
+#: ../delete_poll.rb:36
+msgid "Delete form"
+msgstr "Löschformular"
+
+#: ../delete_poll.rb:43
 msgid "Example polls cannot be deleted."
 msgstr "Beispielumfragen können nicht gelöscht werden."
 
-#: ../delete_poll.rb:43
+#: ../delete_poll.rb:44
 msgid "You should never see this text."
 msgstr "Diesen Text sollten Sie niemals sehen."
 
-#: ../delete_poll.rb:56
+#: ../delete_poll.rb:57
 msgid "The poll was deleted successfully!"
 msgstr "Die Umfrage wurde erfolgreich gelöscht!"
 
-#: ../delete_poll.rb:57
+#: ../delete_poll.rb:58
 msgid ""
 "If this was done by accident, please contact the administrator of the "
 "system. The poll can be recovered for an indeterminate amount of time; it "
@@ -286,39 +290,39 @@ msgstr ""
 "des Systems. Die Umfrage kann für einen unvorhersehbaren Zeitraum "
 "wiederhergestellt werden, vielleicht ist es jetzt schon zu spät."
 
-#: ../delete_poll.rb:59
+#: ../delete_poll.rb:60
 msgid "You can now"
 msgstr "Sie können jetzt"
 
-#: ../delete_poll.rb:61
+#: ../delete_poll.rb:62
 msgid "Browse Wikipedia"
 msgstr "bei Wikipedia stöbern"
 
-#: ../delete_poll.rb:62
+#: ../delete_poll.rb:63
 msgid "Search for something on the Internet"
 msgstr "Etwas im Internet suchen"
 
-#: ../delete_poll.rb:88
+#: ../delete_poll.rb:89
 msgid "To delete the poll, you have to type:"
 msgstr "Um diese Umfrage zu löschen, müssen Sie den folgenden Satz eingeben:"
 
-#: ../delete_poll.rb:96
+#: ../delete_poll.rb:97
 msgid "but you typed:"
 msgstr "Ihre Eingabe lautete aber:"
 
-#: ../delete_poll.rb:108
+#: ../delete_poll.rb:109
 msgid "Delete this poll"
 msgstr "Diese Umfrage löschen"
 
-#: ../delete_poll.rb:109
+#: ../delete_poll.rb:110
 msgid "You want to delete the poll named"
 msgstr "Sie wollen die Umfrage mit folgendem Namen löschen:"
 
-#: ../delete_poll.rb:110
+#: ../delete_poll.rb:111
 msgid "This is an irreversible action!"
 msgstr "Das Löschen der gesamten Umfrage ist unwiderrufbar!"
 
-#: ../delete_poll.rb:111
+#: ../delete_poll.rb:112
 msgid ""
 "If you are sure that you want to permanently remove this poll, please type "
 "“%{question}” into the form."
@@ -374,27 +378,27 @@ msgstr "Personalisieren"
 msgid "DuD-Poll Home"
 msgstr "DuD-Poll Startseite"
 
-#: ../dudle.rb:208 ../dudle.rb:226
+#: ../dudle.rb:209 ../dudle.rb:227
 msgid "Previous"
 msgstr "Zurück"
 
-#: ../dudle.rb:209 ../dudle.rb:227
+#: ../dudle.rb:210 ../dudle.rb:228
 msgid "Next"
 msgstr "Weiter"
 
-#: ../dudle.rb:210 ../dudle.rb:228
+#: ../dudle.rb:211 ../dudle.rb:229
 msgid "Finish"
 msgstr "Fertig"
 
-#: ../dudle.rb:233
+#: ../dudle.rb:234
 msgid "All changes were saved successfully."
 msgstr "Alle Änderungen wurden erfolgreich gespeichert."
 
-#: ../dudle.rb:233
+#: ../dudle.rb:234
 msgid "Proceed!"
 msgstr "Weiter"
 
-#: ../dudle.rb:245 ../dudle.rb:282
+#: ../dudle.rb:246 ../dudle.rb:283
 msgid "Select Language"
 msgstr "Sprache wählen"
 
@@ -494,8 +498,8 @@ msgid "Current poll (version %{revisionnumber})"
 msgstr "Aktuelle Umfrage (Version %{revisionnumber})"
 
 #: ../html.rb:131
-msgid "xml:lang='en' dir='ltr'"
-msgstr "xml:lang='de' dir='ltr'"
+msgid "xml:lang='en' lang='en' dir='ltr'"
+msgstr "xml:lang='de' lang='de' dir='ltr'"
 
 #: ../index.cgi:32
 msgid "Please enter a descriptive title."
@@ -657,115 +661,115 @@ msgstr "%{user} hat Nein ausgewählt"
 msgid "%{user} selected Maybe"
 msgstr "%{user} hat Vielleicht ausgewählt"
 
-#: ../poll.rb:167
+#: ../poll.rb:166
 msgid "Total"
 msgstr "Summe"
 
-#: ../poll.rb:199
+#: ../poll.rb:198
 msgid "Invite"
 msgstr "Einladen"
 
-#: ../poll.rb:200 ../poll.rb:241 ../pollhead.rb:62 ../timepollhead.rb:158
+#: ../poll.rb:199 ../poll.rb:240 ../pollhead.rb:62 ../timepollhead.rb:158
 msgid "Name"
 msgstr "Name"
 
-#: ../poll.rb:243
+#: ../poll.rb:242
 msgid "Add a participant"
 msgstr "Teilnehmer einladen"
 
-#: ../poll.rb:247
+#: ../poll.rb:246
 msgid "Save changes"
 msgstr "Speichern"
 
-#: ../poll.rb:251
+#: ../poll.rb:250
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: ../poll.rb:273
+#: ../poll.rb:272
 msgid "Do you really want to delete user %{user}?"
 msgstr "Wollen Sie den Teilnehmer %{user} wirklich löschen?"
 
-#: ../poll.rb:276
+#: ../poll.rb:275
 msgid "Confirm"
 msgstr "Bestätigen"
 
-#: ../poll.rb:297
+#: ../poll.rb:296
 msgid "Yes"
 msgstr "Ja"
 
-#: ../poll.rb:297
+#: ../poll.rb:296
 msgid "No"
 msgstr "Nein"
 
-#: ../poll.rb:297
+#: ../poll.rb:296
 msgid "Maybe"
 msgstr "Vielleicht"
 
-#: ../poll.rb:325
+#: ../poll.rb:324
 msgid "Comments"
 msgstr "Kommentare"
 
-#: ../poll.rb:328
+#: ../poll.rb:327
 msgid "Sort oldest comment first"
 msgstr "Zeige den ältesten Kommentar zuerst an"
 
-#: ../poll.rb:331
+#: ../poll.rb:330
 msgid "Sort newest comment first"
 msgstr "Zeige den neusten Kommentar zuerst an"
 
-#: ../poll.rb:336
+#: ../poll.rb:335
 msgid "Go to last comment"
 msgstr "Springe zum letzten Kommentar"
 
-#: ../poll.rb:349
+#: ../poll.rb:348
 msgid "%{user} said on %{time}"
 msgstr "%{user} sagte am %{time}"
 
-#: ../poll.rb:364
+#: ../poll.rb:363
 msgid "Go up"
 msgstr "Gehe nach oben"
 
-#: ../poll.rb:370
+#: ../poll.rb:369
 msgid "says"
 msgstr "sagt"
 
-#: ../poll.rb:371
+#: ../poll.rb:370
 msgid "Submit comment"
 msgstr "Sende Kommentar"
 
-#: ../poll.rb:380 ../poll.rb:381
+#: ../poll.rb:379 ../poll.rb:380
 msgid "Enter your name"
 msgstr "Geben Sie Ihren Namen ein"
 
-#: ../poll.rb:387 ../poll.rb:388
+#: ../poll.rb:386 ../poll.rb:387
 msgid "Enter a comment"
 msgstr "Springe zum letzten Kommentar"
 
-#: ../poll.rb:400
+#: ../poll.rb:399
 msgid "Show history items:"
 msgstr "Zeige nur folgende Versionen:"
 
-#: ../poll.rb:407
+#: ../poll.rb:406
 msgid "All"
 msgstr "Alle"
 
-#: ../poll.rb:408
+#: ../poll.rb:407
 msgid "Participant related"
 msgstr "Teilnehmer betreffend"
 
-#: ../poll.rb:409
+#: ../poll.rb:408
 msgid "Column related"
 msgstr "Spalten betreffend"
 
-#: ../poll.rb:410
+#: ../poll.rb:409
 msgid "Comment related"
 msgstr "Kommentare betreffend"
 
-#: ../poll.rb:411
+#: ../poll.rb:410
 msgid "Access control related"
 msgstr "Zugriffskontrolle betreffend"
 
-#: ../poll.rb:417
+#: ../poll.rb:416
 msgid "Update"
 msgstr "Aktualisieren"
 
@@ -855,43 +859,51 @@ msgstr "Hinzufügen der Spalte %{DATE}"
 msgid "Click on the dates to add or remove columns."
 msgstr "Klicken Sie auf ein Datum, um es der Umfrage hinzuzufügen."
 
-#: ../timepollhead.rb:320
+#: ../timepollhead.rb:309
+msgid "added"
+msgstr "hinzugefügt"
+
+#: ../timepollhead.rb:310
+msgid "removed"
+msgstr "entfernt"
+
+#: ../timepollhead.rb:349
 msgid "Optional:"
 msgstr "Optional:"
 
-#: ../timepollhead.rb:321
+#: ../timepollhead.rb:350
 msgid "Select specific start times."
 msgstr "Geben Sie eine Zeit für ein Datum ein."
 
-#: ../timepollhead.rb:337
+#: ../timepollhead.rb:366
 msgid "Time"
 msgstr "Zeit"
 
-#: ../timepollhead.rb:350
+#: ../timepollhead.rb:379
 msgid "Selected"
 msgstr "Gewählt"
 
-#: ../timepollhead.rb:351
+#: ../timepollhead.rb:380
 msgid "Not selected"
 msgstr "Nicht Gewählt"
 
-#: ../timepollhead.rb:352
+#: ../timepollhead.rb:381
 msgid "Past"
 msgstr "Vergangen"
 
-#: ../timepollhead.rb:386
+#: ../timepollhead.rb:415
 msgid "Select the whole row"
 msgstr "Wähle die ganze Zeile aus"
 
-#: ../timepollhead.rb:391
+#: ../timepollhead.rb:420
 msgid "Deselect the whole row"
 msgstr "Die Auswahl der ganzen Zeile entfernen"
 
-#: ../timepollhead.rb:435
+#: ../timepollhead.rb:464
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: ../timepollhead.rb:436
+#: ../timepollhead.rb:465
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "z.B., 9:30, morgens, abends"
 
