@@ -14,4 +14,7 @@ input.disabled, td.undecided {
 	color: rgb(0, 0, 0);
 }
 
+.warning, .error{
+	color: #B25E10;
+}
 
