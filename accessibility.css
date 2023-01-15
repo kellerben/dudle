@@ -10,3 +10,8 @@
 	border: 0 !important;
 }
 
+input.disabled, td.undecided {
+	color: rgb(0, 0, 0);
+}
+
+
