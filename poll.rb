@@ -380,7 +380,7 @@ TR
 			rows='7'
 			name='comment'
 			aria-label='#{CGI.escapeHTML(_('Enter a comment'))}'
-			label='#{CGI.escapeHTML(_('Enter a comment'))}'></textarea>
+			></textarea>
 		<br /><input type='submit' value='#{submitstr}' />
 	</div>
 </form>

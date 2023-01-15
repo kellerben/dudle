@@ -757,7 +757,7 @@ msgstr "Geben Sie Ihren Namen ein"
 
 #: ../poll.rb:386 ../poll.rb:387
 msgid "Enter a comment"
-msgstr "Springe zum letzten Kommentar"
+msgstr "Geben Sie einen Kommentar ein"
 
 #: ../poll.rb:399
 msgid "Show history items:"
