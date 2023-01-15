@@ -320,12 +320,7 @@ END
         removed = _("removed")
 		ret += <<END
 </tr></table>
-<div id="liveCalenderDayInfo" class="shorttextcolumn" aria-live="assertive" style="position:absolute;
-left:-10000px;
-top:auto;
-width:1px;
-height:1px;
-overflow:hidden;"></div>
+<div id="liveCalenderDayInfo" class="shorttextcolumn visually-hidden" aria-live="assertive"></div>
 </td>
 <script>
     window.onload = function() {
