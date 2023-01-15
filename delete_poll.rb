@@ -33,6 +33,7 @@ QUESTIONS = [ "phahqu3Uib4neiRi",
              _("Please delete this poll.")]
 
 userconfirm = CGI.escapeHTML($cgi["confirm"].strip)
+deleteform = _("Delete form")
 if $cgi.include?("confirmnumber")
  confirm = $cgi["confirmnumber"].to_i
 	if userconfirm == QUESTIONS[confirm]
@@ -113,11 +114,14 @@ deletestr = _("Delete")
 $d.html << %{
 	#{hint}
 	<form method='post' action='' accept-charset='utf-8'>
-		<div>
+		<table  class='settingstable'>
+			<td class='label'><label for="confirm">#{deleteform}:</label></td>	
+			<td>
 			<input type='hidden' name='confirmnumber' value="#{confirm}" />
-			<input size='30' type='text' name='confirm' value="#{userconfirm}" />
+			<input size='30' type='text' id ='confirm' name='confirm' value="#{userconfirm}" />
 			<input type='submit' value="#{deletestr}" />
-		</div>
+			</td>
+		</table>
 	</form>
 }
 
