@@ -395,8 +395,8 @@ ADDCOMMENT
 		ret = <<FORM
 <form method='get' action=''>
 	<div>
-		#{showhiststr}
-		<select name='history'>
+	<label class='label' for='history'>#{showhiststr}</label>
+		<select name='history' id='history'>
 FORM
 		[["",_("All")],
 		 ["participants",_("Participant related")],
