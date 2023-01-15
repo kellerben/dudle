@@ -151,7 +151,8 @@ class TimePollHead
 
 		def sortsymb(scols,col)
 			return <<SORTSYMBOL
-<span class='sortsymb'> #{scols.include?(col) ? SORT : NOSORT}</span>
+			<span class="visually-hidden">#{scols.include?(col) ? _("Sort") : _("No Sort")}</span>
+			<span class='sortsymb' aria-hidden='true'> #{scols.include?(col) ? SORT : NOSORT}</span>
 SORTSYMBOL
 		end
 

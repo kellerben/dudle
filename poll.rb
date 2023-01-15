@@ -315,15 +315,18 @@ TR
 		ret = "<div id='comments'>"
 		ret	+= "<h2>" + _("Comments") if !@comment.empty? || editable
 			if $cgi.include?("comments_reverse")
-				ret	+= " <a class='comment_sort' href='?' title='"
+				ret += "<span class='visually-hidden'>"+_("Reverse Sort")+"</span>"
+				ret	+= "<a class='comment_sort' aria-hidden='true' href='?' title='"
 				ret += _("Sort oldest comment first") + "'>#{REVERSESORT}</a>"
 			else
-				ret	+= " <a class='comment_sort' href='?comments_reverse' title='"
+				ret += "<span class='visually-hidden'>"+_("Sort")+"</span>"
+				ret	+= "<a class='comment_sort' aria-hidden='true' href='?comments_reverse' title='"
 				ret += _("Sort newest comment first") + "'>#{SORT}</a>"
 			end
 
 		if @comment.size > 5
-			ret += " <a class='top_bottom_ref' href='#comment#{@comment.size - 1}' title='"
+			ret += "<span class='visually-hidden'>"+_("Go to last comment")+"</span>"
+			ret += "<a class='top_bottom_ref' aria-hidden='true' href='#comment#{@comment.size - 1}' title='"
 			ret += _("Go to last comment") + "'>#{GODOWN}</a>"
 		end
 
@@ -351,7 +354,8 @@ TR
 		end
 
 		if @comment.size > 5
-			ret += "<a class='top_bottom_ref' href='#top' title='"
+			ret += "<span class='visually-hidden'>"+_("Go up")+"</span>"
+			ret += "<a class='top_bottom_ref' aria-hidden='true' href='#top' title='"
 			ret += _("Go up") + "'>#{GOUP}</a>"
 		end
 
