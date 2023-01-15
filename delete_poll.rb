@@ -33,7 +33,6 @@ QUESTIONS = [ "phahqu3Uib4neiRi",
              _("Please delete this poll.")]
 
 userconfirm = CGI.escapeHTML($cgi["confirm"].strip)
-deleteform = _("Delete form")
 if $cgi.include?("confirmnumber")
  confirm = $cgi["confirmnumber"].to_i
 	if userconfirm == QUESTIONS[confirm]
@@ -111,6 +110,7 @@ $d.html << _("You want to delete the poll named") + " <b>#{CGI.escapeHTML($d.tab
 $d.html << _("This is an irreversible action!") + "<br />"
 $d.html << _("If you are sure that you want to permanently remove this poll, please type “%{question}” into the form.") % {:question => QUESTIONS[confirm]}
 deletestr = _("Delete")
+deleteform = _("Delete form")
 $d.html << %{
 	#{hint}
 	<form method='post' action='' accept-charset='utf-8'>
