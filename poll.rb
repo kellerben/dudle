@@ -230,8 +230,7 @@ HEAD
 		name='add_participant'
 		id='add_participant_input'
 		aria-label='#{CGI.escapeHTML(_('Name'))}'
-		value="#{CGI.escapeHTML(edituser.to_s)}"
-		label='#{CGI.escapeHTML(_('Add a participant'))}'/>
+		value="#{CGI.escapeHTML(edituser.to_s)}"/>
 </td>
 END
 	end
@@ -373,7 +372,7 @@ TR
 			name='commentname'
 			size='9'
 			aria-label='#{CGI.escapeHTML(_('Enter your name'))}'
-			label='#{CGI.escapeHTML(_('Enter your name'))}'/> #{saysstr}&nbsp;
+			title='#{CGI.escapeHTML(_('Enter your name'))}'/> #{saysstr}&nbsp;
 		<br />
 		<textarea
 			cols='50'
