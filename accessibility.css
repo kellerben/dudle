@@ -10,8 +10,12 @@
 	border: 0 !important;
 }
 
-input.disabled, td.undecided {
+td.undecided {
 	color: rgb(0, 0, 0);
+}
+
+input.disabled {
+	color:rgb(153, 153, 153)
 }
 
 .warning, .error{
