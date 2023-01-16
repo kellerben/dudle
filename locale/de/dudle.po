@@ -53,8 +53,8 @@ msgstr ""
 "verfügbar."
 
 #: ../about.cgi:33
-msgid "The sourcecode of this application can be found %{a_start}here%{a_end}."
-msgstr "Der Quellcode der Applikation ist %{a_start}hier%{a_end} verfügbar."
+msgid "The sourcecode of this application can be found here: %{a_start}source code of this application%{a_end}."
+msgstr "Der Quellcode der Applikation ist hier verfügbar: %{a_start}Quellcode dieser Applikation%{a_end}."
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"

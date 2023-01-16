@@ -30,7 +30,7 @@ $d << _('This application is powered by %{DuDPoll}.') % {:DuDPoll => "<a href='h
 $d << "</div>"
 $d << "<div><h2>" + _("License") + "</h2>"
 $d << _("The sourcecode of this application is available under the terms of <a href='http://www.fsf.org/licensing/licenses/agpl-3.0.html'>AGPL Version 3</a>.")
-$d << _("The sourcecode of this application can be found %{a_start}here%{a_end}.") % { :a_start => "<a href=\"#{$conf.dudle_src}\">", :a_end => "</a>"}
+$d << _("The sourcecode of this application can be found here: %{a_start}source code of this application%{a_end}.") % { :a_start => "<a href=\"#{$conf.dudle_src}\">", :a_end => "</a>"}
 $d << "</div>"
 
 $d << $conf.aboutnotice
