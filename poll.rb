@@ -94,9 +94,13 @@ class Poll
 			ret += "<td><span class='edituser'>"
 			ret += "<a title=\""
 			ret += _("Edit user %{user}...") % {:user => CGI.escapeHTML(participant)}
+			ret += "\" alt=\""
+			ret += _("Edit user %{user}...") % {:user => CGI.escapeHTML(participant)}
 			ret += "\" href=\"?edituser=#{CGI.escape(participant)}\">"
 			ret += EDIT
 			ret += "</a> | <a title=\""
+			ret += _("Delete user %{user}...") % {:user => CGI.escapeHTML(participant)}
+			ret += "\" alt=\""
 			ret += _("Delete user %{user}...") % {:user => CGI.escapeHTML(participant)}
 			ret += "\" href=\"?deleteuser&amp;edituser=#{CGI.escape(participant)}\">"
 			ret += "#{DELETE}</a>"
