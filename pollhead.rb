@@ -55,7 +55,7 @@ class PollHead
 	def to_html(scols, showeditbuttons = false,activecolumn = nil)
 		def sortsymb(scols,col)
 			return <<SORTSYMBOL
-			<span class="visually-hidden">#{scols.include?(col) ? _("Sort") : _("No Sort")}</span>
+			<span class="sortsymb visually-hidden">#{scols.include?(col) ? _("Sort") : _("No Sort")}</span>
 			<span class='sortsymb' aria-hidden='true'> #{scols.include?(col) ? SORT : NOSORT}</span>
 SORTSYMBOL
 		end
