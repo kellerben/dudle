@@ -388,7 +388,7 @@ msgstr "Sortierung umkehren"
 
 #: ../dudle.rb:184 ../dudle.rb:195
 msgid "No Sort"
-msgstr "Keine Sortierung"
+msgstr "Nicht sortiert"
 
 #: ../dudle.rb:234 ../dudle.rb:252
 msgid "Previous"
