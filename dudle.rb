@@ -140,7 +140,7 @@ class Dudle
 		else
 			@basedir = "."
 			inittabs
-			@title = params[:title] || "DuD-Poll"
+			@title = params[:title] || "DuD-Poll - #{@tabtitle}"
 			@html = HTML.new(@title,params[:relative_dir])
 		end
 
