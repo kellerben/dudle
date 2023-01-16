@@ -865,6 +865,9 @@ msgstr "Füge nachfolgende zwei Stunden hinzu"
 msgid "Delete the column %{DATE}"
 msgstr "Entferne die Spalte %{DATE}"
 
+msgid "Add the already past column %{DATE}"
+msgstr "Hinzufügen der bereits vergangenen Spalte %{DATE}"
+
 #: ../timepollhead.rb:266
 msgid "Add the column %{DATE}"
 msgstr "Hinzufügen der Spalte %{DATE}"
@@ -875,7 +878,7 @@ msgstr "Klicken Sie auf ein Datum, um es der Umfrage hinzuzufügen."
 
 #: ../timepollhead.rb:320
 msgid "added"
-msgstr "hinzugefügt"
+msgstr "angegliedert"
 
 #: ../timepollhead.rb:321
 msgid "removed"
