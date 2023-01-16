@@ -141,9 +141,9 @@ class Poll
 						klasse = MAYBEVAL
 						str = _("%{user} selected Maybe")  % {:user => CGI.escapeHTML(participant)}
 					end
-					ret += "<td class=\"vote #{klasse}\" title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(column.to_s)}\"><span class='visually-hidden'>#{str}</span><span aria-hidden='true'>#{value}</span></td>\n"
+					ret += "<td class=\"vote #{klasse}\" title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(DateTime.parse(column.to_s).strftime('%d-%m-%Y %H:%M'))}\"><span class='visually-hidden'>#{str}</span><span aria-hidden='true'>#{value}</span></td>\n"
 				}
-				ret += "<td class='date'>#{poll['timestamp'].strftime('%c')}</td>"
+				ret += "<td class='date'>#{poll['timestamp'].strftime('%d %B %Y %H:%M')}</td>"
 				ret += "</tr>\n"
 			end
 		}
@@ -292,8 +292,8 @@ END
 							value='#{valbinary}'
 							id=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\"
 							name=\"add_participant_checked_#{CGI.escapeHTML(column.to_s)}\"
-							aria-label=\"#{CGI.escapeHTML(column.to_s)}: #{valtext}\"
-							title=\"#{CGI.escapeHTML(column.to_s)}: #{valhuman}\" #{checked[column] == valbinary ? "checked='checked'":""}/>
+							aria-label=\"#{CGI.escapeHTML(DateTime.parse(column.to_s).strftime('%d-%m-%Y %H:%M'))}: #{valtext}\"
+							title=\"#{CGI.escapeHTML(DateTime.parse(column.to_s).strftime('%d-%m-%Y %H:%M'))}: #{valhuman}\" #{checked[column] == valbinary ? "checked='checked'":""}/>
 					</td>
 					<td class='input-label'>
 						<label for=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\">#{valhuman}</label>

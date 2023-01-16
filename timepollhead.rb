@@ -151,8 +151,7 @@ class TimePollHead
 
 		def sortsymb(scols,col)
 			return <<SORTSYMBOL
-			<span class="visually-hidden">#{scols.include?(col) ? _("Sort") : _("No Sort")}</span>
-			<span class='sortsymb' aria-hidden='true'> #{scols.include?(col) ? SORT : NOSORT}</span>
+<span class='sortsymb'> #{scols.include?(col) ? SORT : NOSORT}</span>
 SORTSYMBOL
 		end
 
@@ -259,16 +258,16 @@ END
 		@firsttime = realtimes.min.strftime("%H").to_i
 		@lasttime  = realtimes.max.strftime("%H").to_i
 
-		def add_remove_button(klasse, buttonlabel, action, columnstring, revision, pretext = "", arialabel = columnstring)
+		def add_remove_button(klasse, buttonlabel, action, columnstring, revision, pretext = "", arialabel = columnstring, properdate)
 			if klasse == "chosen" || klasse == "delete"
-				titlestr = _("Delete the column %{DATE}") % {:DATE => CGI.escapeHTML(arialabel)}
+				titlestr = _("Delete the column %{DATE}") % {:DATE => CGI.escapeHTML(properdate)}
 			else
-				titlestr = _("Add the column %{DATE}") % {:DATE => CGI.escapeHTML(arialabel)}
+				titlestr = _("Add the column %{DATE}") % {:DATE => CGI.escapeHTML(properdate)}
 			end
 			return <<FORM
 <form method='post' action=''>
 	<div>
-		#{pretext}<input date="#{CGI.escapeHTML(arialabel)}" title='#{titlestr}' aria-label='#{titlestr}' class='#{klasse}' type='submit' value="#{buttonlabel}" />
+		#{pretext}<input date="#{CGI.escapeHTML(properdate)}" title='#{titlestr}' aria-label='#{titlestr}' class='#{klasse}' type='submit' value="#{buttonlabel}" />
 		<input type='hidden' name='#{action}' value="#{CGI.escapeHTML(columnstring)}" />
 		<input type='hidden' name='firsttime' value="#{@firsttime.to_s.rjust(2,"0")}:00" />
 		<input type='hidden' name='lasttime' value="#{@lasttime.to_s.rjust(2,"0")}:00" />
@@ -312,7 +311,7 @@ END
 				klasse = "chosen"
 				varname = "deletecolumn"
 			end
-			ret += "<td class='calendarday'>#{add_remove_button(klasse, d.day, varname, d.strftime('%Y-%m-%d'),revision)}</td>"
+			ret += "<td class='calendarday'>#{add_remove_button(klasse, d.day, varname, d.strftime('%Y-%m-%d'),revision, d.strftime('%d-%m-%Y'))}</td>"
 			d = d.next
 			break if d.month != @startdate.month
 			ret += "</tr><tr>\n" if d.wday == 1
@@ -373,7 +372,7 @@ END
 
 		head_count("%Y-%m-%d",true).each{|title,count|
 			coltime = Date.parse(title)
-			ret += "<th>" + add_remove_button("delete",DELETE, "deletecolumn", coltime.strftime("%Y-%m-%d"), revision, "#{coltime.strftime('%a, %d')}&nbsp;") + "</th>"
+			ret += "<th>" + add_remove_button("delete",DELETE, "deletecolumn", coltime.strftime("%Y-%m-%d"), revision, "#{coltime.strftime('%a, %d')}&nbsp;", d.strftime('%d-%m-%Y')) + "</th>"
 		}
 
 		ret += "</tr>"
@@ -445,7 +444,7 @@ END
 						hiddenvars += "<input type='hidden' name='columnid' value=\"#{TimeString.new(day,nil)}\" />"
 					end
 				end
-				ret += "<td>" + add_remove_button(klasse, chosenstr[klasse], "columntime", CGI.escapeHTML(timestamp.time_to_s), revision, hiddenvars, timestamp.to_s) + "</td>"
+				ret += "<td>" + add_remove_button(klasse, chosenstr[klasse], "columntime", CGI.escapeHTML(timestamp.time_to_s), revision, hiddenvars, timestamp.to_s, DateTime.parse(timestamp.to_s).strftime('%d-%m-%Y %H:%M')) + "</td>"
 
 			}
 			ret += "</tr>\n"
