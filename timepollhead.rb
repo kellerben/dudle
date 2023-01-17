@@ -442,7 +442,7 @@ END
 
 		head_count("%Y-%m-%d",true).each{|title,count|
 			coltime = Date.parse(title)
-			ret += "<th>" + add_remove_button("delete",DELETE, "deletecolumn", coltime.strftime("%Y-%m-%d"), revision, "#{coltime.strftime('%a, %d')}&nbsp;", d.strftime('%d-%m-%Y')) + "</th>"
+			ret += "<th>" + add_remove_button("delete",DELETE, "deletecolumn", coltime.strftime("%Y-%m-%d"), revision, "#{coltime.strftime('%a, %d')}&nbsp;", coltime.strftime('%d-%m-%Y')) + "</th>"
 		}
 
 		ret += "</tr>"
