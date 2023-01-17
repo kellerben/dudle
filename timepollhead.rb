@@ -168,7 +168,7 @@ SORTSYMBOL
 
 		ret += "<th class='invisible'></th></tr><tr><th colspan='2'><a href='?sort=name' data-utf='#{is_utf($USEUTF)}'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>"
 		@data.sort.each{|date|
-			ret += "<th><a title=\"#{CGI.escapeHTML(date.to_s)}\" href=\"?sort=#{CGI.escape(date.to_s)}\" data-utf='#{is_utf($USEUTF)}'>#{CGI.escapeHTML(date.time_to_s)} #{sortsymb(scols,date.to_s)}</a></th>\n"
+			ret += "<th><a title=\"#{CGI.escapeHTML(DateTime.parse(date.to_s).strftime('%d-%m-%Y %H:%M'))}\" href=\"?sort=#{CGI.escape(date.to_s)}\" data-utf='#{is_utf($USEUTF)}'>#{CGI.escapeHTML(date.time_to_s)} #{sortsymb(scols,date.to_s)}</a></th>\n"
 		}
 		ret += "<th><a href='?' data-utf='#{is_utf($USEUTF)}'>" + _("Last edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
 		ret +="<script>window.onload = function() {
