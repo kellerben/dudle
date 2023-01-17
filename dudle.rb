@@ -172,31 +172,6 @@ class Dudle
 			@html.add_css("#{@basedir}/#{href}",href.scan(/([^\/]*)\.css/).flatten[0] ,href == @user_css)
 		}
 
-		@html.add_html_head('<style type="text/css">
-		<!--
-			[data-utf="utf"].headerSort:after {
-				content: "▴" / "' + _("Sort") + '";
-			}
-			[data-utf="utf"].headerSortReverse:after {
-				content: "▾" / "' + _("Reverse Sort") + '";
-			}
-			[data-utf="utf"][class=header]:after {
-				content: "▾▴" / "' + _("No Sort") + '";
-			}
-
-
-			[data-utf="no-utf"].headerSort:after {
-				content: "^" / "' + _("Sort") + '";
-			}
-			[data-utf="no-utf"].headerSortReverse:after {
-				content: "reverse" / "' + _("Reverse Sort") + '";
-			}
-			[data-utf="no-utf"][class=header]:after {
-				content: "" / "' + _("No Sort") + '";
-			}
-			-->
-		</style>')
-
 		@html << <<HEAD
 <body><div id="top"></div>
 HEAD

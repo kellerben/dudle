@@ -171,6 +171,73 @@ SORTSYMBOL
 			ret += "<th><a title=\"#{CGI.escapeHTML(date.to_s)}\" href=\"?sort=#{CGI.escape(date.to_s)}\" data-utf='#{is_utf($USEUTF)}'>#{CGI.escapeHTML(date.time_to_s)} #{sortsymb(scols,date.to_s)}</a></th>\n"
 		}
 		ret += "<th><a href='?' data-utf='#{is_utf($USEUTF)}'>" + _("Last edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
+		ret +="<script>window.onload = function() {
+            var no_sort = document.querySelectorAll('.header:not(.headerSort):not(.headerSortReverse)');
+            var sort = document.querySelectorAll('.headerSort');
+            var reverse_sort = document.querySelectorAll('.headerSortReverse');
+            var all_header_elements = document.querySelectorAll('.header');
+
+            function addAccessibilitySpans(type){
+                var string = '';
+                if (type === 'no_sort'){
+                    var selector = '.header:not(.headerSort):not(.headerSortReverse)';
+                    string = '"+_("No Sort")+"';
+                    var elements = no_sort;
+                } else if (type === 'sort'){
+                    string = '"+_("Sort")+"';
+                    var selector = '.headerSort';
+                    var elements = sort;
+                } else {
+                    string = '"+_("Reverse Sort")+"';
+                    var selector = '.headerSortReverse';
+                    var elements = reverse_sort;
+                }
+                if (document.querySelector(selector) !== null){
+                    var sortsymb = window.getComputedStyle(document.querySelector(selector), ':after').getPropertyValue('content');
+                    sortsymb = sortsymb.substr(1);
+                    sortsymb = sortsymb.slice(0, -1);
+                    document.styleSheets[0].addRule(selector + ':after', 'content: \"\" !important;'); 
+                
+                    for (var i = 0, len = elements.length; i < len; i++) {
+                        
+                        if (elements[i].parentNode.childNodes.length === 1){
+                            var visually_hidden_span = document.createElement('span');
+                            visually_hidden_span.className += 'visually-hidden';
+                            visually_hidden_span.innerText = string;
+                            elements[i].after(visually_hidden_span)
+                        } else {
+                            elements[i].nextSibling.innerText = string;
+                        }
+            
+                        if (elements[i].getElementsByTagName('span').length === 0){
+                            var hidden_sortsymb_span = document.createElement('span');
+                            hidden_sortsymb_span.setAttribute('aria-hidden','true');
+                            hidden_sortsymb_span.innerText = sortsymb;
+                            elements[i].appendChild(hidden_sortsymb_span);
+                        } else {
+                            elements[i].getElementsByTagName('span')[0].innerText = sortsymb;
+                        }
+
+                    }
+                }
+            }
+
+            function addAll(){
+                addAccessibilitySpans('no_sort');
+                addAccessibilitySpans('sort');
+                addAccessibilitySpans('reverse_sort');
+            }
+
+            for (var i = 0, len = all_header_elements.length; i < len; i++) {
+                all_header_elements[i].onclick = (function() {
+                    addAll();
+                });
+            }
+            
+            addAll();
+
+        }
+        </script>"
 		ret
 	end
 
