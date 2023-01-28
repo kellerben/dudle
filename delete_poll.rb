@@ -81,7 +81,7 @@ if $cgi.include?("confirmnumber")
 		exit
 	else
 		hint = %{
-<table style='background:lightgray'>
+<table style='background:rgb(225,225,225)'>
 	<tr>
 		<td style='text-align:right'>
 }

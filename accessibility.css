@@ -19,6 +19,6 @@ input.disabled {
 }
 
 .warning, .error{
-	color: #B25E10;
+	color: rgb(177, 48, 16);
 }
 
