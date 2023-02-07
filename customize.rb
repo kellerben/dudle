@@ -34,11 +34,13 @@ $d << _("You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a
 def choosetable(options, cursetting)
 	ret = <<HEAD
 <table>
+	<thead>
 	<tr>
 HEAD
 	ret += "<th>" + _("Current setting") + "</th>"
 	ret += "<th>" + _("Description") + "</th>"
 	ret += "</tr>"
+	ret += "</thead>";
 	options.each{|description,href,title|
 		selected = href == cursetting
 		ret += "<tr><td>"

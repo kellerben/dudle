@@ -360,13 +360,13 @@ END
 		ret += "<div id='selectedmonth' style='display: inline-block; width:38%; padding: 0.25em 0.5em 0.25em 0.5em' class='navigation'><b>#{@startdate.strftime('%b %Y')}</b></div>"
 		ret += datenavi(MONTHFORWARD,revision)
 
-		ret += "</div><table border='1' aria-labelledby='selectedmonth' id='calenderdaytable' class='calendarday'><tr>\n"
+		ret += "</div><table border='1' aria-labelledby='selectedmonth' id='calenderdaytable' class='calendarday'><thead><tr>\n"
 
 		7.times{|i|
 			# 2010-03-01 was a Monday, so we can use this month for a dirty hack
 			ret += "<th class='weekday'>#{Date.parse("2010-03-0#{i+1}").strftime("%a")}</th>"
 		}
-		ret += "</tr><tr>\n"
+		ret += "</tr></thead><tr>\n"
 
 		((@startdate.wday+7-1)%7).times{
 			ret += "<td class='invisible'></td>"
@@ -430,6 +430,7 @@ END
 #{hintstr}
 </div>
 <table border='1' class='calendarday'>
+<thead>
 <tr>
 END
 
@@ -446,7 +447,7 @@ END
 			ret += "<th>" + add_remove_button("delete",DELETE, "deletecolumn", coltime.strftime("%Y-%m-%d"), revision, "#{coltime.strftime('%a, %d')}&nbsp;", coltime.strftime('%d-%m-%Y')) + "</th>"
 		}
 
-		ret += "</tr>"
+		ret += "</thead></tr>"
 
 
 		days = @data.sort.collect{|date| date.date }.uniq

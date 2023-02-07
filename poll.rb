@@ -195,9 +195,9 @@ class Poll
 		namestr = _("Name")
 		ret = <<HEAD
 <table id='participanttable'>
-<tr>
-	<th colspan='2'>#{namestr}</th>
-</tr>
+<thead>
+	<tr><th colspan='2'>#{namestr}</th></tr>
+</thead>
 HEAD
 		@data.keys.sort.each{|participant|
 			has_voted = false
