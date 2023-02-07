@@ -171,35 +171,38 @@ SORTSYMBOL
 			ret += "<th><a title=\"#{CGI.escapeHTML(DateTime.parse(date.to_s).strftime('%d-%m-%Y %H:%M'))}\" href=\"?sort=#{CGI.escape(date.to_s)}\" data-utf='#{is_utf($USEUTF)}'>#{CGI.escapeHTML(date.time_to_s)} #{sortsymb(scols,date.to_s)}</a></th>\n"
 		}
 		ret += "<th><a href='?' data-utf='#{is_utf($USEUTF)}'>" + _("Last edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
+		
 		ret +="<script>window.onload = function() {
-            var no_sort = document.querySelectorAll('.header:not(.headerSort):not(.headerSortReverse)');
-            var sort = document.querySelectorAll('.headerSort');
-            var reverse_sort = document.querySelectorAll('.headerSortReverse');
+			var no_sort_selector = '.header:not(.headerSort):not(.headerSortReverse)';
+			var sort_selector = '.headerSort';
+			var reverse_sort_selector = '.headerSortReverse';
             var all_header_elements = document.querySelectorAll('.header');
+			var removed_symbols = [];
 
             function addAccessibilitySpans(type){
-                var string = '';
                 if (type === 'no_sort'){
-                    var selector = '.header:not(.headerSort):not(.headerSortReverse)';
-                    string = '"+_("No Sort")+"';
-                    var elements = no_sort;
+                    var selector = no_sort_selector;
+                    var string = '"+_("No Sort")+"';
+					var sortsymb_element = '<span aria-hidden=\"true\">" + NOSORT + "</span>';
                 } else if (type === 'sort'){
-                    string = '"+_("Sort")+"';
-                    var selector = '.headerSort';
-                    var elements = sort;
+                    var string = '"+_("Sort")+"';
+                    var selector = sort_selector;
+					var sortsymb_element = '<span aria-hidden=\"true\">" + SORT + "</span>';;
                 } else {
-                    string = '"+_("Reverse Sort")+"';
-                    var selector = '.headerSortReverse';
-                    var elements = reverse_sort;
+                    var string = '"+_("Reverse Sort")+"';
+                    var selector = reverse_sort_selector;
+					var sortsymb_element = '<span aria-hidden=\"true\">" + REVERSESORT + "</span>';;
                 }
+				var elements = document.querySelectorAll(selector);
                 if (document.querySelector(selector) !== null){
-                    var sortsymb = window.getComputedStyle(document.querySelector(selector), ':after').getPropertyValue('content');
+					var sortsymb = window.getComputedStyle(document.querySelector(selector), ':after').getPropertyValue('content');
                     sortsymb = sortsymb.substr(1);
                     sortsymb = sortsymb.slice(0, -1);
-                    document.styleSheets[0].addRule(selector + ':after', 'content: \"\" !important;'); 
-                
+					if (!removed_symbols.includes(sortsymb)){
+						document.styleSheets[0].addRule(selector + ':after', 'content: \"\" !important;');
+						removed_symbols.push(sortsymb);
+					}
                     for (var i = 0, len = elements.length; i < len; i++) {
-                        
                         if (elements[i].parentNode.childNodes.length === 1){
                             var visually_hidden_span = document.createElement('span');
                             visually_hidden_span.className += 'visually-hidden';
@@ -208,14 +211,11 @@ SORTSYMBOL
                         } else {
                             elements[i].nextSibling.innerText = string;
                         }
-            
                         if (elements[i].getElementsByTagName('span').length === 0){
-                            var hidden_sortsymb_span = document.createElement('span');
-                            hidden_sortsymb_span.setAttribute('aria-hidden','true');
-                            hidden_sortsymb_span.innerText = sortsymb;
-                            elements[i].appendChild(hidden_sortsymb_span);
+							elements[i].insertAdjacentHTML('beforeend', sortsymb_element);
                         } else {
-                            elements[i].getElementsByTagName('span')[0].innerText = sortsymb;
+                            elements[i].getElementsByTagName('span')[0].remove();
+							elements[i].insertAdjacentHTML('beforeend', sortsymb_element);
                         }
 
                     }
@@ -233,7 +233,6 @@ SORTSYMBOL
                     addAll();
                 });
             }
-            
             addAll();
 
         }
