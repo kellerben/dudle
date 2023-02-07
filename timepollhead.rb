@@ -252,7 +252,7 @@ SORTSYMBOL
 			raise "Unknown navi value #{val}"
 		end
 		return <<END
-		<th colspan='2' style='padding:0px'>
+		<div style='display: inline-block; width:27%'>
 			<form method='post' action=''>
 				<div>
 					<input class='navigation' type='submit' title='#{navimonthDescription}' aria-label='#{navimonthDescription}' value='#{val}' />
@@ -262,7 +262,7 @@ SORTSYMBOL
 					<input type='hidden' name='undo_revision' value='#{revision}' />
 				</div>
 			</form>
-		</th>
+		</div>
 END
 	end
 	def timenavi val,revision
@@ -354,13 +354,13 @@ FORM
 <div id='AddRemoveColumndaysDescription' class='shorttextcolumn'>
 #{hintstr}
 </div>
-<table border='1' class='calendarday'><tr>
+<div id='monthnav' class='calendarday'>
 END
 		ret += datenavi(MONTHBACK,revision)
-		ret += "<th colspan='3'>#{@startdate.strftime('%b %Y')}</th>"
+		ret += "<div id='selectedmonth' style='display: inline-block; width:38%; padding: 0.25em 0.5em 0.25em 0.5em' class='navigation'><b>#{@startdate.strftime('%b %Y')}</b></div>"
 		ret += datenavi(MONTHFORWARD,revision)
 
-		ret += "</tr><tr>\n"
+		ret += "</div><table border='1' aria-labelledby='selectedmonth' id='calenderdaytable' class='calendarday'><tr>\n"
 
 		7.times{|i|
 			# 2010-03-01 was a Monday, so we can use this month for a dirty hack
@@ -393,6 +393,8 @@ END
 </td>
 <script>
     window.onload = function() {
+	document.getElementById('monthnav').style.width = document.getElementById('calenderdaytable').clientWidth+"px";
+
         var anchors = document.querySelectorAll(".notchosen,.disabled");
         var anchors2 = document.querySelectorAll(".chosen");
         for(var i = 0; i < anchors.length; i++) {
