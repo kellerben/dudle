@@ -156,21 +156,12 @@ class TimePollHead
 SORTSYMBOL
 		end
 
-		
-		def is_utf(utf)
-			if utf
-				data_attribute = "utf"
-			else
-				data_attribute = "no-utf"
-			end	
-			data_attribute
-		end
 
-		ret += "<th class='invisible'></th></tr><tr><th colspan='2'><a href='?sort=name' data-utf='#{is_utf($USEUTF)}'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>"
+		ret += "<th class='invisible'></th></tr><tr><th colspan='2'><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>"
 		@data.sort.each{|date|
-			ret += "<th><a title=\"#{CGI.escapeHTML(DateTime.parse(date.to_s).strftime('%d-%m-%Y %H:%M'))}\" href=\"?sort=#{CGI.escape(date.to_s)}\" data-utf='#{is_utf($USEUTF)}'>#{CGI.escapeHTML(date.time_to_s)} #{sortsymb(scols,date.to_s)}</a></th>\n"
+			ret += "<th><a title=\"#{CGI.escapeHTML(DateTime.parse(date.to_s).strftime('%d-%m-%Y %H:%M'))}\" href=\"?sort=#{CGI.escape(date.to_s)}\">#{CGI.escapeHTML(date.time_to_s)} #{sortsymb(scols,date.to_s)}</a></th>\n"
 		}
-		ret += "<th><a href='?' data-utf='#{is_utf($USEUTF)}'>" + _("Last edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
+		ret += "<th><a href='?'>" + _("Last edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
 		
 		ret +="<script>window.onload = function() {
 			var no_sort_selector = '.header:not(.headerSort):not(.headerSortReverse)';
