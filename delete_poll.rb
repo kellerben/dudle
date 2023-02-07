@@ -81,7 +81,7 @@ if $cgi.include?("confirmnumber")
 		exit
 	else
 		hint = %{
-<table style='background:rgb(225,225,225)'>
+<table id='warningtable' style='background:rgb(225,225,225)'>
 	<tr>
 		<td style='text-align:right'>
 }
@@ -115,10 +115,10 @@ $d.html << %{
 	#{hint}
 	<form method='post' action='' accept-charset='utf-8'>
 		<table  class='settingstable'>
-			<td class='label'><label for="confirm">#{deleteform}:</label></td>	
+			<td class='label'><label id="deletform" for="confirm">#{deleteform}:</label></td>    
 			<td>
 			<input type='hidden' name='confirmnumber' value="#{confirm}" />
-			<input size='30' type='text' id ='confirm' name='confirm' value="#{userconfirm}" />
+			<input size='30' type='text' aria-labelledby='warningtable deleteform'  id ='confirm' name='confirm' value="#{userconfirm}" />
 			<input type='submit' value="#{deletestr}" />
 			</td>
 		</table>
