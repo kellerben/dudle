@@ -517,6 +517,7 @@ END
 		ret += "<tr><td colspan='2' class='invisible'></td>"
 		days.each{|d|
 			ret += <<END
+	<tr>		
 	<td class='addColumnManual'>
 		<form method='post' action='' accept-charset='utf-8'>
 			<div>
@@ -526,19 +527,22 @@ END
 				<input type='hidden' name='lasttime' value='#{@lasttime.to_s.rjust(2,"0")}:00' />
 				<input type='hidden' name='undo_revision' value='#{revision}' />
 END
+		}
 			if @data.include?(TimeString.new(d,nil))
 				ret += "<input type='hidden' name='columnid' value='#{TimeString.new(d,nil)}' />"
 			end
 			addstr = _("Add")
 			hintstr = _("e.&thinsp;g., 09:30, morning, afternoon")
+			timestr = _("Time")
 			ret += <<END
-				<input type="text" name='columntime' title='#{hintstr}' style="max-width: 10ex" /><br />
+				<label for='individualtime'>#{timestr}:</label>
+				<input type="text" id='individualtime' name='columntime' title='#{hintstr}' style="max-width: 10ex" /><br />
 				<input type="submit" value="#{addstr}" style="width: 100%" />
 			</div>
 		</form>
 	</td>
+	</tr>
 END
-		}
 
 		ret += "</tr></table>"
 		ret += "<div class='error textcolumn'>#{@edit_column_error}</div>" if @edit_column_error
