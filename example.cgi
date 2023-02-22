@@ -65,7 +65,9 @@ end
 unless $d.html.header["status"] == "REDIRECT"
 	unless $conf.examples.empty?
 		$d << "<div class='textcolumn'><h2>" + _("Examples") + "</h2>"
+		$d << "<p>"
 		$d << _("If you want to play with the application, you may want to take a look at these example polls:")
+		$d << "</p>"
 		$d << "<ul>"
 		$conf.examples.each{|poll|
 			$d << "<li><a href='example.cgi?poll=#{poll[:url]}'>#{poll[:description]}</a></li>" unless poll[:hidden]

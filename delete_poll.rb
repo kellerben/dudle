@@ -106,9 +106,10 @@ else
 end
 
 $d.html << "<h2>" + _("Delete this poll") + "</h2>"
-$d.html << _("You want to delete the poll named") + " <b>#{CGI.escapeHTML($d.table.name)}</b>.<br />"
+$d.html << "<p>" + _("You want to delete the poll named") + " <b>#{CGI.escapeHTML($d.table.name)}</b>.<br />"
 $d.html << _("This is an irreversible action!") + "<br />"
 $d.html << _("If you are sure that you want to permanently remove this poll, please type “%{question}” into the form.") % {:question => QUESTIONS[confirm]}
+$d.html << "</p>"
 deletestr = _("Delete")
 deleteform = _("Delete form")
 $d.html << %{
