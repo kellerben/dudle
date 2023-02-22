@@ -151,7 +151,7 @@ class TimePollHead
 
 		def sortsymb(scols,col)
 			return <<SORTSYMBOL
-            <span class="sortsymb visually-hidden">#{scols.include?(col) ? _("Sort") : _("No Sort")}</span>
+            <span class="sortsymb visually-hidden headerSymbol">#{scols.include?(col) ? _("Sort") : _("No Sort")}</span>
             <span class='sortsymb' aria-hidden='true'> #{scols.include?(col) ? SORT : NOSORT}</span>
 SORTSYMBOL
 		end
@@ -162,72 +162,6 @@ SORTSYMBOL
 			ret += "<th><a title=\"#{CGI.escapeHTML(DateTime.parse(date.to_s).strftime('%d-%m-%Y %H:%M'))}\" href=\"?sort=#{CGI.escape(date.to_s)}\">#{CGI.escapeHTML(date.time_to_s)} #{sortsymb(scols,date.to_s)}</a></th>\n"
 		}
 		ret += "<th><a href='?'>" + _("Last edit") + " #{sortsymb(scols,"timestamp")}</a></th>\n</tr>\n"
-		
-		ret +="<script>window.onload = function() {
-			var no_sort_selector = '.header:not(.headerSort):not(.headerSortReverse)';
-			var sort_selector = '.headerSort';
-			var reverse_sort_selector = '.headerSortReverse';
-            var all_header_elements = document.querySelectorAll('.header');
-			var removed_symbols = [];
-
-            function addAccessibilitySpans(type){
-                if (type === 'no_sort'){
-                    var selector = no_sort_selector;
-                    var string = '"+_("No Sort")+"';
-					var sortsymb_element = '<span aria-hidden=\"true\">" + NOSORT + "</span>';
-                } else if (type === 'sort'){
-                    var string = '"+_("Sort")+"';
-                    var selector = sort_selector;
-					var sortsymb_element = '<span aria-hidden=\"true\">" + SORT + "</span>';;
-                } else {
-                    var string = '"+_("Reverse Sort")+"';
-                    var selector = reverse_sort_selector;
-					var sortsymb_element = '<span aria-hidden=\"true\">" + REVERSESORT + "</span>';;
-                }
-				var elements = document.querySelectorAll(selector);
-                if (document.querySelector(selector) !== null){
-					var sortsymb = window.getComputedStyle(document.querySelector(selector), ':after').getPropertyValue('content');
-                    sortsymb = sortsymb.substr(1);
-                    sortsymb = sortsymb.slice(0, -1);
-					if (!removed_symbols.includes(sortsymb)){
-						document.styleSheets[0].addRule(selector + ':after', 'content: \"\" !important;');
-						removed_symbols.push(sortsymb);
-					}
-                    for (var i = 0, len = elements.length; i < len; i++) {
-                        if (elements[i].parentNode.childNodes.length === 1){
-                            var visually_hidden_span = document.createElement('span');
-                            visually_hidden_span.className += 'visually-hidden';
-                            visually_hidden_span.innerText = string;
-                            elements[i].after(visually_hidden_span)
-                        } else {
-                            elements[i].nextSibling.innerText = string;
-                        }
-                        if (elements[i].getElementsByTagName('span').length === 0){
-							elements[i].insertAdjacentHTML('beforeend', sortsymb_element);
-                        } else {
-                            elements[i].getElementsByTagName('span')[0].remove();
-							elements[i].insertAdjacentHTML('beforeend', sortsymb_element);
-                        }
-
-                    }
-                }
-            }
-
-            function addAll(){
-                addAccessibilitySpans('no_sort');
-                addAccessibilitySpans('sort');
-                addAccessibilitySpans('reverse_sort');
-            }
-
-            for (var i = 0, len = all_header_elements.length; i < len; i++) {
-                all_header_elements[i].onclick = (function() {
-                    addAll();
-                });
-            }
-            addAll();
-
-        }
-        </script>"
 		ret
 	end
 
@@ -322,8 +256,9 @@ END
 			elsif klasse == "disabled"
 				titlestr = _("Add the already past column %{DATE}") % {:DATE => CGI.escapeHTML(properdate)}
 			else
-				titlestr = _("Add the column %{DATE}") % {:DATE => CGI.escapeHTML(properdate)}
+				titlestr = _("Add the column %{DATE}") % {:DATE => CGI.escapeHTML(properdate)}	
 			end
+			klasse += " headerSymbol"
 			return <<FORM
 <form method='post' action=''>
 	<div>
@@ -403,6 +338,28 @@ END
                 $("#liveCalenderDayInfo").text(date + " #{removed}");
             }
         }
+		var all_table_cells = document.querySelectorAll('table.calendartime td');
+		var all_table_header = document.querySelectorAll('table.calendartime th');
+		for (var i = 0, len = all_table_cells.length; i < len; i++) {
+			all_table_cells[i].setAttribute('tabindex', 0);
+			all_table_cells[i].onfocus = (function() {
+				var headerElements = document.querySelectorAll('.headerSymbol');
+				for (var i = 0; i < headerElements.length; i++) {
+					headerElements[i].setAttribute('aria-hidden','true');
+				}
+			});
+		}
+
+		for (var i = 0, len = all_table_header.length; i < len; i++) {
+			all_table_header[i].setAttribute('tabindex', 0);
+			all_table_header[i].onfocus = (function() {
+				var headerElements = document.querySelectorAll('.headerSymbol');
+				for (var i = 0; i < headerElements.length; i++) {
+					headerElements[i].setAttribute('aria-hidden','false');
+				}
+			});
+		}
+	
     }
 </script>
 END
@@ -420,7 +377,7 @@ END
 #{optstr}<br/>
 #{hintstr}
 </div>
-<table border='1' class='calendarday'>
+<table border='1' class='calendarday calendartime'>
 <thead>
 <tr>
 END
