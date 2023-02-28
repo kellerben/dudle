@@ -145,7 +145,7 @@ class Poll
 						klasse = MAYBEVAL
 						str = _("%{user} selected Maybe")  % {:user => CGI.escapeHTML(participant)}
 					end
-					ret += "<td class=\"vote #{klasse}\" title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(DateTime.parse(column.to_s).strftime('%d-%m-%Y %H:%M'))}\"><span class='visually-hidden'>#{str}</span><span aria-hidden='true'>#{value}</span></td>\n"
+					ret += "<td class=\"vote #{klasse}\" title=\"#{CGI.escapeHTML(participant)}: #{CGI.escapeHTML(column.to_s)}\"><span class='visually-hidden'>#{str}</span><span aria-hidden='true'>#{value}</span></td>\n"
 				}
 				ret += "<td class='date'>#{poll['timestamp'].strftime('%d %B %Y %H:%M')}</td>"
 				ret += "</tr>\n"
