@@ -751,6 +751,9 @@ msgstr "sagt"
 msgid "Submit comment"
 msgstr "Sende Kommentar"
 
+msgid "Your name"
+msgstr "Dein Name"
+
 #: ../poll.rb:379 ../poll.rb:380
 msgid "Enter your name"
 msgstr "Geben Sie Ihren Namen ein"

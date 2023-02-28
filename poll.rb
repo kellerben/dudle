@@ -366,12 +366,15 @@ TR
 			# ADD COMMENT
 			saysstr = _("says")
 			submitstr = _("Submit comment")
+			commentnamestr = _("Your name")
 			ret += <<ADDCOMMENT
 <form method='post' action='.' accept-charset='utf-8' id='newcomment'>
 	<div class='comment' id='add_comment'>
+	<label for='commentname'>#{commentnamestr}:</label>
 		<input
 			value="#{CGI.escapeHTML($cgi.cookies["username"][0] || "Anonymous")}"
 			type='text'
+			id='commentname'
 			name='commentname'
 			size='9'
 			aria-label='#{CGI.escapeHTML(_('Enter your name'))}'
