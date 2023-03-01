@@ -138,13 +138,13 @@ class TimePollHead
 		ret.sort
 	end
 	def to_html(scols,config = false,activecolumn = nil)
-		ret = "<tr><th colspan='2' class='invisible'></th>"
+		ret = "<tr><td colspan='2' class='invisible'></td>"
 		head_count("%Y-%m",false).each{|title,count|
 			year, month = title.split("-").collect{|e| e.to_i}
 			ret += "<th colspan='#{count}'>#{Date.parse("#{year}-#{month}-01").strftime("%b %Y")}</th>\n"
 		}
 
-		ret += "<th class='invisible'></th></tr><tr><th colspan='2' class='invisible'></th>"
+		ret += "<td class='invisible'></td></tr><tr><td colspan='2' class='invisible'></td>"
 		head_count("%Y-%m-%d",false).each{|title,count|
 			ret += "<th colspan='#{count}'>#{Date.parse(title).strftime('%a, %d')}</th>\n"
 		}
@@ -157,7 +157,7 @@ SORTSYMBOL
 		end
 
 
-		ret += "<th class='invisible'></th></tr><tr><th colspan='2'><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>"
+		ret += "<td class='invisible'></td></tr><tr><th colspan='2'><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>"
 		@data.sort.each{|date|
 			ret += "<th><a title=\"#{CGI.escapeHTML(DateTime.parse(date.to_s).strftime('%d-%m-%Y %H:%M'))}\" href=\"?sort=#{CGI.escape(date.to_s)}\">#{CGI.escapeHTML(date.time_to_s)} #{sortsymb(scols,date.to_s)}</a></th>\n"
 		}
@@ -382,7 +382,7 @@ END
 <tr>
 END
 
-		ret += "<th class='invisible' colspan='2'></th>"
+		ret += "<td class='invisible' colspan='2'></td>"
 		head_count("%Y-%m",true).each{|title,count|
 			year,month = title.split("-").collect{|e| e.to_i}
 			ret += "<th colspan='#{count}'>#{Date.parse("#{year}-#{month}-01").strftime("%b %Y")}</th>\n"
