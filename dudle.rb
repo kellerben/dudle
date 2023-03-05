@@ -53,7 +53,7 @@ class Dudle
 		$is_poll
 	end
 	def tabs_to_html(active_tab)
-		ret = "<div id='tabs'><ul id='tablist'>"
+		ret = "<div id='tabs' role='navigation'><ul id='tablist'>"
 		@tabs.each{|tab,file|
 			case file
 			when _(active_tab)
@@ -181,7 +181,7 @@ HEAD
 #{breadcrumbs}
 <div id='main'>
 #{tabs_to_html(@tab)}
-<div id='content'>
+<div id='content' role='content'>
 	<h1 id='polltitle'>#{CGI.escapeHTML(@title)}</h1>
 HEAD
 
