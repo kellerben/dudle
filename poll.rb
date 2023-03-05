@@ -297,8 +297,7 @@ END
 							id=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\"
 							name=\"add_participant_checked_#{CGI.escapeHTML(column.to_s)}\"
 							aria-label=\"#{CGI.escapeHTML(column.to_s)}: #{valtext}\"
-                            title=\"#{CGI.escapeHTML(column.to_s)}: #{valhuman}\" #{checked[column] == valbinary ? "checked='checked'":""}/></td>
-					<td class='input-label'>
+                            title=\"#{CGI.escapeHTML(column.to_s)}: #{valhuman}\" #{checked[column] == valbinary ? "checked='checked'":""}/>
 						<label for=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\">#{valhuman}</label>
 					</td>
 			</tr>
