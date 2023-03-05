@@ -842,11 +842,11 @@ msgstr "Diese Zeit war schon gewählt."
 
 #: ../timepollhead.rb:181
 msgid "Navigate one month back"
-msgstr "Zum nächsten Monat wechseln"
+msgstr "Zum vorherigen Monat wechseln"
 
 #: ../timepollhead.rb:184
 msgid "Navigate one month forward"
-msgstr "Zum vorherigen Monat wechseln"
+msgstr "Zum nächsten Monat wechseln"
 
 #: ../timepollhead.rb:206
 msgid "Earlier"
