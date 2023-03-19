@@ -116,7 +116,7 @@ $d.html << %{
 	#{hint}
 	<form method='post' action='' accept-charset='utf-8'>
 		<table  class='settingstable'>
-			<td class='label'><label id="deletform" for="confirm">#{deleteform}:</label></td>    
+			<td class='label'><label id="deleteform" for="confirm">#{deleteform}:</label></td>    
 			<td>
 			<input type='hidden' name='confirmnumber' value="#{confirm}" />
 			<input size='30' type='text' aria-labelledby='deleteform'  id ='confirm' name='confirm' value="#{userconfirm}" />
