@@ -327,7 +327,7 @@ msgid ""
 "If you are sure that you want to permanently remove this poll, please type the following sentence into the form: %{question}"
 msgstr ""
 "Wenn Sie sich sicher sind, dann geben Sie bitte den folgenden Satz in das "
-"folgende Formular ein. „%{question}“"
+"folgende Formular ein: %{question}"
 
 #: ../delete_poll.rb:114
 msgid "Delete form"
