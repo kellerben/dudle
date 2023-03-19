@@ -113,6 +113,13 @@ class Dudle
 		"<div id='breadcrumbs'><ul><li class='breadcrumb'>#{crumbs.join("</li><li class='breadcrumb'>")}</li></ul></div>"
 	end
 
+	def polltypespan
+		if is_poll?
+			ret = "<span class='visually-hidden'>#{CGI.escapeHTML(@polltype)}</span>"
+		return ret
+		end
+	end
+
 	def initialize(params = {:revision => nil, :title => nil, :hide_lang_chooser => nil, :relative_dir => "", :load_extensions => true})
 		@requested_revision = params[:revision]
 		@hide_lang_chooser = params[:hide_lang_chooser]
@@ -128,7 +135,12 @@ class Dudle
 			@table = YAML::load(VCS.cat(self.revision, "data.yaml"))
 			@urlsuffix = File.basename(File.expand_path("."))
 			@title = @table.name
-
+			
+			if @table.head.to_s.include? "TimePollHead"
+				@polltype = _('This is a Time Poll')
+			else @table.head.to_s.include? "PollHead"
+				@polltype = _('This is an Option Poll')
+			end
 
 			configfiles = @configtabs.collect{|name,file| file}
 			@is_config = configfiles.include?(@tab)
@@ -183,6 +195,7 @@ HEAD
 #{tabs_to_html(@tab)}
 <div id='content' role='content'>
 	<h1 id='polltitle'>#{CGI.escapeHTML(@title)}</h1>
+	#{polltypespan}
 HEAD
 
 
