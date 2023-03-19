@@ -108,7 +108,7 @@ end
 $d.html << "<h2>" + _("Delete this poll") + "</h2>"
 $d.html << "<p>" + _("You want to delete the poll named") + " <b>#{CGI.escapeHTML($d.table.name)}</b>.<br />"
 $d.html << _("This is an irreversible action!") + "<br />"
-$d.html << _("If you are sure that you want to permanently remove this poll, please type “%{question}” into the form.") % {:question => QUESTIONS[confirm]}
+$d.html << _("If you are sure that you want to permanently remove this poll, please type the following sentence into the form: %{question}") % {:question => QUESTIONS[confirm]}
 $d.html << "</p>"
 deletestr = _("Delete")
 deleteform = _("Delete form")
@@ -119,7 +119,7 @@ $d.html << %{
 			<td class='label'><label id="deletform" for="confirm">#{deleteform}:</label></td>    
 			<td>
 			<input type='hidden' name='confirmnumber' value="#{confirm}" />
-			<input size='30' type='text' aria-labelledby='warningtable deleteform'  id ='confirm' name='confirm' value="#{userconfirm}" />
+			<input size='30' type='text' aria-labelledby='deleteform'  id ='confirm' name='confirm' value="#{userconfirm}" />
 			<input type='submit' value="#{deletestr}" />
 			</td>
 		</table>

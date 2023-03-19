@@ -324,11 +324,14 @@ msgstr "Das Löschen der gesamten Umfrage ist unwiderrufbar!"
 
 #: ../delete_poll.rb:111
 msgid ""
-"If you are sure that you want to permanently remove this poll, please type "
-"“%{question}” into the form."
+"If you are sure that you want to permanently remove this poll, please type the following sentence into the form: %{question}"
 msgstr ""
-"Wenn Sie sich sicher sind, dann geben Sie bitte „%{question}“ in das "
-"folgende Formular ein."
+"Wenn Sie sich sicher sind, dann geben Sie bitte den folgenden Satz in das "
+"folgende Formular ein. „%{question}“"
+
+#: ../delete_poll.rb:114
+msgid "Delete form"
+msgstr "Satz hier eingeben"
 
 #: ../dudle.rb:73
 msgid "Home"
@@ -927,8 +930,6 @@ msgstr "Hinzufügen"
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "z.B., 9:30, morgens, abends"
 
-#~ msgid "Delete form"
-#~ msgstr "Löschformular"
 
 #~ msgid ""
 #~ "If you think that the deletion was done in error, please contact the "
