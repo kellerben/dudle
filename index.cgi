@@ -104,10 +104,6 @@ unless $d.html.header["status"] == "REDIRECT"
 	</td>
 </tr>
 <tr>
-	<td></td>
-	<td class='separator_bottom'><input type='submit' value='#{createstr}' /></td>
-</tr>
-<tr>
 	<td colspan='2' class='separator_top'>#{customaddrstr}:
 	<span class='hint'>#{customaddrhintstr}</span></td>
 </tr>
@@ -115,18 +111,11 @@ unless $d.html.header["status"] == "REDIRECT"
 	<td colspan='2'><label for="poll_url">#{$conf.siteurl}</label><input id="poll_url" size='16' type='text' name='poll_url' value="#{CGI.escapeHTML($cgi["poll_url"])}" />
 	</td>
 </tr>
-CREATE
-	if defined?(createnotice)
-		$d << <<NOTICE
-<tr>
-	<td colspan='2' class='error'>
-		#{createnotice}
-	</td>
-</tr>
-NOTICE
-	end
-	$d << <<CREATE
 </table>
+<div class = 'error' aria-atomic="true" aria-live='assertive'>
+#{createnotice}
+</div>
+<input type='submit' value='#{createstr}' /></td>
 </form>
 CREATE
 
