@@ -74,10 +74,10 @@ SORTSYMBOL
 				ret += <<EDITDELETE
 <form method='post' action=''>
 	<div class='editdelete'>
-			<a class='editcolumn' href="?editcolumn=#{CGI.escape(columntitle)}" title="#{editstr}" alt="#{editstr}">
+			<a class='editcolumn' href="?editcolumn=#{CGI.escape(columntitle)}" title="#{editstr}" aria-label="#{editstr}">
 				#{EDIT}
 			</a>|
-		<input style='padding:0;margin:0' title='#{deletestr}' alt='#{deletestr}' class='delete' type='submit' value='#{DELETE}' />
+		<input style='padding:0;margin:0' title='#{deletestr}' aria-label='#{deletestr}' class='delete' type='submit' value='#{DELETE}' />
 		<input type='hidden' name='deletecolumn' value="#{CGI.escapeHTML(columntitle)}" />
 	</div>
 </form>
