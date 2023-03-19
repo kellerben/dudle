@@ -814,8 +814,8 @@ msgid "Description (optional)"
 msgstr "Beschreibung (optional)"
 
 #: ../pollhead.rb:101
-msgid "Add/Edit option"
-msgstr "Option bearbeiten/hinzufügen"
+msgid "Confirm option"
+msgstr "Option bestätigen"
 
 #: ../pollhead.rb:102
 msgid "Preview"

@@ -66,7 +66,7 @@ SORTSYMBOL
 			ret += " id='active' " if activecolumn == columntitle
 			ret += ">"
 			ret += "<a href=\"?sort=#{CGI.escape(columntitle)}\">" unless showeditbuttons
-			ret += "#{CGI.escapeHTML(columntitle)}"
+			ret += "#{CGI.escapeHTML(columntitle)} <span class='visually-hidden'>#{CGI.escapeHTML(columndescription)} </span>"
 			ret += "#{sortsymb(scols,columntitle)}</a>" unless showeditbuttons
 			if showeditbuttons
 				editstr = _("Edit option")
@@ -99,7 +99,7 @@ EDITDELETE
 		end
 		columntitlestr = _("Option")
 		descriptionstr = _("Description (optional)")
-		addeditstr = _("Add/Edit option")
+		addeditstr = _("Confirm option")
 		previewstr = _("Preview")
 		hint = _("Enter all the options (columns) which you want the participants of the poll to choose among. For each option you give here, the participants will choose a vote.")
 		ret = <<END
