@@ -137,9 +137,9 @@ class Dudle
 			@title = @table.name
 			
 			if @table.head.to_s.include? "TimePollHead"
-				@polltype = _('This is a Time Poll')
+				@polltype = _('This is a Normal poll.')
 			else @table.head.to_s.include? "PollHead"
-				@polltype = _('This is an Option Poll')
+				@polltype = _('This is a Event-scheduling poll.')
 			end
 
 			configfiles = @configtabs.collect{|name,file| file}
@@ -194,8 +194,10 @@ HEAD
 <div id='main'>
 #{tabs_to_html(@tab)}
 <div id='content' role='content'>
-	<h1 id='polltitle'>#{CGI.escapeHTML(@title)}</h1>
+	<h1 id='polltitle'>#{CGI.escapeHTML(@title)}
 	#{polltypespan}
+	</h1>
+	
 HEAD
 
 
