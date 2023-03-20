@@ -64,7 +64,6 @@ HEAD
 
 			var all_table_cells = document.querySelectorAll('td');
 			var all_table_header = document.querySelectorAll('th');
-			console.log(document.querySelectorAll('td'));
 			for (var i = 0, len = all_table_cells.length; i < len; i++) {
 				all_table_cells[i].setAttribute('tabindex', 0);
                 all_table_cells[i].onfocus = (function() {
@@ -146,6 +145,18 @@ HEAD
 				if(document.getElementById('polltypespan')!=null){
 					document.getElementById('polltypespan').remove();
 				}
+			}else {
+				var participantrows = document.querySelectorAll('tr.participantrow');
+				var particpantcount = 0;
+				for (var i = 0; i < participantrows.length; i++) {
+					if (participantrows[i].querySelectorAll('.c_no___').length >= 1 || participantrows[i].querySelectorAll('.a_yes__').length >= 1 || participantrows[i].querySelectorAll('.b_maybe').length >= 1){
+						particpantcount += 1;
+					}
+				}
+				var participantcountspan = document.createElement('span');
+				participantcountspan.className += 'visually-hidden';
+				participantcountspan.innerText = particpantcount + ' "+ _("participants have already voted.") +"';
+				document.getElementById('polltypespan').after(participantcountspan);
 			}
 
         }
