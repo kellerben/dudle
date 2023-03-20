@@ -184,8 +184,11 @@ class Poll
 			if undecided > 0
 				percent += "-#{(100.0*(undecided+yes)/@data.size).round} %"
 			end
+			
+			ofstr = _("out of")
+			votedstr = _("participants voted yes")
 
-			ret += "<td id=\"sum_#{column.to_htmlID}\" class=\"sum match_#{(percent_f/10).round*10}\" title=\"#{percent}\">#{yes}</td>\n"
+			ret += "<td aria-hidden=\"true\" id=\"sum_#{column.to_htmlID}\" class=\"sum match_#{(percent_f/10).round*10}\" title=\"#{percent}\">#{yes}<span class=visually-hidden>#{yes} #{ofstr} #{@data.size} #{votedstr}.</span></td>\n"
 		}
 
 		ret += "<td class='invisible'></td></tr>"
