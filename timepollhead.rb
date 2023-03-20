@@ -253,12 +253,12 @@ END
 		def add_remove_button(klasse, buttonlabel, action, columnstring, revision, pretext = "", arialabel = columnstring, properdate)
 			if klasse == "chosen" || klasse == "delete"
 				titlestr = _("Delete the column %{DATE}") % {:DATE => CGI.escapeHTML(properdate)}
+				klasse += " headerSymbol"
 			elsif klasse == "disabled"
 				titlestr = _("Add the already past column %{DATE}") % {:DATE => CGI.escapeHTML(properdate)}
 			else
 				titlestr = _("Add the column %{DATE}") % {:DATE => CGI.escapeHTML(properdate)}	
 			end
-			klasse += " headerSymbol"
 			return <<FORM
 <form method='post' action=''>
 	<div>
@@ -338,10 +338,12 @@ END
                 $("#liveCalenderDayInfo").text(date + " #{removed}");
             }
         }
-		var all_table_cells = document.querySelectorAll('table.calendartime td');
+		var all_table_cells = document.querySelectorAll('table.calendartime:not(.timecolumns) td ,table.calendartime td input:not([type="hidden"])');
 		var all_table_header = document.querySelectorAll('table.calendartime th');
 		for (var i = 0, len = all_table_cells.length; i < len; i++) {
-			all_table_cells[i].setAttribute('tabindex', 0);
+			if (!all_table_cells[i].closest('.timecolumns')){
+				all_table_cells[i].setAttribute('tabindex', 0);
+			}
 			all_table_cells[i].onfocus = (function() {
 				var headerElements = document.querySelectorAll('.headerSymbol');
 				for (var i = 0; i < headerElements.length; i++) {
@@ -377,7 +379,7 @@ END
 #{optstr}<br/>
 #{hintstr}
 </div>
-<table border='1' class='calendarday calendartime'>
+<table border='1' class='calendarday calendartime timecolumns'>
 <thead>
 <tr>
 END
