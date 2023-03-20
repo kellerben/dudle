@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dudle\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-19 13:43+0100\n"
+"POT-Creation-Date: 2023-03-20 16:21+0100\n"
 "PO-Revision-Date: 2022-04-04 18:54+0200\n"
 "Last-Translator: Benedikt Wildenhain\n"
 "Language-Team: \n"
@@ -382,35 +382,35 @@ msgstr "Personalisieren"
 msgid "DuD-Poll Home"
 msgstr "DuD-Poll Startseite"
 
-#: ../dudle.rb:133
+#: ../dudle.rb:140
 msgid "This is a Time Poll"
 msgstr "Dies ist eine Umfrage nach der Zeit"
 
-#: ../dudle.rb:135
+#: ../dudle.rb:142
 msgid "This is an Option Poll"
 msgstr "Dies ist eine Umfrage für Optionen"
 
-#: ../dudle.rb:217 ../dudle.rb:235
+#: ../dudle.rb:222 ../dudle.rb:240
 msgid "Previous"
 msgstr "Zurück"
 
-#: ../dudle.rb:218 ../dudle.rb:236
+#: ../dudle.rb:223 ../dudle.rb:241
 msgid "Next"
 msgstr "Weiter"
 
-#: ../dudle.rb:219 ../dudle.rb:237
+#: ../dudle.rb:224 ../dudle.rb:242
 msgid "Finish"
 msgstr "Fertig"
 
-#: ../dudle.rb:242
+#: ../dudle.rb:247
 msgid "All changes were saved successfully."
 msgstr "Alle Änderungen wurden erfolgreich gespeichert."
 
-#: ../dudle.rb:242
+#: ../dudle.rb:247
 msgid "Proceed!"
 msgstr "Weiter"
 
-#: ../dudle.rb:254 ../dudle.rb:291
+#: ../dudle.rb:259 ../dudle.rb:296
 msgid "Select Language"
 msgstr "Sprache wählen"
 
@@ -521,7 +521,7 @@ msgstr "Sortieren"
 msgid "Reverse Sort"
 msgstr "Sortierung umkehren"
 
-#: ../html.rb:219
+#: ../html.rb:225
 msgid "xml:lang='en' lang='en' dir='ltr'"
 msgstr "xml:lang='de' lang='de' dir='ltr'"
 
@@ -875,11 +875,11 @@ msgstr "Füge nachfolgende zwei Stunden hinzu"
 msgid "Delete the column %{DATE}"
 msgstr "Entferne die Spalte %{DATE}"
 
-#: ../timepollhead.rb:257
+#: ../timepollhead.rb:258
 msgid "Add the already past column %{DATE}"
 msgstr "Hinzufügen der bereits vergangenen Spalte %{DATE}"
 
-#: ../timepollhead.rb:259
+#: ../timepollhead.rb:260
 msgid "Add the column %{DATE}"
 msgstr "Hinzufügen der Spalte %{DATE}"
 
@@ -895,35 +895,35 @@ msgstr "angegliedert"
 msgid "removed"
 msgstr "entfernt"
 
-#: ../timepollhead.rb:373
+#: ../timepollhead.rb:375
 msgid "Optional:"
 msgstr "Optional:"
 
-#: ../timepollhead.rb:374
+#: ../timepollhead.rb:376
 msgid "Select specific start times."
 msgstr "Geben Sie eine Zeit für ein Datum ein."
 
-#: ../timepollhead.rb:391 ../timepollhead.rb:493
+#: ../timepollhead.rb:393
 msgid "Time"
-msgstr "Zeit"
+msgstr ""
 
-#: ../timepollhead.rb:404
+#: ../timepollhead.rb:406
 msgid "Selected"
 msgstr "Gewählt"
 
-#: ../timepollhead.rb:405
+#: ../timepollhead.rb:407
 msgid "Not selected"
 msgstr "Nicht Gewählt"
 
-#: ../timepollhead.rb:406
+#: ../timepollhead.rb:408
 msgid "Past"
 msgstr "Vergangen"
 
-#: ../timepollhead.rb:440
+#: ../timepollhead.rb:442
 msgid "Select the whole row"
 msgstr "Wähle die ganze Zeile aus"
 
-#: ../timepollhead.rb:445
+#: ../timepollhead.rb:447
 msgid "Deselect the whole row"
 msgstr "Die Auswahl der ganzen Zeile entfernen"
 
@@ -934,6 +934,10 @@ msgstr "Hinzufügen"
 #: ../timepollhead.rb:492
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
 msgstr "z.B., 9:30, morgens, abends"
+
+#: ../timepollhead.rb:493
+msgid "Write a specific time for "
+msgstr "Angeben einer Zeit für den "
 
 #~ msgid "Add a participant"
 #~ msgstr "Teilnehmer einladen"
