@@ -188,7 +188,7 @@ class Poll
 			ofstr = _("out of")
 			votedstr = _("participants voted yes")
 
-			ret += "<td aria-hidden=\"true\" id=\"sum_#{column.to_htmlID}\" class=\"sum match_#{(percent_f/10).round*10}\" title=\"#{percent}\">#{yes}<span class=visually-hidden>#{yes} #{ofstr} #{@data.size} #{votedstr}.</span></td>\n"
+			ret += "<td id=\"sum_#{column.to_htmlID}\" class=\"sum match_#{(percent_f/10).round*10}\" title=\"#{yes} #{ofstr} #{@data.size} #{votedstr}\"><span aria-hidden=\"true\">#{yes}</span><span class=\"visually-hidden\">#{yes} #{ofstr} #{@data.size} #{votedstr}.</span></td>\n"
 		}
 
 		ret += "<td class='invisible'></td></tr>"
