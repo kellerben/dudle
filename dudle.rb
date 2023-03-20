@@ -115,7 +115,7 @@ class Dudle
 
 	def polltypespan
 		if is_poll?
-			ret = "<span class='visually-hidden'>#{CGI.escapeHTML(@polltype)}</span>"
+			ret = "<span id='polltypespan' class='visually-hidden'>#{CGI.escapeHTML(@polltype)}</span>"
 		return ret
 		end
 	end

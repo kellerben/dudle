@@ -142,6 +142,12 @@ HEAD
 
             addAll();
 
+			if(Array.prototype.slice.call(document.getElementById('tablist').children).indexOf(active_tab)!=2){
+				if(document.getElementById('polltypespan')!=null){
+					document.getElementById('polltypespan').remove();
+				}
+			}
+
         }
         </script>"
 		ret += "</head>"
