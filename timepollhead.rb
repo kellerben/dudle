@@ -492,7 +492,7 @@ END
 			hintstr = _("e.&thinsp;g., 09:30, morning, afternoon")
 			timestr = _("Write a specific time for ")
 			ret += <<END
-				<input type="text" name='columntime' title='#{hintstr}' arialabel='#{timestr}#{d.strftime("%d-%m-%Y")}' style="max-width: 10ex" /><br />
+				<input type="text" name='columntime' title='#{timestr}#{d.strftime("%d-%m-%Y")}' aria-label='#{timestr}#{d.strftime("%d-%m-%Y")}' style="max-width: 10ex" /><br />
 				<input type="submit" value="#{addstr}" style="width: 100%" />
 			</div>
 		</form>
