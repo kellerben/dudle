@@ -917,7 +917,7 @@ msgstr "Geben Sie eine Zeit für ein Datum ein."
 
 #: ../timepollhead.rb:393 ../timepollhead.rb:495
 msgid "Time"
-msgstr ""
+msgstr "Zeit"
 
 #: ../timepollhead.rb:406
 msgid "Selected"
