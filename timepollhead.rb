@@ -253,7 +253,9 @@ END
 		def add_remove_button(klasse, buttonlabel, action, columnstring, revision, pretext = "", arialabel = columnstring, properdate)
 			if klasse == "chosen" || klasse == "delete"
 				titlestr = _("Delete the column %{DATE}") % {:DATE => CGI.escapeHTML(properdate)}
-				klasse += " headerSymbol"
+				if klasse == "delete"
+					klasse += " headerSymbol"
+				end	
 			elsif klasse == "disabled"
 				titlestr = _("Add the already past column %{DATE}") % {:DATE => CGI.escapeHTML(properdate)}
 			else
