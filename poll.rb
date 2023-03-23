@@ -339,19 +339,16 @@ TR
 		ret = "<div id='comments'>"
 		ret	+= "<h2>" + _("Comments") if !@comment.empty? || editable
 			if $cgi.include?("comments_reverse")
-				ret += "<a class='visually-hidden comment_sort' href='?'>"+" "+ _("Sort oldest comment first")+"</a>"
-				ret	+= "<a class='comment_sort' aria-hidden='true' href='?' title='"
-				ret += _("Sort oldest comment first") + "'>#{REVERSESORT}</a>"
+				ret += "<a class='comment_sort' href='?'><span class='visually-hidden'>"+" "+ _("Sort oldest comment first")
+				ret += "</span><span aria-hidden='true'>#{REVERSESORT}</a>"
 			else
-				ret += "<a class='visually-hidden comment_sort' href='?comments_reverse'>"+" "+_("Sort newest comment first")+"</a>"
-				ret	+= "<a class='comment_sort' aria-hidden='true' href='?comments_reverse' title='"
-				ret += _("Sort newest comment first") + "'>#{SORT}</a>"
+				ret += "<a class='comment_sort' href='?comments_reverse'><span class='visually-hidden'>"+" "+_("Sort newest comment first")
+				ret	+= "</span><span aria-hidden='true'>#{SORT}</span></a>"
 			end
 
 		if @comment.size > 5
-			ret += "<a class='visually-hidden top_bottom_ref'> href='#comment#{@comment.size - 1}'"+" "+_("Go to last comment")+"</a>"
-			ret += "<a class='top_bottom_ref' aria-hidden='true' href='#comment#{@comment.size - 1}' title='"
-			ret += _("Go to last comment") + "'>#{GODOWN}</a>"
+			ret += "<a class='top_bottom_ref' href='#comment#{@comment.size - 1}'><span class='visually-hidden'>"+" "+_("Go to last comment")
+			ret += "</span><span aria-hidden='true'>#{GODOWN}</span></a>"
 		end
 
 		ret	+= "</h2>" if !@comment.empty? || editable
@@ -378,9 +375,8 @@ TR
 		end
 
 		if @comment.size > 5
-			ret += "<span class='visually-hidden'>"+_("Go up")+"</span>"
-			ret += "<a class='top_bottom_ref' aria-hidden='true' href='#top' title='"
-			ret += _("Go up") + "'>#{GOUP}</a>"
+			ret += "<a class='top_bottom_ref'  href='#top' title='"+_("Go up")+"'><span class='visually-hidden'>"+_("Go up")
+			ret += + "</span><span aria-hidden='true'>#{GOUP}</span></a>"
 		end
 
 
