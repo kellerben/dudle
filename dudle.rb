@@ -137,9 +137,9 @@ class Dudle
 			@title = @table.name
 			
 			if @table.head.to_s.include? "TimePollHead"
-				@polltype = _('This is a Normal poll.')
-			else @table.head.to_s.include? "PollHead"
 				@polltype = _('This is a Event-scheduling poll.')
+			else @table.head.to_s.include? "PollHead"
+				@polltype = _('This is a Normal poll.')
 			end
 
 			configfiles = @configtabs.collect{|name,file| file}

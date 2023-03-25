@@ -383,7 +383,7 @@ msgid "DuD-Poll Home"
 msgstr "DuD-Poll Startseite"
 
 #: ../dudle.rb:140
-msgid "This is a Event-scheduling poll."
+msgid "This is an Event-scheduling poll."
 msgstr "Dies ist eine Umfrage nach der Zeit."
 
 #: ../dudle.rb:142
