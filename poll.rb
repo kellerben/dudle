@@ -307,7 +307,7 @@ END
 							name=\"add_participant_checked_#{CGI.escapeHTML(column.to_s)}\"
 							aria-label=\"#{CGI.escapeHTML(DateTime.parse(column.to_s).strftime('%d-%m-%Y %H:%M'))}: #{valtext}\"
                             title=\"#{CGI.escapeHTML(DateTime.parse(column.to_s).strftime('%d-%m-%Y %H:%M'))}: #{valhuman}\" #{checked[column] == valbinary ? "checked='checked'":""}/>
-							<label for=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\">#{valhuman}</label>
+							<label for=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\"><span class=\"visually-hidden\">#{valtext}</span><span aria-hidden=\"true\">#{valhuman}</span></label>
 					</td>
 			</tr>
 TR
@@ -321,7 +321,7 @@ TR
 							name=\"add_participant_checked_#{CGI.escapeHTML(column.to_s)}\"
 							aria-label=\"#{CGI.escapeHTML(column.to_s)}: #{valtext}\"
                             title=\"#{CGI.escapeHTML(column.to_s)}: #{valhuman}\" #{checked[column] == valbinary ? "checked='checked'":""}/>
-						<label for=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\">#{valhuman}</label>
+							<label for=\"add_participant_checked_#{column.to_htmlID}_#{valbinary}\"><span class=\"visually-hidden\">#{valtext}</span><span aria-hidden=\"true\">#{valhuman}</span></label>
 					</td>
 			</tr>
 TR
