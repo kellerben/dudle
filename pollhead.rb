@@ -62,7 +62,7 @@ SORTSYMBOL
 		ret = "<tr>"
 		ret += "<th colspan='2'><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>\n" unless showeditbuttons
 		@data.sort.each{|columntitle,columndescription|
-			ret += "<th title=\"#{CGI.escapeHTML(columndescription)}\""
+			ret += "<th class='polloptions' title=\"#{CGI.escapeHTML(columndescription)}\""
 			ret += " id='active' " if activecolumn == columntitle
 			ret += ">"
 			ret += "<a href=\"?sort=#{CGI.escape(columntitle)}\">" unless showeditbuttons

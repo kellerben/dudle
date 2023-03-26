@@ -188,7 +188,7 @@ class Poll
 			ofstr = _("out of")
 			votedstr = _("participants voted yes")
 
-			ret += "<td id=\"sum_#{column.to_htmlID}\" class=\"sum match_#{(percent_f/10).round*10}\" title=\"#{yes} #{ofstr} #{@data.size} #{votedstr}\"><span aria-hidden=\"true\">#{yes}</span><span class=\"visually-hidden\">#{yes} #{ofstr} #{@data.size} #{votedstr}.</span></td>\n"
+			ret += "<td id=\"sum_#{column.to_htmlID}\" class=\"sum match_#{(percent_f/10).round*10}\" title=\"#{yes} #{ofstr} #{@data.size} #{votedstr}\"><span aria-hidden=\"true\">#{yes}</span><span class=\"visually-hidden\">#{yes} #{ofstr} #{@data.size} #{votedstr}.</span></td>\n"		
 		}
 
 		ret += "<td class='invisible'></td></tr>"
@@ -240,7 +240,8 @@ HEAD
 		type='text'
 		name='add_participant'
 		id='add_participant_input'
-		aria-label='#{CGI.escapeHTML(_('Name'))}'
+		aria-label='#{CGI.escapeHTML(_('Enter your name'))}'
+		title='#{CGI.escapeHTML(_('Enter your name'))}'
 		value="#{CGI.escapeHTML(edituser.to_s)}"/>
 </td>
 END

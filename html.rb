@@ -140,7 +140,7 @@ HEAD
             }
 
             addAll();
-
+			
 			if(Array.prototype.slice.call(document.getElementById('tablist').children).indexOf(active_tab)!=2){
 				if(document.getElementById('polltypespan')!=null){
 					document.getElementById('polltypespan').remove();
@@ -157,9 +157,25 @@ HEAD
 				participantcountspan.className += 'visually-hidden';
 				participantcountspan.innerText = particpantcount + ' "+ _("participants have already voted.") +"';
 				document.getElementById('polltypespan').after(participantcountspan);
-			}
+			}	
 
-        }
+			var amntcolumns = document.getElementById('summary').childElementCount;
+			var participantrows = document.querySelectorAll('tr.participantrow');
+			var polloptioncolumns = document.getElementsByClassName('polloptions');
+			var yes = 0;
+			for (var i = 2; i < amntcolumns; i++) {
+				yes = 0;
+				for (var j = 0; j < participantrows.length; j++) {
+					if (participantrows[j].children[i].classList.contains('a_yes__') == true){
+						yes += 1;
+					}
+				}
+				var sumspan = document.createElement('span');
+				sumspan.className += 'visually-hidden';
+				sumspan.innerText = yes + ' "+ _("out of")+" ' + particpantcount + ' "+_("participants voted yes")+"';
+				Array.prototype.slice.call(document.getElementsByClassName('polloptions'))[i-2].appendChild(sumspan);
+			}
+	}
         </script>"
 		ret += "</head>"
 		ret
