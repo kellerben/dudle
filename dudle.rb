@@ -115,7 +115,7 @@ class Dudle
 
 	def polltypespan
 		if is_poll?
-			ret = "<span id='polltypespan' class='visually-hidden'>#{CGI.escapeHTML(@polltype)}</span>"
+			ret = "<div tabindex='0'><span id='polltypespan' class='visually-hidden'>#{CGI.escapeHTML(@polltype)}</span></div>"
 		return ret
 		end
 	end
@@ -195,9 +195,8 @@ HEAD
 #{tabs_to_html(@tab)}
 <div id='content' role='content'>
 	<h1 id='polltitle'>#{CGI.escapeHTML(@title)}
-	#{polltypespan}
 	</h1>
-	
+	#{polltypespan}
 HEAD
 
 
