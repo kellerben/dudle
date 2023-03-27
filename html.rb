@@ -65,7 +65,9 @@ HEAD
 			var all_table_cells = document.querySelectorAll('td');
 			var all_table_header = document.querySelectorAll('th');
 			for (var i = 0, len = all_table_cells.length; i < len; i++) {
-				all_table_cells[i].setAttribute('tabindex', 0);
+				if(!all_table_cells[i].classList.contains('input-radio') && !all_table_cells[i].classList.contains('checkboxes')) {
+					all_table_cells[i].setAttribute('tabindex', 0);
+				}
                 all_table_cells[i].onfocus = (function() {
 					var headerElements = document.querySelectorAll('.headerSymbol');
 					for (var i = 0; i < headerElements.length; i++) {
