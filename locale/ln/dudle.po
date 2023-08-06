@@ -22,9 +22,9 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-04 22:19+0200\n"
 "PO-Revision-Date: 2019-02-25 16:57+0100\n"
-"Last-Translator: Séb. M.\n"
-"Language-Team: \n"
-"Language: \n"
+"Last-Translator: L10N\n"
+"Language-Team: ln\n"
+"Language: ln\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -93,7 +93,7 @@ msgstr ""
 
 #: ../access_control.rb:141
 msgid "Passwords did not match."
-msgstr "Mot de passe incorrect."
+msgstr "Banda ezalí malámu tɛ́."
 
 #: ../access_control.rb:175
 msgid "Change access control settings"
@@ -113,7 +113,7 @@ msgstr "sera activé dès qu'un administrateur aura été configuré"
 
 #: ../access_control.rb:186
 msgid "Deactivate"
-msgstr "Désactiver"
+msgstr "Kotendisa"
 
 #: ../access_control.rb:188
 msgid "activated"
@@ -132,7 +132,7 @@ msgid ""
 "You will be asked for the password you have entered here after you press "
 "save!"
 msgstr ""
-"Le mot de passe tapé vous sera demandé après avoir cliqué sur Sauvegarder !"
+"Le mot de passe tapé vous sera demandé après avoir cliqué sur Sauvegarder!"
 
 #: ../access_control.rb:196
 #, fuzzy
@@ -152,23 +152,23 @@ msgstr "Bonɔ́ngi ya liyíngeli:"
 #: ../advanced.rb:31 ../advanced.rb:35
 #, fuzzy
 msgid "Revert poll"
-msgstr "Kobakola sondage"
+msgstr "Kobakola litúnele"
 
 #: ../advanced.rb:32
 #, fuzzy
 msgid "Poll was reverted to Version %{version}!"
-msgstr "Sondage courant (Version %{revisionnumber})"
+msgstr "Litúnele courant (Version %{revisionnumber})"
 
 #: ../advanced.rb:37
 msgid "Revert poll to version (see ‘History’ tab for revision numbers): "
 msgstr ""
-"Retourner à la version de sondage (voir l'onglet « Historique » pour les "
+"Retourner à la version de litúnele (voir l'onglet « Historique » pour les "
 "numéros de révision) :"
 
 #: ../advanced.rb:39
 #, fuzzy
 msgid "Revert"
-msgstr "Kobakola sondage"
+msgstr "Kobakola litúnele"
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
@@ -180,7 +180,7 @@ msgstr "La configuration de ce sondage est protégée par un mot de passe !"
 
 #: ../authorization_required.cgi:41
 msgid "This poll is password-protected!"
-msgstr "Ce sondage est protégé par un mot de passe !"
+msgstr "Ce litúnele est protégé par banda!"
 
 #: ../authorization_required.cgi:43
 msgid "In order to proceed, you have to give the password for user %{user}."
@@ -261,7 +261,7 @@ msgstr "Je suis conscient des conséquences de mes actes."
 
 #: ../delete_poll.rb:33
 msgid "Please delete this poll."
-msgstr "Supprimez ce sondage."
+msgstr "Supprimez ce litúnele."
 
 #: ../delete_poll.rb:42
 msgid "Example polls cannot be deleted."
@@ -273,7 +273,7 @@ msgstr "Vous ne devriez jamais voir ce text."
 
 #: ../delete_poll.rb:56
 msgid "The poll was deleted successfully!"
-msgstr "Ce sondage a été supprimé !"
+msgstr "Ce litúnele ezalí supprimé !"
 
 #: ../delete_poll.rb:57
 #, fuzzy
@@ -309,7 +309,7 @@ msgstr "mais vous avez tapé:"
 
 #: ../delete_poll.rb:108
 msgid "Delete this poll"
-msgstr "Kolímuisa sondage"
+msgstr "Kolímuisa litúnele"
 
 #: ../delete_poll.rb:109
 msgid "You want to delete the poll named"
@@ -334,7 +334,7 @@ msgstr "Lonkásá loa libosó"
 
 #: ../dudle.rb:76
 msgid "Poll"
-msgstr "Sondage"
+msgstr "Litúnele"
 
 #: ../dudle.rb:77 ../history.rb:35
 msgid "History"
@@ -358,7 +358,7 @@ msgstr "xxxxx"
 
 #: ../dudle.rb:86
 msgid "Delete Poll"
-msgstr "Kolímuisa sondage"
+msgstr "Kolímuisa litúnele"
 
 #: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
@@ -476,16 +476,16 @@ msgid ""
 "these example polls:"
 msgstr ""
 "Si vous voulez utiliser l'application, vous pouvez être intéressé par ces "
-"exemples de sondages :"
+"exemples de sondages:"
 
 #: ../history.rb:28
 #, fuzzy
 msgid "Poll of version %{revisionnumber}"
-msgstr "Sondage courant (Version %{revisionnumber})"
+msgstr "Litúnele courant (Version %{revisionnumber})"
 
 #: ../history.rb:32
 msgid "Current poll (version %{revisionnumber})"
-msgstr "Sondage courant (Version %{revisionnumber})"
+msgstr "Litúnele courant (Version %{revisionnumber})"
 
 #: ../html.rb:131
 msgid "xml:lang='en' dir='ltr'"
@@ -518,23 +518,23 @@ msgstr "Fuyez."
 
 #: ../index.cgi:79
 msgid "Create new poll"
-msgstr "Créer un nouveau sondage"
+msgstr "Kokela litúnele lia síka"
 
 #: ../index.cgi:81
 msgid "Title"
-msgstr "Titre"
+msgstr "Litɛ́mɛ"
 
 #: ../index.cgi:82
 msgid "Type"
-msgstr "Type"
+msgstr "Típɛ"
 
 #: ../index.cgi:83
 msgid "Event-scheduling poll (e.&thinsp;g., schedule a meeting)"
-msgstr "Sondage \"agenda\" (ex. prévoir une réunion)"
+msgstr "Litúnele \"agenda\" (ex. prévoir une réunion)"
 
 #: ../index.cgi:84
 msgid "Normal poll (e.&thinsp;g., vote for what is the best coffee)"
-msgstr "Sondage normal (par exemple un vote pour le choix du meilleur café)"
+msgstr "Litúnele-kásá (par exemple un vote pour le choix du meilleur café)"
 
 #: ../index.cgi:85
 msgid "Custom address (optional)"
@@ -546,7 +546,7 @@ msgstr "Peut contenir des lettres, chiffres et tirets."
 
 #: ../index.cgi:88
 msgid "Create"
-msgstr "Créer"
+msgstr "Kokela"
 
 #: ../log.rb:111
 msgid "Version"
@@ -562,7 +562,7 @@ msgstr "Linanoli"
 
 #: ../maintenance.cgi:25 ../maintenance.cgi:27
 msgid "Maintenance"
-msgstr ""
+msgstr "Bobátɛli"
 
 #: ../maintenance.cgi:31
 msgid "This site is currently undergoing maintenance!"
@@ -578,15 +578,15 @@ msgstr ""
 
 #: ../not_found.cgi:30
 msgid "Poll not found"
-msgstr "Sondage introuvable"
+msgstr "Litúnele ezalí tɛ́"
 
 #: ../not_found.cgi:32
 msgid "The requested poll was not found."
-msgstr "Le sondage demandé est introuvable."
+msgstr "Litúnele ezalí tɛ́."
 
 #: ../not_found.cgi:33
 msgid "There are several reasons why a poll may have been deleted:"
-msgstr "Il peut y avoir plusieurs explications à la suppression d'un sondage :"
+msgstr "Il peut y avoir plusieurs explications à la suppression d'un sondage:"
 
 #: ../not_found.cgi:34
 msgid "Somebody clicked on “Delete poll” and deleted the poll manually."
@@ -617,11 +617,11 @@ msgstr "Kotínda ekangisi-nkomá na nkandá..."
 
 #: ../overview.rb:35
 msgid "Visit the poll yourself:"
-msgstr "Aller sur le sondage : "
+msgstr "Kokende na litúnele: "
 
 #: ../overview.rb:36
 msgid "Link to DuD-Poll about %{polltitle}"
-msgstr "Ekangisi-nkomá vers le sondage DuD-Poll \"%{polltitle}\""
+msgstr "Ekangisi-nkomá na litúnele DuD-Poll \"%{polltitle}\""
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."
@@ -631,19 +631,19 @@ msgstr ""
 
 #: ../poll.rb:96
 msgid "Edit user %{user}..."
-msgstr "Éditer l'utilisateur %{user}..."
+msgstr "Kobimisela mosáleli %{user}..."
 
 #: ../poll.rb:100
 msgid "Delete user %{user}..."
-msgstr "Supprimer l'utilisateur %{user}"
+msgstr "Kolímuisa mosáleli %{user}"
 
 #: ../poll.rb:154
 msgid "Total"
-msgstr "Total"
+msgstr "Motúya"
 
 #: ../poll.rb:186
 msgid "Invite"
-msgstr "Inviter"
+msgstr "Kobyánga"
 
 #: ../poll.rb:187 ../pollhead.rb:62 ../timepollhead.rb:158
 msgid "Name"
@@ -652,11 +652,11 @@ msgstr "Nkómbó"
 #: ../poll.rb:229
 #, fuzzy
 msgid "Add a participant"
-msgstr "Inviter des participants"
+msgstr "Kobyánga balandi"
 
 #: ../poll.rb:233
 msgid "Save changes"
-msgstr "Enregistrer les modifications"
+msgstr "Kobómbisa bobóngoami"
 
 #: ../poll.rb:237
 msgid "Cancel"
@@ -704,19 +704,19 @@ msgstr "%{user} a dit à %{time}"
 
 #: ../poll.rb:350
 msgid "Go up"
-msgstr "Vers le haut"
+msgstr "O likoló"
 
 #: ../poll.rb:356
 msgid "says"
-msgstr "dit"
+msgstr "alobí"
 
 #: ../poll.rb:357
 msgid "Submit comment"
-msgstr "Sauvegarder le commentaire"
+msgstr "Kobómbisa linanoli"
 
 #: ../poll.rb:361
 msgid "Enter your name"
-msgstr ""
+msgstr "Kokɔ́ta nkómbó na yɔ̌"
 
 #: ../poll.rb:363
 #, fuzzy
@@ -729,7 +729,7 @@ msgstr "Montrer les éléments de l'historique : "
 
 #: ../poll.rb:382
 msgid "All"
-msgstr "Tous"
+msgstr "Bato bánsɔ"
 
 #: ../poll.rb:383
 msgid "Participant related"
@@ -768,7 +768,7 @@ msgstr "Dernière édition"
 #: ../pollhead.rb:99
 #, fuzzy
 msgid "Option"
-msgstr "Optionnel :"
+msgstr "Lipɔni"
 
 #: ../pollhead.rb:100
 msgid "Description (optional)"
@@ -806,11 +806,11 @@ msgstr "Cette heure est déjà choisie."
 
 #: ../timepollhead.rb:193
 msgid "Earlier"
-msgstr "Plus tôt"
+msgstr "Libosó"
 
 #: ../timepollhead.rb:198
 msgid "Later"
-msgstr "Plus tard"
+msgstr "Nsima"
 
 #: ../timepollhead.rb:265
 msgid "Click on the dates to add or remove columns."
@@ -818,11 +818,11 @@ msgstr "Cliquez sur les dates pour ajouter ou supprimer une colonne."
 
 #: ../timepollhead.rb:313
 msgid "Optional:"
-msgstr "Optionnel:"
+msgstr "Lipɔni:"
 
 #: ../timepollhead.rb:314
 msgid "Select specific start times."
-msgstr "Entrer une heure de début."
+msgstr "Kokɔ́ta ngonga na ebandela."
 
 #: ../timepollhead.rb:330
 msgid "Time"
@@ -838,7 +838,7 @@ msgstr "Lipɔnisi tɛ́"
 
 #: ../timepollhead.rb:345
 msgid "Past"
-msgstr "Passé"
+msgstr "Ntángo eleká"
 
 #: ../timepollhead.rb:379
 msgid "Select the whole row"
@@ -862,7 +862,7 @@ msgstr "ex : 09h30, matin, après-midi"
 #~ "which disturbs you, or have any other feedback."
 #~ msgstr ""
 #~ "Si vous trouvez un bug ou un truc qui vous dérange, indiquez-le moi (de "
-#~ "préférence en anglais ou allemand) : <a href=\"mailto:"
+#~ "préférence en anglais ou allemand): <a href=\"mailto:"
 #~ "Benjamin_dot_Kellermann@gmx_in_deutschland?subject=Dudle%20Feedback"
 #~ "\">Feedback</a>"
 
@@ -875,10 +875,10 @@ msgstr "ex : 09h30, matin, après-midi"
 #~ "l'administrateur du système."
 
 #~ msgid "Event-scheduling poll"
-#~ msgstr "Sondage de choix de date"
+#~ msgstr "Litúnele na mokɔlɔ bopɔni"
 
 #~ msgid "Normal poll"
-#~ msgstr "Sondage normal"
+#~ msgstr "Litúnele-kásá"
 
 #~ msgid "Things you can do now are"
 #~ msgstr "Choses que vous pouvez faire maintenant"
@@ -894,7 +894,7 @@ msgstr "ex : 09h30, matin, après-midi"
 #~ "vcs.org/'>bazaar</a>:"
 
 #~ msgid "The link to your poll is:"
-#~ msgstr "Le lien de votre sondage est :"
+#~ msgstr "Le lien de votre litúnele na yOO ezalí:"
 
 #~ msgid "To the Vote interface"
 #~ msgstr "Vers la page de vote"
