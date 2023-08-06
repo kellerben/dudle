@@ -40,7 +40,7 @@ msgstr "Application soutenue par %{DuDPoll}."
 
 #: ../about.cgi:31
 msgid "License"
-msgstr "License"
+msgstr "Lisásɛ"
 
 #: ../about.cgi:32
 msgid ""
@@ -58,15 +58,15 @@ msgstr "Le code source de l'application est disponible %{a_start}ici%{a_end}."
 
 #: ../access_control.rb:74 ../customize.cgi:82 ../customize.rb:82
 msgid "Username:"
-msgstr "Identifiant :"
+msgstr "Mosáleli:"
 
 #: ../access_control.rb:87
 msgid "Password"
-msgstr "Mot de passe"
+msgstr "Banda"
 
 #: ../access_control.rb:88
 msgid "repeat"
-msgstr "répéter"
+msgstr "Kobandela"
 
 #: ../access_control.rb:114
 msgid ""
@@ -79,12 +79,12 @@ msgstr ""
 #: ../access_control.rb:117 ../customize.cgi:119 ../customize.rb:119
 #: ../delete_poll.rb:112 ../poll.rb:340
 msgid "Delete"
-msgstr "Supprimer"
+msgstr "Kolímuisa"
 
 #: ../access_control.rb:121 ../customize.cgi:116 ../customize.rb:116
 #: ../poll.rb:302
 msgid "Save"
-msgstr "Enregistrer"
+msgstr "Kobómbisa"
 
 #: ../access_control.rb:139
 msgid "Only letters and digits are allowed in the username."
@@ -101,11 +101,11 @@ msgstr "Changer les règles de contrôle d'accès"
 
 #: ../access_control.rb:179
 msgid "not activated"
-msgstr "inactif"
+msgstr "na mosálá tɛ́"
 
 #: ../access_control.rb:181
 msgid "Activate"
-msgstr "Activer"
+msgstr "Kolamuisa"
 
 #: ../access_control.rb:184
 msgid "controls will be activated when at least the admin user is configured"
@@ -117,7 +117,7 @@ msgstr "Désactiver"
 
 #: ../access_control.rb:188
 msgid "activated"
-msgstr "activé"
+msgstr "elamúísámí"
 
 #: ../access_control.rb:189
 msgid ""
@@ -147,12 +147,12 @@ msgstr "L'utilisateur 'participant’ n'a accès qu'au vote."
 
 #: ../access_control.rb:208
 msgid "Access control:"
-msgstr "Contrôle d'accès :"
+msgstr "Bonɔ́ngi ya liyíngeli:"
 
 #: ../advanced.rb:31 ../advanced.rb:35
 #, fuzzy
 msgid "Revert poll"
-msgstr "Supprimer le sondage"
+msgstr "Kobakola sondage"
 
 #: ../advanced.rb:32
 #, fuzzy
@@ -168,7 +168,7 @@ msgstr ""
 #: ../advanced.rb:39
 #, fuzzy
 msgid "Revert"
-msgstr "Supprimer le sondage"
+msgstr "Kobakola sondage"
 
 #: ../authorization_required.cgi:36 ../authorization_required.cgi:52
 msgid "Authorization required"
@@ -197,7 +197,7 @@ msgstr "Vous devez vous identifier pour afficher cette page !"
 
 #: ../customize.cgi:31 ../customize.rb:31
 msgid "Customize personal settings"
-msgstr "Préférences"
+msgstr "Malúli"
 
 #: ../customize.cgi:32 ../customize.rb:32
 #, fuzzy
@@ -208,11 +208,11 @@ msgstr "Les cookies doivent être activés pour personnaliser vos préférences.
 
 #: ../customize.cgi:39 ../customize.rb:39
 msgid "Current setting"
-msgstr "Paramètres actuels"
+msgstr "Palamɛ́tɛlɛ na mosálá"
 
 #: ../customize.cgi:40 ../customize.rb:40
 msgid "Description"
-msgstr "Description"
+msgstr "Bolimboli"
 
 #: ../customize.cgi:57 ../customize.rb:57
 msgid "Use special characters"
@@ -233,19 +233,19 @@ msgstr ""
 
 #: ../customize.cgi:61 ../customize.rb:61
 msgid "Charset"
-msgstr "Charset"
+msgstr "Kɔdázɛ"
 
 #: ../customize.cgi:66 ../customize.rb:66
 msgid "Stylesheet"
-msgstr "Feuille de style"
+msgstr "Lonkásá lia stílɛ"
 
 #: ../customize.cgi:81 ../customize.rb:81
 msgid "Default Username"
-msgstr "Nom d'utilisateur par défaut"
+msgstr "Mosáleli ya lipɔneli"
 
 #: ../customize.cgi:106 ../customize.rb:106
 msgid "Edit"
-msgstr "Éditer"
+msgstr "Kobimisela"
 
 #: ../delete_poll.rb:30
 msgid "Yes, I know what I am doing!"
@@ -301,15 +301,15 @@ msgstr "Chercher quelque chose avec Google"
 
 #: ../delete_poll.rb:88
 msgid "To delete the poll, you have to type:"
-msgstr "Pour supprimer ce sondage, vous devez taper :"
+msgstr "Pour supprimer ce sondage, vous devez taper:"
 
 #: ../delete_poll.rb:96
 msgid "but you typed:"
-msgstr "mais vous avez tapé :"
+msgstr "mais vous avez tapé:"
 
 #: ../delete_poll.rb:108
 msgid "Delete this poll"
-msgstr "Supprimer ce sondage"
+msgstr "Kolímuisa sondage"
 
 #: ../delete_poll.rb:109
 msgid "You want to delete the poll named"
@@ -330,7 +330,7 @@ msgstr ""
 
 #: ../dudle.rb:73
 msgid "Home"
-msgstr "Accueil"
+msgstr "Lonkásá loa libosó"
 
 #: ../dudle.rb:76
 msgid "Poll"
@@ -338,11 +338,11 @@ msgstr "Sondage"
 
 #: ../dudle.rb:77 ../history.rb:35
 msgid "History"
-msgstr "Historique"
+msgstr "Mokóló"
 
 #: ../dudle.rb:80
 msgid "Edit Columns"
-msgstr "Éditer les colonnes"
+msgstr "Kobimisela lia likonzí"
 
 #: ../dudle.rb:81 ../invite_participants.rb:38
 msgid "Invite Participants"
@@ -354,11 +354,11 @@ msgstr "Droits d'accès"
 
 #: ../dudle.rb:83
 msgid "Overview"
-msgstr "Écraser"
+msgstr "xxxxx"
 
 #: ../dudle.rb:86
 msgid "Delete Poll"
-msgstr "Supprimer le sondage"
+msgstr "Kolímuisa sondage"
 
 #: ../dudle.rb:89 ../example.cgi:67
 msgid "Examples"
@@ -370,19 +370,19 @@ msgstr "À propos"
 
 #: ../dudle.rb:92
 msgid "Customize"
-msgstr "Personnaliser"
+msgstr "Bosekisi"
 
 #: ../dudle.rb:100
 msgid "DuD-Poll Home"
-msgstr "Accueil de DuD-Poll"
+msgstr "Libosó lia DuD-Poll"
 
 #: ../dudle.rb:208 ../dudle.rb:226
 msgid "Previous"
-msgstr "Précédent"
+msgstr "Lolekí"
 
 #: ../dudle.rb:209 ../dudle.rb:227
 msgid "Next"
-msgstr "Suivant"
+msgstr "Lolandí"
 
 #: ../dudle.rb:210 ../dudle.rb:228
 msgid "Finish"
@@ -394,12 +394,12 @@ msgstr "Toutes les modifications ont été sauvegardées."
 
 #: ../dudle.rb:233
 msgid "Proceed!"
-msgstr "Effectuer !"
+msgstr "Effectuer!"
 
 #: ../dudle.rb:282
 #, fuzzy
 msgid "Select Language"
-msgstr "Choisi"
+msgstr "Lokótá"
 
 #: ../edit_columns.rb:44
 msgid "Add and remove columns"
@@ -407,27 +407,27 @@ msgstr "Ajouter et supprimer des colonnes"
 
 #: ../edit_columns.rb:67 ../edit_columns.rb:86 ../timepollhead.rb:249
 msgid "Delete column"
-msgstr "Supprimer une colonne"
+msgstr "Kolímuisa likonzí"
 
 #: ../edit_columns.rb:69 ../edit_columns.rb:84 ../timepollhead.rb:248
 msgid "Add column"
-msgstr "Ajouter une colonne"
+msgstr "Kobakisa likonzí"
 
 #: ../edit_columns.rb:71 ../edit_columns.rb:88
 msgid "Edit column"
-msgstr "Éditer une colonne"
+msgstr "Kobimisela likonzí"
 
 #: ../edit_columns.rb:99
 msgid "Undo"
-msgstr "Annuler"
+msgstr "Kozóngela"
 
 #: ../edit_columns.rb:99
 msgid "Redo"
-msgstr "Répéter"
+msgstr "Kobandela"
 
 #: ../error.cgi:25 ../error.cgi:27
 msgid "Error"
-msgstr "Erreur"
+msgstr "Zíko"
 
 #: ../error.cgi:41
 msgid "The following error was printed:"
@@ -450,7 +450,7 @@ msgstr ""
 
 #: ../error.cgi:46
 msgid "Bug in DuD-Poll"
-msgstr "Bug dans DuD-Poll"
+msgstr "Zíko na DuD-Poll"
 
 #: ../error.cgi:48
 msgid ""
@@ -489,11 +489,11 @@ msgstr "Sondage courant (Version %{revisionnumber})"
 
 #: ../html.rb:131
 msgid "xml:lang='en' dir='ltr'"
-msgstr "xml:lang='fr' dir='ltr'"
+msgstr "xml:lang='ln' dir='ltr'"
 
 #: ../index.cgi:32
 msgid "Please enter a descriptive title."
-msgstr "Entrez un titre s'il-vous-plait."
+msgstr "Entrez un titre s'il-vous-plaît."
 
 #: ../index.cgi:43
 msgid "Custom address may only contain letters, numbers, and dashes."
@@ -550,15 +550,15 @@ msgstr "Créer"
 
 #: ../log.rb:111
 msgid "Version"
-msgstr "Version"
+msgstr "Libóngoli"
 
 #: ../log.rb:111
 msgid "Date"
-msgstr "Date"
+msgstr "Mokɔlɔ"
 
 #: ../log.rb:111
 msgid "Comment"
-msgstr "Commentaire"
+msgstr "Linanoli"
 
 #: ../maintenance.cgi:25 ../maintenance.cgi:27
 msgid "Maintenance"
@@ -605,15 +605,15 @@ msgstr ""
 
 #: ../overview.rb:31
 msgid "The next steps are:"
-msgstr "Les étapes suivantes sont : "
+msgstr "Les étapes suivantes sont: "
 
 #: ../overview.rb:33
 msgid "Send the link to all participants:"
-msgstr "Envoyer ce lien à tous les participants : "
+msgstr "Kotínda ekangisi-nkomá na tous les participants: "
 
 #: ../overview.rb:34
 msgid "Send this link via email..."
-msgstr "Envoyer ce lien par email..."
+msgstr "Kotínda ekangisi-nkomá na nkandá..."
 
 #: ../overview.rb:35
 msgid "Visit the poll yourself:"
@@ -621,7 +621,7 @@ msgstr "Aller sur le sondage : "
 
 #: ../overview.rb:36
 msgid "Link to DuD-Poll about %{polltitle}"
-msgstr "Lien vers le sondage DuD-Poll \"%{polltitle}\""
+msgstr "Ekangisi-nkomá vers le sondage DuD-Poll \"%{polltitle}\""
 
 #: ../participate.rb:59
 msgid "The changes were saved, you should be redirected to %{link}."
@@ -647,7 +647,7 @@ msgstr "Inviter"
 
 #: ../poll.rb:187 ../pollhead.rb:62 ../timepollhead.rb:158
 msgid "Name"
-msgstr "Nom"
+msgstr "Nkómbó"
 
 #: ../poll.rb:229
 #, fuzzy
@@ -660,7 +660,7 @@ msgstr "Enregistrer les modifications"
 
 #: ../poll.rb:237
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Kolímuisa"
 
 #: ../poll.rb:259
 msgid "Do you really want to delete user %{user}?"
@@ -668,23 +668,23 @@ msgstr "Voulez-vous réellement supprimer l'utilisateur %{user} ?"
 
 #: ../poll.rb:262
 msgid "Confirm"
-msgstr "Confirmer"
+msgstr "Kondima"
 
 #: ../poll.rb:283
 msgid "Yes"
-msgstr ""
+msgstr "Íyo"
 
 #: ../poll.rb:283
 msgid "No"
-msgstr ""
+msgstr "Tɛ́"
 
 #: ../poll.rb:283
 msgid "Maybe"
-msgstr ""
+msgstr "Sɔ́kɔ́"
 
 #: ../poll.rb:311
 msgid "Comments"
-msgstr "Commentaires"
+msgstr "Linanoli"
 
 #: ../poll.rb:314
 msgid "Sort oldest comment first"
@@ -749,17 +749,17 @@ msgstr "liés au contrôle d'accès"
 
 #: ../poll.rb:392
 msgid "Update"
-msgstr "Mettre à jour"
+msgstr "Kotía sika"
 
 #: ../pollhead.rb:71
 #, fuzzy
 msgid "Edit option"
-msgstr "Éditer une colonne"
+msgstr "Kobimisela likonzí"
 
 #: ../pollhead.rb:72
 #, fuzzy
 msgid "Delete option"
-msgstr "Supprimer une colonne"
+msgstr "Kolímuisa likonzí"
 
 #: ../pollhead.rb:87 ../timepollhead.rb:162
 msgid "Last edit"
@@ -777,11 +777,11 @@ msgstr "Description (optionnel)"
 #: ../pollhead.rb:101
 #, fuzzy
 msgid "Add/Edit option"
-msgstr "Ajouter/Éditer la colonne"
+msgstr "Kobakisa/Kobimisela likonzí"
 
 #: ../pollhead.rb:102
 msgid "Preview"
-msgstr "Prévisualiser"
+msgstr "Botáli"
 
 #: ../pollhead.rb:103
 msgid ""
@@ -818,7 +818,7 @@ msgstr "Cliquez sur les dates pour ajouter ou supprimer une colonne."
 
 #: ../timepollhead.rb:313
 msgid "Optional:"
-msgstr "Optionnel :"
+msgstr "Optionnel:"
 
 #: ../timepollhead.rb:314
 msgid "Select specific start times."
@@ -826,15 +826,15 @@ msgstr "Entrer une heure de début."
 
 #: ../timepollhead.rb:330
 msgid "Time"
-msgstr "Heure"
+msgstr "Ngonga"
 
 #: ../timepollhead.rb:343
 msgid "Selected"
-msgstr "Choisi"
+msgstr "Lipɔnisi"
 
 #: ../timepollhead.rb:344
 msgid "Not selected"
-msgstr "Non choisi"
+msgstr "Lipɔnisi tɛ́"
 
 #: ../timepollhead.rb:345
 msgid "Past"
@@ -850,7 +850,7 @@ msgstr "Déselectionner toute la ligne"
 
 #: ../timepollhead.rb:428
 msgid "Add"
-msgstr "Ajouter"
+msgstr "Kobakisa"
 
 #: ../timepollhead.rb:429
 msgid "e.&thinsp;g., 09:30, morning, afternoon"
