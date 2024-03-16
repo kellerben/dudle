@@ -319,53 +319,6 @@ END
 </tr></table>
 <div id="liveCalenderDayInfo" class="shorttextcolumn visually-hidden" aria-live="assertive"></div>
 </td>
-<script>
-    window.onload = function() {
-	document.getElementById('monthnav').style.width = document.getElementById('calenderdaytable').clientWidth+"px";
-
-        var anchors = document.querySelectorAll(".notchosen,.disabled");
-        var anchors2 = document.querySelectorAll(".chosen");
-        for(var i = 0; i < anchors.length; i++) {
-            var anchor = anchors[i];
-            anchor.onclick = function() {
-                var text = "#{added}".replace("&uuml;", "ü");
-                var date = event.srcElement.getAttribute("date");
-                $("#liveCalenderDayInfo").text(date + " " + text);
-            }
-        }
-        for(var i = 0; i < anchors2.length; i++) {
-            var anchor2 = anchors2[i];
-            anchor2.onclick = function() {
-                var date = event.srcElement.getAttribute("date");
-                $("#liveCalenderDayInfo").text(date + " #{removed}");
-            }
-        }
-		var all_table_cells = document.querySelectorAll('table.calendartime:not(.timecolumns) td ,table.calendartime td input:not([type="hidden"])');
-		var all_table_header = document.querySelectorAll('table.calendartime th');
-		for (var i = 0, len = all_table_cells.length; i < len; i++) {
-			if (!all_table_cells[i].closest('.timecolumns')){
-				all_table_cells[i].setAttribute('tabindex', 0);
-			}
-			all_table_cells[i].onfocus = (function() {
-				var headerElements = document.querySelectorAll('.headerSymbol');
-				for (var i = 0; i < headerElements.length; i++) {
-					headerElements[i].setAttribute('aria-hidden','true');
-				}
-			});
-		}
-
-		for (var i = 0, len = all_table_header.length; i < len; i++) {
-			all_table_header[i].setAttribute('tabindex', 0);
-			all_table_header[i].onfocus = (function() {
-				var headerElements = document.querySelectorAll('.headerSymbol');
-				for (var i = 0; i < headerElements.length; i++) {
-					headerElements[i].setAttribute('aria-hidden','false');
-				}
-			});
-		}
-	
-    }
-</script>
 END
 
 
