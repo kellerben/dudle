@@ -138,13 +138,13 @@ class TimePollHead
 		ret.sort
 	end
 	def to_html(scols,config = false,activecolumn = nil)
-		ret = "<tr><td colspan='2' class='invisible'></td>"
+		ret = "<tr><th colspan='2' class='invisible'></th>"
 		head_count("%Y-%m",false).each{|title,count|
 			year, month = title.split("-").collect{|e| e.to_i}
 			ret += "<th colspan='#{count}'>#{Date.parse("#{year}-#{month}-01").strftime("%b %Y")}</th>\n"
 		}
 
-		ret += "<td class='invisible'></td></tr><tr><td colspan='2' class='invisible'></td>"
+		ret += "<th class='invisible'></th></tr><tr><th colspan='2' class='invisible'></th>"
 		head_count("%Y-%m-%d",false).each{|title,count|
 			ret += "<th colspan='#{count}'>#{Date.parse(title).strftime('%a, %d')}</th>\n"
 		}
@@ -157,7 +157,7 @@ SORTSYMBOL
 		end
 
 
-		ret += "<td class='invisible'></td></tr><tr><th colspan='2'><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>"
+		ret += "<th class='invisible'></th></tr><tr><th colspan='2'><a href='?sort=name'>" + _("Name") + " #{sortsymb(scols,"name")}</a></th>"
 		@data.sort.each{|date|
 			ret += "<th class='polloptions'><a title=\"#{CGI.escapeHTML(DateTime.parse(date.to_s).strftime('%d-%m-%Y %H:%M'))}\" href=\"?sort=#{CGI.escape(date.to_s)}\">#{CGI.escapeHTML(date.time_to_s)} #{sortsymb(scols,date.to_s)}</a></th>\n"
 		}
@@ -177,7 +177,7 @@ SORTSYMBOL
 			raise "Unknown navi value #{val}"
 		end
 		return <<END
-		<div style='display: inline-block; width:27%'>
+		<th colspan='2' style='padding:0px'>
 			<form method='post' action=''>
 				<div>
 					<input class='navigation' type='submit' title='#{navimonthDescription}' aria-label='#{navimonthDescription}' value='#{val}' />
@@ -187,7 +187,7 @@ SORTSYMBOL
 					<input type='hidden' name='undo_revision' value='#{revision}' />
 				</div>
 			</form>
-		</div>
+		</th>
 END
 	end
 	def timenavi val,revision
@@ -282,13 +282,13 @@ FORM
 <div id='AddRemoveColumndaysDescription' class='shorttextcolumn'>
 #{hintstr}
 </div>
-<div id='monthnav' class='calendarday'>
+<table border='1' class='calendarday'><tr>
 END
 		ret += datenavi(MONTHBACK,revision)
-		ret += "<div id='selectedmonth' style='display: inline-block; width:38%; padding: 0.25em 0.5em 0.25em 0.5em' class='navigation'><b>#{@startdate.strftime('%b %Y')}</b></div>"
+		ret += "<th colspan='3'>#{@startdate.strftime('%b %Y')}</th>"
 		ret += datenavi(MONTHFORWARD,revision)
 
-		ret += "</div><table border='1' aria-labelledby='selectedmonth' id='calenderdaytable' class='calendarday'><thead><tr>\n"
+		ret += "</tr><tr>\n"
 
 		7.times{|i|
 			# 2010-03-01 was a Monday, so we can use this month for a dirty hack
@@ -314,7 +314,7 @@ END
 			ret += "</tr><tr>\n" if d.wday == 1
 		end
 		added = _("added")
-        removed = _("removed")
+		removed = _("removed")
 		ret += <<END
 </tr></table>
 <div id="liveCalenderDayInfo" class="shorttextcolumn visually-hidden" aria-live="assertive"></div>
@@ -430,7 +430,7 @@ END
 
 		ret += "<tr><td colspan='2' class='invisible'></td>"
 		days.each{|d|
-			ret += <<END		
+			ret += <<END
 	<td class='addColumnManual'>
 		<form method='post' action='' accept-charset='utf-8'>
 			<div>
