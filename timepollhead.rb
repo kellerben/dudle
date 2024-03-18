@@ -421,7 +421,7 @@ END
 						hiddenvars += "<input type='hidden' name='columnid' value=\"#{TimeString.new(day,nil)}\" />"
 					end
 				end
-				ret += "<td>" + add_remove_button(klasse, chosenstr[klasse], "columntime", CGI.escapeHTML(timestamp.time_to_s), revision, hiddenvars, timestamp.to_s, DateTime.parse(timestamp.to_s).strftime('%d-%m-%Y %H:%M')) + "</td>"
+				ret += "<td>" + add_remove_button(klasse, chosenstr[klasse], "columntime", CGI.escapeHTML(timestamp.time_to_s), revision, hiddenvars, timestamp.to_s) + "</td>"
 
 			}
 			ret += "</tr>\n"
