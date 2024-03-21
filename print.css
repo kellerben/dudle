@@ -21,7 +21,7 @@
 	size: landscape;
 }
 
-.invisible {
+.invisible, .visually-hidden {
 	visibility: hidden;
 }
 th.invisible,
