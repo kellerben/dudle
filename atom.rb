@@ -38,7 +38,7 @@ require_relative "config_defaults"
 require_relative "poll"
 Dir.chdir(olddir)
 
-poll = YAML::load_file("data.yaml")
+poll = YAML::safe_load_file("data.yaml", permitted_classes: [Poll, TimePollHead])
 
 feed.title = poll.name
 feed.id = "urn:dudle:#{poll.class}:#{poll.name}"
