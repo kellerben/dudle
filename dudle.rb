@@ -174,6 +174,13 @@ class Dudle
 			@user_css ||= $conf.default_css
 		end
 
+    @html.add_script('
+      function trClick(object)
+      {
+        object.childNodes[1].childNodes[1].checked = true;
+      }
+    ')
+
 		if $cgi.user_agent =~ /.*MSIE [567]\..*/
 			css = [@user_css]
 		else

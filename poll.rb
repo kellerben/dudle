@@ -299,7 +299,7 @@ END
 			[[YES, YESVAL, _("Yes")],[NO, NOVAL, _("No")],[MAYBE, MAYBEVAL, _("Maybe")]].each{|valhuman, valbinary, valtext|
 			if column.to_s.match(/\d\d\d\d\-\d\d\-\d\d/)
 				ret += <<TR
-				<tr class='input-#{valbinary}'>
+				<tr class='input-#{valbinary}' onclick=\"trClick(this);\">
 					<td class='input-radio'>
 						<input type='radio'
 							value='#{valbinary}'
