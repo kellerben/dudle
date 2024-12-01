@@ -43,7 +43,7 @@ hints = []
 
 begin
 
-	hints << "You might want to config your environment within the file 'config.rb' (see 'config_sample.rb' for a starting point)" unless File.exists?("config.rb")
+	hints << "You might want to config your environment within the file 'config.rb' (see 'config_sample.rb' for a starting point)" unless File.exist?("config.rb")
 
 begin
 	require_relative "dudle"
@@ -55,7 +55,7 @@ end
 
 
 
-unless File.exists?("locale/de/dudle.mo")
+unless File.exist?("locale/de/dudle.mo")
 	problems << ["If you want a language other than English, you will need a localization and therefore need to build the .mo files. Refer the README for details."]
 end
 
@@ -63,7 +63,7 @@ unless File.writable?(".")
 	problems << ["Your webserver needs write access to #{File.expand_path(".")}"]
 else
 	testdir = "this-is-a-test-directory-created-by-check.cgi-it-should-be-deleted"
-	if Dir.exists?(testdir) # might exist from a previous test
+	if Dir.exist?(testdir) # might exist from a previous test
 		require "fileutils"
 		FileUtils.rm_r(testdir)
 	end

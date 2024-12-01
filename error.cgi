@@ -21,13 +21,13 @@
 
 require_relative "dudle"
 
-if File.exists?("#{Dir.pwd}/#{File.dirname(ENV["REDIRECT_URL"])}/data.yaml")
+if File.exist?("#{Dir.pwd}/#{File.dirname(ENV["REDIRECT_URL"])}/data.yaml")
 	$d = Dudle.new(:title => _("Error"), :hide_lang_chooser => true, :load_extensions => false, :relative_dir => "../")
 else
 	$d = Dudle.new(:title => _("Error"), :hide_lang_chooser => true, :load_extensions => false)
 end
 
-if File.exists?($conf.errorlog)
+if File.exist?($conf.errorlog)
 	begin
 		a = File.open($conf.errorlog,"r").to_a
 	rescue Exception => e

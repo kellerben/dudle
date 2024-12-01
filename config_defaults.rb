@@ -65,7 +65,7 @@ $conf.dudle_src = "https://github.com/kellerben/dudle/"
 
 $conf.bots = /bot/i
 
-if File.exists?("config.rb") || File.exists?("../config.rb")
+if File.exist?("config.rb") || File.exist?("../config.rb")
 	require_relative "config"
 end
 

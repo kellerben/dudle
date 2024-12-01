@@ -39,7 +39,7 @@ if $cgi.include?("poll")
 		if poll[:new_environment]
 			targeturl += "_#{Time.now.to_i}"
 
-			while (File.exists?(targeturl))
+			while (File.exist?(targeturl))
 				targeturl += "I"
 			end
 			VCS.branch(poll[:url],targeturl)

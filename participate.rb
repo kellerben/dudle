@@ -60,7 +60,7 @@ if edit
 
 else
 
-$d.html.add_atom("atom.cgi") if File.exists?("../atom.rb")
+$d.html.add_atom("atom.cgi") if File.exist?("../atom.rb")
 
 # TABLE
 $d << <<HTML

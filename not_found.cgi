@@ -21,7 +21,7 @@
 
 if(ENV["REDIRECT_URL"])
 require_relative "dudle"
-if File.exists?(Dir.pwd + File.dirname(ENV["REDIRECT_URL"]))
+if File.exist?(Dir.pwd + File.dirname(ENV["REDIRECT_URL"]))
 	$d = Dudle.new(:hide_lang_chooser => true, :load_extensions => false)
 else
 	$d = Dudle.new(:hide_lang_chooser => true, :load_extensions => false, :relative_dir => "../")
