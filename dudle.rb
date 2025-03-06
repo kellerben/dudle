@@ -132,8 +132,9 @@ class Dudle
 			File.open('last_read_access', 'w').close unless @cgi.user_agent =~ $conf.bots
 			@basedir = '..'
 			inittabs
-			if params[:revision]
+		  	if params[:revision]
 				@table = YAML.load(VCS.cat(revision, 'data.yaml'))
+   				@table = YAML::safe_load(VCS.cat(self.revision, 'data.yaml'), permitted_classes: [Poll, TimePollHead])
 			else
 				@table = YAML.load_file('data.yaml')
 			end

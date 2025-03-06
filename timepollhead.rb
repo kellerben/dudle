@@ -92,10 +92,10 @@ class TimePollHead
 
 	def parsecolumntitle(title)
 		if $cgi.include?('add_remove_column_day')
-			parsed_date = YAML.load(Time.parse("#{$cgi['add_remove_column_month']}-#{$cgi['add_remove_column_day']} #{title}").to_yaml)
+			parsed_date = YAML::safe_load(Time.parse("#{$cgi["add_remove_column_month"]}-#{$cgi["add_remove_column_day"]} #{title}").to_yaml, permitted_classes: [Poll, TimePollHead])
 		else
 			earlytime = @head.keys.collect { |t| t.strftime('%H:%M') }.sort[0]
-			parsed_date = YAML.load(Time.parse("#{$cgi['add_remove_column_month']}-#{title} #{earlytime}").to_yaml)
+			parsed_date = YAML::safe_load(Time.parse("#{$cgi["add_remove_column_month"]}-#{title} #{earlytime}").to_yaml, permitted_classes: [Poll, TimePollHead])
 		end
 		parsed_date
 	end
