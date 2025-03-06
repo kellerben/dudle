@@ -1,4 +1,3 @@
-# coding: utf-8
 ############################################################################
 # Copyright 2009-2019 Benjamin Kellermann                                  #
 #                                                                          #
@@ -21,67 +20,74 @@
 class HTML
 	attr_accessor :body, :header
 	attr_reader :relative_dir
-	def initialize(title, relative_dir = "")
+
+	def initialize(title, relative_dir = '')
 		@title = title
 		@relative_dir = relative_dir
 		@header = {}
-		@header["type"] = "text/html"
-#		@header["type"] = "application/xhtml+xml"
-		@header["charset"] = "utf-8"
+		@header['type'] = 'text/html'
+		# @header["type"] = "application/xhtml+xml"
+		@header['charset'] = 'utf-8'
 
-		@body = ""
+		@body = ''
 		@htmlheader = ''
 		@css = []
 		@atom = []
 	end
+
 	def head
 		ret = <<HEAD
 <head>
-	<meta http-equiv="Content-Type" content="#{@header["type"]}; charset=#{@header["charset"]}" />
+	<meta http-equiv="Content-Type" content="#{@header['type']}; charset=#{@header['charset']}" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<title>#{@title}</title>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
 HEAD
 
 		@css = [@css[0]] + @css[1..-1].sort unless @css.empty?
-		@css.each{|title,href|
-			titleattr = "title='#{title}'" if title != ""
+		@css.each { |title, href|
+			titleattr = "title='#{title}'" if title != ''
 			ret += "<link rel='stylesheet' type='text/css' href='#{@relative_dir}#{href}' #{titleattr} media='screen, projection, tv, handheld'/>\n"
-			ret += "<link rel='stylesheet' type='text/css' href='#{@relative_dir}#{href}' media='print' />\n" if title == "print"
+			ret += "<link rel='stylesheet' type='text/css' href='#{@relative_dir}#{href}' media='print' />\n" if title == 'print'
 		}
 
-		@atom.each{|href|
+		@atom.each { |href|
 			ret += "<link rel='alternate'  type='application/atom+xml' href='#{@relative_dir}#{href}' />\n"
 		}
 
 		ret += @htmlheader
-
-		ret += "</head>"
+		ret += '</head>'
 		ret
 	end
-	def add_css(href, title = "", default = false)
+
+	def add_css(href, title = '', default = false)
 		if default
-			@css.unshift([title,href])
+			@css.unshift([title, href])
 		else
-			@css << [title,href]
+			@css << [title, href]
 		end
 	end
+
 	def add_atom(href)
 		@atom << href
 	end
-	def add_cookie(key,value,path,expiretime)
+
+	def add_cookie(key, value, path, expiretime)
 		c = CGI::Cookie.new(key, value)
 		c.path = path
 		c.expires = expiretime
-		@header["cookie"] ||= []
-		@header["cookie"] << c
+		@header['cookie'] ||= []
+		@header['cookie'] << c
 	end
+
 	def add_head_script(file)
 		add_html_head("<script type='text/javascript' src='#{@relative_dir}#{file}'></script>")
 	end
+
 	def add_script_file(file)
 		self << "<script type='text/javascript' src='#{@relative_dir}#{file}'></script>"
 	end
+
 	def add_script(script)
 		self << <<SCRIPT
 <script type="text/javascript">
@@ -91,45 +97,47 @@ HEAD
 </script>
 SCRIPT
 	end
-	def << (bodycontent)
+
+	def <<(bodycontent)
 		@body += bodycontent.chomp + "\n"
 	end
+
 	def add_html_head(headercontent)
 		@htmlheader += headercontent.chomp + "\n"
 	end
 
 	def out(cgi)
-		#FIXME: quick and dirty fix for encoding problem
+		# FIXME: quick and dirty fix for encoding problem
 		{
-			"ö" => "&ouml;",
-			"ü" => "&uuml;",
-			"ä" => "&auml;",
-			"Ö" => "&Ouml;",
-			"Ü" => "&Uuml;",
-			"Ä" => "&Auml;",
-			"ß" => "&szlig;",
-			"–" => "&#8211;",
-			"„" => "&#8222;",
-			"“" => "&#8220;",
-			"”" => "&#8221;",
-			"✔" => "&#10004;",
-			"✘" => "&#10008;",
-			"◀" => "&#9664;",
-			"▶" => "&#9654;",
-			"✍" => "&#9997;",
-			"✖" => "&#10006;",
-			"•" => "&#8226;",
-			"▾" => "&#9662;",
-			"▴" => "&#9652;"
-		}.each{|from,to|
-			@body.gsub!(from,to)
+			'ö' => '&ouml;',
+			'ü' => '&uuml;',
+			'ä' => '&auml;',
+			'Ö' => '&Ouml;',
+			'Ü' => '&Uuml;',
+			'Ä' => '&Auml;',
+			'ß' => '&szlig;',
+			'–' => '&#8211;',
+			'„' => '&#8222;',
+			'“' => '&#8220;',
+			'”' => '&#8221;',
+			'✔' => '&#10004;',
+			'✘' => '&#10008;',
+			'◀' => '&#9664;',
+			'▶' => '&#9654;',
+			'✍' => '&#9997;',
+			'✖' => '&#10006;',
+			'•' => '&#8226;',
+			'▾' => '&#9662;',
+			'▴' => '&#9652;'
+		}.each { |from, to|
+			@body.gsub!(from, to)
 		}
-#		@body.gsub!(/./){|char|
-#			 code = char[0]
-#			 code > 127 ? "&##{code};" : char
-#		}
-		xmllang = _("xml:lang='en' dir='ltr'")
-		cgi.out(@header){
+		# @body.gsub!(/./){|char|
+		#	 code = char[0]
+		#	 code > 127 ? "&##{code};" : char
+		# }
+		xmllang = _("xml:lang='en' lang='en' dir='ltr'")
+		cgi.out(@header) {
 			<<HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -141,4 +149,3 @@ HEAD
 		}
 	end
 end
-

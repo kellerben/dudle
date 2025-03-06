@@ -21,26 +21,25 @@
 
 if __FILE__ == $0
 
-load "../dudle.rb"
+load '../dudle.rb'
 
 $d = Dudle.new
 
 $d.wizzard_redirect
 
+$d << _('The next steps are:')
 
-$d << _("The next steps are:")
-
-sendlink = _("Send the link to all participants:")
-mailstr = _("Send this link via email...")
-nextstr = _("Visit the poll yourself:")
-subjectstr = _("Link to DuD-Poll about %{polltitle}") % {:polltitle => $d.title}
+sendlink = _('Send the link to all participants:')
+mailstr = _('Send this link via email...')
+nextstr = _('Visit the poll yourself:')
+subjectstr = format(_('Link to DuD-Poll about %<polltitle>s'), polltitle: $d.title)
 $d << <<END
 <ol>
 	<li>
 		#{sendlink}
 		<ul>
 			<li><input id="humanReadableURL" value="#{$conf.siteurl}" type="text" size="80" readonly="readonly" /></li>
-			<li><a id="mailtoURL" href='mailto:?subject=#{CGI.escape(subjectstr).gsub("+","%20")}&amp;body=#{$conf.siteurl}'>#{mailstr}</a></li>
+			<li><a id="mailtoURL" href='mailto:?subject=#{CGI.escape(subjectstr).gsub('+', '%20')}&amp;body=#{$conf.siteurl}'>#{mailstr}</a></li>
 		</ul>
 	</li>
 	<li>
@@ -54,5 +53,3 @@ END
 
 $d.out
 end
-
-

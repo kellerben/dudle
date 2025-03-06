@@ -19,39 +19,39 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require_relative "dudle"
+require_relative 'dudle'
 
-if $cgi.include?("poll")
-	if File.directory?($cgi["poll"])
-		Dir.chdir($cgi["poll"])
+if $cgi.include?('poll')
+	if File.directory?($cgi['poll'])
+		Dir.chdir($cgi['poll'])
 		$is_poll = true
 
 		# check for trailing slash
-		if ENV["REDIRECT_URL"] =~ /#{$cgi["poll"]}$/
-			$d = Dudle.new(:hide_lang_chooser => true, :relative_dir => "#{$cgi["poll"]}/")
+		if ENV.fetch('REDIRECT_URL', nil) =~ /#{$cgi['poll']}$/
+			$d = Dudle.new(hide_lang_chooser: true, relative_dir: "#{$cgi['poll']}/")
 		else
-			$d = Dudle.new(:hide_lang_chooser => true)
+			$d = Dudle.new(hide_lang_chooser: true)
 		end
 
-		$d << "<h2>" + _("Authorization required") + "</h2>"
-		case $cgi["user"]
-		when "admin"
-			$d << _("The configuration of this poll is password-protected!")
-		when "participant"
-			$d << _("This poll is password-protected!")
+		$d << ('<h2>' + _('Authorization required') + '</h2>')
+		case $cgi['user']
+		when 'admin'
+			$d << _('The configuration of this poll is password-protected!')
+		when 'participant'
+			$d << _('This poll is password-protected!')
 		end
-		$d << _("In order to proceed, you have to give the password for user %{user}.") % {:user => "<code>#{$cgi["user"]}</code>"}
+		$d << (format(_('In order to proceed, you have to give the password for user %<user>s.'), user: "<code>#{$cgi['user']}</code>"))
 
 		$d.out
 
 	else
-		$cgi.out({"status" => "BAD_REQUEST"}){""}
+		$cgi.out({ 'status' => 'BAD_REQUEST' }) { '' }
 	end
 
 else
-	$d = Dudle.new(:title => _("Authorization required"), :hide_lang_chooser => true)
-	returnstr = _("Return to DuD-Poll home and schedule a new poll")
-	authstr = _("You have to authorize yourself in order to access this page!")
+	$d = Dudle.new(title: _('Authorization required'), hide_lang_chooser: true)
+	returnstr = _('Return to DuD-Poll home and schedule a new poll')
+	authstr = _('You have to authorize yourself in order to access this page!')
 	$d << <<END
 	<p>#{authstr}</p>
 	<ul>
@@ -63,5 +63,3 @@ END
 	$d.out
 
 end
-
-

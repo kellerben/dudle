@@ -19,17 +19,17 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require_relative "dudle"
+require_relative 'dudle'
 # check for trailing slash
-if ENV["REDIRECT_URL"] =~ /#{$cgi["poll"]}$/
-	$d = Dudle.new(:title => _("Maintenance"), :hide_lang_chooser => true, :relative_dir => "#{$cgi["poll"]}/")
+if ENV.fetch('REDIRECT_URL', nil) =~ /#{$cgi['poll']}$/
+	$d = Dudle.new(title: _('Maintenance'), hide_lang_chooser: true, relative_dir: "#{$cgi['poll']}/")
 else
-	$d = Dudle.new(:title => _("Maintenance"), :hide_lang_chooser => true)
+	$d = Dudle.new(title: _('Maintenance'), hide_lang_chooser: true)
 end
 
-if File.exists?("maintenance.html")
-	$d << _("This site is currently undergoing maintenance!")
-	$d << File.open("maintenance.html","r").read
+if File.exist?('maintenance.html')
+	$d << _('This site is currently undergoing maintenance!')
+	$d << File.read('maintenance.html')
 else
 	$d << _('You should not browse to this file directly. Please create a file named "maintenance.html" to enable the maintenance mode.')
 end

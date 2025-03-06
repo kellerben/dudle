@@ -20,19 +20,19 @@
 ############################################################################
 
 if __FILE__ == $0
-load "../dudle.rb"
+load '../dudle.rb'
 
-if $cgi.include?("revision")
-	revno=$cgi["revision"].to_i
-	$d = Dudle.new(:revision => revno)
-	versiontitle = _("Poll of version %{revisionnumber}") % {:revisionnumber => revno}
+if $cgi.include?('revision')
+	revno = $cgi['revision'].to_i
+	$d = Dudle.new(revision: revno)
+	versiontitle = format(_('Poll of version %<revisionnumber>s'), revisionnumber: revno)
 else
 	revno = VCS.revno
 	$d = Dudle.new
-	versiontitle = _("Current poll (version %{revisionnumber})") % {:revisionnumber => revno}
+	versiontitle = format(_('Current poll (version %<revisionnumber>s)'), revisionnumber: revno)
 end
 
-historystr = _("History")
+historystr = _('History')
 $d << <<HTML
 <h2>#{versiontitle}</h2>
 #{$d.table.to_html(false)}
@@ -40,9 +40,9 @@ $d << <<HTML
 #{$d.table.comment_to_html(false)}
 <h2>#{historystr}</h2>
 <div id='history'>
-#{$d.table.history_selectform($cgi.include?("revision") ? revno : nil, $cgi["history"])}
+#{$d.table.history_selectform($cgi.include?('revision') ? revno : nil, $cgi['history'])}
 
-#{$d.table.history_to_html(revno, $cgi["history"])}
+#{$d.table.history_to_html(revno, $cgi['history'])}
 </div>
 HTML
 
