@@ -31,7 +31,7 @@ GetText.cgi=$cgi
 GetText.output_charset = 'utf-8'
 require "locale"
 
-if File.exists?("data.yaml") && !File.stat("data.yaml").directory?
+if File.exist?("data.yaml") && !File.stat("data.yaml").directory?
 	$is_poll = true
 	GetText.bindtextdomain("dudle", :path => Dir.pwd + "/../locale/")
 else
@@ -159,7 +159,7 @@ class Dudle
 
 
 		@css = ["default", "classic", "print"].collect{|f| f + ".css"}
-		if Dir.exists?("#{@basedir}/css/")
+		if Dir.exist?("#{@basedir}/css/")
 			Dir.open("#{@basedir}/css/").each{|f|
 				if f =~ /\.css$/
 					@css << "css/#{f}"
@@ -205,11 +205,11 @@ HEAD
 		###################
 		@extensions = []
 		$d = self # FIXME: this is dirty, but extensions need to know table elem
-		if Dir.exists?("#{@basedir}/extensions/") && params[:load_extensions]
+		if Dir.exist?("#{@basedir}/extensions/") && params[:load_extensions]
 			Dir.open("#{@basedir}/extensions/").sort.each{|f|
-				if File.exists?("#{@basedir}/extensions/#{f}/main.rb")
+				if File.exist?("#{@basedir}/extensions/#{f}/main.rb")
 					@extensions << f
-					if File.exists?("#{@basedir}/extensions/#{f}/preload.rb")
+					if File.exist?("#{@basedir}/extensions/#{f}/preload.rb")
 						$current_ext_dir = f
 						require "#{@basedir}/extensions/#{f}/preload"
 					end
@@ -299,7 +299,7 @@ READY
 		@html << "</div>" # main
 		$conf.footer.each{|f| @html << f }
 		@extensions.each{|e|
-			if File.exists?("#{@basedir}/extensions/#{e}/main.rb")
+			if File.exist?("#{@basedir}/extensions/#{e}/main.rb")
 				$current_ext_dir = e
 				require "#{@basedir}/extensions/#{e}/main"
 			end

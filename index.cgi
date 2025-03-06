@@ -33,7 +33,7 @@ if $cgi.include?("create_poll") && $cgi.include?("poll_url")
 	else
 		if $cgi["poll_url"] == ""
 			require "securerandom"
-			true while(File.exists?(pollurl = SecureRandom.urlsafe_base64($conf.random_chars)))
+			true while(File.exist?(pollurl = SecureRandom.urlsafe_base64($conf.random_chars)))
 		else
 			pollurl=$cgi["poll_url"]
 		end
