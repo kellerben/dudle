@@ -19,16 +19,14 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-
 if __FILE__ == $0
 
-$:.push("..")
-require_relative "dudle"
+$:.push('..')
+require_relative 'dudle'
 
 $d = Dudle.new
 
-
-$d << "<h2>" + _("Customize personal settings") + "</h2>"
+$d << ('<h2>' + _('Customize personal settings') + '</h2>')
 $d << _("You need <a href='https://en.wikipedia.org/wiki/HTTP_cookie'>cookies</a> enabled in order to personalize your settings.")
 
 def choosetable(options, cursetting)
@@ -37,51 +35,49 @@ def choosetable(options, cursetting)
 	<thead>
 	<tr>
 HEAD
-	ret += "<th>" + _("Current setting") + "</th>"
-	ret += "<th>" + _("Description") + "</th>"
-	ret += "</tr>"
-	ret += "</thead>";
-	options.each{|description,href,title|
+	ret += '<th>' + _('Current setting') + '</th>'
+	ret += '<th>' + _('Description') + '</th>'
+	ret += '</tr>'
+	ret += '</thead>'
+	options.each { |description, href, title|
 		selected = href == cursetting
-		ret += "<tr><td>"
+		ret += '<tr><td>'
 		ret += YES if selected
 		ret += "</td><td class='settingstable' title='#{title}'>"
 		ret += "<a href='?#{href}'>" unless selected
 		ret += description
-		ret += "</a>" unless selected
-		ret += "</td></tr>"
+		ret += '</a>' unless selected
+		ret += '</td></tr>'
 	}
-	ret += "</table>"
+	ret += '</table>'
 	ret
 end
 
-
-a = [[_("Use special characters") + " (#{UTFCHARS})","utf", _("Use this option if you see the characters in the parenthesis.")],
-     [_("Use only normal strings"),"ascii",_("Use this option if you have problems with some characters.")]]
-$d.html.add_cookie("ascii","true","/",Time.now + (1*60*60*24*365 * ($USEUTF ? -1 : 1 )))
+a = [
+	[_('Use special characters') + " (#{UTFCHARS})", 'utf', _('Use this option if you see the characters in the parenthesis.')],
+	[_('Use only normal strings'), 'ascii', _('Use this option if you have problems with some characters.')]
+]
+$d.html.add_cookie('ascii', 'true', '/', Time.now + (1 * 60 * 60 * 24 * 365 * ($USEUTF ? -1 : 1)))
 $d << "<div id='charset'>"
-$d << "<h3>" + _("Charset")+ "</h3>"
-$d << choosetable(a,$USEUTF ? "utf" : "ascii")
-$d << "</div>"
+$d << ('<h3>' + _('Charset') + '</h3>')
+$d << choosetable(a, $USEUTF ? 'utf' : 'ascii')
+$d << '</div>'
 
 $d << "<div id='config_stylesheet'>"
-$d << "<h3>" + _("Stylesheet") + "</h3>"
-$d << choosetable($d.css.collect{|href| [href.scan(/([^\/]*)\.css/).flatten[0],"css=#{href}"]},"css=#{$d.user_css}")
-$d << "</div>"
+$d << ('<h3>' + _('Stylesheet') + '</h3>')
+$d << choosetable($d.css.collect { |href| [href.scan(%r{([^/]*)\.css}).flatten[0], "css=#{href}"] }, "css=#{$d.user_css}")
+$d << '</div>'
 
-
-username = $cgi.cookies["username"][0]
-if $cgi.include?("delete_username")
-	$d.html.add_cookie("username","","/",Time.now - 1*60*60*24*365)
-	username = ""
-elsif $cgi.include?("username") && $cgi["username"] != ""
-	$d.html.add_cookie("username",$cgi["username"],"/",Time.now + 1*60*60*24*365)
+username = $cgi.cookies['username'][0]
+if $cgi.include?('delete_username')
+	$d.html.add_cookie('username', '', '/', Time.now - (1 * 60 * 60 * 24 * 365))
+	username = ''
+elsif $cgi.include?('username') && $cgi['username'] != ''
+	$d.html.add_cookie('username', $cgi['username'], '/', Time.now + (1 * 60 * 60 * 24 * 365))
 end
 
-
-
-defaultuserstr = _("Default Username")
-usernamestr = _("Username:")
+defaultuserstr = _('Default Username')
+usernamestr = _('Username:')
 $d << <<CHARSET
 <div id='config_user'>
 <h3>#{defaultuserstr}</h3>
@@ -94,7 +90,7 @@ $d << <<CHARSET
 			<td class='settingstable'>
 CHARSET
 
-if username && !$cgi.include?("edit")
+if username && !$cgi.include?('edit')
 	$d << <<CHARSET
 				<span>#{CGI.escapeHTML(username)}</span>
 				<input type='hidden' value="#{CGI.escapeHTML(username)}" name='username' />
@@ -105,7 +101,7 @@ if username && !$cgi.include?("edit")
 			<td></td>
 			<td class='settingstable'>
 CHARSET
-	$d << "<input id='username' type='submit' value='" + _("Edit") + "' />"
+	$d << ("<input id='username' type='submit' value='" + _('Edit') + "' />")
 else
 	$d << <<CHARSET
 				<input id='username' type='text' value="#{CGI.escapeHTML(username.to_s)}" name='username' />
@@ -115,10 +111,10 @@ else
 			<td></td>
 			<td class='settingstable'>
 CHARSET
-	$d << "<input type='submit' value='" + _("Save") + "' />"
+	$d << ("<input type='submit' value='" + _('Save') + "' />")
 end
 
-$d.html << "<input type='submit' name='delete_username' value='" + _("Delete") + "' />" if username
+$d.html << ("<input type='submit' name='delete_username' value='" + _('Delete') + "' />") if username
 
 $d << <<CHARSET
 			</td>
@@ -130,5 +126,3 @@ CHARSET
 
 $d.out
 end
-
-

@@ -21,21 +21,21 @@
 
 if __FILE__ == $0
 
-load "../dudle.rb"
+load '../dudle.rb'
 
 $d = Dudle.new
 
-unless $cgi.include?("cancel")
-	if $cgi.include?("deleteuser")
-		$d.table.delete($cgi["edituser"])
-	elsif $cgi.include?("add_participant")
-		$d.table.add_participant($cgi["olduser"],$cgi["add_participant"],{})
+unless $cgi.include?('cancel')
+	if $cgi.include?('deleteuser')
+		$d.table.delete($cgi['edituser'])
+	elsif $cgi.include?('add_participant')
+		$d.table.add_participant($cgi['olduser'], $cgi['add_participant'], {})
 	end
 end
 
 $d.wizzard_redirect
 
-inviteparticipantsstr = _("Invite Participants")
+inviteparticipantsstr = _('Invite Participants')
 $d << <<TABLE
 	<h2>#{inviteparticipantsstr}</h2>
 <form id='invite_participants_form' method='post' action='invite_participants.cgi' accept-charset='utf-8'>
@@ -45,4 +45,3 @@ TABLE
 
 $d.out
 end
-

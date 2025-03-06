@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-# coding: utf-8
-
 ############################################################################
 # Copyright 2009-2019 Benjamin Kellermann                                  #
 #                                                                          #
@@ -22,46 +20,48 @@
 
 if __FILE__ == $0
 
-load "../dudle.rb"
-$d = Dudle.new
-require "fileutils"
+	load '../dudle.rb'
+	$d = Dudle.new
+	require 'fileutils'
 
-QUESTIONS = [ "phahqu3Uib4neiRi",
-             _("Yes, I know what I am doing!"),
-             _("I hate these stupid entry fields."),
-             _("I am aware of the consequences."),
-             _("Please delete this poll.")]
+	QUESTIONS = [
+		'phahqu3Uib4neiRi',
+		_('Yes, I know what I am doing!'),
+		_('I hate these stupid entry fields.'),
+		_('I am aware of the consequences.'),
+		_('Please delete this poll.')
+	]
 
-userconfirm = CGI.escapeHTML($cgi["confirm"].strip)
-if $cgi.include?("confirmnumber")
- confirm = $cgi["confirmnumber"].to_i
-	if userconfirm == QUESTIONS[confirm]
-		Dir.chdir("..")
+	userconfirm = CGI.escapeHTML($cgi['confirm'].strip)
+	if $cgi.include?('confirmnumber')
+		confirm = $cgi['confirmnumber'].to_i
+		if userconfirm == QUESTIONS[confirm]
+			Dir.chdir('..')
 
-		if $conf.examples.collect{|e| e[:url] }.include?($d.urlsuffix)
-			deleteconfirmstr =  _("Example polls cannot be deleted.")
-			accidentstr = _("You should never see this text.")
-		else
-			FileUtils.cp_r($d.urlsuffix, "/tmp/#{$d.urlsuffix}.#{rand(9999999)}")
-			FileUtils.rm_r($d.urlsuffix)
+			if $conf.examples.collect { |e| e[:url] }.include?($d.urlsuffix)
+				deleteconfirmstr = _('Example polls cannot be deleted.')
+				accidentstr = _('You should never see this text.')
+			else
+				FileUtils.cp_r($d.urlsuffix, "/tmp/#{$d.urlsuffix}.#{rand(9_999_999)}")
+				FileUtils.rm_r($d.urlsuffix)
 
-			if $cgi.include?("return")
-				$d.html.header["status"] = "REDIRECT"
-				$d.html.header["Cache-Control"] = "no-cache"
-				$d.html.header["Location"] = $conf.siteurl + $cgi["return"]
-				$d.out
-				exit
+				if $cgi.include?('return')
+					$d.html.header['status'] = 'REDIRECT'
+					$d.html.header['Cache-Control'] = 'no-cache'
+					$d.html.header['Location'] = $conf.siteurl + $cgi['return']
+					$d.out
+					exit
+				end
+
+				deleteconfirmstr = _('The poll was deleted successfully!')
+				accidentstr = _('If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterminate amount of time; it could already be too late.')
 			end
+			nextthingsstr = _('You can now')
+			homepagestr = _('Return to DuD-Poll home and schedule a new poll')
+			wikipediastr = _('Browse Wikipedia')
+			searchstr = _('Search for something on the Internet')
 
-			deleteconfirmstr = _("The poll was deleted successfully!")
-			accidentstr = _("If this was done by accident, please contact the administrator of the system. The poll can be recovered for an indeterminate amount of time; it could already be too late.")
-		end
-		nextthingsstr = _("You can now")
-		homepagestr = _("Return to DuD-Poll home and schedule a new poll")
-		wikipediastr = _("Browse Wikipedia")
-		searchstr = _("Search for something on the Internet")
-
-		$d.html << %{
+			$d.html << %(
 <p class='textcolumn'>
 	#{deleteconfirmstr}
 </p>
@@ -76,47 +76,47 @@ if $cgi.include?("confirmnumber")
 		<li><a href='https://duckduckgo.com'>#{searchstr}</a></li>
 	</ul>
 </div>
-		}
-		$d.out
-		exit
-	else
-		hint = %{
+			)
+			$d.out
+			exit
+		else
+			hint = %{
 <table id='warningtable' style='background:rgb(225,225,225)'>
 	<tr>
 		<td style='text-align:right'>
-}
-		hint += _("To delete the poll, you have to type:")
-		hint += %{
+			}
+			hint += _('To delete the poll, you have to type:')
+			hint += %(
 		</td>
 		<td class='warning' style='text-align:left'>#{QUESTIONS[confirm]}</td>
 	</tr>
 	<tr>
 		<td style='text-align:right'>
-}
-		hint += _("but you typed:")
-		hint += %{
+			)
+			hint += _('but you typed:')
+			hint += %(
 		</td>
 		<td class='warning' style='text-align:left'>#{userconfirm}</td>
 	</tr>
 </table>
-}
+			)
+		end
+	else
+		confirm = rand(QUESTIONS.size - 1) + 1
 	end
-else
-	confirm = rand(QUESTIONS.size()-1) +1
-end
 
-$d.html << "<h2>" + _("Delete this poll") + "</h2>"
-$d.html << "<p>" + _("You want to delete the poll named") + " <b>#{CGI.escapeHTML($d.table.name)}</b>.<br />"
-$d.html << _("This is an irreversible action!") + "<br />"
-$d.html << _("If you are sure that you want to permanently remove this poll, please type the following sentence into the form: %{question}") % {:question => QUESTIONS[confirm]}
-$d.html << "</p>"
-deletestr = _("Delete")
-deleteform = _("Delete form")
-$d.html << %{
+	$d.html << ('<h2>' + _('Delete this poll') + '</h2>')
+	$d.html << ('<p>' + _('You want to delete the poll named') + " <b>#{CGI.escapeHTML($d.table.name)}</b>.<br />")
+	$d.html << (_('This is an irreversible action!') + '<br />')
+	$d.html << (format(_('If you are sure that you want to permanently remove this poll, please type the following sentence into the form: %<question>s'), question: QUESTIONS[confirm]))
+	$d.html << '</p>'
+	deletestr = _('Delete')
+	deleteform = _('Delete form')
+	$d.html << %(
 	#{hint}
 	<form method='post' action='' accept-charset='utf-8'>
 		<table  class='settingstable'>
-			<td class='label'><label id="deleteform" for="confirm">#{deleteform}:</label></td>    
+			<td class='label'><label id="deleteform" for="confirm">#{deleteform}:</label></td>
 			<td>
 			<input type='hidden' name='confirmnumber' value="#{confirm}" />
 			<input size='30' type='text' aria-labelledby='deleteform'  id ='confirm' name='confirm' value="#{userconfirm}" />
@@ -124,8 +124,8 @@ $d.html << %{
 			</td>
 		</table>
 	</form>
-}
+	)
 
-$d.out
+	$d.out
 
 end

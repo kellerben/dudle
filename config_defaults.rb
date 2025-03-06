@@ -1,4 +1,3 @@
-# coding: utf-8
 ############################################################################
 # Copyright 2009-2019 Benjamin Kellermann                                  #
 #                                                                          #
@@ -18,56 +17,55 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "ostruct"
+require 'ostruct'
 $conf = OpenStruct.new
 
-$conf.vcs = "git"
+$conf.vcs = 'git'
 
 case $cgi.server_port
 when 80
-	protocol = "http"
-	port = ""
+	protocol = 'http'
+	port = ''
 when 443
-	protocol = "https"
-	port = ""
+	protocol = 'https'
+	port = ''
 else
-	protocol = "http"
+	protocol = 'http'
 	port = ":#{$cgi.server_port}"
 end
-$conf.siteurl = "#{protocol}://#{$cgi.server_name}#{port}#{$cgi.script_name.gsub(/[^\/]*$/,"")}"
+$conf.siteurl = "#{protocol}://#{$cgi.server_name}#{port}#{$cgi.script_name.gsub(%r{[^/]*$}, '')}"
 
 $conf.random_chars = 7
 
 $conf.breadcrumbs = []
 $conf.header = []
 $conf.footer = []
-6.times{|i|
+6.times { |i|
 	$conf.header << "<div id='header#{i}'></div>"
 	$conf.footer << "<div id='footer#{i}'></div>"
 }
 
-$conf.errorlog = ""
+$conf.errorlog = ''
 $conf.bugreportmail = "webmaster@#{$cgi.server_name}"
 $conf.auto_send_report = false
 $conf.known_errors = []
 
-$conf.indexnotice = ""
+$conf.indexnotice = ''
 
 $conf.examples = []
 
-$conf.examplenotice = ""
+$conf.examplenotice = ''
 
-$conf.aboutnotice = ""
+$conf.aboutnotice = ''
 
-$conf.default_css = "default.css"
+$conf.default_css = 'default.css'
 
-$conf.dudle_src = "https://github.com/kellerben/dudle/"
+$conf.dudle_src = 'https://github.com/kellerben/dudle/'
 
 $conf.bots = /bot/i
 
-if File.exist?("config.rb") || File.exist?("../config.rb")
-	require_relative "config"
+if File.exist?('config.rb') || File.exist?('../config.rb')
+	require_relative 'config'
 end
 
 require_relative "vcs_#{$conf.vcs}"
-

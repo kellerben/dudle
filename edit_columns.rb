@@ -21,104 +21,106 @@
 
 if __FILE__ == $0
 
-load "../dudle.rb"
+load '../dudle.rb'
 
 revbeforeedit = VCS.revno
 
-if $cgi.include?("undo_revision") && $cgi["undo_revision"].to_i < revbeforeedit
-	undorevision = $cgi["undo_revision"].to_i
-	$d = Dudle.new(:revision => undorevision)
-	comment = $cgi.include?("redo") ? "Redo changes" : "Reverted Poll"
+if $cgi.include?('undo_revision') && $cgi['undo_revision'].to_i < revbeforeedit
+	undorevision = $cgi['undo_revision'].to_i
+	$d = Dudle.new(revision: undorevision)
+	comment = $cgi.include?('redo') ? 'Redo changes' : 'Reverted Poll'
 	$d.table.store("#{comment} to version #{undorevision}")
 else
 	$d = Dudle.new
 end
 
-$d.table.edit_column($cgi["columnid"],$cgi["new_columnname"],$cgi) if $cgi.include?("new_columnname")
-$d.table.delete_column($cgi["deletecolumn"]) if $cgi.include?("deletecolumn")
+$d.table.edit_column($cgi['columnid'], $cgi['new_columnname'], $cgi) if $cgi.include?('new_columnname')
+$d.table.delete_column($cgi['deletecolumn']) if $cgi.include?('deletecolumn')
 
 $d.wizzard_redirect
 
 revno = VCS.revno
 
-$d << "<h2>" + _("Add and remove columns") + "</h2>"
-$d << $d.table.edit_column_htmlform($cgi["editcolumn"],revno)
+$d << ('<h2>' + _('Add and remove columns') + '</h2>')
+$d << $d.table.edit_column_htmlform($cgi['editcolumn'], revno)
 
 h = VCS.history
 urevs = h.undorevisions
 rrevs = h.redorevisions
 
-disabled, title, undorevision, hidden = {},{},{},{}
-hidden["common"] = ""
-["add_remove_column_month","firsttime","lasttime"].each{|v|
-	hidden["common"] += "<input type='hidden' name='#{v}' value='#{$cgi[v]}' />" if $cgi.include?(v)
+disabled = {}
+title = {}
+undorevision = {}
+hidden = {}
+hidden['common'] = ''
+%w[add_remove_column_month firsttime lasttime].each { |v|
+	hidden['common'] += "<input type='hidden' name='#{v}' value='#{$cgi[v]}' />" if $cgi.include?(v)
 }
-["Undo","Redo"].each{|button|
+%w[Undo Redo].each { |button|
 	disabled[button] = "disabled='disabled'"
 }
 if urevs.max
 	# enable undo
-	disabled["Undo"] = ""
-	undorevision["Undo"] = urevs.max.rev() -1
+	disabled['Undo'] = ''
+	undorevision['Undo'] = urevs.max.rev - 1
 
-	coltitle,action = urevs.max.comment.scan(/^Column (.*) (added|deleted|edited)$/).flatten
+	coltitle, action = urevs.max.comment.scan(/^Column (.*) (added|deleted|edited)$/).flatten
 	case action
-	when "added"
-		title["Undo"] = _("Delete column") + " #{coltitle}"
-	when "deleted"
-		title["Undo"] = _("Add column") + " #{coltitle}"
-	when "edited"
-		title["Undo"] = _("Edit column") + " #{coltitle}"
+	when 'added'
+		title['Undo'] = _('Delete column') + " #{coltitle}"
+	when 'deleted'
+		title['Undo'] = _('Add column') + " #{coltitle}"
+	when 'edited'
+		title['Undo'] = _('Edit column') + " #{coltitle}"
 	end
 
-	curundorev = urevs.max.rev() +1 if rrevs.min
+	urevs.max.rev + 1 if rrevs.min
 end
 if rrevs.min
 	# enable redo
-	disabled["Redo"] = ""
-	undorevision["Redo"] = rrevs.min.rev()
+	disabled['Redo'] = ''
+	undorevision['Redo'] = rrevs.min.rev
 
-	coltitle,action = rrevs.min.comment.scan(/^Column (.*) (added|deleted|edited)$/).flatten
+	coltitle, action = rrevs.min.comment.scan(/^Column (.*) (added|deleted|edited)$/).flatten
 	case action
-	when "added"
-		title["Redo"] = _("Add column") + " #{coltitle}"
-	when "deleted"
-		title["Redo"] = _("Delete column") + " #{coltitle}"
-	when "edited"
-		title["Redo"] = _("Edit column") + " #{coltitle}"
+	when 'added'
+		title['Redo'] = _('Add column') + " #{coltitle}"
+	when 'deleted'
+		title['Redo'] = _('Delete column') + " #{coltitle}"
+	when 'edited'
+		title['Redo'] = _('Edit column') + " #{coltitle}"
 	end
 
-	hidden["Redo"] = "<input type='hidden' name='redo'/>"
+	hidden['Redo'] = "<input type='hidden' name='redo'/>"
 end
 
-	$d << <<UNDOREDOREADY
+$d << <<UNDOREDOREADY
 <div class='undo'>
 	<table>
 		<tr>
 UNDOREDOREADY
-	localstr = {"Undo" => _("Undo"), "Redo" => _("Redo")}
-	["Undo","Redo"].each{|button|
+localstr = { 'Undo' => _('Undo'), 'Redo' => _('Redo') }
+%w[Undo Redo].each { |button|
 		$d << <<TD
 			<td>
 				<form method='post' action=''>
 					<div>
 						<input type='submit' title="#{CGI.escapeHTML(title[button].to_s)}" value='#{localstr[button]}' #{disabled[button]} />
 						<input type='hidden' name='undo_revision' value='#{undorevision[button]}' />
-						#{hidden["common"]}
+						#{hidden['common']}
 						#{hidden[button]}
 					</div>
 				</form>
 			</td>
 TD
-	}
-	$d << <<END
+}
+$d << <<END
 		</tr>
 	</table>
 </div>
 END
 
-#$d << (urevs + rrevs).to_html(curundorev,"")
+# $d << (urevs + rrevs).to_html(curundorev,"")
 
 $d.out
 end
-

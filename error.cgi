@@ -19,17 +19,17 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require_relative "dudle"
+require_relative 'dudle'
 
-if File.exist?("#{Dir.pwd}/#{File.dirname(ENV["REDIRECT_URL"])}/data.yaml")
-	$d = Dudle.new(:title => _("Error"), :hide_lang_chooser => true, :load_extensions => false, :relative_dir => "../")
+if File.exist?("#{Dir.pwd}/#{File.dirname(ENV.fetch('REDIRECT_URL', nil))}/data.yaml")
+	$d = Dudle.new(title: _('Error'), hide_lang_chooser: true, load_extensions: false, relative_dir: '../')
 else
-	$d = Dudle.new(:title => _("Error"), :hide_lang_chooser => true, :load_extensions => false)
+	$d = Dudle.new(title: _('Error'), hide_lang_chooser: true, load_extensions: false)
 end
 
 if File.exist?($conf.errorlog)
 	begin
-		a = File.open($conf.errorlog,"r").to_a
+		a = File.open($conf.errorlog, 'r').to_a
 	rescue Exception => e
 		errorstr = "Exception while opening #{$conf.errorlog}:\n#{e}"
 	else
@@ -38,17 +38,17 @@ if File.exist?($conf.errorlog)
 		errorstr = s.reverse.join
 	end
 
-	errormessage = "\n" + _("The following error was printed:") + "\n" + errorstr
+	errormessage = "\n" + _('The following error was printed:') + "\n" + errorstr
 
 end
 
-	errormessagebody = _("Hi!\n\nI found a bug in your application at %{urlofsite}.\nI did the following:\n\n<please describe what you did>\n<e.g., I wanted to post a comment to the poll.>\n\nI am using <please state your browser and operating system>\n%{errormessage}\nSincerely,\n") % {:errormessage => errormessage, :urlofsite => $conf.siteurl}
-	subject = _("Bug in DuD-Poll")
+errormessagebody = format(_("Hi!\n\nI found a bug in your application at %<urlofsite>s.\nI did the following:\n\n<please describe what you did>\n<e.g., I wanted to post a comment to the poll.>\n\nI am using <please state your browser and operating system>\n%<errormessage>s\nSincerely,\n"), errormessage: errormessage, urlofsite: $conf.siteurl)
+subject = _('Bug in DuD-Poll')
 
-	$d << _("An error occurred while executing DuD-Poll.<br/>Please send an error report, including your browser, operating system, and what you did to %{admin}.") % {:admin => "<a href='mailto:#{$conf.bugreportmail}?subject=#{CGI.escape(subject).gsub("+","%20")}&amp;body=#{CGI.escape(errormessagebody).gsub("+","%20")}'>#{$conf.bugreportmail}</a>"}
+$d << (format(_('An error occurred while executing DuD-Poll.<br/>Please send an error report, including your browser, operating system, and what you did to %<admin>s.'), admin: "<a href='mailto:#{$conf.bugreportmail}?subject=#{CGI.escape(subject).gsub('+', '%20')}&amp;body=#{CGI.escape(errormessagebody).gsub('+', '%20')}'>#{$conf.bugreportmail}</a>"))
 
-if (errorstr)
-	errorheadstr = _("Please include the following as well:")
+if errorstr
+	errorheadstr = _('Please include the following as well:')
 	$d << <<ERROR
 <br/>
 #{errorheadstr}
@@ -59,21 +59,20 @@ end
 $d.out
 
 known = false
-if (errorstr)
-	$conf.known_errors.each{|err|
+if errorstr
+	$conf.known_errors.each { |err|
 		known = true if errorstr.index(err)
 	}
 end
 
 if $conf.auto_send_report && !known
-	tmpfile = "/tmp/error.#{rand(10000)}"
-	File.open(tmpfile,"w"){|f|
+	tmpfile = "/tmp/error.#{rand(10_000)}"
+	File.open(tmpfile, 'w') { |f|
 		f << errorstr
 	}
 
-	%x{mail -s "Bug in DuD-Poll" #{$conf.bugreportmail} < #{tmpfile}}
+	`mail -s "Bug in DuD-Poll" #{$conf.bugreportmail} < #{tmpfile}`
 
 	File.delete(tmpfile)
 
 end
-

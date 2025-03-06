@@ -1,4 +1,3 @@
-# coding: utf-8
 ############################################################################
 # Copyright 2009-2019 Benjamin Kellermann                                  #
 #                                                                          #
@@ -37,12 +36,12 @@
 # You may insert some sites, which are under your site
 # A breadcrumb will be generated in the way:
 # TUD -> ... -> Fakultät Informatik -> Professur DuD -> dudle -> poll
-#$conf.breadcrumbs = [
+# $conf.breadcrumbs = [
 #	"<a href='http://tu-dresden.de'>TUD</a>",
 #	"...",
 #	"<a href='http://www.inf.tu-dresden.de'>Fakultät Informatik</a>",
 #	"<a href='http://dud.inf.tu-dresden.de'>Professur Datenschutz und Datensicherheit</a>"
-#]
+# ]
 
 # If you want to encourage the user to send bug reports, state the errorlog,
 # which you have configured in your apache conf with the ErrorLog directive.
@@ -61,33 +60,32 @@
 #      TO OTHER THAN /var/log/apache2/* !
 # If you do not know what to do what I am speaking about, just do not uncomment
 # the next line
-#$conf.errorlog = "/var/log/dudle_error.log"
-#$conf.bugreportmail = "webmaster@yoursite.example.org"
+# $conf.errorlog = "/var/log/dudle_error.log"
+# $conf.bugreportmail = "webmaster@yoursite.example.org"
 
 # Send bug reports automatically with the program “mail”
-#$conf.auto_send_report = false
+# $conf.auto_send_report = false
 
 # Add the following htmlcode to the startpage.
 # Example: displays all available Polls
-#$conf.indexnotice = <<INDEXNOTICE
-#<h2>Available Polls</h2>
-#<table>
+# $conf.indexnotice = <<INDEXNOTICE
+# <h2>Available Polls</h2>
+# <table>
 #	<tr>
 #		<th>Poll</th><th>Last change</th>
 #	</tr>
-#INDEXNOTICE
-#Dir.glob("*/data.yaml").sort_by{|f|
+# INDEXNOTICE
+# Dir.glob("*/data.yaml").sort_by{|f|
 #	File.new(f).mtime
-#}.reverse.collect{|f| f.gsub(/\/data\.yaml$/,'') }.each{|site|
+# }.reverse.collect{|f| f.gsub(/\/data\.yaml$/,'') }.each{|site|
 #	$conf.indexnotice += <<INDEXNOTICE
-#<tr class='participantrow'>
+# <tr class='participantrow'>
 #	<td class='polls'><a href='./#{CGI.escape(site)}/'>#{CGI.escapeHTML(site)}</a></td>
 #	<td class='mtime'>#{File.new(site + "/data.yaml").mtime.strftime('%d.%m, %H:%M')}</td>
-#</tr>
-#INDEXNOTICE
-#}
-#$conf.indexnotice += "</table>"
-
+# </tr>
+# INDEXNOTICE
+# }
+# $conf.indexnotice += "</table>"
 
 # Add some Example Polls to the example page.
 # You may create those using the normal interface
@@ -95,7 +93,7 @@
 # .htaccess and .htdigest are deleted after
 # example creation (defining password protected
 # examples is not possible therefore)
-#$conf.examples = [
+# $conf.examples = [
 #	{
 #		:url => "coffeebreak",
 #		:description => _("Event-scheduling poll"),
@@ -109,30 +107,29 @@
 #		:description => "Cheater",
 #		:hidden => true
 #	}
-#]
+# ]
 
 # Add the following htmlcode to the example page.
-#$conf.examplenotice = <<EXAMPLENOTICE
+# $conf.examplenotice = <<EXAMPLENOTICE
 #	<h2>Screencasts</h2>
 #	<ol>
 #		<li><a href="0-register.ogv">Register a new user</a></li>
 #		<li><a href="1-setup.ogv">Setup a new poll</a></li>
 #		<li><a href="2-participate.ogv">Participate in a poll</a></li>
 #	</ol>
-#EXAMPLENOTICE
+# EXAMPLENOTICE
 
 # Add the following htmlcode to the about page.
-#$conf.aboutnotice = <<ABOUTNOTICE
-#<div class='textcolumn'>
+# $conf.aboutnotice = <<ABOUTNOTICE
+# <div class='textcolumn'>
 #	<h2>Bugs/Features</h2>
 #	<ul>
 #		<li><a href="Bugs">Report a Bug</a></li>
 #		<li><a href="Features">Request a Feature</a></li>
 #	</ul>
-#</div>
-#ABOUTNOTICE
-
+# </div>
+# ABOUTNOTICE
 
 # choose a default stylesheet
 # e.g., "classic.css", "css/foobar.css", ...
-#$conf.default_css = "default.css"
+# $conf.default_css = "default.css"

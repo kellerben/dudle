@@ -1,4 +1,3 @@
-# encoding: utf-8
 ############################################################################
 # Copyright 2009-2019 Benjamin Kellermann                                  #
 #                                                                          #
@@ -18,72 +17,70 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-require "time"
-require_relative "log"
-require "open3"
+require 'time'
+require_relative 'log'
+require 'open3'
 require 'tempfile'
 
 def runcmd *args
-	Open3.popen3(*args) {|i,o,e,t| o.read }
+	Open3.popen3(*args) { |_i, o, _e, _t| o.read }
 end
 
 class VCS
-	GITCMD="git"
-	def VCS.init
-		runcmd(GITCMD, "init")
+	GITCMD = 'git'
+	def self.init
+		runcmd(GITCMD, 'init')
 	end
 
-	def VCS.rm file
-		runcmd(GITCMD, "rm", file)
+	def self.rm(file)
+		runcmd(GITCMD, 'rm', file)
 	end
 
-	def VCS.add file
-		runcmd(GITCMD, "add", file)
+	def self.add(file)
+		runcmd(GITCMD, 'add', file)
 	end
 
-	def VCS.revno
+	def self.revno
 		# there is a bug in git log --format, which suppresses the \n on the last line
-		runcmd(GITCMD, "log", "--format=format:x").scan("\n").size + 1
+		runcmd(GITCMD, 'log', '--format=format:x').scan("\n").size + 1
 	end
 
-	def VCS.cat revision, file
-		revs = runcmd(GITCMD, "log", "--format=format:%H").split("\n").reverse
-		runcmd(GITCMD, "show", "#{revs[revision-1]}:#{file}")
+	def self.cat(revision, file)
+		revs = runcmd(GITCMD, 'log', '--format=format:%H').split("\n").reverse
+		runcmd(GITCMD, 'show', "#{revs[revision - 1]}:#{file}")
 	end
 
-	def VCS.history
-		log = runcmd(GITCMD, "log", "--format=format:%s\t%ai").force_encoding('utf-8').split("\n").reverse
+	def self.history
+		log = runcmd(GITCMD, 'log', "--format=format:%s\t%ai").force_encoding('utf-8').split("\n").reverse
 		ret = Log.new
-		log.each_with_index{|s,i|
+		log.each_with_index { |s, i|
 			a = s.scan(/^([^\t]*)(.*)$/).flatten
-			ret.add(i+1, Time.parse(a[1]), a[0])
+			ret.add(i + 1, Time.parse(a[1]), a[0])
 		}
 		ret
 	end
 
-	def VCS.commit comment
-		tmpfile = Tempfile.new("commit")
+	def self.commit(comment)
+		tmpfile = Tempfile.new('commit')
 		tmpfile.write(comment)
 		tmpfile.close
-		ret = runcmd(GITCMD, "commit", "-a", "-F", tmpfile.path)
+		ret = runcmd(GITCMD, 'commit', '-a', '-F', tmpfile.path)
 		tmpfile.unlink
 		ret
 	end
 
-	def VCS.branch source, target
-		runcmd(GITCMD, "clone", source, target)
+	def self.branch(source, target)
+		runcmd(GITCMD, 'clone', source, target)
 	end
 
-	def VCS.revert revno
-		revhash = runcmd(GITCMD, "log", "--format=%H").split("\n").reverse[revno-1]
-		runcmd(GITCMD, "checkout", revhash, ".")
+	def self.revert(revno)
+		revhash = runcmd(GITCMD, 'log', '--format=%H').split("\n").reverse[revno - 1]
+		runcmd(GITCMD, 'checkout', revhash, '.')
 		VCS.commit("Reverted Poll to version #{revno}")
 	end
 
-	def VCS.reset revno
-		revhash = runcmd(GITCMD, "log", "--format=%H").split("\n").reverse[revno-1]
-		runcmd(GITCMD, "checkout", "-B", "master", revhash)
+	def self.reset(revno)
+		revhash = runcmd(GITCMD, 'log', '--format=%H').split("\n").reverse[revno - 1]
+		runcmd(GITCMD, 'checkout', '-B', 'master', revhash)
 	end
 end
-
-

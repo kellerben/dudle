@@ -1,4 +1,3 @@
-# coding: utf-8
 ############################################################################
 # Copyright 2009-2019 Benjamin Kellermann                                  #
 #                                                                          #
@@ -20,9 +19,9 @@
 
 $USEUTF = true
 $USEUTF = false if $cgi.user_agent =~ /.*MSIE [56]\..*/
-$USEUTF = false if $cgi.cookies["ascii"][0]
-$USEUTF = true  if $cgi.include?("utf")
-$USEUTF = false if $cgi.include?("ascii")
+$USEUTF = false if $cgi.cookies['ascii'][0]
+$USEUTF = true  if $cgi.include?('utf')
+$USEUTF = false if $cgi.include?('ascii')
 
 if $USEUTF
 	NOSORT      = CGI.escapeHTML('▾▴')
@@ -34,19 +33,19 @@ if $USEUTF
 	YES      = CGI.escapeHTML('✔')
 	NO       = CGI.escapeHTML('✘')
 	MAYBE    = CGI.escapeHTML('?')
-	UNKNOWN  = CGI.escapeHTML("–")
+	UNKNOWN  = CGI.escapeHTML('–')
 	CROSS    = CGI.escapeHTML('✘')
 
 	# Thanks to Antje for the symbols
-	MONTHBACK    = CGI.escapeHTML("◀")
-	MONTHFORWARD = CGI.escapeHTML("▶")
-	EARLIER = CGI.escapeHTML("▴")
-	LATER = CGI.escapeHTML("▾")
+	MONTHBACK    = CGI.escapeHTML('◀')
+	MONTHFORWARD = CGI.escapeHTML('▶')
+	EARLIER = CGI.escapeHTML('▴')
+	LATER = CGI.escapeHTML('▾')
 
-	EDIT = CGI.escapeHTML("✎")
-	DELETE = CGI.escapeHTML("✖")
+	EDIT = CGI.escapeHTML('✎')
+	DELETE = CGI.escapeHTML('✖')
 
-	PASSWORDSTAR = CGI.escapeHTML("•")
+	PASSWORDSTAR = CGI.escapeHTML('•')
 else
 	NOSORT      = ''
 	SORT        = CGI.escapeHTML('^')
@@ -57,18 +56,18 @@ else
 	YES      = CGI.escapeHTML('OK')
 	NO       = CGI.escapeHTML('NO')
 	MAYBE    = CGI.escapeHTML('?')
-	UNKNOWN  = CGI.escapeHTML("-")
+	UNKNOWN  = CGI.escapeHTML('-')
 	CROSS    = CGI.escapeHTML('X')
 
-	MONTHBACK    = CGI.escapeHTML("<")
-	MONTHFORWARD = CGI.escapeHTML(">")
-	EARLIER = CGI.escapeHTML("")
-	LATER = CGI.escapeHTML("")
+	MONTHBACK    = CGI.escapeHTML('<')
+	MONTHFORWARD = CGI.escapeHTML('>')
+	EARLIER = CGI.escapeHTML('')
+	LATER = CGI.escapeHTML('')
 
-	EDIT = CGI.escapeHTML("edit")
-	DELETE = CGI.escapeHTML("delete")
+	EDIT = CGI.escapeHTML('edit')
+	DELETE = CGI.escapeHTML('delete')
 
-	PASSWORDSTAR = CGI.escapeHTML("*")
+	PASSWORDSTAR = CGI.escapeHTML('*')
 end
 
-UTFCHARS = CGI.escapeHTML("✔✘◀▶✍✖•▾▴")
+UTFCHARS = CGI.escapeHTML('✔✘◀▶✍✖•▾▴')

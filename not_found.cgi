@@ -19,23 +19,25 @@
 # along with dudle.  If not, see <http://www.gnu.org/licenses/>.           #
 ############################################################################
 
-if(ENV["REDIRECT_URL"])
-require_relative "dudle"
-if File.exist?(Dir.pwd + File.dirname(ENV["REDIRECT_URL"]))
-	$d = Dudle.new(:hide_lang_chooser => true, :load_extensions => false)
-else
-	$d = Dudle.new(:hide_lang_chooser => true, :load_extensions => false, :relative_dir => "../")
-end
+if ENV['REDIRECT_URL']
+	require_relative 'dudle'
+	if File.exist?(Dir.pwd + File.dirname(ENV.fetch('REDIRECT_URL', nil)))
+		$d = Dudle.new(hide_lang_chooser: true, load_extensions: false)
+	else
+		$d = Dudle.new(hide_lang_chooser: true, load_extensions: false, relative_dir: '../')
+	end
 
-title = _("Poll not found")
+	_('Poll not found')
 
-str = [_("The requested poll was not found."),
-       _("There are several reasons why a poll may have been deleted:"),
-       _("Somebody clicked on “Delete poll” and deleted the poll manually."),
-       _("The poll was deleted by the administrator because it was not accessed for a long time."),
-       _("Return to DuD-Poll home and schedule a new poll")]
+	str = [
+		_('The requested poll was not found.'),
+		_('There are several reasons why a poll may have been deleted:'),
+		_('Somebody clicked on “Delete poll” and deleted the poll manually.'),
+		_('The poll was deleted by the administrator because it was not accessed for a long time.'),
+		_('Return to DuD-Poll home and schedule a new poll')
+	]
 
-$d << <<END
+	$d << <<END
 		<p>
 		#{str[0]}
 		</p>
@@ -49,9 +51,9 @@ $d << <<END
 		</p>
 END
 
-$d.out#($cgi)
+	$d.out # ($cgi)
 
 else
 	puts
-	puts "Not Found"
+	puts 'Not Found'
 end
