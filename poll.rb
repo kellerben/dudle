@@ -20,6 +20,7 @@
 require_relative 'hash'
 require 'yaml'
 require 'time'
+require 'fileutils'
 require_relative 'pollhead'
 require_relative 'timepollhead'
 
@@ -493,12 +494,20 @@ FORM
 	end
 
 	def store(comment)
-		File.open('data.yaml', 'w') { |out|
-			out << "# This is a dudle poll file\n"
-			out << to_yaml
-			out.chmod(0o660)
+		lockfile = 'data.yaml.lock'
+
+		File.open(lockfile, 'w') { |lock|
+			if lock.flock(File::LOCK_EX)
+				File.open('data.yaml', 'w') { |out|
+					out << "# This is a dudle poll file\n"
+					out << to_yaml
+					out.chmod(0o660)
+				}
+				VCS.commit(comment)
+
+				lock.flock(File::LOCK_UN)
+			end
 		}
-		VCS.commit(comment)
 	end
 
 	###############################
