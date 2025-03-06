@@ -132,12 +132,12 @@ class Dudle
 			File.open('last_read_access', 'w').close unless @cgi.user_agent =~ $conf.bots
 			@basedir = '..'
 			inittabs
-		  	if params[:revision]
+		 if params[:revision]
 				@table = YAML.load(VCS.cat(revision, 'data.yaml'))
-   				@table = YAML::safe_load(VCS.cat(self.revision, 'data.yaml'), permitted_classes: [Poll, TimePollHead])
+ 			@table = YAML.safe_load(VCS.cat(revision, 'data.yaml'), permitted_classes: [Poll, TimePollHead])
 			else
 				@table = YAML.load_file('data.yaml')
-			end
+   end
 			@urlsuffix = File.basename(File.expand_path('.'))
 			@title = @table.name
 
@@ -273,6 +273,7 @@ READY
 			['pl', 'Polski'], # 45 million
 			['es_AR', 'Español Argentino'], # 25–30 million
 			['nl', 'Nederlands'], # 24 million (2016)
+			['ln', 'Lingála'], # 21 million (2021)
 			['sw', 'Kiswahili'], # 15 million (2012)
 			['hu', 'Magyar'], # 13 million (2002–2012)
 			['sv', 'Svenska'], # 10 million (2018)
