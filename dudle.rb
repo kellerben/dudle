@@ -133,7 +133,7 @@ class Dudle
 			@basedir = '..'
 			inittabs
 		 if params[:revision]
-				@table = YAML.safe_load(VCS.cat(revision, 'data.yaml'), permitted_classes: [Poll, TimePollHead])
+				@table = YAML.safe_load(VCS.cat(revision, 'data.yaml'), permitted_classes: [Poll, PollHead, TimePollHead, TimeString, Date, Time])
 			else
 				@table = YAML.load_file('data.yaml')
    end
